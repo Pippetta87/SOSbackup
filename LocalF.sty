@@ -1,0 +1,39 @@
+\ProvidesPackage{LocalF}
+
+
+\renewenvironment{abstract} %%%% Abstract personalization
+ {\small
+  \begin{center}
+  \bfseries \abstractname\vspace{-.5em}\vspace{0pt}
+  \end{center}
+  \list{}{%
+    \setlength{\leftmargin}{-0mm}% <---------- CHANGE HERE
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \item\relax}
+ {\endlist}
+ 
+ \newenvironment{abstractc} %%%% Abstract personalization
+ {\small
+  \begin{center}
+  \bfseries Abstract\vspace{-.3em}\vspace{0pt}
+  \end{center}
+  \list{}{%
+    \setlength{\leftmargin}{-0mm}% <---------- CHANGE HERE
+    \setlength{\rightmargin}{\leftmargin}%
+    \thispagestyle{empty}
+  }%
+  \item\relax}
+ {\endlist}
+ 
+\renewcommand\cftappendixname{\appendixname~} %% Appendix ???
+
+\renewcommand{\thesubfigure}{\arabic{figure}.\arabic{subfigure}}
+
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+
+\renewcommand{\theequation}{\thechapter.\arabic{equation}}   %%% Modo numerazione equazioni
+\newcommand{\Exp}[1]{\text{exp}\{#1\}}
+
+\newcommand{\mss}{modello solare standard}
+\newcommand{\intmy}[1]{\intertext{\noindent{#1}\vspace{-2pt}\noindent}}

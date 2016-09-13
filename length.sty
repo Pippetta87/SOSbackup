@@ -1,0 +1,18 @@
+\ProvidesPackage{length}
+
+
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\topskip}{1pt}
+\setlength{\topmargin}{1pt}
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
+\setlength\parindent{12pt}
+
+\makeatletter
+\g@addto@macro\normalsize{%
+  \setlength\abovedisplayskip{2pt}
+  \setlength\belowdisplayskip{2pt}
+}
+\makeatother

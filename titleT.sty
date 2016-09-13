@@ -1,0 +1,27 @@
+\ProvidesPackage{titleT}
+
+\usepackage{titletoc}
+\setcounter{tocdepth}{2}
+\setsecnumdepth{subsection}
+\maxsecnumdepth{subsection}
+
+\usepackage[compact]{titlesec}
+\titleclass{\part}{top}
+
+\titleformat{\part}[block]{\huge\bfseries\centering\vspace*{\fill}}{\thepart}{10pt}{\huge}[\thispagestyle{empty}\addtocounter{page}{-1}\vspace*{\fill}] 
+
+%\titleformat{\chapter}[block]{\huge}{\chaptertitlename\ \thechapter:\ }{0pt}{\huge}
+\titleformat{\chapter}[block]{\Huge}{\thechapter.\ }{0pt}{\huge} %Titoli capitoli senza capitolo XZ:
+
+
+\titleformat{\section}{\LARGE}{\thesection: }{0pt}{\LARGE}
+
+
+\titleformat{\subsection}[runin]{\LARGE}{\arabic{chapter}.\arabic{section}.\arabic{subsection}}{5pt}{\large\scshape}
+
+
+\titlespacing*{\part}{0pt}{0pt}{0pt}
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+\titlespacing{\section}{0pt}{*0}{*0}
+\titlespacing{\subsection}{0pt}{*0}{5pt}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}

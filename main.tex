@@ -1,0 +1,96 @@
+\documentclass[oneside,11pt,fleqn]{memoir}
+\usepackage{makeidx}
+\makeindex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% importa pacchetti
+\usepackage{usepkg}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{\cftpagenumbersoff{part}} %% part senza numero pagina in toc
+%%%%%%%%%%%%%%%%%% titletoc, titlesec setting.
+%%%%%%%%%%%%%%%%%%      pagestyle
+\usepackage{titleT}
+\pagestyle{plain}
+%%%%%%%%%%%%%%%%%% length
+\usepackage{length}
+%%%%%%%%%%%% Hyperref package
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+%%%%%%%%%%%%%%%%%%%%%%%% Things need to be loaded after hyperref
+%\usepackage{cleveref}
+%%%%%%%%%%%%%%%%%Geometry package
+\usepackage[a4paper,margin=60px,tmargin=20px,includefoot,footskip=40px]{geometry}
+%http://tex.stackexchange.com/questions/211248/problem-with-cropmarks-on-geometry-package
+%http://www.ctex.org/documents/packages/layout/geometry.pdf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Funzioni generali
+\usepackage{functions}
+%http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include
+\usepackage{sources}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Funzioni per questo file main
+\usepackage{mathOp}
+\usepackage{LocalF}
+\usepackage{ads}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\raggedbottom %http://tex.stackexchange.com/questions/102084/annoying-paragraph-spacing-issue-with-memoir
+
+%% CAption figure
+    \makeatletter
+    \renewcommand\@memmain@floats{%
+      \counterwithout{figure}{section}
+      \counterwithout{table}{section}
+      \counterwithout{figure}{chapter}
+      \counterwithout{table}{chapter}
+      }
+    \makeatother
+%%%%
+
+\author{ }
+\title{Studio delle oscillazioni solari}
+\date{\today}
+%%%
+\begin{document}
+
+\frontmatter
+\pagenumbering{roman}
+\maketitle
+
+\tableofcontents
+
+\clearpage
+
+\subfile{sommario}
+
+\clearpage
+
+\mainmatter
+\pagenumbering{arabic}
+
+\part{Il modello solare standard: importanza osservabili sismologiche.}
+
+\subfile{SSM}
+
+
+\part{Oscillazioni lineari adiabatiche.}
+
+\subfile{oscillation}
+
+\part{Problema inverso e accuratezza parametri del modello solare.}
+
+\subfile{inversion}
+
+\backmatter
+
+
+\part{Appendice}
+
+\subfile{appendix}
+
+\printbibliography
+
+
+\end{document}
