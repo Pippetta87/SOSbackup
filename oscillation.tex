@@ -5,27 +5,25 @@
 In questa sezione ricavo l'equazione del moto perturbato che descrive i modi normali del Sole: considero piccole perturbazioni dello stato di equilibrio e adiabatiche cio\'e molto pi\'u rapide del tempo scala per scambio di calore dovuto al flusso radiativo o alle reazioni nucleari. Le frequenze delle oscillazioni adiabatiche sono determinate dalla struttura interna del Sole attraverso i coefficienti che compaiono nelle equazioni che descrivono i modi normali: dato che $P,\ \rho,\ g$ non sono indipendenti \'e sufficiente specificare $\rho(r)$ e $\Gamma_1(r)$. Un confronto con le frequenze osservate necessita che la precisione numerica sia dei parametri ricavati dal modello sia delle tecniche numeriche usate per ricavare le frequenze dei modi di oscillazione sia maggiore dell'accuratezza delle misure.
 
 
-{\let\clearpage\relax \chapter{Introduzione alle oscillazioni solari.}} % Inizio chapter "Introduzione ai fenomeni oscillatori solari (da vecchia prima parte)" senza nuava pagina
+{\let\clearpage\relax \chapter{Introduzione alle oscillazioni solari.}} % 
 
 
 \section{Oscillazioni dei 5 minuti.}
 
 In \citet{lei62velocity} si osserva che la superficie solare ha scale spazio-temporali privilegiate: in particolare \'e presente un comportamento periodico nell'atmosfera a tutte le altezze rilevato tramite effetto doppler. Il periodo \'e di circa 300 secondi e la lunghezza caratteristica di qualche \si{\mega\meter}.
 
-Il modello proposto da \citet{ulrich70five} e \citet*{stein71five} considera le propriet\'a dei modi normali non radiali di oscillazione del Sole, in particolare usando la relazione di dispersione per onde acustiche, si ha la definizione di cavit\'a risonanti all'interno del Sole: la variazione delle propriet\'a del gas delimita le regioni di propagazione a diverse profondit\'a a seconda delle caratteristiche trasversali del moto. 
+Il modello proposto da \citet{ulrich70five} e \citet*{stein71five} considera le propriet\'a dei modi normali non radiali di oscillazione del Sole, in particolare usando la relazione di dispersione per onde acustiche, si ha la definizione di cavit\'a risonanti all'interno del Sole: la variazione delle propriet\'a del gas delimita le regioni di propagazione a diverse profondit\'a a seconda delle caratteristiche trasversali del moto.
+{\itshape Introdurre $l=k_h\rsun{}$}
 
-Le oscillazioni osservate hanno $\nu\geq\SI{500}{\micro\hertz}$, sono causate da modi p, onde stazionarie che si propagano come onda evanascente nell'atmosfera solare, e modi f, onde di superficie, osservabili ad alto grado angolare l.
+Le oscillazioni osservate hanno $\nu\geq\SI{500}{\micro\hertz}$, sono causate da modi p, onde stazionarie che si propagano come onda evanascente nell'atmosfera solare, e modi f, onde di superficie, di alto grado l.
 
 Sono possibili onde stazionarie per determinati valori di  $(k_h,\omega)$, dove la perturbazione della densit\'a, pressione e potenziale gravitazionale sono descritte approssimativamente da un'onda piana dove $k_h=\sqrt{k_x^2+k_y^2}$ \'e il numero d'onda orizzontale e $\vec{k}=k_r\hat{r}+\vec{k}_h$.
 
 La simmetria sferica del modello solare rende naturale una descrizione delle perturbazioni in funzione di $Y\indices{_l^m}(\theta,\phi)$, l \'e l'ordine angolare: nell'approssimazione di onda piana si ha $k_h^2\approx\frac{l(l+1)}{r^2}$ (vedere \eqref{eq:SHperturb}).
 
-
 Le osservazione del disco solare risolto spazialmente permettono di individuare i modi di alto grado angolare: l'analisi tramite FFT (frequenza e $k_h$) delle osservazioni della superficie solare riportate in \citet{deu75observations} ($CI\ \SI{538}{\nano\meter}$) confermano che la  potenza delle oscillazioni (con numero d'onda $k_h=\frac{2\pi}{\lambda}<\SI{1}{\per\mega\meter}$) si distribuisce in linee determinate nel diagramma $(k_h,\omega)$ predette dal modello e quindi conferma che sono provocate da modi acustici non radiali degli strati interni alla fotosfera.
 
 Le osservazioni della luce integrata sull'intero disco selezionano modi di basso grado angolare: \citet{cla79solar} osservano nello spettro Doppler (linee di assorbimento di K neutro: \SI{769.9}{\nano\meter}) della luce integrata sull'intero disco solare dei picchi equi-spaziati circa \SI{68}{\micro\hertz} interpretate come modi p di alto ordine n e basso grado l. I modi di basso ordine radiale l penetrano in profondit\'a e quindi portano informazioni sulle regioni di fusione e la loro evoluzione.
-
-
 
 \section{Analisi del campo di velocit\'a della superficie solare.}
 
