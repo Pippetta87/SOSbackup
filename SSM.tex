@@ -120,7 +120,6 @@ ottengo valori di circa $27$ min.: quindi la costanza delle caratteristiche sola
 \end{equation}
 
 
-
 \subsection{Teorema del viriale.}
 
 Il teorema del viriale esprime una propriet\'a statistica di particelle interagenti: si trova una relazione tra energia interna, dovuta al moto traslazionale degli atomi, ed energia potenziale gravitazionale, sottointendendo una residua interazione tra le particelle in modo da poter considerare il sistema localmente in equilibrio termodinamico. Stimo dall'energia potenziale gravitazionale il valore caratteristico per la velocit\'a del suono all'interno del Sole di circa \SI{400}{\kilo\meter\per\second}. 
@@ -161,25 +160,14 @@ L=-\frac{1}{2}\dot{\Omega}=\dot{E}_i
 
 \begingroup
 \color{midnightblue}
-
-
-\subsection{Onde stazionarie: modo fondamentale.}
-
-Le oscillazioni solari sono in prevalenza dovute ad onde acustiche, in cui la forza di richiamo \'e prodotta dal gradiente di pressione: il profilo radiale della velocit\'a del suono determina il loro comportamento all'interno del Sole.
-
-I modi puramente acustici di un corpo finito o comunque con condizioni ai bordi sono onde stazionarie la cui parte reale \'e del tipo $f(x,y,z)\cos{(\omega t+\alpha)}$: in assenza di effetti dissipativi la velocit\'a di fase \'e nulla e la velocit\'a di gruppo infinita, velocit\'a e pressione sono sfasati di $\frac{\pi}{2}$. 
-
-Per un corpo in equilibrio idrostatico ricavo il valore medio della velocit\'a del suono utilizzando il teorema del viriale
-\begin{align}
-&-\Omega=3\int_VP\,dV=3\int_M\frac{P}{\rho}\,dm=3\int_M\frac{c_s^2}{\Gamma_1}\,dm=3\exv{\frac{c_s^2}{\Gamma_1}}M\approx3\frac{\overline{c}_s^2}{\Gamma_1}M
-\end{align}
-
-Per stelle in sequenza principale ho $\Omega=-q\frac{GM^2}{R}$ con $q\approx1.5$; per il modo fondamentale di oscillazione radiale si ha:
-\begin{align*}
- &\lambda_1\approx 2\rsun{},\ \omega_1\approx\frac{c_s}{\lambda_1},\ \Pi_1\approx\SI{1}{\hour}
-\end{align*}
+Il tempo caratteristico che regola il collasso gravitazionale di una massa gassosa in equilibrio idrostatico \'e il tempo di Kelvin-Helmholtz
+\begin{equation}
+\tkh{}=\frac{\Omega}{L}\approx\frac{GM^2}{2RL}
+\end{equation}
+sostituendo i valori solari con $\lsun{}=\SI{3.846e33}{\erg\per\second}$ si ha $\tkh{}\approx\SI{1.6e7}{\year}$.
 
 \endgroup
+
 
 
 {\let\clearpage\relax\chapter{Costruzione del modello solare}}
@@ -229,11 +217,15 @@ u(T,P)=\frac{3\gasconstant{}T}{2\mu}+\frac{1}{\rho}[n_{H^+}\chi_H+n_{He^+}\chi_{
 
 con $\chi_x$ energia di ionizzazione dell'atomo $x$ e $n(x^i)$ densit\'a dell'atomo $x$ ionizzato i volte calcolato tramite l'equazione di Saha.
 
+\begingroup
+\color{grey}
 Il tempo caratteristico che regola il collasso gravitazionale di una massa gassosa in equilibrio idrostatico \'e il tempo di Kelvin-Helmholtz
 \begin{equation}
 \tkh{}=\frac{\Omega}{L}\approx\frac{GM^2}{2RL}
 \end{equation}
 sostituendo i valori solari con $\lsun{}=\SI{3.846e33}{\erg\per\second}$ si ha $\tkh{}\approx\SI{1.6e7}{\year}$.
+
+\endgroup
 
 Scrivo il bilancio di calore per un elemento di massa unitaria di gas:
 
