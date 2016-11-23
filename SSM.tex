@@ -4,7 +4,7 @@
 
 \begingroup
 \color{midnightblue}
-\'E possibile che parte dell'energia interna di una stella vada ad alimentare un comportamento oscillatorio attorno alla configurazione di equilibrio descritta tramite un modello stellare. Nei capitoli successivi descrivo la configurazione di equilibrio del Sole e le incertezze nella descrizione fisica del modelo.
+\'E possibile che parte dell'energia interna di una stella alimenti un comportamento oscillatorio attorno alla configurazione di equilibrio. Nei capitoli successivi descrivo la configurazione di equilibrio del Sole e le incertezze nella descrizione fisica del modelo solare standard (MSS).
 
 \endgroup
 
@@ -12,7 +12,7 @@
 \begin{figure}[!hb]
     \centering
     \includegraphics[width=0.5\linewidth]{HRpulsating}
-    \caption{Stelle pulsanti nel diagramma di \hr{}. Da \cite{chr97lecture}}
+    \caption{Zone del diagramma di \hr{} in cui sono previsti comportamenti oscillatori. Da \cite{chr97lecture}}
     \label{fig:HRp}
 \end{figure}
 
@@ -25,6 +25,11 @@
 
 \section{Condizione di equilibrio idrostatico.}
 
+\begingroup
+\color{midnightblue}
+Suppongo che la pressione del campo magnetico, della turbolenza e della radiazione sia molto minore della pressione del gas nell'interno solare e che la correzione dovuta alla rotazione sia piccola; ci\'o \'e suffragato dalla piccola deviazione dalla forma sferica.
+\endgroup
+
 La distribuzione di massa del Sole \'e determinata dall'equilibrio tra la forza di attrazione gravitazionale e il gradiente della pressione del gas. Considero una distribuzione di massa sferica con densit\'a $\rho(r,t)$, la variazione della massa presente entro il raggio $r$ \'e descritta da:
 
 \begin{equation}
@@ -32,6 +37,11 @@ dm=4\pi r^2\rho \,dr-4\pi r^2\rho v\,dt\label{eq:massvar}
 \end{equation}
 
 e $v(r,t)$ \'e il campo di velocit\'a della distribuzione di massa a distanza r dal centro e tempo $t$.
+
+\begingroup
+\color{midnightblue}
+Eulerian vs Lagrangian description
+\endgroup
 
 Per una configurazione di equilibrio statico la velocit\'a radiale del guscio sferico \'e $v=0$ quindi:
 
@@ -80,7 +90,7 @@ La condizione di equilibrio idrostatico diventa:
 \end{equation}
 
 
-\section{Tempo di evoluzione dinamico.}
+\subsection{Tempo di evoluzione dinamico.}
 
 Scrivo l'equazione del moto per la massa $dm$ racchiusa da un guscio sferico di raggio r:
 \begin{align}
@@ -105,10 +115,62 @@ ottengo valori di circa $27$ min.: quindi la costanza delle caratteristiche sola
 \tau_{idro}^{\odot}= \sqrt{\frac{R^3}{GM}}\approx\frac{1}{2}(G\overline{\rho})\expy{-\frac{1}{2}}\approx\SI{27}{\minute}
 \end{equation}
 
+
+\section{Conservazione dell'energia.}
+
+
+\subsection{Teorema del viriale.}
+
+Il teorema del viriale esprime una propriet\'a statistica di particelle interagenti: si trova una relazione tra energia interna, dovuta al moto traslazionale degli atomi, ed energia potenziale gravitazionale, sottointendendo una residua interazione tra le particelle in modo da poter considerare il sistema localmente in equilibrio termodinamico.
+
+L'energia potenziale gravitazionale della stella \'e
+\begin{equation}
+\Omega=-\int_0^M\frac{Gm(r)}{r}\,dm\label{eq:energiapg}
+\end{equation}
+
+Il gas solare \'e approssimabile come un gas perfetto monoatomico essendo composto in gran parte da \chem{H} e \chem{^4He} completamente ionizzati quindi l'energia interna \'e costituita dalla somma delle energie traslazionali delle particelle pesate secondo la distribuzione di equilibrio di Maxwell-Boltzmann
+
+\begin{align}
+&\int_M\frac{1}{\rho}\int n(\vec{p})\frac{p^2}{2m}\,d\vec{p}\,dm=\frac{3}{2}\int_M\frac{P}{\rho}\,dm\\
+&E_i=\int_0^Mu\,dm
+\end{align}
+
+dove $n(\vec{p})$ \'e il numero di particelle per unit\'a di volume con impulso in $[\vec{p},\vec{p}+d\vec{p}]$ e u \'e l'energia interna per unit\'a di massa.
+
+Il teorema del viriale 
+\begin{equation}
+\frac{1}{2}\TtwoDy{t}{I}=2K+\Omega
+\end{equation}
+con K energia cinetica e $I=\int r^2\,dm$, implica, dato che all'equilibrio $\frac{1}{2}\TtwoDy{t}{I}=0$:
+
+\begin{equation}
+0=\int_M\frac{3P}{\rho}\,dm(r)+\Omega
+\end{equation}
+
 \begingroup
 \color{midnightblue}
 
-\section{Conservazione dell'energia.}
+Detta $W=E_i+\Omega$ l'energia totale della stella, 
+\begin{equation}
+\Omega=-2E_i\label{eq:virialegpm}
+\end{equation}
+
+e dalla conservazione dell'energia $\TDy{t}{W}+L=0$ segue che durante la fase di collasso prima dell'inizio della sequenza principale met\'a dell'energia gravitazionale viene spesa per aumentare l'energia interna e met\'a in luminosit\'a:
+
+\begin{equation}
+L=-\frac{1}{2}\dot{\Omega}=\dot{E}_i
+\end{equation}
+
+
+Il tempo caratteristico che regola il collasso gravitazionale di una massa gassosa in equilibrio idrostatico \'e il tempo di Kelvin-Helmholtz
+\begin{equation}
+\tkh{}=\frac{\Omega}{L}\approx\frac{GM^2}{2RL}
+\end{equation}
+sostituendo i valori solari con $\lsun{}=\SI{3.846e33}{\erg\per\second}$ si ha $\tkh{}\approx\SI{1.6e7}{\year}$.
+
+\endgroup
+
+\subsection{Equilibrio termico locale}
 
 La prima legge della termodinamica esprime la conservazione dell'energia interna, ovvero mette in relazione il flusso di calore $dq$ per unit\'a di massa in un elemento di gas nell'intervallo di tempo $dt$ con la variazione di energia interna per unit\'a di massa $du$ e di volume specifico $dV$:
 \begin{equation}
@@ -164,57 +226,6 @@ Stimo il tempo trascorso da una stella di massa solare in sequenza principale co
 con $Q=\SI{6.3e18}{\erg\per\gram}$.
 
 \endgroup
-
-\subsection{Teorema del viriale.}
-
-Il teorema del viriale esprime una propriet\'a statistica di particelle interagenti: si trova una relazione tra energia interna, dovuta al moto traslazionale degli atomi, ed energia potenziale gravitazionale, sottointendendo una residua interazione tra le particelle in modo da poter considerare il sistema localmente in equilibrio termodinamico. Stimo dall'energia potenziale gravitazionale il valore caratteristico per la velocit\'a del suono all'interno del Sole di circa \SI{400}{\kilo\meter\per\second}. 
-
-L'energia potenziale gravitazionale della stella \'e
-\begin{equation}
-\Omega=-\int_0^M\frac{Gm(r)}{r}\,dm\label{eq:energiapg}
-\end{equation}
-
-Il gas solare \'e approssimabile come un gas perfetto monoatomico essendo composto in gran parte da \chem{H} e \chem{^4He} completamente ionizzati quindi l'energia interna \'e costituita dalla somma delle energie traslazionali delle particelle pesate secondo la distribuzione di equilibrio di Maxwell-Boltzmann
-\begin{align}
-&K=\int_M\frac{1}{\rho}\int n(\vec{p})\frac{p^2}{2m}\,d\vec{p}\,dm=\frac{3}{2}\int_M\frac{P}{\rho}\,dm\\
-&K=E_i=\int_0^Mu\,dm
-\end{align}
-
-dove $n(\vec{p})$ \'e il numero di particelle per unit\'a di volume con impulso in $[\vec{p},\vec{p}+d\vec{p}]$ e u \'e l'energia interna per unit\'a di massa.
-
-Il teorema del viriale 
-\begin{equation}
-\frac{1}{2}\TtwoDy{t}{I}=2K+\Omega
-\end{equation}
-con K energia cinetica e $I=\int r^2\,dm$, implica, dato che all'equilibrio $\frac{1}{2}\TtwoDy{t}{I}=0$:
-
-\begin{equation}
-0=\int_M\frac{3P}{\rho}\,dm(r)+\Omega
-\end{equation}
-
-\begingroup
-\color{midnightblue}
-
-Detta $W=E_i+\Omega$ l'energia totale della stella, 
-\begin{equation}
-\Omega=-2E_i\label{eq:virialegpm}
-\end{equation}
-
-e dalla conservazione dell'energia $\TDy{t}{W}+L=0$ segue che durante la fase di collasso prima dell'inizio della sequenza principale met\'a dell'energia gravitazionale viene spesa per aumentare l'energia interna e met\'a in luminosit\'a:
-
-\begin{equation}
-L=-\frac{1}{2}\dot{\Omega}=\dot{E}_i
-\end{equation}
-
-
-Il tempo caratteristico che regola il collasso gravitazionale di una massa gassosa in equilibrio idrostatico \'e il tempo di Kelvin-Helmholtz
-\begin{equation}
-\tkh{}=\frac{\Omega}{L}\approx\frac{GM^2}{2RL}
-\end{equation}
-sostituendo i valori solari con $\lsun{}=\SI{3.846e33}{\erg\per\second}$ si ha $\tkh{}\approx\SI{1.6e7}{\year}$.
-
-\endgroup
-
 
 
 {\let\clearpage\relax\chapter{Costruzione del modello solare}}
