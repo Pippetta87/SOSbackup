@@ -255,9 +255,9 @@ Per quanto riguarda il Sole \'e possibile determinare sperimentalmente il prodot
 
 
 \begingroup
-\color{midnightblue}
+\color{grey}
 
-section(Meccanismi di trasporto dell'energia)
+\section{Meccanismi di trasporto dell'energia}a
 \endgroup
 
 \begingroup
@@ -472,20 +472,28 @@ Le 5 equazioni \eqref{eq:totalflux},\eqref{eq:radiativegradient}, \eqref{eq:conv
     \label{fluxproportion}
 \end{minipage}
 
+\begingroup
+\color{grey}
+section(Descrizione dello stato del gas solare)
+\endgroup
 
-\section{Descrizione dello stato del gas solare}
+\section{Calibrazione del modello solare e incertezze}
+
+\subsection{Equazione di stato}
 
 Per determinare l'equazione di stato esistono due approcci: lo schema chimico considera atomi e molecole, ricava l'energia libera del sistema, e minimizzando l'energia libera si ottengono relazioni termodinamiche ed equazione di stato, utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD; lo schema fisico considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
 
-In questa tesi scrivo un'espressione approssimata tenendo conto delle correzioni all'equazione di stato dei gas perfetti per l'interazione Coulombiana e la degenerazione degli elettroni, illustro i processi che causano l'evoluzione chimica, e determinano il tempo di vita in sequenza principale del Sole mentre non considero i i meccanismi responsabili dell'opacit\'a e gli effetti della pressione di radiazione sulla diffusione degli ioni.
+\begingroup
+\color{midnightblue}
+descrivo sommariamente i varii contributi
+\endgroup
 
-\subsection{Equazione di stato}
+In questa tesi scrivo un'espressione approssimata tenendo conto delle correzioni all'equazione di stato dei gas perfetti per l'interazione Coulombiana e la degenerazione degli elettroni, illustro i processi che causano l'evoluzione chimica, e determinano il tempo di vita in sequenza principale del Sole mentre non considero i i meccanismi responsabili dell'opacit\'a e gli effetti della pressione di radiazione sulla diffusione degli ioni.
 
 \begingroup
 \color{midnightblue}
 
-
-tenendo conto del contributo cinetico e dell'energia di ionizzazione l'energia interna per unit\'a di massa si scrive
+Tenendo conto del contributo cinetico e dell'energia di ionizzazione di $\cem{H}{1}{}{}$ e $\cem{He}{4}{}{}$ l'energia interna per unit\'a di massa si scrive 
 
 \begin{equation}
 u(T,P)=\frac{3\gasconstant{}T}{2\mu}+\frac{1}{\rho}[n_{H^+}\chi_H+n_{He^+}\chi_{He}+n_{He^{++}}(\chi_{He}+\chi_{He^+})]
@@ -543,8 +551,11 @@ Le correzioni dovute alle interazioni coulombiane sono
 &u_c=\frac{1}{2}\sum_ZeZ\overline{n}_Z\phi_Z=-e^3\sqrt{\frac{\pi\rho}{kT}}(N_A\zeta)\expy{\frac{3}{2}},\ P_c=\frac{1}{3}u_c
 \end{align}
 
-
+\begingroup
+\color{midnightblue}
 \subsection{Reazioni nucleari.}
+\endgroup
+
 
 La composizione chimica \'e modificata dalle reazioni di fusione che per gli elementi principali, assumendo condizione di equilibrio secolare, riassumo
 %%% \tag{\theequation a,b}
@@ -569,10 +580,8 @@ incertezza su $S_{11}$
 \endgroup
 
 
-\begingroup
-\color{midnightblue}
-subsection\{Processi di diffusione.\}
-\endgroup
+\subsection{Processi di diffusione.}
+
 
 Oltre alle reazioni di fusioni anche i processi di diffusione modificano l'abbondanza degli elementi, il peso molecolare medio e l'opacit\'a. Sebbene il tempo caratteristico per percorre un raggio solare sia lungo $\tau_{diff}\approx\SI{6e13}{\year}$ i processi di diffusione producono effetti misurabili sulle frequenze dei modi di oscillazione: la loro inclusione nei \mss{} produce un miglior accordo con le osservazioni.
 
@@ -600,15 +609,16 @@ con $w_s$ velocit\'a di diffusione specie s.
 
 \begingroup
 \color{midnightblue}
+stime diffusione
 diffusione termica
 \endgroup
 
 
-\section{''Accuratezza del modello solare standard''.}
+\subsection{Modello solare standard.}
 
 \begingroup
-\color{midnightblue}
-Considero un gusco sferico di gas su cui agiscono gravit\'a e pressione termica: simmetria sferica.
+\color{grey}
+simmetria sferica.
 
 \begin{itemize*}
 \item pressione gas
@@ -617,6 +627,12 @@ Considero un gusco sferico di gas su cui agiscono gravit\'a e pressione termica:
 \item magnetic pressure
 \end{itemize*}
 
+\endgroup
+
+\begingroup
+\color{midnightblue}
+grafico densita vs pressione bahcall95
+tabella input del mss: eta, luminosita, raggio,
 \endgroup
 
 Un modello del Sole attuale si ottiene integrando numericamente le equazioni fondamentali della struttura stellare \eqref{subeqn:stellarstructure} per ottenere il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note  l'equazione di stato $P(\rho,T,X_i)$ (e l'energia interna $u(P,T,X_i)$), l'opacit\'a $\kappa$, il rate di produzione di energia nucleare $\epsilon(P,T,X_i)$.
@@ -651,9 +667,11 @@ La luminosit\'a dipende fortemente dal valore di $Y_0$,  mentre il raggio da $\a
 
 Scelgo $Y_0$ e $\alpha$ che forniscono luminosit\'a e raggio $\rsun{}=\SI{6.96e8}{\meter}$ attuali del Sole: risulta $\frac{R_b}{\rsun{}}\approx0.710$ e il valore di $Y_0=0.250$.
 
-\begin{comment}
+\begingroup
+\color{yellow}
+
 \eqref{eq:massaguscio},\eqref{eq:fidroequilibrio},\eqref{eq:fenergyconservation}, \eqref{eq:ftransportenergy} a partire da $r=0$ produce soluzioni dipendenti da $(P_c,T_c)$, mentre le condizioni alla superficie sono pi\'u complesse perch\'e dipendono dalla struttura dell'atmosfera e le soluzioni sono dipendenti da $(R,L)$: i quattro parametri matematici del problema, $(P_c,T_C,L,R)$, sono determinati dalla condizione di continuit\'a ad un punto intermedio  delle soluzioni $(P,T,m(r),l(r))$ fra le soluzioni con condizioni al centro e sulla superficie.
-\end{comment}
+\endgroup
 
 
 \begingroup
@@ -661,6 +679,5 @@ Scelgo $Y_0$ e $\alpha$ che forniscono luminosit\'a e raggio $\rsun{}=\SI{6.96e8
 Incertezze negli input del SSM e quindi su $\alpha$ e $Y$
 \endgroup
 
-\subsection{Input fisici del MSS}
 
 \end{document}
