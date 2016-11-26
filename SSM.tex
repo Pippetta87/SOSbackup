@@ -257,6 +257,7 @@ con $Q=\SI{6.3e18}{\erg\per\gram}$.
 
 {\let\clearpage\relax\chapter{Costruzione del modello solare}}
 
+
 La luminosit\'a e la temperatura efficace sono le coordinate nel diagramma di \hr{} di una stella. Un modello stellare deve riprodurre la posizione di una stella nel diagramma entro le incertezze sulle osservabili sperimentali disponibili: luminosi\'a, massa, raggio, spettro della luce emessa dalla superficie (temperatura efficace, composizione chimica superficiale, accelerazione di gravit\'a) ed et\'a.
 
 Un modello stellare \'e determinato, almeno nella parte in sequenza principale, da massa e composizione chimica della stella ad inizio sequenza: la struttura interna di una stella \'e regolata dalle condizioni di equilibrio idrostatico e termico locale.
@@ -268,6 +269,83 @@ I parametri del modello solare standard (MSS) sono $\alpha$, che descrive il tra
 Le osservabili sperimentali che contengono informazioni dirette sull'interno stellare sono legate al flusso di neutrini prodotti nelle reazioni nucleari e all'osservazione dei modi normali di oscillazione caratteristici di una determinata classe stellare.
 
 Per quanto riguarda il Sole \'e possibile determinare sperimentalmente il prodotto $G\msun$, la distanza, la luminosit\'a, la composizione chimica al livello della fotosfera ad eccezione dell'abbondanza di $\cel{He}{4}{}{}$ e il raggio.
+
+\begingroup
+\color{midnightblue}
+
+\section{Equazione di stato e opacit\'a}
+
+
+Per determinare l'equazione di stato esistono due approcci: lo schema chimico considera atomi e molecole, ricava l'energia libera del sistema, e minimizzando l'energia libera si ottengono relazioni termodinamiche ed equazione di stato, utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD; lo schema fisico considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
+
+L'equazione di stato $P(\rho,T)$ inoltre viene utilizzata nel computo dell'opacit\'a, probabilit\'a che un fotone venga assorbito per unit\'a di massa.
+
+''descrivo sommariamente i varii contributi''
+
+''In questa tesi scrivo un'espressione approssimata tenendo conto delle'' correzioni all'equazione di stato dei gas perfetti per l'interazione Coulombiana e la degenerazione degli elettroni, illustro i processi che causano l'evoluzione chimica, e determinano il tempo di vita in sequenza principale del Sole mentre non considero i i meccanismi responsabili dell'opacit\'a e gli effetti della pressione di radiazione sulla diffusione degli ioni.
+
+Considero il contributo alla pressione degli ioni, degli elettroni degeneri nella parte interna del Sole, e dei fotoni, $P=P_I+P_R+P_e$, dove ho
+\begin{align}
+&P_I=\rho \gasconstant{} T(X+\frac{Y}{4}+\frac{Z}{\exv{A_Z}})\shortintertext{dove ho usato il peso molecolare medio per i soli ioni $\mu_0$,}\nonumber\\
+&P_R=\frac{a}{3}T^4\shortintertext{definisco il parametro $\beta$}\nonumber\\
+&P_R=(1-\beta)P
+\end{align}
+
+Il peso molecolare medio, definito come massa media in amu per particella libera \'e
+
+\begin{align}
+&\mu=\frac{1}{\bar{n}_HX+\bar{n}_{He}Y+\bar{n}_{Z}Z}\label{eq:meanmw}\intmy{con $\bar{n}_i=\frac{1+f_i}{A_i}$ numero medio di particelle libere per unit\'a di massa atomica dovute alla specie i di peso atomico $A_i$ con $f_i$ numero medio di elettroni liberati da specie i.}\nonumber
+\end{align}
+
+    \begin{figure*}[!h]
+    \centering
+  \begin{subfigure}[t]{0.5\textwidth}
+        \includegraphics[width=0.5\textwidth]{degenpsiP}
+        \caption{Parametro di degenerazione $\Psi$ e correzioni alla pressione dovute alla degenerazione degli elettroni nell'interno solare.}
+    \end{subfigure}%
+    ~
+    \begin{subfigure}[t]{0.5\textwidth}
+        \includegraphics[width=0.6\textwidth]{RatioelectroEP}
+        \caption{Rapporto fra energia termica e coulombiana la prima e fra pressione e correzione coulombiana la seconda.}
+    \end{subfigure}
+\end{figure*}
+
+
+Il contributo degli elettroni, detta $n_e$ la densit\'a numerica, $\psi$ il parametro di degenerazione, funzinione P e T, tale che per $\psi\to-\infty$ si abbia la distribuzione di Boltzmann e per $\psi\to+\infty$ completa degenerazione, e $u_k$ energia cinetica dell'elettrone, \'e determinato da
+\begin{align}
+&\rho N_A\frac{1+X}{2}=\intzi{}\frac{8\pi p^2\,dp}{h^3(\exp{\frac{u_k}{KT}-\psi}+1)},\ \beta P-\rho\gasconstant{}(X+\frac{Y}{4}+\frac{Z}{\exv{A_Z}})=\frac{1}{3}\intzi{}pn_e\TDy{p}{u_k}\,dp\shortintertext{dove ho introdotto il peso atomico medio per elettrone libero (ionizzato) $\mu_e$ con}\nonumber
+&\frac{1}{\mu_e}\approx X+\frac{1}{2}Y+\frac{1}{2}(1-X-Y)=\frac{1+X}{2}
+\end{align}
+
+
+Introduco una correzione duvuta all'interazione Coulombiana seguendo Debye-H\"uckel: il potenziale $V_i(r)$ dovuto allo ione $Z_i$ \'e schermato dagli elettroni quindi, per la formula di Boltzmann, la densit\'a degli ioni con carica Z \'e $n_Z=\overline{n}_Z\exp{-\frac{ZeV_i}{kT}}$, con $\overline{n}_Z$ densit\'a numerica dello ione $Z$ imperturbata. Assumendo l'energia coulombiana molto minore dell'energia termica espando $n_Z$ al prim'ordine nell'equazione di Poisson per $V_i$ 
+
+\begin{align}
+&\nabla^2V_i=-4\pi e\sum Zn_Z\approx\frac{1}{r_D^2}V_i\shortintertext{da cui ottengo il potenziale generato dalla nube di cariche attorno a Z}\nonumber\\
+&\phi_Z=-\frac{eZ}{r_D}\shortintertext{dove}\nonumber\\
+&\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}\zeta,\ \zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}N_A
+\end{align}
+
+Le correzioni dovute alle interazioni coulombiane sono
+\begin{align}
+&u=\frac{3}{2}\frac{\gasconstant{}T}{\mu}+u_c,\ P=\frac{\rho}{\mu}kT+P_c\shortintertext{con}\nonumber\\[-2\normalbaselineskip]
+&u_c=\frac{1}{2}\sum_ZeZ\overline{n}_Z\phi_Z=-e^3\sqrt{\frac{\pi\rho}{kT}}(N_A\zeta)\expy{\frac{3}{2}},\ P_c=\frac{1}{3}u_c
+\end{align}
+
+
+\subsection{Opacit\'a}
+
+Al limite bb bf ff electron scattering.
+
+
+Definisco l'opacit\'a media di Rosseland
+
+\begin{equation}
+\frac{1}{\kappa}=(\intzi{}\PDy{T}{B(\nu,T)})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}=(\frac{acT^3}{\pi})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\label{eq:rosselandopacity}
+\end{equation}
+
+
+\endgroup
 
 
 \section{Trasporto radiativo.}
@@ -284,11 +362,16 @@ integrando sull'angolo solido, il flusso di energia risulta
 &\vec{F}=-[\frac{4\pi}{3\rho}\intzi{}\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\,d\nu]\nabla T\label{eq:radiativeflux}
 \end{align}
 
+\begingroup
+\color{grey}
+
 Definisco l'opacit\'a media di Rosseland
 
 \begin{equation}
 \frac{1}{\kappa}=(\intzi{}\PDy{T}{B(\nu,T)})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}=(\frac{acT^3}{\pi})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\label{eq:rosselandopacity}
 \end{equation}
+
+\ebdgroup
 
 quindi riscrivo \eqref{eq:radiativeflux} utilizzando la pressione di radiazione $p_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4$
 
@@ -305,14 +388,6 @@ Definisco il gradiente radiativo a partire da \eqref{eq:radfluxTgradrelation}
 
 con $l(r)=4\pi r^2F$ luminosit\'a totale in funzione di r.
 
-
-\begingroup
-\color{midnightblue}
-
-\subsection{Opacit\'a}
-
-Al limite bb bf ff electron scattering.
-\endgroup
 
 \section{Condizione di in-stabilit\'a dinamica: trasporto convettivo.}
 
@@ -429,14 +504,13 @@ section(Descrizione dello stato del gas solare)
 
 \section{Calibrazione del modello solare e incertezze}
 
+\begingroup
+\color{grey}
 \subsection{Equazione di stato}
 
 Per determinare l'equazione di stato esistono due approcci: lo schema chimico considera atomi e molecole, ricava l'energia libera del sistema, e minimizzando l'energia libera si ottengono relazioni termodinamiche ed equazione di stato, utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD; lo schema fisico considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
 
-\begingroup
-\color{midnightblue}
-descrivo sommariamente i varii contributi
-\endgroup
+''descrivo sommariamente i varii contributi''
 
 In questa tesi scrivo un'espressione approssimata tenendo conto delle correzioni all'equazione di stato dei gas perfetti per l'interazione Coulombiana e la degenerazione degli elettroni, illustro i processi che causano l'evoluzione chimica, e determinano il tempo di vita in sequenza principale del Sole mentre non considero i i meccanismi responsabili dell'opacit\'a e gli effetti della pressione di radiazione sulla diffusione degli ioni.
 
@@ -487,6 +561,8 @@ Le correzioni dovute alle interazioni coulombiane sono
 &u=\frac{3}{2}\frac{\gasconstant{}T}{\mu}+u_c,\ P=\frac{\rho}{\mu}kT+P_c\shortintertext{con}\nonumber\\[-2\normalbaselineskip]
 &u_c=\frac{1}{2}\sum_ZeZ\overline{n}_Z\phi_Z=-e^3\sqrt{\frac{\pi\rho}{kT}}(N_A\zeta)\expy{\frac{3}{2}},\ P_c=\frac{1}{3}u_c
 \end{align}
+
+\endgroup
 
 \begingroup
 \color{midnightblue}
