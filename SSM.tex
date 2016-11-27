@@ -532,109 +532,14 @@ Le 5 equazioni \eqref{eq:totalflux},\eqref{eq:radiativegradient}, \eqref{eq:conv
     \label{fluxproportion}
 \end{minipage}
 
-\begingroup
-\color{grey}
-section(Descrizione dello stato del gas solare)
-\endgroup
-
-\section{Calibrazione del modello solare e incertezze.}
-
-Un modello del Sole attuale si ottiene integrando numericamente le equazioni fondamentali della struttura stellare \eqref{subeqn:stellarstructure} per ottenere il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note  l'equazione di stato $P(\rho,T,X_i)$ (e l'energia interna $u(P,T,X_i)$), l'opacit\'a $\kappa$, il rate di produzione di energia nucleare $\epsilon(P,T,X_i)$.
-
-Descrivo le caratteristiche del trasporto di energia verso la superficie attraverso la relazione
-
-\begin{subequations}\label{subeqn:stellarstructure}
-\begin{align}
-&\TDy{r}{m}=4\pi r^2\rho\\
-&\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\\
-&\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
-&\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
-\end{align}
-\end{subequations}
-
-I meccanismi di trasporto di energia determinano il gradiente di temperatura $\nabla=\TDly{P}{T}$ fissata la luminosit\'a alla superficie.
-
-Le condizioni al bordo sono
-\begin{itemize}
-    \item La superficie \'e definita da $T=T_{eff}$ e si ha la condizione $L=4\pi r^2\sigma T^4$. La pressione alla superficie \'e legata alla struttura di equilibrio dell'atmosfera.
-    \item In $r=0$ deve essere $L=0$, $M=0$.
-    %e condizioni al centro si ricavano espandendo l, m attorno a $r=0$ in termini di $T_c, P_C,X_C,X_{3C}$ ed eguagliando le espansioni ai valori di l e m del punto pi\'u interno.
-\end{itemize}
-per $X_i(r)$ e M fissati, e costruendo una sequenza evolutiva del Sole in sequenza principale fino ad ottenere un modello solare con le caratteristiche del Sole attuale:
-
-l'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffusionchange}, dovuto principalmente alle reazioni di fusione \eqref{subeqn:fusionchange}, deve essere compensato da un'aumento di temperatura con conseguente incremento dell'energia generata e della luminosit\'a.
-
-L'incertezza sull'abbondanza iniziale di He e sui meccanismi del trasporto convettivo rendono necessaria una calibrazione in funzione della luminosit\'a e raggio attuali.
-
-L'et\'a del sistema solare \'e nota grazie modelli di formazione e analisi dei meteoriti che determinano $t_{\odot}=\SI{4.9+-0.1e9}{\year}$ con incertezza dovuta al periodo di solidificazione dei meteoriti.
-La luminosit\'a dipende fortemente dal valore di $Y_0$,  mentre il raggio da $\alpha$, parametro che regola l'efficienza del trasporto convettivo nella regione esterna caratterizzata fisicamente dall'entropia il cui valore \'e determinato, a meno di una costante additiva, dalla zona superadiabatica vicino alla superficie.
-
-\begingroup
-\color{grey}
-\subsection{Equazione di stato}
-
-Per determinare l'equazione di stato esistono due approcci: lo schema chimico considera atomi e molecole, ricava l'energia libera del sistema, e minimizzando l'energia libera si ottengono relazioni termodinamiche ed equazione di stato, utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD; lo schema fisico considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
-
-''descrivo sommariamente i varii contributi''
-
-In questa tesi scrivo un'espressione approssimata tenendo conto delle correzioni all'equazione di stato dei gas perfetti per l'interazione Coulombiana e la degenerazione degli elettroni, illustro i processi che causano l'evoluzione chimica, e determinano il tempo di vita in sequenza principale del Sole mentre non considero i i meccanismi responsabili dell'opacit\'a e gli effetti della pressione di radiazione sulla diffusione degli ioni.
-
-Considero il contributo alla pressione degli ioni, degli elettroni degeneri nella parte interna del Sole, e dei fotoni, $P=P_I+P_R+P_e$, dove ho
-\begin{align}
-&P_I=\rho \gasconstant{} T(X+\frac{Y}{4}+\frac{Z}{\exv{A_Z}})\shortintertext{dove ho usato il peso molecolare medio per i soli ioni $\mu_0$,}\nonumber\\
-&P_R=\frac{a}{3}T^4\shortintertext{definisco il parametro $\beta$}\nonumber\\
-&P_R=(1-\beta)P
-\end{align}
-
-Il peso molecolare medio, definito come massa media in amu per particella libera \'e
-
-\begin{align}
-&\mu=\frac{1}{\bar{n}_HX+\bar{n}_{He}Y+\bar{n}_{Z}Z}\label{eq:meanmw}\intmy{con $\bar{n}_i=\frac{1+f_i}{A_i}$ numero medio di particelle libere per unit\'a di massa atomica dovute alla specie i di peso atomico $A_i$ con $f_i$ numero medio di elettroni liberati da specie i.}\nonumber
-\end{align}
-
-    \begin{figure*}[!h]
-    \centering
-  \begin{subfigure}[t]{0.5\textwidth}
-        \includegraphics[width=0.5\textwidth]{degenpsiP}
-        \caption{Parametro di degenerazione $\Psi$ e correzioni alla pressione dovute alla degenerazione degli elettroni nell'interno solare.}
-    \end{subfigure}%
-    ~
-    \begin{subfigure}[t]{0.5\textwidth}
-        \includegraphics[width=0.6\textwidth]{RatioelectroEP}
-        \caption{Rapporto fra energia termica e coulombiana la prima e fra pressione e correzione coulombiana la seconda.}
-    \end{subfigure}
-\end{figure*}
-
-
-Il contributo degli elettroni, detta $n_e$ la densit\'a numerica, $\psi$ il parametro di degenerazione, funzinione P e T, tale che per $\psi\to-\infty$ si abbia la distribuzione di Boltzmann e per $\psi\to+\infty$ completa degenerazione, e $u_k$ energia cinetica dell'elettrone, \'e determinato da
-\begin{align}
-&\rho N_A\frac{1+X}{2}=\intzi{}\frac{8\pi p^2\,dp}{h^3(\exp{\frac{u_k}{KT}-\psi}+1)},\ \beta P-\rho\gasconstant{}(X+\frac{Y}{4}+\frac{Z}{\exv{A_Z}})=\frac{1}{3}\intzi{}pn_e\TDy{p}{u_k}\,dp\shortintertext{dove ho introdotto il peso atomico medio per elettrone libero (ionizzato) $\mu_e$ con}\nonumber
-&\frac{1}{\mu_e}\approx X+\frac{1}{2}Y+\frac{1}{2}(1-X-Y)=\frac{1+X}{2}
-\end{align}
-
-
-Introduco una correzione duvuta all'interazione Coulombiana seguendo Debye-H\"uckel: il potenziale $V_i(r)$ dovuto allo ione $Z_i$ \'e schermato dagli elettroni quindi, per la formula di Boltzmann, la densit\'a degli ioni con carica Z \'e $n_Z=\overline{n}_Z\exp{-\frac{ZeV_i}{kT}}$, con $\overline{n}_Z$ densit\'a numerica dello ione $Z$ imperturbata. Assumendo l'energia coulombiana molto minore dell'energia termica espando $n_Z$ al prim'ordine nell'equazione di Poisson per $V_i$ 
-
-\begin{align}
-&\nabla^2V_i=-4\pi e\sum Zn_Z\approx\frac{1}{r_D^2}V_i\shortintertext{da cui ottengo il potenziale generato dalla nube di cariche attorno a Z}\nonumber\\
-&\phi_Z=-\frac{eZ}{r_D}\shortintertext{dove}\nonumber\\
-&\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}\zeta,\ \zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}N_A
-\end{align}
-
-Le correzioni dovute alle interazioni coulombiane sono
-\begin{align}
-&u=\frac{3}{2}\frac{\gasconstant{}T}{\mu}+u_c,\ P=\frac{\rho}{\mu}kT+P_c\shortintertext{con}\nonumber\\[-2\normalbaselineskip]
-&u_c=\frac{1}{2}\sum_ZeZ\overline{n}_Z\phi_Z=-e^3\sqrt{\frac{\pi\rho}{kT}}(N_A\zeta)\expy{\frac{3}{2}},\ P_c=\frac{1}{3}u_c
-\end{align}
-
-\endgroup
 
 \begingroup
 \color{midnightblue}
 \subsection{Reazioni nucleari.}
 \endgroup
 
-
+\begingroup
+\color{grey}
 La composizione chimica \'e modificata dalle reazioni di fusione che per gli elementi principali, assumendo condizione di equilibrio secolare, riassumo
 %%% \tag{\theequation a,b}
 \begin{subequations}\label{subeqn:fusionchange}
@@ -647,18 +552,27 @@ La composizione chimica \'e modificata dalle reazioni di fusione che per gli ele
 
 con $r_{ik}$ rate di reazione per unit\'a di massa:
 
+\endgroup
+
 \begin{align}
 &r_{ik}=\frac{\rho N_A^2X_iX_k}{(1+\delta_{ik})A_iA_k}\lambda_{ik}\shortintertext{dove, introducendo il fattore astrofisico $S(E)$, la massa ridotta dei due reagenti $m_{ik}$}\nonumber\\
 &\lambda_{ik}=\sqrt{\frac{8}{m_{ik}\pi}}\frac{S_{ik}|_{E=0}}{(kT)\expy{\frac{3}{2}}}\intzi{}\exp{(-\frac{E}{kT}-\frac{b}{\sqrt{E}})}\,dE,\ b=31.28Z_1Z_2\sqrt{\frac{m_{ik}}{m_u}}\,(KeV)\expy{-1}\label{eq:astrofactor}
 \end{align}
 
-\begingroup
-\color{midnightblue}
-incertezza su $S_{11}$
-\endgroup
 
+\subsection{Composizione chimica e processi di diffusione.}
 
-\subsection{Processi di diffusione.}
+La composizione chimica \'e modificata dalle reazioni di fusione che per gli elementi principali, assumendo condizione di equilibrio secolare, riassumo
+%%% \tag{\theequation a,b}
+\begin{subequations}\label{subeqn:fusionchange}
+\begin{align}
+&\dot{X}=\frac{m_p}{N_A}(-3r_{pp}+2r_{33}-r_{34}-4r_{p14})\\ 
+&\dot{Y}_3=\frac{m_{He3}}{N_A}(r_{pp}-2r_{33}-r_{34})\\
+&\dot{Y}=\frac{m_{He4}}{N_A}(r_{33}+r_{34}+r_{p14})
+\end{align}
+\end{subequations}
+
+con $r_{ik}$ rate di reazione per unit\'a di massa:
 
 
 Oltre alle reazioni di fusioni anche i processi di diffusione modificano l'abbondanza degli elementi, il peso molecolare medio e l'opacit\'a. Sebbene il tempo caratteristico per percorre un raggio solare sia lungo $\tau_{diff}\approx\SI{6e13}{\year}$ i processi di diffusione producono effetti misurabili sulle frequenze dei modi di oscillazione: la loro inclusione nei \mss{} produce un miglior accordo con le osservazioni.
@@ -692,7 +606,45 @@ diffusione termica
 \endgroup
 
 
-\subsection{Modello solare standard.}
+\section{Calibrazione del modello solare e incertezze.}
+
+Un modello del Sole attuale si ottiene integrando numericamente le equazioni fondamentali della struttura stellare \eqref{subeqn:stellarstructure} per ottenere il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note  l'equazione di stato $P(\rho,T,X_i)$ (e l'energia interna $u(P,T,X_i)$), l'opacit\'a $\kappa$, il rate di produzione di energia nucleare $\epsilon(P,T,X_i)$.
+
+Descrivo le caratteristiche del trasporto di energia verso la superficie attraverso la relazione
+
+\begin{subequations}\label{subeqn:stellarstructure}
+\begin{align}
+&\TDy{r}{m}=4\pi r^2\rho\\
+&\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\\
+&\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
+&\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
+\end{align}
+\end{subequations}
+
+I meccanismi di trasporto di energia determinano il gradiente di temperatura $\nabla=\TDly{P}{T}$ fissata la luminosit\'a alla superficie.
+
+Le condizioni al bordo sono
+\begin{itemize}
+    \item La superficie \'e definita da $T=T_{eff}$ e si ha la condizione $L=4\pi r^2\sigma T^4$. La pressione alla superficie \'e legata alla struttura di equilibrio dell'atmosfera.
+    \item In $r=0$ deve essere $L=0$, $M=0$.
+    %e condizioni al centro si ricavano espandendo l, m attorno a $r=0$ in termini di $T_c, P_C,X_C,X_{3C}$ ed eguagliando le espansioni ai valori di l e m del punto pi\'u interno.
+\end{itemize}
+per $X_i(r)$ e M fissati, e costruendo una sequenza evolutiva del Sole in sequenza principale fino ad ottenere un modello solare con le caratteristiche del Sole attuale:
+
+l'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffusionchange}, dovuto principalmente alle reazioni di fusione \eqref{subeqn:fusionchange}, deve essere compensato da un'aumento di temperatura con conseguente incremento dell'energia generata e della luminosit\'a.
+
+L'incertezza sull'abbondanza iniziale di He e sui meccanismi del trasporto convettivo rendono necessaria una calibrazione in funzione della luminosit\'a e raggio attuali.
+
+L'et\'a del sistema solare \'e nota grazie modelli di formazione e analisi dei meteoriti che determinano $t_{\odot}=\SI{4.9+-0.1e9}{\year}$ con incertezza dovuta al periodo di solidificazione dei meteoriti.
+La luminosit\'a dipende fortemente dal valore di $Y_0$,  mentre il raggio da $\alpha$, parametro che regola l'efficienza del trasporto convettivo nella regione esterna caratterizzata fisicamente dall'entropia il cui valore \'e determinato, a meno di una costante additiva, dalla zona superadiabatica vicino alla superficie.
+
+
+\begingroup
+\color{midnightblue}
+incertezza su $S_{11}$
+incertezza composizione
+\endgroup
+
 
 \begingroup
 \color{grey}
