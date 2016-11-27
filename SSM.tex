@@ -333,17 +333,33 @@ Le correzioni dovute alle interazioni coulombiane sono
 \end{align}
 
 
-\subsection{Opacit\'a}
+I fenomeni che contribuiscono all'opacit\'a nel Sole sono:
 
-Al limite bb bf ff electron scattering.
-
-
-Definisco l'opacit\'a media di Rosseland
-
+ lo scattering di fotone-elettrone che classicamente \'e descritto come lo scattering di un'onda elettromagnetica piana da parte di un dipolo oscillante, scattering Thomson,
 \begin{equation}
-\frac{1}{\kappa}=(\intzi{}\PDy{T}{B(\nu,T)})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}=(\frac{acT^3}{\pi})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\label{eq:rosselandopacity}
+\kappa_{\nu}\propto\frac{r_e^2}{\mu_em_u}
 \end{equation}
 
+e l'approssimazione non relativistica \'e valida per $T<\SI{e8}{\kelvin}$;
+
+l'assorbimento di un fotone da parte di un elettrone libero \'e energeticamente possibile quando l'elettrone \'e vicino ad uno ione, l'opacit\'a in questo caso ha l'andamento
+
+\begin{equation}
+\kappa_{ff}\propto\rhoT\expy{-\frac{7}{2}}
+\end{equation}
+
+si tiene conto degli effetti quantistici tramite un opportuno coefficiente, il fattore di Gaunt;
+
+eccitazione di un elettrone o ionizzazione;
+
+la presenza di metalli con potenziale di ionizzazione minore di H ed He rendono disponibile elettroni per la formazione di $H^-$, sistema debolmente legato per cui un fotone con $h\nu>\SI{0.75}{\elettronvolt}$ o $\lambda<\SI{1655}{\nano\meter}$ pu\'o essere assorbito: temperature di qualche $eV$ (??).
+
+La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
+
+    \begin{figure}[t]{0.5\textwidth}
+        \includegraphics[width=0.6\textwidth]{RatioelectroEP}
+        \caption{Importanza dei varii contributi all'opacit'a nell'interno solare.}
+    \end{figure}
 
 \endgroup
 
