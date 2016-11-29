@@ -533,10 +533,30 @@ Le 5 equazioni \eqref{eq:totalflux},\eqref{eq:radiativegradient}, \eqref{eq:conv
 \end{minipage}
 
 
-\begingroup
-\color{midnightblue}
-\subsection{Reazioni nucleari.}
-\endgroup
+\subsection{Reazioni di fusione.}
+
+La funzione $\epsilon(\rho,T,X_i)$ che descrive l'energia liberata dalle reazioni nucleari per grammo per secondo \'e determinata dalla probabiblit\'a che la reazione $X(a,b)Y$ abbia luogo con $E$ energia cinetica nel centro di massa dei nuclei. Per la sezione d'urto $\sigma(E)$ della reazione di fusione
+
+\begin{align}
+&\sigma(E)\propto\pi\lambdabar^2P_0(E)\xi(E)&\intertext{con la lunghezza d'onda di de Broglie si descrive l'indeterminazione sulla posizione nell'urto nel centro di massa di due particelle con momento relativo p}\\
+&\lambdabar=\frac{\hbar}{p}=\frac{\hbar}{\sqrt{2mE}}&\intertext{con $\xi(E)$ tengo conto di eventuali livelli risonanti: $\xi(E)\to1$ lontano dall'energia del livello risonante; con $P_0(E)$ descrivo la probabilit\'a di attraversamento della barriera coulombiana. Introducendo il fattore astrofisico, dipendente dalle caratteristiche dei nuclei e debolmente dall'energia, scrivo la sezione d'urto per i nuclei di carica $Z_1$, $Z_2$ e m massa ridotta}\\
+\sigma(E)=\frac{S(E)}{E}\exp{-2\pi\eta},\ \eta=\sqrt{\frac{m}{2}}
+\end{align}
+
+La funzione $\epsilon(\rho,T,X_i)$ \'e quindi determinata dalla somma di tutti i contributi
+
+\begin{equation}
+\epsilon_{ij}=\frac{1}{1+\delta_{ij}}\frac{Q}{m_jm_k}X_jX_k\exv{\sigma v}
+\end{equation}
+
+dove $Q$ \'e l'energia liberata per reazione e $\exv{}$ indica la media sulla distribuzione di Maxwell-Boltzmann.
+
+Per determinare la sezione d'urto $\sigma(E)$ uso il fatto che l'integrando
+\begin{align}
+&S(E)\exp{-\frac{E}{kT+\frac{b}{\sqrt{2}}}}&\intertext{ha forma approssimativamente gaussiana il cui massimo e FWHM sono, posto $W=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:}\\
+&E_0=5.665W\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}}\si{\kilo\ev},\ \Delta E=4.249W\expy{\frac{1}{6}}T_7\expy{\frac{5}{6}}
+\end{align}
+
 
 \begingroup
 \color{grey}
@@ -552,13 +572,12 @@ La composizione chimica \'e modificata dalle reazioni di fusione che per gli ele
 
 con $r_{ik}$ rate di reazione per unit\'a di massa:
 
-\endgroup
-
 \begin{align}
 &r_{ik}=\frac{\rho N_A^2X_iX_k}{(1+\delta_{ik})A_iA_k}\lambda_{ik}\shortintertext{dove, introducendo il fattore astrofisico $S(E)$, la massa ridotta dei due reagenti $m_{ik}$}\nonumber\\
 &\lambda_{ik}=\sqrt{\frac{8}{m_{ik}\pi}}\frac{S_{ik}|_{E=0}}{(kT)\expy{\frac{3}{2}}}\intzi{}\exp{(-\frac{E}{kT}-\frac{b}{\sqrt{E}})}\,dE,\ b=31.28Z_1Z_2\sqrt{\frac{m_{ik}}{m_u}}\,(KeV)\expy{-1}\label{eq:astrofactor}
 \end{align}
 
+\endgroup
 
 \subsection{Composizione chimica e processi di diffusione.}
 
