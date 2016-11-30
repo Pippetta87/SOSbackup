@@ -551,11 +551,11 @@ La funzione $\epsilon(\rho,T,X_i)$ \'e quindi determinata dalla somma di tutti i
 
 dove $Q$ \'e l'energia liberata per reazione e $\exv{}$ indica la media sulla distribuzione di Maxwell-Boltzmann.
 
-Per determinare la sezione d'urto $\sigma(E)$ uso il fatto che l'integrando
+Per determinare la sezione d'urto $\sigma(E)$ uso il fatto che l'integrando (?? dove!!!)
 \begin{align}
-&S(E)\exp{-\frac{E}{kT+\frac{b}{\sqrt{2}}}}&\intertext{ha forma approssimativamente gaussiana il cui massimo e FWHM sono, posto $W=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:}\\
-&E_0=5.665W\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}}\si{\kilo\ev},\ \Delta E=4.249W\expy{\frac{1}{6}}T_7\expy{\frac{5}{6}}&\intertext{quindi il rate locale per reazioni non risonanti si scrive}\\
-\exv{\sigma v}=\num{1.3005e-15}[\frac{Z_1Z_2}{AT_6^2}]\expy{\frac{1}{3}}fS_{eff}\exp{-\tau}\si{\cubic\cm\per\second}
+&S(E)\exp{-\frac{E}{kT+\frac{b}{\sqrt{2}}}}&\intertext{ha forma approssimativamente gaussiana il cui massimo, $E_0$ energia pi\'u probabile di reazione, e FWHM sono, posto $A=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:}\\
+&E_0=\SI{\kilo\ev}{5.665} A\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}},\ \Delta E=4.249W\expy{\frac{1}{6}}T_7\expy{\frac{5}{6}},\ \tau=frac{3E_0}{kT}\num{42.487}(Z_1^2Z_2^2AT_6\expy{-1})\expy{\frac{1}{3}}&\intertext{quindi il rate locale per reazioni non risonanti si scrive}\\
+&\exv{\sigma v}=\num{1.3005e-15}[\frac{Z_1Z_2}{AT_6^2}]\expy{\frac{1}{3}}fS_{eff}\exp{-\tau}\si{\cubic\cm\per\second}&\intertext{$S_{eff}$ \'e il risultato dell'espansione dell'integrando per $\invers{\tau}\ll1$ ed estrapolato a $E_0$ a partire dal valore a $E(0)$ calcolato dalla fisica nucleare}
 \end{align}
 
 
