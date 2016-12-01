@@ -561,8 +561,26 @@ Per determinare la sezione d'urto $\sigma(E)$ uso il fatto che l'integrando (?? 
 &\exv{\sigma v}=\num{1.3005e-15}[\frac{Z_1Z_2}{AT_6^2}]\expy{\frac{1}{3}}fS_{eff}\exp{-\tau}\si{\cubic\cm\per\second}&\intertext{$S_{eff}$ \'e il risultato dell'espansione dell'integrando per $\invers{\tau}\ll1$ ed estrapolato a $E_0$ a partire dal valore a $E(0)$ determinato dalla fisica nucleare.}
 \end{align}
 
+Tengo conto della correzione di schermaggio degli elettroni aggiungendo un parametro correttivo $f$:
+
+\begin{equation}
+\exv{v\sigma}\to f\exv{v\sigma},\ f=\exp{\frac{E_D}{KT}}
+\end{equation}
 
 % T_6=10T_7=10^3T_9
+
+\begin{figure*}[!h]
+    \centering
+  \begin{subfigure}[t]{0.5\textwidth}
+        \includegraphics[width=0.5\textwidth]{gamow}
+        \caption{Picco di Gamow per distribuzione velocit\'a nuclei MB a T.}
+    \end{subfigure}%
+    ~
+    \begin{subfigure}[t]{0.5\textwidth}
+        \includegraphics[width=0.5\textwidth]{Rscreening}
+        \caption{Andamento della correzione di schermaggio degli elettroni.}
+    \end{subfigure}
+\end{figure*}
 
 
 \begingroup
