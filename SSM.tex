@@ -631,17 +631,25 @@ La composizione chimica \'e modificata dalle reazioni di fusione che per gli ele
 \end{align}
 \end{subequations}
 
-con $r_{ik}$ rate di reazione per unit\'a di massa:
+con $r_{ik}$ rate di reazione per unit\'a di massa.
 
 Oltre alle reazioni di fusioni anche i processi di diffusione modificano l'abbondanza degli elementi, il peso molecolare medio e l'opacit\'a. Sebbene il tempo caratteristico per percorre un raggio solare sia lungo $\tau_{diff}\approx\SI{6e13}{\year}$ i processi di diffusione producono effetti misurabili sulle frequenze dei modi di oscillazione: la loro inclusione nei \mss{} produce un miglior accordo con le osservazioni.
 
-I processi di diffusione inglobano diversi effetti: la gravit\'a tende a concentrare gli elementi pi\'u pesanti verso il centro, le interazioni elettromagnetiche mantengono gli elettroni ancorati ai nuclei, la diffusione termica concentra le particelle pi\'u cariche e pi\'u pesanti nelle zone pi\'u calde, mentre la presenza di gradiente di concentrazione $C_s=\frac{n_s}{n_e}$ produce diffusione in senso opposto. Si tiene conto del flusso di massa, momento ed energia nelle equazioni di conservazione attraverso le equazioni sviluppate da Burgers (1969), per la concentrazione numerica della specie s ho un l'equazione di continuit\'a.
+L'equazione di Boltzmann del trasporto regola i processi di diffusio
+\begin{align}
+&\PDy{t}{f_i}
+&
+\end{align}
+
+non considero le tecniche di soluzione per la soluzione approssimata della diffusione nel plasma stellare ma solo alcune considerazioni euristiche.
+
+I processi di diffusione inglobano diversi effetti: la gravit\'a tende a concentrare gli elementi pi\'u pesanti verso il centro, le interazioni elettromagnetiche mantengono gli elettroni ancorati ai nuclei, la diffusione termica concentra le particelle pi\'u cariche e pi\'u pesanti nelle zone pi\'u calde, mentre la presenza di gradiente di concentrazione $C_s=\frac{n_s}{n_e}$ produce diffusione in senso opposto. Si tiene conto del flusso di massa, momento ed energia nelle equazioni di conservazione attraverso le equazioni sviluppate da Burgers (1969).
 
 La velocit\'a di sedimentazione dell'elio, $v_{He}$, e degli elementi pesanti, $v_A$, \'e determinata dalla somma dei trasferimenti di momento con le altre specie $F_{ij}$ (per unit\'a di volume)
 \begin{align}
 &\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})=\sum_{i\neq j}F_{ij}&\intertext{trasferimento di momento dovuto agli urti per unit\'a di volume}\\
 &\vec{F}_{ij}\propto m_{ij}n_in_j\vec{v}_{ij}&\intertext{il coefficiente di proporzionalit\'a}\\
-&w_{ij}=\num{2.68e-12}Z_i^2Z_j^2(\frac{m_{ij}}{m_H})\expy{\frac{1}{2}}(\frac{T}{\SI{e7}{\kelvin}})\expy{-\frac{3}{2}}\ln{\Lambda}\si{\cubic\cm\per\second}
+&w_{ij}=\num{2.68e-12}Z_i^2Z_j^2(\frac{m_{ij}}{m_H})\expy{\frac{1}{2}}(\frac{T}{\SI{e7}{\kelvin}})\expy{-\frac{3}{2}}\ln{\Lambda}\si{\cubic\cm\per\second}&\intertext{$\ln{\Lambda}$ indica quanto due ioni s e t}
 \end{align}
 
 Per un plasma di $\cel{H}{1}{}{}$,$\cel{He}{4}{}{}$, \Pelectron
@@ -654,7 +662,8 @@ Per un plasma di $\cel{H}{1}{}{}$,$\cel{He}{4}{}{}$, \Pelectron
 Risulta
 \begin{align}
 &v_H=-\num{8e-11}[\frac{T\expy{5}{2}}{\rho\ln{\Lambda}}\xi_H(r)]\si{\cm\per\second}\\
-&\PDy{t}{X}=\frac{1}{\rho r^2}\PDof{r}[r^2\frac{XT\expy{\frac{5}{2}}}{\ln{\Lambda}}\xi_H(r)]
+&\PDy{t}{X}=\frac{1}{\rho r^2}\PDof{r}[r^2\frac{XT\expy{\frac{5}{2}}}{\ln{\Lambda}}\xi_H(r)]\\
+&\PDy{t}{Z}=-\frac{1}{\rho r^2}\PDof{r}[\frac{r^2ZXT\expy{\frac{5}{2}}\xi_A(r)}{(2-X)\ln{\Lambda}/2.2}]
 \end{align}
 
 \begin{equation}
