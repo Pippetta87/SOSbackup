@@ -273,7 +273,7 @@ Per quanto riguarda il Sole \'e possibile determinare sperimentalmente il prodot
 \begingroup
 \color{midnightblue}
 
-\section{Equazione di stato e opacit\'a}
+\section{Equazione di stato e opacit\'a.}
 
 
 Per determinare l'equazione di stato esistono due approcci: lo schema chimico considera atomi e molecole, ricava l'energia libera del sistema, e minimizzando l'energia libera si ottengono relazioni termodinamiche ed equazione di stato, utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD; lo schema fisico considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
@@ -333,52 +333,27 @@ Le correzioni dovute alle interazioni coulombiane sono
 \end{align}
 
 
-I fenomeni che contribuiscono all'opacit\'a nel Sole sono:
 
+
+\tpc{ht!}{
+
+\node (opint) at (8,5) {\includegraphics[width=0.5\textwidth]{opcontrib-int}};
+\node (opout) at (8,-7) {\includegraphics[width=0.5\textwidth]{opcontrib-out}};
+\node (opcontrib) at (-2,6) {\parbox{0.5\textwidth}{I fenomeni che contribuiscono all'opacit\'a nel Sole sono:
  lo scattering di fotone-elettrone che classicamente \'e descritto come lo scattering di un'onda elettromagnetica piana da parte di un dipolo oscillante, scattering Thomson,
 \begin{equation}
 \kappa_{\nu}\propto\frac{r_e^2}{\mu_em_u}
 \end{equation}
-
 e l'approssimazione non relativistica \'e valida per $T<\SI{e8}{\kelvin}$;
-
 l'assorbimento di un fotone da parte di un elettrone libero \'e energeticamente possibile quando l'elettrone \'e vicino ad uno ione, l'opacit\'a in questo caso ha l'andamento
-
 \begin{equation}
 \kappa_{ff}\propto\rho T\expy{-\frac{7}{2}}
 \end{equation}
-
 si tiene conto degli effetti quantistici tramite un opportuno coefficiente, il fattore di Gaunt;
-
 eccitazione di un elettrone o ionizzazione;
-
 la presenza di metalli con potenziale di ionizzazione minore di H ed He rendono disponibile elettroni per la formazione di $H^-$, sistema debolmente legato per cui un fotone con $h\nu>\SI{0.75}{\ev}$ o $\lambda<\SI{1655}{\nano\meter}$ pu\'o essere assorbito: temperature di qualche $eV$ (??).
-
-La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
-
-\tpc{ht!}{
-
-\node (opint) at (7,6) {\includegraphics[width=0.5\textwidth]{opcontrib-int}};
-\node at (opint.north) {(a)};
-\node (opout) at (0,-6) {\includegraphics[width=0.5\textwidth]{opcontrib-out}};
-\node[name=hydrogen, right= 8mm of opint.south west] {\tiny H};
-\node[name=helium, right=4.5mm of hydrogen.west] {\tiny He};
-\node[name=carbonium, right=4.5mm of helium.west] {\tiny C};
-\node[name=nitrum, right=4.5mm of carbonium.west] {\tiny N};
-\node[name=oxygen, right=4.5mm of nitrum.west] {\tiny O};
-\node[name=neon, right=4.5mm of oxygen.west] {\tiny Ne};
-\node[name=sodium, right=4.5mm of neon.west] {\tiny Na};
-\node[name=magnesium, right=4.5mm of sodium.west] {\tiny Mg};
-\node[name=alluminium, right=4.5mm of magnesium.west] {\tiny Al};
-\node[name=silicium, right=4.5mm of alluminium.west] {\tiny Si};
-\node[name=sulfur, right=4.5mm of silicium.west] {\tiny S};
-\node[name=argon, right=4.5mm of sulfur.west] {\tiny Ar};
-\node[name=calcium, right=4.5mm of argon.west] {\tiny Ca};
-\node[name=cromum, right=4.5mm of calcium.west] {\tiny Cr};
-\node[name=manganese, right=4.5mm of cromum.west] {\tiny Mn};
-\node[name=ferrum, right=4.5mm of manganese.west] {\tiny Fe};
-\node[name=nikel, right=4.5mm of ferrum.west] {\tiny Ni};
-}{(0,-13)}{9cm}{Importanza dei varii contributi all'opacit\'a nell'interno solare.}
+La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.}};
+}{(7,-14)}{0.5\textwidth}{Importanza dei varii contributi all'opacit\'a nell'interno solare.}
     
 \endgroup
 
