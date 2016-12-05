@@ -620,12 +620,40 @@ L'equazione di Boltzmann del trasporto descrive l'evoluzione della probabilit\'a
 \begin{align}
 &\PDy{t}{f_i}+\vec{v}_i\cdot\PDy{f_i}{\vec{r}}+\vec{F}_i\cdot\PDy{f_i}{\vec{v}}=-\div_{\vec{p}}{\vec{s}}\\
 &s_{\alpha}=\sum_'\int[f(\vec{p}\PDy{f'(\vec{p}')}{p'_{\beta}}-f'(\vec{p}'\PDy{f(\vec{p})}{p_{\beta}})]B_{\alpha\beta}\,d^3p'\\
-&B_{\alpha\beta}=\frac{1}{2}\int q_{\alpha}q_{\beta}|\vec{v}-\vec{v}'|\,d\sigma
+&B_{\alpha\beta}=\frac{1}{2}\int q_{\alpha}q_{\beta}|\vec{v}-\vec{v}'|\,d\sigma\\
+&d\sigma=\frac{4\pi(Z_iZ_j)^2}{\mu^2(\vec{v}-\vec{v}')^4}\frac{d\chi}{\chi^3}&\intertext{approssimazione piccoli angoli}
 \end{align}
 
-non considero le tecniche di soluzione per la soluzione approssimata della diffusione nel plasma stellare ma solo alcune considerazioni euristiche.
+I processi di diffusione inglobano diversi effetti:
 
-I processi di diffusione inglobano diversi effetti: la gravit\'a tende a concentrare gli elementi pi\'u pesanti verso il centro, le interazioni elettromagnetiche mantengono gli elettroni ancorati ai nuclei, la diffusione termica concentra le particelle pi\'u cariche e pi\'u pesanti nelle zone pi\'u calde, mentre la presenza di gradiente di concentrazione $C_s=\frac{n_s}{n_e}$ produce diffusione in senso opposto. Si tiene conto del flusso di massa, momento ed energia nelle equazioni di conservazione attraverso le equazioni sviluppate da Burgers (1969).
+\begin{itemize}
+\item la gravit\'a tende a concentrare gli elementi pi\'u pesanti verso il centro, le interazioni elettromagnetiche mantengono gli elettroni ancorati ai nuclei. La forza per unit\'a di volume agente sulle particelle di specie i \'e
+
+\begin{align}
+&\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})&\intertext{e in condizioni di equilibrio il momento trasferito tramite urti con le altre specie \'e}\\
+&\vec{F}_i=\sum_{i\neq j}&\vec{F}_{ij},\ \vec{F}_{ij}=m_{ij}n_in_jw_{ij}\vec{F}_{ij}&\intertext{dove la funzione $w_{ij}$ \'e la sezione d'urto di Rutherford per la velocit\'a media relativa delle particelle $i,j$}\\
+&w_{ij}=\num{2.68e-12}Z_i^2Z_j^2(\frac{m_{ij}}{m_H})\expy{-\frac{1}{2}}()\expy{}\ln{\lambda_{ij}}\si{\cubic\cm\per\second}
+\end{align}
+
+Considero la diffusione in un plasma di $\cel{H}{1}{}{}$, $\cel{He}{4}{}{}$, \Pelectron: il momento trasferito dagli ioni agli elettroni \'e piccolo quindi si ha 
+\begin{align}
+&F_H\approx c_{HHe}=-\PDy{r}{P_H}+n_H(eE+m_Hg)\\
+&F_{He}\approx -c_{HHe}=-\PDy{r}{P_{He}}+n_{He}(2eE+4m_Hg)\\
+&E=-\frac{1}{en_e}\PDy{r}{P_e}\\
+&v_{HHe}=-\frac{m_{He}T}{m_{HHe}Y\rho w_{HHe}}[\PDy{r}{\ln{(P_eP_H)}}-m_Hg]\\
+&(n_Hv_H=\frac{(m_{He}n_Hn_{He})}{\rho}v_{HHe}&\intertext{analogamente considero la condizione di equilibrio tra le forze che agiscono sugli ioni pesanti e gli scambi di momento con gli ioni $\cel{H}{1}{}{}$, $\cel{He}{4}{}{}$ durante gli urti}\\
+&n_Av_A(m_{AH}n_Hw_{AH})(1+2\frac{Y}{X})\approx-n_Av_H(m_{AH}n_Hw_{AH})
+\end{align}
+ 
+\item la diffusione termica concentra le particelle pi\'u cariche e pi\'u pesanti nelle zone pi\'u calde
+
+
+
+\item gradiente di concentrazione $C_s=\frac{n_s}{n_e}$ produce diffusione in senso opposto.
+
+\end{itemize}
+
+Si tiene conto del flusso di massa, momento ed energia nelle equazioni di conservazione attraverso le equazioni sviluppate da Burgers (1969).
 
 La velocit\'a di sedimentazione dell'elio, $v_{He}$, e degli elementi pesanti, $v_A$, \'e determinata dalla somma dei trasferimenti di momento con le altre specie $F_{ij}$ (per unit\'a di volume)
 \begin{align}
