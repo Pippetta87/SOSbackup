@@ -8,14 +8,22 @@
 
 \endgroup
 
+\begingroup
+\color{midnightblue}
+La luminosit\'a e la temperatura efficace sono le coordinate nel diagramma di \hr{} di una stella. Un modello stellare deve riprodurre la posizione di una stella nel diagramma entro le incertezze sulle osservabili sperimentali disponibili: luminosi\'a, massa, raggio, spettro della luce emessa dalla superficie (temperatura efficace, composizione chimica superficiale, accelerazione di gravit\'a) ed et\'a.
 
-\begin{figure}[!hb]
-    \centering
-    \includegraphics[width=0.5\linewidth]{HRpulsating}
-    \caption{Zone del diagramma di \hr{} in cui sono previsti comportamenti oscillatori. Da \cite{chr97lecture}}
-    \label{fig:HRp}
-\end{figure}
+Un modello stellare \'e determinato, almeno nella parte in sequenza principale, da massa e composizione chimica della stella ad inizio sequenza: la struttura interna di una stella \'e regolata dalle condizioni di equilibrio idrostatico e termico locale.
 
+I modelli stellari contengo dei parametri per descrivere incertezze nella descrizione dei fenomeni fisici: i parametri vengono scelti in maniera da riprodurre pi\'u accuratamente possibile la posizione della stella nel diagramma di \hr{}.
+
+Le osservabili sperimentali che contengono informazioni dirette sull'interno stellare sono legate al flusso di neutrini prodotti nelle reazioni nucleari e all'osservazione dei modi normali di oscillazione caratteristici di una determinata classe stellare.
+
+\endgroup
+
+
+\tpc{!h}{
+\node at (3.5,0) {\includegraphics[width=0.5\linewidth]{HRpulsating} \label{fig:HRp}};
+}{(-3.5,0)}{5cm}{{Zone del diagramma di \hr{} in cui sono previsti comportamenti oscillatori. Da \cite{chr97lecture}}}
 
 \clearpage
 
@@ -255,18 +263,19 @@ con $Q=\SI{6.3e18}{\erg\per\gram}$.
 
 {\let\clearpage\relax\chapter{Costruzione del modello solare}}
 
-
+\begingroup
+\color{grey}
 La luminosit\'a e la temperatura efficace sono le coordinate nel diagramma di \hr{} di una stella. Un modello stellare deve riprodurre la posizione di una stella nel diagramma entro le incertezze sulle osservabili sperimentali disponibili: luminosi\'a, massa, raggio, spettro della luce emessa dalla superficie (temperatura efficace, composizione chimica superficiale, accelerazione di gravit\'a) ed et\'a.
 
 Un modello stellare \'e determinato, almeno nella parte in sequenza principale, da massa e composizione chimica della stella ad inizio sequenza: la struttura interna di una stella \'e regolata dalle condizioni di equilibrio idrostatico e termico locale.
 
 I modelli stellari contengo dei parametri per descrivere incertezze nella descrizione dei fenomeni fisici: i parametri vengono scelti in maniera da riprodurre pi\'u accuratamente possibile la posizione della stella nel diagramma di \hr{}.
 
-I parametri del modello solare standard (MSS) sono $\alpha$, che descrive il trasporto convettivo, e l'abbondanza di $\cel{He}{4}{}{}$.
-
 Le osservabili sperimentali che contengono informazioni dirette sull'interno stellare sono legate al flusso di neutrini prodotti nelle reazioni nucleari e all'osservazione dei modi normali di oscillazione caratteristici di una determinata classe stellare.
 
-Per quanto riguarda il Sole \'e possibile determinare sperimentalmente il prodotto $G\msun$, la distanza, la luminosit\'a, la composizione chimica al livello della fotosfera ad eccezione dell'abbondanza di $\cel{He}{4}{}{}$ e il raggio.
+\endgroup
+
+Per quanto riguarda il Sole \'e possibile determinare sperimentalmente il prodotto $G\msun$, la distanza, la luminosit\'a, la composizione chimica al livello della fotosfera, ad eccezione del $\cel{He}{4}{}{}$ e altri gas nobili, e il raggio; allo stato delle conoscenze \'e conveniente introdurre un parametro $\alpha$ per descrivere l'efficienza del trasporto convettivo da determinare tramite la calibrazione del modello con le osservazioni, assieme l'abbondanza di $\cel{He}{4}{}{}$.
 
 \begingroup
 \color{midnightblue}
@@ -345,23 +354,23 @@ Le correzioni dovute alle interazioni coulombiane sono
 
 I fenomeni che contribuiscono all'opacit\'a nel Sole sono:
 
+
+\tpc{ht!}{
+
+\node (opint) at (8,5) {\includegraphics[width=0.5\textwidth]{opcontrib-int}};
+\node (opout) at (8,-7) {\includegraphics[width=0.5\textwidth]{opcontrib-out}};
+\node (opcontrib) at (-2,6) {\parbox{0.5\textwidth}{I fenomeni che contribuiscono all'opacit\'a nel Sole sono:
  lo scattering di fotone-elettrone che classicamente \'e descritto come lo scattering di un'onda elettromagnetica piana da parte di un dipolo oscillante, scattering Thomson,
 \begin{equation}
 \kappa_{\nu}\propto\frac{r_e^2}{\mu_em_u}
 \end{equation}
-
 e l'approssimazione non relativistica \'e valida per $T<\SI{e8}{\kelvin}$;
-
 l'assorbimento di un fotone da parte di un elettrone libero \'e energeticamente possibile quando l'elettrone \'e vicino ad uno ione, l'opacit\'a in questo caso ha l'andamento
-
 \begin{equation}
 \kappa_{ff}\propto\rho T\expy{-\frac{7}{2}}
 \end{equation}
-
 si tiene conto degli effetti quantistici tramite un opportuno coefficiente, il fattore di Gaunt;
-
 eccitazione di un elettrone o ionizzazione;
-
 la presenza di metalli con potenziale di ionizzazione minore di H ed He rendono disponibile elettroni per la formazione di $H^-$, sistema debolmente legato per cui un fotone con $h\nu>\SI{0.75}{\ev}$ o $\lambda<\SI{1655}{\nano\meter}$ pu\'o essere assorbito: temperature di qualche $eV$ (??).
 
 La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
@@ -567,12 +576,12 @@ f(E)dE\propto\frac{E\expy{\frac{1}{2}}}{(kT)\expy{\frac{3}{2}}}\exp{-\frac{E}{kT
 \begin{figure*}[!h]
     \centering
   \begin{subfigure}[t]{0.5\textwidth}
-        \includegraphics[width=0.5\textwidth]{ReactionsH}
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{ReactionsH}
         \caption{Reazioni di fusione H-He: catena PP e ciclo CNO.}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
-        \includegraphics[width=0.5\textwidth]{watt-PPvsCNO}
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{watt-PPvsCNO}
         \caption{Andamento della luminosit\'a nel Sole.}
     \end{subfigure}
 \end{figure*}
@@ -627,10 +636,12 @@ con $r_{ik}$ rate di reazione per unit\'a di massa:
 
 \endgroup
 
-\subsection{Composizione chimica e processi di diffusione.}
+\subsection{Metallicit\'a e processi di diffusione.}
 
+La metallicit\'a del Sole \'e determinata analizzando le righe di assorbimento ed emissione degli strati visibili.
 
-
+\begingroup
+\color{grey}
 La composizione chimica \'e modificata dalle reazioni di fusione che per gli elementi principali, assumendo condizione di equilibrio secolare, riassumo
 %%% \tag{\theequation a,b}
 \begin{subequations}\label{subeqn:fusionchange}
@@ -643,17 +654,55 @@ La composizione chimica \'e modificata dalle reazioni di fusione che per gli ele
 
 con $r_{ik}$ rate di reazione per unit\'a di massa.
 
+\endgroup
+
+L'evoluzione chimica del Sole \'e determinata dalle reazioni nucleari e dai processi di fusione. La composizione iniziale del Sole che supponiamo omogenea \'e calcolata a partire dalla composizione delle regioni esterne, modificata solo dalla diffusione per quanto riguarda gli elementi pesanti, e dalla calibrazione del modello solare per le abbondanze di $\cel{H}{1}{}{}$ e $\cel{He}{4}{}{}$.
+
 Oltre alle reazioni di fusioni anche i processi di diffusione modificano l'abbondanza degli elementi, il peso molecolare medio e l'opacit\'a. Sebbene il tempo caratteristico per percorre un raggio solare sia lungo $\tau_{diff}\approx\SI{6e13}{\year}$ i processi di diffusione producono effetti misurabili sulle frequenze dei modi di oscillazione: la loro inclusione nei \mss{} produce un miglior accordo con le osservazioni.
 
-L'equazione di Boltzmann del trasporto regola i processi di diffusio
+L'equazione di Boltzmann del trasporto descrive l'evoluzione della probabilit\'a $f(\vec{r},\vec{v},t)$ che una particella di una determinata specie sia in una regione dello spazio delle fasi
+
 \begin{align}
-&\PDy{t}{f_i}
-&
+&\PDy{t}{f_i}+\vec{v}_i\cdot\PDy{f_i}{\vec{r}}+\vec{F}_i\cdot\PDy{f_i}{\vec{v}}=-\nabla_{\vec{p}}(\vec{s})\\
+&s_{\alpha}=\sum_{'}\int [f(\vec{p})\PDy{f'(\vec{p}'}{p'_{\beta}}-f'(\vec{p}')\PDy{f(\vec{p})}{p_{\beta}}]B_{\alpha\beta}\,d^3p'\\
+&B_{\alpha\beta}=\frac{1}{2}\int q_{\alpha}q_{\beta}|\vec{v}-\vec{v}'|\,d\sigma\\
+&d\sigma=\frac{4\pi(Z_iZ_j)^2}{\mu^2(\vec{v}-\vec{v}')^4}\frac{d\chi}{\chi^3}&\intertext{approssimazione piccoli angoli}
 \end{align}
 
-non considero le tecniche di soluzione per la soluzione approssimata della diffusione nel plasma stellare ma solo alcune considerazioni euristiche.
+I processi di diffusione inglobano diversi effetti:
 
-I processi di diffusione inglobano diversi effetti: la gravit\'a tende a concentrare gli elementi pi\'u pesanti verso il centro, le interazioni elettromagnetiche mantengono gli elettroni ancorati ai nuclei, la diffusione termica concentra le particelle pi\'u cariche e pi\'u pesanti nelle zone pi\'u calde, mentre la presenza di gradiente di concentrazione $C_s=\frac{n_s}{n_e}$ produce diffusione in senso opposto. Si tiene conto del flusso di massa, momento ed energia nelle equazioni di conservazione attraverso le equazioni sviluppate da Burgers (1969).
+\begin{itemize}
+\item la gravit\'a tende a concentrare gli elementi pi\'u pesanti verso il centro, le interazioni elettromagnetiche mantengono gli elettroni ancorati ai nuclei. La forza per unit\'a di volume agente sulle particelle di specie i \'e
+
+\begin{align}
+&\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})&\intertext{e in condizioni di equilibrio il momento trasferito tramite urti con le altre specie \'e}\\
+&\vec{F}_i=\sum_{i\neq j}&\vec{F}_{ij},\ \vec{F}_{ij}=m_{ij}n_in_jw_{ij}\vec{F}_{ij}&\intertext{dove la funzione $w_{ij}$ \'e la sezione d'urto di Rutherford per la velocit\'a media relativa delle particelle $i,j$}\\
+&w_{ij}=\num{2.68e-12}Z_i^2Z_j^2(\frac{m_{ij}}{m_H})\expy{-\frac{1}{2}}()\expy{}\ln{\lambda_{ij}}\si{\cubic\cm\per\second}
+\end{align}
+
+Considero la diffusione in un plasma di $\cel{H}{1}{}{}$, $\cel{He}{4}{}{}$, \Pelectron: il momento trasferito dagli ioni agli elettroni \'e piccolo quindi si ha 
+\begin{align}
+&F_H\approx c_{HHe}=-\PDy{r}{P_H}+n_H(eE+m_Hg)\\
+&F_{He}\approx -c_{HHe}=-\PDy{r}{P_{He}}+n_{He}(2eE+4m_Hg)\\
+&E=-\frac{1}{en_e}\PDy{r}{P_e}\\
+&v_{HHe}=-\frac{m_{He}T}{m_{HHe}Y\rho w_{HHe}}[\PDy{r}{\ln{(P_eP_H)}}-m_Hg]\\
+&(n_Hv_H=\frac{(m_{He}n_Hn_{He})}{\rho}v_{HHe}&\intertext{analogamente considero la condizione di equilibrio tra le forze che agiscono sugli ioni pesanti e gli scambi di momento con gli ioni $\cel{H}{1}{}{}$, $\cel{He}{4}{}{}$ durante gli urti}\\
+&n_Av_A(m_{AH}n_Hw_{AH})(1+2\frac{Y}{X})\approx-n_Av_H(m_{AH}n_Hw_{AH})
+\end{align}
+ 
+\item la diffusione termica concentra le particelle pi\'u cariche e pi\'u pesanti nelle zone pi\'u calde: infatti in presenza di un gradiente termico si ha una diversa probabilit\'a di trasferimento di momento nella direzione del gradiente
+
+\begin{align}
+&F_{ij}^{th}\propto\lambda_{ih}\frac{\Delta T}{T}m_{ij}n_in_jw_{ij}v_{ij}&\intertext{con il cammino libero medio per particelle i,j}\nonumber\\
+&\lambda_{ij}=\frac{v_{ij}^{th}}{n_iw_{ij}}
+&F_{HHe}^{th}=\alpha_{HHe}n_{He}n_{H}\frac{T}{P}\nabla T
+\end{align}
+
+\item gradiente di concentrazione $C_s=\frac{n_s}{n_e}$ produce diffusione in senso opposto.
+
+\end{itemize}
+
+Si tiene conto del flusso di massa, momento ed energia nelle equazioni di conservazione attraverso le equazioni sviluppate da Burgers (1969).
 
 La velocit\'a di sedimentazione dell'elio, $v_{He}$, e degli elementi pesanti, $v_A$, \'e determinata dalla somma dei trasferimenti di momento con le altre specie $F_{ij}$ (per unit\'a di volume)
 \begin{align}
