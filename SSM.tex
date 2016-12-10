@@ -434,8 +434,8 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 
 \begin{tikzpicture}[remember picture,overlay]
 
-\node (opint) at (0,0) {\includegraphics[width=0.5\textwidth]{opcontrib-int}};
-\node (opout) at (8,0) {\includegraphics[width=0.5\textwidth]{opcontrib-out}};
+\node[anchor=north west] (opint) at (current page.north west) {\includegraphics[width=0.5\textwidth]{opcontrib-int}};
+\node[right of (apint)=5mm] (opout) {\includegraphics[width=0.5\textwidth]{opcontrib-out}};
 \node[draw,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at (2,-7) {};
 \node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm] (ff) at (4,-7) {};
 \node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm] (bb) at (6,-7) {};
@@ -460,8 +460,7 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 \node[name=manganese, right=4.5mm of cromum.west] {\tiny Mn};
 \node[name=ferrum, right=4.5mm of manganese.west] {\tiny Fe};
 \node[name=nikel, right=4.5mm of ferrum.west] {\tiny Ni};
-\node at (current page.north west) {\parbox{5mm}{a}};
-%\captionof{figure}{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}\label{fig:opacitycontrib} }};
+\node at (current page.north west) {\parbox{5mm}{\captionof{figure}{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}\label{fig:opacitycontrib} }};
  
 \end{tikzpicture}
 
