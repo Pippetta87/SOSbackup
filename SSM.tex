@@ -383,7 +383,7 @@ la presenza di metalli con potenziale di ionizzazione minore di H ed He rendono 
 
 La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 
-\tpc{ht!}{
+\begin{tikzpicture}
 
 \node (opint) at (0,0) {\includegraphics[width=0.5\textwidth]{opcontrib-int}};
 \node (opout) at (8,0) {\includegraphics[width=0.5\textwidth]{opcontrib-out}};
@@ -411,8 +411,13 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 \node[name=manganese, right=4.5mm of cromum.west] {\tiny Mn};
 \node[name=ferrum, right=4.5mm of manganese.west] {\tiny Fe};
 \node[name=nikel, right=4.5mm of ferrum.west] {\tiny Ni};
-}{current page.north west}{\textwidth}{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}
-    
+\node at (current page.north west) {\parbox{\textwidth}{\makeatletter
+\def\@captype{figure}
+\makeatother
+\caption{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}}\label{opacitycontrib}}
+ 
+\end{tikzpicture}
+
 \endgroup
 
 
