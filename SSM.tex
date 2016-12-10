@@ -314,7 +314,11 @@ Alcune correzioni all'equazione dei gas perfetti:
 
 \begin{itemize}
 
-\item Stati elettronici legati: ionizzazione e livelli eccitati.
+\item Stati elettronici legati e stati di scattering.
+
+Per determinare 
+
+Ionizazione da pressione
 
 il contributo cinetico e dell'energia di ionizzazione di $\cel{H}{1}{}{}$ e $\cel{He}{4}{}{}$ l'energia interna per unit\'a di massa si scrive 
 
@@ -363,13 +367,19 @@ Le correzioni dovute alle interazioni coulombiane sono
 
 \section{Opacit\'a.}
 
-I fenomeni che contribuiscono all'opacit\'a nel Sole sono:
-
 
 \tpc{ht!}{
 
 \node (opint) at (8,5) {\includegraphics[width=0.5\textwidth]{opcontrib-int}};
 \node (opout) at (8,-7) {\includegraphics[width=0.5\textwidth]{opcontrib-out}};
+\node[draw,right] (sc) at (4,4) {Scattering \Pphoton\Pelectron};
+\node[draw,right,fill=black] (sc) at (8,4) {bf};
+\node[draw,right,fill=bb] (sc) at (4,2) {bb};
+\node[draw,right,fill=ff] (sc) at (8,2) {ff};
+
+\node[draw,fit={(sc),(bb),(bf),(ff)}] (legend) {};
+
+
 \node (opcontrib) at (-2,6) {\parbox{0.5\textwidth}{I fenomeni che contribuiscono all'opacit\'a nel Sole sono:
  lo scattering di fotone-elettrone che classicamente \'e descritto come lo scattering di un'onda elettromagnetica piana da parte di un dipolo oscillante, scattering Thomson,
 \begin{equation}
