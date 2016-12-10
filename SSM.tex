@@ -385,14 +385,14 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 
 \tpc{ht!}{
 
-\node (opint) at (-5,0) {\includegraphics[width=0.5\textwidth]{opcontrib-int}};
-\node (opout) at (5,0) {\includegraphics[width=0.5\textwidth]{opcontrib-out}};
-\node[draw,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at (0,-6) {};
-\node[draw,label={[label distance=2mm]90:ff},fill=black,minimum size=5mm] (ff) at (2,-6) {};
-\node[draw,label={[label distance=2mm]30:bb},fill=bb,minimum size=5mm] (bb) at (4,-6) {};
-\node[draw,label={[label distance=2mm]30:bf},fill=bf,minimum size=5mm] (bf) at (6,-6) {};
+\node (opint) at (0,0) {\includegraphics[width=0.5\textwidth]{opcontrib-int}};
+\node (opout) at (8,0) {\includegraphics[width=0.5\textwidth]{opcontrib-out}};
+\node[draw,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at (2,-6) {};
+\node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm] (ff) at (4,-6) {};
+\node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm] (bb) at (6,-6) {};
+\node[draw,label={[label distance=2mm]-90:bf},fill=bf,minimum size=5mm] (bf) at (8,-6) {};
 
-\node[draw,fit={(sc) (bb) (bf) (ff)}] (legend) {};
+\node[draw,fit={(sc) (bb) (bf) (ff)},minimum size=1cm] (legend) {};
 
 \node[name=hydrogen, right= 8mm of opint.south west] {\tiny H};
 \node[name=helium, right=4.5mm of hydrogen.west] {\tiny He};
