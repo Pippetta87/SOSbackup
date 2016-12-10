@@ -432,10 +432,12 @@ la presenza di metalli con potenziale di ionizzazione minore di H ed He rendono 
 
 La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 
+\clearpage
+
 \begin{tikzpicture}[remember picture,overlay]
 
 \node[anchor=north west] (opint) at (current page.north west) {\includegraphics[width=0.5\textwidth]{opcontrib-int}};
-\node[right of (apint)=5mm] (opout) {\includegraphics[width=0.5\textwidth]{opcontrib-out}};
+\node[right = 5mm of (apint)] (opout) {\includegraphics[width=0.5\textwidth]{opcontrib-out}};
 \node[draw,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at (2,-7) {};
 \node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm] (ff) at (4,-7) {};
 \node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm] (bb) at (6,-7) {};
