@@ -387,12 +387,12 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 
 \node (opint) at (0,0) {\includegraphics[width=0.5\textwidth]{opcontrib-int}};
 \node (opout) at (8,0) {\includegraphics[width=0.5\textwidth]{opcontrib-out}};
-\node[draw,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at (2,-6) {};
-\node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm] (ff) at (4,-6) {};
-\node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm] (bb) at (6,-6) {};
-\node[draw,label={[label distance=2mm]-90:bf},fill=bf,minimum size=5mm] (bf) at (8,-6) {};
+\node[draw,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at (2,-7) {};
+\node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm] (ff) at (4,-7) {};
+\node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm] (bb) at (6,-7) {};
+\node[draw,label={[label distance=2mm]-90:bf},fill=bf,minimum size=5mm] (bf) at (8,-7) {};
 
-\node[draw,fit={(sc) (bb) (bf) (ff)},minimum size=1cm] (legend) {};
+\node[draw,fit={(sc) (bb) (bf) (ff)},minimum size=2cm] (legend) {};
 
 \node[name=hydrogen, right= 8mm of opint.south west] {\tiny H};
 \node[name=helium, right=4.5mm of hydrogen.west] {\tiny He};
@@ -411,7 +411,7 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 \node[name=manganese, right=4.5mm of cromum.west] {\tiny Mn};
 \node[name=ferrum, right=4.5mm of manganese.west] {\tiny Fe};
 \node[name=nikel, right=4.5mm of ferrum.west] {\tiny Ni};
-}{(-2,-8)}{\textwidth}{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}
+}{(0,-8)}{\textwidth}{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}
     
 \endgroup
 
