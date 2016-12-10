@@ -295,15 +295,14 @@ Per quanto riguarda il Sole \'e possibile determinare sperimentalmente il prodot
 \section{Equazione di stato e energia interna.}
 
 
+\begingroup
+\color{grey}
+
 ''descrivo sommariamente i varii contributi''
 
 ''In questa tesi scrivo un'espressione approssimata tenendo conto delle'' correzioni all'equazione di stato dei gas perfetti per l'interazione Coulombiana e la degenerazione degli elettroni, illustro i processi che causano l'evoluzione chimica, e determinano il tempo di vita in sequenza principale del Sole mentre non considero i i meccanismi responsabili dell'opacit\'a e gli effetti della pressione di radiazione sulla diffusione degli ioni.
 
-
-
-\begingroup
-\color{midnightblue}
-
+\endgroup
 
 Gli approci pi\'u usati per determinare l'equazione di stato e quindi le grandezze termodinamiche del plasma solare sono due: lo schema chimico considera atomi e molecole, la cui popolazione per stati eccitati e diversi gradi di ionizzazione \'e determinata a priori tramite le equazioni di Boltzmann e Saha, ricava l'energia libera del sistema, e minimizzando l'energia libera si ottengono relazioni termodinamiche ed equazione di stato; utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD; lo schema fisico considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
 
@@ -364,61 +363,6 @@ Le correzioni dovute alle interazioni coulombiane sono
 \end{itemize}
 
 
-
-\section{Opacit\'a.}
-
-I fenomeni che contribuiscono all'opacit\'a nel Sole sono:
- lo scattering di fotone-elettrone che classicamente \'e descritto come lo scattering di un'onda elettromagnetica piana da parte di un dipolo oscillante, scattering Thomson,
-\begin{equation}
-\kappa_{\nu}\propto\frac{r_e^2}{\mu_em_u}
-\end{equation}
-e l'approssimazione non relativistica \'e valida per $T<\SI{e8}{\kelvin}$;
-l'assorbimento di un fotone da parte di un elettrone libero \'e energeticamente possibile quando l'elettrone \'e vicino ad uno ione, l'opacit\'a in questo caso ha l'andamento
-\begin{equation}
-\kappa_{ff}\propto\rho T\expy{-\frac{7}{2}}
-\end{equation}
-si tiene conto degli effetti quantistici tramite un opportuno coefficiente, il fattore di Gaunt;
-eccitazione di un elettrone o ionizzazione;
-la presenza di metalli con potenziale di ionizzazione minore di H ed He rendono disponibile elettroni per la formazione di $H^-$, sistema debolmente legato per cui un fotone con $h\nu>\SI{0.75}{\ev}$ o $\lambda<\SI{1655}{\nano\meter}$ pu\'o essere assorbito: temperature di qualche $eV$ (??).
-
-La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
-
-\begin{tikzpicture}[remember picture]
-
-\node (opint) at (0,0) {\includegraphics[width=0.5\textwidth]{opcontrib-int}};
-\node (opout) at (8,0) {\includegraphics[width=0.5\textwidth]{opcontrib-out}};
-\node[draw,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at (2,-7) {};
-\node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm] (ff) at (4,-7) {};
-\node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm] (bb) at (6,-7) {};
-\node[draw,label={[label distance=2mm]-90:bf},fill=bf,minimum size=5mm] (bf) at (8,-7) {};
-
-%\node[draw,fit={(sc) (bb) (bf) (ff)},minimum size=2cm] (legend) {};
-
-\node[name=hydrogen, right= 8mm of opint.south west] {\tiny H};
-\node[name=helium, right=4.5mm of hydrogen.west] {\tiny He};
-\node[name=carbonium, right=4.5mm of helium.west] {\tiny C};
-\node[name=nitrum, right=4.5mm of carbonium.west] {\tiny N};
-\node[name=oxygen, right=4.5mm of nitrum.west] {\tiny O};
-\node[name=neon, right=4.5mm of oxygen.west] {\tiny Ne};
-\node[name=sodium, right=4.5mm of neon.west] {\tiny Na};
-\node[name=magnesium, right=4.5mm of sodium.west] {\tiny Mg};
-\node[name=alluminium, right=4.5mm of magnesium.west] {\tiny Al};
-\node[name=silicium, right=4.5mm of alluminium.west] {\tiny Si};
-\node[name=sulfur, right=4.5mm of silicium.west] {\tiny S};
-\node[name=argon, right=4.5mm of sulfur.west] {\tiny Ar};
-\node[name=calcium, right=4.5mm of argon.west] {\tiny Ca};
-\node[name=cromum, right=4.5mm of calcium.west] {\tiny Cr};
-\node[name=manganese, right=4.5mm of cromum.west] {\tiny Mn};
-\node[name=ferrum, right=4.5mm of manganese.west] {\tiny Fe};
-\node[name=nikel, right=4.5mm of ferrum.west] {\tiny Ni};
-\node at (current page.north west) {\parbox{\textwidth}{a}};
-%\captionof{figure}{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}\label{fig:opacitycontrib} }};
- 
-\end{tikzpicture}
-
-\endgroup
-
-
 \section{Trasporto radiativo.}
 
 Nell'interno stellare il cammino libero medio dei fotoni \'e molto corto $\frac{1}{\kappa\rho}\ll \rsun{}$, con l'opacit\'a $\kappa$ che descrive l'assorbimento per unit\'a di massa, quindi considero la radiazione localmente in equilibrio con la materia: il flusso di energia verso la superficie \'e generato da una piccola anisotropia nell'intensit\'a descritta al prim'ordine tramite
@@ -458,6 +402,68 @@ Definisco il gradiente radiativo a partire da \eqref{eq:radfluxTgradrelation}
 \end{equation}
 
 con $l(r)=4\pi r^2F$ luminosit\'a totale in funzione di r.
+
+\subsection{Opacit\'a.}
+
+I fenomeni che contribuiscono all'opacit\'a nel Sole sono:
+\begin{itemize}
+\item lo scattering di fotone-elettrone che classicamente \'e descritto come lo scattering di un'onda elettromagnetica piana da parte di un dipolo oscillante, scattering Thomson per $h\nu\ll m_ec^2$
+
+\begin{align}
+&\kappa_{\nu}\propto\frac{r_e^2}{\mu_em_u}\\
+&\kappa=\si{\squared\cm\per\gram}
+\end{align}
+Lo scattering Compton \Pphoton\Pelectron, per $T\geq\SI{e8}{\kelvin}$
+
+\item Brehmstrahlung inverso l'assorbimento di un fotone da parte di un elettrone libero \'e energeticamente possibile quando l'elettrone \'e vicino ad uno ione, l'opacit\'a in questo caso ha l'andamento
+
+\begin{equation}
+\kappa_{ff}\propto\rho T\expy{-\frac{7}{2}}
+\end{equation}
+si tiene conto degli effetti quantistici tramite un opportuno coefficiente, il fattore di Gaunt;
+eccitazione di un elettrone o ionizzazione;
+la presenza di metalli con potenziale di ionizzazione minore di H ed He rendono disponibile elettroni per la formazione di $H^-$, sistema debolmente legato per cui un fotone con $h\nu>\SI{0.75}{\ev}$ o $\lambda<\SI{1655}{\nano\meter}$ pu\'o essere assorbito: temperature di qualche $eV$ (??).
+
+\item Reazioni di ionizzazione (bf)
+
+\item Transizione elettronica a livelli eccitati (bb).
+
+\end{itemize}
+
+La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
+
+\begin{tikzpicture}[remember picture]
+
+\node (opint) at (0,0) {\includegraphics[width=0.5\textwidth]{opcontrib-int}};
+\node (opout) at (8,0) {\includegraphics[width=0.5\textwidth]{opcontrib-out}};
+\node[draw,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at (2,-7) {};
+\node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm] (ff) at (4,-7) {};
+\node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm] (bb) at (6,-7) {};
+\node[draw,label={[label distance=2mm]-90:bf},fill=bf,minimum size=5mm] (bf) at (8,-7) {};
+
+%\node[draw,fit={(sc) (bb) (bf) (ff)},minimum size=2cm] (legend) {};
+
+\node[name=hydrogen, right= 8mm of opint.south west] {\tiny H};
+\node[name=helium, right=4.5mm of hydrogen.west] {\tiny He};
+\node[name=carbonium, right=4.5mm of helium.west] {\tiny C};
+\node[name=nitrum, right=4.5mm of carbonium.west] {\tiny N};
+\node[name=oxygen, right=4.5mm of nitrum.west] {\tiny O};
+\node[name=neon, right=4.5mm of oxygen.west] {\tiny Ne};
+\node[name=sodium, right=4.5mm of neon.west] {\tiny Na};
+\node[name=magnesium, right=4.5mm of sodium.west] {\tiny Mg};
+\node[name=alluminium, right=4.5mm of magnesium.west] {\tiny Al};
+\node[name=silicium, right=4.5mm of alluminium.west] {\tiny Si};
+\node[name=sulfur, right=4.5mm of silicium.west] {\tiny S};
+\node[name=argon, right=4.5mm of sulfur.west] {\tiny Ar};
+\node[name=calcium, right=4.5mm of argon.west] {\tiny Ca};
+\node[name=cromum, right=4.5mm of calcium.west] {\tiny Cr};
+\node[name=manganese, right=4.5mm of cromum.west] {\tiny Mn};
+\node[name=ferrum, right=4.5mm of manganese.west] {\tiny Fe};
+\node[name=nikel, right=4.5mm of ferrum.west] {\tiny Ni};
+\node at (current page.north west) {\parbox{\textwidth}{a}};
+%\captionof{figure}{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}\label{fig:opacitycontrib} }};
+ 
+\end{tikzpicture}
 
 
 \section{Condizione di in-stabilit\'a dinamica: trasporto convettivo.}
