@@ -666,7 +666,9 @@ con $r_{ik}$ rate di reazione per unit\'a di massa:
 La composizione chimica del Sole \'e determinata analizzando le righe di assorbimento prodotte dalle transizioni atomiche negli strati esterni del Sole; poich\'e l'assorbimento continuo \'e dovuto principalmente all'idrogeno l'abbondanza dell'elemento A si esprime relativamente all'abbondanza di idrogeno.
 
 \tpc{!ht}{
-\node (ccagsnove) at (0,0) {\includegraphics[width=0.6\textwidth,keepaspectratio]{chem-ags}}; 
+%\node (ccagsnove) at (0,0) {\includegraphics[width=0.6\textwidth,keepaspectratio]{chem-ags}}; 
+\pgfplotstabletypeset[col sep=space,
+     columns={X Y Z}]{comp-ags.txt},
 }{(5,5)}{0.5\textwidth}{Metallicit\'a osservata e iniziale.}
 
 \begingroup
