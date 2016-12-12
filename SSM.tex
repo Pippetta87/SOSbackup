@@ -223,7 +223,7 @@ L'energia interna per unit\'a di massa \'e approssimativamente quella di un gas 
 \begin{equation}
 u(T,P)=\frac{3\gasconstant{}T}{2\mu}
 \end{equation}
-dove ipotizzo ionzzazione completa.
+
 \endgroup
 
 %Il contributo delle modificazioni chimiche aggiungo al lato di destra di \eqref{eq:prima} il termine contenente il potenziale chimico $-\mu_idN_i$ con $\mu_i=\Dcvar{\PDy{N_i}{u}}{S,V}$ all'equilibrio \'e trascurabile.
@@ -252,9 +252,8 @@ e i processi nucleari che avvengono nella parte centrale forniscono il calore pe
 Stimo il tempo trascorso da una stella di massa solare in sequenza principale considerando il tempo necessario per la massa di idrogeno nel core di fusione (le temperature necessarie perch\'e il rate di reazione sia apprezzabile si raggiungono nella regione pi\'u interna che costituisce una frazione $f$ pari al $15\%$ della massa solare) a trasformarsi in elio:
 
 \begin{equation}
-\tau_n\approx\frac{E_n}{L}=\frac{fX\msun Q}{\lsun}\approx\SI{e+10}{\year}
-\end{equation} 
-con $Q=\SI{6.3e18}{\erg\per\gram}$.
+\tau_n\approx\frac{E_n}{L}=\frac{fX\msun Q}{\lsun}\approx\SI{e+10}{\year},\ Q=\SI{6.3e18}{\erg\per\gram}
+\end{equation}
 
 
 {\let\clearpage\relax\chapter{Costruzione del modello solare}}
@@ -272,10 +271,8 @@ Gli approci pi\'u usati per determinare l'equazione di stato e quindi le grandez
 L'energia libera \'e connessa all'equazione di stato e alle altre grandezze termodinamiche da
 
 \begin{align}
-&P(\rho,T)=\frac{1}{\rho^2}\Dcvar{\PDy{\rho}{F}}{T}\\
-&\Gamma_1=\Dcvar{\PDly{\rho}{P}}{S}
+&P(\rho,T)=\frac{1}{\rho^2}\Dcvar{\PDy{\rho}{F}}{T},\ \Gamma_1=\Dcvar{\PDly{\rho}{P}}{S}
 \end{align}
-
 
 \endgroup
  
@@ -341,6 +338,7 @@ Le correzioni dovute alle interazioni coulombiane sono
 \section{Trasporto radiativo.}
 
 Nell'interno stellare il cammino libero medio dei fotoni \'e molto corto $\frac{1}{\kappa\rho}\ll \rsun{}$, con l'opacit\'a $\kappa$ che descrive l'assorbimento per unit\'a di massa, quindi considero la radiazione localmente in equilibrio con la materia: il flusso di energia verso la superficie \'e generato da una piccola anisotropia nell'intensit\'a descritta al prim'ordine tramite
+
 \begin{equation}
 I_{\nu}=B(\nu,T)-\frac{1}{\kappa_{\nu}'\rho}\nabla B(\nu,T)
 \end{equation}
@@ -351,6 +349,12 @@ integrando sull'angolo solido, il flusso di energia risulta
 &\vec{F}_{\nu}=-\frac{4\pi}{3\kappa_{\nu}\rho}\nabla B(\nu,T)\shortintertext{e integrando sulle frequenze}\nonumber\\
 &\vec{F}=-[\frac{4\pi}{3\rho}\intzi{}\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\,d\nu]\nabla T\label{eq:radiativeflux}
 \end{align}
+
+\begin{wrapfigure}{R}{0.5\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.9\linewidth]{opacitylld}
+\caption{Profilo radiale di $\kappa$ e $\PDly{T}{\kappa}$. Da \cite{sti91sun}.}
+\end{wrapfigure}
 
 Definisco l'opacit\'a media di Rosseland
 
@@ -480,9 +484,9 @@ dove ho usato $\nabla_{amb}=\nrad{}$ definito in \eqref{eq:radiativegradient}, c
 
 \begin{figure}[!h]
 \begin{subfigure}[t]{0.5\linewidth}
-\centering
-\includegraphics[keepaspectratio,width=0.9\linewidth]{opacitylld}
-\subcaption{Profilo radiale di $\kappa$ e $\PDly{T}{\kappa}$. Da \cite{sti91sun}.}
+    \includegraphics[height=0.4\textheight,keepaspectratio]{proportionflux}}
+    \caption{Da \cite{gou76convection}
+    \label{fluxproportion}
 \end{subfigure}
 ~
 \begin{subfigure}[t]{0.5\linewidth}
@@ -506,20 +510,25 @@ F_{con}+F_{rad}=\frac{4acG}{3}\frac{T^4m}{\kappa Pr^2}\nrad{}\label{eq:totalflux
 
 Per determinare il gradiente di temperatura effettivo $\nabla$ uso la teoria della mixing-length (\cite{prandtl25tur} e \cite{vitense53kon}):
 si considera l'eccesso di calore trasportato dai blob di gas nel moto convettivo $c_P\Delta T$ rispetto all'ambiente, il cui cammino libero medio \'e la mixing-length $l_m=\alpha H_P$, che da luogo al flusso di energia
+
 \begin{equation}
 F_{con}=\exv{\rho vc_P\Delta T}\label{eq:convectiveflux}
 \end{equation}
+
 dove $\exv{}$ indica una media opportuna sul guscio sferico di raggio r. Determino il valor medio della differenza di temperatura prendendo come valore caratteristico dello spostamento del blob di gas $\Delta r\approx\frac{l_m}{2}$:
+
 \begin{equation}
 \frac{\Delta T}{T}\approx\frac{1}{T}\PDy{r}{(\Delta T)}\frac{l_m}{2}=(\nabla-\nabla_e)\frac{l_m}{2}\frac{1}{H_P}
 \end{equation}
 
 Assumo il lavoro medio fatto dalla forza di galleggiamento per unit\'a di massa $-g\frac{\Delta\rho}{\rho}$ uguale al valore medio della forza, cio\'e la met\'a di quello al guscio sferico dato, moltiplicato lo spostamento medio $\frac{l_m}{2}$ quindi, assumendo in oltre che in media met\'a del lavoro fatto dalla forza di galleggiamento sia trasformato in energia cinetica del blob si ottiene
+
 \begin{equation}
 v^2=g\delta(\nabla-\nabla_e)\frac{l_m^2}{8H_P}\label{eq:blobvelocity}
 \end{equation}
 
 Infine determino gli scambi radiative del blob: il modulo del flusso radiativo \'e proporzionale al gradiente termico in direzione normale alla superficie del blob
+
 \begin{equation}
 f=\frac{4acT^3}{3\kappa\rho}|\PDy{n}{T}|
 \end{equation}
@@ -536,13 +545,6 @@ esplicitando $\lambda$ approssimando il gradiente normale alla superficie con $\
 \end{equation}
 
 Le 5 equazioni \eqref{eq:totalflux},\eqref{eq:radiativegradient}, \eqref{eq:convectiveflux}, \eqref{eq:blobvelocity}, \eqref{eq:nablavitense} determinano completamente le variabili $F_{rad}, F_{con}, v, \nabla_e, \nabla$ in funzione di $P,T,l(r),m(r),c_P,\nad{},\nrad{},g$ .
-
-\begin{minipage}{\linewidth}
-\makebox[\linewidth]{
-    \includegraphics[height=0.4\textheight,keepaspectratio]{proportionflux}}
-    \captionof{figure}{Da \cite{gou76convection}}
-    \label{fluxproportion}
-\end{minipage}
 
 
 \section{Reazioni di fusione.}
