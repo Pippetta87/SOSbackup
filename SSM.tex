@@ -2,24 +2,16 @@
 
 \begin{document}
 
-\begingroup
-\color{midnightblue}
-\'E possibile che parte dell'energia interna di una stella alimenti un comportamento oscillatorio attorno alla configurazione di equilibrio. Nei capitoli successivi descrivo la configurazione di equilibrio del Sole e le incertezze nella descrizione fisica del modelo solare standard (MSS).
+La struttura stellare \'e determinata da massa e composizione chimica iniziale della stella sulla base delle condizioni di equilibrio idrostatico e termico locale.
 
-\endgroup
 
-\begingroup
-\color{midnightblue}
-La luminosit\'a e la temperatura efficace sono le coordinate nel diagramma di \hr{} di una stella. Un modello stellare deve riprodurre la posizione di una stella nel diagramma entro le incertezze sulle osservabili sperimentali disponibili: luminosi\'a, massa, raggio, spettro della luce emessa dalla superficie (temperatura efficace, composizione chimica superficiale, accelerazione di gravit\'a) ed et\'a.
+I modelli stellari contengo dei parametri per descrivere incertezze nella descrizione dei fenomeni fisici: i parametri vengono scelti in maniera da riprodurre pi\'u accuratamente possibile la posizione della stella nel diagramma di \hr{}, definito tramite luminosit\'a e temperatura efficacie.
 
-Un modello stellare \'e determinato, almeno nella parte in sequenza principale, da massa e composizione chimica della stella ad inizio sequenza: la struttura interna di una stella \'e regolata dalle condizioni di equilibrio idrostatico e termico locale.
+%Un modello stellare deve riprodurre la posizione di una stella nel diagramma entro le incertezze sulle osservabili sperimentali disponibili: luminosi\'a, massa, raggio, spettro della luce emessa dalla superficie (temperatura efficace, composizione chimica superficiale, accelerazione di gravit\'a) ed et\'a.
 
-I modelli stellari contengo dei parametri per descrivere incertezze nella descrizione dei fenomeni fisici: i parametri vengono scelti in maniera da riprodurre pi\'u accuratamente possibile la posizione della stella nel diagramma di \hr{}.
+\'E possibile che parte dell'energia interna di una stella alimenti un comportamento oscillatorio attorno alla configurazione di equilibrio: le frequenze dei modi normali sono le osservabili sperimentali che contengono informazioni dirette sull'interno stellare, oltre al flusso di neutrini prodotti nelle reazioni nucleari.
 
-Le osservabili sperimentali che contengono informazioni dirette sull'interno stellare sono legate al flusso di neutrini prodotti nelle reazioni nucleari e all'osservazione dei modi normali di oscillazione caratteristici di una determinata classe stellare.
-
-\endgroup
-
+ Nei capitoli successivi descrivo la configurazione di equilibrio del Sole e le incertezze nella descrizione fisica del modelo solare standard (MSS).
 
 \tpc{!h}{
 \node at (3.5,0) {\includegraphics[width=0.5\linewidth]{HRpulsating} \label{fig:HRp}};
@@ -33,10 +25,7 @@ Le osservabili sperimentali che contengono informazioni dirette sull'interno ste
 
 \section{Condizione di equilibrio idrostatico.}
 
-\begingroup
-\color{midnightblue}
-Suppongo che la pressione del campo magnetico, della turbolenza e della radiazione sia molto minore della pressione del gas nell'interno solare e che la correzione dovuta alla rotazione sia piccola; ci\'o \'e suffragato dalla piccola deviazione dalla forma sferica.
-\endgroup
+Suppongo che la pressione del campo magnetico sia molto minore della pressione del gas nell'interno solare e che la correzione dovuta alla rotazione sia piccola; ci\'o \'e suffragato dalle misure del campoi magnetico superficiale e dalla piccola deviazione dalla forma sferica.
 
 La distribuzione di massa del Sole \'e determinata dall'equilibrio tra la forza di attrazione gravitazionale e il gradiente della pressione del gas. Considero una distribuzione di massa sferica con densit\'a $\rho(r,t)$, la variazione della massa presente entro il raggio $r$ \'e descritta da:
 
@@ -44,36 +33,27 @@ La distribuzione di massa del Sole \'e determinata dall'equilibrio tra la forza 
 dm=4\pi r^2\rho \,dr-4\pi r^2\rho v\,dt\label{eq:massvar}
 \end{equation}
 
-e $v(r,t)$ \'e il campo di velocit\'a della distribuzione di massa a distanza r dal centro e tempo $t$.
+e $v(r,t)$ \'e il campo di velocit\'a della distribuzione di massa a distanza r dal centro e tempo $t$,
 
-\begingroup
-\color{midnightblue}
-Eulerian vs Lagrangian description
-\endgroup
+%Eulerian vs Lagrangian description
 
-Per una configurazione di equilibrio statico la velocit\'a radiale del guscio sferico \'e $v=0$ quindi:
+per una configurazione di equilibrio statico quindi:
 
 \begin{equation}
 dm=4\pi r^2\rho \,dr\label{eq:massaguscio}
 \end{equation}
 
-Differenziando \eqref{eq:massvar} rispetto alle variabili indipendenti $r$ e $t$ ricavo l'equazione di continuit\'a in coordinate sferiche 
-\begin{equation}
-\PDy{t}{\rho}=-\frac{1}{r^2}\PDof{r}(\rho r^2 v)
-\end{equation}
-Per un elemento di fluido qualsiasi, si ha
-\begin{equation}
-\PDy{t}{\rho}+\nabla\cdot(\rho\vec{v})=0\label{eq:continuityeq}
-\end{equation}
+Differenziando \eqref{eq:massvar} rispetto alle variabili indipendenti $r$ e $t$ ricavo l'equazione di continuit\'a per distribuzione sfericamente simmetrica 
+\begin{align}
+&\PDy{t}{\rho}=-\frac{1}{r^2}\PDof{r}(\rho r^2 v)&\intertext{caso particolare di}\nonumber\\
+&\PDy{t}{\rho}+\nabla\cdot(\rho\vec{v})=0\label{eq:continuityeq}
+\end{align}
 
-Per un gas di particelle debolmente interagenti considero la condizione di equilibrio idrostatico $\ddvec{r}=0$ nella situazione in cui il moto termico delle particelle \'e l'unico contributo al flusso di momento e la forza agente per unit\'a di massa $\vec{f}$ ha solo componente radiale: la conservazione della quantit\'a di moto richiede
-\begin{equation}
-\rho\TDy{t}{\vec{v}}=-\nabla P+\rho\vec{f}
-\end{equation}
-da cui ottengo la condizione di equilibrio
-\begin{equation}
-\nabla P=\rho \vec{f}\label{eq:idrosta}
-\end{equation}
+La condizione di equilibrio idrostatico $\ddvec{r}=0$ implica, per la conservazione della quantit\'a di moto:
+\begin{align}
+&\rho\TDy{t}{\vec{v}}=-\nabla P+\rho\vec{f}&\intertext{da cui segue}\nonumber\\
+&\nabla P=\rho \vec{f}\label{eq:idrosta}
+\end{align}
 
 Nel caso di una stella la forma della forza per unit\'a di massa f \'e determinata dall'attrazione gravitazionale:
 
@@ -98,7 +78,8 @@ La condizione di equilibrio idrostatico diventa:
 \end{equation}
 
 \begingroup\color{midnightblue}
-Considero il contributo alla pressione degli ioni, degli elettroni degeneri nella parte interna del Sole, e dei fotoni, $P=P_I+P_R+P_e$, dove ho
+
+Considero il contributo alla pressione degli ioni, elettroni e fotoni, $P=P_I+P_R+P_e$, dove ho
 \begin{align}
 &P_I=\rho \gasconstant{} T(X+\frac{Y}{4}+\frac{Z}{\exv{A_Z}})\shortintertext{dove ho usato il peso molecolare medio per i soli ioni $\mu_0$,}\nonumber\\
 &P_R=\frac{a}{3}T^4\shortintertext{definisco il parametro $\beta$}\nonumber\\
@@ -107,9 +88,12 @@ Considero il contributo alla pressione degli ioni, degli elettroni degeneri nell
 
 Il peso molecolare medio, definito come massa media in amu per particella libera \'e
 
-\begin{align}
-&\mu=\frac{1}{\bar{n}_HX+\bar{n}_{He}Y+\bar{n}_{Z}Z}\label{eq:meanmw}\intmy{con $\bar{n}_i=\frac{1+f_i}{A_i}$ numero medio di particelle libere per unit\'a di massa atomica dovute alla specie i di peso atomico $A_i$ con $f_i$ numero medio di elettroni liberati da specie i.}\nonumber
-\end{align}
+\begin{equation}
+\mu=\frac{1}{\bar{n}_HX+\bar{n}_{He}Y+\bar{n}_{Z}Z}\label{eq:meanmw}
+\end{equation}
+
+con $\bar{n}_i=\frac{1+f_i}{A_i}$ numero medio di particelle libere per unit\'a di massa atomica dovute alla specie i di peso atomico $A_i$ con $f_i$ numero medio di elettroni liberati da specie i.
+
 \endgroup
 
 \subsection{Tempo di evoluzione dinamico.}
@@ -235,6 +219,8 @@ dove ipotizzo ionzzazione completa.
 
 
 Quando il contributo delle reazioni di fusione o di ionizzazione parziale non \'e trascurabile aggiungo al lato di destra di \eqref{eq:prima} il termine contenente il potenziale chimico $-\mu_idN_i$ con $\mu_i=\Dcvar{\PDy{N_i}{u}}{S,V}$: 
+
+Vedi: chemical mixing, equilibrium slowness (partial ionization region, nuclear burning) mass action law: $\sum n_i\mu_i=0$??, minimizzazione energia libera.
 
 \endgroup
 
