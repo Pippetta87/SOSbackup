@@ -25,7 +25,12 @@ I modelli stellari contengo dei parametri per descrivere incertezze nella descri
 
 \section{Condizione di equilibrio idrostatico.}
 
-Suppongo che la pressione del campo magnetico sia molto minore della pressione del gas nell'interno solare e che la correzione dovuta alla rotazione sia piccola; ci\'o \'e suffragato dalle misure del campoi magnetico superficiale e dalla piccola deviazione dalla forma sferica.
+Suppongo che la pressione del campo magnetico sia molto minore della pressione del gas nell'interno solare e che la correzione dovuta alla rotazione sia piccola, ci\'o \'e suffragato dalle misure del campoi magnetico superficiale e dalla piccola deviazione dalla forma sferica, e che 
+
+\begingroup
+\color{midnightblue}
+tensore pressione$\to$hydrostatic pressure
+\endgroup
 
 La distribuzione di massa del Sole \'e determinata dall'equilibrio tra la forza di attrazione gravitazionale e il gradiente della pressione del gas. Considero una distribuzione di massa sferica con densit\'a $\rho(r,t)$, la variazione della massa presente entro il raggio $r$ \'e descritta da:\noindent
 
@@ -79,7 +84,7 @@ La condizione di equilibrio idrostatico diventa:
 
 \begingroup\color{midnightblue}
 
-Considero il contributo alla pressione degli ioni, elettroni e fotoni, $P=P_I+P_R+P_e$, dove ho
+Considero il contributo alla pressione degli ioni, elettroni e fotoni, $P=P_I+P_R+P_e$. Il gas solare \'e approssimabile come un gas perfetto monoatomico essendo composto in gran parte da \chem{H} e \chem{^4He} completamente ionizzati quindi
 \begin{align}
 &P_I=\rho \gasconstant{} T(X+\frac{Y}{4}+\frac{Z}{\exv{A_Z}})\shortintertext{dove ho usato il peso molecolare medio per i soli ioni $\mu_0$,}\nonumber\\
 &P_R=\frac{a}{3}T^4\shortintertext{definisco il parametro $\beta$}\nonumber\\
@@ -93,6 +98,12 @@ Il peso molecolare medio, definito come massa media in amu per particella libera
 \end{equation}
 
 con $\bar{n}_i=\frac{1+f_i}{A_i}$ numero medio di particelle libere per unit\'a di massa atomica dovute alla specie i di peso atomico $A_i$ con $f_i$ numero medio di elettroni liberati da specie i.
+
+Trascurando la degenerazione degli elettroni
+
+\begin{equation}
+P_G=P_I+P_e=\frac{\rho}{\mu}\gasconstant{}T
+\end{equation}
 
 \endgroup
 
@@ -132,7 +143,9 @@ IL collasso di una nube di gas interstellare \'e un processo complesso; una volt
 
 \subsection{Teorema del viriale.}
 
-Il teorema del viriale esprime una propriet\'a statistica di particelle interagenti: si trova una relazione tra energia interna, dovuta al moto traslazionale degli atomi, ed energia potenziale gravitazionale, sottointendendo una residua interazione tra le particelle in modo da poter considerare il sistema localmente in equilibrio termodinamico.
+Il teorema del viriale esprime una propriet\'a statistica di particelle interagenti: si trova una relazione tra energia interna, dovuta al moto traslazionale degli atomi, ed energia potenziale gravitazionale.
+
+%sottointendendo una residua interazione tra le particelle in modo da poter considerare il sistema localmente in equilibrio termodinamico
 
 \begingroup
 \color{grey}
@@ -144,7 +157,7 @@ L'energia potenziale gravitazionale della stella \'e
 \Omega=-\int_0^M\frac{Gm(r)}{r}\,dm\label{eq:energiapg}
 \end{equation}
 
-Il gas solare \'e approssimabile come un gas perfetto monoatomico essendo composto in gran parte da \chem{H} e \chem{^4He} completamente ionizzati quindi l'energia interna \'e costituita dalla somma delle energie traslazionali delle particelle pesate secondo la distribuzione di equilibrio di Maxwell-Boltzmann
+mentre l'energia interna \'e costituita dalla somma delle energie traslazionali delle particelle pesate secondo la distribuzione di equilibrio di Maxwell-Boltzmann
 
 \begin{align}
 &\int_M\frac{1}{\rho}\int n(\vec{p})\frac{p^2}{2m}\,d\vec{p}\,dm=\frac{3}{2}\int_M\frac{P}{\rho}\,dm\\
@@ -157,14 +170,12 @@ Il teorema del viriale
 \begin{equation}
 \frac{1}{2}\TtwoDy{t}{I}=2K+\Omega
 \end{equation}
-con K energia cinetica e $I=\int r^2\,dm$, implica, dato che all'equilibrio $\frac{1}{2}\TtwoDy{t}{I}=0$:
+con K energia cinetica e $I=\int r^2\,dm$, implica, dato che all'equilibrio $\frac{1}{2}\TtwoDy{t}{I}=0$
 
 \begin{equation}
 0=\int_M\frac{3P}{\rho}\,dm(r)+\Omega
 \end{equation}
 
-\begingroup
-\color{midnightblue}
 
 Detta $W=E_i+\Omega$ l'energia totale della stella, 
 \begin{equation}
@@ -184,7 +195,6 @@ Il tempo caratteristico che regola il collasso gravitazionale di una massa gasso
 \end{equation}
 sostituendo i valori solari con $\lsun{}=\SI{3.846e33}{\erg\per\second}$ si ha $\tkh{}\approx\SI{1.6e7}{\year}$.
 
-\endgroup
 
 \subsection{Conservazione dell'energia interna}
 
@@ -207,30 +217,18 @@ dove ho introdotto gli esponenti adiabatici $\Gamma_i$
 \end{equation}
 
 \begingroup
-\color{midnightblue}
-
+\color{grey}
 L'energia interna per unit\'a di massa \'e approssimativamente quella di un gas di particelle non interagenti: 
 
 \begin{equation}
 u(T,P)=\frac{3\gasconstant{}T}{2\mu}
 \end{equation}
 dove ipotizzo ionzzazione completa.
-
-
-
-Quando il contributo delle reazioni di fusione o di ionizzazione parziale non \'e trascurabile aggiungo al lato di destra di \eqref{eq:prima} il termine contenente il potenziale chimico $-\mu_idN_i$ con $\mu_i=\Dcvar{\PDy{N_i}{u}}{S,V}$: 
-
-Vedi: chemical mixing, equilibrium slowness (partial ionization region, nuclear burning) mass action law: $\sum n_i\mu_i=0$??, minimizzazione energia libera.
-
 \endgroup
 
-\begingroup
-\color{grey}
-Il tempo caratteristico che regola il collasso gravitazionale di una massa gassosa in equilibrio idrostatico \'e il tempo di Kelvin-Helmholtz
-\begin{equation}
-\tkh{}=\frac{\Omega}{L}\approx\frac{GM^2}{2RL}
-\end{equation}
-sostituendo i valori solari con $\lsun{}=\SI{3.846e33}{\erg\per\second}$ si ha $\tkh{}\approx\SI{1.6e7}{\year}$.
+%Il contributo delle modificazioni chimiche aggiungo al lato di destra di \eqref{eq:prima} il termine contenente il potenziale chimico $-\mu_idN_i$ con $\mu_i=\Dcvar{\PDy{N_i}{u}}{S,V}$ all'equilibrio \'e trascurabile.
+%Vedi: chemical mixing, equilibrium slowness (partial ionization region, nuclear burning) mass action law: $\sum n_i\mu_i=0$??, minimizzazione energia libera.
+
 \endgroup
 
 Scrivo il bilancio di calore per un elemento di massa unitaria di gas:
@@ -263,57 +261,52 @@ con $Q=\SI{6.3e18}{\erg\per\gram}$.
 
 {\let\clearpage\relax\chapter{Costruzione del modello solare}}
 
-\begingroup
-\color{grey}
-La luminosit\'a e la temperatura efficace sono le coordinate nel diagramma di \hr{} di una stella. Un modello stellare deve riprodurre la posizione di una stella nel diagramma entro le incertezze sulle osservabili sperimentali disponibili: luminosi\'a, massa, raggio, spettro della luce emessa dalla superficie (temperatura efficace, composizione chimica superficiale, accelerazione di gravit\'a) ed et\'a.
-
-Un modello stellare \'e determinato, almeno nella parte in sequenza principale, da massa e composizione chimica della stella ad inizio sequenza: la struttura interna di una stella \'e regolata dalle condizioni di equilibrio idrostatico e termico locale.
-
-I modelli stellari contengo dei parametri per descrivere incertezze nella descrizione dei fenomeni fisici: i parametri vengono scelti in maniera da riprodurre pi\'u accuratamente possibile la posizione della stella nel diagramma di \hr{}.
-
-Le osservabili sperimentali che contengono informazioni dirette sull'interno stellare sono legate al flusso di neutrini prodotti nelle reazioni nucleari e all'osservazione dei modi normali di oscillazione caratteristici di una determinata classe stellare.
-
-\endgroup
 
 Per quanto riguarda il Sole \'e possibile determinare sperimentalmente il prodotto $G\msun$, la distanza, la luminosit\'a, la composizione chimica al livello della fotosfera, ad eccezione del $\cel{He}{4}{}{}$ e altri gas nobili, e il raggio; allo stato delle conoscenze \'e conveniente introdurre un parametro $\alpha$ per descrivere l'efficienza del trasporto convettivo da determinare tramite la calibrazione del modello con le osservazioni, assieme l'abbondanza di $\cel{He}{4}{}{}$.
 
 
 \section{Equazione di stato e energia interna.}
 
+Gli approci pi\'u usati per determinare l'equazione di stato e quindi le grandezze termodinamiche del plasma solare sono due. Lo schema chimico considera atomi e molecole, la cui popolazione per stati eccitati e diversi gradi di ionizzazione \'e ottenuto minimizzando l'energia libera; utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD. Lo schema fisico considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
 
 \begingroup
-\color{grey}
+\color{midnightblue}
+L'energia libera \'e connessa all'equazione di stato e alle altre grandezze termodinamiche da
 
-''descrivo sommariamente i varii contributi''
+\begin{align}
+&P(\rho,T)=\frac{1}{\rho^2}\DCvar{\PDy{\rho}{F}}{T}\\
+&\Gamma_1=\Dcvar{\PDlny{\rho}{P}}{S}
+\end{align}
 
-''In questa tesi scrivo un'espressione approssimata tenendo conto delle'' correzioni all'equazione di stato dei gas perfetti per l'interazione Coulombiana e la degenerazione degli elettroni, illustro i processi che causano l'evoluzione chimica, e determinano il tempo di vita in sequenza principale del Sole mentre non considero i i meccanismi responsabili dell'opacit\'a e gli effetti della pressione di radiazione sulla diffusione degli ioni.
 
 \endgroup
-
-Gli approci pi\'u usati per determinare l'equazione di stato e quindi le grandezze termodinamiche del plasma solare sono due: lo schema chimico considera atomi e molecole, la cui popolazione per stati eccitati e diversi gradi di ionizzazione \'e determinata a priori tramite le equazioni di Boltzmann e Saha, ricava l'energia libera del sistema, e minimizzando l'energia libera si ottengono relazioni termodinamiche ed equazione di stato; utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD; lo schema fisico considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
-
-
-
-Alcune correzioni all'equazione dei gas perfetti:
+ 
+Elenco alcune correzioni all'equazione dei gas perfetti:
 
 
 \begin{itemize}
 
-\item Stati elettronici legati e stati di scattering.
+\item Stati elettronici legati e stati di scattering; ionizzazione da pressione.
 
-Per determinare 
 
-Ionizazione da pressione
+Nelle regioni di ionizzazione parziale di $\cel{H}{1}{}{}$ e $\cel{He}{4}{}{}$ considero un contributo all'energia interna per unit\'a di massa dell'energia di legame degli elettroni 
 
-il contributo cinetico e dell'energia di ionizzazione di $\cel{H}{1}{}{}$ e $\cel{He}{4}{}{}$ l'energia interna per unit\'a di massa si scrive 
-
+%u(T,P)=\frac{3\gasconstant{}T}{2\mu}+\frac{1}{\rho}[n_{H^+}\chi_H+n_{He^+}\chi_{He}+n_{He^{++}}(\chi_{He}+\chi_{He^+})]
 \begin{equation}
-u(T,P)=\frac{3\gasconstant{}T}{2\mu}+\frac{1}{\rho}[n_{H^+}\chi_H+n_{He^+}\chi_{He}+n_{He^{++}}(\chi_{He}+\chi_{He^+})]
+\frac{1}{\rho}[n_{H^+}\chi_H+n_{He^+}\chi_{He}+n_{He^{++}}(\chi_{He}+\chi_{He^+})]
 \end{equation}
 
-con $\chi_x$ energia di ionizzazione dell'atomo $x$ e $n(x^i)$ densit\'a dell'atomo $x$ ionizzato i volte calcolato tramite l'equazione di Saha.
+con $\chi_x$ energia di ionizzazione dell'atomo $x$ e $n(x^i)$ densit\'a dell'atomo $x$ ionizzato i volte calcolato tramite l'equazione di Saha che tuttavia non tiene conto della ionizzazione da pressione dovuta alle modificazioni dei livelli atomici indotte dalla materia circostante.
+
+Inoltre si hanno correzioni per gli stati di scattering.
 
 \item Degenerazione degli elettroni.
+
+Il contributo degli elettroni, detta $n_e$ la densit\'a numerica, $\psi$ il parametro di degenerazione, funzinione P e T, tale che per $\psi\to-\infty$ si abbia la distribuzione di Boltzmann e per $\psi\to+\infty$ completa degenerazione, e $u_k$ energia cinetica dell'elettrone, \'e determinato da
+\begin{align}
+&\rho N_A\frac{1+X}{2}=\intzi{}\frac{8\pi p^2\,dp}{h^3(\exp{\frac{u_k}{KT}-\psi}+1)},\ \beta P-\rho\gasconstant{}(X+\frac{Y}{4}+\frac{Z}{\exv{A_Z}})=\frac{1}{3}\intzi{}pn_e\TDy{p}{u_k}\,dp\shortintertext{dove ho introdotto il peso atomico medio per elettrone libero (ionizzato) $\mu_e$ con}\nonumber
+&\frac{1}{\mu_e}\approx X+\frac{1}{2}Y+\frac{1}{2}(1-X-Y)=\frac{1+X}{2}
+\end{align}
 
 \begin{figure*}[!h]
 \centering
@@ -343,8 +336,6 @@ Le correzioni dovute alle interazioni coulombiane sono
 &u=\frac{3}{2}\frac{\gasconstant{}T}{\mu}+u_c,\ P=\frac{\rho}{\mu}kT+P_c\shortintertext{con}\nonumber\\[-2\normalbaselineskip]
 &u_c=\frac{1}{2}\sum_ZeZ\overline{n}_Z\phi_Z=-e^3\sqrt{\frac{\pi\rho}{kT}}(N_A\zeta)\expy{\frac{3}{2}},\ P_c=\frac{1}{3}u_c
 \end{align}
-
-\item correzioni quantistiche
 
 \end{itemize}
 
@@ -423,7 +414,7 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 \begin{tikzpicture}[remember picture,overlay]
 
 \node[anchor=north west] (opint) at (current page.north west) {\includegraphics[width=0.5\textwidth]{opcontrib-int}};
-\node[anchor=north east] (opout) at ([shift={(0,-3/40)}]current page.north east) {\includegraphics[width=0.5\textwidth]{opcontrib-out}};
+\node[anchor=north east] (opout) at ([shift={(0,-3/35)}]current page.north east) {\includegraphics[width=0.5\textwidth]{opcontrib-out}};
 \node[draw,anchor=north,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at ([shift={(0,-2)}]current page.north) {};
 \node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm,below=10mm of sc] (ff) {};
 \node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm,below=10mm of ff] (bb) {};
