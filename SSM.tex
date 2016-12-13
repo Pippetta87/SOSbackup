@@ -351,15 +351,7 @@ integrando sull'angolo solido, il flusso di energia risulta
 \end{align}
 
 
-\parbox[t]{\dimexpr\textwidth-\leftmargin}{%
-\vspace{-2.5mm}
-\begin{wrapfigure}{r}{0.5\textwidth}
-\centering
-\vspace{-\baselineskip}
-\includegraphics[keepaspectratio,width=0.9\linewidth]{opacitylld}
-\caption{Profilo radiale di $\kappa$ e $\PDly{T}{\kappa}$. Da \cite{sti91sun}.}
-\end{wrapfigure}
-}
+
 
 Definisco l'opacit\'a media di Rosseland
 
@@ -385,14 +377,29 @@ con $l(r)=4\pi r^2F$ luminosit\'a totale in funzione di r.
 \subsection{Opacit\'a.}
 
 I fenomeni che contribuiscono all'opacit\'a nel Sole sono:
+
 \begin{itemize}
-\item lo scattering di fotone-elettrone che classicamente \'e descritto come lo scattering di un'onda elettromagnetica piana da parte di un dipolo oscillante, scattering Thomson per $h\nu\ll m_ec^2$
+
+\item \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
+\vspace{-2.5mm}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\vspace{-\baselineskip}
+\includegraphics[keepaspectratio,width=0.9\linewidth]{opacitylld}
+\caption{Profilo radiale di $\kappa$ e $\PDly{T}{\kappa}$. Da \cite{sti91sun}.}
+\end{wrapfigure}
+
+
+scattering di fotone-elettrone che classicamente \'e descritto come lo scattering di un'onda elettromagnetica piana da parte di un dipolo oscillante, scattering Thomson per $h\nu\ll m_ec^2$
 
 \begin{align}
 &\kappa_{\nu}\propto\frac{r_e^2}{\mu_em_u}\\
 &\kappa=\si{\squared\cm\per\gram}
 \end{align}
-Lo scattering Compton \Pphoton\Pelectron, per $T\geq\SI{e8}{\kelvin}$
+
+Lo scattering Compton \Pphoton\Pelectron, per $T\geq\SI{e8}{\kelvin}$.
+
+}
 
 \item Brehmstrahlung inverso l'assorbimento di un fotone da parte di un elettrone libero \'e energeticamente possibile quando l'elettrone \'e vicino ad uno ione, l'opacit\'a in questo caso ha l'andamento
 
