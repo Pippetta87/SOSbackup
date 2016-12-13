@@ -659,8 +659,12 @@ La composizione chimica del Sole \'e determinata analizzando le righe di assorbi
 \tpc{!ht}{
 %\node (ccagsnove) at (0,0) {\includegraphics[width=0.6\textwidth,keepaspectratio]{chem-ags}}; 
 \pgfplotstabletypeset[col sep=space,
-     columns={X, Y, Z, $\frac{X}{Z}$},
-     create on use/new col/.style={create col/set list={Anders \& Grevesse (1989),Grevesse \& Noels (1993),Grevesse \& Sauval (1998),Lodders (2003),Asplund Grevesse \& Sauval (2005),Lodders Palme \& Gail (2009),\cite{asplund2009chemical}}
+     columns={x, y, z, zx},
+     create on use/new col/.style={create col/set list={Anders \& Grevesse (1989),Grevesse \& Noels (1993),Grevesse \& Sauval (1998),Lodders (2003),Asplund Grevesse \& Sauval (2005),Lodders Palme \& Gail (2009),\cite{asplund2009chemical}},
+     columns/x/.style={column name={$X$},
+     columns/y/.style={column name={$Y$},
+     columns/z/.style={column name={$Z$},
+     columns/zx/.style={column name={$\frac{Z}{X}$}
      ]{comp-ags.txt},
 }{(5,5)}{0.5\textwidth}{Metallicit\'a osservata e iniziale. Da\cite{asplund2009chemical}.}
 
