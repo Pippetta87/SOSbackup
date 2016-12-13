@@ -54,7 +54,8 @@
 
 \raggedbottom %http://tex.stackexchange.com/questions/102084/annoying-paragraph-spacing-issue-with-memoir
 
-%% CAption figure
+%% CAption subcaption figure %%% captionsetup
+\captionsetup[subfigure]{labelformat=alph}
     \makeatletter
     \renewcommand\@memmain@floats{%
       \counterwithout{figure}{section}
@@ -64,6 +65,7 @@
       }
     \makeatother
 %%%%
+\renewcommand{\thefigure}{\arabic{figure}.\alph{subfigure}}
 
 \author{ }
 \title{Studio delle oscillazioni solari}
