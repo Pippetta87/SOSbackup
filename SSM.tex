@@ -659,8 +659,8 @@ La composizione chimica del Sole \'e determinata analizzando le righe di assorbi
 \tpc{!ht}{
 %\node (ccagsnove) at (0,0) {\includegraphics[width=0.6\textwidth,keepaspectratio]{chem-ags}}; 
 \pgfplotstabletypeset[col sep=space,
-     columns={x, y, z, zx},
-     create on use/new col/.style={create col/set list={Anders \& Grevesse (1989),Grevesse \& Noels (1993),Grevesse \& Sauval (1998),Lodders (2003),Asplund Grevesse \& Sauval (2005),Lodders Palme \& Gail (2009),\cite{asplund2009chemical}},
+     create on use/authors/.style={create col/set list={Anders \& Grevesse (1989),Grevesse \& Noels (1993),Grevesse \& Sauval (1998),Lodders (2003),Asplund Grevesse \& Sauval (2005),Lodders Palme \& Gail (2009),\cite{asplund2009chemical}},
+     columns={authors, x, y, z, zx},
      columns/x/.style={column name={$X$},
      columns/y/.style={column name={$Y$},
      columns/z/.style={column name={$Z$},
