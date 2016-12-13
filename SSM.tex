@@ -350,11 +350,16 @@ integrando sull'angolo solido, il flusso di energia risulta
 &\vec{F}=-[\frac{4\pi}{3\rho}\intzi{}\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\,d\nu]\nabla T\label{eq:radiativeflux}
 \end{align}
 
-\begin{wrapfigure}{R}{0.5\textwidth}
+
+\parbox[t]{\dimexpr\textwidth-\leftmargin}{%
+\vspace{-2.5mm}
+\begin{wrapfigure}{r}{0.5\textwidth}
 \centering
+\vspace{-\baselineskip}
 \includegraphics[keepaspectratio,width=0.9\linewidth]{opacitylld}
 \caption{Profilo radiale di $\kappa$ e $\PDly{T}{\kappa}$. Da \cite{sti91sun}.}
 \end{wrapfigure}
+}
 
 Definisco l'opacit\'a media di Rosseland
 
@@ -483,13 +488,13 @@ che descrive un comportamento oscillatorio per $N^2>0$, cio\'e uno strato di gas
 dove ho usato $\nabla_{amb}=\nrad{}$ definito in \eqref{eq:radiativegradient}, cio\'e il gradiente che si ha nel caso la luminosit\'a si trasportata dai fotoni.
 
 \begin{figure}[!h]
-\begin{subfigure}[t]{0.5\textwidth}
-    \includegraphics[width=0.9\textwidth,keepaspectratio]{proportionflux}
+\begin{subfigure}[t]{0.6\textwidth}
+    \includegraphics[ width=0.99\textwidth,keepaspectratio]{proportionflux}
     \caption{Profilo radiale del flusso convettivo rispetto al flusso totale, della super-adiabaticit\'a del gradiente termico e regioni di ionizzazione parziale di $\cel{He}{4}{}{}$. Da \cite{gou76convection}}
     \label{fluxproportion}
 \end{subfigure}
 ~
-\begin{subfigure}[t]{0.5\textwidth}
+\begin{subfigure}[t]{0.4\textwidth}
 \centering
 \includegraphics[keepaspectratio,width=0.9\textwidth]{specificheatnablaa}
 \subcaption{Profilo radiale di $c_P$ e $\nabla_a$. Da \cite{sti91sun}.}
