@@ -323,7 +323,7 @@ Introduco una correzione duvuta all'interazione Coulombiana seguendo Debye-H\"uc
 \begin{align}
 &\nabla^2V_i=-4\pi e\sum Zn_Z\approx\frac{1}{r_D^2}V_i\shortintertext{da cui ottengo il potenziale generato dalla nube di cariche attorno a Z}\nonumber\\
 &\phi_Z=-\frac{eZ}{r_D}\shortintertext{dove}\nonumber\\
-&\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}\zeta,\ \zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}N_A
+&\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}\zeta,\ \zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}N_A\label{eq:debyeradius}
 \end{align}
 
 Le correzioni dovute alle interazioni coulombiane sono
@@ -561,21 +561,22 @@ Le 5 equazioni \eqref{eq:totalflux},\eqref{eq:radiativegradient}, \eqref{eq:conv
 
 \section{Reazioni di fusione.}
 
-La funzione $\epsilon(\rho,T,X_i)$ che descrive l'energia liberata dalle reazioni nucleari per grammo per secondo \'e determinata dalla probabilit\'a che la reazione $X(a,b)Y$ abbia luogo. Sia $E$ l'energia cinetica nel centro di massa dei nuclei, per la sezione d'urto $\sigma(E)$ di fusione si ha
+La funzione $\epsilon(\rho,T,X_i)$, energia liberata dalle reazioni nucleari per grammo per secondo, \'e determinata dalla probabilit\'a che la reazione $X(a,b)Y$ abbia luogo. Sia $E$ l'energia cinetica nel centro di massa dei nuclei, per la sezione d'urto $\sigma(E)$ di fusione si ha
 
 \begin{align}
-&\sigma(E)\propto\pi\lambdabar^2P_0(E)\xi(E)&\intertext{con la lunghezza d'onda di de Broglie si descrive l'indeterminazione sulla posizione nell'urto di due particelle con momento relativo p}\\
-&\lambdabar=\frac{\hbar}{p}=\frac{\hbar}{\sqrt{2mE}}&\intertext{con $\xi(E)$ tengo conto di eventuali livelli risonanti: $\xi(E)\to1$ lontano dall'energia del livello risonante; con $P_0(E)$ descrivo la probabilit\'a di attraversamento della barriera coulombiana. Introducendo il fattore astrofisico, dipendente dalle caratteristiche dei nuclei e debolmente dall'energia lontano da risonanze; scrivo la sezione d'urto per i nuclei di carica $Z_1$, $Z_2$ e m massa ridotta}\\
+&\sigma(E)\propto\pi\lambdabar^2P_0(E)\xi(E)&\intertext{La lunghezza d'onda di de Broglie relativa delle particelle si descrive l'indeterminazione sulla posizione nell'urto di due particelle con momento relativo p}\nonumber\\
+&\lambdabar=\frac{\hbar}{p}=\frac{\hbar}{\sqrt{2mE}}&\intertext{$\xi(E)$ tiene conto di eventuali livelli risonanti: $\xi(E)\to1$ lontano dall'energia del livello risonante. $P_0(E)$ descrive la probabilit\'a di attraversamento della barriera coulombiana. Introducendo il fattore astrofisico, dipendente dalle caratteristiche dei nuclei e debolmente dall'energia lontano da risonanze, scrivo la sezione d'urto per i nuclei di carica $Z_1$, $Z_2$ e m massa ridotta}\nonumber\\
 &\sigma(E)=\frac{S(E)}{E}\exp{-2\pi\eta},\ \eta=\sqrt{\frac{m}{2}}\frac{Z_1Z_2e^2}{\hbar E\expy{\frac{1}{2}}}
 \end{align}
 
-La funzione $\epsilon(\rho,T,X_i)$ \'e quindi determinata dalla somma di tutti i contributi
+La funzione $\epsilon(\rho,T,X_i)$ \'e determinata dalla somma di tutti i contributi
 
 \begin{equation}
-\epsilon_{ij}=\frac{1}{1+\delta_{ij}}\frac{Q}{m_jm_k}X_jX_k\exv{\sigma v}
+\epsilon_{ij}=\frac{1}{1+\delta_{ij}}\frac{Q_{ij}}{m_jm_k}X_jX_k\exv{\sigma v}\label{eq:energyrate}
 \end{equation}
 
-dove $Q$ \'e l'energia liberata per reazione e $\exv{}$ indica la media sulla distribuzione di Maxwell-Boltzmann
+dove $Q_{ij}$ \'e l'energia liberata per reazione tra nucleo di specie i e j; $\exv{}$ indica la media sulla distribuzione di Maxwell-Boltzmann
+
 \begin{equation}
 f(E)dE\propto\frac{E\expy{\frac{1}{2}}}{(kT)\expy{\frac{3}{2}}}\exp{-\frac{E}{kT}}\,dE
 \end{equation}
@@ -593,17 +594,23 @@ f(E)dE\propto\frac{E\expy{\frac{1}{2}}}{(kT)\expy{\frac{3}{2}}}\exp{-\frac{E}{kT
     \end{subfigure}
 \end{figure*}
 
-Per determinare la sezione d'urto $\sigma(E)$ uso il fatto che l'integrando (?? dove!!!)
+Per determinare \eqref{eq:energyrate} uso il fatto che l'integrando
 \begin{align}
-&S(E)\exp{-\frac{E}{kT+\frac{b}{\sqrt{2}}}}&\intertext{ha forma approssimativamente gaussiana il cui massimo $E_0$, energia pi\'u probabile di reazione, e FWHM sono, posto $A=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:}\\
-&E_0=\SI{5.665}{\kilo\ev} A\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}},\ \Delta E=4.249W\expy{\frac{1}{6}}T_7\expy{\frac{5}{6}},\ \tau=frac{3E_0}{kT}\num{42.487}(Z_1^2Z_2^2AT_6\expy{-1})\expy{\frac{1}{3}}&\intertext{quindi il rate locale per reazioni non risonanti si scrive}\\
+&S(E)\exp{-\frac{E}{kT}-\frac{b}{\sqrt{E}}}&\intertext{ha forma approssimativamente gaussiana il cui massimo $E_0$, energia pi\'u probabile di reazione, e FWHM sono, posto $A=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:}\\
+&E_0=\SI{5.665}{\kilo\ev} A\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}},\ \Delta E=4.249W\expy{\frac{1}{6}}T_7\expy{\frac{5}{6}},\ \tau=\frac{3E_0}{kT}\num{42.487}(Z_1^2Z_2^2AT_6\expy{-1})\expy{\frac{1}{3}}&\intertext{quindi il rate locale per reazioni non risonanti si scrive}\\
 &\exv{\sigma v}=\num{1.3005e-15}[\frac{Z_1Z_2}{AT_6^2}]\expy{\frac{1}{3}}fS_{eff}\exp{-\tau}\si{\cubic\cm\per\second}&\intertext{$S_{eff}$ \'e il risultato dell'espansione dell'integrando per $\invers{\tau}\ll1$ ed estrapolato a $E_0$ a partire dal valore a $E(0)$ determinato dalla fisica nucleare.}
 \end{align}
 
-Tengo conto della correzione di schermaggio degli elettroni aggiungendo un parametro correttivo $f$:
+Lo schermaggio degli elettroni diminuisce la repulsione coulombiana
+\begin{equation}
+E_C'-E=\frac{Z_1Z_2e^2}{r}\exp{-\frac{r}{r_D}}\approx\frac{Z_1Z_2e^2}{r}-\frac{Z_1Z_2e^2}{r_D}=E_C-E-E_D
+\end{equation}
+analogamente a quanto visto in precedenza.
+
+Per $\frac{E_D}{kT}\ll1$ ne tengo conto aggiungendo il parametro correttivo $f$
 
 \begin{equation}
-\exv{v\sigma}\to f\exv{v\sigma},\ f=\exp{\frac{E_D}{KT}}
+&\exv{v\sigma}\to f\exv{v\sigma},\ f=\exp{\frac{E_D}{KT}}\\
 \end{equation}
 
 % T_6=10T_7=10^3T_9
@@ -621,7 +628,7 @@ Tengo conto della correzione di schermaggio degli elettroni aggiungendo un param
     \end{subfigure}
 \end{figure*}
 
-
+\begin{comment}
 \begingroup
 \color{grey}
 La composizione chimica \'e modificata dalle reazioni di fusione che per gli elementi principali, assumendo condizione di equilibrio secolare, riassumo
@@ -642,6 +649,8 @@ con $r_{ik}$ rate di reazione per unit\'a di massa:
 \end{align}
 
 \endgroup
+
+\end{comment}
 
 \section{Composizione chimica e processi di diffusione.}
 
