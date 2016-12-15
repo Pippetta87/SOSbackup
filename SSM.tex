@@ -684,7 +684,20 @@ create on use/authors/.style={create col/set list={Anders \& Grevesse (1989),Gre
 columns/authors/.style={string type},
 columns={authors,x, y, z, zx},
 /pgf/number format/precision=4
-     ]{asplundactual.txt}
+     ]{asplundactual.txt} %%%attuale
+     
+     \pgfplotstabletypeset[
+every head row/.style={
+ before row={\toprule &\multicolumn{4}{c}{Iniziale}\\\endrule},
+},
+
+display columns/1/.style={column name={$X$}},
+display columns/2/.style={column name={$Y$}},
+display columns/3/.style={column name={$Z$}},
+display columns/4/.style={column name={$\frac{Z}{X}$}},
+columns={x, y, z, zx},
+/pgf/number format/precision=4
+     ]{asplundactual.txt}.  %%% Iniziale
      
 \caption{Metallicit\'a osservata e iniziale. Da\cite{asplund2009chemical}.}
 
