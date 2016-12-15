@@ -669,13 +669,12 @@ La composizione chimica del Sole \'e determinata analizzando le righe di assorbi
 
 L'evoluzione chimica del Sole \'e determinata dalle reazioni nucleari, ininfluenti nelle regioni esterne, e dai processi di fusione. La composizione iniziale del Sole, supposta omogenea, \'e calcolata a partire dalla composizione attuale delle regioni esterne, tenendo conto della diffusione, e attraverso la calibrazione del modello solare per le abbondanze di $\cel{H}{1}{}{}$ e $\cel{He}{4}{}{}$.
 
-\begin{array}{ll}
-\begin{minipage}{0.5\textwidth}
+
 \begin{table}
 
 \pgfplotstabletypeset[
 every head row/.style={
- before row={\toprule &\multicolumn{4}{c}{Attuale}\\\midrule},
+ before row={\toprule &\multicolumn{4}{c}{Attuale}\midrule&\multicolumn{4}{c}{Primordiale}\\},
  every last row/.style={after row=\bottomrule},
 },
 display columns/0/.style={column name={}},
@@ -683,41 +682,36 @@ display columns/1/.style={column name={$X$}},
 display columns/2/.style={column name={$Y$}},
 display columns/3/.style={column name={$Z$}},
 display columns/4/.style={column name={$\frac{Z}{X}$}},
+display columns/5/.style={column name={$X$}},
+display columns/6/.style={column name={$Y$}},
+display columns/7/.style={column name={$Z$}},
+display columns/8/.style={column name={$\frac{Z}{X}$}},
 create on use/authors/.style={create col/set list={Anders \& Grevesse (1989),Grevesse \& Noels (1993),Grevesse \& Sauval (1998),Lodders (2003),Asplund Grevesse \& Sauval (2005),Lodders Palme \& Gail (2009),\cite{asplund2009chemical}}},
 columns/authors/.style={string type},
-columns={authors,x, y, z, zx},
+columns={authors,x, y, z, zx,xi,yi,zi, zxi},
 /pgf/number format/precision=4
-     ]{asplundactual.txt} %%%attuale
+     ]{asplund.txt} %%%attuale
 
-\end{table}
-\end{minipage}
-
-&
- 
-\begin{minipage}{0.5\textwidth}
-\begin{table}
-
-     \pgfplotstabletypeset[
-every head row/.style={
- before row={\toprule &\multicolumn{4}{c}{Iniziale}\\},
-},
-every last row/.style={after row=\bottomrule},
-
-display columns/0/.style={column name={$X$}},
-display columns/1/.style={column name={$Y$}},
-display columns/2/.style={column name={$Z$}},
-display columns/3/.style={column name={$\frac{Z}{X}$}},
-columns={x, y, z, zx},
-/pgf/number format/precision=4
-     ]{asplundprimordial.txt}.  %%% Iniziale
-     
-
-
-\end{table}
-\end{minipage}
-\\
 \captionof{figure}{Metallicit\'a osservata e iniziale. Da\cite{asplund2009chemical}.}
-\end{array}
+\end{table}
+ 
+%\begin{minipage}{0.5\textwidth}
+%\begin{table}
+%     \pgfplotstabletypeset[
+%every head row/.style={
+%before row={\toprule &\multicolumn{4}{c}{Iniziale}\\},
+%},
+%every last row/.style={after row=\bottomrule},
+%display columns/0/.style={column name={$X$}},
+%display columns/1/.style={column name={$Y$}},
+%display columns/2/.style={column name={$Z$}},
+%display columns/3/.style={column name={$\frac{Z}{X}$}},
+%columns={x, y, z, zx},
+%/pgf/number format/precision=4
+%    ]{asplundprimordial.txt}.  %%% Iniziale
+
+
+
 %Oltre alle reazioni di fusioni anche i processi di diffusione modificano l'abbondanza degli elementi, il peso molecolare medio e l'opacit\'a.
 
 L'equazione di Boltzmann del trasporto descrive l'evoluzione della probabilit\'a $f(\vec{r},\vec{v},t)$ che una particella di una determinata specie sia in una regione dello spazio delle fasi
