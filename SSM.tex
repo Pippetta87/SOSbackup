@@ -669,8 +669,9 @@ La composizione chimica del Sole \'e determinata analizzando le righe di assorbi
 
 L'evoluzione chimica del Sole \'e determinata dalle reazioni nucleari, ininfluenti nelle regioni esterne, e dai processi di fusione. La composizione iniziale del Sole, supposta omogenea, \'e calcolata a partire dalla composizione attuale delle regioni esterne, tenendo conto della diffusione, e attraverso la calibrazione del modello solare per le abbondanze di $\cel{H}{1}{}{}$ e $\cel{He}{4}{}{}$.
 
-\begin{table}
+\begin{tablular}{ll}
 
+\begin{table}
 \pgfplotstabletypeset[
 every head row/.style={
  before row={\toprule &\multicolumn{4}{c}{Attuale}\\\midrule},
@@ -686,7 +687,12 @@ columns/authors/.style={string type},
 columns={authors,x, y, z, zx},
 /pgf/number format/precision=4
      ]{asplundactual.txt} %%%attuale
-     
+
+\end{table}
+
+&
+ 
+\begin{table}    
      \pgfplotstabletypeset[
 every head row/.style={
  before row={\toprule &\multicolumn{4}{c}{Iniziale}\\},
@@ -705,6 +711,8 @@ columns={x, y, z, zx},
 
 \end{table}
 
+\\
+\end{tabular}
 %Oltre alle reazioni di fusioni anche i processi di diffusione modificano l'abbondanza degli elementi, il peso molecolare medio e l'opacit\'a.
 
 L'equazione di Boltzmann del trasporto descrive l'evoluzione della probabilit\'a $f(\vec{r},\vec{v},t)$ che una particella di una determinata specie sia in una regione dello spazio delle fasi
