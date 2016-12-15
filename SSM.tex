@@ -670,8 +670,9 @@ La composizione chimica del Sole \'e determinata analizzando le righe di assorbi
 L'evoluzione chimica del Sole \'e determinata dalle reazioni nucleari, ininfluenti nelle regioni esterne, e dai processi di fusione. La composizione iniziale del Sole, supposta omogenea, \'e calcolata a partire dalla composizione attuale delle regioni esterne, tenendo conto della diffusione, e attraverso la calibrazione del modello solare per le abbondanze di $\cel{H}{1}{}{}$ e $\cel{He}{4}{}{}$.
 
 \begin{tabular}{ll}
-
+\begin{minipage}{0.5\textwidth}
 \begin{table}
+
 \pgfplotstabletypeset[
 every head row/.style={
  before row={\toprule &\multicolumn{4}{c}{Attuale}\\\midrule},
@@ -689,10 +690,13 @@ columns={authors,x, y, z, zx},
      ]{asplundactual.txt} %%%attuale
 
 \end{table}
+\end{minipage}
 
 &
  
-\begin{table}    
+\begin{minipage}{0.5\textwidth}
+\begin{table}
+
      \pgfplotstabletypeset[
 every head row/.style={
  before row={\toprule &\multicolumn{4}{c}{Iniziale}\\},
@@ -707,11 +711,12 @@ columns={x, y, z, zx},
 /pgf/number format/precision=4
      ]{asplundprimordial.txt}.  %%% Iniziale
      
-\caption{Metallicit\'a osservata e iniziale. Da\cite{asplund2009chemical}.}
+
 
 \end{table}
-
+\end{minipage}
 \\
+\caption{Metallicit\'a osservata e iniziale. Da\cite{asplund2009chemical}.}
 \end{tabular}
 %Oltre alle reazioni di fusioni anche i processi di diffusione modificano l'abbondanza degli elementi, il peso molecolare medio e l'opacit\'a.
 
