@@ -672,6 +672,10 @@ L'evoluzione chimica del Sole \'e determinata dalle reazioni nucleari, ininfluen
 \begin{table}
 
 \pgfplotstabletypeset[
+every head row/.style={
+ before row={\toprule &\multicolumn{4}{Attuale}}
+ }
+ 
 display columns/0/.style={column name={}},
 display columns/1/.style={column name={$X$}},
 display columns/2/.style={column name={$Y$}},
@@ -682,6 +686,7 @@ columns/authors/.style={string type},
 columns={authors,x, y, z, zx},
 /pgf/number format/precision=4
      ]{asplundactual.txt}
+     
 \caption{Metallicit\'a osservata e iniziale. Da\cite{asplund2009chemical}.}
 
 \end{table}
