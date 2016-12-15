@@ -692,7 +692,7 @@ columns={authors,x, y, z, zx,xi,yi,zi, zxi},
 /pgf/number format/precision=4
      ]{asplund.txt} %%%attuale
 
-\captionof{figure}{Metallicit\'a osservata e iniziale. Da\cite{asplund2009chemical}.}
+\captionof{table}{Metallicit\'a osservata e iniziale. Da \cite{asplund2009chemical}.}
 \end{table}
  
 %\begin{minipage}{0.5\textwidth}
@@ -746,10 +746,16 @@ n_Hv_H=\frac{(m_{He}n_Hn_{He})}{\rho}v_{HHe}&\intertext{analogamente considero l
  
 \item la diffusione termica concentra le particelle pi\'u cariche e pi\'u pesanti nelle zone pi\'u calde: infatti in presenza di un gradiente termico si ha una diversa probabilit\'a di trasferimento di momento nella direzione del gradiente; la sezione d'urto coulombiana dipende dalla velocit\'a relativa $\propto v\expy{-4}$
 
+%\begin{align}
+%&F_{ij}^{th}\propto\lambda_{ih}\frac{\Delta T}{T}m_{ij}n_in_jw_{ij}v_{ij}&\intertext{con il cammino libero medio per particelle i,j}\nonumber\\
+%&\lambda_{ij}=\frac{v_{ij}^{th}}{n_iw_{ij}}
+%&F_{HHe}^{th}=\alpha_{HHe}n_{He}n_{H}\frac{T}{P}\nabla T
+%\end{align}
+
 \begin{align}
-&F_{ij}^{th}\propto\lambda_{ih}\frac{\Delta T}{T}m_{ij}n_in_jw_{ij}v_{ij}&\intertext{con il cammino libero medio per particelle i,j}\nonumber\\
-&\lambda_{ij}=\frac{v_{ij}^{th}}{n_iw_{ij}}
-&F_{HHe}^{th}=\alpha_{HHe}n_{He}n_{H}\frac{T}{P}\nabla T
+&K_T=\frac{C-1}{nkD_{12}}\frac{x_1m_1\lambda_2-x_2m_2\lambda_1}{m_1+m_2},\ D_{12}=\frac{kT}{m_{12}n\overline{\nu}}(\text{mean collision frequency $n\overline{\nu}$})\\
+&D_T\approxD_{12}K_T=(C-1)\frac{T}{P}\frac{x_1m_1\lambda_2-x_2m_2\lambda_1}{m_1+m_2}&\intertext{C dipende da T e dalla legge di interazione delle molecole di specie diverse}\\
+&V=-\frac{D_T\nabla T}{x_1x_2T}=(C-1)\frac{n_1m_1\vec{q}_2-n_2m_2\vec{q}_1}{n_1n_2kT(m_1+m_2)},\ \vec{q}_1=-\lambda_i\nabla T
 \end{align}
 
 \item Diffusione dovuta al gradiente di concentrazione $c_i=\frac{n_i}{n}$.
@@ -809,8 +815,7 @@ con $w_s$ velocit\'a di diffusione specie s.
 
 \begingroup
 \color{midnightblue}
-stime diffusione
-diffusione termica
+$D_{12}$ vs $K_T$
 \endgroup
 
 
