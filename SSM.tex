@@ -84,8 +84,9 @@ La condizione di equilibrio idrostatico diventa:
 
 \begingroup\color{midnightblue}
 
-Considero il contributo alla pressione degli ioni, elettroni e fotoni, $P=P_I+P_R+P_e$. Il gas solare \'e approssimabile come un gas perfetto monoatomico essendo composto in gran parte da \chem{H} e \chem{^4He} completamente ionizzati quindi
+Considero il contributo alla pressione degli ioni, elettroni e fotoni, $P=P_I+P_R+P_e$. Il gas solare \'e approssimabile come un gas perfetto monoatomico essendo composto in gran parte da \chem{H} e \chem{^4He} completamente ionizzati con distanza interionica $a_0$ molto maggiore delle dimensioni nucleari
 \begin{align}
+&a_0=(\frac{3}{4\pi}\sum_{I}n_I)\expy{-\frac{1}{3}}\gg r_N\label{eq:interionicdistance}\\
 &P_I=\rho \gasconstant{} T(X+\frac{Y}{4}+\frac{Z}{\exv{A_Z}})\shortintertext{dove ho usato il peso molecolare medio per i soli ioni $\mu_0$,}\nonumber\\
 &P_R=\frac{a}{3}T^4\shortintertext{definisco il parametro $\beta$}\nonumber\\
 &P_R=(1-\beta)P
@@ -710,8 +711,6 @@ columns={authors,x, y, z, zx,xi,yi,zi, zxi},
 %/pgf/number format/precision=4
 %    ]{asplundprimordial.txt}.  %%% Iniziale
 
-
-
 %Oltre alle reazioni di fusioni anche i processi di diffusione modificano l'abbondanza degli elementi, il peso molecolare medio e l'opacit\'a.
 
 L'equazione di Boltzmann del trasporto descrive l'evoluzione della probabilit\'a $f(\vec{r},\vec{v},t)$ che una particella di una determinata specie sia in una regione dello spazio delle fasi.
@@ -723,22 +722,43 @@ s_{\alpha}=\sum_{'}\int [f(\vec{p})\PDy{f'(\vec{p}'}{p'_{\beta}}-f'(\vec{p}')\PD
 d\sigma=\frac{4\pi(Z_iZ_j)^2}{\mu^2(\vec{v}-\vec{v}')^4}\frac{d\chi}{\chi^3}&\intertext{con $d\sigma$ sezione d'urto differenziale coulombiana per piccoli angoli, $\chi$ deviazione nel sistema CM e $\mu$ massa ridotta.}\nonumber
 \end{align}
 
-Varii processi fisici producono una forza sulle differenti componenti del gas solare che quindi acquisiscono una velocit\'a rispetto alle altre in maniera che le componenti di frizione dovuti agli urti bilancino la forza.  Schematizzo i processi di diffusione , considerando separatamente la diffusione di $\cel{H}{1}{}{}-\cel{He}{4}{}{}$ e degli elementi pesanti, senza risolvere l'equazione del trasporto.
+Esistono varii processi fisici che trasferendo quantit\'a di moto tra le varie componenti del gas solare,
+tramite gli urti, causano un moto macroscopico tale che si raggiunga l'equilibrio con l'attrito tra le componenti. Schematizzo i processi di diffusione , considerando separatamente la diffusione di $\cel{H}{1}{}{}-\cel{He}{4}{}{}$ e degli elementi pesanti, senza risolvere l'equazione del trasporto.
 
 Per la velocit\'a di diffusione relative dei due elementi pi\'u abbondanti, definita la concentrazione relativa $c_i=\frac{n_i}{n}$ e il coefficiente di diffusione $D_{HHe}=-\frac{1}{3}lv_{th}$ con $l\propto(n\sigma)\expy{-1}$
 
-\begin{align}
-&v_H-v_{He}=-D_{HHe}[\frac{1}{c_1c_2}\PDy{r}{c_1}+\frac{m_2-m_1}{c_1m_1+c_2m_2}\frac{1}{P}\PDy{r}{P}+\frac{K_T}{n_1n_2}\frac{1}{T}\PDy{r}{T}]&\intertext{per potenziale coulombiano}\nonumber\\
-&[D_{12}]_1=\left.\frac{3}{16n}(\frac{2kT(m_H+m_{He})}{\pi m_1m_2})\expy{\frac{1}{2}}(\frac{2kT}{Z_1Z_2e^2})^2\middle/\ln{(1+\frac{4\lambda kT}{Z_1Z_2e^2})}\right.,\ d=
-\end{align}
+\begin{equation}
+v_H-v_{He}=-D_{HHe}[\frac{1}{c_Hc_{He}}\PDy{r}{c_H}+\frac{m_{He}-m_H}{c_Hm_H+c_{He}m_{He}}\frac{1}{P}\PDy{r}{P}+\frac{K_T}{n_Hn_{He}}\frac{1}{T}\PDy{r}{T}]
+\end{equation}
 
 \begin{itemize}
 
 \item Diffusione dovuta al gradiente di concentrazione.
 
+\begingroup
+\color{midnightblue}
+general diffusion theory: $nD_{12}\overline{\nu}\vec{P}=n_1n_2kT\vec{V}$
+\endgroup
+
+Il flusso di momento per \si{\cubic\cm} da specie 1 a specie 2 \'e
+
+\begin{align}
+&n_1n_2\iint f_H(\vec{v}_H)f_{He}(\vec{v}_{He})m_{HHe}\vec{g}\nu(g)\,d^3v_H\,d^3v_{He}\\
+&\approx\iint f_H^{(0)}(\vec{v}_H)f_{He}^{(0)}(\vec{v}_{He})[1+\frac{m_1\scap{c}_1{c}_1'}{}]m_{HHe}\vec{g}\nu(g)\,d^3v_H\,d^3v_{He}&\intertext{dove $\nu(g)$ caratterizza il numero di collisioni che si avrebbero tra le componenti di due flussi omogenei di velocit\'a $c_1$ e $c_2$ con}\nonumber\\
+&\vec{g}=\vec{c}_2-\vec{c}_1,\ \text{$\#$ collisioni H-He}\si{\per\cubic\cm\per\second}=n_1n_2\nu(g)&\intertext{e la distribuzione di velocit\'a delle due specie, dette $\vec{c}_i'$ le loro velocit\'a di diffusione, \'e legata a quella di Maxwell-Boltzmann da}\nonumber\\
+&f_i(\vec{c}_i)=f_i^{(0)}(\vec{c}_i-\vec{c}_i')&\intertext{Il flusso di momento per unit\'a di volume si riscrive}\nonumber\\
+&n_Hn_{He}\overline{\nu}m_{HHe}\vec{V},\ \overline{\nu}=\frac{1}{3}\int f^{(0)}\frac{m_{HHe}g^2}{kT}\nu(g)\,d^3g
+\end{align}
+
+Per potenziale coulombiano
+
 \begin{equation}
-v_{HHe}=-D_{12}\frac{1}{c_Hc_{He}}\PDy{r}{c_H}
+[D_{12}]_1=\left.\frac{3}{16n}(\frac{2kT(m_H+m_{He})}{\pi m_1m_2})\expy{\frac{1}{2}}(\frac{2kT}{Z_1Z_2e^2})^2\middle/\ln{(1+\frac{4\lambda kT}{Z_1Z_2e^2})}\right.
 \end{equation}
+
+con $\lambda$ maggiore tra distanza interionica e lunghezza di Debye.
+
+
 
 \item la gravit\'a tende a concentrare gli elementi pi\'u pesanti verso il centro, le interazioni elettromagnetiche mantengono gli elettroni ancorati ai nuclei. La forza per unit\'a di volume agente sulle particelle di specie i \'e
 
@@ -776,11 +796,6 @@ Seguendo \cite{cowling1970approximate} ipotizzo che i flussi di calore (conduzio
 \end{align}
 
 
-
-\begin{equation}
-4
-\end{equation}
-
 \end{itemize}
 
 Sebbene il tempo caratteristico per percorre un raggio solare sia lungo $\tau_{diff}\approx\SI{6e13}{\year}$ i processi di diffusione producono effetti misurabili sulle frequenze dei modi di oscillazione: la loro inclusione nei \mss{} produce un miglior accordo con le osservazioni.
@@ -814,8 +829,6 @@ Risulta
 
 con $w_s$ velocit\'a di diffusione specie s.
 
-
-
 \begin{minipage}{\linewidth}
 \begin{tikzpicture}
 \node[inner sep=0pt] (image) at (0,0)
@@ -829,11 +842,7 @@ con $w_s$ velocit\'a di diffusione specie s.
 \end{tikzpicture}
 \end{minipage}
 
-
-\begingroup
-\color{midnightblue}
-$D_{12}$ vs $K_T$
-\endgroup
+% $D_{12}$ vs $K_T=\alpha n_0n_1$ thermal diffusion ration. Thermal diffusion coefficient: $D_T=D_{12}K_T$
 
 
 \section{Modello di Sole attuale.}
