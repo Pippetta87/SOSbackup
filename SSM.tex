@@ -5,7 +5,7 @@
 La struttura stellare \'e determinata da massa e composizione chimica iniziale della stella sulla base delle condizioni di equilibrio idrostatico e termico locale.
 
 
-I modelli stellari contengo dei parametri per descrivere incertezze nella descrizione dei fenomeni fisici: i parametri vengono scelti in maniera da riprodurre pi\'u accuratamente possibile la posizione della stella nel diagramma di \hr{}, definito tramite luminosit\'a e temperatura efficacie.
+I modelli stellari contengo dei parametri per descrivere i fenomeni fisici per cui non esiste una teoria completa: i parametri vengono scelti in maniera da riprodurre pi\'u accuratamente possibile la posizione della stella nel diagramma di \hr{}, definito da luminosit\'a e temperatura efficace.
 
 %Un modello stellare deve riprodurre la posizione di una stella nel diagramma entro le incertezze sulle osservabili sperimentali disponibili: luminosi\'a, massa, raggio, spettro della luce emessa dalla superficie (temperatura efficace, composizione chimica superficiale, accelerazione di gravit\'a) ed et\'a.
 
@@ -25,14 +25,11 @@ I modelli stellari contengo dei parametri per descrivere incertezze nella descri
 
 \section{Condizione di equilibrio idrostatico.}
 
-Suppongo che la pressione del campo magnetico sia molto minore della pressione del gas nell'interno solare e che la correzione dovuta alla rotazione sia piccola, ci\'o \'e suffragato dalle misure del campoi magnetico superficiale e dalla piccola deviazione dalla forma sferica, e che 
+Suppongo che la pressione del campo magnetico sia molto minore della pressione del gas nell'interno solare e che la correzione dovuta alla rotazione sia piccola, ci\'o \'e suffragato dalle misure del campo magnetico superficiale e dalla piccola deviazione dalla forma sferica.
 
-\begingroup
-\color{midnightblue}
-tensore pressione$\to$hydrostatic pressure
-\endgroup
+%tensore pressione$\to$hydrostatic pressure
 
-La distribuzione di massa del Sole \'e determinata dall'equilibrio tra la forza di attrazione gravitazionale e il gradiente della pressione del gas. Considero una distribuzione di massa sferica con densit\'a $\rho(r,t)$, la variazione della massa presente entro il raggio $r$ \'e descritta da:\noindent
+La distribuzione di massa del Sole \'e determinata dall'equilibrio tra la forza di attrazione gravitazionale e il gradiente della pressione del gas. Considero una distribuzione di massa sferica con densit\'a $\rho(r,t)$, la variazione della massa presente entro il raggio $r$ \'e descritta da
 
 \begin{equation}
 dm=4\pi r^2\rho \,dr-4\pi r^2\rho v\,dt\label{eq:massvar}
@@ -42,31 +39,32 @@ e $v(r,t)$ \'e il campo di velocit\'a della distribuzione di massa a distanza r 
 
 %Eulerian vs Lagrangian description
 
-per una configurazione di equilibrio statico quindi:
+per una configurazione di equilibrio statico quindi
 
 \begin{equation}
 dm=4\pi r^2\rho \,dr\label{eq:massaguscio}
 \end{equation}
 
-Differenziando \eqref{eq:massvar} rispetto alle variabili indipendenti $r$ e $t$ ricavo l'equazione di continuit\'a per distribuzione sfericamente simmetrica 
+Differenziando \eqref{eq:massvar} rispetto alle variabili indipendenti $r$ e $t$ ricavo l'equazione di continuit\'a
+
 \begin{align}
-&\PDy{t}{\rho}=-\frac{1}{r^2}\PDof{r}(\rho r^2 v)&\intertext{caso particolare di}\nonumber\\
+&\PDy{t}{\rho}=-\frac{1}{r^2}\PDof{r}(\rho r^2 v)&\intertext{che esprime la conservazione della massa per simmetria sferica, in generale}\nonumber\\
 &\PDy{t}{\rho}+\nabla\cdot(\rho\vec{v})=0\label{eq:continuityeq}
 \end{align}
 
-La condizione di equilibrio idrostatico $\ddvec{r}=0$ implica, per la conservazione della quantit\'a di moto:
+La condizione di equilibrio idrostatico $\ddvec{r}=0$ implica, per la conservazione della quantit\'a di moto
+
 \begin{align}
 &\rho\TDy{t}{\vec{v}}=-\nabla P+\rho\vec{f}&\intertext{da cui segue}\nonumber\\
 &\nabla P=\rho \vec{f}\label{eq:idrosta}
 \end{align}
 
-Nel caso di una stella la forma della forza per unit\'a di massa f \'e determinata dall'attrazione gravitazionale:
+Nel caso di una stella la forma della forza per unit\'a di massa f \'e determinata dall'attrazione gravitazionale
 
 \begin{equation}
 g=\frac{Gm(r)}{r^2}\label{eq:gravitya}
 \end{equation}
 diretta verso il centro di massa.
-
 
 Definendo il potenziale gravitazionale $\Phi$, soluzione dell'equazione di Poisson 
 \begin{equation}
@@ -94,9 +92,10 @@ Considero il contributo alla pressione degli ioni, elettroni e fotoni, $P=P_I+P_
 
 Il peso molecolare medio, definito come massa media in amu per particella libera \'e
 
-\begin{equation}
-\mu=\frac{1}{\bar{n}_HX+\bar{n}_{He}Y+\bar{n}_{Z}Z}\label{eq:meanmw}
-\end{equation}
+\begin{align}
+&\mu=\frac{1}{\bar{n}_HX+\bar{n}_{He}Y+\bar{n}_{Z}Z}\label{eq:meanmw}\\
+&\mu_0=
+\end{align}
 
 con $\bar{n}_i=\frac{1+f_i}{A_i}$ numero medio di particelle libere per unit\'a di massa atomica dovute alla specie i di peso atomico $A_i$ con $f_i$ numero medio di elettroni liberati da specie i.
 
