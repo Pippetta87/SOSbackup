@@ -45,7 +45,7 @@ per una configurazione di equilibrio statico quindi
 dm=4\pi r^2\rho \,dr\label{eq:massaguscio}
 \end{equation}
 
-Differenziando \eqref{eq:massvar} rispetto alle variabili indipendenti $r$ e $t$ ricavo l'equazione di continuit\'a
+Differenziando \eqref{eq:massvar} rispetto alle variabili euleriane $r$ e $t$ ricavo l'equazione di continuit\'a
 
 \begin{align}
 &\PDy{t}{\rho}=-\frac{1}{r^2}\PDof{r}(\rho r^2 v)&\intertext{che esprime la conservazione della massa per simmetria sferica, in generale}\nonumber\\
@@ -82,7 +82,7 @@ La condizione di equilibrio idrostatico diventa:
 
 
 
-Considero il contributo alla pressione degli ioni, elettroni e fotoni, $P=P_I+P_R+P_e$. Il gas solare \'e approssimabile come un gas perfetto monoatomico essendo composto in gran parte da \chem{H} e \chem{^4He} completamente ionizzati con distanza interionica $a_0$ molto maggiore delle dimensioni nucleari
+Considero il contributo alla pressione degli ioni, elettroni e fotoni, $P=P_I+P_e+P_R$. Il gas solare \'e approssimabile come un gas perfetto essendo composto in gran parte da \chem{H} e \chem{^4He} completamente ionizzati con distanza interionica $a_0$ molto maggiore delle dimensioni nucleari
 \begin{align}
 &a_0=(\frac{3}{4\pi}\sum_{I}n_I)\expy{-\frac{1}{3}}\gg r_N\label{eq:interionicdistance}\\
 &P_I=\rho \gasconstant{} T(X+\frac{Y}{4}+\frac{Z}{\exv{A_Z}})\shortintertext{dove ho usato il peso molecolare medio per i soli ioni $\mu_0$,}\nonumber\\
@@ -92,10 +92,9 @@ Considero il contributo alla pressione degli ioni, elettroni e fotoni, $P=P_I+P_
 
 Il peso molecolare medio, definito come massa media in amu per particella libera \'e
 
-\begin{align}
-&\mu=\frac{1}{\bar{n}_HX+\bar{n}_{He}Y+\bar{n}_{Z}Z}\label{eq:meanmw}\\
-&\mu_0=
-\end{align}
+\begin{equation}
+&\mu=\frac{1}{\bar{n}_HX+\bar{n}_{He}Y+\bar{n}_{Z}Z}\label{eq:meanmw},\ \mu_0=\frac{1}{X+\midfrac{Y}{4}+\\midfrac{Z}{\bar{A}}}
+\end{equation}
 
 con $\bar{n}_i=\frac{1+f_i}{A_i}$ numero medio di particelle libere per unit\'a di massa atomica dovute alla specie i di peso atomico $A_i$ con $f_i$ numero medio di elettroni liberati da specie i.
 
@@ -104,7 +103,6 @@ Trascurando la degenerazione degli elettroni
 \begin{equation}
 P_G=P_I+P_e=\frac{\rho}{\mu}\gasconstant{}T
 \end{equation}
-
 
 \subsection{Tempo di evoluzione dinamico.}
 
@@ -134,22 +132,11 @@ ottengo valori di circa $27$ min.: quindi la costanza delle caratteristiche sola
 
 \section{Conservazione dell'energia.}
 
-\begingroup
-\color{midnightblue}
-IL collasso di una nube di gas interstellare \'e un processo complesso; una volta raggiunta una configurazione abbastanza densa, tale che il cammino libero medio degli atomi e dei fotoni sia breve posso considerare il sistema in equilibrio idrostatico e termico. Il processo di collasso gravitazionale continua fino a che l'energia prodotta dalle reazioni nucleari bilancia l'energia irradiata.
-\endgroup
-
+Il collasso di una nube di gas interstellare \'e un processo complesso. Quando si raggiunge una configurazione abbastanza densa, tale che il cammino libero medio degli atomi e dei fotoni sia breve, si raggiunge rapidamente l'equilibrio idrostatico e termico locale. Il processo di collasso gravitazionale continua fino a che l'energia prodotta dalle reazioni nucleari bilancia l'energia irradiata.
 
 \subsection{Teorema del viriale.}
 
 Il teorema del viriale esprime una propriet\'a statistica di particelle interagenti: si trova una relazione tra energia interna, dovuta al moto traslazionale degli atomi, ed energia potenziale gravitazionale.
-
-%sottointendendo una residua interazione tra le particelle in modo da poter considerare il sistema localmente in equilibrio termodinamico
-
-\begingroup
-\color{grey}
-Stimo dall'energia potenziale gravitazionale il valore caratteristico per la velocit\'a del suono all'interno del Sole di circa \SI{400}{\kilo\meter\per\second}.
-\endgroup
 
 L'energia potenziale gravitazionale della stella \'e
 \begin{equation}
@@ -158,17 +145,18 @@ L'energia potenziale gravitazionale della stella \'e
 
 mentre l'energia interna \'e costituita dalla somma delle energie traslazionali delle particelle pesate secondo la distribuzione di equilibrio di Maxwell-Boltzmann
 
-\begin{align}
-&\int_M\frac{1}{\rho}\int n(\vec{p})\frac{p^2}{2m}\,d\vec{p}\,dm=\frac{3}{2}\int_M\frac{P}{\rho}\,dm\\
-&E_i=\int_0^Mu\,dm
-\end{align}
+\begin{equation}
+E_i=\int_0^Mu\,dm=\int_M\frac{1}{\rho}\int n(\vec{p})\frac{p^2}{2m}\,d\vec{p}\,dm=\frac{3}{2}\int_M\frac{P}{\rho}\,dm
+\end{equation}
 
 dove $n(\vec{p})$ \'e il numero di particelle per unit\'a di volume con impulso in $[\vec{p},\vec{p}+d\vec{p}]$ e u \'e l'energia interna per unit\'a di massa.
 
-Il teorema del viriale 
+Il teorema del viriale dimostra che
+
 \begin{equation}
 \frac{1}{2}\TtwoDy{t}{I}=2K+\Omega
 \end{equation}
+
 con K energia cinetica e $I=\int r^2\,dm$, implica, dato che all'equilibrio $\frac{1}{2}\TtwoDy{t}{I}=0$
 
 \begin{equation}
@@ -215,15 +203,11 @@ dove ho introdotto gli esponenti adiabatici $\Gamma_i$
 \Gamma_1=\Dcvar{\TDly{\rho}{P}}{Ad}, \ \Gamma_3-1=\Dcvar{\TDly{\rho}{T}}{Ad},\ \frac{\Gamma_2-1}{\Gamma_2}=\Dcvar{\TDly{P}{T}}{Ad}
 \end{equation}
 
-\begingroup
-\color{grey}
-L'energia interna per unit\'a di massa \'e approssimativamente quella di un gas di particelle non interagenti: 
+L'energia interna per unit\'a di massa \'e approssimabile con quella di un gas perfetto: 
 
 \begin{equation}
 u(T,P)=\frac{3\gasconstant{}T}{2\mu}
 \end{equation}
-
-\endgroup
 
 %Il contributo delle modificazioni chimiche aggiungo al lato di destra di \eqref{eq:prima} il termine contenente il potenziale chimico $-\mu_idN_i$ con $\mu_i=\Dcvar{\PDy{N_i}{u}}{S,V}$ all'equilibrio \'e trascurabile.
 %Vedi: chemical mixing, equilibrium slowness (partial ionization region, nuclear burning) mass action law: $\sum n_i\mu_i=0$??, minimizzazione energia libera.
@@ -236,10 +220,10 @@ Scrivo il bilancio di calore per un elemento di massa unitaria di gas:
 dove $\epsilon$ \'e l'energia prodotta per unit\'a di tempo e massa dalle reazioni nucleari e $\vec{F}$ \'e il flusso di energia verso l'esterno che in situazioni di stabilit\'a dinamica \'e dovuto alla diffusione di fotoni dalla zona pi\'u calda verso la superficie; sostituendo in \eqref{eq:prima} si ha
 
 \begin{equation}
-\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]\label{eq:fenergyconservation}
+\TDy{r}{L}=4\pi r^2[\rho\epsilon-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]\label{eq:fenergyconservation}
 \end{equation}
 
-Tengo conto dell'energia generata sotto forma di neutrini, che, alle densit\'a tipiche dell'interno solare, hanno interazioni trascurabili con la materia e quindi non danno luogo a un flusso di calore nel sistema, aggiungendo un termine negativo $\epsilon_{\nu}$ tale che $L_{\nu}=\int_0^M\epsilon_{\nu}\,dm$.
+Tengo conto dell'energia generata sotto forma di neutrini, che, alle densit\'a tipiche dell'interno solare, hanno interazioni trascurabili con la materia e quindi non danno luogo a un flusso di calore nel sistema, aggiungendo un termine negativo $-\epsilon_{\nu}$ tale che $L_{\nu}=\int_0^M\epsilon_{\nu}\,dm$.
 
 Nel caso stazionario
 
