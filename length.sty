@@ -1,5 +1,7 @@
 \ProvidesPackage{length}
 
+\makeatletter
+\g@addto@macro\normalsize{%
 
 \setlength{\parskip}{0pt}
 \setlength{\parsep}{0pt}
@@ -9,12 +11,10 @@
 \setlength{\topsep}{0pt}
 \setlength{\partopsep}{0pt}
 \setlength\parindent{12pt}
-
-%\makeatletter
-%\g@addto@macro\normalsize{%
-  \setlength\abovedisplayskip{1pt}
-  \setlength\belowdisplayskip{1pt}
-  \setlength{\abovedisplayshortskip}{1pt}
+\setlength\abovedisplayskip{1pt}
+\setlength\belowdisplayskip{1pt}
+\setlength{\abovedisplayshortskip}{1pt}
 \setlength{\belowdisplayshortskip}{1pt}
-%}
-%\makeatother
+
+}
+\makeatother
