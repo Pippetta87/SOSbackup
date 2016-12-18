@@ -397,8 +397,8 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 
 \begin{tikzpicture}[remember picture,overlay]
 
-\node[anchor=south west] (opint) at ([shift={(0,5)}]current page.south west) {\includegraphics[width=0.55\textwidth,keepaspectratio]{opcontrib-int-g}};
-\node[anchor=south east] (opout) at ([shift={(0,5-3/35)}]current page.south east) {\includegraphics[width=0.55\textwidth,keepaspectratio]{opcontrib-out-g}};
+\node[anchor=south west] (opint) at ([shift={(0,4)}]current page.south west) {\includegraphics[width=0.55\textwidth,keepaspectratio]{opcontrib-int-g}};
+\node[anchor=south east] (opout) at ([shift={(0,4-3/35)}]current page.south east) {\includegraphics[width=0.55\textwidth,keepaspectratio]{opcontrib-out-g}};
 \node[draw,anchor=south,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at ([shift={(0,+7)}]current page.south) {};
 \node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm,above=10mm of sc] (ff) {};
 \node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm,above=10mm of ff] (bb) {};
@@ -430,24 +430,30 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 
 \section{Condizione di in-stabilit\'a dinamica: trasporto convettivo.}
 
-Considero sotto quali condizioni una perturbazione radiale infinitesima di un elemento di fluido cresce esponenzialmente a causa della forza di galleggiamento 
+La zona convettiva occupa il $29\%$ pi\'u esterno del raggio solare e contiene il $2\%$ della massa: questa regione \'e chimicamente omogenea. 
+
+Una regione stellare \'e convettivamente stabile se una perturbazione radiale infinitesima non cresce ad ampiezza finita 
 \begin{equation}
 \rho\PtwoDy{t}{(\Delta r)}=-g\Delta\rho=-g[\Dcvar{\TDy{r}{\rho}}{e}-\Dcvar{\TDy{r}{\rho}}{amb}]\Delta r
 \end{equation}
 
-La forza di archimede ha direzione opposta alla perturbazione se $\Delta\rho>0$.
+La forza di archimede ha verso opposta alla perturbazione se $\Delta\rho>0$.
 
-Considero un'equazione di stato generica $\rho(P,T,\mu)$ e definisco i coefficienti $\alpha,\delta,\phi$ tramite:
-\begin{equation}
-\frac{d\rho}{\rho}=\alpha\frac{dP}{P}-\delta\frac{dT}{T}+\phi\frac{d\mu}{\mu}\label{eq:deltatherm}
-\end{equation}
-
-Considero il moto dell'elemento in equilibrio di pressione con l'ambiente e, definiti i gradienti termici per il blob e l'ambiente e il gradiente di composizione chimica 
-
+Considero un'equazione di stato generica $\rho(P,T,\mu)$ e definita tramite:
 \begin{align}
-&\nabla=\Dcvar{\TDly{P}{T}}{amb},\ \nabla_e=\Dcvar{\TDly{P}{T}}{blob},\ \nmu{}=\Dcvar{\TDly{P}{\mu}}{amb}\label{eq:nablavitense}\shortintertext{riscrivo l'equazione del moto}\nonumber\\
-&\PtwoDy{t}{(\Delta r)}=-g\frac{\delta}{H_P}[\nabla_e-\nabla-\frac{\phi}{\delta}\nmu{}]\Delta r\label{eq:galleggiamento}
+&\frac{d\rho}{\rho}=\alpha\frac{dP}{P}-\delta\frac{dT}{T}+\phi\frac{d\mu}{\mu}\label{eq:deltatherm}\\
+&P=\frac{\rho\gasconstant{}T}{\mu}\quad\Rightarrow\quad\alpha=\delta=\phi=1
 \end{align}
+
+Suppongo il moto dell'elemento in equilibrio di pressione con l'ambiente quindi, definiti i gradienti termici per il blob e l'ambiente e il gradiente di composizione chimica 
+
+\begin{equation}
+\nabla=\Dcvar{\TDly{P}{T}}{amb},\ \nabla_e=\Dcvar{\TDly{P}{T}}{blob},\ \nmu{}=\Dcvar{\TDly{P}{\mu}}{amb}\label{eq:nablavitense}
+\end{equation}
+riscrivo l'equazione del moto utilizzando l'equazione di stato, essendo $\nmu{}_{blob}\approx0$,
+\begin{equation}
+\PtwoDy{t}{(\Delta r)}=-g\frac{\delta}{H_P}[\nabla_e-\nabla-\frac{\phi}{\delta}\nmu{}]\Delta r\label{eq:galleggiamento}
+\end{equation}
 
 Suppongo adesso un moto del blob adiabatico $\nabla_e=\nabla_{ad}=\frac{P\delta}{T\rho c_P}$ e introduco la frequenza di \bv{}:
 \begin{align}
@@ -458,7 +464,7 @@ Suppongo adesso un moto del blob adiabatico $\nabla_e=\nabla_{ad}=\frac{P\delta}
 
 $N^2$ rappresenta la massima frequenza sotto cui pu\'o oscillare una particella di fluido sottoposta a onde di gravit\'a mantenendo l'equilibrio di pressione con l'ambiente.
 
-La variazione di composizione ambientale pu\'o essere descritta tramite $\densityscale{}$ in \eqref{eq:bvfsdensita}, quindi riscrivo l'equazione \eqref{eq:galleggiamento}
+Riscrivo l'equazione \eqref{eq:galleggiamento}
 \begin{equation}
 \PtwoDy{t}{(\Delta r)}=-N^2\Delta r
 \end{equation}
@@ -469,6 +475,10 @@ che descrive un comportamento oscillatorio per $N^2>0$, cio\'e uno strato di gas
 \end{equation}
 
 dove ho usato $\nabla_{amb}=\nrad{}$ definito in \eqref{eq:radiativegradient}, cio\'e il gradiente che si ha nel caso la luminosit\'a si trasportata dai fotoni.
+
+Le basse temperature causano un aumento dell'opacit\'a e il gradiente termico necessario per trasportare la luminosit\'a solare \'e superiore al gradiente adiabatico, il cui valore \'e diminuito dal calore latente dell'idrogeno solo parzialmente ionizzato.
+
+Una maggiore efficienza del trasporto convettivo di energia si riflette in una minore differenza tra il gradiente di temperature adiabatico ed effettivo.
 
 \begin{figure}[!h]
 \begin{subfigure}[t]{0.6\textwidth}
@@ -485,11 +495,8 @@ dove ho usato $\nabla_{amb}=\nrad{}$ definito in \eqref{eq:radiativegradient}, c
     
 \end{figure}
 
-\subsection{Teoria della mixing-length}
 
-La zona convettiva occupa il $29\%$ pi\'u esterno del raggio solare e il $2\%$ della massa: questa regione \'e chimicamente omogenea a causa dei moti convettivi. Le basse temperature causano un aumento dell'opacit\'a e il gradiente termico necessario per trasportare la luminosit\'a solare \'e superiore al gradiente adiabatico, il cui valore \'e diminuito dal calore latente dell'idrogeno solo parzialmente ionizzato.
-
-Una maggiore efficienza del trasporto convettivo di energia si riflette in una minore differenza tra il gradiente di temperature adiabatico ed effettivo: per determinare lo scostamento dalla stratificazione adiabatica dovuto alle perdite radiative utilizzo la teoria della mixing-length.
+\subsection{Teoria della mixing-length.}
 
 Il flusso di energia complessivo \'e determinato da
 \begin{equation}
@@ -527,7 +534,7 @@ La variazione della temperatura del blob per unit\'a distanza percorsa \'e quind
 \begin{equation}
 \Dcvar{\TDy{r}{T}}{e}=\Dcvar{\TDy{r}{T}}{ad}-\frac{\lambda}{\rho Vc_Pv}\label{eq:Tchangelength}
 \end{equation}
-esplicitando $\lambda$ approssimando il gradiente normale alla superficie con $\exv{\Delta T}$ ed usando le definizioni \eqref{eq:nablavitense} si ottiene
+esplicitando $\lambda$, approssimando il gradiente normale alla superficie con $\exv{\Delta T}$ ed usando le definizioni \eqref{eq:nablavitense} si ottiene
 \begin{equation}
 \frac{\nabla_e-\nad{}}{\nabla-\nabla_e}=\frac{6acT^3}{\kappa\rho^2c_Pl_mv}
 \end{equation}
