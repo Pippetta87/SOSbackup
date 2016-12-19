@@ -661,9 +661,9 @@ every head row/.style={
  every last row/.style={after row=\bottomrule},
 },
 every first column/.style={column type/.add={|}{}},
-every last column/.style={column type/.add={|}{}},
+every last column/.style={column type/.add={}{|}},
 columns/x/.style = {column type/.add={|}{}},
-columns/xi/.style = {column type/.add={|}{}}
+columns/xi/.style = {column type/.add={|}{}},
 display columns/0/.style={column name={}},
 display columns/1/.style={column name={$X$}},
 display columns/2/.style={column name={$Y$}},
