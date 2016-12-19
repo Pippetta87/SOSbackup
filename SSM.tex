@@ -14,7 +14,7 @@ I modelli stellari contengo dei parametri per descrivere i fenomeni fisici per c
  Nei capitoli successivi descrivo la configurazione di equilibrio del Sole e le incertezze nella descrizione fisica del modelo solare standard (MSS).
 
 \tpc{!h}{
-\node at (3.5,0) {\includegraphics[width=0.5\linewidth]{HRpulsating} \label{fig:HRp}};
+\node at (3.5,0) {\includegraphics[width=0.5\linewidth,keepaspectratio]{HRpulsating} \label{fig:HRp}};
 }{(-3.5,0)}{5cm}{{Zone del diagramma di \hr{} in cui sono previsti comportamenti oscillatori. Da \cite{chr97lecture}}}
 
 \clearpage
@@ -284,12 +284,12 @@ Il contributo degli elettroni, detta $n_e$ la densit\'a numerica, $\psi(P,T)$ il
 \begin{figure*}[!h]
 \centering
 \begin{subfigure}[t]{0.5\textwidth}
-\includegraphics[width=0.9\textwidth]{degenpsiP}
+\includegraphics[width=0.9\textwidth,keepaspectratio]{degenpsiP}
 \caption{Parametro di degenerazione $\Psi$ e correzioni alla pressione dovute alla degenerazione degli elettroni nell'interno solare.}
 \end{subfigure}%
 ~
 \begin{subfigure}[t]{0.5\textwidth}
-\includegraphics[width=0.9\textwidth]{RatioelectroEP}
+\includegraphics[width=0.9\textwidth,keepaspectratio]{RatioelectroEP}
 \caption{Rapporto fra energia termica e coulombiana la prima e fra pressione e correzione coulombiana la seconda.}
 \end{subfigure}
 \end{figure*}
@@ -601,12 +601,12 @@ Per $\frac{E_D}{kT}\ll1$ ne tengo conto aggiungendo il parametro correttivo $f$
 \begin{figure*}[!h]
     \centering
   \begin{subfigure}[t]{0.5\textwidth}
-        \includegraphics[width=0.9\textwidth]{gamow}
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{gamow}
         \caption{Picco di Gamow per distribuzione velocit\'a nuclei MB a T.}
     \end{subfigure}%
     ~
     \begin{subfigure}[t]{0.5\textwidth}
-        \includegraphics[width=0.9\textwidth]{Rscreening}
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{Rscreening}
         \caption{Andamento della correzione di schermaggio degli elettroni.}
     \end{subfigure}
 \end{figure*}
@@ -865,16 +865,19 @@ L'et\'a del sistema solare \'e nota grazie modelli di formazione e analisi dei m
 La luminosit\'a dipende fortemente dal valore di $Y_0$,  mentre il raggio da $\alpha$, parametro che regola l'efficienza del trasporto convettivo nella regione esterna caratterizzata fisicamente dall'entropia il cui valore \'e determinato, a meno di una costante additiva, dalla zona superadiabatica vicino alla superficie.
 
 
+
+Scelgo $Y_0$ e $\alpha$ che forniscono luminosit\'a e raggio $\rsun{}=\SI{6.96e8}{\meter}$ attuali del Sole: risulta $\frac{R_b}{\rsun{}}\approx0.710$ e il valore di $Y_0=0.250$.
+
+\begin{figure}[!h]
+\includegraphics[width=0.9\textwidth,keepaspectratio]{bahcall95}
+\caption{Andamento radiale di .}
+\end{figure}
+
+
 \begingroup
 \color{midnightblue}
 incertezza su $S_{11}$
 incertezza composizione
-\endgroup
-
-
-\begingroup
-\color{grey}
-simmetria sferica.
 
 \begin{itemize*}
 \item pressione gas
@@ -882,16 +885,11 @@ simmetria sferica.
 \item radiation pressure $-->$ photon absorption
 \item magnetic pressure
 \end{itemize*}
-
-\endgroup
-
-\begingroup
-\color{midnightblue}
 grafico densita vs pressione bahcall95
 tabella input del mss: eta, luminosita, raggio,
+Incertezze negli input del SSM e quindi su $\alpha$ e $Y$
 \endgroup
 
-Scelgo $Y_0$ e $\alpha$ che forniscono luminosit\'a e raggio $\rsun{}=\SI{6.96e8}{\meter}$ attuali del Sole: risulta $\frac{R_b}{\rsun{}}\approx0.710$ e il valore di $Y_0=0.250$.
 
 \begingroup
 \color{yellow}
@@ -900,10 +898,6 @@ Scelgo $Y_0$ e $\alpha$ che forniscono luminosit\'a e raggio $\rsun{}=\SI{6.96e8
 \endgroup
 
 
-\begingroup
-\color{midnightblue}
-Incertezze negli input del SSM e quindi su $\alpha$ e $Y$
-\endgroup
 
 
 \end{document}
