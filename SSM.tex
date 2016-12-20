@@ -252,7 +252,7 @@ Gli approcci pi\'u usati per determinare l'equazione di stato e quindi le grande
 L'energia libera \'e connessa all'equazione di stato e alle altre grandezze termodinamiche da
 
 \begin{align}
-&P(\rho,T)=\frac{1}{\rho^2}\Dcvar{\PDy{\rho}{F}}{T}
+&P(\rho,T)=\frac{1}{\rho^2}\Dcvar{\PDy{\rho}{F}}{T},\ u=-T^2\PDof{T}\left(\frac{F}{T}\right)
 \end{align}
  
 Elenco alcune correzioni all'equazione dei gas perfetti:
@@ -834,9 +834,9 @@ con $w_s$ velocit\'a di diffusione specie s.
 
 \section{Modello di Sole attuale.}
 
-Un modello del Sole attuale si ottiene integrando numericamente le equazioni fondamentali della struttura stellare \eqref{subeqn:stellarstructure} per ottenere il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note  l'equazione di stato $P(\rho,T,X_i)$ (e l'energia interna $u(P,T,X_i)$), l'opacit\'a $\kappa$, il rate di produzione di energia nucleare $\epsilon(P,T,X_i)$.
+Un modello del Sole attuale si ottiene integrando numericamente le equazioni fondamentali della struttura stellare \eqref{subeqn:stellarstructure} per ottenere il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note  l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare $\epsilon(P,T,X_i)$.
 
-Determino il modello solare risolvendo le equationi fondamentali
+Determino la struttura solare risolvendo le equationi fondamentali
 
 \begin{subequations}\label{subeqn:stellarstructure}
 \begin{align}
@@ -855,16 +855,15 @@ con le condizioni al bordo
     %e condizioni al centro si ricavano espandendo l, m attorno a $r=0$ in termini di $T_c, P_C,X_C,X_{3C}$ ed eguagliando le espansioni ai valori di l e m del punto pi\'u interno.
 \end{itemize}
 
-Evolvo il modello del Sole in sequenza principale fino ad ottenere un modello solare con le caratteristiche del Sole attuale:
+Evolvo il modello del Sole in sequenza principale fino ad ottenere un modello con le caratteristiche del Sole attuale:
 
 l'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffusionchange}, dovuto principalmente alle reazioni di fusione \eqref{subeqn:fusionchange}, deve essere compensato da un'aumento di temperatura con conseguente incremento dell'energia generata e della luminosit\'a.
 
 L'incertezza sull'abbondanza iniziale di He e sui meccanismi del trasporto convettivo rendono necessaria una calibrazione in funzione della luminosit\'a e raggio attuali.
 
+
 L'et\'a del sistema solare \'e nota grazie modelli di formazione e analisi dei meteoriti che determinano $t_{\odot}=\SI{4.9+-0.1e9}{\year}$ con incertezza dovuta al periodo di solidificazione dei meteoriti.
 La luminosit\'a dipende fortemente dal valore di $Y_0$,  mentre il raggio da $\alpha$, parametro che regola l'efficienza del trasporto convettivo nella regione esterna caratterizzata fisicamente dall'entropia il cui valore \'e determinato, a meno di una costante additiva, dalla zona superadiabatica vicino alla superficie.
-
-
 
 Scelgo $Y_0$ e $\alpha$ che forniscono luminosit\'a e raggio $\rsun{}=\SI{6.96e8}{\meter}$ attuali del Sole: risulta $\frac{R_b}{\rsun{}}\approx0.710$ e il valore di $Y_0=0.250$.
 
