@@ -703,14 +703,16 @@ L'equazione di Boltzmann del trasporto descrive l'evoluzione della probabilit\'a
 
 \begin{align}
 &\PDy{t}{f_i}+\vec{v}_i\cdot\PDy{\vec{r}}{f_i}+\vec{F}_i\cdot\PDy{\vec{v}}{f_i}=-\nabla_{\vec{p}}(\vec{s}),\ 
-s_{\alpha}=\sum_{'}\int [f(\vec{p})\PDy{f'(\vec{p}'}{p'_{\beta}}-f'(\vec{p}')\PDy{f(\vec{p})}{p_{\beta}}]B_{\alpha\beta}\,d^3p'&\intertext{$\vec{s}$ \'e il flusso nello spazio dei momenti dovuto alle collisioni, la somma \'e sulle specie diverse da i e}\nonumber\\
+s_{\alpha}=\sum_{'}\int [f(\vec{p})\PDy{p'_{\beta}}{f'(\vec{p}'}-f'(\vec{p}')\PDy{p_{\beta}}{f(\vec{p})}]B_{\alpha\beta}\,d^3p'&\intertext{$\vec{s}$ \'e il flusso nello spazio dei momenti dovuto alle collisioni, la somma \'e sulle specie diverse da i e}\nonumber\\
 &B_{\alpha\beta}=\frac{1}{2}\int q_{\alpha}q_{\beta}|\vec{v}-\vec{v}'|\,d\sigma,\ 
 d\sigma=\frac{4\pi(Z_iZ_j)^2}{\mu^2(\vec{v}-\vec{v}')^4}\frac{d\chi}{\chi^3}&\intertext{con $d\sigma$ sezione d'urto differenziale coulombiana per piccoli angoli, $\chi$ deviazione nel sistema CM e $\mu$ massa ridotta.}\nonumber
 \end{align}
 
-''Esistono varii processi fisici che contribuendo al trasferimento di quantit\'a di moto tra le varie componenti del gas solare, tramite gli urti, producono trasporto di particelle tale che si raggiunga l'equilibrio con l'attrito tra le componenti.''
+\begingroup
+\color{midnightblue}
 
-Schematizzo i processi di diffusione , considerando separatamente la diffusione di $\cel{H}{1}{}{}-\cel{He}{4}{}{}$ e degli elementi pesanti, senza risolvere l'equazione del trasporto.
+Schematizzo i processi di diffusione , considerando separatamente la diffusione di $\cel{H}{1}{}{}-\cel{He}{4}{}{}$ e degli elementi pesanti.
+
 
 Per la velocit\'a di diffusione relative dei due elementi pi\'u abbondanti, definita la concentrazione relativa $c_i=\frac{n_i}{n}$ e il coefficiente di diffusione $D_{HHe}=-\frac{1}{3}lv_{th}$ con $l\propto(n\sigma)\expy{-1}$
 
@@ -718,14 +720,19 @@ Per la velocit\'a di diffusione relative dei due elementi pi\'u abbondanti, defi
 v_H-v_{He}=-D_{HHe}[\frac{1}{c_Hc_{He}}\PDy{r}{c_H}+\frac{m_{He}-m_H}{c_Hm_H+c_{He}m_{He}}\frac{1}{P}\PDy{r}{P}+\frac{K_T}{n_Hn_{He}}\frac{1}{T}\PDy{r}{T}]
 \end{equation}
 
+dove sono presenti il contributo alla velocit\'a di diffusione relativa del
+
+\endgroup
+
 \begin{itemize}
 
 \item Diffusione dovuta al gradiente di concentrazione.
 
 \begingroup
 \color{midnightblue}
+
+
 general diffusion theory: $nD_{12}\overline{\nu}\vec{P}=n_1n_2kT\vec{V}$
-\endgroup
 
 Il flusso di momento per \si{\cubic\cm} da specie 1 a specie 2 \'e
 
@@ -745,9 +752,9 @@ Per potenziale coulombiano
 
 con $\lambda$ maggiore tra distanza interionica e lunghezza di Debye.
 
+\endgroup
 
-
-\item la gravit\'a tende a concentrare gli elementi pi\'u pesanti verso il centro, le interazioni elettromagnetiche mantengono gli elettroni ancorati ai nuclei. La forza per unit\'a di volume agente sulle particelle di specie i \'e
+\item Sedimentazione gravitazionale. La gravit\'a tende a concentrare gli elementi pi\'u pesanti verso il centro, le interazioni elettromagnetiche mantengono gli elettroni ancorati ai nuclei. La forza per unit\'a di volume agente sulle particelle di specie i \'e
 
 \begin{align}
 &\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})&\intertext{e in condizioni di equilibrio il momento trasferito tramite urti con le altre specie \'e}\\
@@ -766,7 +773,7 @@ n_Hv_H=\frac{(m_{He}n_Hn_{He})}{\rho}v_{HHe}&\intertext{analogamente considero l
 &n_Av_A(m_{AH}n_Hw_{AH})(1+2\frac{Y}{X})\approx-n_Av_H(m_{AH}n_Hw_{AH})
 \end{align}
  
-\item la diffusione termica concentra le particelle pi\'u cariche e pi\'u pesanti nelle zone pi\'u calde: infatti in presenza di un gradiente termico si ha una diversa probabilit\'a di trasferimento di momento nella direzione del gradiente; la sezione d'urto coulombiana dipende dalla velocit\'a relativa $\propto v\expy{-4}$ (probabilit\'a di collisione $\propto v\expy{-3}$).
+\item Diffusione termica. Le particelle pi\'u cariche e pi\'u pesanti diffondono verso le zone pi\'u calde: infatti in presenza di un gradiente termico si ha una diversa probabilit\'a di trasferimento di momento nella direzione del gradiente; la sezione d'urto coulombiana dipende dalla velocit\'a relativa $\propto v\expy{-4}$ (probabilit\'a di collisione $\propto v\expy{-3}$).
 
 %\begin{align}
 %&F_{ij}^{th}\propto\lambda_{ih}\frac{\Delta T}{T}m_{ij}n_in_jw_{ij}v_{ij}&\intertext{con il cammino libero medio per particelle i,j}\nonumber\\
@@ -781,7 +788,6 @@ Seguendo \cite{cowling1970approximate} ipotizzo che i flussi di calore (conduzio
 &\vec{V}_{HHe}=\frac{2}{5kn_1n_2}(\frac{n_{He}m_{He}\vec{q}_2-n_Hm_H\vec{q}_1}{m_H+m_{He}})\PDof{T}(\ln{\overline{\nu}})\\
 &\overline{\nu}=\frac{1}{3}\int f^{(0)}\frac{m_{HHe}g^2}{kT}\nu(g)\,d\vec{g}
 \end{align}
-
 
 \end{itemize}
 
@@ -834,9 +840,7 @@ con $w_s$ velocit\'a di diffusione specie s.
 
 \section{Modello di Sole attuale.}
 
-Un modello del Sole attuale si ottiene integrando numericamente le equazioni fondamentali della struttura stellare \eqref{subeqn:stellarstructure} per ottenere il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note  l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare $\epsilon(P,T,X_i)$.
-
-Determino la struttura solare risolvendo le equationi fondamentali
+Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare \eqref{subeqn:stellarstructure} per ottenere il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note  l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
 
 \begin{subequations}\label{subeqn:stellarstructure}
 \begin{align}
@@ -845,6 +849,10 @@ Determino la struttura solare risolvendo le equationi fondamentali
 &\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
 &\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
 \end{align}
+e
+\begin{equation}
+\PDy{t}{n_s}+\frac{1}{r^2}\PDof{r}(r^2n_sw_s)=\Dcvar{\PDy{t}{n_s}}{Nucl}\label{eq:difffusionchange}
+\end{equation}
 \end{subequations}
 
 con le condizioni al bordo
@@ -855,12 +863,11 @@ con le condizioni al bordo
     %e condizioni al centro si ricavano espandendo l, m attorno a $r=0$ in termini di $T_c, P_C,X_C,X_{3C}$ ed eguagliando le espansioni ai valori di l e m del punto pi\'u interno.
 \end{itemize}
 
+L'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffusionchange}, dovuto principalmente alle reazioni di fusione \eqref{subeqn:fusionchange}, deve essere compensato da un'aumento di temperatura con conseguente incremento dell'energia generata e della luminosit\'a.
+
 Evolvo il modello del Sole in sequenza principale fino ad ottenere un modello con le caratteristiche del Sole attuale:
 
-l'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffusionchange}, dovuto principalmente alle reazioni di fusione \eqref{subeqn:fusionchange}, deve essere compensato da un'aumento di temperatura con conseguente incremento dell'energia generata e della luminosit\'a.
-
-L'incertezza sull'abbondanza iniziale di He e sui meccanismi del trasporto convettivo rendono necessaria una calibrazione in funzione della luminosit\'a e raggio attuali.
-
+l'incertezza sull'abbondanza iniziale di He e sui meccanismi del trasporto convettivo rendono necessaria una calibrazione in funzione della luminosit\'a e raggio attuali.
 
 L'et\'a del sistema solare \'e nota grazie modelli di formazione e analisi dei meteoriti che determinano $t_{\odot}=\SI{4.9+-0.1e9}{\year}$ con incertezza dovuta al periodo di solidificazione dei meteoriti.
 La luminosit\'a dipende fortemente dal valore di $Y_0$,  mentre il raggio da $\alpha$, parametro che regola l'efficienza del trasporto convettivo nella regione esterna caratterizzata fisicamente dall'entropia il cui valore \'e determinato, a meno di una costante additiva, dalla zona superadiabatica vicino alla superficie.
@@ -871,6 +878,8 @@ Scelgo $Y_0$ e $\alpha$ che forniscono luminosit\'a e raggio $\rsun{}=\SI{6.96e8
 \node at (0,0) {\includegraphics[width=0.9\textwidth,trim=4 4 4 4,clip]{bahcall95}};
 
 }{(0,-7)}{\textwidth}{Profilo radiale}
+
+
 
 \begingroup
 \color{midnightblue}
@@ -886,16 +895,8 @@ incertezza composizione
 grafico densita vs pressione bahcall95
 tabella input del mss: eta, luminosita, raggio,
 Incertezze negli input del SSM e quindi su $\alpha$ e $Y$
-\endgroup
-
-
-\begingroup
-\color{yellow}
 
 \eqref{eq:massaguscio},\eqref{eq:fidroequilibrio},\eqref{eq:fenergyconservation}, \eqref{eq:ftransportenergy} a partire da $r=0$ produce soluzioni dipendenti da $(P_c,T_c)$, mentre le condizioni alla superficie sono pi\'u complesse perch\'e dipendono dalla struttura dell'atmosfera e le soluzioni sono dipendenti da $(R,L)$: i quattro parametri matematici del problema, $(P_c,T_C,L,R)$, sono determinati dalla condizione di continuit\'a ad un punto intermedio  delle soluzioni $(P,T,m(r),l(r))$ fra le soluzioni con condizioni al centro e sulla superficie.
 \endgroup
-
-
-
 
 \end{document}
