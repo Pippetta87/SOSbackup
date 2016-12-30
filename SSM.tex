@@ -705,7 +705,7 @@ L'equazione di Boltzmann del trasporto descrive l'evoluzione della probabilit\'a
 
 \begin{align}
 &\PDy{t}{f_i}+\vec{v}_i\cdot\PDy{\vec{r}}{f_i}+\vec{F}_i\cdot\PDy{\vec{v}}{f_i}=-\nabla_{\vec{p}}(\vec{s}),\ 
-s_{\alpha}=\sum_{'}\int [f(\vec{p})\PDy{f'(\vec{p}'}{p'_{\beta}}-f'(\vec{p}')\PDy{f(\vec{p})}{p_{\beta}}]B_{\alpha\beta}\,d^3p'&\intertext{$\vec{s}$ \'e il flusso nello spazio dei momenti dovuto alle collisioni, la somma \'e sulle specie diverse da i e}\nonumber\\
+s_{\alpha}=\sum_{'}\int [f(\vec{p})\PDy{p'_{\beta}}{f'(\vec{p}'}-f'(\vec{p}')\PDy{p_{\beta}}{f(\vec{p})}]B_{\alpha\beta}\,d^3p'&\intertext{$\vec{s}$ \'e il flusso nello spazio dei momenti dovuto alle collisioni, la somma \'e sulle specie diverse da i e}\nonumber\\
 &B_{\alpha\beta}=\frac{1}{2}\int q_{\alpha}q_{\beta}|\vec{v}-\vec{v}'|\,d\sigma,\ 
 d\sigma=\frac{4\pi(Z_iZ_j)^2}{\mu^2(\vec{v}-\vec{v}')^4}\frac{d\chi}{\chi^3}&\intertext{con $d\sigma$ sezione d'urto differenziale per potenziale coulombiano puro per piccoli angoli, $\chi$ deviazione nel sistema CM e $\mu$ massa ridotta e}\nonumber\\
 &\sigma_{st}=\frac{4\pi(Z_sZ_t)^2}{\mu^2(\vec{v}-\vec{v}')^4}L,\ L=\ln{\frac{1}{\chi_{min}}}=\ln{\frac{\lambda\mu v_{rel}^2}{|Z_sZ_t|^2}}
@@ -778,9 +778,7 @@ Sebbene il tempo caratteristico per percorre un raggio solare sia lungo $\tau_{d
 
 \section{Modello di Sole attuale.}
 
-Un modello del Sole attuale si ottiene integrando numericamente le equazioni fondamentali della struttura stellare \eqref{subeqn:stellarstructure} per ottenere il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note  l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare $\epsilon(P,T,X_i)$.
-
-Determino la struttura solare risolvendo le equationi fondamentali
+Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare \eqref{subeqn:stellarstructure} per ottenere il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note  l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
 
 \begin{subequations}\label{subeqn:stellarstructure}
 \begin{align}
@@ -789,6 +787,10 @@ Determino la struttura solare risolvendo le equationi fondamentali
 &\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
 &\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
 \end{align}
+e
+\begin{equation}
+\PDy{t}{n_s}+\frac{1}{r^2}\PDof{r}(r^2n_sw_s)=\Dcvar{\PDy{t}{n_s}}{Nucl}\label{eq:difffusionchange}
+\end{equation}
 \end{subequations}
 
 con le condizioni al bordo
@@ -810,8 +812,9 @@ Evolvo il modello del Sole in sequenza principale fino ad ottenere un modello co
 
 l'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffusionchange}, dovuto principalmente alle reazioni di fusione \eqref{subeqn:fusionchange}, deve essere compensato da un'aumento di temperatura con conseguente incremento dell'energia generata e della luminosit\'a.
 
-L'incertezza sull'abbondanza iniziale di He e sui meccanismi del trasporto convettivo rendono necessaria una calibrazione in funzione della luminosit\'a e raggio attuali.
+Evolvo il modello del Sole in sequenza principale fino ad ottenere un modello con le caratteristiche del Sole attuale:
 
+l'incertezza sull'abbondanza iniziale di He e sui meccanismi del trasporto convettivo rendono necessaria una calibrazione in funzione della luminosit\'a e raggio attuali.
 
 L'et\'a del sistema solare \'e nota grazie modelli di formazione e analisi dei meteoriti che determinano $t_{\odot}=\SI{4.9+-0.1e9}{\year}$ con incertezza dovuta al periodo di solidificazione dei meteoriti.
 La luminosit\'a dipende fortemente dal valore di $Y_0$,  mentre il raggio da $\alpha$, parametro che regola l'efficienza del trasporto convettivo nella regione esterna caratterizzata fisicamente dall'entropia il cui valore \'e determinato, a meno di una costante additiva, dalla zona superadiabatica vicino alla superficie.
@@ -822,6 +825,8 @@ Scelgo $Y_0$ e $\alpha$ che forniscono luminosit\'a e raggio $\rsun{}=\SI{6.96e8
 \node at (0,0) {\includegraphics[width=\textwidth,trim=4 4 4 4,clip]{bahcall95}};
 
 }{(0,-7)}{\textwidth}{Profilo radiale}
+
+
 
 \begingroup
 \color{midnightblue}
@@ -837,16 +842,8 @@ incertezza composizione
 grafico densita vs pressione bahcall95
 tabella input del mss: eta, luminosita, raggio,
 Incertezze negli input del SSM e quindi su $\alpha$ e $Y$
-\endgroup
-
-
-\begingroup
-\color{yellow}
 
 \eqref{eq:massaguscio},\eqref{eq:fidroequilibrio},\eqref{eq:fenergyconservation}, \eqref{eq:ftransportenergy} a partire da $r=0$ produce soluzioni dipendenti da $(P_c,T_c)$, mentre le condizioni alla superficie sono pi\'u complesse perch\'e dipendono dalla struttura dell'atmosfera e le soluzioni sono dipendenti da $(R,L)$: i quattro parametri matematici del problema, $(P_c,T_C,L,R)$, sono determinati dalla condizione di continuit\'a ad un punto intermedio  delle soluzioni $(P,T,m(r),l(r))$ fra le soluzioni con condizioni al centro e sulla superficie.
 \endgroup
-
-
-
 
 \end{document}
