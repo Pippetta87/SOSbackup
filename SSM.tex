@@ -711,8 +711,9 @@ d\sigma=\frac{4\pi(Z_iZ_j)^2}{\mu^2(\vec{v}-\vec{v}')^4}\frac{d\chi}{\chi^3}&\in
 &\sigma_{st}=\frac{4\pi(Z_sZ_t)^2}{\mu^2(\vec{v}-\vec{v}')^4}L,\ L=\ln{\frac{1}{\chi_{min}}}=\ln{\frac{\lambda\mu v_{rel}^2}{|Z_sZ_t|^2}}
 \end{align}
 
+Il plasma solare \'e costituito da $\cel{H}{1}{}{}$, $\cel{He}{4}{}{}$, \Pelectron e in minore abbondanza nuclei pesanti.
 
-Illustro in maniera fenomenologica i processi fisici che danno luoga a diffusione , considerando separatamente la diffusione di $\cel{H}{1}{}{}-\cel{He}{4}{}{}$ e degli elementi pesanti. La distribuzione di velocit\'a della specie i \'e approssimativamente la distribuzione di equilibrio traslata di $w^i$.
+ La distribuzione di velocit\'a della specie i \'e approssimativamente la distribuzione di equilibrio traslata di $w^i$.
 
 Per la velocit\'a di diffusione relative dei due elementi pi\'u abbondanti, definita la concentrazione relativa $c_i=\frac{n_i}{n}$ e il coefficiente di diffusione $D_{HHe}=-\frac{1}{3}lv_{th}$ con $l\approx(n\sigma)\expy{-1}$
 
@@ -729,14 +730,14 @@ La forza per unit\'a di volume agente sulle particelle di specie i \'e
 &\sigma_{ij}=\num{2.68e-12}Z_i^2Z_j^2(\frac{m_{ij}}{m_H})\expy{-\frac{1}{2}}(\frac{T}{\SI{e7}{\kelvin}})\expy{-\frac{3}{2}}\ln{\lambda_{ij}}\si{\cubic\cm\per\second}
 \end{align}
 
-Considero la diffusione in un plasma di $\cel{H}{1}{}{}$, $\cel{He}{4}{}{}$, \Pelectron: il momento trasferito dagli ioni agli elettroni \'e piccolo quindi si ha
+Il momento trasferito dagli ioni agli elettroni \'e piccolo quindi si ha
 
 \begin{align}
 &F_H\approx F_{HHe}=-\PDy{r}{P_H}+n_H(eE+m_Hg)\\
 &F_{He}\approx -F_{HHe}=-\PDy{r}{P_{He}}+n_{He}(2eE+4m_Hg)\\
-&E=-\frac{1}{en_e}\PDy{r}{P_e}&\intertext{Per la velocit\'a di diffusione si ha}\nonumber\\
+&E=-\frac{1}{en_e}\PDy{r}{P_e}&\intertext{Per le velocit\'a di diffusione si ha}\nonumber\\
 &w_{HHe}=-\frac{m_{He}T}{m_{HHe}Y\rho \sigma_{HHe}}[\PDy{r}{\ln{(P_eP_H)}}-m_Hg],\ 
-n_Hw_H=\frac{(m_{He}n_Hn_{He})}{\rho}w_{HHe}&\intertext{analogamenteper ioni pesanti, con $\cel{H}{1}{}{}$, $\cel{He}{4}{}{}$  elementi pi\'u abbondanti, si trova}\nonumber\\
+n_Hw_H=\frac{(m_{He}n_Hn_{He})}{\rho}w_{HHe}\\
 &w_A(1+2\frac{Y}{X})\approx-w_H
 %&n_Av_A(m_{AH}n_Hw_{AH})(1+2\frac{Y}{X})\approx-n_Av_H(m_{AH}n_Hw_{AH})
 \end{align}
@@ -778,8 +779,7 @@ Sebbene il tempo caratteristico per percorre un raggio solare sia lungo $\tau_{d
 
 \section{Modello di Sole attuale.}
 
-Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare \eqref{subeqn:stellarstructure} per ottenere il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note  l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
-
+Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
 \begin{subequations}\label{subeqn:stellarstructure}
 \begin{align}
 &\TDy{r}{m}=4\pi r^2\rho\\
@@ -792,7 +792,7 @@ Determino la struttura solare integrando numericamente le equazioni fondamentali
 \PDy{t}{n_s}+\frac{1}{r^2}\PDof{r}(r^2n_sw_s)=\Dcvar{\PDy{t}{n_s}}{Nucl}\label{eq:difffusionchange}
 \end{equation}
 \end{subequations}
-con $w_s$ velocit\'a di diffusione specie s.
+con $w_s$ velocit\'a di diffusione specie s,  per ottenere il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note  l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
 
 Le condizioni al bordo per le equazioni precedenti sono
 
@@ -802,24 +802,53 @@ Le condizioni al bordo per le equazioni precedenti sono
     %e condizioni al centro si ricavano espandendo l, m attorno a $r=0$ in termini di $T_c, P_C,X_C,X_{3C}$ ed eguagliando le espansioni ai valori di l e m del punto pi\'u interno.
 \end{itemize}
 
+\begingroup
+\begin{wraptable}{l}{5cm}
+\begin{tabular}{|lc|}
+\hline
+$\agesun{}$&\SI{e9}{\year}\\
+$\rsun{}$&\SI{6.9599e10}{\cm}\\
+$\lsun{}$&\SI{3.844e33}{\erg\per\second}\\
+$\left(\frac{Z}{X}\right)_{ph}$&0.0245\\
+\hline
+\end{tabular}
+\caption{.}
+\end{wraptable}
 
 Evolvo il modello del Sole in sequenza principale fino ad ottenere un modello con le caratteristiche del Sole attuale:
 
-l'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffusionchange}, dovuto principalmente alle reazioni di fusione \eqref{subeqn:fusionchange}, deve essere compensato da un'aumento di temperatura con conseguente incremento dell'energia generata e della luminosit\'a.
 
-Evolvo il modello del Sole in sequenza principale fino ad ottenere un modello con le caratteristiche del Sole attuale:
 
-l'incertezza sull'abbondanza iniziale di He e sui meccanismi del trasporto convettivo rendono necessaria una calibrazione in funzione della luminosit\'a e raggio attuali.
+l'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffusionchange}, dovuto principalmente alle reazioni di fusione \eqref{subeqn:energyrate}, deve essere compensato da un'aumento di temperatura con conseguente incremento dell'energia generata e della luminosit\'a.
+
+\endgroup
+
+%Evolvo il modello del Sole in sequenza principale fino ad ottenere un modello con le caratteristiche del Sole attuale:
+%l'incertezza sull'abbondanza iniziale di He e sui meccanismi del trasporto convettivo rendono necessaria una calibrazione in funzione della luminosit\'a e raggio attuali.
+%Scelgo $Y_0$ e $\alpha$ che forniscono luminosit\'a e raggio $\rsun{}=\SI{6.96e8}{\meter}$ attuali del Sole: risulta $\frac{R_b}{\rsun{}}\approx0.710$ e il valore di $Y_0=0.250$.
+
+\begingroup
+
+
+\begin{wraptable}{r}{5.5cm}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$Y_{in}$&$Y_{ph}$&$Z_{in}$&$\alpha$&$\frac{R_{cz}}{\rsun{}}$\\
+0.27753&0.24695&0.02&2.09&0.712\\
+\hline
+\end{tabular}
+\caption{Risultati modello solare. Da \cite{bahcall95diffusion}.}
+\end{wraptable}
 
 L'et\'a del sistema solare \'e nota grazie modelli di formazione e analisi dei meteoriti che determinano $t_{\odot}=\SI{4.9+-0.1e9}{\year}$ con incertezza dovuta al periodo di solidificazione dei meteoriti.
-La luminosit\'a dipende fortemente dal valore di $Y_0$,  mentre il raggio da $\alpha$, parametro che regola l'efficienza del trasporto convettivo nella regione esterna caratterizzata fisicamente dall'entropia il cui valore \'e determinato, a meno di una costante additiva, dalla zona superadiabatica vicino alla superficie.
+La luminosit\'a dipende fortemente dal valore di $Y_{in}$,  mentre il raggio da $\alpha$, parametro che regola l'efficienza del trasporto convettivo nella regione esterna.
 
-Scelgo $Y_0$ e $\alpha$ che forniscono luminosit\'a e raggio $\rsun{}=\SI{6.96e8}{\meter}$ attuali del Sole: risulta $\frac{R_b}{\rsun{}}\approx0.710$ e il valore di $Y_0=0.250$.
+
+\endgroup
 
 \tpc{!h}{
 \node at (0,0) {\includegraphics[width=\textwidth,trim=4 4 4 4,clip]{bahcall95}};
-
-}{(0,-7)}{\textwidth}{Profilo radiale}
+}{(0,-7)}{\textwidth}{Profilo radiale della densit\'a, composizione, luminosit\'a e temperatura.}
 
 
 
@@ -827,18 +856,18 @@ Scelgo $Y_0$ e $\alpha$ che forniscono luminosit\'a e raggio $\rsun{}=\SI{6.96e8
 \color{midnightblue}
 incertezza su $S_{11}$
 incertezza composizione
-
 \begin{itemize*}
 \item pressione gas
 \item pressione turbolenta == kinetic pressure
 \item radiation pressure $-->$ photon absorption
 \item magnetic pressure
 \end{itemize*}
-grafico densita vs pressione bahcall95
 tabella input del mss: eta, luminosita, raggio,
 Incertezze negli input del SSM e quindi su $\alpha$ e $Y$
-
-\eqref{eq:massaguscio},\eqref{eq:fidroequilibrio},\eqref{eq:fenergyconservation}, \eqref{eq:ftransportenergy} a partire da $r=0$ produce soluzioni dipendenti da $(P_c,T_c)$, mentre le condizioni alla superficie sono pi\'u complesse perch\'e dipendono dalla struttura dell'atmosfera e le soluzioni sono dipendenti da $(R,L)$: i quattro parametri matematici del problema, $(P_c,T_C,L,R)$, sono determinati dalla condizione di continuit\'a ad un punto intermedio  delle soluzioni $(P,T,m(r),l(r))$ fra le soluzioni con condizioni al centro e sulla superficie.
 \endgroup
+
+%\eqref{eq:massaguscio},\eqref{eq:fidroequilibrio},\eqref{eq:fenergyconservation}, \eqref{eq:ftransportenergy} a partire da $r=0$ produce soluzioni dipendenti da $(P_c,T_c)$, mentre le condizioni alla superficie sono pi\'u complesse perch\'e dipendono dalla struttura dell'atmosfera e le soluzioni sono dipendenti da $(R,L)$: i quattro parametri matematici del problema, $(P_c,T_C,L,R)$, sono determinati dalla condizione di continuit\'a ad un punto intermedio  delle soluzioni $(P,T,m(r),l(r))$ fra le soluzioni con condizioni al centro e sulla superficie.
+
+
 
 \end{document}
