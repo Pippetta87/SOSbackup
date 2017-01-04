@@ -39,7 +39,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%% Things need to be loaded after hyperref
 %\usepackage{cleveref}
 %%%%%%%%%%%%%%%%%Geometry package
-\usepackage[a4paper,margin=60px,tmargin=20px,includefoot,footskip=40px]{geometry}
+\usepackage[a4paper,lmargin=80px,rmargin=40px,tmargin=40px,bmargin=20px,nofoot,footskip=20px]{geometry}
 %http://tex.stackexchange.com/questions/211248/problem-with-cropmarks-on-geometry-package
 %http://www.ctex.org/documents/packages/layout/geometry.pdf
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Funzioni generali
@@ -67,13 +67,16 @@
 %%%%
 \renewcommand{\thesubfigure}{\arabic{figure}.\alph{subfigure}}
 
+
 %%% input rawdata
 \input{rawdata.txt}
 
 \author{ }
 \title{Studio delle oscillazioni solari}
 \date{\today}
+
 %%%
+
 \begin{document}
 
 \frontmatter
@@ -108,9 +111,15 @@
 
 \backmatter
 
+\newgeometry{margin=60px,tmargin=20px}
 
-%\part{Appendice}
-%\subfile{appendix}
+\appendix
+
+\part{Appendice}
+
+\subfile{appendix}
+
+\restoregeometry
 
 \printbibliography
 

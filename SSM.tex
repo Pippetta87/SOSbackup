@@ -792,36 +792,42 @@ Determino la struttura solare integrando numericamente le equazioni fondamentali
 \PDy{t}{n_s}+\frac{1}{r^2}\PDof{r}(r^2n_sw_s)=\Dcvar{\PDy{t}{n_s}}{Nucl}\label{eq:difffusionchange}
 \end{equation}
 \end{subequations}
-con $w_s$ velocit\'a di diffusione specie s,  per ottenere il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note  l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
+con $w_s$ velocit\'a di diffusione specie s. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note  l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
 
 Le condizioni al bordo per le equazioni precedenti sono
 
 \begin{itemize}
-    \item La superficie \'e definita da $T=T_{eff}$ e si ha la condizione $L=4\pi r^2\sigma T^4$. La pressione alla superficie \'e legata alla struttura di equilibrio dell'atmosfera.
+    \item La superficie \'e definita da $T=T_{eff}$ e si ha la condizione $\lsun{}=4\pi r^2\sigma T_{eff}^4$. La pressione alla superficie \'e legata alla struttura di equilibrio dell'atmosfera.
     \item In $r=0$ deve essere $L=0$, $M=0$.
     %e condizioni al centro si ricavano espandendo l, m attorno a $r=0$ in termini di $T_c, P_C,X_C,X_{3C}$ ed eguagliando le espansioni ai valori di l e m del punto pi\'u interno.
 \end{itemize}
 
 \begingroup
-\begin{wraptable}{l}{5cm}
-\begin{tabular}{|lc|}
+
+\renewcommand{\arraystretch}{1.3}
+\begin{wraptable}{l}{5.5cm}
+
+\caption{Osservabili solari principali.}
+
+\begin{tabular}{l|c}
+
+$\agesun{}$&\SI[separate-uncertainty=true]{5.57\pm0.02e9}{\year}\\
 \hline
-$\agesun{}$&\SI{e9}{\year}\\
 $\rsun{}$&\SI{6.9599e10}{\cm}\\
-$\lsun{}$&\SI{3.844e33}{\erg\per\second}\\
-$\left(\frac{Z}{X}\right)_{ph}$&0.0245\\
 \hline
+$\lsun{}$&\SI{3.844e33}{\erg\per\second}\\
+\hline
+$\left(\frac{Z}{X}\right)_{ph}$&0.0245\\
+
 \end{tabular}
-\caption{.}
+
 \end{wraptable}
 
-Evolvo il modello del Sole in sequenza principale fino ad ottenere un modello con le caratteristiche del Sole attuale:
-
-
-
-l'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffusionchange}, dovuto principalmente alle reazioni di fusione \eqref{subeqn:energyrate}, deve essere compensato da un'aumento di temperatura con conseguente incremento dell'energia generata e della luminosit\'a.
+Evolvo il modello del Sole in sequenza principale fino ad ottenere un modello con le caratteristiche del Sole attuale: l'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffusionchange}, dovuto principalmente alle reazioni di fusione \eqref{eq:energyrate}, deve essere compensato da un'aumento di temperatura con conseguente incremento dell'energia generata e della luminosit\'a.
 
 \endgroup
+
+\vspace{2.4\baselineskip}
 
 %Evolvo il modello del Sole in sequenza principale fino ad ottenere un modello con le caratteristiche del Sole attuale:
 %l'incertezza sull'abbondanza iniziale di He e sui meccanismi del trasporto convettivo rendono necessaria una calibrazione in funzione della luminosit\'a e raggio attuali.
@@ -829,28 +835,25 @@ l'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffus
 
 \begingroup
 
-
-\begin{wraptable}{r}{5.5cm}
+\renewcommand{\arraystretch}{1.3}
+\begin{wraptable}{r}{6.5cm}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 $Y_{in}$&$Y_{ph}$&$Z_{in}$&$\alpha$&$\frac{R_{cz}}{\rsun{}}$\\
+\hline
 0.27753&0.24695&0.02&2.09&0.712\\
 \hline
 \end{tabular}
 \caption{Risultati modello solare. Da \cite{bahcall95diffusion}.}
 \end{wraptable}
 
-L'et\'a del sistema solare \'e nota grazie modelli di formazione e analisi dei meteoriti che determinano $t_{\odot}=\SI{4.9+-0.1e9}{\year}$ con incertezza dovuta al periodo di solidificazione dei meteoriti.
-La luminosit\'a dipende fortemente dal valore di $Y_{in}$,  mentre il raggio da $\alpha$, parametro che regola l'efficienza del trasporto convettivo nella regione esterna.
-
+L'et\'a del sistema solare \'e nota grazie modelli di formazione del sistema solare e analisi dei meteoriti da cui si determina  $t_{\odot}=\SI{4.9+-0.1e9}{\year}$ con incertezza dovuta al periodo di solidificazione dei meteoriti.
 
 \endgroup
 
 \tpc{!h}{
 \node at (0,0) {\includegraphics[width=\textwidth,trim=4 4 4 4,clip]{bahcall95}};
 }{(0,-7)}{\textwidth}{Profilo radiale della densit\'a, composizione, luminosit\'a e temperatura.}
-
-
 
 \begingroup
 \color{midnightblue}
@@ -865,9 +868,6 @@ incertezza composizione
 tabella input del mss: eta, luminosita, raggio,
 Incertezze negli input del SSM e quindi su $\alpha$ e $Y$
 \endgroup
-
 %\eqref{eq:massaguscio},\eqref{eq:fidroequilibrio},\eqref{eq:fenergyconservation}, \eqref{eq:ftransportenergy} a partire da $r=0$ produce soluzioni dipendenti da $(P_c,T_c)$, mentre le condizioni alla superficie sono pi\'u complesse perch\'e dipendono dalla struttura dell'atmosfera e le soluzioni sono dipendenti da $(R,L)$: i quattro parametri matematici del problema, $(P_c,T_C,L,R)$, sono determinati dalla condizione di continuit\'a ad un punto intermedio  delle soluzioni $(P,T,m(r),l(r))$ fra le soluzioni con condizioni al centro e sulla superficie.
-
-
 
 \end{document}
