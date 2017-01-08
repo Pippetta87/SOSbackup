@@ -5,11 +5,9 @@
 
 Si osservano fenomeni periodici, tramite tecniche fotometriche o spettroscopiche, tramite effetto doppler, in numerose regioni del diagramma di \hr{}: l'osservazione di fenomeni periodici nelle stelle permette di dedurre informazione sulla loro struttura interna e di ridurre le incertezze nello spazio dei parametri del modello stellare.
 
-Le stelle in sequenza principale, come il Sole nella fase attuale, sono caratterizzate da numerosi modi di oscillazione di piccola ampiezza: onde gravo-acustiche stazionarie le cui caratteristiche sono determinate dal profilo radiale di $P$ e $\rho$, dal profilo radiale della velocit\'a del suono e dalla geometria della stella.
+Le stelle in sequenza principale, come il Sole nella fase attuale, sono caratterizzate da numerosi modi di oscillazione di piccola ampiezza: onde gravo-acustiche stazionarie le cui caratteristiche sono determinate dal profilo radiale di $P$ e $\rho$, dal profilo radiale della velocit\'a del suono: le frequenze delle oscillazioni sono determinate principalmente dalla stratificazione e dinamica della regione in cui le ampiezze delle oscillazioni sono apprezzabili. Lo studio delle oscillazioni della superficie solare e l'estrapolazione delle informazioni sulla struttura interna in esse contenuta \'e detta eliosismologia.
 
-Lo studio delle oscillazioni della superficie solare e l'estrapolazione delle informazioni sulla struttura interna in esse contenuta \'e detta eliosismologia: le frequenze sono determinate principalmente dalla stratificazione e dinamica della regione in cui le ampiezze delle oscillazioni sono apprezzabili.
-
-\'E possibile calcolare numericamente le frequenze di oscillazione attese sulla base del modello solare e al variare di uno o pi\'u parametri del modello analizzare la corrispondenza con quelle osservate inoltre sono state sviluppate tecniche per analizzare il problema inverso e valutare le discrepanze modello/Sole dalla differenza tra frequenze predette dal modello e osservate.
+%\'E possibile calcolare numericamente le frequenze di oscillazione attese sulla base del modello solare e al variare di uno o pi\'u parametri del modello analizzare la corrispondenza con quelle osservate inoltre sono state sviluppate tecniche per analizzare il problema inverso e valutare le discrepanze modello/Sole dalla differenza tra frequenze predette dal modello e osservate.
 
 In questa sezione ricavo l'equazione del moto perturbato che descrive i modi normali del Sole: considero piccole perturbazioni dello stato di equilibrio e adiabatiche cio\'e molto pi\'u rapide del tempo scala per scambio di calore dovuto al flusso radiativo o alle reazioni nucleari.
 
@@ -18,47 +16,32 @@ In questa sezione ricavo l'equazione del moto perturbato che descrive i modi nor
 
 
 {\let\clearpage\relax
-\chapter{Perturbazioni lineari adiabatiche.}
+\chapter{Modi normali di oscillazione solari.}
 }
-
 
 \section{Perturbazione dello stato di equilibrio.}
 
+Descrivo le oscillazioni come piccole perturbazioni attorno allo stato di equilibrio stazionario (gli effetti non lineari, fra cui lo scambio di energia tra i modi, sono dell'ordine di $\frac{v}{c_s}$ dove v \'e l'ampiezza della velocit\'a dell'oscillazione). Indico con $P'(\vec{r},t)$ e $\delta P$ la perturbazione euleriana e lagrangiana della pressione e con $\rho'$, $\Phi'$ e $\vec{g}'$ la perturbazione euleriana della densit\'a , e le perturbazioni euleriane del potenziale gravitazionale e dell'accelerazione di gravit\'a conseguenti,  con $\delta\vec{r}=\vec{\xi}$ il vettore spostamento perturbato e con $\vec{v}=\PDof{t}(\Lvar{\vec{\xi}})$ la sua  velocit\'a:
+\begin{align}
+&P(\vec{r},t)=P_0(\vec{r})+P'(\vec{r},t)\label{eq:pressureperturbation}\\
+&\Lvar{P(\vec{r})}=P(\vec{r}+\Lvar{\vec{r}})-P_0(\vec{r})=P'(\vec{r})+\Lvar{\vec{r}}\cdot\nabla P_0\\
+&\vec{g}'=-\nabla\Phi',\ \nabla^2\Phi'=4\pi G\rho'\label{eq:gapert}
+\end{align}
 
-Descrivo le oscillazioni come piccole perturbazioni attorno allo stato di equilibrio stazionario (gli effetti non lineari sono dell'ordine di $\frac{v}{c_s}$ dove v \'e l'ampiezza dell'oscillazione). Indico con $P'(\vec{r},t)$ la perturbazione euleriana, con $\delta\vec{r}=\vec{\xi}$ lo spostamento della particella di fluido a causa della perturbazione e con $\vec{v}=\PDof{t}(\Lvar{\vec{\xi}})$ la sua  velocit\'a
-
-\begin{equation}
-P(\vec{r},t)=P_0(\vec{r})+P'(\vec{r},t)\label{eq:pressureperturbation}
-\end{equation}
-
-e in termini della variazione lagrangiana
-
-\begin{equation*}
-\Lvar{P(\vec{r})}=P(\vec{r}+\Lvar{\vec{r}})-P_0(\vec{r})=P'(\vec{r})+\Lvar{\vec{r}}\cdot\nabla P_0
-\end{equation*}
-
-
-
-Ricavo l'equazione del moto perturbato sostituendo \eqref{eq:pressureperturbation} nell'equazione del moto  $\rho\TDof{t}v\indices{_i}=\rho(\PDy{t}{v\indices{_i}}+v\indices{_j}\partial\indices{_j}v\indices{_i})=-\partial\indices{_i} P+\rho\vec{g}\indices{_i}$ e considerando solo i termini lineari nelle perturbazioni risulta:
-
-\begin{equation}
-\rho_0\PtwoDy{t}{\Lvar{\vec{r}}}=\rho_0\PDy{t}{\vec{v}}=-\nabla P'+\rho_0\vec{g}'+\rho'\vec{g}_0\label{eq:emper}
-\end{equation}
-
-con $\vec{g}'=-\nabla\Phi'$, $\nabla^2\Phi'=4\pi G\rho'$.
+Ricavo l'equazione del moto perturbato sostituendo \eqref{eq:pressureperturbation} nell'equazione del moto \eqref{eq:motion} considerando solo i termini lineari nella perturbazione:
+\begin{align}
+&\rho\TDof{t}v\indices{_i}=\rho(\PDy{t}{v\indices{_i}}+v\indices{_j}\partial\indices{_j}v\indices{_i})=-\partial\indices{_i} P+\rho\vec{g}\indices{_i}\\
+&\rho_0\PtwoDy{t}{\Lvar{\vec{r}}}=\rho_0\PDy{t}{\vec{v}}=-\nabla P'+\rho_0\vec{g}'+\rho'\vec{g}_0\label{eq:emper}
+\end{align}
 
 Analogamente per l'equazione di continuit\'a ottengo
 \begin{equation}
 \rho'+\div{(\rho_0\Lvar{\vec{r}})}=0\label{eq:contper}
 \end{equation}
 
-\begingroup
-\color{midnightblue}
+\section{Modi normali di oscillazione.}
 
-
-\subsection{Onde stazionarie: modo fondamentale.}
-
-Le oscillazioni solari sono in prevalenza dovute ad onde acustiche, in cui la forza di richiamo \'e prodotta dal gradiente di pressione: il profilo radiale della velocit\'a del suono determina il loro comportamento all'interno del Sole.
+Le oscillazioni solari sono in prevalenza dovute ad onde acustiche, in cui la forza di richiamo \'e prodotta dal gradiente di pressione.
 
 I modi puramente acustici di un corpo finito o comunque con condizioni ai bordi sono onde stazionarie la cui parte reale \'e del tipo $f(x,y,z)\cos{(\omega t+\alpha)}$: in assenza di effetti dissipativi la velocit\'a di fase \'e nulla e la velocit\'a di gruppo infinita, velocit\'a e pressione sono sfasati di $\frac{\pi}{2}$. 
 
@@ -68,11 +51,69 @@ Per un corpo in equilibrio idrostatico ricavo il valore medio della velocit\'a d
 \end{align}
 
 Per stelle in sequenza principale ho $\Omega=-q\frac{GM^2}{R}$ con $q\approx1.5$; per il modo fondamentale di oscillazione radiale si ha:
-\begin{align*}
- &\lambda_1\approx 2\rsun{},\ \omega_1\approx\frac{c_s}{\lambda_1},\ \Pi_1\approx\SI{1}{\hour}
-\end{align*}
+\begin{equation}
+\lambda_1\approx 2\rsun{},\ \omega_1\approx\frac{c_s}{\lambda_1},\ \Pi_1\approx\SI{1}{\hour}
+\end{equation}
 
-\endgroup
+Si osserva che l'ampiezza della velocit\'a di oscillazione \'e massima attorno a $\nu\approx\SI{5}{\minute}$.
+
+\subsection{Analisi del campo di velocit\'a della superficie solare.}
+
+Una parte basilare dell'informazione contenuta nei modi di oscillazione \'e ricavata analizzando  lo spostamento doppler delle righe di assorbimento dei metalli presenti negli strati visibili pi\'u esterni del sole.
+
+I modi relativi alle oscillazioni dei 5 minuti di grado l non elevato causano uno spostamento quasi totalmente radiale: il segnale \'e proporzionale alla velocit\'a proiettata lungo la linea di vista. Prendendo l'asse delle armoniche sferiche sul piano del cielo ortogonale alla linea di vista, il segnale Doppler osservato \'e proporzionale a
+
+\begin{equation}
+    V_D(\theta,\phi,t)=\sin{\theta}\cos{\phi}\sum_{n,l,m}A_{nlm}c_{lm}P_l^m(\cos{\theta})\cos{(m\phi-\omega_{nlm}t-\beta_{nlm})}
+\end{equation}
+
+il fattore $\sin{\theta}\cos{\phi}$ deriva dalla proiezione della velocit\'a radiale sulla linea di vista.
+
+Per isolare il contributo di una singola $Y_{l_0m_0}$ considero
+\begin{equation}
+V_{l_0m_0}(t)=\int_AV_D(\theta,\phi,t)W_{l_0m_0}(\theta,\phi)\,dA=\sum_{n,l,m}S_{l_0m_0,lm}A_{nlm}\cos{(\omega_{nlm}t+\beta_{nlm,L_0m_0})}
+\end{equation}
+e ho integrato sul disco solare con $W_{l_0m_0}\approx Y_{l_0m_0}$. La funzione di risposta $S_{l_0m_0,lm}\propto\delta_{ll_0}\delta_{mm_0}$ poich\'e le armoniche sferiche sono ortogonali sull'intera sfera $V_{l_0m_0}(t)$ contiene contributi da valori di $(l,m)$ vicini.
+
+La trasformata di Fourier di $V_{l_0m_0}(t)$ permette di isolare i singoli modi caratterizzati dall'ordine radiale n.
+
+Un segnale di durata T permette una risoluzione $\Delta\omega=\frac{2\pi}{T}$: se devo risolvere due frequenze $\omega$ e $\omega+\Delta\omega$ devo osservare per un tempo $T=\frac{2\pi}{\Delta\omega}$ e la frequenza pi\'u bassa osservabile \'e $\Delta\omega$. Il limite superiore delle frequenze osservate \'e dato dalla frequenza di Nyquist $\omega_{Ny}=\frac{\pi}{\Delta t}$ con $\Delta t$ risoluzione temporale, e analogamente per le variabili spaziali e vettore d'onda associato, quindi
+\begin{align}
+&\Delta\omega=\frac{2\pi}{T}\leq\omega\leq\frac{\pi}{\Delta t}\\
+&\Delta k_x=\frac{2\pi}{L_x}\leq k_x\leq\frac{\pi}{\Delta x}
+\end{align}
+
+In linea di principio:
+
+\begin{itemize}
+    \item Dall'andamento di un modo sulla superficie solare si ricava $(l,m)$.
+    \item L'ordine radiale n si ricava dalla distribuzione delle frequenze di oscillazione.
+\end{itemize}
+
+e, considerando che deviazioni dalla simmetria sferica causano uno splitting delle frequenze, un multipletto di frequenze si rappresenta come
+\begin{equation}
+\nu_{nlm}=\nu_{nl0}+\sum_{j=1}^{j_{\max}}a_j(n,l)\pol_j^{(l)}(m)\label{eq:freqmulti}
+\end{equation}
+
+i coefficienti dispari contengono il contributo della rotazione al termine lineare, i coefficienti pari effetti delle asfericit\'a nella struttura solare e effetti quadratici della rotazione.
+
+\subsection{Oscillazioni dei 5 minuti.}
+
+In \citet{lei62velocity} si osserva che la superficie solare ha scale spazio-temporali privilegiate: in particolare \'e presente un comportamento periodico nell'atmosfera a tutte le altezze rilevato tramite effetto doppler. Il periodo \'e di circa 300 secondi e la lunghezza caratteristica di qualche \si{\mega\meter}.
+
+Il modello proposto da \citet{ulrich70five} e \citet*{stein71five} considera le propriet\'a dei modi normali non radiali di oscillazione del Sole, in particolare usando la relazione di dispersione per onde acustiche, si ha la definizione di cavit\'a risonanti all'interno del Sole: la variazione delle propriet\'a del gas delimita le regioni di propagazione a diverse profondit\'a a seconda delle caratteristiche trasversali del moto.
+
+Le oscillazioni osservate hanno $\nu\geq\SI{500}{\micro\hertz}$, sono causate da modi p, onde stazionarie che si propagano come onda evanascente nell'atmosfera solare, e modi f, onde di superficie, di alto grado l.
+
+Approssimo la perturbazione di densit\'a, pressione e potenziale gravitazionale tramite un'onda piana con $k_h=\sqrt{k_x^2+k_y^2}$ numero d'onda orizzontale e $\vec{k}=k_r\hat{r}+\vec{k}_h$:  i modi si concentrano in determinate regioni del diagramma  $(k_h,\omega)$:
+
+[ridges in $k_h,\omega$ diagram]
+
+La simmetria sferica del modello solare rende naturale una descrizione delle perturbazioni in funzione di $Y\indices{_l^m}(\theta,\phi)$, l \'e l'ordine angolare: nell'approssimazione di onda piana si ha $k_h^2\approx\frac{l(l+1)}{r^2}$ (vedere \eqref{eq:SHperturb}).
+
+Le osservazione del disco solare risolto spazialmente permettono di individuare i modi di alto grado angolare: l'analisi tramite FFT (frequenza e $k_h$) delle osservazioni della superficie solare riportate in \citet{deu75observations} ($CI\ \SI{538}{\nano\meter}$) confermano che la  potenza delle oscillazioni (con numero d'onda $k_h=\frac{2\pi}{\lambda}<\SI{1}{\per\mega\meter}$) si distribuisce in linee determinate nel diagramma $(k_h,\omega)$ predette dal modello e quindi conferma che sono provocate da modi acustici non radiali degli strati interni alla fotosfera.
+
+Le osservazioni della luce integrata sull'intero disco selezionano modi di basso grado angolare: \citet{cla79solar} osservano nello spettro Doppler (linee di assorbimento di K neutro: \SI{769.9}{\nano\meter}) della luce integrata sull'intero disco solare dei picchi equi-spaziati circa \SI{68}{\micro\hertz} interpretate come modi p di alto ordine n e basso grado l. I modi di basso ordine radiale l penetrano in profondit\'a e quindi portano informazioni sulle regioni di fusione e la loro evoluzione.
 
 \subsection{Approssimazione adiabatica.}
 
@@ -99,7 +140,6 @@ Confronto $\frac{T}{\tau_R}$, $\frac{T}{\tau_{\epsilon}}$ con $\TDy{t}{T}\approx
 
 Il moto di una elemento di fluido \'e descritto dalla relazione adiabatica
 
-
 \begin{align*}
 &\TDy{t}{P}=\frac{\Gamma_1P}{\rho}\TDy{t}{\rho}
 \end{align*}
@@ -112,9 +152,7 @@ La condizione di perturbazione adiabatica linearizzata \'e
 &P'+\Lvar{\vec{\xi}}\cdot\nabla P_0=\frac{\Gamma_{1,0}P_0}{\rho}(\rho'+\Lvar{\vec{\xi}}\cdot\nabla\rho_0)\label{eq:adper}
 \end{align}
 
-\section{Modi di oscillazione.}
-
-\subsection{Separazione variabili spaziali e temporali.}
+\section{Oscillazioni lineari adiabatiche.}
 
 Dall'equazione del moto \eqref{eq:emper} si vede che
 
@@ -142,8 +180,6 @@ La variazione euleriana di densit\'a, pressione, potenziale gravitazionale sono 
 &(\rho',P',\Phi')=\exp{i\omega t}[\rho'(r),P'(r),\Phi'(r)]Y_l^m
 \end{align*}
 
-
-\subsection{Spettro delle oscillazioni.}
 
 Utilizzo l'equzione del moto \eqref{eq:emper} e l'equazione di continuit\'a \eqref{eq:contper} per eliminare $\xi_h(r)$ dall'equazione del moto
 \begin{align}
@@ -193,7 +229,7 @@ La condizione di non propagazione oltre la fotosfera dipende dalla descrizione d
 [Fig.3 pag. 13 \cite{chr02helioseismology}]
 
 
-\section{Eccitazione e tempo di vita dei modi.}
+\subsection{Eccitazione e tempo di vita dei modi.}
 
 La presenza di modi osservabili pone il problema del bilancio energetico dei modi: si deve capire se esistono modi instabili, cio\'e modi per cui l'ampiezza delle oscillazioni lineari cresce
 
@@ -416,66 +452,6 @@ I modi g di alto n e basso l soddisfano un'equazione analoga a \eqref{eq:freqequ
 %[Inserisci figura pgmodesC]
 
 
-{\let\clearpage\relax \chapter{Problematiche osservative.}} % 
-
-
-\section{Oscillazioni dei 5 minuti.}
-
-In \citet{lei62velocity} si osserva che la superficie solare ha scale spazio-temporali privilegiate: in particolare \'e presente un comportamento periodico nell'atmosfera a tutte le altezze rilevato tramite effetto doppler. Il periodo \'e di circa 300 secondi e la lunghezza caratteristica di qualche \si{\mega\meter}.
-
-Il modello proposto da \citet{ulrich70five} e \citet*{stein71five} considera le propriet\'a dei modi normali non radiali di oscillazione del Sole, in particolare usando la relazione di dispersione per onde acustiche, si ha la definizione di cavit\'a risonanti all'interno del Sole: la variazione delle propriet\'a del gas delimita le regioni di propagazione a diverse profondit\'a a seconda delle caratteristiche trasversali del moto.
-
-{\itshape Introdurre $l=k_h\rsun{}$}
-
-Le oscillazioni osservate hanno $\nu\geq\SI{500}{\micro\hertz}$, sono causate da modi p, onde stazionarie che si propagano come onda evanascente nell'atmosfera solare, e modi f, onde di superficie, di alto grado l.
-
-Sono possibili onde stazionarie per determinati valori di  $(k_h,\omega)$, dove la perturbazione della densit\'a, pressione e potenziale gravitazionale sono descritte approssimativamente da un'onda piana dove $k_h=\sqrt{k_x^2+k_y^2}$ \'e il numero d'onda orizzontale e $\vec{k}=k_r\hat{r}+\vec{k}_h$.
-
-La simmetria sferica del modello solare rende naturale una descrizione delle perturbazioni in funzione di $Y\indices{_l^m}(\theta,\phi)$, l \'e l'ordine angolare: nell'approssimazione di onda piana si ha $k_h^2\approx\frac{l(l+1)}{r^2}$ (vedere \eqref{eq:SHperturb}).
-
-Le osservazione del disco solare risolto spazialmente permettono di individuare i modi di alto grado angolare: l'analisi tramite FFT (frequenza e $k_h$) delle osservazioni della superficie solare riportate in \citet{deu75observations} ($CI\ \SI{538}{\nano\meter}$) confermano che la  potenza delle oscillazioni (con numero d'onda $k_h=\frac{2\pi}{\lambda}<\SI{1}{\per\mega\meter}$) si distribuisce in linee determinate nel diagramma $(k_h,\omega)$ predette dal modello e quindi conferma che sono provocate da modi acustici non radiali degli strati interni alla fotosfera.
-
-Le osservazioni della luce integrata sull'intero disco selezionano modi di basso grado angolare: \citet{cla79solar} osservano nello spettro Doppler (linee di assorbimento di K neutro: \SI{769.9}{\nano\meter}) della luce integrata sull'intero disco solare dei picchi equi-spaziati circa \SI{68}{\micro\hertz} interpretate come modi p di alto ordine n e basso grado l. I modi di basso ordine radiale l penetrano in profondit\'a e quindi portano informazioni sulle regioni di fusione e la loro evoluzione.
-
-\section{Analisi del campo di velocit\'a della superficie solare.}
-
-In linea di principio:
-
-\begin{itemize}
-    \item Dall'andamento di un modo sulla superficie solare si ricava $(l,m)$.
-    \item L'ordine radiale n si ricava dalla distribuzione delle frequenze di oscillazione.
-\end{itemize}
-
-e, considerando che deviazioni dalla simmetria sferica causano uno splitting delle frequenze, un multipletto di frequenze si rappresenta come
-\begin{equation}
-\nu_{nlm}=\nu_{nl0}+\sum_{j=1}^{j_{\max}}a_j(n,l)\pol_j^{(l)}(m)\label{eq:freqmulti}
-\end{equation}
-
-i coefficienti dispari contengono il contributo della rotazione al termine lineare, i coefficienti pari effetti delle asfericit\'a nella struttura solare e effetti quadratici della rotazione.
-
-Una parte basilare dell'informazione contenuta nei modi di oscillazione \'e ricavata analizzando  lo spostamento doppler delle righe di assorbimento dei metalli presenti negli strati visibili pi\'u esterni del sole.
-I modi relativi alle oscillazioni dei 5 minuti di grado l non elevato causano uno spostamento quasi totalmente radiale: il segnale \'e proporzionale alla velocit\'a proiettata lungo la linea di vista. Prendendo l'asse delle armoniche sferiche sul piano del cielo ortogonale alla linea di vista, il segnale Doppler osservato \'e proporzionale a
-
-\begin{equation}
-    V_D(\theta,\phi,t)=\sin{\theta}\cos{\phi}\sum_{n,l,m}A_{nlm}c_{lm}P_l^m(\cos{\theta})\cos{(m\phi-\omega_{nlm}t-\beta_{nlm})}
-\end{equation}
-
-il fattore $\sin{\theta}\cos{\phi}$ deriva dalla proiezione della velocit\'a radiale sulla linea di vista.
-
-Per isolare il contributo di una singola $Y_{l_0m_0}$ considero
-\begin{equation}
-V_{l_0m_0}(t)=\int_AV_D(\theta,\phi,t)W_{l_0m_0}(\theta,\phi)\,dA=\sum_{n,l,m}S_{l_0m_0,lm}A_{nlm}\cos{(\omega_{nlm}t+\beta_{nlm,L_0m_0})}
-\end{equation}
-e ho integrato sul disco solare con $W_{l_0m_0}\approx Y_{l_0m_0}$. La funzione di risposta $S_{l_0m_0,lm}\propto\delta_{ll_0}\delta_{mm_0}$ poich\'e le armoniche sferiche sono ortogonali sull'intera sfera $V_{l_0m_0}(t)$ contiene contributi da valori di $(l,m)$ vicini.
-
-La trasformata di Fourier di $V_{l_0m_0}(t)$ permette di isolare i singoli modi caratterizzati dall'ordine radiale n.
-
-Un segnale di durata T permette una risoluzione $\Delta\omega=\frac{2\pi}{T}$: se devo risolvere due frequenze $\omega$ e $\omega+\Delta\omega$ devo osservare per un tempo $T=\frac{2\pi}{\Delta\omega}$ e la frequenza pi\'u bassa osservabile \'e $\Delta\omega$. Il limite superiore delle frequenze osservate \'e dato dalla frequenza di Nyquist $\omega_{Ny}=\frac{\pi}{\Delta t}$ con $\Delta t$ risoluzione temporale, e analogamente per le variabili spaziali e vettore d'onda associato, quindi
-\begin{align}
-&\Delta\omega=\frac{2\pi}{T}\leq\omega\leq\frac{\pi}{\Delta t}\\
-&\Delta k_x=\frac{2\pi}{L_x}\leq k_x\leq\frac{\pi}{\Delta x}
-\end{align}
-
-
+%{\let\clearpage\relax \chapter{Problematiche osservative.}} % 
 
 \end{document}
