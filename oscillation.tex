@@ -55,13 +55,27 @@ Per stelle in sequenza principale ho $\Omega=-q\frac{GM^2}{R}$ con $q\approx1.5$
 \lambda_1\approx 2\rsun{},\ \omega_1\approx\frac{c_s}{\lambda_1},\ \Pi_1\approx\SI{1}{\hour}
 \end{equation}
 
-Si osserva che l'ampiezza della velocit\'a di oscillazione \'e massima attorno a $\nu\approx\SI{5}{\minute}$.
+I modi osservabili pi\'u facilmente hanno periodo attorno ai $\nu\approx\SI{5}{\minute}$ ci\'o \'e dovuto all'aumento del rumore solare a basse frequenze e ai processi di eccitazione dei modi che trasferiscono la massima energia.
 
 \subsection{Analisi del campo di velocit\'a della superficie solare.}
 
 Una parte basilare dell'informazione contenuta nei modi di oscillazione \'e ricavata analizzando  lo spostamento doppler delle righe di assorbimento dei metalli presenti negli strati visibili pi\'u esterni del sole.
 
-I modi relativi alle oscillazioni dei 5 minuti di grado l non elevato causano uno spostamento quasi totalmente radiale: il segnale \'e proporzionale alla velocit\'a proiettata lungo la linea di vista. Prendendo l'asse delle armoniche sferiche sul piano del cielo ortogonale alla linea di vista, il segnale Doppler osservato \'e proporzionale a
+\begingroup
+\color{midnightblue}
+$\frac{\Delta\lambda}{\lambda}\approx\num{e-10}$ doppler resonant scattering cell
+velocit\'a dirretta approx radialmente: I modi relativi alle oscillazioni dei 5 minuti di grado l non elevato causano uno spostamento quasi totalmente radiale: il segnale \'e proporzionale alla velocit\'a proiettata lungo la linea di vista. 
+\endgroup
+
+Per identificare i modi di oscillazione non radiali \'e necessario considerare anche la dipendenza spaziale del campo di velocit\'a per ottenere, tramite trasformata di Fourier, lo spettro di potenza.
+
+Un segnale di durata T permette una risoluzione $\Delta\omega=\frac{2\pi}{T}$: se devo risolvere due frequenze $\omega$ e $\omega+\Delta\omega$ devo osservare per un tempo $T=\frac{2\pi}{\Delta\omega}$ e la frequenza pi\'u bassa osservabile \'e $\Delta\omega$. Il limite superiore delle frequenze osservate \'e dato dalla frequenza di Nyquist $\omega_{Ny}=\frac{\pi}{\Delta t}$ con $\Delta t$ risoluzione temporale. Il dominio spazio-temporale quindi definisce, con analoghe relazioni per le variabili spaziali cartesiane e vettore d'onda associato, il dominio nello spazio $(\omega,\vec{k}_h)$ con $\vec{k}_h=(k_x,k_y)$
+\begin{align}
+&\Delta\omega=\frac{2\pi}{T}\leq\omega\leq\frac{\pi}{\Delta t}\\
+&\Delta k_x=\frac{2\pi}{L_x}\leq k_x\leq\frac{\pi}{\Delta x},\ \Delta k_y=\frac{2\pi}{L_x}\leq k_y\leq\frac{\pi}{\Delta y}
+\end{align}
+
+Considero la geometria sfrerica descrivendo la dipendenza spaziale prendendo l'asse delle armoniche sferiche sul piano del cielo ortogonale alla linea di vista, il segnale Doppler osservato \'e proporzionale a
 
 \begin{equation}
     V_D(\theta,\phi,t)=\sin{\theta}\cos{\phi}\sum_{n,l,m}A_{nlm}c_{lm}P_l^m(\cos{\theta})\cos{(m\phi-\omega_{nlm}t-\beta_{nlm})}
@@ -71,31 +85,24 @@ il fattore $\sin{\theta}\cos{\phi}$ deriva dalla proiezione della velocit\'a rad
 
 Per isolare il contributo di una singola $Y_{l_0m_0}$ considero
 \begin{equation}
-V_{l_0m_0}(t)=\int_AV_D(\theta,\phi,t)W_{l_0m_0}(\theta,\phi)\,dA=\sum_{n,l,m}S_{l_0m_0,lm}A_{nlm}\cos{(\omega_{nlm}t+\beta_{nlm,L_0m_0})}
+V_{l_0m_0}(t)=\int_AV_D(\theta,\phi,t)W_{l_0m_0}(\theta,\phi)\,dA=\sum_{n,l,m}S_{l_0m_0,lm}A_{nlm}(t)\cos{(\omega_{nlm}t+\beta_{nlm,L_0m_0})}
 \end{equation}
 e ho integrato sul disco solare con $W_{l_0m_0}\approx Y_{l_0m_0}$. La funzione di risposta $S_{l_0m_0,lm}\propto\delta_{ll_0}\delta_{mm_0}$ poich\'e le armoniche sferiche sono ortogonali sull'intera sfera $V_{l_0m_0}(t)$ contiene contributi da valori di $(l,m)$ vicini.
 
-La trasformata di Fourier di $V_{l_0m_0}(t)$ permette di isolare i singoli modi caratterizzati dall'ordine radiale n.
-
-Un segnale di durata T permette una risoluzione $\Delta\omega=\frac{2\pi}{T}$: se devo risolvere due frequenze $\omega$ e $\omega+\Delta\omega$ devo osservare per un tempo $T=\frac{2\pi}{\Delta\omega}$ e la frequenza pi\'u bassa osservabile \'e $\Delta\omega$. Il limite superiore delle frequenze osservate \'e dato dalla frequenza di Nyquist $\omega_{Ny}=\frac{\pi}{\Delta t}$ con $\Delta t$ risoluzione temporale, e analogamente per le variabili spaziali e vettore d'onda associato, quindi
-\begin{align}
-&\Delta\omega=\frac{2\pi}{T}\leq\omega\leq\frac{\pi}{\Delta t}\\
-&\Delta k_x=\frac{2\pi}{L_x}\leq k_x\leq\frac{\pi}{\Delta x}
-\end{align}
-
-In linea di principio:
+La trasformata di Fourier di $V_{l_0m_0}(t)$ permette di isolare i modi come picchi nello spettro di potenza $P(\omega,l,m)=|A_{nlm}|^2(\omega)$:
 
 \begin{itemize}
     \item Dall'andamento di un modo sulla superficie solare si ricava $(l,m)$.
     \item L'ordine radiale n si ricava dalla distribuzione delle frequenze di oscillazione.
 \end{itemize}
 
-e, considerando che deviazioni dalla simmetria sferica causano uno splitting delle frequenze, un multipletto di frequenze si rappresenta come
+Le deviazioni dalla simmetria sferica causano uno splitting delle frequenze: rappresento un multipletto di frequenze tramite
 \begin{equation}
 \nu_{nlm}=\nu_{nl0}+\sum_{j=1}^{j_{\max}}a_j(n,l)\pol_j^{(l)}(m)\label{eq:freqmulti}
 \end{equation}
+e ricavo i coefficienti tramite fit con le frequenze osservate; i coefficienti dispari contengono il contributo della rotazione al termine lineare, i coefficienti pari effetti delle asfericit\'a nella struttura solare e effetti quadratici della rotazione.
 
-i coefficienti dispari contengono il contributo della rotazione al termine lineare, i coefficienti pari effetti delle asfericit\'a nella struttura solare e effetti quadratici della rotazione.
+
 
 \subsection{Oscillazioni dei 5 minuti.}
 
