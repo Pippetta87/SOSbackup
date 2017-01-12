@@ -21,7 +21,7 @@ In questa sezione ricavo l'equazione del moto perturbato che descrive i modi nor
 
 \section{Perturbazione dello stato di equilibrio.}
 
-Descrivo le oscillazioni come piccole perturbazioni attorno allo stato di equilibrio stazionario (gli effetti non lineari, fra cui lo scambio di energia tra i modi, sono dell'ordine di $\frac{v}{c_s}$ dove v \'e l'ampiezza della velocit\'a dell'oscillazione). Indico con $P'(\vec{r},t)$ e $\delta P$ la perturbazione euleriana e lagrangiana della pressione e con $\rho'$, $\Phi'$ e $\vec{g}'$ la perturbazione euleriana della densit\'a , e le perturbazioni euleriane del potenziale gravitazionale e dell'accelerazione di gravit\'a conseguenti,  con $\delta\vec{r}=\vec{\xi}$ il vettore spostamento perturbato e con $\vec{v}=\PDof{t}(\Lvar{\vec{\xi}})$ la sua  velocit\'a:
+Descrivo le oscillazioni come piccole perturbazioni attorno allo stato di equilibrio stazionario (gli effetti non lineari, fra cui lo scambio di energia tra i modi, sono dell'ordine di $\frac{v}{c_s}$ dove v \'e l'ampiezza della velocit\'a dell'oscillazione). Indico con $P'(\vec{r},t)$ e $\delta P$ la perturbazione euleriana e lagrangiana della pressione e con $\rho'$, $\Phi'$ e $\vec{g}'$ la perturbazione euleriana della densit\'a , e le perturbazioni euleriane del potenziale gravitazionale e dell'accelerazione di gravit\'a conseguenti,  con $\delta\vec{r}=\vec{\xi}$ il vettore spostamento perturbato e con $\vec{v}=\PDof{t}(\Lvar{\vec{r}})$ la sua  velocit\'a:
 \begin{align}
 &P(\vec{r},t)=P_0(\vec{r})+P'(\vec{r},t)\label{eq:pressureperturbation}\\
 &\Lvar{P(\vec{r})}=P(\vec{r}+\Lvar{\vec{r}})-P_0(\vec{r})=P'(\vec{r})+\Lvar{\vec{r}}\cdot\nabla P_0\\
@@ -105,81 +105,106 @@ Il modello proposto da \citet{ulrich70five} e \citet*{stein71five} considera le 
 
 Le oscillazioni osservate hanno $\nu\geq\SI{500}{\micro\hertz}$, sono causate da modi p, onde stazionarie che si propagano come onda evanascente nell'atmosfera solare, e modi f, onde di superficie, di alto grado l.
 
-Approssimo la perturbazione di densit\'a, pressione e potenziale gravitazionale tramite un'onda piana con $k_h=\sqrt{k_x^2+k_y^2}$ numero d'onda orizzontale e $\vec{k}=k_r\hat{r}+\vec{k}_h$:  i modi si concentrano in determinate regioni del diagramma  $(k_h,\omega)$:
+Approssimo la perturbazione di densit\'a, pressione e potenziale gravitazionale tramite un'onda piana con $k_h=\sqrt{k_x^2+k_y^2}$ numero d'onda orizzontale e $\vec{k}=k_r\hat{r}+\vec{k}_h$:  i modi si concentrano in determinate regioni del diagramma  $(k_h,\omega)$.
 
-[ridges in $k_h,\omega$ diagram]
+La simmetria sferica del modello solare rende naturale una descrizione delle perturbazioni in funzione di $Y\indices{_l^m}(\theta,\phi)$, l \'e l'ordine angolare. Le funzioni armoniche sferiche  soddisfano
+\begin{equation}
+L^2Y_l^m=-\frac{1}{\sin{\theta}}\PDof{\theta}(\sin{\theta}\PDy{\theta}{Y_l^m})+\frac{1}{\sin^2{\theta}}\PtwoDy{\phi}{Y_l^m}=-r^2\nabla_h^2Y_l^m=l(l+1)Y_l^m\label{eq:SHperturb}
+\end{equation}
+nell'approssimazione di onda piana si ha $k_h^2\approx\frac{l(l+1)}{r^2}$.
 
-La simmetria sferica del modello solare rende naturale una descrizione delle perturbazioni in funzione di $Y\indices{_l^m}(\theta,\phi)$, l \'e l'ordine angolare: nell'approssimazione di onda piana si ha $k_h^2\approx\frac{l(l+1)}{r^2}$ (vedere \eqref{eq:SHperturb}).
+\begin{minipage}[c][7cm][c]{\textwidth}
+
+\begin{wrapfigure}[12]{r}{0.6\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.45\textwidth]{midlmodes}
+\caption{Distribuzione dei modi con $l\leq300$ nel diagramma $\nu-l$. Da \cite{chr02helioseismology}.}\label{fig:midlmodes}
+\end{wrapfigure}
 
 Le osservazione del disco solare risolto spazialmente permettono di individuare i modi di alto grado angolare: l'analisi tramite FFT (frequenza e $k_h$) delle osservazioni della superficie solare riportate in \citet{deu75observations} ($CI\ \SI{538}{\nano\meter}$) confermano che la  potenza delle oscillazioni (con numero d'onda $k_h=\frac{2\pi}{\lambda}<\SI{1}{\per\mega\meter}$) si distribuisce in linee determinate nel diagramma $(k_h,\omega)$ predette dal modello e quindi conferma che sono provocate da modi acustici non radiali degli strati interni alla fotosfera.
 
+\end{minipage}
+
+\begin{minipage}[c][7cm][t]{\textwidth}
+
+\begin{wrapfigure}[11]{r}{0.6\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.45\textwidth]{lowlmodes}
+\caption{Spettro modi di basso grado angolare. Da \cite{chr02helioseismology}.}\label{fig:lowlmodes}
+\end{wrapfigure}
+
+
 Le osservazioni della luce integrata sull'intero disco selezionano modi di basso grado angolare: \citet{cla79solar} osservano nello spettro Doppler (linee di assorbimento di K neutro: \SI{769.9}{\nano\meter}) della luce integrata sull'intero disco solare dei picchi equi-spaziati circa \SI{68}{\micro\hertz} interpretate come modi p di alto ordine n e basso grado l. I modi di basso ordine radiale l penetrano in profondit\'a e quindi portano informazioni sulle regioni di fusione e la loro evoluzione.
+
+\end{minipage}
 
 
 \section{Oscillazioni lineari adiabatiche.}
 
-\subsection{Approssimazione adiabatica.}
+Considero i tempi caratteristici per scambio di calore per un elemento di fluido soggetto a un moto periodico: sono molto maggiori del periodo delle pulsazioni solari.
 
-I tempi caratteristici per scambio di calore sono molto maggiori del periodo delle pulsazioni. Considero i termini a destra dell'equazione di conservazione dell'energia interna \eqref{eq:primatemp}, dove ho esplicitato il bilancio di calore usando \eqref{eq:heatgl},
+L'equazione di conservazione dell'energia interna \eqref{eq:primatemp}, esplicitando il bilancio di calore \eqref{eq:heatgl}, \'e
 
-
-\begin{equation*}
+\begin{equation}
 \TDy{t}{T}-\frac{\Gamma_2-1}{\Gamma_2}\frac{T}{P}\TDy{t}{P}=\frac{1}{c_P}(\epsilon-\frac{1}{\rho}\scap{\nabla}{F})
-\end{equation*}
+\end{equation}
 
-Stimo il tempo caratteristico $\tau_R$ per flusso radiativo \eqref{eq:radfluxTgradrelation}:
+Stimo il tempo caratteristico $\tau_R$ per flusso radiativo \eqref{eq:radfluxTgradrelation}, con $H$ lunghezza caratteristica per  la variazione di T:
 
+\noindent
+\begin{minipage}[c]{0.5\textwidth}
 \begin{align*}
-&\frac{1}{\rho c_P}\nabla\cdot(\frac{4acT^3}{3\kappa\rho}\nabla T)\approx\frac{4acT^4}{3\kappa\rho^2c_PH}=\frac{T}{\tau_R}&\intertext{H lunghezza caratteristica, in cgs:}\\
-&\tau_R=\num{e12}\frac{\kappa\rho^2H^2}{T^3}
+&\frac{1}{\rho c_P}\nabla\cdot(\frac{4acT^3}{3\kappa\rho}\nabla T)\approx\frac{4acT^4}{3\kappa\rho^2c_PH^2}=\frac{T}{\tau_R}\\
+&\tau_R=\num{e12}\frac{\kappa\rho^2H^2}{T^3}\ (\si{\cgs})
 \end{align*}
+\end{minipage}
+\begin{minipage}[c]{0.5\textwidth}
+\begin{tabular}{ll}
+Sole&Zona convettiva\\
+$\tau_R\approx\SI{e7}{\year}\approx\tkh{}$&$\tau_R\approx\SI{e3}{\year}$\\
+\end{tabular}
+\end{minipage}
 
-Per valori caratteristici dell'intero Sole ho ($\kappa=1$, $\rho=1$, $T=\num{e6}$, $H=\num{e10}$) ho $\tau_R\approx\SI{e7}{\year}\approx\tkh{}$, per valori caratteristici della zona convettiva ($\kappa=100$, $\rho=\num{e-5}$, $T=\num{e4}$, $H=\num{e9}$) ho $\tau_R\approx\SI{e3}{\year}$, in cgs.
-
+%Sole: $\kappa=1$, $\rho=1$, $T=\num{e6}$, $H=\num{e10}$)
+%Zona convettiva$\kappa=100$, $\rho=\num{e-5}$, $T=\num{e4}$, $H=\num{e9}$)
 
 Nella parte interna il termine dovuto alle reazioni nucleari \'e caratterizzato da un tempo $\tau_{\epsilon}\approx\frac{c_PT}{\epsilon}\approx\tkh{}$.
 
-Confronto $\frac{T}{\tau_R}$, $\frac{T}{\tau_{\epsilon}}$ con $\TDy{t}{T}\approx\frac{T}{\Pi_{osc}}$ con $\Pi_{osc}\approx\si{\minute}-\si{\hour}$: i termini dovuti allo scambio di calore sono trascurabili rispetto alla derivata temporale di T.
+Confronto $\frac{T}{\tau_R}$, $\frac{T}{\tau_{\epsilon}}$ con $\TDy{t}{T}\approx\frac{T}{\Pi_{osc}}$ con $\Pi_{osc}\approx\si{\minute}-\si{\hour}$: i termini dovuti allo scambio di calore sono trascurabili. L'approssimazione adiabatica non \'e pi\'u valida vicino alla superficie solare dove i tempi per lo scambio di calore sono pi\'u brevi.
 
 Il moto di una elemento di fluido \'e descritto dalla relazione adiabatica
+\begin{equation}
+\TDy{t}{P}=\frac{\Gamma_1P}{\rho}\TDy{t}{\rho}
+\end{equation}
 
-\begin{align*}
-&\TDy{t}{P}=\frac{\Gamma_1P}{\rho}\TDy{t}{\rho}
-\end{align*}
-
-Approssimazione adiabatica non pi\'u valida vicino alla superficie solare dove i tempi per lo scambio di calore sono pi\'u brevi.
+\begin{wrapfigure}[23]{r}{0.5\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.45\textwidth]{nrmodesLAWE}
+\caption{Modi adiabatici calcolati sulla base di un modello solare. Da \cite{chr02helioseismology}.}\label{fig:nrmodesLAWE}
+\end{wrapfigure}
 
 La condizione di perturbazione adiabatica linearizzata \'e
 \begin{align}
-&\PDy{t}{\Lvar{P}}-\frac{\Gamma_{1,0}P_0}{\rho_0}\PDy{t}{\Lvar{\rho}}=0\nonumber&\intertext{che integrata rispetto a t ed in funzione della variazione euleriana diventa}\nonumber\\
+&\PDy{t}{\Lvar{P}}-\frac{\Gamma_{1,0}P_0}{\rho_0}\PDy{t}{\Lvar{\rho}}=0\nonumber&\intertext{che integrata rispetto a t ed in funzione della variazione euleriana diventa}\\
 &P'+\Lvar{\vec{\xi}}\cdot\nabla P_0=\frac{\Gamma_{1,0}P_0}{\rho}(\rho'+\Lvar{\vec{\xi}}\cdot\nabla\rho_0)\label{eq:adper}
 \end{align}
 
-Dall'equazione del moto \eqref{eq:emper} si vede che
-
-\begin{equation*}
-\hat{r}\cdot(\rot{\PtwoDy{t}{\vec{\xi}}})=0\ \Rightarrow\ \PDof{\theta}(\sin{\theta}\xi_{\phi})-\PDy{\phi}{\xi_{\theta}}=0
-\end{equation*}
-
-quindi \'e possibile ricavare la componente tangenziale della perturbazione da una funzione scalare.
-
-Descrivo i modi normali di oscillazione introducendo la dipendenza temporale da $\exp{i\omega t}$ e angolare dalle funzioni armoniche sferiche $Y_{lm}(\theta,\phi)$
-
+Descrivo la dipendenza temporale dei modi normali tramite $\exp{i\omega t}$ e angolare tramite le funzioni armoniche sferiche $Y_{lm}(\theta,\phi)$; inoltre, introducendo la frequenza di \bv{} (vedi \eqref{eq:bvfs}), $a=\Phi'+\frac{P}{\rho_0}$, $b=\div{\vec{\	}}$, riscrivo l'equazione del moto \eqref{eq:emper} nella forma (vedi \cite{ledoux1958variable})
+\begin{align}
+&\omega^2\Lvar{\vec{\xi}}=\nabla a+\frac{N^2c^2}{g}\alpha\frac{\vec{r}}{r}\\
+&\hat{r}\cdot(\rot{\vec{\xi}})=0\ \Rightarrow\ \PDof{\theta}(\sin{\theta}\xi_{\phi})-\PDy{\phi}{\xi_{\theta}}=0
+\end{align}
+\'E quindi possibile ricavare la componente tangenziale della perturbazione da una funzione scalare:
 \begin{equation}
 \vec{\xi}=\exp{i\omega t}(\xi_r(r),\xi_h(r)\PDof{\theta},\frac{\xi_h(r)}{\sin{\theta}}\PDof{\phi})Y_l^m(\theta,\phi)
 \end{equation}
 
 dove ho scomposto il vettore spostamento perturbato in componente radiale $\xi_r(r)$ e tangenziale $\xi_h(r)$.
 
-Le funzioni armoniche sferiche  soddisfano
-\begin{equation}
-L^2Y_l^m=-\frac{1}{\sin{\theta}}\PDof{\theta}(\sin{\theta}\PDy{\theta}{Y_l^m})+\frac{1}{\sin^2{\theta}}\PtwoDy{\phi}{Y_l^m}=-r^2\nabla_h^2Y_l^m=l(l+1)Y_l^m\label{eq:SHperturb}
-\end{equation}
-
 La variazione euleriana di densit\'a, pressione, potenziale gravitazionale sono espresse
-\begin{align*}
-&(\rho',P',\Phi')=\exp{i\omega t}[\rho'(r),P'(r),\Phi'(r)]Y_l^m
-\end{align*}
+\begin{equation}
+(\rho',P',\Phi')=\exp{i\omega t}[\rho'(r),P'(r),\Phi'(r)]Y_l^m
+\end{equation}
 
 
 Utilizzo l'equzione del moto \eqref{eq:emper} e l'equazione di continuit\'a \eqref{eq:contper} per eliminare $\xi_h(r)$ dall'equazione del moto
@@ -192,7 +217,7 @@ Utilizzo l'equzione del moto \eqref{eq:emper} e l'equazione di continuit\'a \eqr
 con $g=-\frac{1}{\rho_0}\TDy{r}{P_0},\ c^2=\frac{\Gamma_1P_0}{\rho_0}$ e le frequenze critiche sono definite ho nella sezione \ref{sec:resonantcavity}.
 
 
-Il sistema di equazione \eqref{eq:eigenomega} ha soluzione con le opportune equazioni al contorno per un insieme discreto di valori delle frequenze, $\omega_{nlm}$. L'ordine angolare non compare nelle equazioni quindi gli autovalori $\omega_{nlm}$ sono $2l+1$ degeneri: la degenerazione \'e rimossa nel caso si tenga conto della rotazione ($\frac{\Omega}{\omega}\approx\num{e-4}$) o di effetti gravitazionali di altri corpi.
+Il sistema di equazione \eqref{eq:eigenomega} ha soluzione con le opportune condizioni al contorno per un insieme discreto di valori delle frequenze, $\omega_{nlm}$. L'ordine angolare m non compare nelle equazioni quindi gli autovalori $\omega_{nlm}$ sono $2l+1$ degeneri: la degenerazione \'e rimossa nel caso si tenga conto della rotazione ($\frac{\Omega}{\omega}\approx\num{e-4}$) o di effetti gravitazionali di altri corpi.
 
 
 Condizioni al contorno: sono necessarie 4 condizioni.
@@ -206,10 +231,9 @@ P'=0,\ \Phi'=0
 
 Vicino a zero risulta un andamento asintotico
 
-\begin{align*}
-&(l\neq0):\ \xi_r\propto r\expy{l-1};\ (l=0):\ \xi_r\propto r\\
-&P',\ \Phi'\propto r^l
-\end{align*}
+\begin{equation}
+(l\neq0):\ \xi_r\propto r\expy{l-1};\ (l=0):\ \xi_r\propto r;P',\ \Phi'\propto r^l
+\end{equation}
 
 \item Alla superficie solare richiediamo la continuit\'a di $\Lvar{\nabla\Phi}$ e che non si abbia propagazione verso l'esterno.
 
@@ -227,7 +251,7 @@ La condizione di non propagazione oltre la fotosfera dipende dalla descrizione d
 
 \end{itemize}
 
-[Fig.3 pag. 13 \cite{chr02helioseismology}]
+
 
 
 \section{Eccitazione e tempo di vita dei modi.} \label{sec:excitation}
