@@ -55,33 +55,29 @@ Per stelle in sequenza principale ho $\Omega=-q\frac{GM^2}{R}$ con $q\approx1.5$
 \lambda_1\approx 2\rsun{},\ \omega_1\approx\frac{c_s}{\lambda_1},\ \Pi_1\approx\SI{1}{\hour}
 \end{equation}
 
-I modi osservabili pi\'u facilmente hanno periodo attorno ai $\nu\approx\SI{5}{\minute}$ ci\'o \'e dovuto all'aumento del rumore solare a basse frequenze e ai processi di eccitazione dei modi che trasferiscono la massima energia.
+I modi osservabili pi\'u facilmente hanno periodo attorno a \SI{5}{\minute} ci\'o \'e dovuto all'aumento del rumore solare a basse frequenze e ai processi di eccitazione dei modi che trasferiscono la massima energia ai modi di tale periodo. (Vedi \ref{sec:excitation}).
 
 \subsection{Analisi del campo di velocit\'a della superficie solare.}
 
 Una parte basilare dell'informazione contenuta nei modi di oscillazione \'e ricavata analizzando  lo spostamento doppler delle righe di assorbimento dei metalli presenti negli strati visibili pi\'u esterni del sole.
 
-\begingroup
-\color{midnightblue}
-$\frac{\Delta\lambda}{\lambda}\approx\num{e-10}$ doppler resonant scattering cell
-velocit\'a dirretta approx radialmente: I modi relativi alle oscillazioni dei 5 minuti di grado l non elevato causano uno spostamento quasi totalmente radiale: il segnale \'e proporzionale alla velocit\'a proiettata lungo la linea di vista. 
-\endgroup
+L'ampiezza della velocit\'a di oscillazione per il singolo modo \'e  al pi\'u \SI{15}{\cm\per\second} quindi l'effetto doppler causa uno shift, al massimo, di $\frac{\Delta\lambda}{\lambda}\approx\num{e-10}$: tale shift si pu\'o misurare attraverso uno spettroscopio a scattering risonante  , per misure senza risoluzione spaziale, o con un tacometro di Fourier dove \'e necessaria risoluzione spaziale.
+
+% Na $D$ lines: $\lambda=\SI{589.6}{\nano\meter},\SI{589.0}{\nano\meter}$; SOHO (MDI): Ni \SI{678.8}{\nano\meter}; K Fraunhofer line \SI{770}{\nano\meter}; Ca \SI{643.9}{\nano\meter}; K \SI{769.9}{\nano\meter}
 
 Per identificare i modi di oscillazione non radiali \'e necessario considerare anche la dipendenza spaziale del campo di velocit\'a per ottenere, tramite trasformata di Fourier, lo spettro di potenza.
 
 Un segnale di durata T permette una risoluzione $\Delta\omega=\frac{2\pi}{T}$: se devo risolvere due frequenze $\omega$ e $\omega+\Delta\omega$ devo osservare per un tempo $T=\frac{2\pi}{\Delta\omega}$ e la frequenza pi\'u bassa osservabile \'e $\Delta\omega$. Il limite superiore delle frequenze osservate \'e dato dalla frequenza di Nyquist $\omega_{Ny}=\frac{\pi}{\Delta t}$ con $\Delta t$ risoluzione temporale. Il dominio spazio-temporale quindi definisce, con analoghe relazioni per le variabili spaziali cartesiane e vettore d'onda associato, il dominio nello spazio $(\omega,\vec{k}_h)$ con $\vec{k}_h=(k_x,k_y)$
-\begin{align}
-&\Delta\omega=\frac{2\pi}{T}\leq\omega\leq\frac{\pi}{\Delta t}\\
-&\Delta k_x=\frac{2\pi}{L_x}\leq k_x\leq\frac{\pi}{\Delta x},\ \Delta k_y=\frac{2\pi}{L_x}\leq k_y\leq\frac{\pi}{\Delta y}
-\end{align}
+\begin{equation}
+\Delta\omega=\frac{2\pi}{T}\leq\omega\leq\frac{\pi}{\Delta t},\ \Delta k_i=\frac{2\pi}{L_i}\leq k_i\leq\frac{\pi}{\Delta x_i}
+\end{equation}
 
-Considero la geometria sfrerica descrivendo la dipendenza spaziale prendendo l'asse delle armoniche sferiche sul piano del cielo ortogonale alla linea di vista, il segnale Doppler osservato \'e proporzionale a
-
+Considero la geometria sfrerica descrivendo la dipendenza spaziale tramite le funzioni armoniche sferiche con l'asse delle sul piano del cielo ortogonale alla linea di vista. Il segnale Doppler osservato \'e proporzionale a:
 \begin{equation}
     V_D(\theta,\phi,t)=\sin{\theta}\cos{\phi}\sum_{n,l,m}A_{nlm}c_{lm}P_l^m(\cos{\theta})\cos{(m\phi-\omega_{nlm}t-\beta_{nlm})}
 \end{equation}
 
-il fattore $\sin{\theta}\cos{\phi}$ deriva dalla proiezione della velocit\'a radiale sulla linea di vista.
+Il fattore $\sin{\theta}\cos{\phi}$ deriva dalla proiezione della velocit\'a radiale sulla linea di vista: i modi relativi alle oscillazioni dei 5 minuti di grado l non elevato causano uno spostamento quasi totalmente radiale.
 
 Per isolare il contributo di una singola $Y_{l_0m_0}$ considero
 \begin{equation}
@@ -89,20 +85,17 @@ V_{l_0m_0}(t)=\int_AV_D(\theta,\phi,t)W_{l_0m_0}(\theta,\phi)\,dA=\sum_{n,l,m}S_
 \end{equation}
 e ho integrato sul disco solare con $W_{l_0m_0}\approx Y_{l_0m_0}$. La funzione di risposta $S_{l_0m_0,lm}\propto\delta_{ll_0}\delta_{mm_0}$ poich\'e le armoniche sferiche sono ortogonali sull'intera sfera $V_{l_0m_0}(t)$ contiene contributi da valori di $(l,m)$ vicini.
 
-La trasformata di Fourier di $V_{l_0m_0}(t)$ permette di isolare i modi come picchi nello spettro di potenza $P(\omega,l,m)=|A_{nlm}|^2(\omega)$:
+La trasformata di Fourier di $V_{l_0m_0}(t)$ permette di isolare i modi come picchi nello spettro di potenza:
+\begin{equation}
+P(\omega,l,m)=|A_{nlm}|^2(\omega)
+\end{equation}
+L'andamento di un modo sulla superficie solare determina $(l,m)$ mentre l'ordine radiale n si ricava dalla distribuzione delle frequenze di oscillazione.
 
-\begin{itemize}
-    \item Dall'andamento di un modo sulla superficie solare si ricava $(l,m)$.
-    \item L'ordine radiale n si ricava dalla distribuzione delle frequenze di oscillazione.
-\end{itemize}
-
-Le deviazioni dalla simmetria sferica causano uno splitting delle frequenze: rappresento un multipletto di frequenze tramite
+Le deviazioni dalla simmetria sferica causano uno splitting delle frequenze: rappresento un multipletto di frequenze tramite espansione con base di polinomi appropriata (solitamente si usano i polinomi di Legendre)
 \begin{equation}
 \nu_{nlm}=\nu_{nl0}+\sum_{j=1}^{j_{\max}}a_j(n,l)\pol_j^{(l)}(m)\label{eq:freqmulti}
 \end{equation}
 e ricavo i coefficienti tramite fit con le frequenze osservate; i coefficienti dispari contengono il contributo della rotazione al termine lineare, i coefficienti pari effetti delle asfericit\'a nella struttura solare e effetti quadratici della rotazione.
-
-
 
 \subsection{Oscillazioni dei 5 minuti.}
 
@@ -121,6 +114,9 @@ La simmetria sferica del modello solare rende naturale una descrizione delle per
 Le osservazione del disco solare risolto spazialmente permettono di individuare i modi di alto grado angolare: l'analisi tramite FFT (frequenza e $k_h$) delle osservazioni della superficie solare riportate in \citet{deu75observations} ($CI\ \SI{538}{\nano\meter}$) confermano che la  potenza delle oscillazioni (con numero d'onda $k_h=\frac{2\pi}{\lambda}<\SI{1}{\per\mega\meter}$) si distribuisce in linee determinate nel diagramma $(k_h,\omega)$ predette dal modello e quindi conferma che sono provocate da modi acustici non radiali degli strati interni alla fotosfera.
 
 Le osservazioni della luce integrata sull'intero disco selezionano modi di basso grado angolare: \citet{cla79solar} osservano nello spettro Doppler (linee di assorbimento di K neutro: \SI{769.9}{\nano\meter}) della luce integrata sull'intero disco solare dei picchi equi-spaziati circa \SI{68}{\micro\hertz} interpretate come modi p di alto ordine n e basso grado l. I modi di basso ordine radiale l penetrano in profondit\'a e quindi portano informazioni sulle regioni di fusione e la loro evoluzione.
+
+
+\section{Oscillazioni lineari adiabatiche.}
 
 \subsection{Approssimazione adiabatica.}
 
@@ -158,8 +154,6 @@ La condizione di perturbazione adiabatica linearizzata \'e
 &\PDy{t}{\Lvar{P}}-\frac{\Gamma_{1,0}P_0}{\rho_0}\PDy{t}{\Lvar{\rho}}=0\nonumber&\intertext{che integrata rispetto a t ed in funzione della variazione euleriana diventa}\nonumber\\
 &P'+\Lvar{\vec{\xi}}\cdot\nabla P_0=\frac{\Gamma_{1,0}P_0}{\rho}(\rho'+\Lvar{\vec{\xi}}\cdot\nabla\rho_0)\label{eq:adper}
 \end{align}
-
-\section{Oscillazioni lineari adiabatiche.}
 
 Dall'equazione del moto \eqref{eq:emper} si vede che
 
@@ -236,10 +230,15 @@ La condizione di non propagazione oltre la fotosfera dipende dalla descrizione d
 [Fig.3 pag. 13 \cite{chr02helioseismology}]
 
 
-\subsection{Eccitazione e tempo di vita dei modi.}
+\section{Eccitazione e tempo di vita dei modi.} \label{sec:excitation}
 
 La presenza di modi osservabili pone il problema del bilancio energetico dei modi: si deve capire se esistono modi instabili, cio\'e modi per cui l'ampiezza delle oscillazioni lineari cresce
 
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.4\textwidth]{modespheomenology}
+\caption{Larghezza della risonanza, potenza ed energia totale. Da \cite{libbrecht1988solar}.}\label{fig:modespheomenology}
+\end{wrapfigure}
 
 [Si ipotizza che le oscillazioni siano eccitate in maniera stocastica dai moti convettivi: la larghezza delle frequenze risonanti \'e determinata dal tempo di smorzamento.]
 
