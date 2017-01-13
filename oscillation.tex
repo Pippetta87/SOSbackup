@@ -43,6 +43,8 @@ Analogamente per l'equazione di continuit\'a ottengo
 
 Le oscillazioni solari sono in prevalenza dovute ad onde acustiche, in cui la forza di richiamo \'e prodotta dal gradiente di pressione.
 
+[fig 5.3 pg 152 stix phase difference]
+
 I modi puramente acustici di un corpo finito o comunque con condizioni ai bordi sono onde stazionarie la cui parte reale \'e del tipo $f(x,y,z)\cos{(\omega t+\alpha)}$: in assenza di effetti dissipativi la velocit\'a di fase \'e nulla e la velocit\'a di gruppo infinita, velocit\'a e pressione sono sfasati di $\frac{\pi}{2}$. 
 
 Per un corpo in equilibrio idrostatico ricavo il valore medio della velocit\'a del suono utilizzando il teorema del viriale
@@ -252,11 +254,9 @@ La condizione di non propagazione oltre la fotosfera dipende dalla descrizione d
 \end{itemize}
 
 
-
-
 \section{Eccitazione e tempo di vita dei modi.} \label{sec:excitation}
 
-La presenza di modi osservabili pone il problema del bilancio energetico dei modi: si deve capire se esistono modi instabili, cio\'e modi per cui l'ampiezza delle oscillazioni lineari cresce
+Per spiegare l'ampiezza dei modi 
 
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
@@ -266,7 +266,15 @@ La presenza di modi osservabili pone il problema del bilancio energetico dei mod
 
 [Si ipotizza che le oscillazioni siano eccitate in maniera stocastica dai moti convettivi: la larghezza delle frequenze risonanti \'e determinata dal tempo di smorzamento.]
 
-[Thermal over-stability: ulrich70, stein leibacher71]
+Ampiezza
+\begin{align}
+&\TDtwoy{t}{A}+2\eta\TDy{t}{A}+\omega_0^2A=f(t)\\
+\end{align}
+
+Power spectrum near the peak:
+\begin{align}
+\exv{P(\omega)}\approx\frac{1}{4\omega_0^2}\frac{P_f(\omega)}{(\omega-\omega_0^2)^2+\eta^2}
+\end{align}
 
 [Extensive turbolent layers: stars lose all hint of vibrational instability]
 
@@ -278,7 +286,6 @@ La presenza di modi osservabili pone il problema del bilancio energetico dei mod
 
 [Power spectrum indipendent of l for $l<100$: low degree modes are not influenced by $k_h$. Vertical propagation: superficial layers (low l modes are generated in these strata)]
 
-[Oscillations are intrinsically over-stable?]
 
 [Interaction with turbolent convection]
 
@@ -318,7 +325,7 @@ Lo spettro \'e discreto, le oscillazioni sono prodotte da onde acustiche in cui 
 
 \item Per $\omega\to0$:
 
-Lo spettro \'e discreto, il moto \'e determinato dalla forza di gravit\'a, ho i modi g, ordinati secondo il numero di nodi radiali.
+Lo spettro \'e discreto, il moto \'e determinato dalla forza di gravit\'a: si hanno i modi g.
 
 \end{itemize}
 
