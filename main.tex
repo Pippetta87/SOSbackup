@@ -60,13 +60,14 @@
     \renewcommand\@memmain@floats{%
       \counterwithout{figure}{section}
       \counterwithout{table}{section}
-      \counterwithout{figure}{chapter}
-      \counterwithout{table}{chapter}
+      \counterwithin{figure}{chapter}
+      \counterwithin{table}{chapter}
+	\renewcommand{\thesubfigure}{\arabic{figure}.\alph{subfigure}}
+	\renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
+	\renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}
       }
     \makeatother
 %%%%
-\renewcommand{\thesubfigure}{\arabic{figure}.\alph{subfigure}}
-
 
 %%% input rawdata
 \input{rawdata.tex}

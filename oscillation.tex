@@ -41,20 +41,31 @@ Analogamente per l'equazione di continuit\'a ottengo
 
 \section{Modi normali di oscillazione.}
 
-Le oscillazioni solari sono in prevalenza dovute ad onde acustiche, in cui la forza di richiamo \'e prodotta dal gradiente di pressione.
+Le oscillazioni solari sono in prevalenza dovute ad onde acustiche, in cui la forza di richiamo \'e prodotta dal gradiente di pressione e onde in cui la forza di richiamo \'e la forza di gravit\'a.
 
-[fig 5.3 pg 152 stix phase difference]
+\begin{wrapfigure}[13]{r}{0.5\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.45\textwidth]{phasepropagation}
+\caption{Differenza di fase per il segnale doppler delle righe $(5930)$ Fe I, pi\'u profonda, e $(5896)$ Na I, pi\'u alta nell'atmosfera. Da \cite{staiger1987observations}.}
+\end{wrapfigure}
 
 I modi puramente acustici di un corpo finito o comunque con condizioni ai bordi sono onde stazionarie la cui parte reale \'e del tipo $f(x,y,z)\cos{(\omega t+\alpha)}$: in assenza di effetti dissipativi la velocit\'a di fase \'e nulla e la velocit\'a di gruppo infinita, velocit\'a e pressione sono sfasati di $\frac{\pi}{2}$. 
 
 Per un corpo in equilibrio idrostatico ricavo il valore medio della velocit\'a del suono utilizzando il teorema del viriale
-\begin{align}
-&-\Omega=3\int_VP\,dV=3\int_M\frac{P}{\rho}\,dm=3\int_M\frac{c_s^2}{\Gamma_1}\,dm=3\exv{\frac{c_s^2}{\Gamma_1}}M\approx3\frac{\overline{c}_s^2}{\Gamma_1}M
-\end{align}
+\begin{equation}
+\begin{split}
+&-\Omega=3\int_VP\,dV=3\int_M\frac{P}{\rho}\,dm\\
+&=3\int_M\frac{c_s^2}{\Gamma_1}\,dm=3\exv{\frac{c_s^2}{\Gamma_1}}M\approx3\frac{\overline{c}_s^2}{\Gamma_1}M
+\end{split}
+\end{equation}
 
 Per stelle in sequenza principale ho $\Omega=-q\frac{GM^2}{R}$ con $q\approx1.5$; per il modo fondamentale di oscillazione radiale si ha:
 \begin{equation}
 \lambda_1\approx 2\rsun{},\ \omega_1\approx\frac{c_s}{\lambda_1},\ \Pi_1\approx\SI{1}{\hour}
+\end{equation}
+dove il quadrato della velocit\'a del suono \'e
+\begin{equation}
+c_s^2=\frac{\Gamma_1P_0}{\rho_0}\label{eq:soundspeed}
 \end{equation}
 
 I modi osservabili pi\'u facilmente hanno periodo attorno a \SI{5}{\minute} ci\'o \'e dovuto all'aumento del rumore solare a basse frequenze e ai processi di eccitazione dei modi che trasferiscono la massima energia ai modi di tale periodo. (Vedi \ref{sec:excitation}).
@@ -116,30 +127,22 @@ L^2Y_l^m=-\frac{1}{\sin{\theta}}\PDof{\theta}(\sin{\theta}\PDy{\theta}{Y_l^m})+\
 nell'approssimazione di onda piana si ha $k_h^2\approx\frac{l(l+1)}{r^2}$.
 
 \begin{minipage}[c][7cm][c]{\textwidth}
-
 \begin{wrapfigure}[12]{r}{0.6\textwidth}
 \centering
 \includegraphics[keepaspectratio,width=0.45\textwidth]{midlmodes}
 \caption{Distribuzione dei modi con $l\leq300$ nel diagramma $\nu-l$. Da \cite{chr02helioseismology}.}\label{fig:midlmodes}
 \end{wrapfigure}
-
 Le osservazione del disco solare risolto spazialmente permettono di individuare i modi di alto grado angolare: l'analisi tramite FFT (frequenza e $k_h$) delle osservazioni della superficie solare riportate in \citet{deu75observations} ($CI\ \SI{538}{\nano\meter}$) confermano che la  potenza delle oscillazioni (con numero d'onda $k_h=\frac{2\pi}{\lambda}<\SI{1}{\per\mega\meter}$) si distribuisce in linee determinate nel diagramma $(k_h,\omega)$ predette dal modello e quindi conferma che sono provocate da modi acustici non radiali degli strati interni alla fotosfera.
-
 \end{minipage}
 
 \begin{minipage}[c][7cm][t]{\textwidth}
-
 \begin{wrapfigure}[11]{r}{0.6\textwidth}
 \centering
 \includegraphics[keepaspectratio,width=0.45\textwidth]{lowlmodes}
 \caption{Spettro modi di basso grado angolare. Da \cite{chr02helioseismology}.}\label{fig:lowlmodes}
 \end{wrapfigure}
-
-
 Le osservazioni della luce integrata sull'intero disco selezionano modi di basso grado angolare: \citet{cla79solar} osservano nello spettro Doppler (linee di assorbimento di K neutro: \SI{769.9}{\nano\meter}) della luce integrata sull'intero disco solare dei picchi equi-spaziati circa \SI{68}{\micro\hertz} interpretate come modi p di alto ordine n e basso grado l. I modi di basso ordine radiale l penetrano in profondit\'a e quindi portano informazioni sulle regioni di fusione e la loro evoluzione.
-
 \end{minipage}
-
 
 \section{Oscillazioni lineari adiabatiche.}
 
@@ -216,7 +219,7 @@ Utilizzo l'equzione del moto \eqref{eq:emper} e l'equazione di continuit\'a \eqr
 &\frac{1}{r^2}\TDof{r}(r^2\TDy{r}{\Phi'})-\frac{l(l+1)}{r^2}\Phi'-\frac{4\pi G\rho_0}{g}N^2\xi_r-\frac{4\pi G}{c^2}P'=0\nonumber
 \end{align}
 
-con $g=-\frac{1}{\rho_0}\TDy{r}{P_0},\ c^2=\frac{\Gamma_1P_0}{\rho_0}$ e le frequenze critiche sono definite ho nella sezione \ref{sec:resonantcavity}.
+con $g=-\frac{1}{\rho_0}\TDy{r}{P_0}$.
 
 Il sistema di equazione \eqref{eq:eigenomega} ha soluzione con le opportune condizioni al contorno per un insieme discreto di valori delle frequenze, $\omega_{nlm}$. L'ordine angolare m non compare nelle equazioni quindi gli autovalori $\omega_{nlm}$ sono $2l+1$ degeneri: la degenerazione \'e rimossa nel caso si tenga conto della rotazione ($\frac{\Omega}{\omega}\approx\num{e-4}$) o di effetti gravitazionali di altri corpi.
 
@@ -226,7 +229,6 @@ Condizioni al contorno: sono necessarie 4 condizioni.
 \begin{equation}
 P'=0,\ \Phi'=0
 \end{equation}
-
 Vicino a zero risulta un andamento asintotico
 \begin{equation}
 (l\neq0):\ \xi_r\propto r\expy{l-1};\ (l=0):\ \xi_r\propto r;P',\ \Phi'\propto r^l
@@ -237,18 +239,15 @@ All'esterno della stella ho $\rho'=0$ quindi scelgo la soluzione nulla a infinit
 \begin{equation}
 \TDy{r}{\Phi'}+\frac{l+1}{r}\Phi'=0,\ r=\rsun{}    
 \end{equation}
-
 La condizione di non propagazione oltre la fotosfera dipende dalla descrizione dell'atmosfera solare. Nella versione pi\'u semplice impongo che la variazione di pressione sia zero alla superficie perturbata della stella
 \begin{align}
 &\Lvar{P}=P'+\xi_r\TDy{r}{P}=0
 \end{align}
-
 \end{itemize}
-
 
 \section{Eccitazione e tempo di vita dei modi.} \label{sec:excitation}
 
-\begin{wrapfigure}[27]{r}{0.5\textwidth}
+\begin{wrapfigure}[23]{r}{0.5\textwidth}
 \centering
 \includegraphics[keepaspectratio,width=0.4\textwidth]{Powerspectraldensity}
 \caption{$\exv{P}=|A(\omega)|^2$ spettro di oscillatore armonico forzato, smorzato di frequenza naturale $\midfrac{\omega_{nl}}{2\pi}$. Da \cite{houdek2006stochastic}.}\label{fig:Powerspectraldensity}
@@ -269,7 +268,7 @@ Assumendo $\omega_{nl}\gg\Gamma_{nl}$, cio\'e gli scambi di energia tra i modi e
 \exv{P(\omega)}\propto P_LP_f=\frac{\midfrac{\Gamma_{nl}}{2\pi}}{(\omega-\omega_0)^2+\midfrac{\Gamma_{nl}}{4}}P_f
 \end{equation}
 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{wrapfigure}[20]{r}{0.5\textwidth}
 \centering
 \includegraphics[keepaspectratio,width=0.4\textwidth]{modespheomenology}
 \caption{FWHM per i modi osservati, $V_{nl}$, energia totale per modi con $l\approx20$. Da \cite{libbrecht1988solar}.}\label{fig:modespheomenology}
@@ -314,63 +313,45 @@ La media temporale dell'energia di un modo \'e
 \chapter{Caratteristiche asintotiche delle oscillazioni adiabatiche.}\label{chap:asyntoticbehavour}
 }
 
-%[inserisci figura propagation ag]
 
-I modi gravo-acustici descritti in \eqref{eq:eigenomega} si riducono ai modi p ed f per alte frequenze e ai modi g per basse frequenze. Approssimando il comportamento della perturbazione localmente con un'onda piana e trascurando la perturbazione al potenziale gravitazionale $\Phi'$ si ottendono soluzioni asintotiche per gli autovettori e le frequenze dei modi normali.
+I modi gravo-acustici descritti in \eqref{eq:eigenomega} si riducono ai modi p ed f per alte frequenze e ai modi g per basse frequenze. Approssimando il comportamento della perturbazione localmente con un'onda piana e trascurando la perturbazione al potenziale gravitazionale $\Phi'$ si ottendono soluzioni asintotiche per i modi normali e relazioni di dispersione approssimate.
 
 \section{Comportamento asintotico.}
 
 Per determinare la struttura dello spettro delle oscillazioni introduciamo l'approssimazione di Cowling (\cite{cow41oscillations}) cio\'e trascuriamo la perturbazione del potenziale gravitazionale. Quindi il sistema \eqref{eq:eigenomega} si riduce al secondo ordine
 
+\begin{subequations}\label{cowosc:main}
 \begin{align}
-&\frac{1}{r^2}\TDof{r}(r^2\xi_r)-\frac{\xi_rg}{c^2}+\frac{1}{\rho_0}(\frac{1}{c^2}-\frac{l(l+1)}{r^2\omega^2})P'=0\label{eq:cowosc}\\
-&\frac{1}{\rho_0}(\TDof{r}+\frac{g}{c^2})P'-(\omega^2-N^2)\xi_r=0\nonumber
+&\frac{1}{r^2}\TDof{r}(r^2\xi_r)-\frac{\xi_rg}{c^2}+\frac{1}{\rho_0}(\frac{1}{c^2}-\frac{l(l+1)}{r^2\omega^2})P'=0\label{cowosc:a}\\
+&\frac{1}{\rho_0}(\TDof{r}+\frac{g}{c^2})P'-(\omega^2-N^2)\xi_r=0\label{cowosc:b}
 \end{align}
+\end{subequations}
+
 
 Considero i limiti asintotici di alte e basse frequenze: ottengo un problema del tipo di Sturm-Liuville.
 %https://en.wikipedia.org/wiki/Sturm%E2%80%93Liouville_theory
-
 \begin{itemize}
-\item Per $\omega\to\infty$:
+\item Per $\omega\to\infty$: lo spettro \'e discreto, le oscillazioni sono prodotte da onde acustiche in cui la forza dominante \'e fornita dalla pressione, i modi p, ordinati in base al numero di zeri di $\xi_r$ fra il centro e la superficie.
 
-Lo spettro \'e discreto, le oscillazioni sono prodotte da onde acustiche in cui la forza dominante \'e fornita dalla pressione, i modi p, ordinati in base al numero di zeri di $\xi_r$ fra il centro e la superficie.
-
-\item Per $\omega\to0$:
-
-Lo spettro \'e discreto, il moto \'e determinato dalla forza di gravit\'a: si hanno i modi g.
+\item Per $\omega\to0$ lo spettro \'e discreto, il moto \'e determinato dalla forza di gravit\'a: si hanno i modi g.
 
 \end{itemize}
+%Lo spettro solare \'e la combinazione dei modi parziali precedenti; 
+I modi f separano i modi g e p: non hanno nodi in direzione radiale.
 
-Lo spettro solare \'e la combinazione dei modi parziali precedenti; i modi f separano i modi g e p: non hanno nodi in direzione radiale.
-
-{\itshape Relazione di dispersione per i modi gravo-acustici.}
-
-Approssimo il comportamento spaziale delle oscillazioni con quello di onda piana
-\begin{align*}
-&\vec{\xi}\propto\exp{i\scap{k}{x}},\ \vec{k}=k_r\hat{r}+\vec{k}_h\\
-&S_l^2=\frac{l(l+1)c^2}{r^2}\approx k_h^2c^2
-\end{align*}
-
-Considero i coefficienti delle equazioni \eqref{eq:cowosc} costanti ad eccezione di $P_0,\ \rho_0$: approssimazione valida se la lunghezza d'onda delle perturbazioni \'e molto minore della scala caratteristica di variazione dei coefficienti.
-
-%stix local treatment pg 165
-
-
-Sostituisco
-\begin{align}
-&\xi_r\propto\rho_0\expy{-\frac{1}{2}}\exp{ik_rr},\ P_1\propto\rho_0\expy{\frac{1}{2}}\exp{ik_rr}&\intertext{forma richiesta dalla conservazione dell'energia e della quantit\'a di moto, e ottengo la relazione di dispersione:}\nonumber\\
-&k_r^2=\frac{\omega^2-\omega_A^2}{c^2}+S_l\frac{N^2-\omega^2}{c^2\omega^2}=\frac{\omega^2}{c^2}(1-\frac{\omega_{l,+}^2}{\omega^2})(1-\frac{\omega_{l,-}^2}{\omega^2})\label{eq:localdispersion}&\intertext{e quindi determino le frequenze critiche per i modi gravo-acustici}\nonumber\\
-&\omega_{\pm}=\frac{1}{2}(S_l^2+\omega_c^2)\pm\sqrt{\frac{1}{2}(S_l^2+\omega_c^2)^2-N^2S_l^2}
-\end{align}
-
-I modi di oscillazione soddisfano la relazione
+\'E utile fare l'ulteriore approssimazione, valida per grandi n, di trascurare la variabile perturbata rispetto alla sua derivata radiale, e cos\'i si ottiene
+\begin{equation}\label{eq:secondorder}
+\TtwoDy{r}{\xi_r}=\frac{\omega^2}{c_s^2}(1-\frac{N^2}{\omega^2})(\frac{S_l^2}{\omega^2}-1)\xi_r=-K(r)\xi_r
+\end{equation}
+per $K(r)>0$ quest'equazione descrive un comportamento oscillante; considerando un'onda piana si ha la relazione di dispersione:
 \begin{equation}
-\omega\int_{r_1}^{r_2}\sqrt{1-\frac{\omega_c^2}{\omega^2}-\frac{S_l^2}{\omega^2}(1-\frac{N^2}{\omega^2})}\,\frac{dr}{c}\approx\pi(n-\frac{1}{2})\label{eq:JWKBmode}
+k_r^2=\frac{\omega^2}{c_s^2}(\frac{N^2}{\omega^2}-1)(\frac{S_l^2}{\omega^2}-1)\label{eq:approximatedispersion}
 \end{equation}
 
 \section{Cavit\'a risonanti.} \label{sec:resonantcavity} %Definizione frequenze critiche
 
-La parte superiore dello spettro delle oscillazioni \'e caratterizzata da modi acustici mentre la parte inferiore \'e caratterizzata da modi di gravit\'a (vedere capitolo \ref{chap:asyntoticbehavour}). La variazione delle propriet\'a del gas influenzano la velocit\'a del suono, $c_s=\Gamma_1\frac{P}{\rho}$, e le frequenze critiche: esistono regioni dell'interno solare, dipendenti dalla natura delle oscillazioni, in cui \'e possibile un comportamento periodico ai cui bordi si ha riflessione interna.
+I modi p e g sono confinati in regioni dell'interno solare determinate dalla variazione delle caratteristiche del plasma solare.
+%La variazione delle propriet\'a del gas influenzano la velocit\'a del suono, $c_s=\Gamma_1\frac{P}{\rho}$, e le frequenze critiche: esistono regioni dell'interno solare, dipendenti dalla natura delle oscillazioni, in cui \'e possibile un comportamento periodico ai cui bordi si ha riflessione interna.
 
 \begin{minipage}{\linewidth}
 \begin{tikzpicture}
@@ -388,102 +369,119 @@ La parte superiore dello spettro delle oscillazioni \'e caratterizzata da modi a
 \end{tikzpicture}
 \end{minipage}
 
-
-
 Le onde acustiche sono confinate in una regione che \'e limitata superiormente dall'aumento della frequenza critica acustica
 \begin{equation}
-\omega_A=\frac{c_s}{2\densityscale{}}\sqrt{1-2\TDy{r}{\densityscale{}}}\label{eq:acusticcutoff}
+\omega_A=\frac{c_s}{2\densityscale{}}\sqrt{1-2\TDy{r}{\densityscale{}}}\propto T\expy{-\frac{1}{2}}\label{eq:acusticcutoff}
 \end{equation}
-causato dalla diminuzione della temperatura dato che $\omega_A\propto T\expy{-\frac{1}{2}}$ che provoca la riflessione delle onde con periodo attorno ai 5-min, mentre l'aumento della velocit\'a del suono con la profondit\'a e la conseguente rifrazione dell'onda porta a propagazione del moto puramente tangenziale $k_r=0$: ci\'o avviene nel guscio sferico per cui $c_s=\frac{\omega}{k_h}\approx\omega \frac{r}{L}$ ovvero per $\omega=S_l$ frequenza di Lamb definita da
+causato dalla diminuzione della temperatura che provoca la riflessione delle onde con periodo attorno ai 5-min, mentre l'aumento della velocit\'a del suono con la profondit\'a e la conseguente rifrazione dell'onda porta a propagazione del moto puramente tangenziale $k_r=0$ nel guscio sferico per cui $c_s=\frac{\omega}{k_h}\approx\omega \frac{r}{L}$ ovvero per $\omega=S_l$ frequenza di Lamb definita da
 \begin{equation}
 S_l^2=\frac{l(l+1)c_s^2}{r^2}\label{eq:Lambf}
 \end{equation}
 
 Maggiore \'e il grado l meno profonda \'e la cavit\'a: le cavit\'a acustiche si estendono nella zone convettiva fino alla profondit\'a in cui la rifrazione dovuta all'aumento della velocit\'a del suono $c_s\propto\sqrt{T}$ causa una riflessione totale dell'onda quando la velocit\'a del suono \'e aumentata fino alla loro velocit\'a di fase orizzontale.
 
+%Si pu\'o stimare la profondit\'a della cavit\'a acustica, utilizzando la condizione $c_s=\frac{\omega}{k_h}$ per $k_r=0$: approssimo la temperatura al punto di inversione del moto con $T\approx\Dcvar{\TDy{r}{T}}{ad}\delta$ dove $\delta$ \'e la profondit\'a della cavit\'a e, ipotizzando un gas ideale, ho $\Dcvar{\TDy{r}{T}}{ad}=\frac{g}{c_P}$ con $c_P$ calore specifico a pressione costante per unit\'a di massa.
+%Usando le relazioni fra gli esponenti adiabatici e che nel caso sono uguali a $\gamma$ riscrivo $c_s^2=(\Gamma_3-1)g\delta$ e sostituendo nella condizione al punto di inversione ottengo $\delta=\frac{\omega^2}{k_h^2(\Gamma_3-1)g}$: i modi con stesso $\frac{\omega}{k_h}$ sono confinati nella stessa cavit\'a.
 
-[Fig.5 pg. 15 \cite{chr02helioseismology}]
+%Le regione di propagazione dei modi g sono definite da $\omega<N$: i modi g sono confinati nelle regioni pi\'u interne del Sole.
+Le onde di gravit\'a sono presenti nelle regioni in cui il gas \'e neutro o completamente ionizzato ($N^2$ grande) mentre sono riflesse dalle regioni dove $N$ \'e piccolo o immaginario: ionizzazione parziale, instabilit\'a convettiva, centro del Sole.
+Ho cavit\'a risonanti per modi g:
+\begin{itemize}
+\item Core radiativo: i modi g sono confinati tra la la parte centrale dove $g\to0$ e il fondo della zona convettiva dove $N^2<0$.
+\item Atmosfera: $N$ ha un massimo in coincidenza del punto $T_m$ nella cromosfera: modi g confinati tra zona convettiva e cromosfera ($\Pi\approx\numrange{180}{800}\si{\second}$).
+\end{itemize}
 
-Si pu\'o stimare la profondit\'a della cavit\'a acustica, utilizzando la condizione $c_s=\frac{\omega}{k_h}$ per $k_r=0$: approssimo la temperatura al punto di inversione del moto con $T\approx\Dcvar{\TDy{r}{T}}{ad}\delta$ dove $\delta$ \'e la profondit\'a della cavit\'a e, ipotizzando un gas ideale, ho $\Dcvar{\TDy{r}{T}}{ad}=\frac{g}{c_P}$ con $c_P$ calore specifico a pressione costante per unit\'a di massa.
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.8\textwidth]{raypath-gp}
+\caption{(a): Percorso di due onda acustiche $p_8(l=2), p_8(l=100)$; (b): Percorso di un'onda di gravit\'a: $g_{10}(l=5)$. Da\cite{gou91seismic}.}
+\end{figure}
 
-Usando le relazioni fra gli esponenti adiabatici e che nel caso sono uguali a $\gamma$ riscrivo $c_s^2=(\Gamma_3-1)g\delta$ e sostituendo nella condizione al punto di inversione ottengo $\delta=\frac{\omega^2}{k_h^2(\Gamma_3-1)g}$: i modi con stesso $\frac{\omega}{k_h}$ sono confinati nella stessa cavit\'a.
-
-{\itshape Condizione di risonanza radiale}
-
+\subsection{Condizione di risonanza radiale}
 %[Specificare il valore di L: spherical harmonic expansion vs ray picture]
 
-In \citet{duv82dispersion} si mostra che un grafico di $\frac{\pi(n+\alpha)}{\omega}$ rispetto a $\frac{\omega}{k_h}$ rappresenta i modi p con un'unica curva, per $\alpha$ e n intero opportuni, quindi
-
+In \citet{duv82dispersion} si mostra che un grafico di $\frac{\pi(n+\alpha)}{\omega}$ rispetto a $\frac{\omega}{k_h}$ rappresenta i modi p con un'unica curva, per $\alpha$ opportuno, quindi:
 \begin{equation}
 (n+\alpha)\frac{\pi}{\omega}=F'(\frac{\omega}{k_h})=F(\frac{\omega}{L})\label{eq:duvallr}
 \end{equation}
 
-[Fig.2 \cite{duv82dispersion}]
+\begin{wrapfigure}[15]{r}{0.45\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.4\textwidth]{dispersionDuvall}
+\caption{I modi p sono rappresentati in un unica linea. Da \cite{duv82dispersion}.}
+\end{wrapfigure}
 
-La formula sopra si giustifica considerando che, per l fissato, le frequenze dei modi sono determinate dalla condizione che l'onda interferisca costruttivamente con se stessa, come per una cavita chiusa ad un'estremit\'a. Un'onda stazionaria in direzione radiale implica che l'integrale di $k_r$ nella regione di propagazione fra due zeri consecutivi sia un intero multiplo di $\pi$.
+Questo si giustifica considerando che, per l fissato, le frequenze dei modi sono determinate dalla condizione che l'onda interferisca costruttivamente con se stessa, come per una cavita chiusa ad un'estremit\'a. Un'onda stazionaria in direzione radiale implica che l'integrale di $k_r$ nella regione di propagazione fra due zeri consecutivi sia un intero multiplo di $\pi$ mentre $\alpha$ tiene conto del combiamento di fase nella riflessione.
+\begin{equation}
+(n+\alpha)\pi\approx\int_{r_t}^Rk_r\,dr\approx\int_{r_t}^R\frac{\omega}{c_s}\sqrt{1-\frac{S_l^2}{\omega^2}}\,dr\label{eq:duvallexpli}
+\end{equation}
+ho usato la relazione di dispersione per onde acustiche considerando il limite ad alte frequenze di \eqref{eq:approximatedispersion}
+\begin{equation}
+k_r^2\frac{\omega^2}{c_s^2}(\frac{S_l^2}{\omega^2}-1)
+\end{equation}
+quindi \'e
+\begin{equation}
+F(w)=\int_{r_t}^R\sqrt{1-\frac{c_s^2}{r^2w^2}}\,\frac{dr}{c_s}\label{eq:duvallf}
+\end{equation}
 
-\begin{align}
-&(n+\alpha)\pi\approx\int_{r_t}^Rk_r\,dr\approx\int_{r_t}^R\frac{\omega}{c_s}\sqrt{1-\frac{S_l^2}{\omega^2}}\,dr\label{eq:duvallexpli}&\intertext{ho usato la relazione di dispersione per onde acustiche e la frequenza di Lamb \eqref{eq:Lambf}, $c_s^2=\Gamma_1\frac{P}{\rho}$, con}\nonumber\\
-&F(w)=\int_{r_t}^R\sqrt{1-\frac{c_s^2}{r^2w^2}}\,\frac{dr}{c_s}\label{eq:duvallf}
-\end{align}
+Utilizzando invece il limite per basse frequenze di \eqref{eq:approximatedispersion} per i modi g trovo la relazione di dispersione approssimata per $l\neq0$
 
-{\itshape Cavit\'a risonanti per modi g.}
-
-I modi g sono modi di gravit\'a dovuti alla forza di galleggiamento. Le regione di propagazione dei modi g sono definite da $\omega<N$ per grandi $k_hH$ o $\omega<S_l\frac{\omega_A}{N}$ per $k_hH$ piccoli.
-
-Nella parte a basse frequenze dei modi g \'e valida una relazione di dispersione approssimata per $l\neq0$
-
-\begin{align}
-&k_r^2=\frac{S_l^2}{c^2}(\frac{N^2}{\omega^2}-1)\label{eq:dispersionag}
-\end{align}
-[introdotta in precedenza \eqref{eq:bvf}]
-
-Vale una relazione analoga a \eqref{eq:duvallexpli}
+\begin{equation}
+k_r^2=\frac{S_l^2}{c^2}(\frac{N^2}{\omega^2}-1)\label{eq:dispersionag}
+\end{equation}
+%[introdotta in precedenza \eqref{eq:bvf}]
+e ottengo l'espressione analoga di \eqref{eq:duvallexpli} per i modi g
 \begin{equation}
 \frac{(n+\alpha_g)\pi}{L}\approx\int_{r_1}^{r_2}(\frac{N^2}{\omega^2}-1)\expy{\frac{1}{2}}\,d\ln{r}\label{eq:duvallg}
 \end{equation}
 con $r_2\approx R_{cz}$.
 
-Le onde di gravit\'a sono presenti nelle regioni in cui il gas \'e neutro o completamente ionizzato ($N^2$ grande) mentre sono riflesse dalle regioni dove $N$ \'e piccolo o immaginario: ionizzazione parziale, instabilit\'a convettiva, centro del Sole.
+\subsection{Relazione di dispersione per i modi gravo-acustici.}
 
-Ho cavit\'a risonanti per modi g:
+Approssimo il comportamento spaziale delle oscillazioni con quello di onda piana $\vec{\xi}\propto\exp{i\scap{k}{x}}$ con $\vec{k}=k_r\hat{r}+\vec{k}_h$.
 
-\begin{itemize}
-\item Core radiativo.
+Considero i coefficienti delle equazioni \eqref{cowosc:main} costanti ad eccezione di $P_0,\ \rho_0$: approssimazione valida se la lunghezza d'onda delle perturbazioni \'e molto minore della scala caratteristica di variazione dei coefficienti.
+%stix local treatment pg 165
 
-I modi g sono confinati tra la la parte centrale dove $g\to0$ e il fondo della zona convettiva dove $N^2<0$.
+Sostituisco
+\begin{align}
+&\xi_r\propto\rho_0\expy{-\frac{1}{2}}\exp{ik_rr},\ P_1\propto\rho_0\expy{\frac{1}{2}}\exp{ik_rr}&\intertext{forma richiesta dalla conservazione dell'energia e della quantit\'a di moto, e ottengo la relazione di dispersione}\nonumber\\
+&k_r^2=\frac{\omega^2-\omega_A^2}{c^2}+S_l\frac{N^2-\omega^2}{c^2\omega^2}=\frac{\omega^2}{c^2}(1-\frac{\omega_{l,+}^2}{\omega^2})(1-\frac{\omega_{l,-}^2}{\omega^2})\label{eq:localdispersion}&\intertext{e quindi determino le frequenze critiche per i modi gravo-acustici}\nonumber\\
+&\omega_{\pm}=\frac{1}{2}(S_l^2+\omega_c^2)\pm\sqrt{\frac{1}{2}(S_l^2+\omega_c^2)^2-N^2S_l^2}
+\end{align}
 
-\item Atmosfera.
-
-$N$ ha un massimo in coincidenza del punto $T_m$ nella cromosfera: modi g confinati tra zona convettiva e cromosfera ($\Pi\approx\numrange{180}{800}\si{\second}$).
-
-\end{itemize}
-
-[Fig.2 pg 636 da\cite{gou91seismic}]
-
+I modi di oscillazione soddisfano la relazione
+\begin{equation}
+\omega\int_{r_1}^{r_2}\sqrt{1-\frac{\omega_c^2}{\omega^2}-\frac{S_l^2}{\omega^2}(1-\frac{N^2}{\omega^2})}\,\frac{dr}{c}\approx\pi(n-\frac{1}{2})\label{eq:JWKBmode}
+\end{equation}
 
 \section{Espressioni asintotiche delle frequenze dei modi}
 
-Per alte frequenze trascuro N in \eqref{eq:JWKBmode}
-\begin{align*}
-&\omega\int_{r_1}^{r_2}\sqrt{1-\frac{\omega_c^2}{\omega^2}-\frac{S_l^2}{\omega^2}}\,\frac{dr}{c}\approx\pi(n-\frac{1}{2})&\intertext{con $r_1=r_t$, $r_2=R_t$, e $\alpha(\omega)$ funzione della frequenza e del comportamento vicino alla superficie di $\omega_c$ e nella regione in cui $\omega\approx S_l$. Ritrovo la relazione di Duvall \eqref{eq:duvallr}.}
-\end{align*}
+%Per alte frequenze trascuro N in \eqref{eq:JWKBmode}
+%\begin{align*}
+%&\omega\int_{r_1}^{r_2}\sqrt{1-\frac{\omega_c^2}{\omega^2}-\frac{S_l^2}{\omega^2}}\,\frac{dr}{c}\approx\pi(n-\frac{1}{2})&\intertext{con $r_1=r_t$, $r_2=R_t$, e $\alpha(\omega)$ funzione della frequenza e del comportamento vicino alla superficie di $\omega_c$ e nella regione in cui $\omega\approx S_l$. Ritrovo la relazione di Duvall \eqref{eq:duvallr}.}
+%\end{align*}
 
-Per modi di alto grado angolare, confinati nella regione convettiva, considerando $\Gamma_1$ e $g$ costanti e una stratificazione adiabatica, ho la relazione di dispersione approssimata
+Per modi di alto grado angolare, confinati nella regione convettiva, considerando $\Gamma_1$ e $g$ lentamenta variabili e una stratificazione adiabatica, ho la relazione di dispersione approssimata
 \begin{equation}
 \omega^2=\frac{2}{\mu_p}\frac{g}{R}(n+\alpha)
 \end{equation}
-dove $\mu_p=\frac{1}{\Gamma_1-1}$ \'e l'inidce politropico efficace della regione considerate 
+dove $\mu_p=\frac{1}{\Gamma_1-1}$ \'e l'inidce politropico efficace della regione considerate. 
 
-I modi di basso l penetrano in profondit\'a, quindi approssimo $r_t\approx0$, da cui risulta
-
+I modi di basso l penetrano in profondit\'a, quindi approssimo $r_t\approx0$, e, usando l'espansione
+\begin{equation}
+F(w)\approx\int_0^R\frac{dr}{c}-w\expy{-1}\frac{\pi}{2}
+\end{equation}
+ risulta
+\begin{equation}
+\int_0^R\frac{dr}{c}-\frac{L}{\omega}\frac{\pi}{2}=\frac{(n+\alpha)\pi}{\omega}
+\end{equation}
+e quindi le  frequenze sono equispaziate in n e $\nu_{nl}\approx\nu_{n-1,l+2}$:
 \begin{align}
-&\int_0^R\frac{dr}{c}-\frac{L}{\omega}\frac{\pi}{2}=\frac{(n+\alpha)\pi}{\omega}&\intertext{avendo usato l'espansione}\nonumber\\
-&F(w)\approx\int_0^R\frac{dr}{c}-w\expy{-1}\frac{\pi}{2}&\intertext{Ottengo la relazione, da cui le  frequenze risultano equispaziate in n e quasi degeneri per $n+\frac{l}{2}$, $\nu_{nl}\approx\nu_{n-1,l+2}$, con $\Delta\nu=[2\int_0^R\frac{dr}{c}]\expy{-1}$: }\nonumber\\
-&\nu_{nl}=\frac{\omega_{nl}}{2\pi}\approx(n+\frac{l}{2}+\frac{1}{4}+\alpha)\Delta\nu\label{eq:freqequi}&\intertext{Questo comportamento a bassi l \'e stato osservato da \cite{cla79solar} sulla luce integrata sul intero disco solare.}\nonumber
+&\nu_{nl}=\frac{\omega_{nl}}{2\pi}\approx(n+\frac{l}{2}+\frac{1}{4}+\alpha)\Delta\nu\label{eq:freqequi}\\
+&\Delta\nu=[2\int_0^R\frac{dr}{c}]\expy{-1}
 \end{align}
+Questo comportamento a bassi l \'e stato osservato da \cite{cla79solar} sulla luce integrata sul intero disco solare.
 
-{\itshape Espressione asintotica modi g.}
 
 Nell'interno solare approssimo \eqref{eq:JWKBmode} con
 \begin{equation}
@@ -499,8 +497,6 @@ I modi g di alto n e basso l soddisfano un'equazione analoga a \eqref{eq:freqequ
 
 %[Inserisci figura khomeagisot]
 %[Inserisci figura pgmodesC]
-
-
 %{\let\clearpage\relax \chapter{Problematiche osservative.}} % 
 
 \end{document}
