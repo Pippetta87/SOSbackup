@@ -218,35 +218,27 @@ Utilizzo l'equzione del moto \eqref{eq:emper} e l'equazione di continuit\'a \eqr
 
 con $g=-\frac{1}{\rho_0}\TDy{r}{P_0},\ c^2=\frac{\Gamma_1P_0}{\rho_0}$ e le frequenze critiche sono definite ho nella sezione \ref{sec:resonantcavity}.
 
-
 Il sistema di equazione \eqref{eq:eigenomega} ha soluzione con le opportune condizioni al contorno per un insieme discreto di valori delle frequenze, $\omega_{nlm}$. L'ordine angolare m non compare nelle equazioni quindi gli autovalori $\omega_{nlm}$ sono $2l+1$ degeneri: la degenerazione \'e rimossa nel caso si tenga conto della rotazione ($\frac{\Omega}{\omega}\approx\num{e-4}$) o di effetti gravitazionali di altri corpi.
 
-
 Condizioni al contorno: sono necessarie 4 condizioni.
-
 \begin{itemize}
 \item Due condizioni per $r=0$ selezionano le soluzioni regolari:
-
 \begin{equation}
 P'=0,\ \Phi'=0
 \end{equation}
 
 Vicino a zero risulta un andamento asintotico
-
 \begin{equation}
 (l\neq0):\ \xi_r\propto r\expy{l-1};\ (l=0):\ \xi_r\propto r;P',\ \Phi'\propto r^l
 \end{equation}
 
 \item Alla superficie solare richiediamo la continuit\'a di $\Lvar{\nabla\Phi}$ e che non si abbia propagazione verso l'esterno.
-
 All'esterno della stella ho $\rho'=0$ quindi scelgo la soluzione nulla a infinito dell'equazione di Poisson $\Phi'=Ar\expy{-l-1}$:
-
 \begin{equation}
 \TDy{r}{\Phi'}+\frac{l+1}{r}\Phi'=0,\ r=\rsun{}    
 \end{equation}
 
 La condizione di non propagazione oltre la fotosfera dipende dalla descrizione dell'atmosfera solare. Nella versione pi\'u semplice impongo che la variazione di pressione sia zero alla superficie perturbata della stella
-
 \begin{align}
 &\Lvar{P}=P'+\xi_r\TDy{r}{P}=0
 \end{align}
@@ -256,25 +248,44 @@ La condizione di non propagazione oltre la fotosfera dipende dalla descrizione d
 
 \section{Eccitazione e tempo di vita dei modi.} \label{sec:excitation}
 
-Per spiegare l'ampiezza dei modi 
+\begin{wrapfigure}[27]{r}{0.5\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.4\textwidth]{Powerspectraldensity}
+\caption{$\exv{P}=|A(\omega)|^2$ spettro di oscillatore armonico forzato, smorzato di frequenza naturale $\midfrac{\omega_{nl}}{2\pi}$. Da \cite{houdek2006stochastic}.}\label{fig:Powerspectraldensity}
+\end{wrapfigure}
+
+Un modello per descrivere l'eccitatazione dei modi p alle ampiezze osservate descrive l'interazione tra i modi e i moti turbolenti dovuti alla convezione tramite un insieme di oscillatori smorzati di frequenze naturali $\omega_{nl}$ e sottoposti a forzante stocastica: trascuro gli effetti non lineari e eventuali instabilit\'a intrinche alle pulsazioni.
+\begin{equation}
+I_{nl}[\TtwoDy{t}{\xi_{nl}}+\Gamma_{nl}\TDy{t}{\xi_{nl}}+\omega_0^2\xi_{nl}]=f(t)
+\end{equation}
+con $\xi_{nl}$ ampiezza dell'oscillatore, $\midfrac{\Gamma}{2}=\Im{\omega}$ costante di smorzamento e definisco l'inerzia del modo
+\begin{equation}
+I_{nl}=\int d^3x\rho_0(\vec{\xi}^*\cdot\vec{\xi})\label{eq:modeinertia}
+\end{equation}
+La funzione $f(t)$ contiene il contributo dei moti turbolenti e fluttuazioni entropia causati dai moti convettivi.
+
+Assumendo $\omega_{nl}\gg\Gamma_{nl}$, cio\'e gli scambi di energia tra i modi e la turbolenza hanno tempo caratteristico $\tau_{nad}\gg\Pi_{osc}$, lo spettro in frequenza dell'oscillatore $\exv{P(\omega)}=\exv{|\xi_{nl}(\omega)|^2}$ \'e della forma:
+\begin{equation}
+\exv{P(\omega)}\propto P_LP_f=\frac{\midfrac{\Gamma_{nl}}{2\pi}}{(\omega-\omega_0)^2+\midfrac{\Gamma_{nl}}{4}}P_f
+\end{equation}
 
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
 \includegraphics[keepaspectratio,width=0.4\textwidth]{modespheomenology}
-\caption{Larghezza della risonanza, potenza ed energia totale. Da \cite{libbrecht1988solar}.}\label{fig:modespheomenology}
+\caption{FWHM per i modi osservati, $V_{nl}$, energia totale per modi con $l\approx20$. Da \cite{libbrecht1988solar}.}\label{fig:modespheomenology}
 \end{wrapfigure}
 
+La media temporale dell'energia di un modo \'e
+\begin{align}
+%E_{\omega_0}=\int_0^M\exv{v_{osc}^2}
+&E_{nl}=I_{nl}V_{nl}^2\\
+&=\frac{1}{2}I_{nl}\omega_{nl}\exv{|A_{nl}^2|}\propto I_{nl}\omega_{nl}\intsinf{}P(\omega)\,d\omega\\
+&\propto\frac{P_f(\omega_{nl})}{\Gamma_{nl}}
+\end{align}
+
+[$H=\int_{-\delta}^{+\delta}|\tilde{V}(\nu)|^2\,d\nu$]
+
 [Si ipotizza che le oscillazioni siano eccitate in maniera stocastica dai moti convettivi: la larghezza delle frequenze risonanti \'e determinata dal tempo di smorzamento.]
-
-Ampiezza
-\begin{align}
-&\TDtwoy{t}{A}+2\eta\TDy{t}{A}+\omega_0^2A=f(t)\\
-\end{align}
-
-Power spectrum near the peak:
-\begin{align}
-\exv{P(\omega)}\approx\frac{1}{4\omega_0^2}\frac{P_f(\omega)}{(\omega-\omega_0^2)^2+\eta^2}
-\end{align}
 
 [Extensive turbolent layers: stars lose all hint of vibrational instability]
 
@@ -296,6 +307,7 @@ Power spectrum near the peak:
 [Excitation p-modes: fluctuating turbolent pressure (Raynold stresses). Excitation g-modes: nuclear burning instabilities. Damping: radiative losses, viscosity, nonlinear interaction between modes.]
 
 [Low l p-modes exponential decay with e-folding time several days.]
+
 
 
 {\let\clearpage\relax           %%% Chapter  Caratteristiche asintotiche delle oscillazioni adiabatiche.
@@ -346,7 +358,7 @@ Considero i coefficienti delle equazioni \eqref{eq:cowosc} costanti ad eccezione
 
 Sostituisco
 \begin{align}
-&\xi_r\propto\rho_0\expy{-\frac{1}{2}}\exp{ik_rr},\ P_1\propto\rho_0\expy{\frac{1}{2}}\exp{ik_rr}\&\intertext{forma richiesta dalla conservazione dell'energia e della quantit\'a di moto, e ottengo la relazione di dispersione:}\nonumber\\
+&\xi_r\propto\rho_0\expy{-\frac{1}{2}}\exp{ik_rr},\ P_1\propto\rho_0\expy{\frac{1}{2}}\exp{ik_rr}&\intertext{forma richiesta dalla conservazione dell'energia e della quantit\'a di moto, e ottengo la relazione di dispersione:}\nonumber\\
 &k_r^2=\frac{\omega^2-\omega_A^2}{c^2}+S_l\frac{N^2-\omega^2}{c^2\omega^2}=\frac{\omega^2}{c^2}(1-\frac{\omega_{l,+}^2}{\omega^2})(1-\frac{\omega_{l,-}^2}{\omega^2})\label{eq:localdispersion}&\intertext{e quindi determino le frequenze critiche per i modi gravo-acustici}\nonumber\\
 &\omega_{\pm}=\frac{1}{2}(S_l^2+\omega_c^2)\pm\sqrt{\frac{1}{2}(S_l^2+\omega_c^2)^2-N^2S_l^2}
 \end{align}
