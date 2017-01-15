@@ -14,7 +14,8 @@ Si pu\'o cos\'i verificare la struttura prevista dal \mss{} tramite una misura i
 {\let\clearpage\relax \chapter{Inversione asintotica.}} % Inizio chapter "Inversione asintotica." senza nuava pagina
 
 
-Si ricava, usando le espressioni asintotiche \eqref{eq:cowosc}, il profilo radiale della velocit\'a indipendente dal modello solare e si determina l'effetto dell'evoluzione stellare sui modi p di basso ordine radiale. Considerando la differenza tra risultati relativi a diversi set di frequenze \'e possibile attenuare gli effetti degli errori sistematici dovuti alla descrizione asintotica.
+Si ricava, usando le espressioni asintotiche \eqref{cowosc:main}, il profilo radiale della velocit\'a del suono indipendente dal modello solare e si determina l'effetto dell'evoluzione stellare sui modi p di basso ordine radiale.
+%Considerando la differenza tra risultati relativi a diversi set di frequenze \'e possibile attenuare gli effetti degli errori sistematici dovuti alla descrizione asintotica.
 
 \section{Inversione della legge di Duvall}
 
@@ -22,21 +23,23 @@ Considero i modi p di alte frequenze quindi \'e plausibile trascurare $N$ e la v
 
 \subsection{Inversione velocit\'a del suono.}
 
+\begin{wrapfigure}[]{r}{0.45\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.4\textwidth]{dispersionDuvall}
+\caption{Inversione del profilo radiale della velocit\'a del suono tramite inversione di \refeq{eq:analinversionc}: linea continua. La linea tratteggiata \'e la velocit\'a del suono calcolata sulla base di un modello solare. Da \cite{christensen1985speed}.}
+\end{wrapfigure}
+
 Determinando sperimentalmente $F(\frac{\omega}{L})=F(w)$ l'equazione \eqref{eq:duvallf} pu\'o essere invertita analiticamente
 
 \begin{equation}
-r=R\Exp{-\frac{2}{\pi}\int_{a_s}^a(w\expy{-2}-a\expy{-2})\expy{-\frac{1}{2}}\TDy{w}{F}\,dw}
+r=R\Exp{-\frac{2}{\pi}\int_{a_s}^a(w\expy{-2}-a\expy{-2})\expy{-\frac{1}{2}}\TDy{w}{F}\,dw}\label{eq:analinversionc}
 \end{equation}
 
 dove $a=\frac{c_s}{r}$.
 
 \subsection{Struttura dei modi penetranti nel core stellare}
 
-Per modi di basso grado \'e possibile espandere al primo ordine l'integrale nella \eqref{eq:duvallf}
-\begin{equation}
-F(w)=\int_{r_t}^R\sqrt{1-\frac{c_s^2}{w^2r^2}}\,\frac{dr}{c_s}\approx\int_0^R\frac{dr}{c_s}-w\expy{-1}\frac{\pi}{2}    
-\end{equation}
-ed esprimere la legge di Duvall tramite
+Per modi di basso grado \'e possibile usare l'espressione \eqref{eq:freqequi} che riscrive la legge di Duvall come
 \begin{equation}\label{eq:claverie}
     \nu_{nl}=\frac{\omega_{nl}}{2\pi}\approx(n+\frac{l}{2}+\frac{1}{4}+\alpha)\Delta\nu
 \end{equation}
@@ -48,15 +51,17 @@ La deviazione dalla \eqref{eq:claverie} fornisce informazioni sull'evoluzione ch
 \end{equation}
 La velocit\'a del suono \'e ridotta a causa dell'aumentare di $\mu$ durante la fusione di H in He durante l'evoluzione stellare: il centro solare \'e un minimo locale per la velocit\'a del suono e quindi, essendo il gradiente della velocit\'a del suono positivo, la parte centrale da un contributo sempre pi\'u negativo in \eqref{eq:tassoul} con l'evolversi della stella.
 
-
 \subsection{Duvall linearizzata}
 
-Introducendo nella relazione di Duvall \eqref{eq:duvallexpli} le differenze tra le grandezze relative a due modelli solari o modello solare e freuquenze osservate ottengo
-
-\begin{align}
-&S_{nl}\frac{\delta\omega_{nl}}{\omega_{nl}}\approx H_1(\frac{\omega_{nl}}{L})+H_2(\omega_{nl}),\ S_{nl}=\int_{r_t}^R(1-\frac{L^2c^2}{r^2\omega_{nl}^2})\expy{-\frac{1}{2}}\frac{dr}{c}-\pi\TDy{\omega}{\alpha}&\intertext{dove ho definito}\nonumber\\
-&H_1(w)=\int_{r_t}^R(1-\frac{c^2}{r^2w^2})\expy{-\frac{1}{2}}\frac{\delta_rc}{c}\frac{dr}{c},\ H_2(\omega)=\frac{\pi}{\omega}\delta\alpha(\omega)&\intertext{che possono essere ottenute separatamente attraverso fitting dei dati sperimentali.}\nonumber
-\end{align}
+Introducendo nella relazione di Duvall \eqref{eq:duvallexpli} le differenze tra le grandezze relative a due modelli solari o modello solare e frequenze osservate ottengo
+\begin{equation}
+S_{nl}\frac{\delta\omega_{nl}}{\omega_{nl}}\approx H_1(\frac{\omega_{nl}}{L})+H_2(\omega_{nl}),\ S_{nl}=\int_{r_t}^R(1-\frac{L^2c^2}{r^2\omega_{nl}^2})\expy{-\frac{1}{2}}\frac{dr}{c}-\pi\TDy{\omega}{\alpha}
+\end{equation}
+dove ho definito
+\begin{equation}
+H_1(w)=\int_{r_t}^R(1-\frac{c^2}{r^2w^2})\expy{-\frac{1}{2}}\frac{\delta_rc}{c}\frac{dr}{c},\ H_2(\omega)=\frac{\pi}{\omega}\delta\alpha(\omega)
+\end{equation}
+ottenute separatamente attraverso fitting dei dati sperimentali e contenenti la prima il contributo alle differenze nelle frequenze dei modi dovuto alle differenze del profilo radiale della velocit\'a del suono, la seconda alle diffenze nella regione vicino alla superficie.
 
 Dalla rozza approssimazione $\frac{\delta\omega}{\omega}\approx\frac{\int_{r_t}^{R}\frac{\delta_rc_s}{c_s}\frac{dr}{c_s}}{\int_{r_t}^R\frac{dr}{c_s}}$ si vede che le differenze nella velocit\'a del suono nelle varie regioni influiscono sulle differenze nelle frequenze con un peso dato dal tempo impiegato da un'onda sonora ad attraversare la regione: le differenze nella regione vicino alla superficie dove $c_s$ \'e minore hanno un effetto relativamente grande sulle differenze di frequenza.
 
@@ -86,54 +91,67 @@ Riscrivo l'equazione del moto linearizzata \eqref{eq:emper} nella forma
 \begin{equation}
 -\omega^2\Lvar{\vec{r}}=\frac{1}{\rho}\nabla p'-\vec{g}'-\frac{\rho'}{\rho}\vec{g}=L(\Lvar{\vec{r}})\label{eq:eigenhermitian}
 \end{equation}
-\cite{Cha64Variational} ha dimostrato che \eqref{eq:eigenhermitian} costituisce un problema agli autovalori hermitiano per condizioni ai bordi di pressione e densit\'a nulle.
+\citet{Cha64Variational} ha dimostrato che questo costituisce un problema agli autovalori hermitiano per condizioni ai bordi di pressione e densit\'a nulle.
 
-Non essendo possibile misurare le autofunzioni delle oscillazioni lineari adiabatiche per il Sole devo linearizzare il problema attorno ad un modello solare per cui siano calcolabili mentre  le oscillazioni di un altro modello o del Sole stesso sono descritte da $(L+\Lvar{L})(\xi+\Lvar{\xi})=-(\omega+\Lvar{\omega})^2(\xi+\Lvar{\xi})$. La variazione delle frequenze \'e determinata da 
+Non essendo possibile misurare le autofunzioni delle oscillazioni lineari adiabatiche per l'interno solare si linearizza il problema attorno ad un modello solare per cui siano calcolabili mentre  le oscillazioni di un altro modello o del Sole stesso sono descritte da 
+\begin{equation}
+(L+\Lvar{L})(\xi+\Lvar{\xi})=-(\omega+\Lvar{\omega})^2(\xi+\Lvar{\xi}) 
+\end{equation}
+quindi la variazione delle frequenze \'e determinata da 
 
 \begin{align}\label{eq:variational}
 &\frac{\Lvar{\omega}}{\omega}=-\frac{\int_V\rho\vec{\xi}\Lvar{L}\vec{\xi}\,d^3x}{2\omega^2\int_V\rho\scap{\xi}{\xi}d^3x}&\intertext{dove $\vec{\xi}=\Lvar{\vec{r}}$ \'e autovettore (perturbazione lagrangiana) del problema agli autovalori \eqref{eq:eigenhermitian}.}\nonumber
 \end{align}
 
-
 \section{Rotazione.}
 
-Il Sole \'e un rotatore lento quindi posso considerare la correzione un effetto lineare, al primo ordine. Il campo di velocit\'a in coordinate sferiche \'e $\vec{v_0}=(0,0,r\Omega\sin{\theta})=\vecp{\Omega}{r}$ dove il vettore velocit\'a angolare \'e funzione di r e $\theta$
-\begin{equation}
-\vec{\Omega(r,\theta)}=(\Omega(r,\theta)\cos{\theta},-\Omega(r,\theta)\sin{\theta},0)
-\end{equation}
-
-In assenza di moti macroscopici il termine d'inerzia \'e $\rho_0\TDy{t}{\vec{v}}=\rho_0\PtwoDy{t}{\vec{\xi}}$, mentre in caso di rotazione diventa  $\rho_0(\PDof{t}+\scap{v_0}{\nabla})^2\vec{\xi}$ e, considerando il termine dovuto alla rotazione come una piccola correzione alle frequenze dei modi $\omega_{(l,m)}+\Delta\omega_{(l,m)}$, l'equazione del moto diventa
-
-\begin{align}
-&\rho_0(\omega_{\alpha}^2+2\omega_{\alpha}\Delta\omega_{\alpha})\vec{\xi}=\nabla P_1-\frac{\rho_1}{\rho_0}\nabla P_0+\rho_0\nabla\Phi_1+2i\omega_{\alpha}\rho_0(\scap{v_0}{\nabla})\vec{\xi}&\intertext{equazione del moto al primo ordine nella perturbazione, con $\alpha=(l,m)$.}\nonumber
-\end{align}
-
-Abbiamo
-
-\begin{equation}
-\Delta\omega_{\alpha}=\frac{i\int\rho_0\xi_{\alpha}^*(\scap{v_0}{\nabla})\xi_{\alpha}}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}}=\frac{-m\int\rho_0\Omega\xi_{\alpha}^*\xi_{\alpha}\,dV+i\int\rho_0\xi_{\alpha}^*(\vecp{\Omega}{\xi_{\alpha}})\,dV}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}}
-\end{equation}
-
-Il problema di trovare $\Omega(r,\theta)$ dalla differenza $\Delta\omega_{\alpha}$ \'e lineare in $\Omega$ quindi $\Delta\omega_{\alpha}\propto\Omega$. Per determinare quindi la rotazione dobbiamo conoscere l'autovalore $\xi_{\alpha}$ dello stato imperturbato. Per rotazione puramente radiale $\Omega(r)$ la relazione tra lo splitting delle frequenze e la rotazione \'e
-\begin{equation}
-\Delta\omega_{\alpha}=-m\frac{\int_0^{\rsun{}}\rho_0\Omega\{|\xi_r-\xi_h|^2+[l(l+1)-2]|\xi_h|^2\}r^2\,dr}{\int_0^{\rsun{}}\rho_0\{|\xi_r|^2+l(l+1)|\xi_h|^2\}r^2\,dr}=\int_0^{\rsun{}}K_{\alpha}(r)\Omega(r)\,dr
-\end{equation}
-
-%Any given $\Delta\omega_{\alpha}$ samples angular velocity in the depth range corresponding to $\xi_{\alpha}$.
-La velocit\'a angolare contribuisce a $\Delta\omega_{\alpha}$ negli strati in cui $\xi_{\alpha}$ \'e apprezzabile. Nel caso di rotazione dipendente solo da r si ha che $\Delta\omega_{\alpha}$ \'e lineare in m: ho $2l+1$ frequenze equispaziate.
-
-
-Le osservazioni della superficie mostrano una dipendenza dalla co-latitudine 
-
+Il Sole \'e un rotatore lento: le osservazioni della superficie mostrano una dipendenza dalla co-latitudine 
 \begin{equation*}
 \frac{\Omega(\theta)}{2\pi}=\SI{451.5}{\nano\hertz}-\SI{65.3}{\nano\hertz}\cos^2{\theta}-\SI{66.7}{\nano\hertz}\cos^4{\theta}
 \end{equation*}
+questa legge soggetta a discrepanze e variazioni temporali.
 
-legge soggetta a discrepanze e variazioni temporali.
+\begin{figure}{!h}
+\centering
+\includegraphics[keepaspectratio,width=0.8\textwidth]{invertedrotation}
+\caption{Inversione della velocit\'a di rotazione a diverse latitudini. La linea verticale tratteggiata indica la base della zona convettiva. Da \cite{chr02helioseismology}.}
+\end{figure}
 
-Per investigare la dipendenza $\Omega(r,\theta)$ devo considerare le $2l+1$ frequenze: latitudinal shear causa una deviazione da frequenze equispaziate.
+Considero la correzione al primo ordine in $\Omega$. Il campo di velocit\'a rotazionale in coordinate sferiche \'e 
+\begin{align}
+&\vec{v_0}=(0,0,r\Omega\sin{\theta})=\vecp{\Omega}{r}\\
+&\vec{\Omega(r,\theta)}=(\Omega(r,\theta)\cos{\theta},-\Omega(r,\theta)\sin{\theta},0)
+\end{align}
+
+In assenza di moti macroscopici il termine d'inerzia \'e $\rho_0\TDy{t}{\vec{v}}=\rho_0\PtwoDy{t}{\vec{\xi}}$, mentre in caso di rotazione si ha
+\begin{equation}
+\rho_0(\PDof{t}+\scap{v_0}{\nabla})^2\vec{\xi}
+\end{equation}
+
+Considero il termine dovuto alla rotazione come una piccola correzione alle frequenze dei modi
+\begin{align}
+&\omega_{(l,m)}+\Delta\omega_{(l,m)}&\intertext{quindi l'equazione del moto al primo ordine nella perturbazione, con $\alpha=(l,m)$, \'e}\nonumber\\
+&\rho_0(\omega_{\alpha}^2+2\omega_{\alpha}\Delta\omega_{\alpha})\vec{\xi}=\nabla P_1-\frac{\rho_1}{\rho_0}\nabla P_0+\rho_0\nabla\Phi_1+2i\omega_{\alpha}\rho_0(\scap{v_0}{\nabla})\vec{\xi}\\
+&\intertext{da cui si deduce}\nonumber\\
+&\Delta\omega_{\alpha}=\frac{i\int\rho_0\xi_{\alpha}^*(\scap{v_0}{\nabla})\xi_{\alpha}}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}}=\frac{-m\int\rho_0\Omega\xi_{\alpha}^*\xi_{\alpha}\,dV+i\int\rho_0\xi_{\alpha}^*(\vecp{\Omega}{\xi_{\alpha}})\,dV}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}}
+\end{align}
+
+Il problema di trovare $\Omega(r,\theta)$ dalla differenza $\Delta\omega_{\alpha}$ \'e lineare in $\Omega$ quindi $\Delta\omega_{\alpha}\propto\Omega$. Per determinare quindi la rotazione dobbiamo conoscere l'autovalore $\xi_{\alpha}$ dello stato imperturbato.
+
+%Per rotazione puramente radiale $\Omega(r)$ la relazione tra lo splitting delle frequenze e la rotazione \'e
+%\begin{equation}
+%\Delta\omega_{\alpha}=-m\frac{\int_0^{\rsun{}}\rho_0\Omega\{|\xi_r-\xi_h|^2+[l(l+1)-2]|\xi_h|^2\}r^2\,dr}{\int_0^{\rsun{}}\rho_0\{|\xi_r|^2+l(l+1)|\xi_h|^2\}r^2\,dr}=\int_0^{\rsun{}}K_{\alpha}(r)\Omega(r)\,dr
+%\end{equation}
+%Any given $\Delta\omega_{\alpha}$ samples angular velocity in the depth range corresponding to $\xi_{\alpha}$.
+
+La velocit\'a angolare contribuisce a $\Delta\omega_{\alpha}$ negli strati in cui $\xi_{\alpha}$ \'e apprezzabile. Nel caso di rotazione dipendente solo da r si ha che $\Delta\omega_{\alpha}$ \'e lineare in m: ho $2l+1$ frequenze equispaziate.
+
+%Per investigare la dipendenza $\Omega(r,\theta)$ devo considerare le $2l+1$ frequenze.
+%latitudinal shear causa una deviazione da frequenze equispaziate.
 
 
+%%Ho corretto fin qui
+\begin{comment}
 \section{Correzioni struttura idrostatica.}
 
 Determino le differenze tra le frequenze osservate e quelle relative ad un modello, $\delta\omega_{nl}=\Omega_{\odot}-\Omega_{Mod}$, e le differenze nella stratificazione idrostatica tramite l'inversione per le variabili $(\rho,c^2)$
@@ -320,5 +338,6 @@ quindi per la temperatura centrale del Sole si ha
 T_{ES}=T_{MSS}(\frac{Y_{ph\odot}}{Y_{ph,MSS}})\expy{0.2}=\SI{1.587e7}{\kelvin}
 \end{equation}
 
+\end{comment}%%%% fine commento della parte da correggere
 
 \end{document}

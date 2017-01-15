@@ -397,8 +397,8 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 
 \begin{tikzpicture}[remember picture,overlay]
 
-\node[anchor=south west] (opint) at ([shift={(0,4)}]current page.south west) {\includegraphics[width=0.55\textwidth,keepaspectratio]{opcontrib-int-g}};
-\node[anchor=south east] (opout) at ([shift={(0,4-3/35)}]current page.south east) {\includegraphics[width=0.55\textwidth,keepaspectratio]{opcontrib-out-g}};
+\node[anchor=south west] (opint) at ([shift={(0,2.5)}]current page.south west) {\includegraphics[width=0.55\textwidth,keepaspectratio]{opcontrib-int-g}};
+\node[anchor=south east] (opout) at ([shift={(0,2.5-3/35)}]current page.south east) {\includegraphics[width=0.55\textwidth,keepaspectratio]{opcontrib-out-g}};
 \node[draw,anchor=south,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at ([shift={(0,+7)}]current page.south) {};
 \node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm,above=10mm of sc] (ff) {};
 \node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm,above=10mm of ff] (bb) {};
@@ -422,7 +422,7 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 \node[name=manganese, right=4.5mm of cromum.west] {\tiny Mn};
 \node[name=ferrum, right=4.5mm of manganese.west] {\tiny Fe};
 \node[name=nikel, right=4.5mm of ferrum.west] {\tiny Ni};
-\node[anchor=south west] at ([shift={(0,3)}]current page.south west) {\parbox{\textwidth}{\captionof{figure}{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}\label{fig:opacitycontrib} }};
+\node[anchor=south west] at ([shift={(0,1.5)}]current page.south west) {\parbox{\textwidth}{\captionof{figure}{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}\label{fig:opacitycontrib} }};
  
 \end{tikzpicture}
 
@@ -481,13 +481,13 @@ Le basse temperature causano un aumento dell'opacit\'a e il gradiente termico ne
 Una maggiore efficienza del trasporto convettivo di energia si riflette in una minore differenza tra il gradiente di temperature adiabatico ed effettivo.
 
 \begin{figure}[!h]
-\begin{subfigure}[t]{0.6\textwidth}
+\begin{subfigure}[l]{0.55\textwidth}
     \includegraphics[ width=0.99\textwidth,keepaspectratio]{proportionflux}
     \caption{Profilo radiale del flusso convettivo rispetto al flusso totale, della super-adiabaticit\'a del gradiente termico e regioni di ionizzazione parziale di $\cel{He}{4}{}{}$. Da \cite{gou76convection}}
     \label{fluxproportion}
 \end{subfigure}
 ~
-\begin{subfigure}[t]{0.4\textwidth}
+\begin{subfigure}[r]{0.4\textwidth}
 \centering
 \includegraphics[keepaspectratio,width=0.9\textwidth]{specificheatnablaa}
 \subcaption{Profilo radiale di $c_P$ e $\nabla_a$. Da \cite{sti91sun}.}
@@ -566,20 +566,19 @@ f(E)dE\propto\frac{E\expy{\frac{1}{2}}}{(kT)\expy{\frac{3}{2}}}\exp{-\frac{E}{kT
 
 \begin{figure*}[!h]
     \centering
-  \begin{subfigure}[t]{0.5\textwidth}
+  \begin{subfigure}[t]{0.6\textwidth}
         \includegraphics[width=0.9\textwidth,keepaspectratio]{ReactionsH}
         \caption{Reazioni di fusione H-He: catena PP e ciclo CNO.}
     \end{subfigure}%
     ~
-    \begin{subfigure}[t]{0.5\textwidth}
+    \begin{subfigure}[t]{0.4\textwidth}
         \includegraphics[width=0.9\textwidth,keepaspectratio]{watt-PPvsCNO}
         \caption{Andamento della luminosit\'a nel Sole.}
     \end{subfigure}
 \end{figure*}
 
-Per determinare \eqref{eq:energyrate} uso il fatto che l'integrando
+Per determinare $\exv{\sigma v}$ uso il fatto che l'integrando $S(E)\exp{-\frac{E}{kT}-\frac{b}{\sqrt{E}}}$ ha forma approssimativamente gaussiana il cui massimo $E_0$, energia pi\'u probabile di reazione, e FWHM sono, posto $A=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:
 \begin{align}
-&S(E)\exp{-\frac{E}{kT}-\frac{b}{\sqrt{E}}}&\intertext{ha forma approssimativamente gaussiana il cui massimo $E_0$, energia pi\'u probabile di reazione, e FWHM sono, posto $A=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:}\\
 &E_0=\SI{5.665}{\kilo\ev} A\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}},\ \Delta E=4.249W\expy{\frac{1}{6}}T_7\expy{\frac{5}{6}}&\intertext{quindi il rate locale per reazioni non risonanti si scrive}\\
 &\exv{\sigma v}=\num{1.3005e-15}[\frac{Z_1Z_2}{AT_6^2}]\expy{\frac{1}{3}}fS_{eff}\exp{-\tau}\si{\cubic\cm\per\second},\ \tau=\frac{3E_0}{kT}\approx\num{42.487}(Z_1^2Z_2^2AT_6\expy{-1})\expy{\frac{1}{3}}&\intertext{$S_{eff}$ \'e il risultato dell'espansione dell'integrando per $\invers{\tau}\ll1$ ed estrapolato a $E_0$ a partire dal valore a $E(0)$ determinato dalla fisica nucleare.}
 \end{align}
