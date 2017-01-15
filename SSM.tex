@@ -583,14 +583,12 @@ Per determinare $\exv{\sigma v}$ uso il fatto che l'integrando $S(E)\exp{-\frac{
 &\exv{\sigma v}=\num{1.3005e-15}[\frac{Z_1Z_2}{AT_6^2}]\expy{\frac{1}{3}}fS_{eff}\exp{-\tau}\si{\cubic\cm\per\second},\ \tau=\frac{3E_0}{kT}\approx\num{42.487}(Z_1^2Z_2^2AT_6\expy{-1})\expy{\frac{1}{3}}&\intertext{$S_{eff}$ \'e il risultato dell'espansione dell'integrando per $\invers{\tau}\ll1$ ed estrapolato a $E_0$ a partire dal valore a $E(0)$ determinato dalla fisica nucleare.}
 \end{align}
 
-Lo schermaggio degli elettroni diminuisce la repulsione coulombiana
+Lo schermaggio degli elettroni diminuisce la repulsione coulombiana e analogamente a quanto visto in precedenza si ha:
 \begin{equation}
 E_C'-E=\frac{Z_1Z_2e^2}{r}\exp{-\frac{r}{r_D}}-E\approx\frac{Z_1Z_2e^2}{r}-\frac{Z_1Z_2e^2}{r_D}-E=E_C-E-E_D
 \end{equation}
-analogamente a quanto visto in precedenza.
 
 Per $\frac{E_D}{kT}\ll1$ ne tengo conto aggiungendo il parametro correttivo $f$
-
 \begin{equation}
 \exv{v\sigma}\to f\exv{v\sigma},\ f=\exp{\frac{E_D}{KT}}
 \end{equation}
@@ -714,7 +712,7 @@ Il plasma solare \'e costituito da $\cel{H}{1}{}{}$, $\cel{He}{4}{}{}$, \Pelectr
 
  La distribuzione di velocit\'a della specie i \'e approssimativamente la distribuzione di equilibrio traslata di $w^i$.
 
-Per la velocit\'a di diffusione relative dei due elementi pi\'u abbondanti, definita la concentrazione relativa $c_i=\frac{n_i}{n}$ e il coefficiente di diffusione $D_{HHe}=-\frac{1}{3}lv_{th}$ con $l\approx(n\sigma)\expy{-1}$
+Per la velocit\'a di diffusione relative dei due elementi pi\'u abbondanti, definita la concentrazione relativa $c_i=\frac{n_i}{n}$ e il coefficiente di diffusione $D_{HHe}=-\frac{1}{3}lv_{th}$ con $l\approx(n\sigma)\expy{-1}$ cammino libero medio
 
 \begin{align}
 &w_H-w_{He}=\frac{1}{n_H}\int\,d^3v_Hf_H\vec{v}_H-\frac{1}{n_{He}}\int\,d^3v_{He}f_{He}\vec{v}_{He}\\
@@ -854,19 +852,6 @@ L'et\'a del sistema solare \'e nota grazie modelli di formazione del sistema sol
 \node at (0,0) {\includegraphics[width=\textwidth,trim=4 4 4 4,clip]{bahcall95}};
 }{(0,-7)}{\textwidth}{Profilo radiale della densit\'a, composizione, luminosit\'a e temperatura. Dati da \cite{bahcall95diffusion}.}
 
-\begingroup
-\color{midnightblue}
-incertezza su $S_{11}$
-incertezza composizione
-\begin{itemize*}
-\item pressione gas
-\item pressione turbolenta == kinetic pressure
-\item radiation pressure $-->$ photon absorption
-\item magnetic pressure
-\end{itemize*}
-tabella input del mss: eta, luminosita, raggio,
-Incertezze negli input del SSM e quindi su $\alpha$ e $Y$
-\endgroup
 %\eqref{eq:massaguscio},\eqref{eq:fidroequilibrio},\eqref{eq:fenergyconservation}, \eqref{eq:ftransportenergy} a partire da $r=0$ produce soluzioni dipendenti da $(P_c,T_c)$, mentre le condizioni alla superficie sono pi\'u complesse perch\'e dipendono dalla struttura dell'atmosfera e le soluzioni sono dipendenti da $(R,L)$: i quattro parametri matematici del problema, $(P_c,T_C,L,R)$, sono determinati dalla condizione di continuit\'a ad un punto intermedio  delle soluzioni $(P,T,m(r),l(r))$ fra le soluzioni con condizioni al centro e sulla superficie.
 
 \end{document}
