@@ -111,7 +111,7 @@ Il Sole \'e un rotatore lento: le osservazioni della superficie mostrano una dip
 \end{equation*}
 questa legge soggetta a discrepanze e variazioni temporali.
 
-\begin{figure}{!h}
+\begin{figure}[!h]
 \centering
 \includegraphics[keepaspectratio,width=0.8\textwidth]{invertedrotation}
 \caption{Inversione della velocit\'a di rotazione a diverse latitudini. La linea verticale tratteggiata indica la base della zona convettiva. Da \cite{chr02helioseismology}.}
@@ -149,10 +149,18 @@ La velocit\'a angolare contribuisce a $\Delta\omega_{\alpha}$ negli strati in cu
 %Per investigare la dipendenza $\Omega(r,\theta)$ devo considerare le $2l+1$ frequenze.
 %latitudinal shear causa una deviazione da frequenze equispaziate.
 
+%% corretto fin qui
 
-%%Ho corretto fin qui
-\begin{comment}
 \section{Correzioni struttura idrostatica.}
+
+Utilizzo le equazioni che descrivono le oscillazioni adiabatiche \eqref{eq:contper}, \eqref{eq:emper}, \eqref{eq:adper}, \eqref{eq:gapert} per scrivre l'equazione del moto nella forma
+\begin{equation}
+\Lvar{L}\vec{\xi}=\nabla(\Lvar{c^2}\nabla\cdot\vec{\xi}+\Lvar{\vec{g}}\cdot\vec{
+\xi})+\nabla(\frac{\Lvar{\rho}}{\rho})c^2\nabla\cdot\vec{\xi}+\frac{1}
+{\rho}\nabla\rho\Lvar{c^2}\nabla\vec{\xi}+\Lvar{\vec{g}}\nabla\cdot\vec{\xi}-
+G\nabla\int_V\frac{\nabla\cdot(\Lvar{\rho}\xi)}{|\vec{x}-
+\vec{x}'|}\,d^3x'
+\end{equation}
 
 Determino le differenze tra le frequenze osservate e quelle relative ad un modello, $\delta\omega_{nl}=\Omega_{\odot}-\Omega_{Mod}$, e le differenze nella stratificazione idrostatica tramite l'inversione per le variabili $(\rho,c^2)$
 
@@ -163,9 +171,8 @@ Determino le differenze tra le frequenze osservate e quelle relative ad un model
 
 I kernel $K_Q^j$ dipendono dalle autofunzioni del modello, il termine $E_{nl}\expy{-1}F_{Surf}(\omega_{nl})$, con $E_{nl}=\int_V|\Lvar{\vec{r}}|^2\rho\,dV$, \'e una correzione dovuta alle differenti condizioni fisiche che si incontrano vicino alla superficie: i modi con basse frequenze sono riflessi pi\'u in profondit\'a a $\omega=\omega_c$ e quindi sono meno influenzati dagli strati superficiali.
 
-Per esplicitare la relazione linearizzata tra le differenze nelle grandezze $\rho$, g, P, $c^2$ e le differenze nelle frequenze si scrive
+Esplicito la relazione linearizzata tra le differenze nelle grandezze $\rho$, g, P, $c^2$ e le differenze nelle frequenze sostituendo \eqref{eq:differenceOP} in \eqref{eq:variational}:
 \begin{align}
-&\Lvar{L}\vec{\xi}=\nabla(\Lvar{c^2}\nabla\cdot\vec{\xi}+\Lvar{\vec{g}}\cdot\vec{\xi})+\nabla(\frac{\Lvar{\rho}}{\rho})c^2\nabla\cdot\vec{\xi}+\frac{1}{\rho}\nabla\rho\Lvar{c^2}\nabla\vec{\xi}+\Lvar{\vec{g}}\nabla\cdot\vec{\xi}-G\nabla\int_V\frac{\nabla\cdot(\Lvar{\rho}\xi)}{|\vec{x}-\vec{x}'|}\,d^3x'&\intertext{che sostituita in \eqref{eq:variational} porta a}\nonumber\\
 &F_{Surf}(\omega)-\frac{1}{2\omega^2}(I_1+I_2+I_3+I_4)=E_{nl}\frac{\Lvar{\omega}}{\omega}&\intertext{con}\nonumber\\
 &\Lvar{g}(r)=\frac{4\pi G}{r^2}\int_0^r\Lvar{\rho}(s)s^2\,ds,\ I_1=-\int_0^R\rho(\scap{\nabla}{\xi})^2\Lvar{c^2}r^2\,dr\\
 &I_2=\int_0^R\xi_r[\rho\scap{\nabla}{\xi}+\nabla\cdot(\rho\vec{\xi})]\Lvar{g}r^2\,dr,\ I_3=\int_0^R\rho c^2\xi_r\scap{\nabla}{\xi}\PDof{r}(\frac{\Lvar{\rho}}{\rho})r^2\,dr\\
@@ -337,7 +344,5 @@ quindi per la temperatura centrale del Sole si ha
 \begin{equation}
 T_{ES}=T_{MSS}(\frac{Y_{ph\odot}}{Y_{ph,MSS}})\expy{0.2}=\SI{1.587e7}{\kelvin}
 \end{equation}
-
-\end{comment}%%%% fine commento della parte da correggere
 
 \end{document}
