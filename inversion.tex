@@ -85,6 +85,8 @@ La funzione $H_2$ \'e determinata dalla regione sotto la fotosfera. \cite{chr92p
 
 La soluzione del problema inverso per il sistema completo di equazioni si basa sulla linearizzazione delle variazioni attorno ad un modello di cui siano calcolabili le autofunzioni del vettore moto perturbato $\vec{\xi}$: il problema \'e espresso matematicamente da \eqref{eq:variational}. Faccio l'esempio della correzione alle frequenze dei modi causata dalla rotazione.
 
+%Asymptotic approximation for radial eigenfunction (integral equation connectin sound speed $c(r)$ to $\Omega_{nl}$) is inadequate (especially in deep interior)
+
 \section{Principio variazionale}    %Vedi pg 110 dalsnote.
 
 Riscrivo l'equazione del moto linearizzata \eqref{eq:emper} nella forma
@@ -189,7 +191,7 @@ Esplicito la relazione linearizzata tra le differenze nelle grandezze $\rho$, g,
 
 Per distinguere gli effetti dovuti alla non corretta descrizione fisica dei modi vicino alla superficie, $r>0.95\rsun{}$, cui sono pi\'u sensibili i modi di l elevato, si introduce il fattore $Q_{nl}=\frac{E_{nl}}{E^0_{nl}}$ che vale 1 per $l=0$ e diminuisce al crescere di $l$.
 
-[figura dalsgaard 2002 fig]
+[figura dalsgaard 2002 fig deltanu/deltanu]
 
 %Nel caso l'entit\'a delle correzioni a $\rho$ e $c^2$ non giustifichi l'approssimazione lineare si ha un miglior accordo definendo la differenza tramite $\frac{\Lvar{f}}{f}=\frac{f-f_0}{\sqrt{ff_0}}$.
 
@@ -216,6 +218,8 @@ dove $(\delta\Gamma_1)_{int}$ \'e l'errore dovuto alle imprecisioni dell'equazio
 [fig. 3 \cite{cas99helioseismology}]
 
 \subsection{Tecniche di inversione numeriche.}
+
+Parte dell'errore sui risultati dell'inversione \'e dovuto alla scelta della parametrizzazione delle funzioni incognite.
 
 Elenco alcune tecniche numeriche usate.
 
@@ -257,16 +261,12 @@ Determino i varii coefficienti minimizzando l'espressione
 
 %dove $i=(n,l)$ e $\sigma_i$ \'e l'errore su $\frac{\delta\omega_i}{\omega_i}$.
 
-\section{Vincoli al modello solare: modello solare sismologico.}
-
-Tramite le tecniche di inversione si misurano, anche se in termini di correzioni ad un modello, grandezze dell'interno solare che permettono un vaglio accurato dei modelli solari.
+\section{Vincoli al modello solare dalle osservazioni sismologiche.}
 
 Indico con $Q(P)$ e $Q_{\odot}$ i valori di una grandezza Q determinati tramite un modello solare, funzione dei parametri del modello, e risultanti dalle correzioni sismologiche a quest ultimi  
 \begin{align*}
 &Q_{\odot}=Q(P)+q(\omega)&\intertext{L'incertezza su $Q_{\odot}$ dipende dall'errore sulle frequenze, la procedura di inversione e regolarizzazione e il modello di partenza.}
 \end{align*}
-
-%Asymptotic approximation for radial eigenfunction (integral equation connectin sound speed $c(r)$ to $\Omega_{nl}$) is inadequate (especially in deep interior)
 
 
 \subsection{Modello solare sismologico}
