@@ -156,13 +156,13 @@ La velocit\'a angolare contribuisce a $\Delta\omega_{\alpha}$ negli strati in cu
 
 \section{Correzioni struttura idrostatica.}
 
-Utilizzo le equazioni che descrivono le oscillazioni adiabatiche \eqref{eq:contper}, \eqref{eq:emper}, \eqref{eq:adper}, \eqref{eq:gapert} per scrivre l'equazione del moto nella forma
+Utilizzo le equazioni che descrivono le oscillazioni adiabatiche \eqref{eq:contper}, \eqref{eq:emper}, \eqref{eq:adper}, \eqref{eq:gapert} per scrivre l'equazione del moto variazionale nella forma
 \begin{equation}
 \Lvar{L}\vec{\xi}=\nabla(\Lvar{c^2}\nabla\cdot\vec{\xi}+\Lvar{\vec{g}}\cdot\vec{
 \xi})+\nabla(\frac{\Lvar{\rho}}{\rho})c^2\nabla\cdot\vec{\xi}+\frac{1}
 {\rho}\nabla\rho\Lvar{c^2}\nabla\vec{\xi}+\Lvar{\vec{g}}\nabla\cdot\vec{\xi}-
 G\nabla\int_V\frac{\nabla\cdot(\Lvar{\rho}\xi)}{|\vec{x}-
-\vec{x}'|}\,d^3x'
+\vec{x}'|}\,d^3x'\label{eq:eqmotvar}
 \end{equation}
 con
 \begin{equation}
@@ -178,7 +178,7 @@ Determino le differenze tra le frequenze osservate e quelle relative ad un model
 
 I kernel $K_Q^j$ dipendono dalle autofunzioni del modello, il termine $E_{nl}\expy{-1}F_{Surf}(\omega_{nl})$, con $E_{nl}=\int_V|\Lvar{\vec{r}}|^2\rho\,dV$, \'e una correzione dovuta alle differenti condizioni fisiche che si incontrano vicino alla superficie: i modi con basse frequenze sono riflessi pi\'u in profondit\'a a $\omega=\omega_c$ e quindi sono meno influenzati dagli strati superficiali.
 
-Esplicito la relazione linearizzata tra le differenze nelle grandezze $\rho$, g, P, $c^2$ e le differenze nelle frequenze sostituendo \eqref{eq:differenceOP} in \eqref{eq:variational}:
+Esplicito la relazione linearizzata tra le differenze nelle grandezze $\rho$, g, P, $c^2$ e le differenze nelle frequenze sostituendo \eqref{eq:eqmotvar} in \eqref{eq:variational}:
 \begin{align}
 &F_{Surf}(\omega)-\frac{1}{2\omega^2}(I_1+I_2+I_3+I_4)=E_{nl}\frac{\Lvar{\omega}}{\omega}&\intertext{con}\nonumber\\
 &I_1=-\int_0^R\rho(\scap{\nabla}{\xi})^2\Lvar{c^2}r^2\,dr\\
@@ -261,9 +261,10 @@ Determino i varii coefficienti minimizzando l'espressione
 &\mathcal{G}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)&\intertext{il kernel cross-term  contralla i contributi indesiderati di $\frac{\delta_r\rho}{\rho}$}\nonumber
 \end{align}
 
-%dove $i=(n,l)$ e $\sigma_i$ \'e l'errore su $\frac{\delta\omega_i}{\omega_i}$.
 
-\section{Vincoli al modello solare dalle osservazioni sismologiche.}
+{\let\clearpage\relax\let\cleardoublepage\relax
+\chapter{Vincoli al modello solare dalle osservazioni sismologiche.}
+}
 
 Indico con $Q(P)$ e $Q_{\odot}$ i valori di una grandezza Q determinati tramite un modello solare, funzione dei parametri del modello, e risultanti dalle correzioni sismologiche a quest ultimi  
 \begin{align*}
@@ -276,6 +277,8 @@ Indico con $Q(P)$ e $Q_{\odot}$ i valori di una grandezza Q determinati tramite 
 Oltre a determinare il valore sismologico corretto delle grandezze meccaniche del modello solare si pu\'o stabilire il range dei parametri del SSM compatibili con le frequenze osservate: si approssima localmente una dipendenza della grandezza $Q$ dai parametri della forma $\frac{Q}{Q_{MSS}}=(\frac{P}{P_{MSS}})\expy{\alpha_{QP}}$ quindi si determina il range dei parametri $p_i=\frac{P^i}{P_{MSS}^i}$ compatibile con $\Omega_i\pm\Delta\Omega_i$, in particolare si usano le grandezze sismologiche pi\'u accurate $Y_{ph},\ R_b,\ \rho_b$.
 
 \subsection{Zona convettiva}
+
+Profondit\'a, etcc \ldots
 
 Le quantit\'a che caratterizzano la zona convettiva sono $R_b$, $Y_{ph}$ e $c_b$, $\rho_b$ .
 
