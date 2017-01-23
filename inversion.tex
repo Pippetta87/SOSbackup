@@ -263,34 +263,39 @@ Determino i varii coefficienti minimizzando l'espressione
 
 
 {\let\clearpage\relax\let\cleardoublepage\relax
-\chapter{Vincoli al modello solare dalle osservazioni sismologiche.}
+\chapter{Vincoli al modello solare dalle osservazioni sismologiche.}%%chapter: vincoli al modello solare: HCSM.
 }
 
-Indico con $Q(P)$ e $Q_{\odot}$ i valori di una grandezza Q determinati tramite un modello solare, funzione dei parametri del modello, e risultanti dalle correzioni sismologiche a quest ultimi  
-\begin{align*}
-&Q_{\odot}=Q(P)+q(\omega)&\intertext{L'incertezza su $Q_{\odot}$ dipende dall'errore sulle frequenze, la procedura di inversione e regolarizzazione e il modello di partenza.}
-\end{align*}
+\subsection{Modello solare sismologico. Approssimazione di scaling.}
 
-
-\subsection{Modello solare sismologico}
+%Indico con $Q(P)$ e $Q_{\odot}$ i valori di una grandezza Q determinati tramite un modello solare, funzione dei parametri del modello, e risultanti dalle correzioni sismologiche a quest ultimi  
+%\begin{equation}
+%&Q_{\odot}=Q(P)+q(\omega)
+%\end{equation}
 
 Oltre a determinare il valore sismologico corretto delle grandezze meccaniche del modello solare si pu\'o stabilire il range dei parametri del SSM compatibili con le frequenze osservate: si approssima localmente una dipendenza della grandezza $Q$ dai parametri della forma $\frac{Q}{Q_{MSS}}=(\frac{P}{P_{MSS}})\expy{\alpha_{QP}}$ quindi si determina il range dei parametri $p_i=\frac{P^i}{P_{MSS}^i}$ compatibile con $\Omega_i\pm\Delta\Omega_i$, in particolare si usano le grandezze sismologiche pi\'u accurate $Y_{ph},\ R_b,\ \rho_b$.
 
 \subsection{Zona convettiva}
 
-Profondit\'a, etcc \ldots
-
-Le quantit\'a che caratterizzano la zona convettiva sono $R_b$, $Y_{ph}$ e $c_b$, $\rho_b$ .
+Le osservabili sismologiche che caratterizzano la zona convettiva sono $R_b$, $Y_{ph}$ e $c_b$, $\rho_b$.
 
 \begin{itemize}
 \item L'abbondanza di elio \'e determinata da varii autori in un range $Y_{ph}=\numrange{0.226}{0.260}$.
+%Il valore di $Y_{ph}$ inferiore di \numrange{0.27}{0.28}, richiesto per calibrare i modelli con la luminosit\'a attuale, conferma l'importanza della diffusione dell'elio verso il centro di gravit\'a.
     
-Il valore di $Y_{ph}$ inferiore di \numrange{0.27}{0.28}, richiesto per calibrare i modelli con la luminosit\'a attuale, conferma l'importanza della diffusione dell'elio verso il centro di gravit\'a.
-    
-\item Fondo della zona convettiva.
- 
-La regione radiativa ha stratificazione sub-adiabatica mentre a partire da $r=R_b$ si ha stratificazione quasi-adiabatica,  $\Gamma_1\approx\frac{5}{3}$: $P\propto\rho\expy{\frac{5}{3}}$.
-Il gradiente di $c_{s\odot}(r)$ \'e discontinuo in $R_b$.
+\item Profondit\'a della zona convettiva.
+
+\begin{wrapfigure}[]{r}{0.4\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.35\textwidth]{adcsgrad}
+\caption{. Da \cite{christensen1991depth}.}
+\end{wrapfigure}
+
+La regione radiativa ha stratificazione sub-adiabatica mentre a partire da $r=R_b$ si ha stratificazione quasi-adiabatica,  $\Gamma_1\approx\frac{5}{3}$: $P\propto\rho\expy{\frac{5}{3}}$. Per identificare il raggio a cui si ha il passaggio dal gradiente di temperatura subadiabatico ad adiabatico \'e utile considerare la funzione
+\begin{equation}
+W=\frac{r^2}{Gm(r)}\TDy{r}{c^2}=\Gamma_1(\invers{\PDly{\rho}{P}}-1)
+\end{equation}
+
     
 \begin{align*}
 &\frac{R_b}{\rsun{}}=\numrange{0.710}{0.716}\\
