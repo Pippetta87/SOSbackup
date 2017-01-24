@@ -426,7 +426,7 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 
 \end{scope}
 
-\begin{scope}[name=scopelegenda]
+\begin{scope}[name=scopelegenda,shift={($(scopeint.west) + (0.1,0)$)}]
 
 \node[draw,anchor=north,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at ([shift={(0,-7)}]10,0) {};
 \node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm,above=10mm of sc] (ff) {};
@@ -435,7 +435,7 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 
 \end{scope}
 
-\begin{scope}[name=scopeout]
+\begin{scope}[name=scopeout,shift={($(scopelegenda.west) + (0.1,0)$)}]
 
 \includegraphics[width=0.5\textwidth,keepaspectratio]{opcontrib-out-g}
 
