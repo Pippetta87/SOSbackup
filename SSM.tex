@@ -398,11 +398,14 @@ si tiene conto degli effetti quantistici tramite un opportuno coefficiente, il f
 
 La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 
+\begin{figure}[!h]
+\centering
+\begin{subfigure*}[t]{0.5\textwidth}
 
-\begin{tikzpicture}[thick]
+\begin{tikzpicture}[]
 
 \node[anchor=north west] (opint) at ([shift={(0,2.5)}]0,0) {\includegraphics[width=0.5\textwidth,keepaspectratio]{opcontrib-int-g}};
-\node[anchor=north east] (opout) at ([shift={(0,2.5-3/35)}]20,0) {\includegraphics[width=0.5\textwidth,keepaspectratio]{opcontrib-out-g}};
+
 \node[draw,anchor=north,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at ([shift={(0,-7)}]10,0) {};
 \node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm,above=10mm of sc] (ff) {};
 \node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm,above=10mm of ff] (bb) {};
@@ -426,12 +429,23 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 \node[name=manganese, right=4.5mm of cromum.west] {\tiny Mn};
 \node[name=ferrum, right=4.5mm of manganese.west] {\tiny Fe};
 \node[name=nikel, right=4.5mm of ferrum.west] {\tiny Ni};
-
-\node[anchor=north west] at ([shift={(0,-10.5)}]0,0) {\parbox{\textwidth}{\captionof{figure}{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}\label{fig:opacitycontrib} }};
  
 \end{tikzpicture}
 
-\clearpage
+\end{subfigure*}
+~
+
+\begin{subfigure*}[t]{0.5\textwidth}
+\includegraphics[width=0.5\textwidth,keepaspectratio]{opcontrib-out-g}
+
+\end{subfigure*}
+
+\end{figure}
+
+\caption{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}\label{fig:opacitycontrib}
+
+
+%\clearpage
 
 \section{Condizione di in-stabilit\'a dinamica: trasporto convettivo.}
 
