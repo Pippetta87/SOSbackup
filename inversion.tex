@@ -266,14 +266,12 @@ Determino i varii coefficienti minimizzando l'espressione
 \chapter{Vincoli al modello solare dalle osservazioni sismologiche.}%%chapter: vincoli al modello solare: HCSM.
 }
 
-\subsection{Modello solare sismologico. Approssimazione di scaling.}
+\section{Modello solare sismologico.}
 
 %Indico con $Q(P)$ e $Q_{\odot}$ i valori di una grandezza Q determinati tramite un modello solare, funzione dei parametri del modello, e risultanti dalle correzioni sismologiche a quest ultimi  
 %\begin{equation}
 %&Q_{\odot}=Q(P)+q(\omega)
 %\end{equation}
-
-Oltre a determinare il valore sismologico corretto delle grandezze meccaniche del modello solare si pu\'o stabilire il range dei parametri del SSM compatibili con le frequenze osservate: si approssima localmente una dipendenza della grandezza $Q$ dai parametri della forma $\frac{Q}{Q_{MSS}}=(\frac{P}{P_{MSS}})\expy{\alpha_{QP}}$ quindi si determina il range dei parametri $p_i=\frac{P^i}{P_{MSS}^i}$ compatibile con $\Omega_i\pm\Delta\Omega_i$, in particolare si usano le grandezze sismologiche pi\'u accurate $Y_{ph},\ R_b,\ \rho_b$.
 
 \subsection{Zona convettiva}
 
@@ -315,22 +313,27 @@ $\rho_b$ is an indipendent quantity ($\rho(x)$ in convective zone is determined 
 
 [\cite{deg97helioseismology} fig.3]
 
+
+
+\section{Approssimazione di scaling.}
+
+Oltre a determinare il valore sismologico corretto delle grandezze meccaniche del modello solare si pu\'o stabilire il range dei parametri del SSM compatibili con le frequenze osservate: si approssima localmente una dipendenza della grandezza $Q$ dai parametri della forma $\frac{Q}{Q_{MSS}}=(\frac{P}{P_{MSS}})\expy{\alpha_{QP}}$ quindi si determina il range dei parametri $p_i=\frac{P^i}{P_{MSS}^i}$ compatibile con $\Omega_i\pm\Delta\Omega_i$, in particolare si usano le grandezze sismologiche pi\'u accurate $Y_{ph},\ R_b,\ \rho_b$.
+
+
 \subsection{Regione intermedia con $0.2<x<0.65$.}
 
 (Vedi: \cite{bah04accurately})
 Sotto la zona convettiva $\Gamma_1=\frac{5}{3}$ con accuratezza migliore di \num{e-3}. L'inversione sismologica \'e accurata: $\frac{\Delta u}{u}\leq5 \permil$. Dalla conoscenza di $u_{\odot}$ si ricava il profilo radiale della velocit\'a del suono tramite $c_s^2=\Gamma_1 u$.
 
 % Vedi H,SManf scilla pg 11-12
-Le propriet\'a di questa regione sono determinate dall'opacit\'a e quindi, nella misura in cui \'e possibile combinare le differenze nei modi per cancellare il contributo della zona convettiva e considerare il contributo di $\frac{\Lvar{L}}{L}$ una piccola correzione, come accade fuori dalla regione di produzione di energia, \'e possibile studiare gli effetti delle variazioni di opacit\'a sui modi.
+%Le propriet\'a di questa regione sono determinate dall'opacit\'a e quindi, nella misura in cui \'e possibile combinare le differenze nei modi per cancellare il contributo della zona convettiva e considerare il contributo di $\frac{\Lvar{L}}{L}$ una piccola correzione, come accade fuori dalla regione di produzione di energia, \'e possibile studiare gli effetti delle variazioni di opacit\'a sui modi.
+%La quantit\'a da determinare \'e quindi
+%\begin{equation}
+%\frac{\delta\kappa}{\kappa}=\frac{\Lvar{\kappa}}{\kappa}+\Dcvar{\PDly{\rho}{\kappa}}{T}+\frac{\Lvar{T}}{T}\Dcvar{\PDly{T}{\kappa}}{\rho}
+%\end{equation}
+%dove $\frac{\Delta\kappa}{\kappa}$ rappresenta la correzione a $\kappa(\rho,T)$ a densit\'a, temperatura e composizione fissate.
+[vedi fig 11/12 \cite{ell95opacity} ??]
 
-La quantit\'a da determinare \'e quindi
-\begin{equation}
-\frac{\delta\kappa}{\kappa}=\frac{\Lvar{\kappa}}{\kappa}+\Dcvar{\PDly{\rho}{\kappa}}{T}+\frac{\Lvar{T}}{T}\Dcvar{\PDly{T}{\kappa}}{\rho}
-\end{equation}
-dove $\frac{\Delta\kappa}{\kappa}$ rappresenta la correzione a $\kappa(\rho,T)$ a densit\'a, temperatura e composizione fissate.
-
-
-[fig 11/12 \cite{ell95opacity}]
 
 \subsection{Core di fusione $x<0.2$.}
 
@@ -360,5 +363,6 @@ quindi per la temperatura centrale del Sole si ha
 \begin{equation}
 T_{ES}=T_{MSS}(\frac{Y_{ph\odot}}{Y_{ph,MSS}})\expy{0.2}=\SI{1.587e7}{\kelvin}
 \end{equation}
+
 
 \end{document}
