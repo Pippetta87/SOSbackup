@@ -398,14 +398,16 @@ si tiene conto degli effetti quantistici tramite un opportuno coefficiente, il f
 
 La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 
-\begin{figure}[!h]
-\centering
+\begin{tikzpicture}[remember picture,overlay]
 
-\begin{tikzpicture}[]
+\node[anchor=north west] (opint) at ([shift={(0,2.5)}]current page.north west) {\includegraphics[width=0.55\textwidth,keepaspectratio]{opcontrib-int-g}};
+\node[anchor=north east] (opout) at ([shift={(0,2.5-3/35)}]current page.north east) {\includegraphics[width=0.55\textwidth,keepaspectratio]{opcontrib-out-g}};
+\node[draw,anchor=north,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at ([shift={(0,-7)}]current page.north) {};
+\node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm,above=10mm of sc] (ff) {};
+\node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm,above=10mm of ff] (bb) {};
+\node[draw,label={[label distance=2mm]-90:bf},fill=bf,minimum size=5mm,above=10mm of bb] (bf) {};
 
-\begin{scope}[name=scopeint]
 
-\node[anchor=north west] (opint) at ([shift={(0,2.5)}]0,0) {\includegraphics[width=0.5\textwidth,keepaspectratio]{opcontrib-int-g}};
 \node[name=hydrogen, right= 8mm of opint.south west] {\tiny H};
 \node[name=helium, right=4.5mm of hydrogen.west] {\tiny He};
 \node[name=carbonium, right=4.5mm of helium.west] {\tiny C};
@@ -424,28 +426,9 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 \node[name=ferrum, right=4.5mm of manganese.west] {\tiny Fe};
 \node[name=nikel, right=4.5mm of ferrum.west] {\tiny Ni};
 
-\end{scope}
-
-\begin{scope}[name=scopelegenda,shift={($(scopeint.west) + (0.1,0)$)}]
-
-\node[draw,anchor=north,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at ([shift={(0,-7)}]10,0) {};
-\node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm,above=10mm of sc] (ff) {};
-\node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm,above=10mm of ff] (bb) {};
-\node[draw,label={[label distance=2mm]-90:bf},fill=bf,minimum size=5mm,above=10mm of bb] (bf) {};
-
-\end{scope}
-
-\begin{scope}[name=scopeout,shift={($(scopelegenda.west) + (0.1,0)$)}]
-
-\includegraphics[width=0.5\textwidth,keepaspectratio]{opcontrib-out-g}
-
-\end{scope}
-
+\node[anchor=north west] at ([shift={(0,10.5)}]current page.north west) {\parbox{\textwidth}{\captionof{figure}{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}\label{fig:opacitycontrib} }};
+ 
 \end{tikzpicture}
-
-\caption{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}\label{fig:opacitycontrib}
-
-\end{figure}
 
 %\clearpage
 
