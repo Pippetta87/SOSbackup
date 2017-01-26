@@ -200,6 +200,8 @@ Le correzioni alle pressione si ottengono dall'equazione di equilibrio idrostati
 \Lvar{P}=\int_r^R(g\Lvar{\rho}+\rho\Lvar{g})\,dr\label{eq:pressurecorrho}
 \end{equation}
 
+%% discrepanza densita e velocita suono con metallicita riviste
+
 %[figure inversione al variare dei parametri solari da \cite{boothroyd2003our}]
 
 \begin{figure}[!h]
@@ -227,7 +229,7 @@ Le correzioni alle pressione si ottengono dall'equazione di equilibrio idrostati
 Per investigare la composizione \'e necessario usare l'equazione di stato per esplicitare $\Gamma_1(P,\rho,X_i)$ riscrivendo \eqref{eq:variational} nella forma
 
 \begin{align}
-&\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^R[K^{nl}_{\Gamma_1,\rho}(r)\frac{\delta_r\Gamma_1}{\Gamma_1}(r)+K^{nl}_{\rho,\Gamma_1}(r)\frac{\delta_r\rho}{\rho}(r)]\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})+\sigma_i\label{eq:invdGammadrho}&\intertext{da questa, utilizzando l'equazione di stato per ricavare la dipendenza di $\Gamma_1$ dalla composizione chimica, \'e possibile ottenere il profilo radiale di $Y$: per diminuire gli errori sistematici dovuti alle discrepanze nell'equazione di stato riscrivo l'ultima espressione nella forma:}\nonumber\\
+&\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^R[K^{nl}_{\Gamma_1,\rho}(r)\frac{\delta_r\Gamma_1}{\Gamma_1}(r)+K^{nl}_{\rho,\Gamma_1}(r)\frac{\delta_r\rho}{\rho}(r)]\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})+\sigma_i\label{eq:invdGammadrho}&\intertext{da questa, utilizzando l'equazione di stato per ricavare la dipendenza di $\Gamma_1$ dalla composizione chimica, \'e possibile ottenere il profilo radiale di $Y$: per diminuire gli errori sistematici dovuti alle discrepanze nell'equazione di stato e nella metallicit\'a riscrivo l'ultima espressione nella forma:}\nonumber\\
 &\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^RK^{nl}_{u,Y}(r)\frac{\delta_ru}{u}(r)\,dr+\int K^{nl}_{Y,u}(r)\delta_rY\,dr+\int_0^RK^{nl}_{c^2,\rho}(r)(\frac{\delta\Gamma_1}{\Gamma_1})_{int}\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})\label{eq:diffthermo}&\intertext{dove $(\delta\Gamma_1)_{int}$ \'e l'errore dovuto alle discrepanze nell'equazione di stato a $(P,\rho,Y)$ fissati.}\nonumber
 \end{align}
 La determinazione dell'abbondanza di elio nella regione convettiva \'e dovuta principalmente alla deviazione da $\Gamma_1=\frac{5}{3}$ nella regione di seconda ionizzazione dell'elio.
@@ -238,13 +240,14 @@ La determinazione dell'abbondanza di elio nella regione convettiva \'e dovuta pr
 
 [fig. 3 \cite{cas99helioseismology}]
 
-\subsection{Tecniche di inversione numeriche.}
+\section{Tecniche di inversione numeriche.}
+%vedi JCD 2002 pg 25-32
 
 Parte dell'errore sui risultati dell'inversione \'e dovuto alla scelta della parametrizzazione delle funzioni incognite.
 
-Elenco alcune tecniche numeriche usate.
+Elenco alcune tecniche numeriche usate. %% subsection o itemize
 
-\subsubsection{Minimi quadrati}
+\subsection{Minimi quadrati}
 
 Si parametrizzano le funzioni incognite $\frac{\delta_rc^2}{c^2}$, $\frac{\delta_r\rho}{\rho}$, $F_{Surf}$. Attraverso la tecnica dei minimi quadrati si ottengono i parametri e le correzioni. La funzione da minimizzare \'e
 \begin{align}
@@ -255,7 +258,7 @@ Si parametrizzano le funzioni incognite $\frac{\delta_rc^2}{c^2}$, $\frac{\delta
 %Determinazione incertezza.
 %(Dziembowski90, Antia Basu 94), (JCD90).
 
-\subsubsection{Subtractive Optimally Localized Averaging}
+\subsection{Subtractive Optimally Localized Averaging}
 
 Per determinare in generale la funzione $\frac{\delta f_1(r)}{f_1(r)}$ scelgo i $c_i(r_0)$ tali che $\sum c_i(r_0)\frac{\delta\omega_i}{\omega_i}$ fornisca una media del valore di $\frac{\delta f_1(r)}{f_1(r)}$ in $r=r_0$:
 
@@ -292,6 +295,8 @@ Determino i varii coefficienti minimizzando l'espressione
 %&Q_{\odot}=Q(P)+q(\omega)
 %\end{equation}
 
+
+
 \subsection{Zona convettiva}
 
 \begin{wrapfigure}[]{r}{0.4\textwidth}
@@ -321,11 +326,9 @@ W=\frac{r^2}{Gm(r)}\TDy{r}{c^2}=\Gamma_1(\invers{\PDly{\rho}{P}}-1)
 &c_b=\SIrange{0.221}{0.225}{\mega\meter\per\second}
 \end{align*}
 
-
-$\rho_b$ is an indipendent quantity ($\rho(x)$ in convective zone is determined up to a scaling factor): the helioseismological determination of $\rho_b$ fixes such a factor.
-
+\item Determinati tramite inversione il profilo radiale di u e $R_b$ si determina anche la densit\'a della base della zona convettiva:
 \begin{equation*}
-\rho_b=\SI{0.192}{\gram\per\cubic\cm}
+\rho_b=\SIrange{0.185}{0.199}{\gram\per\cubic\cm}
 \end{equation*}
     
 \end{itemize}
@@ -333,6 +336,19 @@ $\rho_b$ is an indipendent quantity ($\rho(x)$ in convective zone is determined 
 [\cite{deg97helioseismology} fig.3]
 
 
+\subsection{Reazioni nucleari}
+
+%[figure inversione al variare dei parametri solari da \cite{boothroyd2003our}]
+
+\begin{figure}[!h]
+\centering
+
+
+\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvRR}
+
+\caption{Da \cite{boothroyd2003our}.}
+
+\end{figure}
 
 \section{Approssimazione di scaling.}
 
