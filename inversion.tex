@@ -201,28 +201,9 @@ Le correzioni alle pressione si ottengono dall'equazione di equilibrio idrostati
 \end{equation}
 
 %% discrepanza densita e velocita suono con metallicita riviste
-
 %[figure inversione al variare dei parametri solari da \cite{boothroyd2003our}]
 
-\begin{figure}[!h]
-\centering
-
-\begin{subfigure}[t]{0.32\textwidth}
-\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvZ}
-\end{subfigure}
-~
-\begin{subfigure}[t]{0.32\textwidth}
-\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvRR}
-\end{subfigure}
-~
-\begin{subfigure}[t]{0.32\textwidth}
-\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvDiff}
-\end{subfigure}
-\caption{Da \cite{boothroyd2003our}.}
-
-\end{figure}
-
-%Figure dalnotes pg. 208 fig. 9.5 
+Figure dalnotes pg. 208 fig. 9.5 
 
 \subsection{Inversione equazione di stato e composizione.}
 
@@ -243,17 +224,18 @@ La determinazione dell'abbondanza di elio nella regione convettiva \'e dovuta pr
 \section{Tecniche di inversione numeriche.}
 %vedi JCD 2002 pg 25-32
 
-Parte dell'errore sui risultati dell'inversione \'e dovuto alla scelta della parametrizzazione delle funzioni incognite.
+Elenco alcune tecniche numeriche usate.
 
-Elenco alcune tecniche numeriche usate. %% subsection o itemize
+I risultati dell'inversione sono affetti da errori sistematici introdotti dalla procedura di inversione ([vedi effetti risoluzione finita sunto pg 1098 $\S 10$ pbp 2000 e DDFR97]).
 
 \subsection{Minimi quadrati}
 
 Si parametrizzano le funzioni incognite $\frac{\delta_rc^2}{c^2}$, $\frac{\delta_r\rho}{\rho}$, $F_{Surf}$. Attraverso la tecnica dei minimi quadrati si ottengono i parametri e le correzioni. La funzione da minimizzare \'e
 \begin{align}
-&Y=(N-N_p)\chi^2+\alpha N\int_0^1(x\TDof{x}\frac{\Delta u}{u})^2\,dx&\intertext{con}\\
-&\chi^2=\frac{1}{N-N_p}\sum_{\alpha=1}^N(\frac{\Delta\nu_{obs}-\Delta\nu_{fit}}{\sigma})^2_{\alpha}&\intertext{e N indica il numero totale di modi $j$, $N_p$ il numero di parametri da determinare, $\Delta\nu_{fit}$ contiene le funzioni incognite opportunamente parametrizzate ed \'e dato da \eqref{eq:diffthermo} o \eqref{eq:invstructure}, $\sigma$ \'e l'errore osservativo e $\alpha$ il parametro di regolarizzazione.}
+&Y=(N-N_p)\chi^2+\alpha N\int_0^1(x\TDof{x}\frac{\Delta u}{u})^2\,dx\label{minimizerls}&\intertext{con}\nonumber\\
+&\chi^2=\frac{1}{N-N_p}\sum_{\alpha=1}^N(\frac{\Delta\nu_{obs}-\Delta\nu_{fit}}{\sigma})^2_{\alpha}
 \end{align}
+N indica il numero totale di modi $\alpha$, $N_p$ il numero di parametri da determinare, $\Delta\nu_{fit}$ contiene le funzioni incognite opportunamente parametrizzate ed \'e dato da \eqref{eq:diffthermo} o \eqref{eq:invstructure}, $\sigma$ \'e l'errore osservativo e il secondo addendo del lato destro di \eqref{eq:minimizerls} \'e introdotto per ridurre oscillazioni indesiderate nel risultato dell'inverisone con $\alpha$ parametro di regolarizzazione.
 
 %Determinazione incertezza.
 %(Dziembowski90, Antia Basu 94), (JCD90).
@@ -288,6 +270,11 @@ Determino i varii coefficienti minimizzando l'espressione
 \chapter{Vincoli al modello solare dalle osservazioni sismologiche.}%%chapter: vincoli al modello solare: HCSM.
 }
 
+
+[variazioni in opacit\'a vs variazioni in $\midfrac{Z}{X}$.]
+[Dipendenza dell'inversione dal modello di riferimento.]
+
+
 \section{Modello solare sismologico.}
 
 %Indico con $Q(P)$ e $Q_{\odot}$ i valori di una grandezza Q determinati tramite un modello solare, funzione dei parametri del modello, e risultanti dalle correzioni sismologiche a quest ultimi  
@@ -295,9 +282,9 @@ Determino i varii coefficienti minimizzando l'espressione
 %&Q_{\odot}=Q(P)+q(\omega)
 %\end{equation}
 
-
-
 \subsection{Zona convettiva}
+
+[accuratezza inversione $R_b$, $Y_{ph}$, $\rho_b$]
 
 \begin{wrapfigure}[]{r}{0.4\textwidth}
 \centering
@@ -343,19 +330,32 @@ W=\frac{r^2}{Gm(r)}\TDy{r}{c^2}=\Gamma_1(\invers{\PDly{\rho}{P}}-1)
 \begin{figure}[!h]
 \centering
 
-
+\begin{subfigure}[t]{0.32\textwidth}
+\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvZ}
+\end{subfigure}
+~
+\begin{subfigure}[t]{0.32\textwidth}
 \includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvRR}
-
+\end{subfigure}
+~
+\begin{subfigure}[t]{0.32\textwidth}
+\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvDiff}
+\end{subfigure}
 \caption{Da \cite{boothroyd2003our}.}
 
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvRR}
+\caption{Da \cite{boothroyd2003our}.}
 \end{figure}
 
 \section{Approssimazione di scaling.}
 
 Oltre a determinare il valore sismologico corretto delle grandezze meccaniche del modello solare si pu\'o stabilire il range dei parametri del SSM compatibili con le frequenze osservate: si approssima localmente una dipendenza della grandezza $Q$ dai parametri della forma $\frac{Q}{Q_{MSS}}=(\frac{P}{P_{MSS}})\expy{\alpha_{QP}}$ quindi si determina il range dei parametri $p_i=\frac{P^i}{P_{MSS}^i}$ compatibile con $\Omega_i\pm\Delta\Omega_i$, in particolare si usano le grandezze sismologiche pi\'u accurate $Y_{ph},\ R_b,\ \rho_b$.
 
-
-\subsection{Regione intermedia con $0.2<x<0.65$.}
+{Regione intermedia con $0.2<x<0.65$.}
 
 (Vedi: \cite{bah04accurately})
 Sotto la zona convettiva $\Gamma_1=\frac{5}{3}$ con accuratezza migliore di \num{e-3}. L'inversione sismologica \'e accurata: $\frac{\Delta u}{u}\leq5 \permil$. Dalla conoscenza di $u_{\odot}$ si ricava il profilo radiale della velocit\'a del suono tramite $c_s^2=\Gamma_1 u$.
@@ -370,17 +370,17 @@ Sotto la zona convettiva $\Gamma_1=\frac{5}{3}$ con accuratezza migliore di \num
 [vedi fig 11/12 \cite{ell95opacity} ??]
 
 
-\subsection{Core di fusione $x<0.2$.}
+{Core di fusione $x<0.2$.}
 
 Vedi \cite{ell98relativistic}
 
-Inversione di $(\delta\Gamma_1)_{int}$ mostra la necessit\'a di tener conto degli effetti relativistici per gli elettroni, che nel core solare hanno energia termica \SI{1.35}{\kilo\ev} approx $0.3\%$ of $m_e$).
+%Inversione di $(\delta\Gamma_1)_{int}$ mostra la necessit\'a di tener conto degli effetti relativistici per gli elettroni, che nel core solare hanno energia termica \SI{1.35}{\kilo\ev} approx $0.3\%$ of $m_e$).
 
 \begin{align}
 &\frac{\Lvar{\Gamma_1}}{\Gamma_1}\approx-\frac{2+2X}{3+5X}T&\intertext{dove T \'e in unit\'a di $\frac{m_ec^2}{k}$}\nonumber
 \end{align}
 
-[\cite{ell98relativistic} fig.3 ].
+%[\cite{ell98relativistic} fig.3 ].
 %[Solar neutrino deduced from solar seismic model]
 
 La temperatura centrale dipende principalmente dall'opacit\'a e dal rapporto $\frac{Z}{X}$. Nella regione centrale si determina
