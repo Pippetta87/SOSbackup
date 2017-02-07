@@ -4,6 +4,8 @@
 
 Considero la soluzione del problema inverso: come ricavare informazioni sulla struttura solare dalle frequenze osservate.
 
+[reminder: wrapfigure delta vu: piccole differenze, $Q_{nl}$ definito in \eqref{eq:surfaceeffects} tiene conto del fatto che gli errori dovuti alla non adiabaticit\'a sono pi\'u importanti per i modi ad alto l confinati pi\'u in superficie.]
+
 Per quanto riguarda l'inversione asintotica, indipendente dal modello ma afflitta da errori sistematici o differneziale, dipendente da un procedimento di linearizzazione attorno ad un modello ma che riduce in parte l'errore, in questa tesi considero la forma elementare basata sull'inversione della legge di Duvall.
 
 Il punto di partenza delle tecniche di inversione non asintotiche sono le  differenze tra le frequenze dei modi solari osservati e quelli predetti da un modello solare, e le autofunzioni di un modello solare combinate in opportune funzioni dette kernel attraverso cui si mettono in relazione le differenze tra una coppia di variabili indipendenti, per esempio $(\rho,c^2)$, e differenze nelle frequenze.
@@ -190,7 +192,11 @@ Esplicito la relazione linearizzata tra le differenze nelle grandezze $\rho$, g,
 \end{split}
 \end{align}
 
-Per distinguere gli effetti dovuti alla non corretta descrizione fisica dei modi vicino alla superficie, $r>0.95\rsun{}$, cui sono pi\'u sensibili i modi di l elevato, si introduce il fattore $Q_{nl}=\frac{E_{nl}}{E^0_{nl}}$ che vale 1 per $l=0$ e diminuisce al crescere di $l$.
+Per distinguere gli effetti dovuti alla non corretta descrizione fisica dei modi vicino alla superficie, $r>0.95\rsun{}$, cui sono pi\'u sensibili i modi di l elevato, si introduce
+\begin{equation}
+Q_{nl}=\frac{E_{nl}}{E^0_{nl}}\label{eq:surfaceeffects}
+\end{equation}
+che vale 1 per $l=0$ e diminuisce al crescere di $l$.
 
 %[figura dalsgaard 2002 fig deltanu/deltanu]
 %Nel caso l'entit\'a delle correzioni a $\rho$ e $c^2$ non giustifichi l'approssimazione lineare si ha un miglior accordo definendo la differenza tramite $\frac{\Lvar{f}}{f}=\frac{f-f_0}{\sqrt{ff_0}}$.
@@ -203,7 +209,14 @@ Le correzioni alle pressione si ottengono dall'equazione di equilibrio idrostati
 %% discrepanza densita e velocita suono con metallicita riviste
 %[figure inversione al variare dei parametri solari da \cite{boothroyd2003our}]
 
-Figure dalnotes pg. 208 fig. 9.5 
+[reminder: errori: sperimentali/numerici/modello per inversione $(\rho,c^2)$]
+\begin{wraptable}{r}{5.5cm}
+\begin{tabular}{||}
+&\Delta_{exp}&\Delta_{num}&\Delta_{mod}\\
+\frac{\delta c}{c}&0.02\percent&&\\
+\frac{\delta\rho}{\rho}&\\
+\end{tabular}
+\end{wraptable}
 
 \subsection{Inversione equazione di stato e composizione.}
 
@@ -219,7 +232,8 @@ La determinazione dell'abbondanza di elio nella regione convettiva \'e dovuta pr
 % Dals Art pg 31-32
 %Le differenze in $U$ e $\rho$  fra modelli solari sismologici e modelli solari standard sono al massimo pochi per cento.
 
-[EOS dependence:LInantiabasu07]
+[reminder: EOS dependence:LInantiabasu07]
+[reminder: errori: sperimentali/numerici/modello per inversione $(\rho,Y)$, $(\rho,\Gamma_1)$]
 
 \section{Tecniche di inversione numeriche.}
 %vedi JCD 2002 pg 25-32
