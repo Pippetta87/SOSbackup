@@ -26,7 +26,13 @@
   \item\relax}
  {\endlist}
  
-\newcommand{\errata}[1]{\begingroup\textcolor{grey}{#1}\endgroup}
+\newenvironment{errata} %%%% Abstract personalization
+{\begingroup\textcolor{grey}
+}{\endgroup}
+ 
+\newenvironment{workout} %%%% Abstract personalization
+{\begingroup\textcolor{midnightblue}
+}{\endgroup}
  
 \renewcommand\cftappendixname{\appendixname~} %% Appendix ???
 
