@@ -30,8 +30,10 @@
 {\begingroup\textcolor{grey}
 }{\endgroup}
  
-\newenvironment{workout} %%%% Abstract personalization
-{\begingroup\textcolor{midnightblue}
+\newenvironment{workout}[1][\unskip]%%%% Abstract personalization
+{\begingroup{#1}
+
+\textcolor{midnightblue}
 }{\endgroup}
  
 \renewcommand\cftappendixname{\appendixname~} %% Appendix ???
