@@ -29,9 +29,11 @@
 \newenvironment{errata} %%%% Abstract personalization
 {\begingroup\color{grey}
 }{\endgroup}
- 
+
+\newcounter{workout}
+\def\theworkout{(\arabic{workout})}
 \newenvironment{workout}[1][ ]%%%% Abstract personalization
-{\begingroup {#1}
+{\refstepcounter{workout}\begingroup {\theworkout: #1}
 \color{midnightblue}
 }{\endgroup}
  
