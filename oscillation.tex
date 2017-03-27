@@ -2,21 +2,29 @@
 
 \begin{document}
 
+\begin{workout}[tecniche Doppler vs fotometriche]
+Si osservano fenomeni periodici, tramite tecniche fotometriche o spettroscopiche, tramite effetto doppler
+\end{workout}
 
-Si osservano fenomeni periodici, tramite tecniche fotometriche o spettroscopiche, tramite effetto doppler, in numerose regioni del diagramma di \hr{}: l'osservazione di fenomeni periodici nelle stelle permette di dedurre informazione sulla loro struttura interna e di ridurre le incertezze nello spazio dei parametri del modello stellare.
+\begin{workout}[Periodo oscillazione-struttura interna]
+ in numerose regioni del diagramma di \hr{}: l'osservazione di fenomeni periodici nelle stelle permette di dedurre informazione sulla loro struttura interna
+\end{workout}
+
+\begin{workout}[Spazio parametri modello stellare]
+  di ridurre le incertezze nello spazio dei parametri del modello stellare.
+\end{workout}
 
 Le stelle in sequenza principale, come il Sole nella fase attuale, sono caratterizzate da numerosi modi di oscillazione di piccola ampiezza: onde gravo-acustiche stazionarie le cui caratteristiche sono determinate dal profilo radiale di $P$ e $\rho$, dal profilo radiale della velocit\'a del suono: le frequenze delle oscillazioni sono determinate principalmente dalla stratificazione e dinamica della regione in cui le ampiezze delle oscillazioni sono apprezzabili. Lo studio delle oscillazioni della superficie solare e l'estrapolazione delle informazioni sulla struttura interna in esse contenuta \'e detta eliosismologia.
 
-%\'E possibile calcolare numericamente le frequenze di oscillazione attese sulla base del modello solare e al variare di uno o pi\'u parametri del modello analizzare la corrispondenza con quelle osservate inoltre sono state sviluppate tecniche per analizzare il problema inverso e valutare le discrepanze modello/Sole dalla differenza tra frequenze predette dal modello e osservate.
 
 In questa sezione ricavo l'equazione del moto perturbato che descrive i modi normali del Sole: considero piccole perturbazioni dello stato di equilibrio e adiabatiche cio\'e molto pi\'u rapide del tempo scala per scambio di calore dovuto al flusso radiativo o alle reazioni nucleari.
 
-%Le frequenze delle oscillazioni adiabatiche sono determinate dalla struttura interna del Sole attraverso i coefficienti che compaiono nelle equazioni che descrivono i modi normali: dato che $P,\ \rho,\ g$ non sono indipendenti \'e sufficiente specificare $\rho(r)$ e $\Gamma_1(r)$.
-%Un confronto con le frequenze osservate necessita che la precisione numerica sia dei parametri ricavati dal modello sia delle tecniche numeriche usate per ricavare le frequenze dei modi di oscillazione sia maggiore dell'accuratezza delle misure.
+Le frequenze delle oscillazioni adiabatiche sono determinate dalla struttura interna del Sole attraverso i coefficienti che compaiono nelle equazioni che descrivono i modi normali: dato che $P,\ \rho,\ g$ non sono indipendenti \'e sufficiente specificare $\rho(r)$ e $\Gamma_1(r)$.
 
 
 {\let\clearpage\relax\let\cleardoublepage\relax
-\chapter{Modi normali di oscillazione solari.}
+%\chapter{Modi normali di oscillazione solari.}
+\chapter{Modi ''globali''.}
 }
 
 \section{Perturbazione dello stato di equilibrio.}
@@ -68,9 +76,13 @@ dove il quadrato della velocit\'a del suono \'e
 c_s^2=\frac{\Gamma_1P_0}{\rho_0}\label{eq:soundspeed}
 \end{equation}
 
+\begin{workout}[Ampiezza dei modi]
+
+\end{workout}
+
 I modi osservabili pi\'u facilmente hanno periodo attorno a \SI{5}{\minute} ci\'o \'e dovuto all'aumento del rumore solare a basse frequenze e ai processi di eccitazione dei modi che trasferiscono la massima energia ai modi di tale periodo. (Vedi \ref{sec:excitation}).
 
-\subsection{Analisi del campo di velocit\'a della superficie solare.}
+\section{Analisi del campo di velocit\'a della superficie solare.}
 
 [Tabella 1 \cite{houdek2006stochastic}.]
 
@@ -106,13 +118,13 @@ P(\omega,l,m)=|A_{nlm}|^2(\omega)
 \end{equation}
 L'andamento di un modo sulla superficie solare determina $(l,m)$ mentre l'ordine radiale n si ricava dalla distribuzione delle frequenze di oscillazione.
 
-\begin{errata}
+\begin{workout}[fitting power spectra to measure splitting coefficients]
 Le deviazioni dalla simmetria sferica causano uno splitting delle frequenze: rappresento un multipletto di frequenze tramite espansione con base di polinomi appropriata (solitamente si usano i polinomi di Legendre)
 \begin{equation}
 \nu_{nlm}=\nu_{nl0}+\sum_{j=1}^{j_{\max}}a_j(n,l)\pol_j^{(l)}(m)\label{eq:freqmulti}
 \end{equation}
 e ricavo i coefficienti tramite fit con le frequenze osservate; i coefficienti dispari contengono il contributo della rotazione al termine lineare, i coefficienti pari effetti delle asfericit\'a nella struttura solare e effetti quadratici della rotazione.
-\end{errata}
+\end{workout}
 
 
 \begin{workout}[Departure from spherical symmetry lift the (2l+1)-fold degeneracy]
@@ -216,7 +228,7 @@ La condizione di perturbazione adiabatica linearizzata \'e
 
 Descrivo la dipendenza temporale dei modi normali tramite $\exp{i\omega t}$ e angolare tramite le funzioni armoniche sferiche $Y_{lm}(\theta,\phi)$; inoltre, introducendo la frequenza di \bv{} (vedi \eqref{eq:bvfs}), $a=\Phi'+\frac{P}{\rho_0}$, $b=\div{\vec{\xi}}$, riscrivo l'equazione del moto \eqref{eq:emper} nella forma (vedi \cite{ledoux1958variable})
 \begin{align}
-&\omega^2\Lvar{\vec{\xi}}=\nabla a+\frac{N^2c^2}{g}b\frac{\vec{r}}{r}\\
+&\omega^2\vec{\xi}=\nabla a+\frac{N^2c^2}{g}b\frac{\vec{r}}{r}\\
 &\hat{r}\cdot(\rot{\vec{\xi}})=0\ \Rightarrow\ \PDof{\theta}(\sin{\theta}\xi_{\phi})-\PDy{\phi}{\xi_{\theta}}=0
 \end{align}
 \'E quindi possibile ricavare la componente tangenziale della perturbazione da una funzione scalare:

@@ -26,8 +26,11 @@
   \item\relax}
  {\endlist}
  
-\newenvironment{errata} %%%% Abstract personalization
-{\begingroup\color{grey}
+\newcounter{errata}
+\def\theerrata{(\arabic{errata})}
+\newenvironment{errata}[1][ ]%%%% Abstract personalization
+{\refstepcounter{errata}\begingroup {\theerrata: #1}
+\color{grey}
 }{\endgroup}
 
 \newcounter{workout}
