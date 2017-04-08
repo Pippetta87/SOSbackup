@@ -26,6 +26,8 @@
 \printbibliography[heading=subbibliography]
 \end{refsection}}
 
+\newcommand{\cel}[4]{\tensor*[^{#2}_{#3}]{\mathrm{#1}}{_{#4}}}    %Chemical element ^A_PA_N: [^{A}_{P}]{\mathrm{X}}{_{N}}
+
 %%% DDDD
 \newcommand{\dal}[1]{\nabla^2-\frac{1}{#1^2}\frac{\partial^2}{\partial t^2}}   %%% operatore di d'alambert: velocita da impostare. compatto
 \newcommand{\dalof}[2]{\nabla^2#2-\frac{1}{#1^2}\frac{\partial^2#2}{\partial t^2}}   %%% operatore di d'alambert: velocita da impostare. Esteso
@@ -70,7 +72,7 @@
  \newcommand{\ER}{E_{\text{RYD}}} %% E_ryd
 \newcommand{\Evar}[1]{#1'} %%% Variazione Euleriana
 \newcommand{\expy}[1]{^{#1}} %%  Esponente >1 char
-\newcommand{\cel}[4]{\tensor*[^{#2}_{#3}]{\mathrm{#1}}{_{#4}}}    %Chemical element ^A_PA_N: [^{A}_{P}]{\mathrm{X}}{_{N}}
+
 
 %%%%% FFFFFFFF
 
