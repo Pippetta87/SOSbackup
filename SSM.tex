@@ -254,8 +254,88 @@ Stimo il tempo trascorso da una stella di massa solare in sequenza principale co
 \chapter{Costruzione del modello solare}
 }
 
+\begin{workout}[Modello Sole attuale]
+
+
 Per quanto riguarda il Sole \'e possibile determinare sperimentalmente il prodotto $G\msun$, la distanza, la luminosit\'a, la composizione chimica al livello della fotosfera, ad eccezione del $\cel{He}{4}{}{}$ e altri gas nobili, e il raggio; allo stato delle conoscenze \'e conveniente introdurre un parametro $\alpha$ per descrivere l'efficienza del trasporto convettivo da determinare tramite la calibrazione del modello con le osservazioni, assieme all'abbondanza di $\cel{He}{4}{}{}$.
 
+Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
+\begin{subequations}\label{subeqn:stellarstructure}
+\begin{align}
+&\TDy{r}{m}=4\pi r^2\rho\\
+&\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\\
+&\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
+&\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
+\end{align}
+
+\begin{equation}
+\PDy{t}{n_s}+\frac{1}{r^2}\PDof{r}(r^2n_sw_s)=\Dcvar{\PDy{t}{n_s}}{Nucl}\label{eq:difffusionchange}
+\end{equation}
+\end{subequations}
+con $w_s$ velocit\'a di diffusione specie s. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note  l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
+
+Le condizioni al bordo per le equazioni precedenti sono
+
+\begin{itemize}
+    \item La superficie \'e definita da $T=T_{eff}$ e si ha la condizione $\lsun{}=4\pi r^2\sigma T_{eff}^4$. La pressione alla superficie \'e legata alla struttura di equilibrio dell'atmosfera.
+    \item In $r=0$ deve essere $L=0$, $M=0$.
+    %e condizioni al centro si ricavano espandendo l, m attorno a $r=0$ in termini di $T_c, P_C,X_C,X_{3C}$ ed eguagliando le espansioni ai valori di l e m del punto pi\'u interno.
+\end{itemize}
+
+\begingroup
+
+\renewcommand{\arraystretch}{1.3}
+\begin{wraptable}{l}{5.5cm}
+
+\caption{Osservabili solari principali.}
+
+\begin{tabular}{l|c}
+
+$\agesun{}$&\SI[separate-uncertainty=true]{5.57\pm0.02e9}{\year}\\
+\hline
+$\rsun{}$&\SI{6.9599e10}{\cm}\\
+\hline
+$\lsun{}$&\SI{3.844e33}{\erg\per\second}\\
+\hline
+$\left(\frac{Z}{X}\right)_{ph}$&0.0245\\
+
+\end{tabular}
+
+\end{wraptable}
+
+Evolvo il modello del Sole in sequenza principale fino ad ottenere un modello con le caratteristiche del Sole attuale: l'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffusionchange}, dovuto principalmente alle reazioni di fusione \eqref{eq:energyrate}, deve essere compensato da un'aumento di temperatura con conseguente incremento dell'energia generata e della luminosit\'a.
+
+\endgroup
+
+L'et\'a del sistema solare \'e nota grazie modelli di formazione del sistema solare e analisi dei meteoriti da cui si determina  $t_{\odot}=\SI{4.9+-0.1e9}{\year}$ con incertezza dovuta al periodo di solidificazione dei meteoriti.
+
+\tpc{!h}{
+\node at (0,0) {\includegraphics[width=\textwidth,trim=4 4 4 4,clip]{bahcall95}};
+}{(0,-7)}{\textwidth}{Profilo radiale della densit\'a, composizione, luminosit\'a e temperatura. Dati da \cite{bahcall95diffusion}.}
+
+\end{workout}
+
+%Evolvo il modello del Sole in sequenza principale fino ad ottenere un modello con le caratteristiche del Sole attuale:
+%l'incertezza sull'abbondanza iniziale di He e sui meccanismi del trasporto convettivo rendono necessaria una calibrazione in funzione della luminosit\'a e raggio attuali.
+%Scelgo $Y_0$ e $\alpha$ che forniscono luminosit\'a e raggio $\rsun{}=\SI{6.96e8}{\meter}$ attuali del Sole: risulta $\frac{R_b}{\rsun{}}\approx0.710$ e il valore di $Y_0=0.250$.
+
+%\eqref{eq:massaguscio},\eqref{eq:fidroequilibrio},\eqref{eq:fenergyconservation}, \eqref{eq:ftransportenergy} a partire da $r=0$ produce soluzioni dipendenti da $(P_c,T_c)$, mentre le condizioni alla superficie sono pi\'u complesse perch\'e dipendono dalla struttura dell'atmosfera e le soluzioni sono dipendenti da $(R,L)$: i quattro parametri matematici del problema, $(P_c,T_C,L,R)$, sono determinati dalla condizione di continuit\'a ad un punto intermedio  delle soluzioni $(P,T,m(r),l(r))$ fra le soluzioni con condizioni al centro e sulla superficie.
+
+\begin{comment}%tabella risultati modello solar
+\begingroup
+\renewcommand{\arraystretch}{1.3}
+\begin{wraptable}{r}{6.5cm}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$Y_{in}$&$Y_{ph}$&$Z_{in}$&$\alpha$&$\frac{R_{cz}}{\rsun{}}$\\
+\hline
+0.27753&0.24695&0.02&2.09&0.712\\
+\hline
+\end{tabular}
+\caption{Risultati modello solare. Da \cite{bahcall95diffusion}.}
+\end{wraptable}
+\endgroup
+\end{comment}
 
 \section{Equazione di stato e energia interna.}
 
@@ -797,85 +877,6 @@ Sebbene il tempo caratteristico per percorre un raggio solare sia lungo $\tau_{d
 
 % $D_{12}$ vs $K_T=\alpha n_0n_1$ thermal diffusion ration. Thermal diffusion coefficient: $D_T=D_{12}K_T$
 
-
-\section{Modello di Sole attuale.}
-
-Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
-\begin{subequations}\label{subeqn:stellarstructure}
-\begin{align}
-&\TDy{r}{m}=4\pi r^2\rho\\
-&\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\\
-&\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
-&\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
-\end{align}
-
-\begin{equation}
-\PDy{t}{n_s}+\frac{1}{r^2}\PDof{r}(r^2n_sw_s)=\Dcvar{\PDy{t}{n_s}}{Nucl}\label{eq:difffusionchange}
-\end{equation}
-\end{subequations}
-con $w_s$ velocit\'a di diffusione specie s. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note  l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
-
-Le condizioni al bordo per le equazioni precedenti sono
-
-\begin{itemize}
-    \item La superficie \'e definita da $T=T_{eff}$ e si ha la condizione $\lsun{}=4\pi r^2\sigma T_{eff}^4$. La pressione alla superficie \'e legata alla struttura di equilibrio dell'atmosfera.
-    \item In $r=0$ deve essere $L=0$, $M=0$.
-    %e condizioni al centro si ricavano espandendo l, m attorno a $r=0$ in termini di $T_c, P_C,X_C,X_{3C}$ ed eguagliando le espansioni ai valori di l e m del punto pi\'u interno.
-\end{itemize}
-
-\begingroup
-
-\renewcommand{\arraystretch}{1.3}
-\begin{wraptable}{l}{5.5cm}
-
-\caption{Osservabili solari principali.}
-
-\begin{tabular}{l|c}
-
-$\agesun{}$&\SI[separate-uncertainty=true]{5.57\pm0.02e9}{\year}\\
-\hline
-$\rsun{}$&\SI{6.9599e10}{\cm}\\
-\hline
-$\lsun{}$&\SI{3.844e33}{\erg\per\second}\\
-\hline
-$\left(\frac{Z}{X}\right)_{ph}$&0.0245\\
-
-\end{tabular}
-
-\end{wraptable}
-
-Evolvo il modello del Sole in sequenza principale fino ad ottenere un modello con le caratteristiche del Sole attuale: l'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffusionchange}, dovuto principalmente alle reazioni di fusione \eqref{eq:energyrate}, deve essere compensato da un'aumento di temperatura con conseguente incremento dell'energia generata e della luminosit\'a.
-
-\endgroup
-
-\vspace{2.4\baselineskip}
-
-%Evolvo il modello del Sole in sequenza principale fino ad ottenere un modello con le caratteristiche del Sole attuale:
-%l'incertezza sull'abbondanza iniziale di He e sui meccanismi del trasporto convettivo rendono necessaria una calibrazione in funzione della luminosit\'a e raggio attuali.
-%Scelgo $Y_0$ e $\alpha$ che forniscono luminosit\'a e raggio $\rsun{}=\SI{6.96e8}{\meter}$ attuali del Sole: risulta $\frac{R_b}{\rsun{}}\approx0.710$ e il valore di $Y_0=0.250$.
-
-\begingroup
-
-\renewcommand{\arraystretch}{1.3}
-\begin{wraptable}{r}{6.5cm}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$Y_{in}$&$Y_{ph}$&$Z_{in}$&$\alpha$&$\frac{R_{cz}}{\rsun{}}$\\
-\hline
-0.27753&0.24695&0.02&2.09&0.712\\
-\hline
-\end{tabular}
-\caption{Risultati modello solare. Da \cite{bahcall95diffusion}.}
-\end{wraptable}
-
-L'et\'a del sistema solare \'e nota grazie modelli di formazione del sistema solare e analisi dei meteoriti da cui si determina  $t_{\odot}=\SI{4.9+-0.1e9}{\year}$ con incertezza dovuta al periodo di solidificazione dei meteoriti.
-
-\endgroup
-
-\tpc{!h}{
-\node at (0,0) {\includegraphics[width=\textwidth,trim=4 4 4 4,clip]{bahcall95}};
-}{(0,-7)}{\textwidth}{Profilo radiale della densit\'a, composizione, luminosit\'a e temperatura. Dati da \cite{bahcall95diffusion}.}
-
-%\eqref{eq:massaguscio},\eqref{eq:fidroequilibrio},\eqref{eq:fenergyconservation}, \eqref{eq:ftransportenergy} a partire da $r=0$ produce soluzioni dipendenti da $(P_c,T_c)$, mentre le condizioni alla superficie sono pi\'u complesse perch\'e dipendono dalla struttura dell'atmosfera e le soluzioni sono dipendenti da $(R,L)$: i quattro parametri matematici del problema, $(P_c,T_C,L,R)$, sono determinati dalla condizione di continuit\'a ad un punto intermedio  delle soluzioni $(P,T,m(r),l(r))$ fra le soluzioni con condizioni al centro e sulla superficie.
+%\section{Modello di Sole attuale.}
 
 \end{document}
