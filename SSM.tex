@@ -2,27 +2,28 @@
 
 \begin{document}
 
+\begin{comment}
 \begin{workout}[Stelle pulsanti]
-
 \begin{wrapfigure}[23]{r}{0.6\textwidth}
 \includegraphics[width=0.65\textwidth,keepaspectratio]{HRpulsating} \label{fig:HRp}
 \caption{Zone del diagramma di \hr{} in cui sono previsti comportamenti oscillatori. Da \cite{dal03notes}.}
 \end{wrapfigure}
-
 \'E possibile che parte dell'energia interna di una stella alimenti un comportamento oscillatorio attorno alla configurazione di equilibrio: le frequenze dei modi normali sono le osservabili sperimentali che contengono informazioni dirette sull'interno stellare, oltre al flusso di neutrini prodotti nelle reazioni nucleari.
-
-
 \end{workout}
+\end{comment}
 
 \begin{workout}[Parametri modello stellare]
 
+La struttura stellare \'e determinata dalle condizioni di equilibrio idrostatico e termico locale: noti massa e composizione chimica iniziale \'e possibile costruire un modello che riproduca la struttura stellare a un tempo dato.
+
+Per quanto riguarda il Sole \'e possibile determinare sperimentalmente il prodotto $G\msun$, la distanza, la luminosit\'a, la composizione chimica al livello della fotosfera, ad eccezione del $\cel{He}{4}{}{}$ e altri gas nobili, e il raggio; allo stato delle conoscenze \'e conveniente introdurre un parametro $\alpha$ per descrivere l'efficienza del trasporto convettivo da determinare tramite la calibrazione del modello con le osservazioni, assieme all'abbondanza di $\cel{He}{4}{}{}$.
+
 I modelli stellari contengo dei parametri per descrivere i fenomeni fisici per cui non esiste una teoria completa: i parametri vengono scelti in maniera da riprodurre pi\'u accuratamente possibile la posizione della stella nel diagramma di \hr{}, definito da luminosit\'a e temperatura efficace.
+
 
 \end{workout}
 
-\vfill
-
-La struttura stellare \'e determinata da massa e composizione chimica iniziale della stella sulla base delle condizioni di equilibrio idrostatico e termico locale.
+%\vfill
 
 %Un modello stellare deve riprodurre la posizione di una stella nel diagramma entro le incertezze sulle osservabili sperimentali disponibili: luminosi\'a, massa, raggio, spettro della luce emessa dalla superficie (temperatura efficace, composizione chimica superficiale, accelerazione di gravit\'a) ed et\'a.
 
@@ -256,7 +257,7 @@ Stimo il tempo trascorso da una stella di massa solare in sequenza principale co
 
 \begin{workout}[Modello Sole attuale]
 
-
+%%Spostato all'inizio
 Per quanto riguarda il Sole \'e possibile determinare sperimentalmente il prodotto $G\msun$, la distanza, la luminosit\'a, la composizione chimica al livello della fotosfera, ad eccezione del $\cel{He}{4}{}{}$ e altri gas nobili, e il raggio; allo stato delle conoscenze \'e conveniente introdurre un parametro $\alpha$ per descrivere l'efficienza del trasporto convettivo da determinare tramite la calibrazione del modello con le osservazioni, assieme all'abbondanza di $\cel{He}{4}{}{}$.
 
 Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
@@ -291,7 +292,7 @@ Le condizioni al bordo per le equazioni precedenti sono
 
 \begin{tabular}{l|c}
 
-$\agesun{}$&\SI[separate-uncertainty=true]{5.57\pm0.02e9}{\year}\\
+$\agesun{}$&\SI[separate-uncertainty=true]{4.57\pm0.02e9}{\year}\\
 \hline
 $\rsun{}$&\SI{6.9599e10}{\cm}\\
 \hline
@@ -310,8 +311,8 @@ Evolvo il modello del Sole in sequenza principale fino ad ottenere un modello co
 L'et\'a del sistema solare \'e nota grazie modelli di formazione del sistema solare e analisi dei meteoriti da cui si determina  $t_{\odot}=\SI{4.9+-0.1e9}{\year}$ con incertezza dovuta al periodo di solidificazione dei meteoriti.
 
 \tpc{!h}{
-\node at (0,0) {\includegraphics[width=\textwidth,trim=4 4 4 4,clip]{bahcall95}};
-}{(0,-7)}{\textwidth}{Profilo radiale della densit\'a, composizione, luminosit\'a e temperatura. Dati da \cite{bahcall95diffusion}.}
+\node at (0,0) {\includegraphics[width=\textwidth,trim=4 4 4 4,clip]{B05AGSOP}};
+}{(0,-7)}{\textwidth}{Profilo radiale della densit\'a, composizione, luminosit\'a e temperatura. Dati da \cite{bahcall2005new}.}
 
 \end{workout}
 
