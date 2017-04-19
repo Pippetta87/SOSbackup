@@ -18,10 +18,14 @@ La struttura stellare \'e determinata dalle condizioni di equilibrio idrostatico
 
 I modelli stellari contengo dei parametri per descrivere i fenomeni fisici per cui non esiste una teoria completa: i parametri vengono scelti in maniera da riprodurre pi\'u accuratamente possibile la posizione della stella nel diagramma di \hr{}, definito da luminosit\'a e temperatura efficace.
 
-\renewcommand{\arraystretch}{1.3}
-\begin{wraptable}{l}{5.5cm}
+\begingroup
+% save original \intextsep
+\newlength{\oldintextsep}
+\setlength{\oldintextsep}{\intextsep}
 
-\caption{Osservabili solari principali.}
+\setlength\intextsep{0pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{wraptable}[10]{l}[10pt]{7.5cm}
 
 \begin{tabular}{l|c}
 
@@ -41,6 +45,8 @@ $\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
 \end{wraptable}
 
 Per quanto riguarda il Sole \'e possibile determinare sperimentalmente il prodotto $G\msun$, la distanza, la luminosit\'a, la composizione chimica al livello della fotosfera, ad eccezione del $\cel{He}{4}{}{}$ e altri gas nobili, e il raggio, quindi allo stato delle conoscenze \'e conveniente introdurre nel modello solare un parametro $\alpha$ per descrivere l'efficienza del trasporto convettivo da determinare tramite la calibrazione del modello con le osservazioni, assieme all'abbondanza di $\cel{He}{4}{}{}$.
+
+\endgroup
 
 \end{workout}
 
