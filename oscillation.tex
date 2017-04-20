@@ -22,7 +22,6 @@ Le frequenze delle oscillazioni adiabatiche sono determinate dalla struttura int
 
 
 {\let\clearpage\relax\let\cleardoublepage\relax
-%\chapter{Modi normali di oscillazione solari.}
 \chapter{Modi normali.}
 }
 
@@ -46,9 +45,9 @@ Analogamente per l'equazione di continuit\'a ottengo
 \rho'+\div{(\rho_0\Lvar{\vec{r}})}=0\label{eq:contper}
 \end{equation}
 
-\section{Modi normali di oscillazione.}
+\section{Modi acustici e di gravit\'a.}
 
-Le oscillazioni solari sono in prevalenza dovute ad onde acustiche, in cui la forza di richiamo \'e prodotta dal gradiente di pressione e onde in cui la forza di richiamo \'e la forza di gravit\'a.
+Le oscillazioni solari sono in prevalenza dovute ad onde acustiche, in cui la forza di richiamo \'e prodotta dal gradiente di pressione, modi p, e onde in cui la forza di richiamo \'e la forza di gravit\'a, i modi g.
 
 \begin{wrapfigure}[13]{r}{0.5\textwidth}
 \centering
@@ -75,13 +74,8 @@ dove il quadrato della velocit\'a del suono \'e
 c_s^2=\frac{\Gamma_1P_0}{\rho_0}\label{eq:soundspeed}
 \end{equation}
 
-\begin{workout}[Ampiezza dei modi]
-
-
-
-\end{workout}
-
 I modi osservabili pi\'u facilmente hanno periodo attorno a \SI{5}{\minute} ci\'o \'e dovuto all'aumento del rumore solare a basse frequenze e ai processi di eccitazione dei modi che trasferiscono la massima energia ai modi di tale periodo. (Vedi \ref{sec:excitation}).
+
 
 \section{Oscillazioni lineari adiabatiche.}
 
@@ -189,7 +183,10 @@ La condizione di non propagazione oltre la fotosfera dipende dalla descrizione d
 \omega_{\alpha}^2\int d^3x\rho|\vec{\xi}_{\alpha}(\vec{x})|^2=1
 \end{equation}
 
+vedi libbrecht88 figura power/gamma/E delle oscillazioni
+
 \end{workout}
+
 
 \begin{workout}[Discrepanze frequenze teoriche vs osservate]
 
@@ -212,8 +209,15 @@ $Q_{nl}=I_{nl}/I_{0}(\omega_{nl})$
 
 \end{workout}
 
+{\let\clearpage\relax\let\cleardoublepagerelax
+\chapte{Eccitazione e tempo di vita dei modi.} \label{chap:excitation}
+}
 
-\section{Eccitazione e tempo di vita dei modi.} \label{sec:excitation}
+\begin{workout}[Ampiezza dei modi]
+
+
+
+\end{workout}
 
 \begin{workout}[Convoluzione source e funzione risposta]
 Modelling solar oscillation power spectra (ADH90): formula 2 ??
@@ -297,8 +301,10 @@ La media temporale dell'energia di un modo \'e
 
 
 
+{\let\clearpage\relax\let\cleardoublepagerelax
+\chapter{Analisi del campo di velocit\'a della superficie solare.}
+}
 
-\section{Analisi del campo di velocit\'a della superficie solare.}
 
 \begin{workout}[altezze linee assorbimento metalli]
 [Tabella 1 \cite{houdek2006stochastic}.]
@@ -311,6 +317,8 @@ L'ampiezza della velocit\'a di oscillazione per il singolo modo \'e  al pi\'u \S
 
 % Na $D$ lines: $\lambda=\SI{589.6}{\nano\meter},\SI{589.0}{\nano\meter}$; SOHO (MDI): Ni \SI{678.8}{\nano\meter}; K Fraunhofer line \SI{770}{\nano\meter}; Ca \SI{643.9}{\nano\meter}; K \SI{769.9}{\nano\meter}
 
+\section{Identificazione fenomeni periodici}
+
 Per identificare i modi di oscillazione non radiali \'e necessario considerare anche la dipendenza spaziale del campo di velocit\'a per ottenere, tramite trasformata di Fourier, lo spettro di potenza.
 
 Un segnale di durata T permette una risoluzione $\Delta\omega=\frac{2\pi}{T}$: se devo risolvere due frequenze $\omega$ e $\omega+\Delta\omega$ devo osservare per un tempo $T=\frac{2\pi}{\Delta\omega}$ e la frequenza pi\'u bassa osservabile \'e $\Delta\omega$. Il limite superiore delle frequenze osservate \'e dato dalla frequenza di Nyquist $\omega_{Ny}=\frac{\pi}{\Delta t}$ con $\Delta t$ risoluzione temporale. Il dominio spazio-temporale quindi definisce, con analoghe relazioni per le variabili spaziali cartesiane e vettore d'onda associato, il dominio nello spazio $(\omega,\vec{k}_h)$ con $\vec{k}_h=(k_x,k_y)$
@@ -318,17 +326,9 @@ Un segnale di durata T permette una risoluzione $\Delta\omega=\frac{2\pi}{T}$: s
 \Delta\omega=\frac{2\pi}{T}\leq\omega\leq\frac{\pi}{\Delta t},\ \Delta k_i=\frac{2\pi}{L_i}\leq k_i\leq\frac{\pi}{\Delta x_i}
 \end{equation}
 
-\begin{wrapfigure}[12]{r}{0.6\textwidth}
-\centering
-\includegraphics[keepaspectratio,width=0.45\textwidth]{midlmodes}
-\caption{Distribuzione dei modi con $l\leq300$ nel diagramma $\nu-l$. Da \cite{chr02helioseismology}.}\label{fig:midlmodes}
-\end{wrapfigure}
+In \citet{lei62velocity} si osserva che la superficie solare ha scale spazio-temporali privilegiate: in particolare \'e presente un comportamento periodico nell'atmosfera a tutte le altezze rilevato tramite effetto doppler. Il periodo \'e di circa 300 secondi e la lunghezza caratteristica di qualche \si{\mega\meter}.
 
-\begin{wrapfigure}[11]{r}{0.6\textwidth}
-\centering
-\includegraphics[keepaspectratio,width=0.45\textwidth]{lowlmodes}
-\caption{Spettro modi di basso grado angolare. Da \cite{chr02helioseismology}.}\label{fig:lowlmodes}
-\end{wrapfigure}
+Le osservazione del disco solare risolto spazialmente permettono di individuare i modi di alto grado angolare: l'analisi tramite FFT (frequenza e $k_h$) delle osservazioni della superficie solare riportate in \citet{deu75observations} ($CI\ \SI{538}{\nano\meter}$) confermano che la  potenza delle oscillazioni (con numero d'onda $k_h=\frac{2\pi}{\lambda}<\SI{1}{\per\mega\meter}$) si distribuisce in linee determinate nel diagramma $(k_h,\omega)$ predette dal modello e quindi conferma che sono provocate da modi acustici non radiali degli strati interni alla fotosfera.
 
 Considero la geometria sfrerica descrivendo la dipendenza spaziale tramite le funzioni armoniche sferiche con l'asse delle sul piano del cielo ortogonale alla linea di vista. Il segnale Doppler osservato \'e proporzionale a:
 \begin{equation}
@@ -383,7 +383,7 @@ Spesso \'e impossibile misurare lo splitting in m quindi si parametrizzano le fr
 
 \begin{workout}[storia osservazioni]
 
-In \citet{lei62velocity} si osserva che la superficie solare ha scale spazio-temporali privilegiate: in particolare \'e presente un comportamento periodico nell'atmosfera a tutte le altezze rilevato tramite effetto doppler. Il periodo \'e di circa 300 secondi e la lunghezza caratteristica di qualche \si{\mega\meter}.
+Leighton deubner alla fine di fenomeni periodici
 
 Il modello proposto da \citet{ulrich70five} e \citet*{stein71five} considera le propriet\'a dei modi normali non radiali di oscillazione del Sole, in particolare usando la relazione di dispersione per onde acustiche, si ha la definizione di cavit\'a risonanti all'interno del Sole: la variazione delle propriet\'a del gas delimita le regioni di propagazione a diverse profondit\'a a seconda delle caratteristiche trasversali del moto.
 
@@ -397,13 +397,26 @@ L^2Y_l^m=-\frac{1}{\sin{\theta}}\PDof{\theta}(\sin{\theta}\PDy{\theta}{Y_l^m})+\
 \end{equation}
 nell'approssimazione di onda piana si ha $k_h^2\approx\frac{l(l+1)}{r^2}$.
 
-Le osservazione del disco solare risolto spazialmente permettono di individuare i modi di alto grado angolare: l'analisi tramite FFT (frequenza e $k_h$) delle osservazioni della superficie solare riportate in \citet{deu75observations} ($CI\ \SI{538}{\nano\meter}$) confermano che la  potenza delle oscillazioni (con numero d'onda $k_h=\frac{2\pi}{\lambda}<\SI{1}{\per\mega\meter}$) si distribuisce in linee determinate nel diagramma $(k_h,\omega)$ predette dal modello e quindi conferma che sono provocate da modi acustici non radiali degli strati interni alla fotosfera.
-
 Le osservazioni della luce integrata sull'intero disco selezionano modi di basso grado angolare: \citet{cla79solar} osservano nello spettro Doppler (linee di assorbimento di K neutro: \SI{769.9}{\nano\meter}) della luce integrata sull'intero disco solare dei picchi equi-spaziati circa \SI{68}{\micro\hertz} interpretate come modi p di alto ordine n e basso grado l. I modi di basso ordine radiale l penetrano in profondit\'a e quindi portano informazioni sulle regioni di fusione e la loro evoluzione.
 
 \end{workout}
 
 
+\begin{workout}[Osservazioni low-high degree attuali]
+
+\begin{wrapfigure}[12]{r}{0.6\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.45\textwidth]{midlmodes}
+\caption{Distribuzione dei modi con $l\leq300$ nel diagramma $\nu-l$. Da \cite{chr02helioseismology}.}\label{fig:midlmodes}
+\end{wrapfigure}
+
+\begin{wrapfigure}[11]{r}{0.6\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.45\textwidth]{lowlmodes}
+\caption{Spettro modi di basso grado angolare. Da \cite{chr02helioseismology}.}\label{fig:lowlmodes}
+\end{wrapfigure}
+
+\end{workout}
 
 {\let\clearpage\relax\let\cleardoublepagerelax           %%% Chapter  Caratteristiche asintotiche delle oscillazioni adiabatiche.
 \chapter{Caratteristiche asintotiche delle oscillazioni adiabatiche.}\label{chap:asyntoticbehavour}
