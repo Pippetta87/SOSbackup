@@ -404,13 +404,13 @@ Le osservazioni della luce integrata sull'intero disco selezionano modi di basso
 
 \begin{workout}[Osservazioni low-high degree attuali]
 
-\begin{wrapfigure}[12]{r}{0.6\textwidth}
+\begin{wrapfigure}[6]{r}{0.6\textwidth}
 \centering
 \includegraphics[keepaspectratio,width=0.45\textwidth]{midlmodes}
 \caption{Distribuzione dei modi con $l\leq300$ nel diagramma $\nu-l$. Da \cite{chr02helioseismology}.}\label{fig:midlmodes}
 \end{wrapfigure}
 
-\begin{wrapfigure}[11]{r}{0.6\textwidth}
+\begin{wrapfigure}[6]{r}{0.6\textwidth}
 \centering
 \includegraphics[keepaspectratio,width=0.45\textwidth]{lowlmodes}
 \caption{Spettro modi di basso grado angolare. Da \cite{chr02helioseismology}.}\label{fig:lowlmodes}
@@ -427,6 +427,8 @@ I modi gravo-acustici descritti in \eqref{eq:eigenomega} si riducono ai modi p e
 
 \section{Comportamento asintotico.}
 
+\begin{workout}[Equazioni oscillazioni adiabatiche: approssimazione di Cowling.]
+
 Per determinare la struttura dello spettro delle oscillazioni introduciamo l'approssimazione di Cowling (\cite{cow41oscillations}) cio\'e trascuriamo la perturbazione del potenziale gravitazionale. Quindi il sistema \eqref{eq:eigenomega} si riduce al secondo ordine
 
 \begin{subequations}\label{cowosc:main}
@@ -436,7 +438,9 @@ Per determinare la struttura dello spettro delle oscillazioni introduciamo l'app
 \end{align}
 \end{subequations}
 
+\end{workout}
 
+\begin{workout}[Problema Sturm-Liuville: limite alte/basse frequenze]
 Considero i limiti asintotici di alte e basse frequenze: ottengo un problema del tipo di Sturm-Liuville.
 %https://en.wikipedia.org/wiki/Sturm%E2%80%93Liouville_theory
 \begin{itemize}
@@ -447,6 +451,7 @@ Considero i limiti asintotici di alte e basse frequenze: ottengo un problema del
 \end{itemize}
 %Lo spettro solare \'e la combinazione dei modi parziali precedenti; 
 I modi f separano i modi g e p: non hanno nodi in direzione radiale.
+\end{workout}
 
 \'E utile fare l'ulteriore approssimazione, valida per grandi n, di trascurare la variabile perturbata rispetto alla sua derivata radiale, e cos\'i si ottiene
 \begin{equation}\label{eq:secondorder}
