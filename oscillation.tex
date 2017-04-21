@@ -100,7 +100,7 @@ La condizione di perturbazione adiabatica linearizzata \'e
 Descrivo la dipendenza temporale dei modi normali tramite $\exp{i\omega t}$ e angolare tramite le funzioni armoniche sferiche $Y_{lm}(\theta,\phi)$;
 \end{workout}
 
- inoltre, introducendo la frequenza di \bv{} (vedi \eqref{eq:bvfs}), $a=\Phi'+\frac{P}{\rho_0}$, $b=\div{\vec{\xi}}$, riscrivo l'equazione del moto \eqref{eq:emper} nella forma (vedi \cite{ledoux1958variable})
+ inoltre, introducendo la frequenza di \bv{} (vedi \eqref{eq:bvfs}), $a=\Phi'+\frac{P}{\rho_0}$, $b=\div{\vec{\xi}}$, riscrivo l'equazione del moto \eqref{eq:emper} nella forma (vedi \citet*{ledoux1958variable})
 \begin{align}
 &\omega^2\vec{\xi}=\nabla a+\frac{N^2c^2}{g}b\frac{\vec{r}}{r}\\
 &\hat{r}\cdot(\rot{\vec{\xi}})=0\ \Rightarrow\ \PDof{\theta}(\sin{\theta}\xi_{\phi})-\PDy{\phi}{\xi_{\theta}}=0
@@ -111,13 +111,18 @@ Descrivo la dipendenza temporale dei modi normali tramite $\exp{i\omega t}$ e an
 \end{equation}
 dove ho scomposto il vettore spostamento perturbato in componente radiale $\xi_r(r)$ e tangenziale $\xi_h(r)$.
 
+
+
 La variazione euleriana di densit\'a, pressione, potenziale gravitazionale sono espresse
 \begin{equation}
 (\rho',P',\Phi')=\exp{i\omega t}[\rho'(r),P'(r),\Phi'(r)]Y_l^m
 \end{equation}
+quindi ricavo la componente $\xi_h(r)$ applicando la parte tangenziale della divergenza all'equazione del moto:
+\begin{equation}
+\xi_h(r)=\frac{L}{r\omega^2}(\frac{P'(r)}{\rho_0}+\Phi'(r))
+\end{equation}
 
-
-Utilizzo l'equzione del moto \eqref{eq:emper} e l'equazione di continuit\'a \eqref{eq:contper} per eliminare $\xi_h(r)$ dall'equazione del moto
+mentre per $\xi_r(r)$:
 \begin{align}
 &\frac{1}{r^2}\TDof{r}(r^2\xi_r)-\frac{\xi_rg}{c^2}+\frac{1}{\rho_0}(\frac{1}{c^2}-\frac{l(l+1)}{r^2\omega^2})P'-\frac{l(l+1)}{r^2\omega^2}\Phi'=0\nonumber\\
 &\frac{1}{\rho_0}(\TDof{r}+\frac{g}{c^2})P'-(\omega^2-N^2)\xi_r+\TDy{r}{\Phi'}=0\label{eq:eigenomega}\\
