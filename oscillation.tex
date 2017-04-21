@@ -96,7 +96,11 @@ La condizione di perturbazione adiabatica linearizzata \'e
 &P'+\Lvar{\vec{\xi}}\cdot\nabla P_0=\frac{\Gamma_{1,0}P_0}{\rho}(\rho'+\Lvar{\vec{\xi}}\cdot\nabla\rho_0)\label{eq:adper}
 \end{align}
 
-Descrivo la dipendenza temporale dei modi normali tramite $\exp{i\omega t}$ e angolare tramite le funzioni armoniche sferiche $Y_{lm}(\theta,\phi)$; inoltre, introducendo la frequenza di \bv{} (vedi \eqref{eq:bvfs}), $a=\Phi'+\frac{P}{\rho_0}$, $b=\div{\vec{\xi}}$, riscrivo l'equazione del moto \eqref{eq:emper} nella forma (vedi \cite{ledoux1958variable})
+\begin{workoput}[Propriet\'a armoniche sferiche]
+Descrivo la dipendenza temporale dei modi normali tramite $\exp{i\omega t}$ e angolare tramite le funzioni armoniche sferiche $Y_{lm}(\theta,\phi)$;
+\end{workout}
+
+ inoltre, introducendo la frequenza di \bv{} (vedi \eqref{eq:bvfs}), $a=\Phi'+\frac{P}{\rho_0}$, $b=\div{\vec{\xi}}$, riscrivo l'equazione del moto \eqref{eq:emper} nella forma (vedi \cite{ledoux1958variable})
 \begin{align}
 &\omega^2\vec{\xi}=\nabla a+\frac{N^2c^2}{g}b\frac{\vec{r}}{r}\\
 &\hat{r}\cdot(\rot{\vec{\xi}})=0\ \Rightarrow\ \PDof{\theta}(\sin{\theta}\xi_{\phi})-\PDy{\phi}{\xi_{\theta}}=0
@@ -185,10 +189,14 @@ $Q_{nl}=I_{nl}/I_{0}(\omega_{nl})$
 }
 
 
+\section{Identificazione fenomeni periodici}
+
 \begin{workout}[altezze linee assorbimento metalli]
 [Tabella 1 \cite{houdek2006stochastic}.]
 perch\'e? Diminuzione T formazione atomo? Diminuzione pressione minori collisioni?
 \end{workout}
+
+
 
 Una parte basilare dell'informazione contenuta nei modi di oscillazione \'e ricavata analizzando  lo spostamento doppler delle righe di assorbimento dei metalli presenti negli strati visibili pi\'u esterni del sole.
 
@@ -196,7 +204,6 @@ L'ampiezza della velocit\'a di oscillazione per il singolo modo \'e  al pi\'u \S
 
 % Na $D$ lines: $\lambda=\SI{589.6}{\nano\meter},\SI{589.0}{\nano\meter}$; SOHO (MDI): Ni \SI{678.8}{\nano\meter}; K Fraunhofer line \SI{770}{\nano\meter}; Ca \SI{643.9}{\nano\meter}; K \SI{769.9}{\nano\meter}
 
-\section{Identificazione fenomeni periodici}
 
 Per identificare i modi di oscillazione non radiali \'e necessario considerare anche la dipendenza spaziale del campo di velocit\'a per ottenere, tramite trasformata di Fourier, lo spettro di potenza.
 
@@ -207,14 +214,32 @@ Un segnale di durata T permette una risoluzione $\Delta\omega=\frac{2\pi}{T}$: s
 
 In \citet{lei62velocity} si osserva che la superficie solare ha scale spazio-temporali privilegiate: in particolare \'e presente un comportamento periodico nell'atmosfera a tutte le altezze rilevato tramite effetto doppler. Il periodo \'e di circa 300 secondi e la lunghezza caratteristica di qualche \si{\mega\meter}.
 
-Le osservazione del disco solare risolto spazialmente permettono di individuare i modi di alto grado angolare: l'analisi tramite FFT (frequenza e $k_h$) delle osservazioni della superficie solare riportate in \citet{deu75observations} ($CI\ \SI{538}{\nano\meter}$) confermano che la  potenza delle oscillazioni (con numero d'onda $k_h=\frac{2\pi}{\lambda}<\SI{1}{\per\mega\meter}$) si distribuisce in linee determinate nel diagramma $(k_h,\omega)$ predette dal modello e quindi conferma che sono provocate da modi acustici non radiali degli strati interni alla fotosfera.
+
 
 \section{Onde stazionarie}
+
+\begin{workout}[Deubner:ridge in $(k_h,\omega)$, Approx onda piana]
+
+nell'approssimazione di onda piana si ha $k_h^2\approx\frac{l(l+1)}{r^2}$
+
+Le osservazione del disco solare risolto spazialmente permettono di individuare i modi di alto grado angolare: l'analisi tramite FFT (frequenza e $k_h$) delle osservazioni della superficie solare riportate in \citet{deu75observations} ($CI\ \SI{538}{\nano\meter}$) confermano che la  potenza delle oscillazioni (con numero d'onda $k_h=\frac{2\pi}{\lambda}<\SI{1}{\per\mega\meter}$) si distribuisce in linee determinate nel diagramma $(k_h,\omega)$ predette dal modello e quindi conferma che sono provocate da modi acustici non radiali degli strati interni alla fotosfera.
+
+Segnale doppler periodico: $k_h=\sqrt{k_x^2+k_y^2}$ numero d'onda orizzontale e $\vec{k}=k_r\hat{r}+\vec{k}_h$:  i modi si concentrano in determinate regioni del diagramma  $(k_h,\omega)$.
+\end{workout}
+
+\begin{workout}[Proiezioni $V_D$ su armoniche sferiche]
+La simmetria sferica del modello solare rende naturale una descrizione delle perturbazioni in funzione di $Y\indices{_l^m}(\theta,\phi)$, l \'e l'ordine angolare. Le funzioni armoniche sferiche  soddisfano
+\begin{equation}
+L^2Y_l^m=-\frac{1}{\sin{\theta}}\PDof{\theta}(\sin{\theta}\PDy{\theta}{Y_l^m})+\frac{1}{\sin^2{\theta}}\PtwoDy{\phi}{Y_l^m}=-r^2\nabla_h^2Y_l^m=l(l+1)Y_l^m\label{eq:SHperturb}
+\end{equation}
+
 
 Considero la geometria sfrerica descrivendo la dipendenza spaziale tramite le funzioni armoniche sferiche con l'asse delle sul piano del cielo ortogonale alla linea di vista. Il segnale Doppler osservato \'e proporzionale a:
 \begin{equation}
     V_D(\theta,\phi,t)=\sin{\theta}\cos{\phi}\sum_{n,l,m}A_{nlm}c_{lm}P_l^m(\cos{\theta})\cos{(m\phi-\omega_{nlm}t-\beta_{nlm})}
 \end{equation}
+
+\end{workout}
 
 Il fattore $\sin{\theta}\cos{\phi}$ deriva dalla proiezione della velocit\'a radiale sulla linea di vista: i modi relativi alle oscillazioni dei 5 minuti di grado l non elevato causano uno spostamento quasi totalmente radiale.
 
@@ -224,17 +249,36 @@ V_{l_0m_0}(t)=\int_AV_D(\theta,\phi,t)W_{l_0m_0}(\theta,\phi)\,dA=\sum_{n,l,m}S_
 \end{equation}
 e ho integrato sul disco solare con $W_{l_0m_0}\approx Y_{l_0m_0}$. La funzione di risposta $S_{l_0m_0,lm}\propto\delta_{ll_0}\delta_{mm_0}$ poich\'e le armoniche sferiche sono ortogonali sull'intera sfera $V_{l_0m_0}(t)$ contiene contributi da valori di $(l,m)$ vicini.
 
+\begin{workout}[Power spectral density]
 La trasformata di Fourier di $V_{l_0m_0}(t)$ permette di isolare i modi come picchi nello spettro di potenza:
 \begin{equation}
 P(\omega,l,m)=|A_{nlm}|^2(\omega)
 \end{equation}
-L'andamento di un modo sulla superficie solare determina $(l,m)$ mentre l'ordine radiale n si ricava dalla distribuzione delle frequenze di oscillazione.
 
+Random precess x(t) sampled over finite window time T:
+\begin{align}
+&S_T(\nu)=\frac{1}{T}|X_T(\nu)|^2\\
+&S_T(\nu)=\frac{1}{T}\int_{-T/2}^{T/2}\int_{-T/2}^{T/2}x(t)x(t')\exp{i2\pi\nu t}\exp{i2\pi\nu t}\,dt\,dt'\\
+&=S_T(\nu)=\int_{-T/2}^{T/2}\left[\frac{1}{T}\int_{-T/2}^{T/2}x(t')x(t'+\tau)\,dt'\right]\exp{i2\pi\nu \tau}\,d\tau\\
+&S_T(\nu)=\int_{-T/2}^{T/2}C_T(\tau)\exp{i2\pi\nu\tau}\,d\tau\\
+&C(\tau)=E(x(t)x(t+\tau))=\lim{T\to\infty}C_T(\tau)&\intertext{Introduco la densit\'a spettrale $S_x(\nu)$:}\nonumber\\
+&S_x(\nu)=\lim{T\to\infty}E[S_T(\nu)]=\int_{-\infty}^{-\infty}C(\tau)\exp{2\pi i\nu\tau}\,d\tau&\intertext{Wiener-Khinchin theorem}\nonumber\\
+&C(\tau)=\int_{-\infty}^{-\infty}S_x(\nu)\exp{-2\pi i\nu\tau}\,d\nu\nonumber\\
+&C(0)=\int_{-\infty}^{-\infty}S_x(\nu)\,d\nu=E(x^2)&\intertex{Parseval's theorem}
+\end{align}
+\end{workout}
+
+Il modello proposto da \citet{ulrich70five} e \citet*{stein71five} considera le propriet\'a dei modi normali non radiali di oscillazione del Sole, in particolare usando la relazione di dispersione per onde acustiche, si ha la definizione di cavit\'a risonanti all'interno del Sole: la variazione delle propriet\'a del gas delimita le regioni di propagazione a diverse profondit\'a a seconda delle caratteristiche trasversali del moto.
+
+\begin{workout}[Modi nodi]
+L'andamento di un modo sulla superficie solare determina $(l,m)$ mentre l'ordine radiale n si ricava dalla distribuzione delle frequenze di oscillazione.
+\end{workout}
 
 \begin{workout}[Mode mass and height of line]
 Relazione tra power of modes at surface and total energy of the mode
 \end{workout}
 
+\section{Misura splitting in m}
 
 \begin{workout}[fitting power spectra to measure splitting coefficients]
 Le deviazioni dalla simmetria sferica causano uno splitting delle frequenze: rappresento un multipletto di frequenze tramite espansione con base di polinomi appropriata (solitamente si usano i polinomi di Legendre)
@@ -262,25 +306,11 @@ Spesso \'e impossibile misurare lo splitting in m quindi si parametrizzano le fr
 
 \end{workout}
 
-\begin{workout}[storia osservazioni]
-
-Leighton deubner alla fine di fenomeni periodici
-
-Il modello proposto da \citet{ulrich70five} e \citet*{stein71five} considera le propriet\'a dei modi normali non radiali di oscillazione del Sole, in particolare usando la relazione di dispersione per onde acustiche, si ha la definizione di cavit\'a risonanti all'interno del Sole: la variazione delle propriet\'a del gas delimita le regioni di propagazione a diverse profondit\'a a seconda delle caratteristiche trasversali del moto.
 
 Le oscillazioni osservate hanno $\nu\geq\SI{500}{\micro\hertz}$, sono causate da modi p, onde stazionarie che si propagano come onda evanascente nell'atmosfera solare, e modi f, onde di superficie, di alto grado l.
 
-Approssimo la perturbazione di densit\'a, pressione e potenziale gravitazionale tramite un'onda piana con $k_h=\sqrt{k_x^2+k_y^2}$ numero d'onda orizzontale e $\vec{k}=k_r\hat{r}+\vec{k}_h$:  i modi si concentrano in determinate regioni del diagramma  $(k_h,\omega)$.
-
-La simmetria sferica del modello solare rende naturale una descrizione delle perturbazioni in funzione di $Y\indices{_l^m}(\theta,\phi)$, l \'e l'ordine angolare. Le funzioni armoniche sferiche  soddisfano
-\begin{equation}
-L^2Y_l^m=-\frac{1}{\sin{\theta}}\PDof{\theta}(\sin{\theta}\PDy{\theta}{Y_l^m})+\frac{1}{\sin^2{\theta}}\PtwoDy{\phi}{Y_l^m}=-r^2\nabla_h^2Y_l^m=l(l+1)Y_l^m\label{eq:SHperturb}
-\end{equation}
-nell'approssimazione di onda piana si ha $k_h^2\approx\frac{l(l+1)}{r^2}$.
 
 Le osservazioni della luce integrata sull'intero disco selezionano modi di basso grado angolare: \citet{cla79solar} osservano nello spettro Doppler (linee di assorbimento di K neutro: \SI{769.9}{\nano\meter}) della luce integrata sull'intero disco solare dei picchi equi-spaziati circa \SI{68}{\micro\hertz} interpretate come modi p di alto ordine n e basso grado l. I modi di basso ordine radiale l penetrano in profondit\'a e quindi portano informazioni sulle regioni di fusione e la loro evoluzione.
-
-\end{workout}
 
 
 \begin{workout}[Osservazioni low-high degree attuali]
