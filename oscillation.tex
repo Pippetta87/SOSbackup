@@ -4,6 +4,9 @@
 
 \begin{workout}[tecniche Doppler vs fotometriche]
 Si osservano fenomeni periodici, tramite tecniche fotometriche o spettroscopiche, tramite effetto doppler
+
+Le oscillazioni osservate hanno $\nu\geq\SI{500}{\micro\hertz}$, sono causate da modi p, onde stazionarie che si propagano come onda evanascente nell'atmosfera solare, e modi f, onde di superficie, di alto grado l.
+
 \end{workout}
 
 \begin{workout}[Periodo oscillazione-struttura interna]
@@ -157,6 +160,8 @@ La condizione di non propagazione oltre la fotosfera dipende dalla descrizione d
 
 \begin{workout}[normalizzazione]
 
+dalsnotes normalizzazione ampiezza superficie
+
 \begin{equation}
 \omega_{\alpha}^2\int d^3x\rho|\vec{\xi}_{\alpha}(\vec{x})|^2=1
 \end{equation}
@@ -283,7 +288,7 @@ L'andamento di un modo sulla superficie solare determina $(l,m)$ mentre l'ordine
 Relazione tra power of modes at surface and total energy of the mode
 \end{workout}
 
-\section{Misura splitting in m}
+%\section{Misura splitting in m}
 
 \begin{workout}[fitting power spectra to measure splitting coefficients]
 Le deviazioni dalla simmetria sferica causano uno splitting delle frequenze: rappresento un multipletto di frequenze tramite espansione con base di polinomi appropriata (solitamente si usano i polinomi di Legendre)
@@ -310,9 +315,6 @@ Spesso \'e impossibile misurare lo splitting in m quindi si parametrizzano le fr
 
 
 \end{workout}
-
-
-Le oscillazioni osservate hanno $\nu\geq\SI{500}{\micro\hertz}$, sono causate da modi p, onde stazionarie che si propagano come onda evanascente nell'atmosfera solare, e modi f, onde di superficie, di alto grado l.
 
 
 Le osservazioni della luce integrata sull'intero disco selezionano modi di basso grado angolare: \citet{cla79solar} osservano nello spettro Doppler (linee di assorbimento di K neutro: \SI{769.9}{\nano\meter}) della luce integrata sull'intero disco solare dei picchi equi-spaziati circa \SI{68}{\micro\hertz} interpretate come modi p di alto ordine n e basso grado l. I modi di basso ordine radiale l penetrano in profondit\'a e quindi portano informazioni sulle regioni di fusione e la loro evoluzione.
@@ -434,9 +436,16 @@ La media temporale dell'energia di un modo \'e
 
 I modi gravo-acustici descritti in \eqref{eq:eigenomega} si riducono ai modi p ed f per alte frequenze e ai modi g per basse frequenze. Approssimando il comportamento della perturbazione localmente con un'onda piana e trascurando la perturbazione al potenziale gravitazionale $\Phi'$ si ottendono soluzioni asintotiche per i modi normali e relazioni di dispersione approssimate.
 
-\section{Comportamento asintotico.}
+\section{.}
 
 \begin{workout}[Equazioni oscillazioni adiabatiche: approssimazione di Cowling.]
+
+\begin{equation}
+\Phi'(r)=-\frac{4\pi G}{2l+1}\left[\frac{1}{r^{l+1}}\int_0^r\rho'(r)r'^{l+2}\,dr'+r^l\int_r^R\frac{\rho'(r')}{r'^{r'^{l-1}}}\,dr'\right]\label{eq:perturbedgravitational}
+\end{equation}
+
+da cui si vede che $|\Phi'|$ \'e trascurabile rispetto a $\rho'$ sia nel caso in cui $l\gg1$, per l'esponente crescente con l al denominatore dei due addendi in \eqref{eq:perturbedgravitational}, sia nel caso $|n|\gg1$, per il comportamento rapidamente oscillante di $\rho'$.
+
 
 Per determinare la struttura dello spettro delle oscillazioni introduciamo l'approssimazione di Cowling (\cite{cow41oscillations}) cio\'e trascuriamo la perturbazione del potenziale gravitazionale. Quindi il sistema \eqref{eq:eigenomega} si riduce al secondo ordine
 
@@ -444,6 +453,14 @@ Per determinare la struttura dello spettro delle oscillazioni introduciamo l'app
 \begin{align}
 &\frac{1}{r^2}\TDof{r}(r^2\xi_r)-\frac{\xi_rg}{c^2}+\frac{1}{\rho_0}(\frac{1}{c^2}-\frac{l(l+1)}{r^2\omega^2})P'=0\label{cowosc:a}\\
 &\frac{1}{\rho_0}(\TDof{r}+\frac{g}{c^2})P'-(\omega^2-N^2)\xi_r=0\label{cowosc:b}
+\end{align}
+\end{subequations}
+
+Cowling approx dalsnotes:
+\begin{subequations}
+\begin{align}
+&\TDy{r}{\xi_r}=-(\frac{2}{r}-\frac{1}{\Gamma_1}\invers{H_p})\xi_r+\frac{1}{\rho_0c^2}(\frac{S_l^2}{\omega^2}-1)P'\\
+&\TDy{r}{P'}=\rho_0(\omega^2-N^2)\xi_r+\frac{1}{\Gamma_1}\invers{H_p}P'\\
 \end{align}
 \end{subequations}
 
@@ -466,10 +483,18 @@ I modi f separano i modi g e p: non hanno nodi in direzione radiale.
 \begin{equation}\label{eq:secondorder}
 \TtwoDy{r}{\xi_r}=\frac{\omega^2}{c_s^2}(1-\frac{N^2}{\omega^2})(\frac{S_l^2}{\omega^2}-1)\xi_r=-K(r)\xi_r
 \end{equation}
-per $K(r)>0$ quest'equazione descrive un comportamento oscillante; considerando un'onda piana si ha la relazione di dispersione:
+per $K(r)>0$ quest'equazione descrive un comportamento oscillante; considerando un'onda piana $\xi_r\propto\exp{ik_rr}$ si ha la relazione di dispersione:
 \begin{equation}
 k_r^2=\frac{\omega^2}{c_s^2}(\frac{N^2}{\omega^2}-1)(\frac{S_l^2}{\omega^2}-1)\label{eq:approximatedispersion}
 \end{equation}
+
+\begin{workout}[Bad approximation near surface (no upper turning point) and near solar center]
+
+Il termine in $\invers{H_P}$ non \'e trascurabile per $H_P$ piccolo vicino alla superficie.
+
+Il termine in $\frac{2}{r}$ non \'e trascurabile vicino al centro solare.
+
+\end{workout}
 
 \section{Cavit\'a risonanti.} \label{sec:resonantcavity} %Definizione frequenze critiche
 
