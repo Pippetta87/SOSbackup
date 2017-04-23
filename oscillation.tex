@@ -228,6 +228,42 @@ In \citet{lei62velocity} si osserva che la superficie solare ha scale spazio-tem
 
 \section{Onde stazionarie}
 
+
+\begin{workout}[Modi normali acustici: Landau - Cox]
+
+\section{Modi acustici e di gravit\'a.}
+
+Le oscillazioni solari sono in prevalenza dovute ad onde acustiche, in cui la forza di richiamo \'e prodotta dal gradiente di pressione, modi p, e onde in cui la forza di richiamo \'e la forza di gravit\'a, i modi g.
+
+\begin{wrapfigure}[13]{r}{0.5\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.45\textwidth]{phasepropagation}
+\caption{Differenza di fase per il segnale doppler delle righe $(5930)$ Fe I, pi\'u profonda, e $(5896)$ Na I, pi\'u alta nell'atmosfera. Da \cite{staiger1987observations}.}
+\end{wrapfigure}
+
+I modi puramente acustici di un corpo finito o comunque con condizioni ai bordi sono onde stazionarie la cui parte reale \'e del tipo $f(x,y,z)\cos{(\omega t+\alpha)}$: in assenza di effetti dissipativi la velocit\'a di fase \'e nulla e la velocit\'a di gruppo infinita, velocit\'a e pressione sono sfasati di $\frac{\pi}{2}$. 
+
+Per un corpo in equilibrio idrostatico ricavo il valore medio della velocit\'a del suono utilizzando il teorema del viriale
+\begin{equation}
+\begin{split}
+&-\Omega=3\int_VP\,dV=3\int_M\frac{P}{\rho}\,dm\\
+&=3\int_M\frac{c_s^2}{\Gamma_1}\,dm=3\exv{\frac{c_s^2}{\Gamma_1}}M\approx3\frac{\overline{c}_s^2}{\Gamma_1}M
+\end{split}
+\end{equation}
+
+Per stelle in sequenza principale ho $\Omega=-q\frac{GM^2}{R}$ con $q\approx1.5$; per il modo fondamentale di oscillazione radiale si ha:
+\begin{equation}
+\lambda_1\approx 2\rsun{},\ \omega_1\approx\frac{c_s}{\lambda_1},\ \Pi_1\approx\SI{1}{\hour}
+\end{equation}
+dove il quadrato della velocit\'a del suono \'e
+\begin{equation}
+c_s^2=\frac{\Gamma_1P_0}{\rho_0}\label{eq:soundspeed}
+\end{equation}
+
+I modi osservabili pi\'u facilmente hanno periodo attorno a \SI{5}{\minute} ci\'o \'e dovuto all'aumento del rumore solare a basse frequenze e ai processi di eccitazione dei modi che trasferiscono la massima energia ai modi di tale periodo. (Vedi \ref{sec:excitation}).
+
+\end{workout}
+
 \begin{workout}[Deubner:ridge in $(k_h,\omega)$, Approx onda piana]
 
 nell'approssimazione di onda piana si ha $k_h^2\approx\frac{l(l+1)}{r^2}$
