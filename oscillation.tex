@@ -567,13 +567,13 @@ Maggiore \'e il grado l meno profonda \'e la cavit\'a: le cavit\'a acustiche si 
 %Si pu\'o stimare la profondit\'a della cavit\'a acustica, utilizzando la condizione $c_s=\frac{\omega}{k_h}$ per $k_r=0$: approssimo la temperatura al punto di inversione del moto con $T\approx\Dcvar{\TDy{r}{T}}{ad}\delta$ dove $\delta$ \'e la profondit\'a della cavit\'a e, ipotizzando un gas ideale, ho $\Dcvar{\TDy{r}{T}}{ad}=\frac{g}{c_P}$ con $c_P$ calore specifico a pressione costante per unit\'a di massa.
 %Usando le relazioni fra gli esponenti adiabatici e che nel caso sono uguali a $\gamma$ riscrivo $c_s^2=(\Gamma_3-1)g\delta$ e sostituendo nella condizione al punto di inversione ottengo $\delta=\frac{\omega^2}{k_h^2(\Gamma_3-1)g}$: i modi con stesso $\frac{\omega}{k_h}$ sono confinati nella stessa cavit\'a.
 
-%Le regione di propagazione dei modi g sono definite da $\omega<N$: i modi g sono confinati nelle regioni pi\'u interne del Sole.
+Le regione di propagazione dei modi g sono definite da $\omega<N$: i modi g sono confinati nelle regioni pi\'u interne del Sole.
 Le onde di gravit\'a sono presenti nelle regioni in cui il gas \'e neutro o completamente ionizzato ($N^2$ grande) mentre sono riflesse dalle regioni dove $N$ \'e piccolo o immaginario: ionizzazione parziale, instabilit\'a convettiva, centro del Sole.
 Ho cavit\'a risonanti per modi g:
-\begin{itemize}
-\item Core radiativo: i modi g sono confinati tra la la parte centrale dove $g\to0$ e il fondo della zona convettiva dove $N^2<0$.
-\item Atmosfera: $N$ ha un massimo in coincidenza del punto $T_m$ nella cromosfera: modi g confinati tra zona convettiva e cromosfera ($\Pi\approx\numrange{180}{800}\si{\second}$).
-\end{itemize}
+
+Core radiativo: i modi g sono confinati tra la la parte centrale dove $g\to0$ e il fondo della zona convettiva dove $N^2<0$.
+
+
 
 \begin{figure}
 \includegraphics[keepaspectratio,width=0.8\textwidth]{raypath-gp}
@@ -659,14 +659,15 @@ F(w)\approx\int_0^R\frac{dr}{c}-w\expy{-1}\frac{\pi}{2}
 \begin{equation}
 \int_0^R\frac{dr}{c}-\frac{L}{\omega}\frac{\pi}{2}=\frac{(n+\alpha)\pi}{\omega}
 \end{equation}
-e quindi le  frequenze sono equispaziate in n e $\nu_{nl}\approx\nu_{n-1,l+2}$:
+e quindi le  frequenze sono equispaziate in n e $\nu_{nl}\approx\nu_{n-1,l+2}$ (per le deviazioni da questa uguaglianza, vedi \eqref{eq:tassoul}):
 \begin{align}
 &\nu_{nl}=\frac{\omega_{nl}}{2\pi}\approx(n+\frac{l}{2}+\frac{1}{4}+\alpha)\Delta\nu\label{eq:freqequi}\\
 &\Delta\nu=[2\int_0^R\frac{dr}{c}]\expy{-1}
 \end{align}
 Questo comportamento a bassi l \'e stato osservato da \cite{cla79solar} sulla luce integrata sul intero disco solare.
 
-
+\beign{workout}[Asymptotic approx modi g]
+[per basse frequenza: modi g]
 Nell'interno solare approssimo \eqref{eq:JWKBmode} con
 \begin{equation}
 \int_{r_1}^{r_2}\sqrt{\frac{N^2}{\omega}-1}\frac{dr}{r}=\frac{(n-\frac{1}{2})\pi}{L}
@@ -678,11 +679,11 @@ I modi g di alto n e basso l soddisfano un'equazione analoga a \eqref{eq:freqequ
 \omega=\frac{L\int_{r_1}^{r_2}N\frac{dr}{r}}{\pi(n+\frac{l}{2}+\alpha_g)}
 \end{equation}
 
+[vedi dasnote]
+
+\end{workout}
 
 %[Inserisci figura khomeagisot]
 %[Inserisci figura pgmodesC]
-%
-%{\let\clearpage
-%\relax\let\cleardoublepage\relax \chapter{Problematiche osservative.}} % 
 
 \end{document}
