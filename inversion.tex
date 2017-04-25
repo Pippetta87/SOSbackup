@@ -141,12 +141,27 @@ dove $\vec{\xi}=\Lvar{\vec{r}}$ \'e autovettore (perturbazione lagrangiana) del 
 
 \section{Inversione della rotazione.}
 
-\begin{workout}
+\begin{workout}[inversione rotazione 1D vs 1.5d vs 2d]
 Inversione 2d vs 1.5d
 Kernel rotazione e risoluzione: vedi biblio(adobe reader)
 Completare relazioni splitting inversione 1.5d
 \end{workout}
 
+\begin{workout}[Inversione 2D]
+
+\begin{align}
+&\omega_{nlm}-&\omega_{nl0}=m\int_0^R\int_0^{\pi}K_{nlm}(r,\theta)\Omega(r,\theta)r\,dr\,d\theta&\intertext{often data doesn't allow determination of individual frequency $\omega_{nlm}$}\\
+&\omega_{nlm}=&\omega_{nl0}+2\pi\sum_{j=1}^{j_{max}a_j(n,l)\mathcal{P}_j^{(l)}(m)}\\
+&2\pi a_j(n,l)=\sum_m\gamma_j(l,m)(\omega_{nlm}-\omega_{nl0}),\ 2\pi a_{2j+1}(n,l)=\int_0^R\int_0^{\pi}K_{nlj}^{(a)}(r,\theta)\Omega(r,\theta)r\,dr\,d\theta
+\end{align}
+
+\end{workout}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[keepaspectratio,width=0.8\textwidth]{invertedrotation}
+\caption{Inversione della velocit\'a di rotazione a diverse latitudini. La linea verticale tratteggiata indica la base della zona convettiva. Da \cite{chr02helioseismology}.}
+\end{figure}
 
 %Per investigare la dipendenza $\Omega(r,\theta)$ devo considerare le $2l+1$ frequenze.
 %latitudinal shear causa una deviazione da frequenze equispaziate.
