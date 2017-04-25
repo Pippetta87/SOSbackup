@@ -314,7 +314,13 @@ Random precess x(t) sampled over finite window time T:
 \end{align}
 \end{workout}
 
+\begin{workout}[modello ulrich71-steinliebacher71]
 Il modello proposto da \citet{ulrich70five} e \citet*{stein71five} considera le propriet\'a dei modi normali non radiali di oscillazione del Sole, in particolare usando la relazione di dispersione per onde acustiche, si ha la definizione di cavit\'a risonanti all'interno del Sole: la variazione delle propriet\'a del gas delimita le regioni di propagazione a diverse profondit\'a a seconda delle caratteristiche trasversali del moto.
+\end{workout}
+
+\begin{workout}[Osservazioni Claverie79 luce integrata sul disco: coerenza temporale - picchi equispaziati]
+Le osservazioni della luce integrata sull'intero disco selezionano modi di basso grado angolare: \citet{cla79solar} osservano nello spettro Doppler (linee di assorbimento di K neutro: \SI{769.9}{\nano\meter}) della luce integrata sull'intero disco solare dei picchi equi-spaziati circa \SI{68}{\micro\hertz} interpretate come modi p di alto ordine n e basso grado l. I modi di basso ordine radiale l penetrano in profondit\'a e quindi portano informazioni sulle regioni di fusione e la loro evoluzione.
+\end{workout}
 
 \begin{workout}[Modi nodi]
 L'andamento di un modo sulla superficie solare determina $(l,m)$ mentre l'ordine radiale n si ricava dalla distribuzione delle frequenze di oscillazione.
@@ -383,6 +389,13 @@ Il problema di trovare $\Omega(r,\theta)$ dalla differenza $\Delta\omega_{\alpha
 
 La velocit\'a angolare contribuisce a $\Delta\omega_{\alpha}$ negli strati in cui $\xi_{\alpha}$ \'e apprezzabile. Nel caso di rotazione dipendente solo da r si ha che $\Delta\omega_{\alpha}$ \'e lineare in m: ho $2l+1$ frequenze equispaziate.
 
+Per modi p di alto n approssimo lo splitting delle frequenze
+\begin{align}
+&\delta\omega_{nlm}\approx m\frac{\int_{r_t}^R\Omega(R)\,\frac{dr}{c}}{\int_{r_t}^R\frac{dr}{c}}&\intertext{per dipendenza puramente radiale, mentre per velocit\'a angolare generale}\\
+&\delta\omega_{nlm}\approx m\frac{\int_{\cos{\Theta}}^{-\cos{\Theta}}(\cos^2{\Theta}-\cos^2{\theta})\expy{-\frac{1}{2}}\int_{r_t}^R(1-\frac{L^2c^2}{r^2\omega^2})\expy^{\frac{1}{2}}\Omega(r,\theta)\frac{dr}{c}\,d(\cos{\theta})}{\int_{r_t}^R(1-\frac{L^2c^2}{r^2\omega^2})\expy^{\frac{1}{2}}\,\frac{dr}{c}}&\intertext{dove}\\
+&\Theta=\sin^{-1}{(\frac{m}{L})}
+\end{align}
+
 Deviazioni dalla simmetria sferica introducono una dipendenza delle frequenze dei modi da m. L'effetto della rotazione \'e descritto al primo ordine (in $\Omega$) da 
 \begin{equation}
 \Delta\omega_{nlm}
@@ -395,10 +408,6 @@ Spesso \'e impossibile misurare lo splitting in m quindi si parametrizzano le fr
 
 
 \end{workout}
-
-
-Le osservazioni della luce integrata sull'intero disco selezionano modi di basso grado angolare: \citet{cla79solar} osservano nello spettro Doppler (linee di assorbimento di K neutro: \SI{769.9}{\nano\meter}) della luce integrata sull'intero disco solare dei picchi equi-spaziati circa \SI{68}{\micro\hertz} interpretate come modi p di alto ordine n e basso grado l. I modi di basso ordine radiale l penetrano in profondit\'a e quindi portano informazioni sulle regioni di fusione e la loro evoluzione.
-
 
 \begin{workout}[Osservazioni low-high degree attuali]
 
