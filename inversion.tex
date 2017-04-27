@@ -114,6 +114,19 @@ La funzione $H_2$ \'e determinata dalla regione sotto la fotosfera. \cite{chr92p
 % Dalsnotes 7.155, fig 7.15
 %vedi relative sharp variations in $\Gamma_1$ in He second ionization zone Influence of the upper layers of the sun on the p-mode frequencies
 
+\section{Zona convettiva}
+
+\begin{wrapfigure}[]{r}{0.4\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.35\textwidth]{WrbczHHeioniz}
+\caption{. Da \cite{christensen1991depth}.}
+\end{wrapfigure}
+
+La regione radiativa ha stratificazione sub-adiabatica mentre a partire da $r=R_b$ si ha stratificazione quasi-adiabatica,  $\Gamma_1\approx\frac{5}{3}$: $P\propto\rho\expy{\frac{5}{3}}$. Per identificare il raggio a cui si ha il passaggio dal gradiente di temperatura subadiabatico ad adiabatico \'e utile considerare la funzione
+\begin{equation}
+W=\frac{r^2}{Gm(r)}\TDy{r}{c^2}=\Gamma_1(\invers{\PDly{\rho}{P}}-1)
+\end{equation}
+
 {\let\clearpage\relax\let\cleardoublepage\relax \chapter{Inversione non asintotica.}} % Inizio chapter "Inversione non asintotica." senza nuava pagina
 
 La soluzione del problema inverso per il sistema completo di equazioni si basa sulla linearizzazione delle variazioni attorno ad un modello di cui siano calcolabili le autofunzioni del vettore moto perturbato $\vec{\xi}$: il problema \'e espresso matematicamente da \eqref{eq:variational}. Faccio l'esempio della correzione alle frequenze dei modi causata dalla rotazione.
@@ -213,18 +226,6 @@ Le correzioni alle pressione si ottengono dall'equazione di equilibrio idrostati
 \Lvar{P}=\int_r^R(g\Lvar{\rho}+\rho\Lvar{g})\,dr\label{eq:pressurecorrho}
 \end{equation}
 
-%% discrepanza densita e velocita suono con metallicita riviste
-%[figure inversione al variare dei parametri solari da \cite{boothroyd2003our}]
-
-[reminder: errori: sperimentali/numerici/modello per inversione $(\rho,c^2)$]
-\begin{wraptable}{r}{5.5cm}
-\begin{tabular}{|cccc|}
-&$\Delta_{exp}$&$\Delta_{num}$&$\Delta_{mod}$\\
-$\frac{\delta c}{c}$&$0.02\%$&&\\
-$\frac{\delta\rho}{\rho}$&&&\\
-\end{tabular}
-\end{wraptable}
-
 
 \subsection{Inversione equazione di stato e composizione.}
 
@@ -240,8 +241,6 @@ La determinazione dell'abbondanza di elio nella regione convettiva \'e dovuta pr
 % Dals Art pg 31-32
 %Le differenze in $U$ e $\rho$  fra modelli solari sismologici e modelli solari standard sono al massimo pochi per cento.
 
-[reminder: EOS dependence:LInantiabasu07]
-[reminder: errori: sperimentali/numerici/modello per inversione $(\rho,Y)$, $(\rho,\Gamma_1)$]
 
 \section{Tecniche di inversione numeriche.}
 %vedi JCD 2002 pg 25-32
@@ -288,6 +287,21 @@ Determino i varii coefficienti minimizzando l'espressione
 \end{align}
 
 
+\section{risultati inversione}
+
+[reminder: EOS dependence:LInantiabasu07]
+[reminder: errori: sperimentali/numerici/modello per inversione $(\rho,Y)$, $(\rho,\Gamma_1)$]
+%% discrepanza densita e velocita suono con metallicita riviste
+%[figure inversione al variare dei parametri solari da \cite{boothroyd2003our}]
+[reminder: errori: sperimentali/numerici/modello per inversione $(\rho,c^2)$]
+\begin{wraptable}{r}{5.5cm}
+\begin{tabular}{|cccc|}
+&$\Delta_{exp}$&$\Delta_{num}$&$\Delta_{mod}$\\
+$\frac{\delta c}{c}$&$0.02\%$&&\\
+$\frac{\delta\rho}{\rho}$&&&\\
+\end{tabular}
+\end{wraptable}
+
 {\let\clearpage\relax\let\cleardoublepage\relax
 \chapter{Vincoli al modello solare dalle osservazioni sismologiche.}%%chapter: vincoli al modello solare: HCSM.
 }
@@ -296,84 +310,24 @@ Determino i varii coefficienti minimizzando l'espressione
 [variazioni in opacit\'a vs variazioni in $\midfrac{Z}{X}$.]
 [Dipendenza dell'inversione dal modello di riferimento.]
 
+\begin{workout}[opacity changes]
+Opacity changes affect structure radiative interior and position of $R_{cz}$
+\end{workout}
+
+\begin{workout}[effect of Z changes]
+Equation of state depends on number of free particle per unit volume - number density of heavy elements is two order of magnitude smaller than that of He, H: small effect on pressure.
+Ionization os elements causes $\Gamma_1$ to decrease in ionization zone.
+The effect of Z on convection zone is due to effect on EOS.
+CNO cycle increase vs opacity increase: vedi tab.12 bahcall06
+\end{workout}
+
+\begin{workout}[RMS sound speed difference: dominated by contrib from region where Z influence opacity]
+Region $R\geq0.45$: sources of opacity are BF transition, in inner regions electron scattering and ff transitions.
+\end{workout}
 
 \section{Modello solare sismologico.}
 
-%Indico con $Q(P)$ e $Q_{\odot}$ i valori di una grandezza Q determinati tramite un modello solare, funzione dei parametri del modello, e risultanti dalle correzioni sismologiche a quest ultimi  
-%\begin{equation}
-%&Q_{\odot}=Q(P)+q(\omega)
-%\end{equation}
-
-\subsection{Zona convettiva}
-
-[accuratezza inversione $R_b$, $Y_{ph}$, $\rho_b$]
-
-\begin{wrapfigure}[]{r}{0.4\textwidth}
-\centering
-\includegraphics[keepaspectratio,width=0.35\textwidth]{adcsgrad}
-\caption{. Da \cite{christensen1991depth}.}
-\end{wrapfigure}
-
-
-Le osservabili sismologiche che caratterizzano la zona convettiva sono $R_b$, $Y_{ph}$ e $c_b$, $\rho_b$.
-
-\begin{itemize}
-
-\item L'abbondanza di elio \'e determinata da varii autori in un range $Y_{ph}=\numrange{0.226}{0.260}$.
-%Il valore di $Y_{ph}$ inferiore di \numrange{0.27}{0.28}, richiesto per calibrare i modelli con la luminosit\'a attuale, conferma l'importanza della diffusione dell'elio verso il centro di gravit\'a.
-    
-\item Profondit\'a della zona convettiva.
-
-La regione radiativa ha stratificazione sub-adiabatica mentre a partire da $r=R_b$ si ha stratificazione quasi-adiabatica,  $\Gamma_1\approx\frac{5}{3}$: $P\propto\rho\expy{\frac{5}{3}}$. Per identificare il raggio a cui si ha il passaggio dal gradiente di temperatura subadiabatico ad adiabatico \'e utile considerare la funzione
-\begin{equation}
-W=\frac{r^2}{Gm(r)}\TDy{r}{c^2}=\Gamma_1(\invers{\PDly{\rho}{P}}-1)
-\end{equation}
-
-    
-\begin{align*}
-&\frac{R_b}{\rsun{}}=\numrange{0.710}{0.716}\\
-&c_b=\SIrange{0.221}{0.225}{\mega\meter\per\second}
-\end{align*}
-
-\item Determinati tramite inversione il profilo radiale di u e $R_b$ si determina anche la densit\'a della base della zona convettiva:
-\begin{equation*}
-\rho_b=\SIrange{0.185}{0.199}{\gram\per\cubic\cm}
-\end{equation*}
-    
-\end{itemize}
-
-[\cite{deg97helioseismology} fig.3]
-
-
-\subsection{Reazioni nucleari}
-
-%[figure inversione al variare dei parametri solari da \cite{boothroyd2003our}]
-
-\begin{figure}[!h]
-\centering
-
-\begin{subfigure}[t]{0.32\textwidth}
-\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvZ}
-\end{subfigure}
-~
-\begin{subfigure}[t]{0.32\textwidth}
-\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvRR}
-\end{subfigure}
-~
-\begin{subfigure}[t]{0.32\textwidth}
-\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvDiff}
-\end{subfigure}
-\caption{Da \cite{boothroyd2003our}.}
-
-\end{figure}
-
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvRR}
-\caption{Da \cite{boothroyd2003our}.}
-\end{figure}
-
-\section{Approssimazione di scaling.}
+\subsection{Approssimazione di scaling.}
 
 Oltre a determinare il valore sismologico corretto delle grandezze meccaniche del modello solare si pu\'o stabilire il range dei parametri del SSM compatibili con le frequenze osservate: si approssima localmente una dipendenza della grandezza $Q$ dai parametri della forma $\frac{Q}{Q_{MSS}}=(\frac{P}{P_{MSS}})\expy{\alpha_{QP}}$ quindi si determina il range dei parametri $p_i=\frac{P^i}{P_{MSS}^i}$ compatibile con $\Omega_i\pm\Delta\Omega_i$, in particolare si usano le grandezze sismologiche pi\'u accurate $Y_{ph},\ R_b,\ \rho_b$.
 
@@ -420,6 +374,76 @@ quindi per la temperatura centrale del Sole si ha
 \begin{equation}
 T_{ES}=T_{MSS}(\frac{Y_{ph\odot}}{Y_{ph,MSS}})\expy{0.2}=\SI{1.587e7}{\kelvin}
 \end{equation}
+
+
+\begin{workout}[modello solare sismologico]
+Same structure equations of SSM but input parameters choosen as best fit helioseismic observable
+\end{workout}
+
+%Indico con $Q(P)$ e $Q_{\odot}$ i valori di una grandezza Q determinati tramite un modello solare, funzione dei parametri del modello, e risultanti dalle correzioni sismologiche a quest ultimi  
+%\begin{equation}
+%&Q_{\odot}=Q(P)+q(\omega)
+%\end{equation}
+
+\subsection{Zona convettiva}
+
+
+[accuratezza inversione $R_b$, $Y_{ph}$, $\rho_b$]
+
+Le osservabili sismologiche che caratterizzano la zona convettiva sono $R_b$, $Y_{ph}$ e $c_b$, $\rho_b$.
+
+\begin{itemize}
+
+\item L'abbondanza di elio \'e determinata da varii autori in un range $Y_{ph}=\numrange{0.226}{0.260}$.
+%Il valore di $Y_{ph}$ inferiore di \numrange{0.27}{0.28}, richiesto per calibrare i modelli con la luminosit\'a attuale, conferma l'importanza della diffusione dell'elio verso il centro di gravit\'a.
+    
+\item Profondit\'a della zona convettiva.
+
+    
+\begin{align*}
+&\frac{R_b}{\rsun{}}=\numrange{0.710}{0.716}\\
+&c_b=\SIrange{0.221}{0.225}{\mega\meter\per\second}
+\end{align*}
+
+\item Determinati tramite inversione il profilo radiale di u e $R_b$ si determina anche la densit\'a della base della zona convettiva:
+\begin{equation*}
+\rho_b=\SIrange{0.185}{0.199}{\gram\per\cubic\cm}
+\end{equation*}
+    
+\end{itemize}
+
+[\cite{deg97helioseismology} fig.3]
+
+
+\subsection{Reazioni nucleari}
+
+%[figure inversione al variare dei parametri solari da \cite{boothroyd2003our}]
+
+\begin{figure}[!h]
+\centering
+
+\begin{subfigure}[t]{0.32\textwidth}
+\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvZ}
+\end{subfigure}
+~
+\begin{subfigure}[t]{0.32\textwidth}
+\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvRR}
+\end{subfigure}
+~
+\begin{subfigure}[t]{0.32\textwidth}
+\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvDiff}
+\end{subfigure}
+\caption{Da \cite{boothroyd2003our}.}
+
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvRR}
+\caption{Da \cite{boothroyd2003our}.}
+\end{figure}
+
+
 
 
 \end{document}
