@@ -8,7 +8,9 @@
 \usepackage[compact]{titlesec}
 \titleclass{\part}{top}
 
-\titleformat{\part}[block]{\huge\bfseries\centering\vspace*{\fill}}{\thepart}{10pt}{\huge}[\thispagestyle{empty}\addtocounter{page}{-1}\vspace*{\fill}\cleardoublepage]
+\titleformat{\part}[block]{\huge\bfseries\centering\vspace*{\fill}}{\thepart}{10pt}{\huge}[\thispagestyle{plain}%
+%\addtocounter{page}{-1}\vspace*{\fill}\cleardoublepage
+]
 
 %\titleformat{\chapter}[block]{\huge}{\chaptertitlename\ \thechapter:\ }{0pt}{\huge}
 \titleformat{\chapter}[block]{\Huge}{\thechapter.\ }{0pt}{\huge} %Titoli capitoli senza capitolo XZ:

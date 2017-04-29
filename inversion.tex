@@ -114,18 +114,6 @@ La funzione $H_2$ \'e determinata dalla regione sotto la fotosfera. \cite{chr92p
 % Dalsnotes 7.155, fig 7.15
 %vedi relative sharp variations in $\Gamma_1$ in He second ionization zone Influence of the upper layers of the sun on the p-mode frequencies
 
-\section{Zona convettiva}
-
-\begin{wrapfigure}[]{r}{0.4\textwidth}
-\centering
-\includegraphics[keepaspectratio,width=0.35\textwidth]{WrbczHHeioniz}
-\caption{. Da \cite{christensen1991depth}.}
-\end{wrapfigure}
-
-La regione radiativa ha stratificazione sub-adiabatica mentre a partire da $r=R_b$ si ha stratificazione quasi-adiabatica,  $\Gamma_1\approx\frac{5}{3}$: $P\propto\rho\expy{\frac{5}{3}}$. Per identificare il raggio a cui si ha il passaggio dal gradiente di temperatura subadiabatico ad adiabatico \'e utile considerare la funzione
-\begin{equation}
-W=\frac{r^2}{Gm(r)}\TDy{r}{c^2}=\Gamma_1(\invers{\PDly{\rho}{P}}-1)
-\end{equation}
 
 {\let\clearpage\relax\let\cleardoublepage\relax \chapter{Inversione non asintotica.}} % Inizio chapter "Inversione non asintotica." senza nuava pagina
 
@@ -258,10 +246,16 @@ Si parametrizzano le funzioni incognite $\frac{\delta_rc^2}{c^2}$, $\frac{\delta
 \end{align}
 N indica il numero totale di modi $\alpha$, $N_p$ il numero di parametri da determinare, $\Delta\nu_{fit}$ contiene le funzioni incognite opportunamente parametrizzate ed \'e dato da \eqref{eq:diffthermo} o \eqref{eq:invstructure}, $\sigma$ \'e l'errore osservativo e il secondo addendo del lato destro di \eqref{eq:minimizerls} \'e introdotto per ridurre oscillazioni indesiderate nel risultato dell'inverisone con $\alpha$ parametro di regolarizzazione.
 
+
+
 %Determinazione incertezza.
 %(Dziembowski90, Antia Basu 94), (JCD90).
 
 \subsection{Subtractive Optimally Localized Averaging}
+
+\begin{workout}[Risoluzone: largezza dei kernel]
+Risoluzione inversione \'e caratterizzata dalla larghezza dei kernel: il valore della grandezza a $r_0$ \'e una media sulla regione in cui il kernel ha il valore massimo.
+\end{workout}
 
 Per determinare in generale la funzione $\frac{\delta f_1(r)}{f_1(r)}$ scelgo i $c_i(r_0)$ tali che $\sum c_i(r_0)\frac{\delta\omega_i}{\omega_i}$ fornisca una media del valore di $\frac{\delta f_1(r)}{f_1(r)}$ in $r=r_0$:
 
@@ -287,8 +281,8 @@ Determino i varii coefficienti minimizzando l'espressione
 \end{align}
 
 
+\begin{comment}
 \section{risultati inversione}
-
 [reminder: EOS dependence:LInantiabasu07]
 [reminder: errori: sperimentali/numerici/modello per inversione $(\rho,Y)$, $(\rho,\Gamma_1)$]
 %% discrepanza densita e velocita suono con metallicita riviste
@@ -301,11 +295,37 @@ $\frac{\delta c}{c}$&$0.02\%$&&\\
 $\frac{\delta\rho}{\rho}$&&&\\
 \end{tabular}
 \end{wraptable}
+\end{comment}
+
 
 {\let\clearpage\relax\let\cleardoublepage\relax
 \chapter{Vincoli al modello solare dalle osservazioni sismologiche.}%%chapter: vincoli al modello solare: HCSM.
 }
 
+\section{Osservabili sismologiche - approssimazione di scaling??}
+
+Come vedsremo nelle prossime sezioni tramite la misura delle frequenze dei modi normali \'e possibile verificare la struttura del modello solare standard.
+
+\begin{workout}[Velocit\'a del suono]
+
+[Fig.2, Fig.4 \cite{villante2014chemical}]
+$c^2=\Gamma_1\frac{P}{\rho}$: tramite il MSS \'e possibile trovare la dipendenza di $c$ dai parametri iniziali quindi ristringere le incertezze o determinare con maggiore accuratezza i parametri sulla base del miglior fit coi dati sismologici
+
+
+
+\end{workout}
+
+\begin{workout}[Base zona convettiva: opacit\'a, discontinuit\'a gradiente]
+
+
+
+\end{workout}
+
+\begin{workout}[$\Gamma_1$]
+
+$\Gamma_1$ regioni ionizzazione
+
+\end{workout}
 
 [variazioni in opacit\'a vs variazioni in $\midfrac{Z}{X}$.]
 [Dipendenza dell'inversione dal modello di riferimento.]
@@ -324,6 +344,20 @@ CNO cycle increase vs opacity increase: vedi tab.12 bahcall06
 \begin{workout}[RMS sound speed difference: dominated by contrib from region where Z influence opacity]
 Region $R\geq0.45$: sources of opacity are BF transition, in inner regions electron scattering and ff transitions.
 \end{workout}
+
+\subsection{Caratteristiche zona convettiva}
+
+\begin{wrapfigure}[]{r}{0.4\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.35\textwidth]{WrbczHHeioniz}
+\caption{. Da \cite{christensen1991depth}.}
+\end{wrapfigure}
+
+La regione radiativa ha stratificazione sub-adiabatica mentre a partire da $r=R_b$ si ha stratificazione quasi-adiabatica,  $\Gamma_1\approx\frac{5}{3}$: $P\propto\rho\expy{\frac{5}{3}}$. Per identificare il raggio a cui si ha il passaggio dal gradiente di temperatura subadiabatico ad adiabatico \'e utile considerare la funzione
+\begin{equation}
+W=\frac{r^2}{Gm(r)}\TDy{r}{c^2}=\Gamma_1(\invers{\PDly{\rho}{P}}-1)
+\end{equation}
+
 
 \section{Modello solare sismologico.}
 
