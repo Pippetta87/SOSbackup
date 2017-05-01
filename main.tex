@@ -64,7 +64,7 @@
       \counterwithin{table}{chapter}
 	\renewcommand{\thesubfigure}{\arabic{figure}.\alph{subfigure}}
 	\renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
-	\renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}
+	\renewcommand{\thetable}{\arabic{part}-\arabic{table}}
       }
     \makeatother
 %%%%
@@ -111,9 +111,9 @@
 \backmatter
 
 %\newgeometry{margin=60px,tmargin=20px}%%APPENDICE
-%\appendix
-%\part{Appendice}
-%\subfile{appendix}
+\appendix
+\part{Appendice}
+\subfile{appendix}
 %\restoregeometry
 
 \printbibliography
