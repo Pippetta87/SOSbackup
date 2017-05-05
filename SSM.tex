@@ -785,28 +785,7 @@ con $r_{ik}$ rate di reazione per unit\'a di massa:
 
 \begin{table}[!h]
 
-\pgfplotstabletypeset[
-%every head row/.style={before row={\toprule & Reaction & $S(0)$ & $S'(0)$ & $S''(0)$ & $\delta S(E)$\\\midrule},
-%every last row/.style={after row=\bottomrule},
-% after row={\midrule}
-%},
-every last row/.style={after row=\bottomrule},
-every first column/.style={column type/.add={|}{}},
-every last column/.style={column type/.add={}{|}},
-%columns/0/.style = {column type/.add={|}{}},
-%columns/xi/.style = {column type/.add={|}{}},
-%display columns/0/.style={column name={r}},
-%display columns/1/.style={column name={S}},
-%display columns/2/.style={column name={Sst}},
-%display columns/3/.style={column name={Snd}},
-%display columns/4/.style={column name={deltaSE}}
-
-%create on use/authors/.style={create col/set list={
-%},
-%columns/authors/.style={string type},
-columns={r,S,Sst,Snd,deltaSE},
-%/pgf/number format/precision=4
-     ]{reactionastrofactor.txt} %%%
+\pgfplotstabletypeset[]{reactionastrofactor.txt} %%%
 
 \captionof{table}{Fattore astrofisico. Da \cite{adelberger2011solar}.}
 \end{table}
