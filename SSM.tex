@@ -132,7 +132,7 @@ La condizione di equilibrio idrostatico diventa:
 \end{equation}
 
 
-
+\begin{workout}[Degenerazione elettroni; interazione coulombiana.]
 Considero il contributo alla pressione degli ioni, elettroni e fotoni, $P=P_I+P_e+P_R$. Il gas solare \'e approssimabile come un gas perfetto essendo composto in gran parte da \chem{H} e \chem{^4He} completamente ionizzati con distanza interionica $a_0$ molto maggiore delle dimensioni nucleari
 \begin{align}
 &a_0=(\frac{3}{4\pi}\sum_{I}n_I)\expy{-\frac{1}{3}}\gg r_N\label{eq:interionicdistance}\\
@@ -140,6 +140,8 @@ Considero il contributo alla pressione degli ioni, elettroni e fotoni, $P=P_I+P_
 &P_R=\frac{a}{3}T^4\intertext{definisco il parametro $\beta$}\nonumber\\
 &P_R=(1-\beta)P
 \end{align}
+
+\end{workout}
 
 Il peso molecolare medio, definito come massa media in amu per particella libera \'e
 
@@ -175,11 +177,83 @@ Per i valori \ref{tab:obssun} ottengo valori di circa $27$ min.: quindi la costa
 \tau_{idro}^{\odot}= \sqrt{\frac{R^3}{GM}}\approx\frac{1}{2}(G\overline{\rho})\expy{-\frac{1}{2}}\approx\SI{27}{\minute}
 \end{equation}
 
+\section{EOS - - ????}
+
 \section{Diffusione}
 
 \begin{workout}[Diffusione]
 
+L'equazione di Boltzmann del trasporto descrive l'evoluzione della probabilit\'a $f(\vec{r},\vec{v},t)$ che una particella di una determinata specie sia in una regione dello spazio delle fasi.
 
+\begin{align}
+&\PDy{t}{f_i}+\vec{v}_i\cdot\PDy{\vec{r}}{f_i}+\vec{F}_i\cdot\PDy{\vec{v}}{f_i}=-\nabla_{\vec{p}}(\vec{s}),\ 
+s_{\alpha}=\sum_{'}\int [f(\vec{p})\PDy{p'_{\beta}}{f'(\vec{p}'}-f'(\vec{p}')\PDy{p_{\beta}}{f(\vec{p})}]B_{\alpha\beta}\,d^3p'&\intertext{$\vec{s}$ \'e il flusso nello spazio dei momenti dovuto alle collisioni, la somma \'e sulle specie diverse da i e}\nonumber\\
+&B_{\alpha\beta}=\frac{1}{2}\int q_{\alpha}q_{\beta}|\vec{v}-\vec{v}'|\,d\sigma,\ 
+d\sigma=\frac{4\pi(Z_iZ_j)^2}{\mu^2(\vec{v}-\vec{v}')^4}\frac{d\chi}{\chi^3}&\intertext{con $d\sigma$ sezione d'urto differenziale per potenziale coulombiano puro per piccoli angoli, $\chi$ deviazione nel sistema CM e $\mu$ massa ridotta e}\nonumber\\
+&\sigma_{st}=\frac{4\pi(Z_sZ_t)^2}{\mu^2(\vec{v}-\vec{v}')^4}L,\ L=\ln{\frac{1}{\chi_{min}}}=\ln{\frac{\lambda\mu v_{rel}^2}{|Z_sZ_t|^2}}
+\end{align}
+
+Il plasma solare \'e costituito principalmenteda $\cel{H}{1}{}{}$, $\cel{He}{4}{}{}$, \Pelectron e in minore abbondanza nuclei pesanti.
+
+ La distribuzione di velocit\'a della specie i \'e approssimativamente la distribuzione di equilibrio traslata di $w^i$.
+
+Per la velocit\'a di diffusione relative dei due elementi pi\'u abbondanti, definita la concentrazione relativa $c_i=\frac{n_i}{n}$ e il coefficiente di diffusione $D_{HHe}=-\frac{1}{3}lv_{th}$ con $l\approx(n\sigma)\expy{-1}$ cammino libero medio
+
+\begin{align}
+&w_H-w_{He}=\frac{1}{n_H}\int\,d^3v_Hf_H\vec{v}_H-\frac{1}{n_{He}}\int\,d^3v_{He}f_{He}\vec{v}_{He}\\
+&=-D_{HHe}\left[\frac{1}{c_Hc_{He}}\PDy{r}{c_H}+\frac{m_{He}-m_H}{c_Hm_H+c_{He}m_{He}}\frac{1}{P}\PDy{r}{P}+\frac{K_T}{n_Hn_{He}}\frac{1}{T}\PDy{r}{T}\right]
+\end{align}
+
+La forza per unit\'a di volume agente sulle particelle di specie i \'e
+
+\begin{align}
+&\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})&\intertext{e in condizioni di equilibrio il momento trasferito tramite urti con le altre specie \'e}\nonumber\\
+&\vec{F}_i=\sum_{i\neq j}\vec{F}_{ij},\ \vec{F}_{ij}=m_{ij}n_in_j\sigma_{ij}\vec{v}_{ij}&\intertext{dove la funzione $w_{ij}$ \'e la sezione d'urto di Rutherford per la velocit\'a media relativa delle particelle $i,j$}\nonumber\\
+&\sigma_{ij}=\num{2.68e-12}Z_i^2Z_j^2(\frac{m_{ij}}{m_H})\expy{-\frac{1}{2}}(\frac{T}{\SI{e7}{\kelvin}})\expy{-\frac{3}{2}}\ln{\lambda_{ij}}\si{\cubic\cm\per\second}
+\end{align}
+
+Il momento trasferito dagli ioni agli elettroni \'e piccolo quindi si ha
+
+\begin{align}
+&F_H\approx F_{HHe}=-\PDy{r}{P_H}+n_H(eE+m_Hg)\\
+&F_{He}\approx -F_{HHe}=-\PDy{r}{P_{He}}+n_{He}(2eE+4m_Hg)\\
+&E=-\frac{1}{en_e}\PDy{r}{P_e}&\intertext{Per le velocit\'a di diffusione si ha}\nonumber\\
+&w_{HHe}=-\frac{m_{He}T}{m_{HHe}Y\rho \sigma_{HHe}}[\PDy{r}{\ln{(P_eP_H)}}-m_Hg],\ 
+n_Hw_H=\frac{(m_{He}n_Hn_{He})}{\rho}w_{HHe}\\
+&w_A(1+2\frac{Y}{X})\approx-w_H
+%&n_Av_A(m_{AH}n_Hw_{AH})(1+2\frac{Y}{X})\approx-n_Av_H(m_{AH}n_Hw_{AH})
+\end{align}
+
+La gravit\'a tende a concentrare gli elementi pi\'u pesanti verso il centro, le interazioni elettromagnetiche mantengono gli elettroni ancorati ai nuclei mentre $\nabla P_i$ contiene un contributo dovuto a $\nabla n_i$ che tende a diminuire il gradiente di concentrazione.
+ 
+La diffusione termica concentra le particelle pi\'u cariche e pi\'u pesanti nelle zone pi\'u calde: infatti la presenza di un gradiente termico determina un flusso di calore, dovuto al maggior numero di particelle energetiche provenienti dalle regioni pi\'u calde, principalmente nuclei di idrogeno, e la  diversa probabilit\'a di trasferimento di momento negli urti nella direzione del gradiente, la sezione d'urto coulombiana dipende dalla velocit\'a relativa $\propto v\expy{-4}$ probabilit\'a di collisione $\propto v\expy{-3}$), produce una forza nel verso opposto al gradiente termico sugli ioni di idrogeno ed una opposta sugli ioni di elio.
+
+\begin{align}
+&\vec{q}_i=\int\frac{1}{2}m_iv_i^2\vec{v}_in_if_i\,d^3v_i\approx-\frac{5}{2}\frac{P_i\tau_ik}{m_i}\nabla T\\
+&\overline{\nu}=\frac{1}{3}\int f^{(0)}\frac{m_{HHe}g^2}{kT}\nu(g)\,d^3g\\
+&\vec{w}_{HHe}^{th}\approx\frac{2}{5kN_Hn_{He}}(\frac{n_{He}m_{He}\vec{q}_H-n_Hm_H\vec{q}_{He}}{m_H+m_{He}})\PDy{T}{\ln{\overline{\nu}}}
+\end{align}
+
+%Si tiene conto del flusso di massa, momento ed energia nelle equazioni di conservazione attraverso le equazioni sviluppate da Burgers (1969).
+
+\begin{minipage}{\linewidth}
+\begin{tikzpicture}
+\node[inner sep=0pt] (image) at (0,0)
+  {\includegraphics[keepaspectratio=true,width=0.5\textwidth]{Hdiffusion}};
+  \draw [thick,dotted] (-3.4,1.5) -- (-3,1.5) node[right] {$\propto\nabla c$};
+ \draw [thick,dashed] (-3.4,1.9) -- (-3,1.9) node[right] {$\propto\nabla T$};
+    \draw [thick,dash dot] (-3.4,2.3) -- (-3,2.3) node[right] {$\propto\nabla P$};
+    \node (caption) at (8.5,-2.5) { \begin{minipage}[c]{0.48\textwidth}
+\captionof{figure}{Contributi alla velocit\'a di diffusione di H-He in modello di $1\msun{}$ a \SI{4.65e9}{\year}. Da \cite{wam88hydrogen}.}%   
+    \end{minipage}};
+\node[] (massconsdiff) at (8.5,1) {\begin{minipage}[c]{0.48\textwidth}
+
+Sebbene il tempo caratteristico per percorre un raggio solare sia lungo $\tau_{diff}\approx\SI{6e13}{\year}$ i processi di diffusione producono effetti misurabili sulle frequenze dei modi di oscillazione: la loro inclusione nei \mss{} produce un miglior accordo con le osservazioni.
+
+\end{minipage}
+};
+\end{tikzpicture}
+\end{minipage}
 
 \end{workout}
 
@@ -298,11 +372,265 @@ Stimo il tempo trascorso da una stella di massa solare in sequenza principale co
 
 \end{workout}
 
-\section{Trasporto radiativo}
+\section{Trasporto radiativo.}
 
-\section{In-stabilit\'a convettiva}
+Nell'interno stellare il cammino libero medio dei fotoni \'e molto corto $\frac{1}{\kappa\rho}\approx\SI{1}{\cm}\ll \rsun{}$, dove l'opacit\'a $\kappa$ che descrive l'assorbimento per unit\'a di massa, quindi considero la radiazione localmente in equilibrio con la materia: il flusso di energia verso la superficie \'e generato da una piccola anisotropia nell'intensit\'a descritta al prim'ordine tramite
 
-\section{Rezioni di fusione}
+\begin{equation}
+I_{\nu}=B(\nu,T)-\frac{1}{\kappa_{\nu}'\rho}\nabla B(\nu,T)
+\end{equation}
+
+integrando sull'angolo solido, il flusso di energia risulta
+
+\begin{align}
+&\vec{F}_{\nu}=-\frac{4\pi}{3\kappa_{\nu}\rho}\nabla B(\nu,T)\shortintertext{ed esplicitando il gradiente termico e integrando sulle frequenze}\nonumber\\
+&\vec{F}=-[\frac{4\pi}{3\rho}\intzi{}\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\,d\nu]\nabla T\label{eq:radiativeflux}
+\end{align}
+
+Definisco l'opacit\'a media di Rosseland
+
+\begin{equation}
+\frac{1}{\kappa}=(\intzi{}\PDy{T}{B(\nu,T)})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}=(\frac{acT^3}{\pi})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\label{eq:rosselandopacity}
+\end{equation}
+
+quindi riscrivo \eqref{eq:radiativeflux} utilizzando la pressione di radiazione $P_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4$
+
+\begin{align}
+&\vec{F}=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{c}{\kappa\rho}\nabla P_{rad}\shortintertext{che per una distribuzione sferica di materia diventa}\nonumber\\
+&F_r=-\frac{c}{\kappa\rho}\TDof{r}(\frac{1}{3}aT^4)=-\frac{4acT^3}{3\kappa\rho}\TDy{r}{T}\label{eq:radfluxTgradrelation}
+\end{align}
+
+Definisco il gradiente radiativo a partire da \eqref{eq:radfluxTgradrelation}
+
+\begin{equation}
+\nrad{}=\Dcvar{\PDly{P}{T}}{rad}=\frac{3}{16\pi acG}\frac{\kappa l(r)P}{m(r)T^4}\label{eq:radiativegradient}
+\end{equation}
+
+con $l(r)=4\pi r^2F$ luminosit\'a totale in funzione di r.
+
+\subsection{Opacit\'a.}
+
+\begin{workout}[fenomeni opacit\'a: opacit\'a solare??]
+
+I fenomeni che contribuiscono all'opacit\'a nel Sole sono:
+
+\begin{itemize}
+
+\item \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
+\vspace{-2.5mm}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\vspace{-\baselineskip}
+\includegraphics[keepaspectratio,width=0.9\linewidth]{opacitylld}
+\caption{Profilo radiale di $\kappa$ e $\PDly{T}{\kappa}$. Da \cite{stix91sun}.}
+\end{wrapfigure}
+
+
+Scattering fotone-elettrone (sc). Classicamente \'e descritto come lo scattering di un'onda elettromagnetica piana da parte di un dipolo oscillante, scattering Thomson per $h\nu\ll m_ec^2$
+
+\begin{align}
+&\kappa_{\nu}\propto\frac{r_e^2}{\mu_em_u}, \kappa_{sc}=0.20(1+X)\si{\squared\cm\per\gram}\\
+&r_e=\SI{2.82e-13}{\cm}
+\end{align}
+
+Per $T\geq\SI{e8}{\kelvin}$ il momento trasferito all'elettrone non \'e trascurabile, scattering Compton.
+
+}
+
+\item Brehmstrahlung inverso (ff). L'assorbimento di un fotone da parte di un elettrone libero \'e energeticamente possibile quando l'elettrone \'e vicino ad uno ione, l'opacit\'a in questo caso ha l'andamento
+
+\begin{equation}
+\kappa_{ff}\propto\rho T\expy{-\frac{7}{2}}
+\end{equation}
+
+si tiene conto degli effetti quantistici tramite un opportuno coefficiente, il fattore di Gaunt.
+
+\item Reazioni di ionizzazione (bf).
+
+\item Transizione elettronica a livelli eccitati (bb).
+
+\item Scattering atomici e ione $H^-$. La presenza di metalli con potenziale di ionizzazione minore di H ed He rendono disponibile elettroni per la formazione di $H^-$, sistema debolmente legato per cui un fotone con $h\nu>\SI{0.75}{\ev}$ o $\lambda<\SI{1655}{\nano\meter}$ pu\'o essere assorbito.
+
+\end{itemize}
+
+La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
+
+\end{workout}
+
+\section{Condizione di in-stabilit\'a dinamica: trasporto convettivo.}
+
+La zona convettiva occupa il $29\%$ pi\'u esterno del raggio solare e contiene il $2\%$ della massa: questa regione \'e chimicamente omogenea. 
+
+Una regione stellare \'e convettivamente stabile se una perturbazione radiale infinitesima non cresce ad ampiezza finita 
+\begin{equation}
+\rho\PtwoDy{t}{(\Delta r)}=-g\Delta\rho=-g[\Dcvar{\TDy{r}{\rho}}{e}-\Dcvar{\TDy{r}{\rho}}{amb}]\Delta r
+\end{equation}
+
+La forza di archimede ha verso opposta alla perturbazione se $\Delta\rho>0$.
+
+Considero un'equazione di stato generica $\rho(P,T,\mu)$ e definita tramite:
+\begin{align}
+&\frac{d\rho}{\rho}=\alpha\frac{dP}{P}-\delta\frac{dT}{T}+\phi\frac{d\mu}{\mu}\label{eq:deltatherm}\\
+&P=\frac{\rho\gasconstant{}T}{\mu}\quad\Rightarrow\quad\alpha=\delta=\phi=1
+\end{align}
+
+Suppongo il moto dell'elemento in equilibrio di pressione con l'ambiente quindi, definiti i gradienti termici per il blob e l'ambiente e il gradiente di composizione chimica 
+
+\begin{equation}
+\nabla=\Dcvar{\TDly{P}{T}}{amb},\ \nabla_e=\Dcvar{\TDly{P}{T}}{blob},\ \nmu{}=\Dcvar{\TDly{P}{\mu}}{amb}\label{eq:nablavitense}
+\end{equation}
+riscrivo l'equazione del moto utilizzando l'equazione di stato, essendo $\nmu{}_{blob}\approx0$,
+\begin{equation}
+\PtwoDy{t}{(\Delta r)}=-g\frac{\delta}{H_P}[\nabla_e-\nabla-\frac{\phi}{\delta}\nmu{}]\Delta r\label{eq:galleggiamento}
+\end{equation}
+
+Suppongo adesso un moto del blob adiabatico $\nabla_e=\nabla_{ad}=\frac{P\delta}{T\rho c_P}$ e introduco la frequenza di \bv{}:
+\begin{align}
+&N^2=g(\frac{1}{\Gamma_1P}\TDy{r}{P}-\frac{1}{\rho}\TDy{r}{\rho})\label{eq:bvfs}\\
+&N^2=g(\frac{1}{\densityscale{}}-\frac{g}{c_s^2})\label{eq:bvfsdensita}\shortintertext{ho definito le lunghezze caratteristiche per variazione di densit\'a e pressione:}\nonumber\\
+&\densityscale{}=-\frac{dr}{d\ln{\rho}},\ H_P=-\frac{dr}{dP}
+\end{align}
+
+$N^2$ rappresenta la massima frequenza sotto cui pu\'o oscillare una particella di fluido sottoposta a onde di gravit\'a mantenendo l'equilibrio di pressione con l'ambiente.
+
+Riscrivo l'equazione \eqref{eq:galleggiamento}
+\begin{equation}
+\PtwoDy{t}{(\Delta r)}=-N^2\Delta r
+\end{equation}
+che descrive un comportamento oscillatorio per $N^2>0$, cio\'e uno strato di gas del Sole \'e stabile per convezione se
+
+\begin{equation}
+\nrad{}<\nad+\frac{\phi}{\delta}\nmu{}\label{eq:ledoux}
+\end{equation}
+
+dove ho usato $\nabla_{amb}=\nrad{}$ definito in \eqref{eq:radiativegradient}, cio\'e il gradiente che si ha nel caso la luminosit\'a si trasportata dai fotoni.
+
+Le basse temperature causano un aumento dell'opacit\'a e il gradiente termico necessario per trasportare la luminosit\'a solare \'e superiore al gradiente adiabatico, il cui valore \'e diminuito dal calore latente dell'idrogeno solo parzialmente ionizzato.
+
+Una maggiore efficienza del trasporto convettivo di energia si riflette in una minore differenza tra il gradiente di temperature adiabatico ed effettivo.
+
+\begin{figure}[!h]
+\begin{subfigure}[l]{0.55\textwidth}
+    \includegraphics[ width=0.99\textwidth,keepaspectratio]{proportionflux}
+    \caption{Profilo radiale del flusso convettivo rispetto al flusso totale, della super-adiabaticit\'a del gradiente termico e regioni di ionizzazione parziale di $\cel{He}{4}{}{}$. Da \cite{gou76convection}}
+    \label{fluxproportion}
+\end{subfigure}
+~
+\begin{subfigure}[r]{0.4\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.9\textwidth]{specificheatnablaa}
+\subcaption{Profilo radiale di $c_P$ e $\nabla_a$. Da \cite{stix91sun}.}
+\end{subfigure}
+    
+\end{figure}
+
+
+\subsection{Teoria della mixing-length.}
+
+Il flusso di energia complessivo \'e determinato da
+\begin{equation}
+F_{con}+F_{rad}=\frac{4acG}{3}\frac{T^4m}{\kappa Pr^2}\nrad{}\label{eq:totalflux}
+\end{equation}
+
+Per determinare il gradiente di temperatura effettivo $\nabla$ uso la teoria della mixing-length (\cite{prandtl25tur} e \cite{vitense53kon}):
+si considera l'eccesso di calore trasportato dai blob di gas nel moto convettivo $c_P\Delta T$ rispetto all'ambiente, il cui cammino libero medio \'e la mixing-length $l_m=\alpha H_P$, che da luogo al flusso di energia
+
+\begin{equation}
+F_{con}=\exv{\rho vc_P\Delta T}\label{eq:convectiveflux}
+\end{equation}
+
+dove $\exv{}$ indica una media opportuna sul guscio sferico di raggio r. Determino il valor medio della differenza di temperatura prendendo come valore caratteristico dello spostamento del blob di gas $\Delta r\approx\frac{l_m}{2}$:
+
+\begin{equation}
+\frac{\Delta T}{T}\approx\frac{1}{T}\PDy{r}{(\Delta T)}\frac{l_m}{2}=(\nabla-\nabla_e)\frac{l_m}{2}\frac{1}{H_P}
+\end{equation}
+
+Assumo il lavoro medio fatto dalla forza di galleggiamento per unit\'a di massa $-g\frac{\Delta\rho}{\rho}$ uguale al valore medio della forza, cio\'e la met\'a di quello al guscio sferico dato, moltiplicato lo spostamento medio $\frac{l_m}{2}$ quindi, assumendo in oltre che in media met\'a del lavoro fatto dalla forza di galleggiamento sia trasformato in energia cinetica del blob si ottiene
+
+\begin{equation}
+v^2=g\delta(\nabla-\nabla_e)\frac{l_m^2}{8H_P}\label{eq:blobvelocity}
+\end{equation}
+
+Infine determino gli scambi radiative del blob: il modulo del flusso radiativo \'e proporzionale al gradiente termico in direzione normale alla superficie del blob
+
+\begin{equation}
+f=\frac{4acT^3}{3\kappa\rho}|\PDy{n}{T}|
+\end{equation}
+
+quindi l'energia scambiata dall'intera superficie S del blob \'e $\lambda=Sf$ che determina, per la prima legge della termodinamica, una variazione di temperatura per unit\'a di tempo, indicato con $V$ il volume, $\PDy{t}{T_e}=-\frac{\lambda}{\rho Vc_P}$.
+
+La variazione della temperatura del blob per unit\'a distanza percorsa \'e quindi
+\begin{equation}
+\Dcvar{\TDy{r}{T}}{e}=\Dcvar{\TDy{r}{T}}{ad}-\frac{\lambda}{\rho Vc_Pv}\label{eq:Tchangelength}
+\end{equation}
+esplicitando $\lambda$, approssimando il gradiente normale alla superficie con $\exv{\Delta T}$ ed usando le definizioni \eqref{eq:nablavitense} si ottiene
+\begin{equation}
+\frac{\nabla_e-\nad{}}{\nabla-\nabla_e}=\frac{6acT^3}{\kappa\rho^2c_Pl_mv}
+\end{equation}
+
+Le 5 equazioni \eqref{eq:totalflux},\eqref{eq:radiativegradient}, \eqref{eq:convectiveflux}, \eqref{eq:blobvelocity}, \eqref{eq:nablavitense} determinano completamente le variabili $F_{rad}, F_{con}, v, \nabla_e, \nabla$ in funzione di $P,T,l(r),m(r),c_P,\nad{},\nrad{},g$ .
+
+
+\section{Reazioni di fusione.}
+
+L'energia liberata dalle reazioni nucleari per grammo per secondo $\epsilon(\rho,T,X_i)$ \'e determinata dalla probabilit\'a che la reazione $X(a,b)Y$ abbia luogo. Sia $E$ l'energia cinetica nel centro di massa dei nuclei, per la sezione d'urto $\sigma(E)$ di fusione si ha
+
+\begin{align}
+&\sigma(E)\propto\pi\lambdabar^2P_0(E)\xi(E)&\intertext{La lunghezza d'onda di de Broglie relativa delle particelle descrive l'indeterminazione sulla posizione nell'urto di due particelle con momento relativo p}\nonumber\\
+&\lambdabar=\frac{\hbar}{p}=\frac{\hbar}{\sqrt{2mE}}&\intertext{$\xi(E)$ tiene conto di eventuali livelli risonanti: $\xi(E)\to1$ lontano dall'energia del livello risonante. $P_0(E)$ descrive la probabilit\'a di attraversamento della barriera coulombiana. Introducendo il fattore astrofisico, dipendente dalle caratteristiche dei nuclei e debolmente dall'energia lontano da risonanze, scrivo la sezione d'urto per i nuclei di carica $Z_1$, $Z_2$ e m massa ridotta}\nonumber\\
+&\sigma(E)=\frac{S(E)}{E}\exp{-2\pi\eta},\ \eta=\sqrt{\frac{m}{2}}\frac{Z_1Z_2e^2}{\hbar E\expy{\frac{1}{2}}}
+\end{align}
+
+La funzione $\epsilon(\rho,T,X_i)$ \'e determinata dalla somma di tutti i contributi
+
+\begin{equation}
+\epsilon_{ij}=\frac{1}{1+\delta_{ij}}\frac{Q_{ij}}{m_jm_k}X_jX_k\exv{\sigma v}\label{eq:energyrate}
+\end{equation}
+
+dove $Q_{ij}$ \'e l'energia liberata per reazione tra nucleo di specie i e j; $\exv{}$ indica la media sulla distribuzione di Maxwell-Boltzmann
+
+\begin{equation}
+f(E)dE\propto\frac{E\expy{\frac{1}{2}}}{(kT)\expy{\frac{3}{2}}}\exp{-\frac{E}{kT}}\,dE
+\end{equation}
+
+\begin{figure*}[!h]
+  \begin{subfigure}[t]{0.6\textwidth}
+        \subfile{ppchain.tex}
+        \caption{Catena PP.}
+    \end{subfigure}%
+
+\end{figure*}
+
+Per determinare $\exv{\sigma v}$ uso il fatto che l'integrando $S(E)\exp{-\frac{E}{kT}-\frac{b}{\sqrt{E}}}$ ha forma approssimativamente gaussiana il cui massimo $E_0$, energia pi\'u probabile di reazione, e FWHM sono, posto $A=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:
+\begin{align}
+&E_0=\SI{5.665}{\kilo\ev} A\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}},\ \Delta E=4.249W\expy{\frac{1}{6}}T_7\expy{\frac{5}{6}}&\intertext{quindi il rate locale per reazioni non risonanti si scrive}\\
+&\exv{\sigma v}=\num{1.3005e-15}[\frac{Z_1Z_2}{AT_6^2}]\expy{\frac{1}{3}}fS_{eff}\exp{-\tau}\si{\cubic\cm\per\second},\ \tau=\frac{3E_0}{kT}\approx\num{42.487}(Z_1^2Z_2^2AT_6\expy{-1})\expy{\frac{1}{3}}&\intertext{$S_{eff}$ \'e il risultato dell'espansione dell'integrando per $\invers{\tau}\ll1$ ed estrapolato a $E_0$ a partire dal valore a $E(0)$ determinato dalla fisica nucleare.}
+\end{align}
+
+Lo schermaggio degli elettroni diminuisce la repulsione coulombiana e analogamente a quanto visto in precedenza si ha:
+\begin{equation}
+E_C'-E=\frac{Z_1Z_2e^2}{r}\exp{-\frac{r}{r_D}}-E\approx\frac{Z_1Z_2e^2}{r}-\frac{Z_1Z_2e^2}{r_D}-E=E_C-E-E_D
+\end{equation}
+
+Per $\frac{E_D}{kT}\ll1$ ne tengo conto aggiungendo il parametro correttivo $f$
+\begin{equation}
+\exv{v\sigma}\to f\exv{v\sigma},\ f=\exp{\frac{E_D}{KT}}
+\end{equation}
+
+% T_6=10T_7=10^3T_9
+
+\begin{figure*}[!h]
+    \centering
+  \begin{subfigure}[t]{0.5\textwidth}
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{gamow}
+        \caption{Picco di Gamow per distribuzione velocit\'a nuclei MB a T.}
+    \end{subfigure}%
+    ~
+    \begin{subfigure}[t]{0.5\textwidth}
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{Rscreening}
+        \caption{Andamento della correzione di schermaggio degli elettroni.}
+    \end{subfigure}
+\end{figure*}
 
 {
 \let\clearpage\relax\let\cleardoublepage\relax
@@ -464,50 +792,8 @@ Le correzioni dovute alle interazioni coulombiane sono
 
 \end{workout}
 
-\section{Trasporto radiativo.}
+\begin{workout}[opacit\'a solare e sua incertezza]
 
-Nell'interno stellare il cammino libero medio dei fotoni \'e molto corto $\frac{1}{\kappa\rho}\approx\SI{1}{\cm}\ll \rsun{}$, dove l'opacit\'a $\kappa$ che descrive l'assorbimento per unit\'a di massa, quindi considero la radiazione localmente in equilibrio con la materia: il flusso di energia verso la superficie \'e generato da una piccola anisotropia nell'intensit\'a descritta al prim'ordine tramite
-
-\begin{equation}
-I_{\nu}=B(\nu,T)-\frac{1}{\kappa_{\nu}'\rho}\nabla B(\nu,T)
-\end{equation}
-
-integrando sull'angolo solido, il flusso di energia risulta
-
-\begin{align}
-&\vec{F}_{\nu}=-\frac{4\pi}{3\kappa_{\nu}\rho}\nabla B(\nu,T)\shortintertext{ed esplicitando il gradiente termico e integrando sulle frequenze}\nonumber\\
-&\vec{F}=-[\frac{4\pi}{3\rho}\intzi{}\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\,d\nu]\nabla T\label{eq:radiativeflux}
-\end{align}
-
-Definisco l'opacit\'a media di Rosseland
-
-\begin{equation}
-\frac{1}{\kappa}=(\intzi{}\PDy{T}{B(\nu,T)})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}=(\frac{acT^3}{\pi})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\label{eq:rosselandopacity}
-\end{equation}
-
-quindi riscrivo \eqref{eq:radiativeflux} utilizzando la pressione di radiazione $P_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4$
-
-\begin{align}
-&\vec{F}=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{c}{\kappa\rho}\nabla P_{rad}\shortintertext{che per una distribuzione sferica di materia diventa}\nonumber\\
-&F_r=-\frac{c}{\kappa\rho}\TDof{r}(\frac{1}{3}aT^4)=-\frac{4acT^3}{3\kappa\rho}\TDy{r}{T}\label{eq:radfluxTgradrelation}
-\end{align}
-
-Definisco il gradiente radiativo a partire da \eqref{eq:radfluxTgradrelation}
-
-\begin{equation}
-\nrad{}=\Dcvar{\PDly{P}{T}}{rad}=\frac{3}{16\pi acG}\frac{\kappa l(r)P}{m(r)T^4}\label{eq:radiativegradient}
-\end{equation}
-
-con $l(r)=4\pi r^2F$ luminosit\'a totale in funzione di r.
-
-\subsection{Opacit\'a.}
-
-I fenomeni che contribuiscono all'opacit\'a nel Sole sono:
-
-\begin{itemize}
-
-\item \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
-\vspace{-2.5mm}
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
 \vspace{-\baselineskip}
@@ -515,35 +801,11 @@ I fenomeni che contribuiscono all'opacit\'a nel Sole sono:
 \caption{Profilo radiale di $\kappa$ e $\PDly{T}{\kappa}$. Da \cite{stix91sun}.}
 \end{wrapfigure}
 
-
-Scattering fotone-elettrone (sc). Classicamente \'e descritto come lo scattering di un'onda elettromagnetica piana da parte di un dipolo oscillante, scattering Thomson per $h\nu\ll m_ec^2$
-
-\begin{align}
-&\kappa_{\nu}\propto\frac{r_e^2}{\mu_em_u}, \kappa_{sc}=0.20(1+X)\si{\squared\cm\per\gram}\\
-&r_e=\SI{2.82e-13}{\cm}
-\end{align}
-
-Per $T\geq\SI{e8}{\kelvin}$ il momento trasferito all'elettrone non \'e trascurabile, scattering Compton.
-
-}
-
-\item Brehmstrahlung inverso (ff). L'assorbimento di un fotone da parte di un elettrone libero \'e energeticamente possibile quando l'elettrone \'e vicino ad uno ione, l'opacit\'a in questo caso ha l'andamento
-
 \begin{equation}
-\kappa_{ff}\propto\rho T\expy{-\frac{7}{2}}
+\delta\kappa(r)=\frac{\kappa_{OPAL}(\bar{T}(r),\bar{\rho}(r),\bar{Y}(r),\bar{Z}(r))}{\kappa_{OP}(\bar{T}(r),\bar{\rho}(r),\bar{Y}(r),\bar{Z}(r))}-1
 \end{equation}
 
-si tiene conto degli effetti quantistici tramite un opportuno coefficiente, il fattore di Gaunt.
-
-\item Reazioni di ionizzazione (bf).
-
-\item Transizione elettronica a livelli eccitati (bb).
-
-\item Scattering atomici e ione $H^-$. La presenza di metalli con potenziale di ionizzazione minore di H ed He rendono disponibile elettroni per la formazione di $H^-$, sistema debolmente legato per cui un fotone con $h\nu>\SI{0.75}{\ev}$ o $\lambda<\SI{1655}{\nano\meter}$ pu\'o essere assorbito.
-
-\end{itemize}
-
-La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
+$\delta\kappa\leq0.025$.
 
 \begin{tikzpicture}[]
 
@@ -577,187 +839,12 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
  
 \end{tikzpicture}
 
-%\clearpage
-
-\section{Condizione di in-stabilit\'a dinamica: trasporto convettivo.}
-
-La zona convettiva occupa il $29\%$ pi\'u esterno del raggio solare e contiene il $2\%$ della massa: questa regione \'e chimicamente omogenea. 
-
-Una regione stellare \'e convettivamente stabile se una perturbazione radiale infinitesima non cresce ad ampiezza finita 
-\begin{equation}
-\rho\PtwoDy{t}{(\Delta r)}=-g\Delta\rho=-g[\Dcvar{\TDy{r}{\rho}}{e}-\Dcvar{\TDy{r}{\rho}}{amb}]\Delta r
-\end{equation}
-
-La forza di archimede ha verso opposta alla perturbazione se $\Delta\rho>0$.
-
-Considero un'equazione di stato generica $\rho(P,T,\mu)$ e definita tramite:
-\begin{align}
-&\frac{d\rho}{\rho}=\alpha\frac{dP}{P}-\delta\frac{dT}{T}+\phi\frac{d\mu}{\mu}\label{eq:deltatherm}\\
-&P=\frac{\rho\gasconstant{}T}{\mu}\quad\Rightarrow\quad\alpha=\delta=\phi=1
-\end{align}
-
-Suppongo il moto dell'elemento in equilibrio di pressione con l'ambiente quindi, definiti i gradienti termici per il blob e l'ambiente e il gradiente di composizione chimica 
-
-\begin{equation}
-\nabla=\Dcvar{\TDly{P}{T}}{amb},\ \nabla_e=\Dcvar{\TDly{P}{T}}{blob},\ \nmu{}=\Dcvar{\TDly{P}{\mu}}{amb}\label{eq:nablavitense}
-\end{equation}
-riscrivo l'equazione del moto utilizzando l'equazione di stato, essendo $\nmu{}_{blob}\approx0$,
-\begin{equation}
-\PtwoDy{t}{(\Delta r)}=-g\frac{\delta}{H_P}[\nabla_e-\nabla-\frac{\phi}{\delta}\nmu{}]\Delta r\label{eq:galleggiamento}
-\end{equation}
-
-Suppongo adesso un moto del blob adiabatico $\nabla_e=\nabla_{ad}=\frac{P\delta}{T\rho c_P}$ e introduco la frequenza di \bv{}:
-\begin{align}
-&N^2=g(\frac{1}{\Gamma_1P}\TDy{r}{P}-\frac{1}{\rho}\TDy{r}{\rho})\label{eq:bvfs}\\
-&N^2=g(\frac{1}{\densityscale{}}-\frac{g}{c_s^2})\label{eq:bvfsdensita}\shortintertext{ho definito le lunghezze caratteristiche per variazione di densit\'a e pressione:}\nonumber\\
-&\densityscale{}=-\frac{dr}{d\ln{\rho}},\ H_P=-\frac{dr}{dP}
-\end{align}
-
-$N^2$ rappresenta la massima frequenza sotto cui pu\'o oscillare una particella di fluido sottoposta a onde di gravit\'a mantenendo l'equilibrio di pressione con l'ambiente.
-
-Riscrivo l'equazione \eqref{eq:galleggiamento}
-\begin{equation}
-\PtwoDy{t}{(\Delta r)}=-N^2\Delta r
-\end{equation}
-che descrive un comportamento oscillatorio per $N^2>0$, cio\'e uno strato di gas del Sole \'e stabile per convezione se
-
-\begin{equation}
-\nrad{}<\nad+\frac{\phi}{\delta}\nmu{}\label{eq:ledoux}
-\end{equation}
-
-dove ho usato $\nabla_{amb}=\nrad{}$ definito in \eqref{eq:radiativegradient}, cio\'e il gradiente che si ha nel caso la luminosit\'a si trasportata dai fotoni.
-
-Le basse temperature causano un aumento dell'opacit\'a e il gradiente termico necessario per trasportare la luminosit\'a solare \'e superiore al gradiente adiabatico, il cui valore \'e diminuito dal calore latente dell'idrogeno solo parzialmente ionizzato.
-
-Una maggiore efficienza del trasporto convettivo di energia si riflette in una minore differenza tra il gradiente di temperature adiabatico ed effettivo.
-
-\begin{figure}[!h]
-\begin{subfigure}[l]{0.55\textwidth}
-    \includegraphics[ width=0.99\textwidth,keepaspectratio]{proportionflux}
-    \caption{Profilo radiale del flusso convettivo rispetto al flusso totale, della super-adiabaticit\'a del gradiente termico e regioni di ionizzazione parziale di $\cel{He}{4}{}{}$. Da \cite{gou76convection}}
-    \label{fluxproportion}
-\end{subfigure}
-~
-\begin{subfigure}[r]{0.4\textwidth}
-\centering
-\includegraphics[keepaspectratio,width=0.9\textwidth]{specificheatnablaa}
-\subcaption{Profilo radiale di $c_P$ e $\nabla_a$. Da \cite{stix91sun}.}
-\end{subfigure}
-    
-\end{figure}
+\end{workout}
 
 
-\subsection{Teoria della mixing-length.}
-
-Il flusso di energia complessivo \'e determinato da
-\begin{equation}
-F_{con}+F_{rad}=\frac{4acG}{3}\frac{T^4m}{\kappa Pr^2}\nrad{}\label{eq:totalflux}
-\end{equation}
-
-Per determinare il gradiente di temperatura effettivo $\nabla$ uso la teoria della mixing-length (\cite{prandtl25tur} e \cite{vitense53kon}):
-si considera l'eccesso di calore trasportato dai blob di gas nel moto convettivo $c_P\Delta T$ rispetto all'ambiente, il cui cammino libero medio \'e la mixing-length $l_m=\alpha H_P$, che da luogo al flusso di energia
-
-\begin{equation}
-F_{con}=\exv{\rho vc_P\Delta T}\label{eq:convectiveflux}
-\end{equation}
-
-dove $\exv{}$ indica una media opportuna sul guscio sferico di raggio r. Determino il valor medio della differenza di temperatura prendendo come valore caratteristico dello spostamento del blob di gas $\Delta r\approx\frac{l_m}{2}$:
-
-\begin{equation}
-\frac{\Delta T}{T}\approx\frac{1}{T}\PDy{r}{(\Delta T)}\frac{l_m}{2}=(\nabla-\nabla_e)\frac{l_m}{2}\frac{1}{H_P}
-\end{equation}
-
-Assumo il lavoro medio fatto dalla forza di galleggiamento per unit\'a di massa $-g\frac{\Delta\rho}{\rho}$ uguale al valore medio della forza, cio\'e la met\'a di quello al guscio sferico dato, moltiplicato lo spostamento medio $\frac{l_m}{2}$ quindi, assumendo in oltre che in media met\'a del lavoro fatto dalla forza di galleggiamento sia trasformato in energia cinetica del blob si ottiene
-
-\begin{equation}
-v^2=g\delta(\nabla-\nabla_e)\frac{l_m^2}{8H_P}\label{eq:blobvelocity}
-\end{equation}
-
-Infine determino gli scambi radiative del blob: il modulo del flusso radiativo \'e proporzionale al gradiente termico in direzione normale alla superficie del blob
-
-\begin{equation}
-f=\frac{4acT^3}{3\kappa\rho}|\PDy{n}{T}|
-\end{equation}
-
-quindi l'energia scambiata dall'intera superficie S del blob \'e $\lambda=Sf$ che determina, per la prima legge della termodinamica, una variazione di temperatura per unit\'a di tempo, indicato con $V$ il volume, $\PDy{t}{T_e}=-\frac{\lambda}{\rho Vc_P}$.
-
-La variazione della temperatura del blob per unit\'a distanza percorsa \'e quindi
-\begin{equation}
-\Dcvar{\TDy{r}{T}}{e}=\Dcvar{\TDy{r}{T}}{ad}-\frac{\lambda}{\rho Vc_Pv}\label{eq:Tchangelength}
-\end{equation}
-esplicitando $\lambda$, approssimando il gradiente normale alla superficie con $\exv{\Delta T}$ ed usando le definizioni \eqref{eq:nablavitense} si ottiene
-\begin{equation}
-\frac{\nabla_e-\nad{}}{\nabla-\nabla_e}=\frac{6acT^3}{\kappa\rho^2c_Pl_mv}
-\end{equation}
-
-Le 5 equazioni \eqref{eq:totalflux},\eqref{eq:radiativegradient}, \eqref{eq:convectiveflux}, \eqref{eq:blobvelocity}, \eqref{eq:nablavitense} determinano completamente le variabili $F_{rad}, F_{con}, v, \nabla_e, \nabla$ in funzione di $P,T,l(r),m(r),c_P,\nad{},\nrad{},g$ .
-
-
-\section{Reazioni di fusione.}
-
-L'energia liberata dalle reazioni nucleari per grammo per secondo $\epsilon(\rho,T,X_i)$ \'e determinata dalla probabilit\'a che la reazione $X(a,b)Y$ abbia luogo. Sia $E$ l'energia cinetica nel centro di massa dei nuclei, per la sezione d'urto $\sigma(E)$ di fusione si ha
-
-\begin{align}
-&\sigma(E)\propto\pi\lambdabar^2P_0(E)\xi(E)&\intertext{La lunghezza d'onda di de Broglie relativa delle particelle descrive l'indeterminazione sulla posizione nell'urto di due particelle con momento relativo p}\nonumber\\
-&\lambdabar=\frac{\hbar}{p}=\frac{\hbar}{\sqrt{2mE}}&\intertext{$\xi(E)$ tiene conto di eventuali livelli risonanti: $\xi(E)\to1$ lontano dall'energia del livello risonante. $P_0(E)$ descrive la probabilit\'a di attraversamento della barriera coulombiana. Introducendo il fattore astrofisico, dipendente dalle caratteristiche dei nuclei e debolmente dall'energia lontano da risonanze, scrivo la sezione d'urto per i nuclei di carica $Z_1$, $Z_2$ e m massa ridotta}\nonumber\\
-&\sigma(E)=\frac{S(E)}{E}\exp{-2\pi\eta},\ \eta=\sqrt{\frac{m}{2}}\frac{Z_1Z_2e^2}{\hbar E\expy{\frac{1}{2}}}
-\end{align}
-
-La funzione $\epsilon(\rho,T,X_i)$ \'e determinata dalla somma di tutti i contributi
-
-\begin{equation}
-\epsilon_{ij}=\frac{1}{1+\delta_{ij}}\frac{Q_{ij}}{m_jm_k}X_jX_k\exv{\sigma v}\label{eq:energyrate}
-\end{equation}
-
-dove $Q_{ij}$ \'e l'energia liberata per reazione tra nucleo di specie i e j; $\exv{}$ indica la media sulla distribuzione di Maxwell-Boltzmann
-
-\begin{equation}
-f(E)dE\propto\frac{E\expy{\frac{1}{2}}}{(kT)\expy{\frac{3}{2}}}\exp{-\frac{E}{kT}}\,dE
-\end{equation}
-
-\begin{figure*}[!h]
-    \centering
-  \begin{subfigure}[t]{0.6\textwidth}
-        \subfile{ppchain.tex}
-        \caption{Catena PP.}
-    \end{subfigure}%
-    ~
-    \begin{subfigure}[t]{0.4\textwidth}
-        \includegraphics[width=0.9\textwidth,keepaspectratio]{watt-PPvsCNO}
-        \caption{Andamento della luminosit\'a nel Sole.}
-    \end{subfigure}
-\end{figure*}
-
-Per determinare $\exv{\sigma v}$ uso il fatto che l'integrando $S(E)\exp{-\frac{E}{kT}-\frac{b}{\sqrt{E}}}$ ha forma approssimativamente gaussiana il cui massimo $E_0$, energia pi\'u probabile di reazione, e FWHM sono, posto $A=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:
-\begin{align}
-&E_0=\SI{5.665}{\kilo\ev} A\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}},\ \Delta E=4.249W\expy{\frac{1}{6}}T_7\expy{\frac{5}{6}}&\intertext{quindi il rate locale per reazioni non risonanti si scrive}\\
-&\exv{\sigma v}=\num{1.3005e-15}[\frac{Z_1Z_2}{AT_6^2}]\expy{\frac{1}{3}}fS_{eff}\exp{-\tau}\si{\cubic\cm\per\second},\ \tau=\frac{3E_0}{kT}\approx\num{42.487}(Z_1^2Z_2^2AT_6\expy{-1})\expy{\frac{1}{3}}&\intertext{$S_{eff}$ \'e il risultato dell'espansione dell'integrando per $\invers{\tau}\ll1$ ed estrapolato a $E_0$ a partire dal valore a $E(0)$ determinato dalla fisica nucleare.}
-\end{align}
-
-Lo schermaggio degli elettroni diminuisce la repulsione coulombiana e analogamente a quanto visto in precedenza si ha:
-\begin{equation}
-E_C'-E=\frac{Z_1Z_2e^2}{r}\exp{-\frac{r}{r_D}}-E\approx\frac{Z_1Z_2e^2}{r}-\frac{Z_1Z_2e^2}{r_D}-E=E_C-E-E_D
-\end{equation}
-
-Per $\frac{E_D}{kT}\ll1$ ne tengo conto aggiungendo il parametro correttivo $f$
-\begin{equation}
-\exv{v\sigma}\to f\exv{v\sigma},\ f=\exp{\frac{E_D}{KT}}
-\end{equation}
-
-% T_6=10T_7=10^3T_9
-
-\begin{figure*}[!h]
-    \centering
-  \begin{subfigure}[t]{0.5\textwidth}
-        \includegraphics[width=0.9\textwidth,keepaspectratio]{gamow}
-        \caption{Picco di Gamow per distribuzione velocit\'a nuclei MB a T.}
-    \end{subfigure}%
-    ~
-    \begin{subfigure}[t]{0.5\textwidth}
-        \includegraphics[width=0.9\textwidth,keepaspectratio]{Rscreening}
-        \caption{Andamento della correzione di schermaggio degli elettroni.}
-    \end{subfigure}
-\end{figure*}
+%%\section{trasporto radiativo}
+%%\section{In-stabilit\'a dinamica}
+%%\section{Reazioni di fusione nucleare}
 
 \begin{comment}
 \begingroup
@@ -783,8 +870,9 @@ con $r_{ik}$ rate di reazione per unit\'a di massa:
 
 \end{comment}
 
+\begin{workout}[Parametri reazioni nucleari e incertezze schermaggio elettronico]
+\begin{comment}%%Tabella fattori astrofisici
 \begin{table}[!h]
-
 \pgfplotstabletypeset[
 %every head row/.style={before row={\toprule & Reaction & $S(0)$ & $S'(0)$ & $S''(0)$ & $\delta S(E)$\\\midrule},
 %every last row/.style={after row=\bottomrule},
@@ -811,10 +899,20 @@ every last column/.style={column type/.add={}{|}},
 
 \captionof{table}{Fattore astrofisico. Da \cite{adelberger2011solar}.}
 \end{table}
+\end{comment}
+
+\begin{wrapfigure}[23]{r}{0.6\textwidth}
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{watt-PPvsCNO}
+        \caption{Andamento della luminosit\'a nel Sole.}
+    \end{wrapfigure}
+
+\end{workout}
+
 
 \section{Composizione chimica e processi di diffusione.}
 
-\begin{workout}[su cosa influisce la compositzione chimica]
+\begin{workout}[Inertezze sistematiche su $Z/X$ e abbondanza relativa elementi]
+
 CNO-refrattari
 Degenerazione opacit\'a-composizione: zona radiativa ionizzazione
 influenza osservabili sismologiche
@@ -887,82 +985,7 @@ columns={authors,x, y, z, zx
 %columns={x, y, z, zx},
 %/pgf/number format/precision=4
 %    ]{asplundprimordial.txt}.  %%% Iniziale
-
 %Oltre alle reazioni di fusioni anche i processi di diffusione modificano l'abbondanza degli elementi, il peso molecolare medio e l'opacit\'a.
-
-L'equazione di Boltzmann del trasporto descrive l'evoluzione della probabilit\'a $f(\vec{r},\vec{v},t)$ che una particella di una determinata specie sia in una regione dello spazio delle fasi.
-
-\begin{align}
-&\PDy{t}{f_i}+\vec{v}_i\cdot\PDy{\vec{r}}{f_i}+\vec{F}_i\cdot\PDy{\vec{v}}{f_i}=-\nabla_{\vec{p}}(\vec{s}),\ 
-s_{\alpha}=\sum_{'}\int [f(\vec{p})\PDy{p'_{\beta}}{f'(\vec{p}'}-f'(\vec{p}')\PDy{p_{\beta}}{f(\vec{p})}]B_{\alpha\beta}\,d^3p'&\intertext{$\vec{s}$ \'e il flusso nello spazio dei momenti dovuto alle collisioni, la somma \'e sulle specie diverse da i e}\nonumber\\
-&B_{\alpha\beta}=\frac{1}{2}\int q_{\alpha}q_{\beta}|\vec{v}-\vec{v}'|\,d\sigma,\ 
-d\sigma=\frac{4\pi(Z_iZ_j)^2}{\mu^2(\vec{v}-\vec{v}')^4}\frac{d\chi}{\chi^3}&\intertext{con $d\sigma$ sezione d'urto differenziale per potenziale coulombiano puro per piccoli angoli, $\chi$ deviazione nel sistema CM e $\mu$ massa ridotta e}\nonumber\\
-&\sigma_{st}=\frac{4\pi(Z_sZ_t)^2}{\mu^2(\vec{v}-\vec{v}')^4}L,\ L=\ln{\frac{1}{\chi_{min}}}=\ln{\frac{\lambda\mu v_{rel}^2}{|Z_sZ_t|^2}}
-\end{align}
-
-Il plasma solare \'e costituito principalmenteda $\cel{H}{1}{}{}$, $\cel{He}{4}{}{}$, \Pelectron e in minore abbondanza nuclei pesanti.
-
- La distribuzione di velocit\'a della specie i \'e approssimativamente la distribuzione di equilibrio traslata di $w^i$.
-
-Per la velocit\'a di diffusione relative dei due elementi pi\'u abbondanti, definita la concentrazione relativa $c_i=\frac{n_i}{n}$ e il coefficiente di diffusione $D_{HHe}=-\frac{1}{3}lv_{th}$ con $l\approx(n\sigma)\expy{-1}$ cammino libero medio
-
-\begin{align}
-&w_H-w_{He}=\frac{1}{n_H}\int\,d^3v_Hf_H\vec{v}_H-\frac{1}{n_{He}}\int\,d^3v_{He}f_{He}\vec{v}_{He}\\
-&=-D_{HHe}\left[\frac{1}{c_Hc_{He}}\PDy{r}{c_H}+\frac{m_{He}-m_H}{c_Hm_H+c_{He}m_{He}}\frac{1}{P}\PDy{r}{P}+\frac{K_T}{n_Hn_{He}}\frac{1}{T}\PDy{r}{T}\right]
-\end{align}
-
-La forza per unit\'a di volume agente sulle particelle di specie i \'e
-
-\begin{align}
-&\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})&\intertext{e in condizioni di equilibrio il momento trasferito tramite urti con le altre specie \'e}\nonumber\\
-&\vec{F}_i=\sum_{i\neq j}\vec{F}_{ij},\ \vec{F}_{ij}=m_{ij}n_in_j\sigma_{ij}\vec{v}_{ij}&\intertext{dove la funzione $w_{ij}$ \'e la sezione d'urto di Rutherford per la velocit\'a media relativa delle particelle $i,j$}\nonumber\\
-&\sigma_{ij}=\num{2.68e-12}Z_i^2Z_j^2(\frac{m_{ij}}{m_H})\expy{-\frac{1}{2}}(\frac{T}{\SI{e7}{\kelvin}})\expy{-\frac{3}{2}}\ln{\lambda_{ij}}\si{\cubic\cm\per\second}
-\end{align}
-
-Il momento trasferito dagli ioni agli elettroni \'e piccolo quindi si ha
-
-\begin{align}
-&F_H\approx F_{HHe}=-\PDy{r}{P_H}+n_H(eE+m_Hg)\\
-&F_{He}\approx -F_{HHe}=-\PDy{r}{P_{He}}+n_{He}(2eE+4m_Hg)\\
-&E=-\frac{1}{en_e}\PDy{r}{P_e}&\intertext{Per le velocit\'a di diffusione si ha}\nonumber\\
-&w_{HHe}=-\frac{m_{He}T}{m_{HHe}Y\rho \sigma_{HHe}}[\PDy{r}{\ln{(P_eP_H)}}-m_Hg],\ 
-n_Hw_H=\frac{(m_{He}n_Hn_{He})}{\rho}w_{HHe}\\
-&w_A(1+2\frac{Y}{X})\approx-w_H
-%&n_Av_A(m_{AH}n_Hw_{AH})(1+2\frac{Y}{X})\approx-n_Av_H(m_{AH}n_Hw_{AH})
-\end{align}
-
-La gravit\'a tende a concentrare gli elementi pi\'u pesanti verso il centro, le interazioni elettromagnetiche mantengono gli elettroni ancorati ai nuclei mentre $\nabla P_i$ contiene un contributo dovuto a $\nabla n_i$ che tende a diminuire il gradiente di concentrazione.
- 
-La diffusione termica concentra le particelle pi\'u cariche e pi\'u pesanti nelle zone pi\'u calde: infatti la presenza di un gradiente termico determina un flusso di calore, dovuto al maggior numero di particelle energetiche provenienti dalle regioni pi\'u calde, principalmente nuclei di idrogeno, e la  diversa probabilit\'a di trasferimento di momento negli urti nella direzione del gradiente, la sezione d'urto coulombiana dipende dalla velocit\'a relativa $\propto v\expy{-4}$ probabilit\'a di collisione $\propto v\expy{-3}$), produce una forza nel verso opposto al gradiente termico sugli ioni di idrogeno ed una opposta sugli ioni di elio.
-
-\begin{align}
-&\vec{q}_i=\int\frac{1}{2}m_iv_i^2\vec{v}_in_if_i\,d^3v_i\approx-\frac{5}{2}\frac{P_i\tau_ik}{m_i}\nabla T\\
-&\overline{\nu}=\frac{1}{3}\int f^{(0)}\frac{m_{HHe}g^2}{kT}\nu(g)\,d^3g\\
-&\vec{w}_{HHe}^{th}\approx\frac{2}{5kN_Hn_{He}}(\frac{n_{He}m_{He}\vec{q}_H-n_Hm_H\vec{q}_{He}}{m_H+m_{He}})\PDy{T}{\ln{\overline{\nu}}}
-\end{align}
-
-%Si tiene conto del flusso di massa, momento ed energia nelle equazioni di conservazione attraverso le equazioni sviluppate da Burgers (1969).
-
-\begin{minipage}{\linewidth}
-\begin{tikzpicture}
-\node[inner sep=0pt] (image) at (0,0)
-  {\includegraphics[keepaspectratio=true,width=0.5\textwidth]{Hdiffusion}};
-  \draw [thick,dotted] (-3.4,1.5) -- (-3,1.5) node[right] {$\propto\nabla c$};
- \draw [thick,dashed] (-3.4,1.9) -- (-3,1.9) node[right] {$\propto\nabla T$};
-    \draw [thick,dash dot] (-3.4,2.3) -- (-3,2.3) node[right] {$\propto\nabla P$};
-    \node (caption) at (8.5,-2.5) { \begin{minipage}[c]{0.48\textwidth}
-\captionof{figure}{Contributi alla velocit\'a di diffusione di H-He in modello di $1\msun{}$ a \SI{4.65e9}{\year}. Da \cite{wam88hydrogen}.}%   
-    \end{minipage}};
-\node[] (massconsdiff) at (8.5,1) {\begin{minipage}[c]{0.48\textwidth}
-
-Sebbene il tempo caratteristico per percorre un raggio solare sia lungo $\tau_{diff}\approx\SI{6e13}{\year}$ i processi di diffusione producono effetti misurabili sulle frequenze dei modi di oscillazione: la loro inclusione nei \mss{} produce un miglior accordo con le osservazioni.
-
-\end{minipage}
-};
-\end{tikzpicture}
-\end{minipage}
-
-
 % $D_{12}$ vs $K_T=\alpha n_0n_1$ thermal diffusion ration. Thermal diffusion coefficient: $D_T=D_{12}K_T$
 %\section{Modello di Sole attuale.}
 
