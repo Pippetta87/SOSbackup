@@ -60,8 +60,10 @@
     \renewcommand\@memmain@floats{%
       \counterwithout{figure}{section}
       \counterwithout{table}{section}
-      \counterwithin{figure}{chapter}
-      \counterwithin{table}{chapter}
+  \counterwithout{figure}{chapter}
+      \counterwithout{table}{chapter}
+      \counterwithin{figure}{part}
+      \counterwithin{table}{part}
 	\renewcommand{\thesubfigure}{\arabic{figure}.\alph{subfigure}}
 	\renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
 	\renewcommand{\thetable}{\arabic{part}-\arabic{table}}
