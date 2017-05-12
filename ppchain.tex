@@ -15,7 +15,7 @@ minimum width=25mm,%
     align=center}
 }
 \begin{tikzpicture}
-
+\begin{scope}[scale=0.9]
 \node[box] (pp) at (0,0) {$\Pproton{+}\Pproton{\to}\cel{H}{2}{}{}{+}\Pnue{+}\APelectron$};%%pp
 \node[box,right=2cm of pp]  (pep) {$\Pproton{+}\Pproton{+}\Pelectron{\to}\cel{H}{2}{}{}+\Pnue$};%%pep
 \coordinate[below=0.3cm of pp] (bpp);
@@ -71,6 +71,8 @@ minimum width=25mm,%
 \draw[->-] (tboron8.south)--(b8.north);
 \draw[->-] (b8.south)--(be7.north);
 \draw[->-] (be7.south)--(pp3.north);
+
+\end{scope}
 
 \end{tikzpicture}
 
