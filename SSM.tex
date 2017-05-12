@@ -431,7 +431,7 @@ Stimo il tempo trascorso da una stella di massa solare in sequenza principale co
 Nell'interno stellare il cammino libero medio dei fotoni \'e molto corto $\frac{1}{\kappa\rho}\approx\SI{1}{\cm}\ll \rsun{}$, dove l'opacit\'a $\kappa$ che descrive l'assorbimento per unit\'a di massa, quindi considero la radiazione localmente in equilibrio con la materia: il flusso di energia verso la superficie \'e generato da una piccola anisotropia nell'intensit\'a descritta al prim'ordine tramite
 
 \begin{equation}
-I_{\nu}=B(\nu,T)-\frac{1}{\kappa_{\nu}'\rho}\nabla B(\nu,T)
+I_{\nu}=B(\nu,T)-\frac{1}{\kappa_{\nu}'\rho}\nabla_s B(\nu,T)
 \end{equation}
 
 integrando sull'angolo solido, il flusso di energia risulta
@@ -627,7 +627,7 @@ Le 5 equazioni \eqref{eq:totalflux},\eqref{eq:radiativegradient}, \eqref{eq:conv
 
 \section{Reazioni di fusione.}
 
-\begin{wrapfigure}[23]{r}{0.4\textwidth}
+\begin{wrapfigure}[17]{r}{0.4\textwidth}
        \includegraphics[width=0.4\textwidth,keepaspectratio]{watt-PPvsCNO}
         \caption{Andamento dell'energia generate per unit\'a di massa nel Sole: il contributo della catena PP \'e dominante sul ciclo CNO.}
 \end{wrapfigure}
@@ -864,6 +864,8 @@ columns={authors,x, y, z, zx
 
 \begin{figure}[!h]
 
+\begin{threeparttable}
+
 \begin{tabular}{|ccc|}
 {Reaction} & {$S(0) (keVb)$} & {\parbox{2cm}{Gamow peak uncertainty (\%)}}\\
 {$p(p,\APelectron\Pnue)d$} & {$(4.01 \pm 0.04)10^{-22}$} & {$\pm 0.7$}\\
@@ -880,6 +882,7 @@ $\cel{Be}{7}{}{}(p,\Pphoton)\cel{B}{8}{}{}$\tnote{2}& $(2.08 \pm 0.16)10^{-2}$ &
 \begin{tablenotes}
 \item[1]$R(\cel{Be}{7}{}{}(\Pelectron,\Pnue)\cel{Li}{7}{}{})=5.6(1\pm0.02)10^{-9}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}[1+0.004(T_6-16)]\si{\per\second}$ ; \item[2] $R(p\Pelectron p)=1.102(1\pm0.01)10^{-4}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}[1+0.002(T_6-16)]R(pp)$
 \end{tablenotes}
+\end{threeparttable}
 ~
 \begin{subfigure}[r]{0.5\textwidth} 
 
