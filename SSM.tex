@@ -2,18 +2,6 @@
 
 \begin{document}
 
-\begin{comment}
-\begin{workout}[Stelle pulsanti]
-\begin{wrapfigure}[23]{r}{0.6\textwidth}
-\includegraphics[width=0.65\textwidth,keepaspectratio]{HRpulsating} \label{fig:HRp}
-\caption{Zone del diagramma di \hr{} in cui sono previsti comportamenti oscillatori. Da \cite{dal03notes}.}
-\end{wrapfigure}
-\'E possibile che parte dell'energia interna di una stella alimenti un comportamento oscillatorio attorno alla configurazione di equilibrio: le frequenze dei modi normali sono le osservabili sperimentali che contengono informazioni dirette sull'interno stellare, oltre al flusso di neutrini prodotti nelle reazioni nucleari.
-\end{workout}
-\end{comment}
-
-
-
 \begin{workout}[Parametri modello stellare]
 
 La struttura stellare \'e determinata dalle condizioni di equilibrio idrostatico e termico locale: noti massa e composizione chimica iniziale \'e possibile costruire un modello che riproduca la struttura stellare a un tempo dato.
@@ -48,6 +36,8 @@ $\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
 \end{wraptable}
 
 Per quanto riguarda il Sole \'e possibile determinare sperimentalmente il prodotto $G\msun$, la distanza, la luminosit\'a, la composizione chimica al livello della fotosfera, ad eccezione del $\cel{He}{4}{}{}$ e altri gas nobili, e il raggio, quindi allo stato delle conoscenze \'e conveniente introdurre nel modello solare un parametro $\alpha$ per descrivere l'efficienza del trasporto convettivo da determinare tramite la calibrazione del modello con le osservazioni, assieme all'abbondanza di $\cel{He}{4}{}{}$.
+
+La composizione iniziale del Sole, supposta omogenea, \'e determinata a partire dalla composizione attuale delle regioni esterne, tenendo conto della diffusione, e attraverso la calibrazione del modello solare per le abbondanze di $\cel{H}{1}{}{}$ e $\cel{He}{4}{}{}$.
 
 \endgroup
 
@@ -538,7 +528,11 @@ riscrivo l'equazione del moto utilizzando l'equazione di stato, essendo $\nmu{}_
 \PtwoDy{t}{(\Delta r)}=-g\frac{\delta}{H_P}[\nabla_e-\nabla-\frac{\phi}{\delta}\nmu{}]\Delta r\label{eq:galleggiamento}
 \end{equation}
 
-Suppongo adesso un moto del blob adiabatico $\nabla_e=\nabla_{ad}=\frac{P\delta}{T\rho c_P}$ e introduco la frequenza di \bv{}:
+Suppongo adesso un moto del blob adiabatico $\nabla_e=\nabla_{ad}$ con
+\begin{equation}
+\nabla_{ad}=\frac{P\delta}{T\rho c_P}
+\end{equation}
+e introduco la frequenza di \bv{}:
 \begin{align}
 &N^2=g(\frac{1}{\Gamma_1P}\TDy{r}{P}-\frac{1}{\rho}\TDy{r}{\rho})\label{eq:bvfs}\\
 &N^2=g(\frac{1}{\densityscale{}}-\frac{g}{c_s^2})\label{eq:bvfsdensita}\shortintertext{ho definito le lunghezze caratteristiche per variazione di densit\'a e pressione:}
@@ -730,33 +724,13 @@ I risultati del modello solare sono afflitti da errori sistematici dovuti alla m
 \end{workout}
 
 
-\begin{workout}[Parametri reazioni nucleari e incertezze schermaggio elettronico]
-
-
-
-
-\end{workout}
-
-
-\begin{workout}[EOS]
+\begin{workout}[EOS: incertezze sistematiche MHD-OPAL]
 
 Gli approcci pi\'u usati per determinare l'equazione di stato e quindi le grandezze termodinamiche del plasma solare sono due. Lo schema chimico considera atomi e molecole, la cui popolazione per stati eccitati e diversi gradi di ionizzazione \'e ottenuto minimizzando l'energia libera; utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD. Lo schema fisico considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
 
 La differenza di pressione calcolata usando l'equazione di stato OPAL e MHD: $\midfrac{\Delta P}{P}\leq1\%$  per $\frac{r}{\rsun{}}\geq0.9$, $\midfrac{\Delta P}{P}\leq0.2\%$ $\frac{r}{\rsun{}}\leq0.9$
 
 \end{workout}
-
-
-\begin{errata}
-
-L'energia libera \'e connessa all'equazione di stato e alle altre grandezze termodinamiche da
-
-\begin{align}
-&P(\rho,T)=\frac{1}{\rho^2}\Dcvar{\PDy{\rho}{F}}{T},\ u=-T^2\PDof{T}\left(\frac{F}{T}\right)
-\end{align}
-
-\end{errata}
-
 
 
 \begin{workout}[opacit\'a solare e sua incertezza]
@@ -776,8 +750,8 @@ $\delta\kappa\leq0.025$.
 
 \begin{tikzpicture}[]
 
-\node[anchor=north west] (opint) at ([shift={(0,0)}]0,0) {\includegraphics[width=0.45\textwidth,keepaspectratio]{opcontrib-int-g}};
-\node[anchor=north east] (opout) at ([shift={(0,0-3/35)}]0,0) {\includegraphics[width=0.45\textwidth,keepaspectratio]{opcontrib-out-g}};
+\node[anchor=north west] (opint) at ([shift={(1.5,0)}]0,0) {\includegraphics[width=0.45\textwidth,keepaspectratio]{opcontrib-int-g}};
+\node[anchor=north east] (opout) at ([shift={(1.5,0-3/35)}]0,0) {\includegraphics[width=0.45\textwidth,keepaspectratio]{opcontrib-out-g}};
 \node[draw,anchor=north,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at ([shift={(0,-7)}]0,0) {};
 \node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm,above=10mm of sc] (ff) {};
 \node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm,above=10mm of ff] (bb) {};
@@ -802,7 +776,7 @@ $\delta\kappa\leq0.025$.
 \node[name=ferrum, right=4.5mm of manganese.west] {\tiny Fe};
 \node[name=nikel, right=4.5mm of ferrum.west] {\tiny Ni};
 
-\node[anchor=north west] at ([shift={(0,-10.5)}]0,0) {\parbox{\textwidth}{\captionof{figure}{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}\label{fig:opacitycontrib} }};
+\node[anchor=north west] at ([shift={(0,-12.5)}]0,0) {\parbox{\textwidth}{\captionof{figure}{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}\label{fig:opacitycontrib} }};
  
 \end{tikzpicture}
 
@@ -811,16 +785,11 @@ $\delta\kappa\leq0.025$.
 
 \begin{workout}[Incertezze sistematiche su $Z/X$ e abbondanza relativa elementi]
 
-CNO-refrattari
-Degenerazione opacit\'a-composizione: zona radiativa ionizzazione
-influenza osservabili sismologiche
+CNO-refrattari: refrattari misure condriti CI - atmosfera mostrano buon accordo
+
 \end{workout}
 
 La composizione chimica del Sole \'e determinata analizzando le righe di assorbimento prodotte dalle transizioni atomiche negli strati esterni del Sole; poich\'e l'assorbimento continuo \'e dovuto principalmente all'idrogeno l'abbondanza degli elementi pesanti si esprime relativamente all'abbondanza di idrogeno.
-
-
-La composizione iniziale del Sole, supposta omogenea, \'e determinata a partire dalla composizione attuale delle regioni esterne, tenendo conto della diffusione, e attraverso la calibrazione del modello solare per le abbondanze di $\cel{H}{1}{}{}$ e $\cel{He}{4}{}{}$.
-
 
 \begin{table}[!h]
 
@@ -894,7 +863,7 @@ $\cel{Be}{7}{}{}(p,\Pphoton)\cel{B}{8}{}{}$\tnote{2}& $(2.08 \pm 0.16)10^{-2}$ &
 \end{figure}
 
 \begin{wrapfigure}[10]{r}{0.3\textwidth}
-        \includegraphics[width=0.9\textwidth,keepaspectratio]{Rscreening}
+        \includegraphics[width=0.5\textwidth,keepaspectratio]{Rscreening}
         \caption{Andamento della correzione di schermaggio degli elettroni.}
 \end{wrapfigure}
 
@@ -910,7 +879,7 @@ c_s^2=\Gamma_1\frac{P}{\rho}
 
 \begin{figure}[!h]
 \begin{subfigure}[r]{0.6\textwidth}
-        \includegraphics[width=0.9\textwidth,keepaspectratio]{Rscreening}
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{deltaCdeltaQ}
         \caption{Profilo della derivata logaritmica di $c_s$ rispetto ai parametri del MSS}
     \end{subfigure}
 ~
