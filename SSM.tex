@@ -542,7 +542,7 @@ Suppongo adesso un moto del blob adiabatico $\nabla_e=\nabla_{ad}=\frac{P\delta}
 \begin{align}
 &N^2=g(\frac{1}{\Gamma_1P}\TDy{r}{P}-\frac{1}{\rho}\TDy{r}{\rho})\label{eq:bvfs}\\
 &N^2=g(\frac{1}{\densityscale{}}-\frac{g}{c_s^2})\label{eq:bvfsdensita}\shortintertext{ho definito le lunghezze caratteristiche per variazione di densit\'a e pressione:}
-&\densityscale{}=-\frac{dr}{d\ln{\rho}},\ H_P=-\frac{dr}{dP}
+&\densityscale{}=-\frac{dr}{d\ln{\rho}},\ H_P=-\frac{dr}{d\ln{P}}
 \end{align}
 
 $N^2$ rappresenta la massima frequenza sotto cui pu\'o oscillare una particella di fluido sottoposta a onde di gravit\'a mantenendo l'equilibrio di pressione con l'ambiente.
@@ -740,13 +740,14 @@ I risultati del modello solare sono afflitti da errori sistematici dovuti alla m
 
 \begin{workout}[EOS]
 
+Gli approcci pi\'u usati per determinare l'equazione di stato e quindi le grandezze termodinamiche del plasma solare sono due. Lo schema chimico considera atomi e molecole, la cui popolazione per stati eccitati e diversi gradi di ionizzazione \'e ottenuto minimizzando l'energia libera; utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD. Lo schema fisico considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
+
 La differenza di pressione calcolata usando l'equazione di stato OPAL e MHD: $\midfrac{\Delta P}{P}\leq1\%$  per $\frac{r}{\rsun{}}\geq0.9$, $\midfrac{\Delta P}{P}\leq0.2\%$ $\frac{r}{\rsun{}}\leq0.9$
 
 \end{workout}
 
 
 \begin{errata}
-Gli approcci pi\'u usati per determinare l'equazione di stato e quindi le grandezze termodinamiche del plasma solare sono due. Lo schema chimico considera atomi e molecole, la cui popolazione per stati eccitati e diversi gradi di ionizzazione \'e ottenuto minimizzando l'energia libera; utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD. Lo schema fisico considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
 
 L'energia libera \'e connessa all'equazione di stato e alle altre grandezze termodinamiche da
 
@@ -933,7 +934,10 @@ Profondit\'a zona convettiva: opacit\'a.
 
 Regione in cui il gradiente radiativo raggiunge il gradiente adiabatico.
 
-sound speed gradient W.
+sound speed gradient W:
+\begin{equation}
+W=\frac{1}{g}\TDy{r}{c^2}
+\end{equation}
 
 $R_b$ \'e misurabile con grande accuratezza: discontinuit\'a.
 
