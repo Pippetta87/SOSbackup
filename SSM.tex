@@ -176,6 +176,26 @@ dove $P_R=(1-\beta)P$.
 
 \item Ionizzazione atomica stati eccitati.
 
+\begin{workout}[regioni di ionizzazione:]
+
+Per avere una descrizione realistica della ionizzazione in condizioni solare bisogna tener conte delle interazioni non ideali legate alla natura estesa degli atomi.
+
+In figura \ref{gamma1eos} si vede che $\Gamma_1\approx\midfrac{5}{3}$ nell'interno solare e maggiori deviazioni si hanno nelle regioni di ionizzazione parziale degli elementi in particolare di idrogeno ed elio.
+
+\begin{figure}[!h]
+\begin{subfigure}[r]{0.5\textwidth}
+        \includegraphics[width=0.95\textwidth,keepaspectratio]{ionfraction}
+        \caption{Profilo radiale della popolazione dei diversi gradi di ionizzazione per $\cel{He}{4}{}{}$, CNO, $\cel{Ne}{20}{}{}$, $\cel{Fe}{56}{}{}$. Stati di ionizzazione maggiore sono pi\'u interni. Da \cite{basu2008helioseismology}.}
+    \end{subfigure}
+~
+\begin{subfigure}[r]{0.95\textwidth}
+        \includegraphics[width=0.5\textwidth,keepaspectratio]{gamma1eos}
+        \caption{Andamento di $\Gamma_1$. Da \cite{trampedach2006synoptic}}
+    \end{subfigure}
+\end{figure}
+
+\end{workout}
+
 \end{itemize}
 
 La principale correzione che tiene conto dell'interazioni tra particelle \'e dovuta alle interazioni coulombiane e come illustrato da \subref{fig:RatioelectroEP} raggiunge il picco nelle regioni di ionizzazione parziale di idrogeno ed elio.
@@ -196,22 +216,6 @@ Le correzioni dovute alle interazioni coulombiane sono
 
 Importante nella regione di ionizzazione di H e He.
 
-\begin{workout}[regioni di ionizzazione:]
-
-
-\begin{figure}[!h]
-\begin{subfigure}[r]{0.5\textwidth}
-        \includegraphics[width=0.5\textwidth,keepaspectratio]{ionfraction}
-        \caption{Profilo radiale della popolazione dei diversi gradi di ionizzazione per $\cel{He}{4}{}{}$, CNO, $\cel{Ne}{20}{}{}$, $\cel{Fe}{56}{}{}$. Da \cite{}.}
-    \end{subfigure}
-~
-\begin{subfigure}[r]{0.5\textwidth}
-        \includegraphics[width=0.5\textwidth,keepaspectratio]{gamma1eos}
-        \caption{Andamento di $\Gamma_1$. Da \cite{villante2014chemical}}
-    \end{subfigure}
-\end{figure}
-
-\end{workout}
 
 \subsection{Tempo di evoluzione dinamico.}
 
@@ -834,6 +838,9 @@ columns={authors,x, y, z, zx
 
 \begin{figure}[!h]
 
+
+\begin{adjustbox}{max width=0.4\textwidth}
+
 \begin{threeparttable}
 
 \begin{tabular}{|ccc|}
@@ -848,11 +855,13 @@ $p(p\Pelectron,\Pnue)d$\tnote{1}& $ $ & $\pm 1.0$\\
 $\cel{Be}{7}{}{}(p,\Pphoton)\cel{B}{8}{}{}$\tnote{2}& $(2.08 \pm 0.16)10^{-2}$ & $\pm 7.5$\\
 %14N(p,7)150 XI.A 1.66 \pm 0.12 (-3.3 \pm 0.2) x 10-3 b (4.4 \pm 0.3) x 10-5 a \pm 7.2
 \end{tabular}
-\caption{Reaction rate \cite{adelberger2011solar}.}
+
 \begin{tablenotes}
 \item[1]$R(\cel{Be}{7}{}{}(\Pelectron,\Pnue)\cel{Li}{7}{}{})=5.6(1\pm0.02)10^{-9}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}[1+0.004(T_6-16)]\si{\per\second}$ ; \item[2] $R(p\Pelectron p)=1.102(1\pm0.01)10^{-4}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}[1+0.002(T_6-16)]R(pp)$
 \end{tablenotes}
+\caption{Reaction rate \cite{adelberger2011solar}.}
 \end{threeparttable}
+\end{adjustbox}
 ~
 \begin{subfigure}[r]{0.5\textwidth} 
 
