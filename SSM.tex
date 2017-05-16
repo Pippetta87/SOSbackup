@@ -213,6 +213,14 @@ Le correzioni dovute alle interazioni coulombiane sono
 
 La correzione alla pressione dovuta alle interazioni coulombiane raggiunge il picco relativo nelle regioni di ionizzazione parziale di idrogeno ed elio, come illustrato da \subref{fig:RatioelectroEP}.
 
+\begin{workout}[EOS: incertezze sistematiche MHD-OPAL]
+
+Due degli approcci usati per determinare l'equazione di stato e quindi le grandezze termodinamiche del plasma solare sono lo schema chimico che considera atomi e molecole, la cui popolazione per stati eccitati e diversi gradi di ionizzazione \'e ottenuto minimizzando l'energia libera; utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD, e lo schema fisico che considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
+
+La differenza di pressione calcolata usando l'equazione di stato OPAL e MHD: $\midfrac{\Delta P}{P}\leq1\%$  per $\frac{r}{\rsun{}}\geq0.9$, $\midfrac{\Delta P}{P}\leq0.2\%$ $\frac{r}{\rsun{}}\leq0.9$
+
+\end{workout}
+
 \subsection{Tempo di evoluzione dinamico.}
 
 Per giustificare l'ipotesi di equilibrio idrostatico stimo i tempi caratteristici di evoluzione della struttura solare nel caso la forza dovuta alla pressione o la forza di gravit\'a non fossero bilanciate, approssimando il valore caratteristico della derivata di due variabili con il rapporto del loro valore caratteristico:
@@ -424,6 +432,50 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
 
 \end{workout}
 
+\begin{workout}[opacit\'a solare e sua incertezza]
+
+
+
+\begin{equation}
+\delta\kappa(r)=\frac{\kappa_{OPAL}(\bar{T}(r),\bar{\rho}(r),\bar{Y}(r),\bar{Z}(r))}{\kappa_{OP}(\bar{T}(r),\bar{\rho}(r),\bar{Y}(r),\bar{Z}(r))}-1
+\end{equation}
+
+$\delta\kappa\leq0.025$.
+
+\begin{tikzpicture}[]
+
+\node[anchor=north west] (opint) at ([shift={(1.5,0)}]0,0) {\includegraphics[width=0.45\textwidth,keepaspectratio]{opcontrib-int-g}};
+\node[anchor=north east] (opout) at ([shift={(1.5,0-3/35)}]0,0) {\includegraphics[width=0.45\textwidth,keepaspectratio]{opcontrib-out-g}};
+\node[draw,anchor=north,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at ([shift={(0,-7)}]0,0) {};
+\node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm,above=10mm of sc] (ff) {};
+\node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm,above=10mm of ff] (bb) {};
+\node[draw,label={[label distance=2mm]-90:bf},fill=bf,minimum size=5mm,above=10mm of bb] (bf) {};
+
+
+\node[name=hydrogen, right= 8mm of opint.south west] {\tiny H};
+\node[name=helium, right=4.5mm of hydrogen.west] {\tiny He};
+\node[name=carbonium, right=4.5mm of helium.west] {\tiny C};
+\node[name=nitrum, right=4.5mm of carbonium.west] {\tiny N};
+\node[name=oxygen, right=4.5mm of nitrum.west] {\tiny O};
+\node[name=neon, right=4.5mm of oxygen.west] {\tiny Ne};
+\node[name=sodium, right=4.5mm of neon.west] {\tiny Na};
+\node[name=magnesium, right=4.5mm of sodium.west] {\tiny Mg};
+\node[name=alluminium, right=4.5mm of magnesium.west] {\tiny Al};
+\node[name=silicium, right=4.5mm of alluminium.west] {\tiny Si};
+\node[name=sulfur, right=4.5mm of silicium.west] {\tiny S};
+\node[name=argon, right=4.5mm of sulfur.west] {\tiny Ar};
+\node[name=calcium, right=4.5mm of argon.west] {\tiny Ca};
+\node[name=cromum, right=4.5mm of calcium.west] {\tiny Cr};
+\node[name=manganese, right=4.5mm of cromum.west] {\tiny Mn};
+\node[name=ferrum, right=4.5mm of manganese.west] {\tiny Fe};
+\node[name=nikel, right=4.5mm of ferrum.west] {\tiny Ni};
+
+\node[anchor=north west] at ([shift={(0,-12.5)}]0,0) {\parbox{\textwidth}{\captionof{figure}{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}\label{fig:opacitycontrib} }};
+ 
+\end{tikzpicture}
+
+\end{workout}
+
 \section{Condizione di in-stabilit\'a dinamica: trasporto convettivo.}
 
 La zona convettiva occupa il $29\%$ pi\'u esterno del raggio solare e contiene il $2\%$ della massa: questa regione \'e chimicamente omogenea. 
@@ -474,7 +526,7 @@ che descrive un comportamento oscillatorio per $N^2>0$, cio\'e uno strato di gas
 \nrad{}<\nad+\frac{\phi}{\delta}\nmu{}\label{eq:ledoux}
 \end{equation}
 
-dove ho usato $\nabla_{amb}=\nrad{}$ definito in \eqref{eq:radiativegradient}, cio\'e il gradiente che si ha nel caso la luminosit\'a si trasportata dai fotoni.
+dove ho usato $\nabla_{amb}=\nrad{}$ definito in \eqref{eq:radiativegradient}, cio\'e il gradiente che si ha nel caso la luminosit\'a si trasportata dai fotoni; nelle zone in cui il criterio di Ledoux (o \sch{} se trascuro il gradiente di $\mu$) non \'e verificato si ha trasporto convettivo e la regione in cui vale l'uguaglianza \'e la base della regione convettiva solare.
 
 Le basse temperature causano un aumento dell'opacit\'a e il gradiente termico necessario per trasportare la luminosit\'a solare \'e superiore al gradiente adiabatico, il cui valore \'e diminuito dal calore latente dell'idrogeno solo parzialmente ionizzato.
 
@@ -586,8 +638,56 @@ Per $\frac{E_D}{kT}\ll1$ ne tengo conto aggiungendo il parametro correttivo $f$
 \exv{v\sigma}\to f\exv{v\sigma},\ f=\exp{\frac{E_D}{KT}}
 \end{equation}
 
-% T_6=10T_7=10^3T_9
+\begin{workout}[reaction rates e incertezze - screening method]
 
+%\begin{wrapfigure}[23]{r}{0.6\textwidth}
+
+\begin{figure}[!h]
+
+
+\begin{adjustbox}{max width=0.4\textwidth, caption={Reaction rate \cite{adelberger2011solar}.}, float=table}
+
+\begin{threeparttable}
+
+\begin{tabular}{|ccc|}
+{Reaction} & {$S(0) (keVb)$} & {\parbox{2cm}{Gamow peak uncertainty (\%)}}\\
+{$p(p,\APelectron\Pnue)d$} & {$(4.01 \pm 0.04)10^{-22}$} & {$\pm 0.7$}\\
+$d(p,\Pphoton)\cel{He}{3}{}{}$ & ${2.14}10^{-4}\substack{+0.17 \\ -0.16}$ & $\pm 7.1$\\
+$\cel{He}{3}{}{}(\cel{He}{3}{}{},2p)\cel{He}{4}{}{}$ & $(5.21 \pm 0.27)10^{-3}$ & $\pm 4.3$\\
+$\cel{He}{3}{}{}(\cel{He}{4}{}{},\Pphoton)\cel{Be}{7}{}{}$ & $0.56 \pm 0.03$ & $\pm 5.1$\\
+$\cel{He}{3}{}{}(p,\APelectron\Pnue)\cel{He}{4}{}{}$ & $(8.6 \pm 2.6)10^{-20}$ & $\pm 30$\\
+$\cel{Be}{7}{}{}(\Pelectron,\Pnue)\cel{Li}{7}{}{}$ & $ $  & $\pm 2.0$\\
+$p(p\Pelectron,\Pnue)d$\tnote{1}& $ $ & $\pm 1.0$\\
+$\cel{Be}{7}{}{}(p,\Pphoton)\cel{B}{8}{}{}$\tnote{2}& $(2.08 \pm 0.16)10^{-2}$ & $\pm 7.5$\\
+%14N(p,7)150 XI.A 1.66 \pm 0.12 (-3.3 \pm 0.2) x 10-3 b (4.4 \pm 0.3) x 10-5 a \pm 7.2
+\end{tabular}
+
+\begin{tablenotes}
+\item[1]$R(\cel{Be}{7}{}{}(\Pelectron,\Pnue)\cel{Li}{7}{}{})=5.6(1\pm0.02)10^{-9}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}[1+0.004(T_6-16)]\si{\per\second}$
+\item[2] $R(p\Pelectron p)=1.102(1\pm0.01)10^{-4}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}[1+0.002(T_6-16)]R(pp)$
+\end{tablenotes}
+
+\end{threeparttable}
+
+\end{adjustbox}
+~
+\begin{subfigure}[r]{0.6\textwidth} 
+\resizebox{\textwidth}{!}{
+        \input{ppchain.tex}
+        }
+        \caption{Catena PP.}
+
+    \end{subfigure}
+\end{figure}
+
+\begin{wrapfigure}[10]{r}{0.3\textwidth}
+        \includegraphics[width=0.5\textwidth,keepaspectratio]{Rscreening}
+        \caption{Andamento della correzione di schermaggio degli elettroni.}
+\end{wrapfigure}
+
+\end{workout}
+
+% T_6=10T_7=10^3T_9
 
 \section{Diffusione}
 
@@ -681,13 +781,9 @@ Sebbene il tempo caratteristico per percorre un raggio solare sia lungo $\tau_{d
 
 
 {\let\clearpage\relax\let\cleardoublepage\relax
-\chapter{Modello solare standard e incertezze. Osservabili sismologiche.}
+\chapter{Modello solare standard e osservabili sismologiche.}
 }
 
-\begin{workout}[Modello Sole attuale]
-
-%%Spostato all'inizio
-Per quanto riguarda il Sole \'e possibile determinare sperimentalmente il prodotto $G\msun$, la distanza, la luminosit\'a, la composizione chimica al livello della fotosfera, ad eccezione del $\cel{He}{4}{}{}$ e altri gas nobili, e il raggio; allo stato delle conoscenze \'e conveniente introdurre un parametro $\alpha$ per descrivere l'efficienza del trasporto convettivo da determinare tramite la calibrazione del modello con le osservazioni, assieme all'abbondanza di $\cel{He}{4}{}{}$.
 
 Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
 \begin{subequations}\label{subeqn:stellarstructure}
@@ -702,8 +798,7 @@ Determino la struttura solare integrando numericamente le equazioni fondamentali
 \PDy{t}{n_s}+\frac{1}{r^2}\PDof{r}(r^2n_sv_i)=\Dcvar{\PDy{t}{n_s}}{Nucl}\label{eq:difffusionchange}
 \end{equation}
 \end{subequations}
-con $v_i$ velocit\'a di diffusione specie i. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note  l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
-
+con $v_i$ velocit\'a di diffusione specie i. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note la metallicit\'a iniziale Z, l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
 
 Le condizioni al bordo per le equazioni precedenti sono:
 \begin{itemize}
@@ -713,7 +808,7 @@ Le condizioni al bordo per le equazioni precedenti sono:
     %e condizioni al centro si ricavano espandendo l, m attorno a $r=0$ in termini di $T_c, P_C,X_C,X_{3C}$ ed eguagliando le espansioni ai valori di l e m del punto pi\'u interno.
 \end{itemize}
 
-Per determinare il modello solare attuale evolvo il modello del Sole in sequenza principale partendo una composizione chimica fissata fino ad ottenere un modello con le caratteristiche del Sole attuale:
+Per determinare il modello solare attuale evolvo il modello del Sole in sequenza principale partendo da una composizione chimica fissata fino ad ottenere un modello con le caratteristiche del Sole attuale:
 \begin{itemize}
 \item Il valore di Y \'e determinato dalla luminosit\'a solare attuale: l'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffusionchange}, dovuto principalmente alle reazioni di fusione \eqref{eq:energyrate}, deve essere compensato da un'aumento di temperatura con conseguente incremento dell'energia generata e della luminosit\'a.
 
@@ -723,77 +818,13 @@ Per determinare il modello solare attuale evolvo il modello del Sole in sequenza
 
 \begin{figure}[!h]
 \includegraphics[width=\textwidth,trim=4 4 4 4,clip]{BP2000}
-\caption{Profilo radiale della densit\'a, composizione, luminosit\'a e temperatura. Dati da \cite{BP2000}.}
+\caption{Profilo radiale della densit\'a, abbondanza di idrogeno, luminosit\'a e temperatura; sono indicati i valori centrali e alla base della zona convettiva. Dati da \cite{BP2000}.}
 \end{figure}
-
-\end{workout}
-
-
-\section{Parametri fisici del modello}
 
 
 \begin{workout}[Incertezze input MSS]
 
 I risultati del modello solare sono afflitti da errori sistematici dovuti alla modellizzazione della fisica del plasma solare (EOS, opacit\'a,) e della formazione delle righe di assorbimento e dell'atmosfera (metallicit\'a)
-\end{workout}
-
-
-\begin{workout}[EOS: incertezze sistematiche MHD-OPAL]
-
-Gli approcci pi\'u usati per determinare l'equazione di stato e quindi le grandezze termodinamiche del plasma solare sono due. Lo schema chimico considera atomi e molecole, la cui popolazione per stati eccitati e diversi gradi di ionizzazione \'e ottenuto minimizzando l'energia libera; utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD. Lo schema fisico considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
-
-La differenza di pressione calcolata usando l'equazione di stato OPAL e MHD: $\midfrac{\Delta P}{P}\leq1\%$  per $\frac{r}{\rsun{}}\geq0.9$, $\midfrac{\Delta P}{P}\leq0.2\%$ $\frac{r}{\rsun{}}\leq0.9$
-
-\end{workout}
-
-
-\begin{workout}[opacit\'a solare e sua incertezza]
-
-\begin{wrapfigure}{r}{0.5\textwidth}
-\centering
-\vspace{-\baselineskip}
-\includegraphics[keepaspectratio,width=0.9\linewidth]{opacitylld}
-\caption{Profilo radiale di $\kappa$ e $\PDly{T}{\kappa}$. Da \cite{stix91sun}.}
-\end{wrapfigure}
-
-\begin{equation}
-\delta\kappa(r)=\frac{\kappa_{OPAL}(\bar{T}(r),\bar{\rho}(r),\bar{Y}(r),\bar{Z}(r))}{\kappa_{OP}(\bar{T}(r),\bar{\rho}(r),\bar{Y}(r),\bar{Z}(r))}-1
-\end{equation}
-
-$\delta\kappa\leq0.025$.
-
-\begin{tikzpicture}[]
-
-\node[anchor=north west] (opint) at ([shift={(1.5,0)}]0,0) {\includegraphics[width=0.45\textwidth,keepaspectratio]{opcontrib-int-g}};
-\node[anchor=north east] (opout) at ([shift={(1.5,0-3/35)}]0,0) {\includegraphics[width=0.45\textwidth,keepaspectratio]{opcontrib-out-g}};
-\node[draw,anchor=north,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm] (sc) at ([shift={(0,-7)}]0,0) {};
-\node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm,above=10mm of sc] (ff) {};
-\node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm,above=10mm of ff] (bb) {};
-\node[draw,label={[label distance=2mm]-90:bf},fill=bf,minimum size=5mm,above=10mm of bb] (bf) {};
-
-
-\node[name=hydrogen, right= 8mm of opint.south west] {\tiny H};
-\node[name=helium, right=4.5mm of hydrogen.west] {\tiny He};
-\node[name=carbonium, right=4.5mm of helium.west] {\tiny C};
-\node[name=nitrum, right=4.5mm of carbonium.west] {\tiny N};
-\node[name=oxygen, right=4.5mm of nitrum.west] {\tiny O};
-\node[name=neon, right=4.5mm of oxygen.west] {\tiny Ne};
-\node[name=sodium, right=4.5mm of neon.west] {\tiny Na};
-\node[name=magnesium, right=4.5mm of sodium.west] {\tiny Mg};
-\node[name=alluminium, right=4.5mm of magnesium.west] {\tiny Al};
-\node[name=silicium, right=4.5mm of alluminium.west] {\tiny Si};
-\node[name=sulfur, right=4.5mm of silicium.west] {\tiny S};
-\node[name=argon, right=4.5mm of sulfur.west] {\tiny Ar};
-\node[name=calcium, right=4.5mm of argon.west] {\tiny Ca};
-\node[name=cromum, right=4.5mm of calcium.west] {\tiny Cr};
-\node[name=manganese, right=4.5mm of cromum.west] {\tiny Mn};
-\node[name=ferrum, right=4.5mm of manganese.west] {\tiny Fe};
-\node[name=nikel, right=4.5mm of ferrum.west] {\tiny Ni};
-
-\node[anchor=north west] at ([shift={(0,-12.5)}]0,0) {\parbox{\textwidth}{\captionof{figure}{Importanza dei varii contributi all'opacit\'a nell'interno solare. Da \cite{bla11opacity}.}\label{fig:opacitycontrib} }};
- 
-\end{tikzpicture}
-
 \end{workout}
 
 
@@ -831,7 +862,7 @@ display columns/4/.style={column name={$\frac{Z}{X}$}},
 %display columns/8/.style={column name={$\frac{Z}{X}$}},
 create on use/authors/.style={create col/set list={
 %Anders \& Grevesse (1989),Grevesse \& Noels (1993),
-Grevesse \& Sauval (1998),Lodders (2003),Asplund Grevesse \& Sauval (2005),Lodders Palme \& Gail (2009),\cite{asplund2009chemical},citecaffau11}},
+Grevesse \& Sauval (1998),Lodders (2003),Asplund Grevesse \& Sauval (2005),Lodders Palme \& Gail (2009),\cite{asplund2009chemical},\cite{caffau2011solar}},
 columns/authors/.style={string type},
 columns={authors,x, y, z, zx
 %,xi,yi,zi, zxi
@@ -839,57 +870,8 @@ columns={authors,x, y, z, zx
 /pgf/number format/precision=4
      ]{asplund.txt} %%%
 
-\captionof{table}{Metallicit\'a osservata. Da \cite{asplund2009chemical}.}
+\captionof{table}{Metallicit\'a osservata.}
 \end{table}
-
-\begin{workout}[reaction rates e incertezze - screening method]
-
-%\begin{wrapfigure}[23]{r}{0.6\textwidth}
-
-\begin{figure}[!h]
-
-
-\begin{adjustbox}{max width=0.4\textwidth, caption={Reaction rate \cite{adelberger2011solar}.}}
-
-\begin{threeparttable}
-
-\begin{tabular}{|ccc|}
-{Reaction} & {$S(0) (keVb)$} & {\parbox{2cm}{Gamow peak uncertainty (\%)}}\\
-{$p(p,\APelectron\Pnue)d$} & {$(4.01 \pm 0.04)10^{-22}$} & {$\pm 0.7$}\\
-$d(p,\Pphoton)\cel{He}{3}{}{}$ & ${2.14}10^{-4}\substack{+0.17 \\ -0.16}$ & $\pm 7.1$\\
-$\cel{He}{3}{}{}(\cel{He}{3}{}{},2p)\cel{He}{4}{}{}$ & $(5.21 \pm 0.27)10^{-3}$ & $\pm 4.3$\\
-$\cel{He}{3}{}{}(\cel{He}{4}{}{},\Pphoton)\cel{Be}{7}{}{}$ & $0.56 \pm 0.03$ & $\pm 5.1$\\
-$\cel{He}{3}{}{}(p,\APelectron\Pnue)\cel{He}{4}{}{}$ & $(8.6 \pm 2.6)10^{-20}$ & $\pm 30$\\
-$\cel{Be}{7}{}{}(\Pelectron,\Pnue)\cel{Li}{7}{}{}$ & $ $  & $\pm 2.0$\\
-$p(p\Pelectron,\Pnue)d$\tnote{1}& $ $ & $\pm 1.0$\\
-$\cel{Be}{7}{}{}(p,\Pphoton)\cel{B}{8}{}{}$\tnote{2}& $(2.08 \pm 0.16)10^{-2}$ & $\pm 7.5$\\
-%14N(p,7)150 XI.A 1.66 \pm 0.12 (-3.3 \pm 0.2) x 10-3 b (4.4 \pm 0.3) x 10-5 a \pm 7.2
-\end{tabular}
-
-\begin{tablenotes}
-\item[1]$R(\cel{Be}{7}{}{}(\Pelectron,\Pnue)\cel{Li}{7}{}{})=5.6(1\pm0.02)10^{-9}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}[1+0.004(T_6-16)]\si{\per\second}$
-\item[2] $R(p\Pelectron p)=1.102(1\pm0.01)10^{-4}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}[1+0.002(T_6-16)]R(pp)$
-\end{tablenotes}
-
-\end{threeparttable}
-
-\end{adjustbox}
-~
-\begin{subfigure}[r]{0.6\textwidth} 
-\resizebox{\textwidth}{!}{
-        \input{ppchain.tex}
-        }
-        \caption{Catena PP.}
-
-    \end{subfigure}
-\end{figure}
-
-\begin{wrapfigure}[10]{r}{0.3\textwidth}
-        \includegraphics[width=0.5\textwidth,keepaspectratio]{Rscreening}
-        \caption{Andamento della correzione di schermaggio degli elettroni.}
-\end{wrapfigure}
-
-\end{workout}
 
 
 \section{Osservabili sismologiche}
