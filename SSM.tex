@@ -611,10 +611,10 @@ Per la velocit\'a di diffusione relative dei due elementi pi\'u abbondanti, idro
 
 \begin{align}
 &v_{HHe}=\frac{1}{n_H}\int\,d^3v_Hf_H\vec{v}_H-\frac{1}{n_{He}}\int\,d^3v_{He}f_{He}\vec{v}_{He}\\
-&=-D_{HHe}\left[\frac{1}{c_Hc_{He}}\PDy{r}{c_H}+\frac{m_{He}-m_H}{c_Hm_H+c_{He}m_{He}}\frac{1}{P}\PDy{r}{P}+\frac{K_T}{n_Hn_{He}}\frac{1}{T}\PDy{r}{T}\right]
+&=-D_{HHe}\left[\frac{1}{c_Hc_{He}}\PDy{r}{c_H}+\frac{m_{He}-m_H}{c_Hm_H+c_{He}m_{He}}\frac{1}{P}\PDy{r}{P}-\frac{m_Hm_{He}(\vec{F}_H-\vec{F}_{He})}{KT(c_Hm_H+c_{He}m_{He})}+\frac{K_T}{n_Hn_{He}}\frac{1}{T}\PDy{r}{T}\right]
 \end{align}
 
-il primo termine tende a diminuire il gradiente di concentrazione, il secondo tiene conto della forza risultante dal disequilibrio tra gradiente di pressione parziale e forza di gravit\'a e il terzo della forza risultante su un nucleo pesante dovuta alla minore probabilit\'a di collisione con nuclei pi\'u veloci, provenienti da regioni pi\'u calde, rispetto a quella con nuclei pi\'u lenti, provenienti da regioni pi\'u fredde.
+il primo termine tende a diminuire il gradiente di concentrazione, il secondo tiene conto della forza risultante dal disequilibrio tra gradiente di pressione parziale e forza di gravit\'a, il terzo tiene conto delle forze per unit\'a di massa e il quarto della forza risultante su un nucleo pesante dovuta alla minore probabilit\'a di collisione con nuclei pi\'u veloci, provenienti da regioni pi\'u calde, rispetto a quella con nuclei pi\'u lenti, provenienti da regioni pi\'u fredde.
 
 Considero la velocit\'a di diffusione legata alla sedimentazione gravitazionale: la forza per unit\'a di volume agente sulle particelle di specie i \'e
 
@@ -634,18 +634,29 @@ n_Hv_H=\frac{(m_{He}n_Hn_{He})}{\rho}v_{HHe}\\
 
 La velocit\'a degli elementi pesanti, analogamente si trova $w_A(1+2\frac{Y}{X})\approx-w_H$.
 %&n_Av_A(m_{AH}n_Hw_{AH})(1+2\frac{Y}{X})\approx-n_Av_H(m_{AH}n_Hw_{AH})
- 
+
+\begin{workout}[diffusione termica as effect of electric field on ion]
+
+Considero da prima un plasma di \Pelectron e \Pproton; per effetto della dipendenza della frequenza di collisione dalla velocit\'a relativa delle particelle si ha una forza per unit\'a di volume che modifica il campo elettrico:
+\begin{equation}
+P_{HHe_{th}}=\alpha_{HHe}n_Hn_{He}\frac{T}{P}\nabla T
+\end{equation}
+
+\end{workout}
+
+
+\begin{errata}
 La diffusione termica concentra le particelle pi\'u pesanti (e pi\'u cariche) nelle zone pi\'u calde: dovuto al maggior numero di particelle energetiche provenienti dalle regioni pi\'u calde, principalmente elettroni che hanno cammino libero medio maggiore, che da luogo a diversa probabilit\'a di trasferimento di momento negli urti nella direzione del gradiente, infatti la sezione d'urto coulombiana dipende dalla velocit\'a relativa $\propto v\expy{-4}$ probabilit\'a di collisione $\propto v\expy{-3}$), e quindi produce una forza nel verso opposto al gradiente termico sugli ioni di idrogeno ed una opposta sugli ioni di elio.
 
 Considero la diffusione termica in un gas a pressione e composizione omogenea: scrivo la distribuzione di una specie di particelle tramite un espansione al primo ardine in $\tau$, tempo fra collisioni
 \begin{align}
-&f=f^{(0)}-KT(\vec{v}\tau\nabla T)\PDof{T}(\frac{f^{(0)}}{KT})\\
-&=f^{(0)}-\frac{2\lambda}{5Kn_1}(\vec{v}\nabla T)\PDof{T}(\frac{m_1f^{(0)}}{KT})&\intxt{Il momento trasferito per unit\'a di volume tra due specie diverse in presenza di un gradiente termico \'e}\\
-&\vec{P}=n_1n_2\int\int f_1f_2m_{12}\vec{g}\nu(g)\,d^3v_1\,d^3v_2\\
-&=\frac{2m_{12}}{5K(m_1+m_1)}\PDy{T}{\bar{\nu}}(n_2m_2\lambda_1-n_1m_1\lambda_2)\nabla T\\
+&f=f^{(0)}-KT(\vec{v}\tau\nabla T)\PDof{T}(\frac{f^{(0)}}{KT})=f^{(0)}-\frac{2\lambda}{5Kn_1}(\vec{v}\nabla T)\PDof{T}(\frac{m_1f^{(0)}}{KT})&\intxt{Il momento trasferito per unit\'a di volume tra due specie diverse in presenza di un gradiente termico, a causa degli urti, \'e}\\
+&\vec{P}=n_1n_2\int\int f_1f_2m_{12}\vec{g}\nu(g)\,d^3v_1\,d^3v_2=\frac{2m_{12}}{5K(m_1+m_1)}\PDy{T}{\bar{\nu}}(n_2m_2\lambda_1-n_1m_1\lambda_2)\nabla T\\
 &\overline{\nu}=\frac{1}{3}\int f^{(0)}\frac{m_{12}g^2}{kT}\nu(g)\,d^3g\\
 &\vec{v}_{HHe}^{th}\approx\frac{2}{5kN_Hn_{He}}(\frac{n_{He}m_{He}\vec{q}_H-n_Hm_H\vec{q}_{He}}{m_H+m_{He}})\PDy{T}{\ln{\overline{\nu}}}
 \end{align}
+
+\end{errata}
 
 %Si tiene conto del flusso di massa, momento ed energia nelle equazioni di conservazione attraverso le equazioni sviluppate da Burgers (1969).
 
