@@ -333,6 +333,94 @@ Nel caso stazionario
 \end{equation}
 e i processi nucleari che avvengono nella parte centrale forniscono il calore per bilanciare il flusso di energia uscente.
 
+\section{Diffusione}
+
+
+
+L'equazione di Boltzmann del trasporto descrive l'evoluzione della probabilit\'a $f_i(\vec{r},\vec{v},t)$ che una particella di una determinata specie sia in una regione dello spazio delle fasi:
+\begin{align}
+&\TDy{t}{f_i}=\PDy{t}{f_i}+\vec{v}_i\cdot\PDy{\vec{r}}{f_i}+\vec{F}_i\cdot\PDy{\vec{v}}{f_i}=-\Div_{\vec{p}}(\vec{s})=C(f_j)\intxt{$\vec{s}$ \'e il flusso nello spazio dei momenti dovuto alle collisioni. Introduco la sezione d'urto collisionale di Rutherford:}
+&d\sigma=\frac{4\pi(Z_iZ_j)^2}{\mu^2(\vec{v}-\vec{v}')^4}\frac{d\chi}{\chi^3}&\intxt{per piccoli angoli $\chi$ di deviazione della velocit\'a relativa nel sistema CM  e $\mu$ massa ridotta. Considero un parametro d'impatto massimo $\lambda=\max{(r_D,a_0)}$, distanza alla quale il potenziale \'e schermato dalle altre cariche:}
+&\sigma_{ij}\propto \frac{e^4Z_i^2Z_j^2}{(KT)^2}\ln{\Lambda_{st}}\intxt{da risultati numerici si ha che}
+&\ln{\Lambda_{ij}}\propto\ln{[1+0.18769(\frac{4KT\lambda}{Z_iZ_je^2})]}\intxt{Scrivo il termine collisionale $C(f)$, considerando solo il contributo degli urti tra la specie 1 con distribuzione $f_1$ , nella forma}
+&C(f,f_1)=\int\,d^3p_1\,d\sigma|\vec{v}-\vec{v}_1|(f'f_1'-ff_1)\intxt{dove le quantit\'a primate si riferiscono ai valori delle dopo l'urto. Considero la forza netta dovuta agli urti:}
+&\vec{R}=\int m\vec{v}C(f,f_1)\,d^3v&\intxt{Considero il problema in cui le due specie hanno velocit\'a relativa media diversa da zero ma piccola rispetto alla velocit\'a termica: nel sistema in cui la prima specie ha velocit\'a media nulla la seconda ha velocit\'a $V$ quindi la distribuzione di velocit\'a della prima \'e la distribuzione di equilibrio a temperatura T quella della seconda \'e  la distribuzione di equilibrio a temperatura T traslata di $V$, velocit\'a di diffusione:}
+&f_1=f_1^{(0)}+\frac{m_1}{KT}(\scap{U}{v}_1)f_1^{(0)}\intxt{da cui si ottiene:}
+&\vec{R}=nn_1\mu\alpha\vec{V},\ \alpha=\frac{\mu}{KT}\int v_r^3\sigma^Tf^{(0)}(\vec{v_r})\,d^3v_r,\ \sigma^T=\int(1-\cos{\chi})\,d\sigma
+\end{align}
+
+Per la velocit\'a di diffusione relative dei due elementi pi\'u abbondanti, idrofeno ed elio, definita la concentrazione relativa $c_i=\frac{n_i}{n}$ e il coefficiente di diffusione $D_{HHe}=\frac{1}{3}lv_{th}$ con $l\approx(n\sigma)\expy{-1}$ cammino libero medio
+
+\begin{align}
+&v_{HHe}=\frac{1}{n_H}\int\,d^3v_Hf_H\vec{v}_H-\frac{1}{n_{He}}\int\,d^3v_{He}f_{He}\vec{v}_{He}\\
+&=-D_{HHe}\left[\frac{1}{c_Hc_{He}}\PDy{r}{c_H}+\frac{m_{He}-m_H}{c_Hm_H+c_{He}m_{He}}\frac{1}{P}\PDy{r}{P}-\frac{m_Hm_{He}(\vec{F}_H-\vec{F}_{He})}{KT(c_Hm_H+c_{He}m_{He})}+\frac{K_T}{n_Hn_{He}}\frac{1}{T}\PDy{r}{T}\right]
+\end{align}
+
+il primo termine tende a diminuire il gradiente di concentrazione, il secondo tiene conto della forza risultante dal disequilibrio tra gradiente di pressione parziale e forza di gravit\'a, il terzo tiene conto delle forze per unit\'a di massa e il quarto della forza risultante su un nucleo pesante dovuta alla minore probabilit\'a di collisione con nuclei pi\'u veloci, provenienti da regioni pi\'u calde, rispetto a quella con nuclei pi\'u lenti, provenienti da regioni pi\'u fredde.
+
+Considero la velocit\'a di diffusione legata alla sedimentazione gravitazionale: la forza per unit\'a di volume agente sulle particelle di specie i \'e
+
+\begin{align}
+&\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})\intxt{e in condizioni di equilibrio il momento trasferito tramite urti con le altre specie \'e}
+&\vec{F}_i=\sum_{i\neq j}\vec{F}_{ij},\ \vec{F}_{ij}=m_{ij}n_in_j\alpha_{ij}\vec{v}_{ij}
+\end{align}
+
+Considero il plasma solare costituito da idrogeno, elio ed elettroni; per mantenere la neutralit\'a la velocit\'a di diffusione degli elettroni \'e dello stesso ordine di grandezza di quella degli ioni, quindi l'impulso trasferito \'e trascurabile, da cui:
+\begin{align}
+&F_H\approx F_{HHe}=-\PDy{r}{P_H}+n_H(eE+m_Hg)\\
+&F_{He}\approx -F_{HHe}=-\PDy{r}{P_{He}}+n_{He}(2eE+4m_Hg)\\
+&E=-\frac{1}{en_e}\PDy{r}{P_e}\intxt{Per le velocit\'a di diffusione si ha}
+&v_{HHe}=-\frac{m_{He}T}{m_{HHe}Y\rho \alpha_{HHe}}[\PDy{r}{\ln{(P_eP_H)}}-m_Hg],\ 
+n_Hv_H=\frac{(m_{He}n_Hn_{He})}{\rho}v_{HHe}\\
+\end{align}
+
+La velocit\'a degli elementi pesanti, analogamente si trova $w_A(1+2\frac{Y}{X})\approx-w_H$.
+%&n_Av_A(m_{AH}n_Hw_{AH})(1+2\frac{Y}{X})\approx-n_Av_H(m_{AH}n_Hw_{AH})
+
+\begin{workout}[diffusione termica as effect of electric field on ion]
+
+Considero da prima un plasma di \Pelectron e \Pproton; per effetto della dipendenza della frequenza di collisione dalla velocit\'a relativa delle particelle si ha una forza per unit\'a di volume che modifica il campo elettrico:
+\begin{equation}
+P_{HHe_{th}}=\alpha_{HHe}n_Hn_{He}\frac{T}{P}\nabla T
+\end{equation}
+
+\end{workout}
+
+
+\begin{errata}
+La diffusione termica concentra le particelle pi\'u pesanti (e pi\'u cariche) nelle zone pi\'u calde: dovuto al maggior numero di particelle energetiche provenienti dalle regioni pi\'u calde, principalmente elettroni che hanno cammino libero medio maggiore, che da luogo a diversa probabilit\'a di trasferimento di momento negli urti nella direzione del gradiente, infatti la sezione d'urto coulombiana dipende dalla velocit\'a relativa $\propto v\expy{-4}$ probabilit\'a di collisione $\propto v\expy{-3}$), e quindi produce una forza nel verso opposto al gradiente termico sugli ioni di idrogeno ed una opposta sugli ioni di elio.
+
+Considero la diffusione termica in un gas a pressione e composizione omogenea: scrivo la distribuzione di una specie di particelle tramite un espansione al primo ardine in $\tau$, tempo fra collisioni
+\begin{align}
+&f=f^{(0)}-KT(\vec{v}\tau\nabla T)\PDof{T}(\frac{f^{(0)}}{KT})=f^{(0)}-\frac{2\lambda}{5Kn_1}(\vec{v}\nabla T)\PDof{T}(\frac{m_1f^{(0)}}{KT})&\intxt{Il momento trasferito per unit\'a di volume tra due specie diverse in presenza di un gradiente termico, a causa degli urti, \'e}\\
+&\vec{P}=n_1n_2\int\int f_1f_2m_{12}\vec{g}\nu(g)\,d^3v_1\,d^3v_2=\frac{2m_{12}}{5K(m_1+m_1)}\PDy{T}{\bar{\nu}}(n_2m_2\lambda_1-n_1m_1\lambda_2)\nabla T\\
+&\overline{\nu}=\frac{1}{3}\int f^{(0)}\frac{m_{12}g^2}{kT}\nu(g)\,d^3g\\
+&\vec{v}_{HHe}^{th}\approx\frac{2}{5kN_Hn_{He}}(\frac{n_{He}m_{He}\vec{q}_H-n_Hm_H\vec{q}_{He}}{m_H+m_{He}})\PDy{T}{\ln{\overline{\nu}}}
+\end{align}
+
+\end{errata}
+
+%Si tiene conto del flusso di massa, momento ed energia nelle equazioni di conservazione attraverso le equazioni sviluppate da Burgers (1969).
+
+\begin{minipage}{\linewidth}
+\begin{tikzpicture}
+\node[inner sep=0pt] (image) at (0,0)
+  {\includegraphics[keepaspectratio=true,width=0.5\textwidth]{Hdiffusion}};
+  \draw [thick,dotted] (-3.4,1.5) -- (-3,1.5) node[right] {$\propto\nabla c$};
+ \draw [thick,dashed] (-3.4,1.9) -- (-3,1.9) node[right] {$\propto\nabla T$};
+    \draw [thick,dash dot] (-3.4,2.3) -- (-3,2.3) node[right] {$\propto\nabla P$};
+    \node (caption) at (8.5,-2.5) { \begin{minipage}[c]{0.48\textwidth}
+\captionof{figure}{Contributi alla velocit\'a di diffusione di H-He in modello solare. Da \cite{wam88hydrogen}.}%   
+    \end{minipage}};
+\node[] (massconsdiff) at (8.5,1) {\begin{minipage}[c]{0.48\textwidth}
+
+Sebbene il tempo caratteristico per percorre un raggio solare sia lungo $\tau_{diff}\approx\SI{6e13}{\year}$ i processi di diffusione producono effetti non trascurabili sulla struttura solare e sull'abbondanza superficiale degli elementi: la loro inclusione nei \mss{} produce un miglior accordo con le osservazioni.
+
+\end{minipage}
+};
+\end{tikzpicture}
+\end{minipage}
+
 {\let\clearpage\relax\let\cleardoublepage\relax
 \chapter{Trasporto e produzione}
 }
@@ -686,94 +774,6 @@ $\cel{Be}{7}{}{}(p,\Pphoton)\cel{B}{8}{}{}$\tnote{2}& $(2.08 \pm 0.16)10^{-2}$ &
 \end{workout}
 
 % T_6=10T_7=10^3T_9
-
-\section{Diffusione}
-
-
-
-L'equazione di Boltzmann del trasporto descrive l'evoluzione della probabilit\'a $f_i(\vec{r},\vec{v},t)$ che una particella di una determinata specie sia in una regione dello spazio delle fasi:
-\begin{align}
-&\TDy{t}{f_i}=\PDy{t}{f_i}+\vec{v}_i\cdot\PDy{\vec{r}}{f_i}+\vec{F}_i\cdot\PDy{\vec{v}}{f_i}=-\Div_{\vec{p}}(\vec{s})=C(f_j)\intxt{$\vec{s}$ \'e il flusso nello spazio dei momenti dovuto alle collisioni. Introduco la sezione d'urto collisionale di Rutherford:}
-&d\sigma=\frac{4\pi(Z_iZ_j)^2}{\mu^2(\vec{v}-\vec{v}')^4}\frac{d\chi}{\chi^3}&\intxt{per piccoli angoli $\chi$ di deviazione della velocit\'a relativa nel sistema CM  e $\mu$ massa ridotta. Considero un parametro d'impatto massimo $\lambda=\max{(r_D,a_0)}$, distanza alla quale il potenziale \'e schermato dalle altre cariche:}
-&\sigma_{ij}\propto \frac{e^4Z_i^2Z_j^2}{(KT)^2}\ln{\Lambda_{st}}\intxt{da risultati numerici si ha che}
-&\ln{\Lambda_{ij}}\propto\ln{[1+0.18769(\frac{4KT\lambda}{Z_iZ_je^2})]}\intxt{Scrivo il termine collisionale $C(f)$, considerando solo il contributo degli urti tra la specie 1 con distribuzione $f_1$ , nella forma}
-&C(f,f_1)=\int\,d^3p_1\,d\sigma|\vec{v}-\vec{v}_1|(f'f_1'-ff_1)\intxt{dove le quantit\'a primate si riferiscono ai valori delle dopo l'urto. Considero la forza netta dovuta agli urti:}
-&\vec{R}=\int m\vec{v}C(f,f_1)\,d^3v&\intxt{Considero il problema in cui le due specie hanno velocit\'a relativa media diversa da zero ma piccola rispetto alla velocit\'a termica: nel sistema in cui la prima specie ha velocit\'a media nulla la seconda ha velocit\'a $V$ quindi la distribuzione di velocit\'a della prima \'e la distribuzione di equilibrio a temperatura T quella della seconda \'e  la distribuzione di equilibrio a temperatura T traslata di $V$, velocit\'a di diffusione:}
-&f_1=f_1^{(0)}+\frac{m_1}{KT}(\scap{U}{v}_1)f_1^{(0)}\intxt{da cui si ottiene:}
-&\vec{R}=nn_1\mu\alpha\vec{V},\ \alpha=\frac{\mu}{KT}\int v_r^3\sigma^Tf^{(0)}(\vec{v_r})\,d^3v_r,\ \sigma^T=\int(1-\cos{\chi})\,d\sigma
-\end{align}
-
-Per la velocit\'a di diffusione relative dei due elementi pi\'u abbondanti, idrofeno ed elio, definita la concentrazione relativa $c_i=\frac{n_i}{n}$ e il coefficiente di diffusione $D_{HHe}=\frac{1}{3}lv_{th}$ con $l\approx(n\sigma)\expy{-1}$ cammino libero medio
-
-\begin{align}
-&v_{HHe}=\frac{1}{n_H}\int\,d^3v_Hf_H\vec{v}_H-\frac{1}{n_{He}}\int\,d^3v_{He}f_{He}\vec{v}_{He}\\
-&=-D_{HHe}\left[\frac{1}{c_Hc_{He}}\PDy{r}{c_H}+\frac{m_{He}-m_H}{c_Hm_H+c_{He}m_{He}}\frac{1}{P}\PDy{r}{P}-\frac{m_Hm_{He}(\vec{F}_H-\vec{F}_{He})}{KT(c_Hm_H+c_{He}m_{He})}+\frac{K_T}{n_Hn_{He}}\frac{1}{T}\PDy{r}{T}\right]
-\end{align}
-
-il primo termine tende a diminuire il gradiente di concentrazione, il secondo tiene conto della forza risultante dal disequilibrio tra gradiente di pressione parziale e forza di gravit\'a, il terzo tiene conto delle forze per unit\'a di massa e il quarto della forza risultante su un nucleo pesante dovuta alla minore probabilit\'a di collisione con nuclei pi\'u veloci, provenienti da regioni pi\'u calde, rispetto a quella con nuclei pi\'u lenti, provenienti da regioni pi\'u fredde.
-
-Considero la velocit\'a di diffusione legata alla sedimentazione gravitazionale: la forza per unit\'a di volume agente sulle particelle di specie i \'e
-
-\begin{align}
-&\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})\intxt{e in condizioni di equilibrio il momento trasferito tramite urti con le altre specie \'e}
-&\vec{F}_i=\sum_{i\neq j}\vec{F}_{ij},\ \vec{F}_{ij}=m_{ij}n_in_j\alpha_{ij}\vec{v}_{ij}
-\end{align}
-
-Considero il plasma solare costituito da idrogeno, elio ed elettroni; per mantenere la neutralit\'a la velocit\'a di diffusione degli elettroni \'e dello stesso ordine di grandezza di quella degli ioni, quindi l'impulso trasferito \'e trascurabile, da cui:
-\begin{align}
-&F_H\approx F_{HHe}=-\PDy{r}{P_H}+n_H(eE+m_Hg)\\
-&F_{He}\approx -F_{HHe}=-\PDy{r}{P_{He}}+n_{He}(2eE+4m_Hg)\\
-&E=-\frac{1}{en_e}\PDy{r}{P_e}\intxt{Per le velocit\'a di diffusione si ha}
-&v_{HHe}=-\frac{m_{He}T}{m_{HHe}Y\rho \alpha_{HHe}}[\PDy{r}{\ln{(P_eP_H)}}-m_Hg],\ 
-n_Hv_H=\frac{(m_{He}n_Hn_{He})}{\rho}v_{HHe}\\
-\end{align}
-
-La velocit\'a degli elementi pesanti, analogamente si trova $w_A(1+2\frac{Y}{X})\approx-w_H$.
-%&n_Av_A(m_{AH}n_Hw_{AH})(1+2\frac{Y}{X})\approx-n_Av_H(m_{AH}n_Hw_{AH})
-
-\begin{workout}[diffusione termica as effect of electric field on ion]
-
-Considero da prima un plasma di \Pelectron e \Pproton; per effetto della dipendenza della frequenza di collisione dalla velocit\'a relativa delle particelle si ha una forza per unit\'a di volume che modifica il campo elettrico:
-\begin{equation}
-P_{HHe_{th}}=\alpha_{HHe}n_Hn_{He}\frac{T}{P}\nabla T
-\end{equation}
-
-\end{workout}
-
-
-\begin{errata}
-La diffusione termica concentra le particelle pi\'u pesanti (e pi\'u cariche) nelle zone pi\'u calde: dovuto al maggior numero di particelle energetiche provenienti dalle regioni pi\'u calde, principalmente elettroni che hanno cammino libero medio maggiore, che da luogo a diversa probabilit\'a di trasferimento di momento negli urti nella direzione del gradiente, infatti la sezione d'urto coulombiana dipende dalla velocit\'a relativa $\propto v\expy{-4}$ probabilit\'a di collisione $\propto v\expy{-3}$), e quindi produce una forza nel verso opposto al gradiente termico sugli ioni di idrogeno ed una opposta sugli ioni di elio.
-
-Considero la diffusione termica in un gas a pressione e composizione omogenea: scrivo la distribuzione di una specie di particelle tramite un espansione al primo ardine in $\tau$, tempo fra collisioni
-\begin{align}
-&f=f^{(0)}-KT(\vec{v}\tau\nabla T)\PDof{T}(\frac{f^{(0)}}{KT})=f^{(0)}-\frac{2\lambda}{5Kn_1}(\vec{v}\nabla T)\PDof{T}(\frac{m_1f^{(0)}}{KT})&\intxt{Il momento trasferito per unit\'a di volume tra due specie diverse in presenza di un gradiente termico, a causa degli urti, \'e}\\
-&\vec{P}=n_1n_2\int\int f_1f_2m_{12}\vec{g}\nu(g)\,d^3v_1\,d^3v_2=\frac{2m_{12}}{5K(m_1+m_1)}\PDy{T}{\bar{\nu}}(n_2m_2\lambda_1-n_1m_1\lambda_2)\nabla T\\
-&\overline{\nu}=\frac{1}{3}\int f^{(0)}\frac{m_{12}g^2}{kT}\nu(g)\,d^3g\\
-&\vec{v}_{HHe}^{th}\approx\frac{2}{5kN_Hn_{He}}(\frac{n_{He}m_{He}\vec{q}_H-n_Hm_H\vec{q}_{He}}{m_H+m_{He}})\PDy{T}{\ln{\overline{\nu}}}
-\end{align}
-
-\end{errata}
-
-%Si tiene conto del flusso di massa, momento ed energia nelle equazioni di conservazione attraverso le equazioni sviluppate da Burgers (1969).
-
-\begin{minipage}{\linewidth}
-\begin{tikzpicture}
-\node[inner sep=0pt] (image) at (0,0)
-  {\includegraphics[keepaspectratio=true,width=0.5\textwidth]{Hdiffusion}};
-  \draw [thick,dotted] (-3.4,1.5) -- (-3,1.5) node[right] {$\propto\nabla c$};
- \draw [thick,dashed] (-3.4,1.9) -- (-3,1.9) node[right] {$\propto\nabla T$};
-    \draw [thick,dash dot] (-3.4,2.3) -- (-3,2.3) node[right] {$\propto\nabla P$};
-    \node (caption) at (8.5,-2.5) { \begin{minipage}[c]{0.48\textwidth}
-\captionof{figure}{Contributi alla velocit\'a di diffusione di H-He in modello solare. Da \cite{wam88hydrogen}.}%   
-    \end{minipage}};
-\node[] (massconsdiff) at (8.5,1) {\begin{minipage}[c]{0.48\textwidth}
-
-Sebbene il tempo caratteristico per percorre un raggio solare sia lungo $\tau_{diff}\approx\SI{6e13}{\year}$ i processi di diffusione producono effetti non trascurabili sulla struttura solare e sull'abbondanza superficiale degli elementi: la loro inclusione nei \mss{} produce un miglior accordo con le osservazioni.
-
-\end{minipage}
-};
-\end{tikzpicture}
-\end{minipage}
 
 
 {\let\clearpage\relax\let\cleardoublepage\relax
