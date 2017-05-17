@@ -503,6 +503,8 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{\Pphoton}\gg l_{\Pe
 
 \begin{tikzpicture}[]
 %([shift={(1.5,0)}]0,0)
+\node[draw] at (0,0) {};
+\node[draw] at (-15,0) {};
 
 \node[anchor=north west] (opint) at (-10,0) {\includegraphics[height=0.35\textheight,keepaspectratio]{opcontrib-int-g}};
 \node[anchor=west,right=2cm of opint.east] (opout) {\includegraphics[height=0.35\textheight,keepaspectratio]{opcontrib-out-g}};
@@ -534,6 +536,8 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{\Pphoton}\gg l_{\Pe
 
 \end{scope}
 
+\node[anchor=north west, below=1mm of opint.south west,draw] {};
+ 
 \node[anchor=north west, below=1mm of opint.south west] {\parbox{\textwidth}{\captionof{figure}{Importanza dei varii contributi all'opacit\'a nell'interno solare; composizione GS98. Da \cite{bla11opacity}.}\label{fig:opacitycontrib} }};
  
 \end{tikzpicture}
