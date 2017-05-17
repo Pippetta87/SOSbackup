@@ -503,10 +503,8 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{\Pphoton}\gg l_{\Pe
 
 \begin{tikzpicture}[]
 %([shift={(1.5,0)}]0,0)
-\node[draw] at (0,0) {};
-\node[draw] at (-15,0) {};
 
-\node[anchor=north west] (opint) at (-10,0) {\includegraphics[height=0.35\textheight,keepaspectratio]{opcontrib-int-g}};
+\node[anchor=north west] (opint) at (0,0) {\includegraphics[height=0.35\textheight,keepaspectratio]{opcontrib-int-g}};
 \node[anchor=west,right=2cm of opint.east] (opout) {\includegraphics[height=0.35\textheight,keepaspectratio]{opcontrib-out-g}};
 \begin{scope}[scale=0.7]
 \node[draw,anchor=west,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm,right=7.5mm of opint.east] (sc) {};
@@ -535,10 +533,8 @@ La conduzione pu\'o essere trascurata in quanto nel Sole $l_{\Pphoton}\gg l_{\Pe
 \node[name=nikel, right=4.5mm of ferrum.west] {\tiny Ni};
 
 \end{scope}
-
-\node[anchor=west, below=1mm of opint.south west,draw] {};
  
-\node[below=1mm of opint.south west] {\parbox{\textwidth}{\captionof{figure}{Importanza dei varii contributi all'opacit\'a nell'interno solare; composizione GS98. Da \cite{bla11opacity}.}\label{fig:opacitycontrib} }};
+\node[] at (0,-15) {\parbox{\textwidth}{\captionof{figure}{Importanza dei varii contributi all'opacit\'a nell'interno solare; composizione GS98. Da \cite{bla11opacity}.}\label{fig:opacitycontrib} }};
  
 \end{tikzpicture}
 
