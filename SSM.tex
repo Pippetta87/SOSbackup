@@ -203,20 +203,20 @@ La correzione alla pressione dovuta alle interazioni coulombiane raggiunge il pi
 Due approcci usati per determinare l'equazione di stato e quindi le grandezze termodinamiche del plasma solare sono lo schema chimico e lo schema fisico: il primo considera atomi e molecole, la cui popolazione per stati eccitati e diversi gradi di ionizzazione \'e ottenuto minimizzando l'energia libera da cui sono ricavate le altre grandezze termodinamiche; utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD. Il secondo considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
 
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 \centering
-\begin{subfigure}[t]{0.5\textwidth}
+\begin{subfigure}[t]{0.45\textwidth}
         \includegraphics[width=0.95\textwidth,keepaspectratio]{ionfraction}\label{ionfraction}
         \caption{Profilo radiale della popolazione dei diversi gradi di ionizzazione per $\cel{He}{4}{}{}$, CNO, $\cel{Ne}{20}{}{}$, $\cel{Fe}{56}{}{}$. Stati di ionizzazione maggiore sono pi\'u interni. Da \cite{basu2008helioseismology}.}
 \end{subfigure}
 ~
-\begin{subfigure}[t]{0.5\textwidth}
-        \includegraphics[width=0.5\textwidth,keepaspectratio]{gamma1eos}\label{gamma1eos}
+\begin{subfigure}[t]{0.45\textwidth}\label{fig:gamma1eos}
+        \includegraphics[width=0.8\textwidth,keepaspectratio]{gamma1eos}\label{gamma1eos}
         \caption{Andamento di $\Gamma_1$. Da \cite{trampedach2006synoptic}}
 \end{subfigure}
 \end{figure}
 
-Come illustrato in \ref{fig:gamma1eos}, per entrambe $\Gamma_1\approx\midfrac{5}{3}$ nell'interno solare e maggiori deviazioni si hanno nelle regioni di ionizzazione parziale degli elementi in particolare di idrogeno ed elio.
+Come illustrato in \subref{fig:gamma1eos}, per entrambe $\Gamma_1\approx\midfrac{5}{3}$ nell'interno solare e maggiori deviazioni si hanno nelle regioni di ionizzazione parziale degli elementi in particolare di idrogeno ed elio.
 
 
 La differenza di pressione calcolata usando l'equazione di stato OPAL e MHD \'e $\midfrac{\Delta P}{P}\leq1\%$  per $\frac{r}{\rsun{}}\geq0.9$ e $\midfrac{\Delta P}{P}\leq0.2\permille$ $\frac{r}{\rsun{}}\leq0.9$; mentre per $\midfrac{\Delta \Gamma_1}{\Gamma_1}\leq1\%$  per $\frac{r}{\rsun{}}\geq0.9$ e $\midfrac{\Delta P}{P}\leq1\permille$ $\frac{r}{\rsun{}}\leq0.9$
@@ -250,8 +250,6 @@ L'energia potenziale gravitazionale della stella \'e
 \Omega=-\int_0^M\frac{Gm(r)}{r}\,dm\label{eq:energiapg}
 \end{equation}
 
-
-
 Il teorema del viriale dimostra che
 
 \begin{equation}
@@ -277,7 +275,7 @@ L=-\frac{1}{2}\dot{\Omega}=\dot{E}_i
 \end{equation}
 
 
-Il tempo caratteristico che regola il collasso gravitazionale di una massa gassosa in equilibrio idrostatico \'e il tempo di Kelvin-Helmholtz
+Nel caso in cui la contrazione gravitazionale sia l'unica fonte di energia per una massa gassosa in equilibrio idrostatico, il suo tempo di evoluzione caratteristico \'e il tempo di \KH{}:
 \begin{equation}
 \tkh{}=\frac{\Omega}{L}\approx\frac{GM^2}{2RL}
 \end{equation}
@@ -517,7 +515,7 @@ si tiene conto degli effetti quantistici tramite un opportuno coefficiente, il f
 
 \end{itemize}
 
-La conduzione pu\'o essere trascurata in quanto nel Sole $l_{ph}\gg l_{e}$.
+La conduzione pu\'o essere trascurata in quanto nel Sole $l_{\Pphoton}\gg l_{\Pelectron}$, cio\'e i tempi caratteristici per il trasporto di calore per conduzione sono molto maggiori di quelli radiativi.
 
 \end{workout}
 
