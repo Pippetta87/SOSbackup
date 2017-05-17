@@ -217,7 +217,8 @@ La correzione alla pressione dovuta alle interazioni coulombiane raggiunge il pi
 
 Due degli approcci usati per determinare l'equazione di stato e quindi le grandezze termodinamiche del plasma solare sono lo schema chimico che considera atomi e molecole, la cui popolazione per stati eccitati e diversi gradi di ionizzazione \'e ottenuto minimizzando l'energia libera; utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD, e lo schema fisico che considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
 
-La differenza di pressione calcolata usando l'equazione di stato OPAL e MHD: $\midfrac{\Delta P}{P}\leq1\%$  per $\frac{r}{\rsun{}}\geq0.9$, $\midfrac{\Delta P}{P}\leq0.2\%$ $\frac{r}{\rsun{}}\leq0.9$
+La differenza di pressione calcolata usando l'equazione di stato OPAL e MHD: 
+$\midfrac{\Delta P}{P}\leq1\%$  per $\frac{r}{\rsun{}}\geq0.9$, $\midfrac{\Delta P}{P}\leq0.2\%$ $\frac{r}{\rsun{}}\leq0.9$
 
 \end{workout}
 
@@ -643,7 +644,44 @@ Per $\frac{E_D}{kT}\ll1$ ne tengo conto aggiungendo il parametro correttivo $f$
 %\begin{wrapfigure}[23]{r}{0.6\textwidth}
 
 
+\begin{adjustbox}{max width=0.4\textwidth,keepaspectratio,caption={Reaction rate \cite{adelberger2011solar}.},float=table}
 
+\begin{threeparttable}
+
+\begin{tabular}{|ccc|}
+{Reaction} & {$S(0) (keVb)$} & {\parbox{2cm}{Gamow peak uncertainty (\%)}}\\
+{$p(p,\APelectron\Pnue)d$} & {$(4.01 \pm 0.04)10^{-22}$} & {$\pm 0.7$}\\
+$d(p,\Pphoton)\cel{He}{3}{}{}$ & ${2.14}10^{-4}\substack{+0.17 \\ -0.16}$ & $\pm 7.1$\\
+$\cel{He}{3}{}{}(\cel{He}{3}{}{},2p)\cel{He}{4}{}{}$ & $(5.21 \pm 0.27)10^{-3}$ & $\pm 4.3$\\
+$\cel{He}{3}{}{}(\cel{He}{4}{}{},\Pphoton)\cel{Be}{7}{}{}$ & $0.56 \pm 0.03$ & $\pm 5.1$\\
+$\cel{He}{3}{}{}(p,\APelectron\Pnue)\cel{He}{4}{}{}$ & $(8.6 \pm 2.6)10^{-20}$ & $\pm 30$\\
+$\cel{Be}{7}{}{}(\Pelectron,\Pnue)\cel{Li}{7}{}{}$ & $ $  & $\pm 2.0$\\
+$p(p\Pelectron,\Pnue)d$\tnote{1}& $ $ & $\pm 1.0$\\
+$\cel{Be}{7}{}{}(p,\Pphoton)\cel{B}{8}{}{}$\tnote{2}& $(2.08 \pm 0.16)10^{-2}$ & $\pm 7.5$\\
+%14N(p,7)150 XI.A 1.66 \pm 0.12 (-3.3 \pm 0.2) x 10-3 b (4.4 \pm 0.3) x 10-5 a \pm 7.2
+\end{tabular}
+
+\begin{tablenotes}
+\item[1]$R(\cel{Be}{7}{}{}(\Pelectron,\Pnue)\cel{Li}{7}{}{})=5.6(1\pm0.02)10^{-9}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}[1+0.004(T_6-16)]\si{\per\second}$
+\item[2] $R(p\Pelectron p)=1.102(1\pm0.01)10^{-4}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}[1+0.002(T_6-16)]R(pp)$
+\end{tablenotes}
+
+\end{threeparttable}
+
+\end{adjustbox}
+~
+\begin{figure}[!ht]
+\resizebox{\textwidth}{!}{
+        \input{ppchain.tex}
+        }
+        \caption{Catena PP.}
+
+\end{figure}
+
+\begin{wrapfigure}[10]{r}{0.3\textwidth}
+        \includegraphics[width=0.5\textwidth,keepaspectratio]{Rscreening}
+        \caption{Andamento della correzione di schermaggio degli elettroni.}
+\end{wrapfigure}
 
 \end{workout}
 
@@ -651,9 +689,7 @@ Per $\frac{E_D}{kT}\ll1$ ne tengo conto aggiungendo il parametro correttivo $f$
 
 \section{Diffusione}
 
-\begin{workout}[diffusione in interno solare]
 
-\end{workout}
 
 L'equazione di Boltzmann del trasporto descrive l'evoluzione della probabilit\'a $f_i(\vec{r},\vec{v},t)$ che una particella di una determinata specie sia in una regione dello spazio delle fasi:
 \begin{align}
