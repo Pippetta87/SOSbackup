@@ -687,20 +687,19 @@ La funzione $\epsilon(\rho,T,X_i)$ \'e determinata dalla somma di tutti i contri
 \epsilon_{ij}=\frac{1}{1+\delta_{ij}}\frac{Q_{ij}}{m_jm_k}X_jX_k\exv{\sigma v}\label{eq:energyrate}
 \end{equation}
 
-dove $Q_{ij}$ \'e l'energia liberata per reazione tra nucleo di specie i e j; $\exv{}$ indica la media sulla distribuzione di Maxwell-Boltzmann
-
+dove $Q_{ij}$ \'e l'energia liberata per reazione tra nucleo di specie i e j; $X_i$ indica la frazione in  massa della specie i; $\exv{}$ indica la media sulla distribuzione di Maxwell-Boltzmann
 \begin{equation}
 f(E)dE\propto\frac{E\expy{\frac{1}{2}}}{(kT)\expy{\frac{3}{2}}}\exp{-\frac{E}{kT}}\,dE
 \end{equation}
 
 
-Per determinare $\exv{\sigma v}$ uso il fatto che l'integrando $S(E)\exp{-\frac{E}{kT}-\frac{b}{\sqrt{E}}}$ ha forma approssimativamente gaussiana il cui massimo $E_0$, energia pi\'u probabile di reazione, e FWHM sono, posto $A=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:
+Per determinare $\exv{\sigma v}$ uso il fatto che l'integrando $S(E)\exp{-\frac{E}{kT}-\frac{b}{\sqrt{E}}}$ ha forma approssimativamente gaussiana il cui massimo $E_0$, energia pi\'u probabile di reazione, e FWHM sono, posto $W=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:
 \begin{align}
-&E_0=\SI{5.665}{\kilo\ev} A\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}},\ \Delta E=4.249W\expy{\frac{1}{6}}T_7\expy{\frac{5}{6}}\intxt{quindi il rate locale per reazioni non risonanti si scrive}\\
+&E_0=\SI{5.665}{\kilo\ev} A\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}},\ \Delta E=4.249W\expy{\frac{1}{6}}T_7\expy{\frac{5}{6}}\intxt{quindi il rate locale per reazioni non risonanti si scrive approssimativamente come}\\
 &\exv{\sigma v}=\num{1.3005e-15}[\frac{Z_1Z_2}{AT_6^2}]\expy{\frac{1}{3}}fS_{eff}\exp{-\tau}\si{\cubic\cm\per\second},\ \tau=\frac{3E_0}{kT}\approx\num{42.487}(Z_1^2Z_2^2AT_6\expy{-1})\expy{\frac{1}{3}}\intxt{$S_{eff}$ \'e il risultato dell'espansione dell'integrando per $\invers{\tau}\ll1$ ed estrapolato a $E_0$ a partire dal valore a $E(0)$ determinato dalla fisica nucleare.}
 \end{align}
 
-Lo schermaggio degli elettroni diminuisce la repulsione coulombiana e analogamente a quanto visto in precedenza si ha:
+Lo schermaggio degli elettroni diminuisce la repulsione coulombiana: la condizione che l'energia elettrostatica di due nuclei distanti $r_D$ sia molto minore dell'energia termica definisce il regime di schermaggio debole: 
 \begin{equation}
 E_C'-E=\frac{Z_1Z_2e^2}{r}\exp{-\frac{r}{r_D}}-E\approx\frac{Z_1Z_2e^2}{r}-\frac{Z_1Z_2e^2}{r_D}-E=E_C-E-E_D
 \end{equation}
