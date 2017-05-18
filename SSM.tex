@@ -704,14 +704,15 @@ f(E)dE\propto\frac{E\expy{\frac{1}{2}}}{(kT)\expy{\frac{3}{2}}}\exp{-\frac{E}{kT
 \end{equation}
 
 \begin{tikzpicture}
+
 \node (ppchain) at (0,0) {
-\begin{figure}[!ht]
-\caption{Catena PP.}
+
+\captionof{figure}{Catena PP.}
 \resizebox{0.5\textwidth}{!}{
         \input{ppchain.tex}
         }
-\end{figure}
 };
+
 \node[right=5cm of ppchain] (sfactortab) {
 \begin{adjustbox}{max width=0.4\textwidth,keepaspectratio,caption={Reaction rate \cite{adelberger2011solar}.},float=table}
 \begin{threeparttable}
