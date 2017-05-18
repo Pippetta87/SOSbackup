@@ -686,12 +686,45 @@ La funzione $\epsilon(\rho,T,X_i)$ \'e determinata dalla somma di tutti i contri
 \begin{equation}
 \epsilon_{ij}=\frac{1}{1+\delta_{ij}}\frac{Q_{ij}}{m_jm_k}X_jX_k\exv{\sigma v}\label{eq:energyrate}
 \end{equation}
-
 dove $Q_{ij}$ \'e l'energia liberata per reazione tra nucleo di specie i e j; $X_i$ indica la frazione in  massa della specie i; $\exv{}$ indica la media sulla distribuzione di Maxwell-Boltzmann
 \begin{equation}
 f(E)dE\propto\frac{E\expy{\frac{1}{2}}}{(kT)\expy{\frac{3}{2}}}\exp{-\frac{E}{kT}}\,dE
 \end{equation}
 
+\begin{flushleft}
+\begin{figure}[!ht]
+\caption{Catena PP.}
+\resizebox{0.5\textwidth}{!}{
+        \input{ppchain.tex}
+        }
+\end{figure}
+\end{flushleft}
+
+\begin{flushright}
+\begin{adjustbox}{max width=0.4\textwidth,keepaspectratio,caption={Reaction rate \cite{adelberger2011solar}.},float=table}
+\begin{threeparttable}
+\begin{tabular}{|ccc|}
+\hline
+{Reaction} & {$S(0) (keVb)$} & {\parbox{2cm}{Gamow peak uncertainty (\%)}}\\
+\hline
+{$p(p,\APelectron\Pnue)d$} & {$(4.01 \pm 0.04)10^{-22}$} & {$\pm 0.7$}\\
+$d(p,\Pphoton)\cel{He}{3}{}{}$ & ${2.14}10^{-4}\substack{+0.17 \\ -0.16}$ & $\pm 7.1$\\
+$\cel{He}{3}{}{}(\cel{He}{3}{}{},2p)\cel{He}{4}{}{}$ & $(5.21 \pm 0.27)10^{-3}$ & $\pm 4.3$\\
+$\cel{He}{3}{}{}(\cel{He}{4}{}{},\Pphoton)\cel{Be}{7}{}{}$ & $0.56 \pm 0.03$ & $\pm 5.1$\\
+$\cel{He}{3}{}{}(p,\APelectron\Pnue)\cel{He}{4}{}{}$ & $(8.6 \pm 2.6)10^{-20}$ & $\pm 30$\\
+$\cel{Be}{7}{}{}(\Pelectron,\Pnue)\cel{Li}{7}{}{}$ & $ $  & $\pm 2.0$\\
+$p(p\Pelectron,\Pnue)d$\tnote{1}& $ $ & $\pm 1.0$\\
+$\cel{Be}{7}{}{}(p,\Pphoton)\cel{B}{8}{}{}$\tnote{2}& $(2.08 \pm 0.16)10^{-2}$ & $\pm 7.5$\\
+%14N(p,7)150 XI.A 1.66 \pm 0.12 (-3.3 \pm 0.2) x 10-3 b (4.4 \pm 0.3) x 10-5 a \pm 7.2
+\hline
+\end{tabular}
+\begin{tablenotes}
+\item[1]$\scriptstyle R(\cel{Be}{7}{}{}(\Pelectron,\Pnue)\cel{Li}{7}{}{})=5.6(1\pm0.02)10^{-9}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}[1+0.004(T_6-16)]\si{\per\second}$
+\item[2] $\scriptstyle R(p\Pelectron p)=1.102(1\pm0.01)10^{-4}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}[1+0.002(T_6-16)]R(pp)$
+\end{tablenotes}
+\end{threeparttable}
+\end{adjustbox}%
+\end{flushright}
 
 Per determinare $\exv{\sigma v}$ uso il fatto che l'integrando $S(E)\exp{-\frac{E}{kT}-\frac{b}{\sqrt{E}}}$ ha forma approssimativamente gaussiana il cui massimo $E_0$, energia pi\'u probabile di reazione, e FWHM sono, posto $W=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:
 \begin{align}
@@ -711,44 +744,11 @@ Per $\frac{E_D}{kT}\ll1$ ne tengo conto aggiungendo il parametro correttivo $f$
 
 Nella fase di sequenza principale per massa e composizione solari la luminosit\'a \'e generata da reazioni delle catene $\Pproton\Pproton$ per il $99.9\%$.
 
-\begin{workout}[reaction rates e incertezze - screening method]
-
 %\begin{wrapfigure}[23]{r}{0.6\textwidth}
 
 
-\begin{adjustbox}{max width=0.4\textwidth,keepaspectratio,caption={Reaction rate \cite{adelberger2011solar}.},float=table}
 
-\begin{threeparttable}
-
-\begin{tabular}{|ccc|}
-{Reaction} & {$S(0) (keVb)$} & {\parbox{2cm}{Gamow peak uncertainty (\%)}}\\
-{$p(p,\APelectron\Pnue)d$} & {$(4.01 \pm 0.04)10^{-22}$} & {$\pm 0.7$}\\
-$d(p,\Pphoton)\cel{He}{3}{}{}$ & ${2.14}10^{-4}\substack{+0.17 \\ -0.16}$ & $\pm 7.1$\\
-$\cel{He}{3}{}{}(\cel{He}{3}{}{},2p)\cel{He}{4}{}{}$ & $(5.21 \pm 0.27)10^{-3}$ & $\pm 4.3$\\
-$\cel{He}{3}{}{}(\cel{He}{4}{}{},\Pphoton)\cel{Be}{7}{}{}$ & $0.56 \pm 0.03$ & $\pm 5.1$\\
-$\cel{He}{3}{}{}(p,\APelectron\Pnue)\cel{He}{4}{}{}$ & $(8.6 \pm 2.6)10^{-20}$ & $\pm 30$\\
-$\cel{Be}{7}{}{}(\Pelectron,\Pnue)\cel{Li}{7}{}{}$ & $ $  & $\pm 2.0$\\
-$p(p\Pelectron,\Pnue)d$\tnote{1}& $ $ & $\pm 1.0$\\
-$\cel{Be}{7}{}{}(p,\Pphoton)\cel{B}{8}{}{}$\tnote{2}& $(2.08 \pm 0.16)10^{-2}$ & $\pm 7.5$\\
-%14N(p,7)150 XI.A 1.66 \pm 0.12 (-3.3 \pm 0.2) x 10-3 b (4.4 \pm 0.3) x 10-5 a \pm 7.2
-\end{tabular}
-
-\begin{tablenotes}
-\item[1]$\scriptstyle R(\cel{Be}{7}{}{}(\Pelectron,\Pnue)\cel{Li}{7}{}{})=5.6(1\pm0.02)10^{-9}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}[1+0.004(T_6-16)]\si{\per\second}$
-\item[2] $\scriptstyle R(p\Pelectron p)=1.102(1\pm0.01)10^{-4}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}[1+0.002(T_6-16)]R(pp)$
-\end{tablenotes}
-
-\end{threeparttable}
-
-\end{adjustbox}
-~
-\begin{figure}[!ht]
-\resizebox{0.5\textwidth}{!}{
-        \input{ppchain.tex}
-        }
-        \caption{Catena PP.}
-
-\end{figure}
+Quali incertezze nell'electron screening?
 
 \begin{wrapfigure}[10]{r}{0.3\textwidth}
         \includegraphics[width=0.5\textwidth,keepaspectratio]{Rscreening}
