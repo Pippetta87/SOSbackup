@@ -146,7 +146,7 @@ E_i=\int_0^Mu\,dm=\frac{3}{2}\int_M\frac{P}{\rho}\,dm\label{eq:traslintenergy}
 \begin{figure}[!h]
 \label{fig:degenelectrocorrection}
 \centering
-\begin{subfigure}[t]{0.5\textwidth}
+	\begin{subfigure}[t]{0.5\textwidth}
 \includegraphics[width=0.9\textwidth,keepaspectratio]{degenpsiP}\label{fig:degenpsiP}
 \phantomcaption
 \end{subfigure}%
@@ -669,14 +669,24 @@ Il tempo trascorso da una stella di massa solare in sequenza principale consider
 
 L'energia liberata dalle reazioni nucleari per grammo per secondo $\epsilon(\rho,T,X_i)$ \'e determinata dalla probabilit\'a che la reazione $X(a,b)Y$ abbia luogo. Sia $E$ l'energia cinetica nel centro di massa dei nuclei, per la sezione d'urto $\sigma(E)$ di fusione si ha
 
-\begin{align}
-&\sigma(E)=\pi\lambdabar^2P_0(E)S(E)\intxt{La lunghezza d'onda di de Broglie relativa delle particelle descrive l'indeterminazione sulla posizione nell'urto di due particelle con momento relativo p}
-&\lambdabar=\frac{\hbar}{p}=\frac{\hbar}{\sqrt{2mE}}\intxt{il fattore astrofisico $S(E)$ descrive l'interazione tra i due reagenti a livello nucleare ed \'e debolmente dipendente dall'energia lontano da risonanze, $P_0(E)=\exp{-2\pi\eta}$  descrive la probabilit\'a di attraversamento della barriera coulombiana con}
-&\eta=\sqrt{\frac{m}{2}}\frac{Z_1Z_2e^2}{\hbar E\expy{\frac{1}{2}}}\intxt{Scrivo la sezione d'urto per i nuclei di carica $Z_1$, $Z_2$ e m massa ridotta:}
-&\sigma(E)=\frac{S(E)}{E}\exp{-2\pi\eta}
-\end{align}
+\begin{equation}
+\sigma(E)=\pi\lambdabar^2P_0(E)S(E)
+\end{equation}
+La lunghezza d'onda di de Broglie relativa delle particelle descrive l'indeterminazione sulla posizione nell'urto di due particelle con momento relativo p:
+\begin{equation}
+\lambdabar=\frac{\hbar}{p}=\frac{\hbar}{\sqrt{2mE}}
+\end{equation}
+Il fattore astrofisico $S(E)$ descrive l'interazione tra i due reagenti a livello nucleare ed \'e debolmente dipendente dall'energia lontano da risonanze.
+La probabilit\'a di attraversamento della barriera coulombiana \'e:
+\begin{equation}
+P_0(E)=\exp{-2\pi\eta},\ \eta=\sqrt{\frac{m}{2}}\frac{Z_1Z_2e^2}{\hbar E\expy{\frac{1}{2}}}
+\end{equation}
+Scrivo la sezione d'urto per i nuclei di carica $Z_1$, $Z_2$ e m massa ridotta:
+\begin{equation}
+\sigma(E)=\frac{S(E)}{E}\exp{-2\pi\eta}
+\end{equation}
 
-\begin{wrapfigure}[10]{r}{0.4\textwidth}
+\begin{wrapfigure}[10]{r}{0.5\textwidth}
        \includegraphics[width=0.4\textwidth,keepaspectratio]{watt-PPvsCNO}
         \caption{Andamento dell'energia generata per unit\'a di massa nel Sole: il contributo della catena PP \'e dominante rispetto ad altre reazioni.}
 \end{wrapfigure}
@@ -691,16 +701,15 @@ dove $Q_{ij}$ \'e l'energia liberata per reazione tra nucleo di specie i e j; $X
 f(E)dE\propto\frac{E\expy{\frac{1}{2}}}{(kT)\expy{\frac{3}{2}}}\exp{-\frac{E}{kT}}\,dE
 \end{equation}
 
-\begin{flushleft}
+
 \begin{figure}[!ht]
-\caption{Catena PP.}
+\beginb{subfigure}[t]{0.5\textwidth}
+\subcaption{Catena PP.}
 \resizebox{0.5\textwidth}{!}{
         \input{ppchain.tex}
         }
-\end{figure}
-\end{flushleft}
+\end{subfigure}
 ~
-\begin{flushright}
 \begin{adjustbox}{max width=0.4\textwidth,keepaspectratio,caption={Reaction rate \cite{adelberger2011solar}.},float=table}
 \begin{threeparttable}
 \begin{tabular}{|ccc|}
@@ -724,7 +733,7 @@ $\cel{Be}{7}{}{}(p,\Pphoton)\cel{B}{8}{}{}$\tnote{2}& $(2.08 \pm 0.16)10^{-2}$ &
 \end{tablenotes}
 \end{threeparttable}
 \end{adjustbox}%
-\end{flushright}
+\end{figure}
 
 Per determinare $\exv{\sigma v}$ uso il fatto che l'integrando $S(E)\exp{-\frac{E}{kT}-\frac{b}{\sqrt{E}}}$ ha forma approssimativamente gaussiana il cui massimo $E_0$, energia pi\'u probabile di reazione, e FWHM sono, posto $W=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:
 \begin{align}
