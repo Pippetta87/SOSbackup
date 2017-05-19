@@ -669,6 +669,11 @@ Il tempo trascorso da una stella di massa solare in sequenza principale consider
 \tau_n\approx\frac{E_n}{L}=\frac{fX\msun Q}{\lsun}\approx\SI{e+10}{\year},\ Q\approx\SI{6.3e18}{\erg\per\gram}
 \end{equation}
 
+\begin{wrapfigure}[10]{r}{0.5\textwidth}
+       \includegraphics[width=0.45\textwidth,keepaspectratio]{watt-PPvsCNO}
+        \caption{Andamento dell'energia generata per unit\'a di massa nel Sole: il contributo della catena PP \'e dominante rispetto ad altre reazioni.}
+\end{wrapfigure}
+
 L'energia liberata dalle reazioni nucleari per grammo per secondo $\epsilon(\rho,T,X_i)$ \'e determinata dalla probabilit\'a che la reazione $X(a,b)Y$ abbia luogo. Sia $E$ l'energia cinetica nel centro di massa dei nuclei, per la sezione d'urto $\sigma(E)$ di fusione si ha
 
 \begin{equation}
@@ -688,11 +693,6 @@ Scrivo la sezione d'urto per i nuclei di carica $Z_1$, $Z_2$ e m massa ridotta:
 \sigma(E)=\frac{S(E)}{E}\exp{-2\pi\eta}
 \end{equation}
 
-\begin{wrapfigure}[10]{r}{0.5\textwidth}
-       \includegraphics[width=0.45\textwidth,keepaspectratio]{watt-PPvsCNO}
-        \caption{Andamento dell'energia generata per unit\'a di massa nel Sole: il contributo della catena PP \'e dominante rispetto ad altre reazioni.}
-\end{wrapfigure}
-
 La funzione $\epsilon(\rho,T,X_i)$ \'e determinata dalla somma di tutti i contributi
 
 \begin{equation}
@@ -705,12 +705,12 @@ f(E)dE\propto\frac{E\expy{\frac{1}{2}}}{(kT)\expy{\frac{3}{2}}}\exp{-\frac{E}{kT
 
 \begin{figure}[!ht]
 \caption{Catena PP.}
-\resizebox{0.5\textwidth}{!}{
+\resizebox{0.45\textwidth}{!}{
         \input{ppchain.tex}
         }
 \end{figure}
 ~
-\begin{adjustbox}{max width=0.4\textwidth,keepaspectratio,caption={Reaction rate \cite{adelberger2011solar}.},float=table}
+\begin{adjustbox}{max width=0.45\textwidth,keepaspectratio,caption={Reaction rate \cite{adelberger2011solar}.},float=table}
 \begin{threeparttable}
 \begin{tabular}{|ccc|}
 \hline
@@ -734,7 +734,6 @@ $\cel{Be}{7}{}{}(p,\Pphoton)\cel{B}{8}{}{}$\tnote{2}& $(2.08 \pm 0.16)10^{-2}$ &
 \end{threeparttable}
 \end{adjustbox}%
 
-
 Per determinare $\exv{\sigma v}$ uso il fatto che l'integrando $S(E)\exp{-\frac{E}{kT}-\frac{b}{\sqrt{E}}}$ ha forma approssimativamente gaussiana il cui massimo $E_0$, energia pi\'u probabile di reazione, e FWHM sono, posto $W=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:
 
 \begin{equation}
@@ -746,29 +745,65 @@ quindi il rate locale per reazioni non risonanti si scrive approssimativamente c
 \end{equation}
 $S_{eff}$ \'e il risultato dell'espansione dell'integrando per $\invers{\tau}\ll1$ ed estrapolato a $E_0$ a partire dal valore a $E(0)$ determinato dalla fisica nucleare.
 
-\begin{wrapfigure}[10]{r}{0.3\textwidth}
-        \includegraphics[width=0.5\textwidth,keepaspectratio]{Rscreening}
-        \caption{Andamento della correzione di schermaggio degli elettroni.}
-\end{wrapfigure}
+%\begin{wrapfigure}[10]{r}{0.3\textwidth}
+%        \includegraphics[width=0.5\textwidth,keepaspectratio]{Rscreening}
+%        \caption{Andamento della correzione di schermaggio degli elettroni.}
+%\end{wrapfigure}
 
-Lo schermaggio degli elettroni diminuisce la repulsione coulombiana: la condizione che l'energia elettrostatica di due nuclei distanti $r_D$ sia molto minore dell'energia termica definisce il regime di schermaggio debole: 
+L'energia di interazione di due nuclei $Z_1$ e $Z_2$ a distanza r contiene un contributo delle altre cariche presenti nel plasma:
 \begin{equation}
-E_C'-E=\frac{Z_1Z_2e^2}{r}\exp{-\frac{r}{r_D}}-E\approx\frac{Z_1Z_2e^2}{r}-\frac{Z_1Z_2e^2}{r_D}-E=E_C-E-E_D
+U_T=\frac{Z_1Z_2e^2}{r}+U(r_{12})=Z_1Z_2e^2\psi_T
+\end{equation}
+dove $U(r_{12})\approx0$ per $r\gg r_D$ e $U(r_{12})\to U_0\approx\frac{Z_1Z_2e^2}{r_D}$ per r che tende a zero; dato che $E_G\gg U_0$ approssimo la correziuone a \eqref{eq:} con un fattore $f=\exp{-\midfrac{-U_0}{KT}}$.
+
+La distribuzione media di carica del plasma, supposto di atomi completamente ionizzati di carica z, si scrive, usando la formula di Boltzmann per descrivere la perturbazione dovuta a $Z_1$:
+\begin{equation}
+\rho_c(\vec{r})=(\frac{\rho N_Aze}{A})[\exp{\frac{Z_1ze^2}{KT}\psi_T}-\exp{\frac{Z_1e^2}{KT}\psi_T}]
+\end{equation}
+dove il primo termine \'e una media sugli ioni del gas diversi da $Z_1$ e $Z_2$  e il secondo sugli elettroni.
+
+La condizione che l'energia elettrostatica di due nuclei distanti $r_D$ sia molto minore dell'energia termica definisce il regime di schermaggio debole e risolvendo l'equazione di Poisson per il potenziale generato da $Z_1$: 
+\begin{equation}
+\nabla^2[Z_1e^2\psi_T]=-4\pi\rho_c(r)-4\pi Z_1e\delta^{(3)}(3)
 \end{equation}
 
-Per $\frac{E_D}{kT}\ll1$ ne tengo conto aggiungendo il parametro correttivo $f$
-\begin{equation}
-\exv{v\sigma}\to f\exv{v\sigma},\ f=\exp{\frac{E_D}{KT}}
-\end{equation}
+%E_C'-E=\frac{Z_1Z_2e^2}{r}\exp{-\frac{r}{r_D}}-E\approx\frac{Z_1Z_2e^2}{r}-\frac{Z_1Z_2e^2}{r_D}-E=E_C-E-E_D
+si ottiene
 
-Nella fase di sequenza principale per massa e composizione solari la luminosit\'a \'e generata da reazioni delle catene $\Pproton\Pproton$ per il $99.9\%$.
+\begin{equation}
+U_0=-\frac{Z_1Z_2e^2}{r_D}
+\end{equation}
 
 %\begin{wrapfigure}[23]{r}{0.6\textwidth}
 
+\begin{table}[!h]
 
-
-Quali incertezze nell'electron screening?
-
+\pgfplotstabletypeset[
+every head row/.style={
+ before row={\toprule
+ %&\multicolumn{4}{c|}{Primordiale}
+ \\\midrule},
+ every last row/.style={after row=\bottomrule},
+ after row={\midrule}
+},
+every last row/.style={after row=\bottomrule},
+every first column/.style={column type/.add={|}{}},
+every last column/.style={column type/.add={}{|}},
+columns/x/.style = {column type/.add={|}{}},
+columns/xi/.style = {column type/.add={|}{}},
+display columns/0/.style={column name={R}},
+display columns/1/.style={column name={$X$}},
+display columns/2/.style={column name={$Y$}},
+display columns/3/.style={column name={$Z$}},
+display columns/4/.style={column name={$\frac{Z}{X}$}},
+%create on use/authors/.style={create col/set list={
+%Anders \& Grevesse (1989),Grevesse \& Noels (1993),
+%Grevesse \& Sauval (1998),Lodders (2003),Asplund Grevesse \& Sauval (2005),Lodders Palme \& Gail (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
+%columns/reactions/.style={string type},
+%columns={authors,x, y, z, zx
+},
+/pgf/number format/precision=4
+     ]{deltaSalpeter.txt} %%%
 
 % T_6=10T_7=10^3T_9
 
@@ -866,6 +901,9 @@ columns={authors,x, y, z, zx
 \captionof{table}{Metallicit\'a osservata.}
 \end{table}
 
+\begin{workout}[Reaction rates]
+Nella fase di sequenza principale per massa e composizione solari la luminosit\'a \'e generata da reazioni delle catene $\Pproton\Pproton$ per circa il $99\%$.
+\end{workout}
 
 \section{Osservabili sismologiche}
 
