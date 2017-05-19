@@ -796,14 +796,19 @@ display columns/1/.style={column name={$X$}},
 display columns/2/.style={column name={$Y$}},
 display columns/3/.style={column name={$Z$}},
 display columns/4/.style={column name={$\frac{Z}{X}$}},
-%create on use/authors/.style={create col/set list={
-%Anders \& Grevesse (1989),Grevesse \& Noels (1993),
+create on use/reactions/.style={create col/set list={
+$p+p$,$\cel{He}{3}{}{}+\cel{He}{4}{}{}$,$p+\cel{N}{14}{}{}$,$p+\cel{Be}{7}{}{}$},
 %Grevesse \& Sauval (1998),Lodders (2003),Asplund Grevesse \& Sauval (2005),Lodders Palme \& Gail (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
-%columns/reactions/.style={string type},
+columns/reactions/.style={string type},
 %columns={authors,x, y, z, zx
-%},
+},
 /pgf/number format/precision=4
      ]{deltaSalpeter.txt} %%%
+
+$p+p$ 0.5 0.0 0.5 0.2 
+$\cel{He}{3}{}{}+\cel{He}{4}{}{}$ 1.7 8.2 2.4 1.8 
+$p+\cel{Be}{7}{}{}$ 1.5 8.5 2.6 2.3 
+$p+\cel{N}{14}{}{}$ 0.8 15.2 6.3 6.3
 
 % T_6=10T_7=10^3T_9
 
