@@ -15,7 +15,7 @@ I modelli stellari contengo dei parametri per descrivere i fenomeni fisici per c
 \setlength\intextsep{0pt}
 \renewcommand{\arraystretch}{1.3}
 
-\begin{wraptable}[10]{l}[10pt]{7.5cm}\label{fig:sunO}
+\begin{wraptable}[10]{l}[10pt]{7.5cm}\label{wrap-tab:sunO}
 
 \begin{tabular}{l|c}
 
@@ -703,15 +703,19 @@ dove $Q_{ij}$ \'e l'energia liberata per reazione tra nucleo di specie i e j; $X
 f(E)dE\propto\frac{E\expy{\frac{1}{2}}}{(kT)\expy{\frac{3}{2}}}\exp{-\frac{E}{kT}}\,dE
 \end{equation}
 
-\begin{wrapfigure}[15]{r}{0.5\textwidth}
+%\begin{wrapfigure}[15]{r}{0.5\textwidth}
+\begin{figure}[!ht]
 \caption{Catena PP.}
 \resizebox{0.45\textwidth}{!}{
         \input{ppchain.tex}
         }
-\end{wrapfigure}
-
-\begin{wrapfigure}[15]{r}{0.5\textwidth}
-\begin{adjustbox}{max width=0.45\textwidth,keepaspectratio,caption={Reaction rate \cite{adelberger2011solar}.},float=table}
+\end{figure}
+~
+\begin{tikzpicture}
+\begin{scope}[scale=0.5]
+%\begin{adjustbox}{max width=0.45\textwidth,keepaspectratio,caption={Reaction rate \cite{adelberger2011solar}.},float=table}
+\node at (0,0) {
+\matrix[ampersand replacement=\&] {
 \begin{threeparttable}
 \begin{tabular}{|ccc|}
 \hline
@@ -733,8 +737,14 @@ $\cel{Be}{7}{}{}(p,\Pphoton)\cel{B}{8}{}{}$& $(2.08 \pm 0.16)10^{-2}$ & $\pm 7.5
 \item[2] $\scriptstyle R(p\Pelectron p)=1.102(1\pm0.01)10^{-4}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}[1+0.002(T_6-16)]R(pp)$
 \end{tablenotes}
 \end{threeparttable}
-\end{adjustbox}%
-\end{wrapfigure}
+}
+}
+%\end{adjustbox}%
+\end{scope}
+\node at (0,-5) {\captionof{figure}{Reaction rate \cite{adelberger2011solar}.}}
+\end{tikzpicture}
+%\end{wrapfigure}
+
 
 Per determinare $\exv{\sigma v}$ uso il fatto che l'integrando $S(E)\exp{-\frac{E}{kT}-\frac{b}{\sqrt{E}}}$ ha forma approssimativamente gaussiana il cui massimo $E_0$, energia pi\'u probabile di reazione, e FWHM sono, posto $W=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:
 
@@ -778,7 +788,7 @@ U_0=-\frac{Z_1Z_2e^2}{r_D}
 
 %\begin{wrapfigure}[23]{r}{0.6\textwidth}
 
-\begin{table}[!h]
+\begin{wraptable}[10]{l}[10pt]{7.5cm}\label{wrap-tab:escreening}
 
 \pgfplotstabletypeset[
 every head row/.style={
@@ -806,7 +816,7 @@ columns={reactions,GB,GDGC,SVH,DTDL}
 },
 /pgf/number format/precision=4
      ]{deltaSalpeter.txt} %%%
-\end{table}
+\end{wraptable}
 
 
 % T_6=10T_7=10^3T_9
