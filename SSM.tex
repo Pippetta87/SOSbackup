@@ -782,15 +782,15 @@ U_0=-\frac{Z_1Z_2e^2}{r_D}
 every head row/.style={
  before row={\toprule
  %&\multicolumn{4}{c|}{Primordiale}
- \\\midrule},
+ },
  every last row/.style={after row=\bottomrule},
  after row={\midrule}
 },
 every last row/.style={after row=\bottomrule},
 every first column/.style={column type/.add={|}{}},
 every last column/.style={column type/.add={}{|}},
-columns/x/.style = {column type/.add={|}{}},
-columns/xi/.style = {column type/.add={|}{}},
+columns/0/.style = {column type/.add={|}{}},
+columns/4/.style = {column type/.add={|}{}},
 display columns/0/.style={column name={reactions}},
 display columns/1/.style={column name={GB}},
 display columns/2/.style={column name={GDGC}},
@@ -800,7 +800,7 @@ create on use/reactions/.style={create col/set list={
 $p+p$,$\cel{He}{3}{}{}+\cel{He}{4}{}{}$,$p+\cel{N}{14}{}{}$,$p+\cel{Be}{7}{}{}$},
 %Grevesse \& Sauval (1998),Lodders (2003),Asplund Grevesse \& Sauval (2005),Lodders Palme \& Gail (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
 columns/reactions/.style={string type},
-columns={reaction,GB,GDGC,SVH,DTDL
+columns={reactions,GB,GDGC,SVH,DTDL}
 },
 /pgf/number format/precision=4
      ]{deltaSalpeter.txt} %%%
