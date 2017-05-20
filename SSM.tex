@@ -714,7 +714,7 @@ f(E)dE\propto\frac{E\expy{\frac{1}{2}}}{(kT)\expy{\frac{3}{2}}}\exp{-\frac{E}{kT
 \begin{threeparttable}
 \begin{tabular}{|ccc|}
 \hline
-{Reaction} & {$S(0) (keVb)$} & {\parbox{2cm}{\centering Gamow peak uncertainty (\%)}}\\
+{Reactione} & {$S(0) (keVb)$} & {\parbox{2cm}{\centering Incertezza su $S(E_G)$ (\%)}}\\
 \hline
 {$p(p,\APelectron\Pnue)d$} & {$(4.01 \pm 0.04)10^{-22}$} & {$\pm 0.7$}\\
 $d(p,\Pphoton)\cel{He}{3}{}{}$ & ${2.14}10^{-4}\substack{+0.17 \\ -0.16}$ & $\pm 7.1$\\
@@ -847,27 +847,13 @@ Per determinare il modello solare attuale evolvo il modello del Sole in sequenza
 
 \end{itemize}
 
-\begin{figure}[!h]
-\includegraphics[width=\textwidth,trim=4 4 4 4,clip]{BP2000}
-\caption{Profilo radiale della densit\'a, abbondanza di idrogeno, luminosit\'a e temperatura; sono indicati i valori centrali e alla base della zona convettiva. Dati da \cite{BP2000}.}
-\end{figure}
+I risultati del modello solare sono afflitti da errori sistematici dovuti alla modellizzazione della fisica del plasma solare (EOS, opacit\'a,); per quanto riguarda la composizione le misure pi\'u accurate sono quelle basate sulle righe di assorbimento dell'atmosfera solare e quelle basate sulla composizione dei meteoriti (condriti CI), che si suppone abbiano conservato composizione originaria a parte H,C,N,O e gas nobili: i metodi sono in accordo per gli altri elementi.
+
+%La composizione determinata usando righe di assorbimento dell'atmosfera  poich\'e l'assorbimento continuo \'e dovuto principalmente all'idrogeno l'abbondanza degli elementi pesanti si esprime relativamente all'abbondanza di idrogeno.
 
 
-\begin{workout}[Incertezze input MSS]
 
-I risultati del modello solare sono afflitti da errori sistematici dovuti alla modellizzazione della fisica del plasma solare (EOS, opacit\'a,) e della formazione delle righe di assorbimento e dell'atmosfera (metallicit\'a)
-\end{workout}
-
-
-\begin{workout}[Incertezze sistematiche su $Z/X$ e abbondanza relativa elementi]
-
-CNO-refrattari: refrattari misure condriti CI - atmosfera mostrano buon accordo
-
-\end{workout}
-
-La composizione chimica del Sole \'e determinata analizzando le righe di assorbimento prodotte dalle transizioni atomiche negli strati esterni del Sole; poich\'e l'assorbimento continuo \'e dovuto principalmente all'idrogeno l'abbondanza degli elementi pesanti si esprime relativamente all'abbondanza di idrogeno.
-
-\begin{table}[!h]
+\begin{wraptable}{r}{0.5\textwidth}
 
 \pgfplotstabletypeset[
 every head row/.style={
@@ -901,14 +887,22 @@ columns={authors,x, y, z, zx
 /pgf/number format/precision=4
      ]{asplund.txt} %%%
 
-\captionof{table}{Metallicit\'a osservata.}
-\end{table}
+\captionof{table}{Metallicit\'a attuale determinata da varii autori.}
+\end{wraptable}
+
+Modelli di atmosfera pi\'u accurati, possibili grazie a maggiore potenza di calcolo, hanno fornito composizione di metalli sensibilmente minore
 
 \begin{workout}[Reaction rates]
 Nella fase di sequenza principale per massa e composizione solari la luminosit\'a \'e generata da reazioni delle catene $\Pproton\Pproton$ per circa il $99\%$.
 \end{workout}
 
+\begin{figure}[!h]
+\includegraphics[width=\textwidth,trim=4 4 4 4,clip]{BP2000}
+\caption{Profilo radiale della densit\'a, abbondanza di idrogeno, luminosit\'a e temperatura; sono indicati i valori centrali e alla base della zona convettiva. Dati da \cite{BP2000}.}
+\end{figure}
+
 \section{Osservabili sismologiche}
+
 
 L'osservazione della superficie solare ha rivelato la presenza di oscillazioni descrivibili come modi normali adiabtici dell'intera struttura solare che dipendono da $P(r)$, $\rho(r)$, $g(r)$ e $\Gamma_1(r)$ e poich\'e queste quantit\'a sono legate dalle equazioni della struttura stellare \'e i modi adiabatici sono determinati da 2 combinazioni indipendentidi queste grandezze; data la natura prevalentemente acustica delle oscillazioni la osservabile principale \'e
 \begin{equation}
