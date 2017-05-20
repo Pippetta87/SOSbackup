@@ -777,7 +777,7 @@ U_0=-\frac{Z_1Z_2e^2}{r_D}
 
 %\begin{wrapfigure}[23]{r}{0.6\textwidth}
 
-\begin{wraptable}[10]{r}{7.5cm}\label{wrap-tab:escreening}
+\begin{wraptable}[10]{r}{0.3\textwidth}\label{wrap-tab:escreening}
 
 \pgfplotstabletypeset[
 every head row/.style={
@@ -792,16 +792,15 @@ every first column/.style={column type/.add={|}{}},
 every last column/.style={column type/.add={}{|}},
 columns/0/.style = {column type/.add={|}{}},
 columns/4/.style = {column type/.add={|}{}},
-display columns/0/.style={column name={reactions}},
-display columns/1/.style={column name={GB}},
-display columns/2/.style={column name={GDGC}},
-display columns/3/.style={column name={SVH}},
-display columns/4/.style={column name={DTDL}},
-create on use/reactions/.style={create col/set list={
+display columns/0/.style={column name={GB}},
+display columns/1/.style={column name={GDGC}},
+display columns/2/.style={column name={SVH}},
+display columns/3/.style={column name={DTDL}},
+create on use/react/.style={create col/set list={reactions,
 $p+p$,$\cel{He}{3}{}{}+\cel{He}{4}{}{}$,$p+\cel{N}{14}{}{}$,$p+\cel{Be}{7}{}{}$},
 %Grevesse \& Sauval (1998),Lodders (2003),Asplund Grevesse \& Sauval (2005),Lodders Palme \& Gail (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
-columns/reactions/.style={string type},
-columns={reactions,GB,GDGC,SVH,DTDL}
+columns/react/.style={string type},
+columns={react,GB,GDGC,SVH,DTDL}
 },
 /pgf/number format/precision=4
      ]{deltaSalpeter.txt} %%%
@@ -850,8 +849,6 @@ Per determinare il modello solare attuale evolvo il modello del Sole in sequenza
 I risultati del modello solare sono afflitti da errori sistematici dovuti alla modellizzazione della fisica del plasma solare (EOS, opacit\'a,); per quanto riguarda la composizione le misure pi\'u accurate sono quelle basate sulle righe di assorbimento dell'atmosfera solare e quelle basate sulla composizione dei meteoriti (condriti CI), che si suppone abbiano conservato composizione originaria a parte H,C,N,O e gas nobili: i metodi sono in accordo per gli altri elementi.
 
 %La composizione determinata usando righe di assorbimento dell'atmosfera  poich\'e l'assorbimento continuo \'e dovuto principalmente all'idrogeno l'abbondanza degli elementi pesanti si esprime relativamente all'abbondanza di idrogeno.
-
-
 
 \begin{wraptable}{r}{0.5\textwidth}
 
