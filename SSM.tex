@@ -777,7 +777,7 @@ U_0=-\frac{Z_1Z_2e^2}{r_D}
 
 %\begin{wrapfigure}[23]{r}{0.6\textwidth}
 
-\begin{wraptable}[10]{l}[10pt]{7.5cm}\label{wrap-tab:escreening}
+\begin{wraptable}[10]{r}{7.5cm}\label{wrap-tab:escreening}
 
 \pgfplotstabletypeset[
 every head row/.style={
@@ -903,31 +903,30 @@ Nella fase di sequenza principale per massa e composizione solari la luminosit\'
 
 \section{Osservabili sismologiche}
 
-
-L'osservazione della superficie solare ha rivelato la presenza di oscillazioni descrivibili come modi normali adiabtici dell'intera struttura solare che dipendono da $P(r)$, $\rho(r)$, $g(r)$ e $\Gamma_1(r)$ e poich\'e queste quantit\'a sono legate dalle equazioni della struttura stellare \'e i modi adiabatici sono determinati da 2 combinazioni indipendentidi queste grandezze; data la natura prevalentemente acustica delle oscillazioni la osservabile principale \'e
+L'osservazione della superficie solare ha rivelato la presenza di oscillazioni descrivibili come modi normali adiabtici dell'intera struttura solare che dipendono da $P(r)$, $\rho(r)$, $g(r)$ e $\Gamma_1(r)$ e poich\'e queste quantit\'a sono legate dalle equazioni della struttura stellare i modi adiabatici sono determinati da 2 combinazioni indipendentidi queste grandezze; data la natura prevalentemente acustica delle oscillazioni la quantit\'a principale determinata dalla misura delle frequenze dei modi \'e
 \begin{equation}
 c_s^2=\Gamma_1\frac{P}{\rho}
 \end{equation}
 
+Il gradiente adimensionale della velocit\'a del suono mette in risalto le discontinuit\'a nel profilo termico (alla base della zona convettiva) e in $\Gamma_1$ (nelle zone di ionizzazione)
+
+\begin{equation}
+W=\frac{1}{g}\TDy{r}{c^2}
+\end{equation}
+
 \begin{figure}[!h]
-\begin{subfigure}[r]{0.6\textwidth}
-        \includegraphics[width=0.9\textwidth,keepaspectratio]{deltaCdeltaQ}
-        \caption{Profilo della derivata logaritmica di $c_s$ rispetto ai parametri del MSS}
+\begin{subfigure}[r]{0.4\textwidth}
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{soundspeed}
+        \caption{Profilo radiale di $c_s^2$ determinato dalle frequenze dei modi adiabatici. Da \cite{christensen1985speed}.}
     \end{subfigure}
 ~
 \begin{subfigure}[r]{0.6\textwidth}
-        \includegraphics[width=0.9\textwidth,keepaspectratio]{dlncdlnzjdetailed}
-        \caption{Derivata della velocit\'a del suono rispetto a $z_i=\midfrac{Z_{ph}}{x_{ph}}$. Da \cite{villante2014chemical}}
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{WrbczHHeioniz}\labe{fig:dlessc}
+        \caption{Profilo di W calcolato da un modello solare. Da \cite{basu2008helioseismology}.}
     \end{subfigure}
 \end{figure}
 
-
-
-\begin{workout}[Esponente adiabatico: EOS - ionizzazione - abbondanza elementi]
-
-Cosa risolvono: $\Gamma_1$ zona convettiva ionizzazione elementi.
-
-\end{workout}
+In \subfig{fig:dlessc} si vedono la base della zona convettiva intorno a $0.7\rsun{}$ e i picchi dovuti alle regioni di ionizzazione a $HeII$, intorno a $0.98\rsun{}$, e di ionizzazione di $HI$ e $HeI$ verso la superficie: \'e possibile determinare l'abbondanza di $He$ nella zona convettiva anche se non \'e la tecnica pi\'u accurata.
 
 \begin{workout}[Caratteristiche base zona convettiva]
 
@@ -935,16 +934,26 @@ Profondit\'a zona convettiva: opacit\'a.
 
 Regione in cui il gradiente radiativo raggiunge il gradiente adiabatico.
 
-sound speed gradient W:
-\begin{equation}
-W=\frac{1}{g}\TDy{r}{c^2}
-\end{equation}
 
 $R_b$ \'e misurabile con grande accuratezza: discontinuit\'a.
 
 $Y_{ph}$ misurabile: Composizione zona convettiva omogenea:  $\Gamma_1$ in regioni di ionizzazione H-He
 
+\begin{figure}[!h]
+\begin{subfigure}[r]{0.6\textwidth}
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{deltaCdeltaQ}
+        \caption{Profilo della derivata logaritmica di $c_s$ rispetto ai parametri del MSS}
+    \end{subfigure}
+~
+\begin{subfigure}[r]{0.4\textwidth}
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{dlncdlnzjdetailed}
+        \caption{Derivata della velocit\'a del suono rispetto a $z_i=\midfrac{Z_{ph}}{x_{ph}}$. Da \cite{villante2014chemical}.}
+    \end{subfigure}
+\end{figure}
+
 \end{workout}
+
+
 
 
 \end{document}
