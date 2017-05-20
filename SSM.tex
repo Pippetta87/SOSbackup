@@ -751,6 +751,35 @@ $S_{eff}$ \'e il risultato dell'espansione dell'integrando per $\invers{\tau}\ll
 %        \caption{Andamento della correzione di schermaggio degli elettroni.}
 %\end{wrapfigure}
 
+ \begin{wraptable}[10]{r}{0.4\textwidth}\label{wrap-tab:escreening}
+
+\pgfplotstabletypeset[
+every head row/.style={
+ before row={\toprule
+ %&\multicolumn{4}{c|}{Primordiale}
+ },
+ every last row/.style={after row=\bottomrule},
+ after row={\midrule}
+},
+every last row/.style={after row=\bottomrule},
+every first column/.style={column type/.add={|}{}},
+every last column/.style={column type/.add={}{|}},
+columns/0/.style = {column type/.add={|}{}},
+display columns/0/.style={column name={GB}},
+display columns/1/.style={column name={GDGC}},
+display columns/2/.style={column name={SVH}},
+display columns/3/.style={column name={DTDL}},
+create on use/react/.style={create col/set list={reactions,
+$p+p$,$\cel{He}{3}{}{}+\cel{He}{4}{}{}$,$p+\cel{N}{14}{}{}$,$p+\cel{Be}{7}{}{}$},
+%Grevesse \& Sauval (1998),Lodders (2003),Asplund Grevesse \& Sauval (2005),Lodders Palme \& Gail (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
+columns/react/.style = {column type/.add={|}{}},
+columns/react/.style={string type},
+columns={react,GB,GDGC,SVH,DTDL}
+},
+/pgf/number format/precision=4
+     ]{deltaSalpeter.txt} %%%
+\end{wraptable}
+
 L'energia di interazione di due nuclei $Z_1$ e $Z_2$ a distanza r contiene un contributo delle altre cariche presenti nel plasma:
 \begin{equation}
 U_T=\frac{Z_1Z_2e^2}{r}+U(r_{12})=Z_1Z_2e^2\psi_T
@@ -777,35 +806,6 @@ U_0=-\frac{Z_1Z_2e^2}{r_D}
 
 %\begin{wrapfigure}[23]{r}{0.6\textwidth}
 
-\begin{wraptable}[10]{r}{0.3\textwidth}\label{wrap-tab:escreening}
-
-\pgfplotstabletypeset[
-every head row/.style={
- before row={\toprule
- %&\multicolumn{4}{c|}{Primordiale}
- },
- every last row/.style={after row=\bottomrule},
- after row={\midrule}
-},
-every last row/.style={after row=\bottomrule},
-every first column/.style={column type/.add={|}{}},
-every last column/.style={column type/.add={}{|}},
-columns/0/.style = {column type/.add={|}{}},
-columns/4/.style = {column type/.add={|}{}},
-display columns/0/.style={column name={GB}},
-display columns/1/.style={column name={GDGC}},
-display columns/2/.style={column name={SVH}},
-display columns/3/.style={column name={DTDL}},
-create on use/react/.style={create col/set list={reactions,
-$p+p$,$\cel{He}{3}{}{}+\cel{He}{4}{}{}$,$p+\cel{N}{14}{}{}$,$p+\cel{Be}{7}{}{}$},
-%Grevesse \& Sauval (1998),Lodders (2003),Asplund Grevesse \& Sauval (2005),Lodders Palme \& Gail (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
-columns/react/.style={string type},
-columns={react,GB,GDGC,SVH,DTDL}
-},
-/pgf/number format/precision=4
-     ]{deltaSalpeter.txt} %%%
-\end{wraptable}
-
 
 % T_6=10T_7=10^3T_9
 
@@ -814,43 +814,7 @@ columns={react,GB,GDGC,SVH,DTDL}
 \chapter{Modello solare standard e osservabili sismologiche.}
 }
 
-
-Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
-\begin{subequations}\label{subeqn:stellarstructure}
-\begin{align}
-&\TDy{r}{m}=4\pi r^2\rho\\
-&\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\\
-&\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
-&\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
-\end{align}
-
-\begin{equation}
-\PDy{t}{n_s}+\frac{1}{r^2}\PDof{r}(r^2n_sv_i)=\Dcvar{\PDy{t}{n_s}}{Nucl}\label{eq:difffusionchange}
-\end{equation}
-\end{subequations}
-con $v_i$ velocit\'a di diffusione specie i. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note la metallicit\'a iniziale Z, l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
-
-Le condizioni al bordo per le equazioni precedenti sono:
-\begin{itemize}
-    \item La superficie \'e definita da $T=T_{eff}$ e si ha la condizione $\lsun{}=4\pi r^2\sigma T_{eff}^4$. La pressione alla superficie \'e legata alla struttura di equilibrio dell'atmosfera.
-
-    \item In $r=0$ deve essere $L=0$, $M=0$.
-    %e condizioni al centro si ricavano espandendo l, m attorno a $r=0$ in termini di $T_c, P_C,X_C,X_{3C}$ ed eguagliando le espansioni ai valori di l e m del punto pi\'u interno.
-\end{itemize}
-
-Per determinare il modello solare attuale evolvo il modello del Sole in sequenza principale partendo da una composizione chimica fissata fino ad ottenere un modello con le caratteristiche del Sole attuale:
-\begin{itemize}
-\item Il valore di Y \'e determinato dalla luminosit\'a solare attuale: l'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffusionchange}, dovuto principalmente alle reazioni di fusione \eqref{eq:energyrate}, deve essere compensato da un'aumento di temperatura con conseguente incremento dell'energia generata e della luminosit\'a.
-
-\item L'efficienza della convezione determina il gradiente della regione esterna convettiva \'e scelta in maniera da avere la temperatura efficace attuale, cio\'e il raggio attuale; in generale devo  fare ulteriore correzione perch\'e cambiando il gradiente termico della regione esterna la soluzione delle equazioni stellari avr\'a in generale un profilo termico leggermente diverso e un modello solare che non riproduce la luminosit\'a attuale.
-
-\end{itemize}
-
-I risultati del modello solare sono afflitti da errori sistematici dovuti alla modellizzazione della fisica del plasma solare (EOS, opacit\'a,); per quanto riguarda la composizione le misure pi\'u accurate sono quelle basate sulle righe di assorbimento dell'atmosfera solare e quelle basate sulla composizione dei meteoriti (condriti CI), che si suppone abbiano conservato composizione originaria a parte H,C,N,O e gas nobili: i metodi sono in accordo per gli altri elementi.
-
-%La composizione determinata usando righe di assorbimento dell'atmosfera  poich\'e l'assorbimento continuo \'e dovuto principalmente all'idrogeno l'abbondanza degli elementi pesanti si esprime relativamente all'abbondanza di idrogeno.
-
-\begin{wraptable}{r}{0.5\textwidth}
+\begin{wraptable}{r}[15]{0.5\textwidth}
 
 \pgfplotstabletypeset[
 every head row/.style={
@@ -887,7 +851,43 @@ columns={authors,x, y, z, zx
 \captionof{table}{Metallicit\'a attuale determinata da varii autori.}
 \end{wraptable}
 
+I risultati del modello solare sono afflitti da errori sistematici dovuti alla modellizzazione della fisica del plasma solare (EOS, opacit\'a,); per quanto riguarda la composizione le misure pi\'u accurate sono quelle basate sulle righe di assorbimento dell'atmosfera solare e quelle basate sulla composizione dei meteoriti (condriti CI), che si suppone abbiano conservato composizione originaria a parte H,C,N,O e gas nobili: i metodi sono in accordo per gli altri elementi.
+
+%La composizione determinata usando righe di assorbimento dell'atmosfera  poich\'e l'assorbimento continuo \'e dovuto principalmente all'idrogeno l'abbondanza degli elementi pesanti si esprime relativamente all'abbondanza di idrogeno.
+
 Modelli di atmosfera pi\'u accurati, possibili grazie a maggiore potenza di calcolo, hanno fornito composizione di metalli sensibilmente minore
+
+Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
+\begin{subequations}\label{subeqn:stellarstructure}
+\begin{align}
+&\TDy{r}{m}=4\pi r^2\rho\\
+&\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\\
+&\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
+&\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
+\end{align}
+
+\begin{equation}
+\PDy{t}{n_s}+\frac{1}{r^2}\PDof{r}(r^2n_sv_i)=\Dcvar{\PDy{t}{n_s}}{Nucl}\label{eq:difffusionchange}
+\end{equation}
+\end{subequations}
+con $v_i$ velocit\'a di diffusione specie i. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note la metallicit\'a iniziale Z, l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
+
+Le condizioni al bordo per le equazioni precedenti sono:
+\begin{itemize}
+    \item La superficie \'e definita da $T=T_{eff}$ e si ha la condizione $\lsun{}=4\pi r^2\sigma T_{eff}^4$. La pressione alla superficie \'e legata alla struttura di equilibrio dell'atmosfera.
+
+    \item In $r=0$ deve essere $L=0$, $M=0$.
+    %e condizioni al centro si ricavano espandendo l, m attorno a $r=0$ in termini di $T_c, P_C,X_C,X_{3C}$ ed eguagliando le espansioni ai valori di l e m del punto pi\'u interno.
+\end{itemize}
+
+Per determinare il modello solare attuale evolvo il modello del Sole in sequenza principale partendo da una composizione chimica fissata fino ad ottenere un modello con le caratteristiche del Sole attuale:
+\begin{itemize}
+\item Il valore di Y \'e determinato dalla luminosit\'a solare attuale: l'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffusionchange}, dovuto principalmente alle reazioni di fusione \eqref{eq:energyrate}, deve essere compensato da un'aumento di temperatura con conseguente incremento dell'energia generata e della luminosit\'a.
+
+\item L'efficienza della convezione determina il gradiente della regione esterna convettiva \'e scelta in maniera da avere la temperatura efficace attuale, cio\'e il raggio attuale; in generale devo  fare ulteriore correzione perch\'e cambiando il gradiente termico della regione esterna la soluzione delle equazioni stellari avr\'a in generale un profilo termico leggermente diverso e un modello solare che non riproduce la luminosit\'a attuale.
+
+\end{itemize}
+
 
 \begin{workout}[Reaction rates]
 Nella fase di sequenza principale per massa e composizione solari la luminosit\'a \'e generata da reazioni delle catene $\Pproton\Pproton$ per circa il $99\%$.
