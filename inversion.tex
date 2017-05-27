@@ -42,6 +42,8 @@ L'inversione lineare, che assume dato un modello di equilibrio e le funzioni di 
 
 \end{workout}
 
+[dlessc soundspeedccm]
+
 {\let\clearpage\relax\let\cleardoublepage\relax \chapter{Inversione asintotica.}} % Inizio chapter "Inversione asintotica." senza nuava pagina
 
 Si ricava, usando le espressioni asintotiche \eqref{cowosc:main}, il profilo radiale della velocit\'a del suono indipendente dal modello solare e si determina l'effetto dell'evoluzione stellare sui modi p di basso ordine radiale.
@@ -140,7 +142,61 @@ quindi la variazione delle frequenze \'e determinata da
 \end{equation}
 dove $\vec{\xi}=\Lvar{\vec{r}}$ \'e autovettore (perturbazione lagrangiana) del problema agli autovalori \eqref{eq:eigenhermitian}.
 
+
 \section{Inversione della rotazione.}
+
+In assenza di moti macroscopici il termine d'inerzia \'e $\rho_0\TDy{t}{\vec{v}}=\rho_0\PtwoDy{t}{\vec{\xi}}$, mentre in caso di rotazione diventa
+\begin{equation}
+\rho_0(\PDof{t}+\scap{v_0}{\nabla})^2\vec{\xi}
+\end{equation}
+
+Considero la correzione al primo ordine in $\Omega$. Il campo di velocit\'a rotazionale \'e 
+\begin{equation}
+\vec{v_0}=\vecp{\Omega}{r}
+\end{equation}
+
+Considero il termine dovuto alla rotazione come una piccola correzione alle frequenze dei modi
+\begin{align}
+&\omega_{(l,m)}+\Delta\omega_{(l,m)}\intxt{quindi l'equazione del moto al primo ordine nella perturbazione, con $\alpha=(l,m)$, \'e}
+&\rho_0(\omega_{\alpha}^2+2\omega_{\alpha}\Delta\omega_{\alpha})\vec{\xi}=\nabla P_1-\frac{\rho_1}{\rho_0}\nabla P_0+\rho_0\nabla\Phi_1+2i\omega_{\alpha}\rho_0(\scap{v_0}{\nabla})\vec{\xi}\intxt{da cui si deduce, usando $(\scap{v_0}{\nabla})\vec{\xi}=im\vec{\Omega}\xi+\vecp{\Omega}{\xi}$, lo splitting dovuto alla rotazione:}
+&\Delta\omega_{\alpha}=\frac{i\int\rho_0\xi_{\alpha}^*(\scap{v_0}{\nabla})\xi_{\alpha}}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}}=\frac{-m\int\rho_0\Omega\xi_{\alpha}^*\xi_{\alpha}\,dV+i\int\rho_0\xi_{\alpha}^*(\vecp{\Omega}{\xi_{\alpha}})\,dV}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}}
+\end{align}
+
+
+
+%Per rotazione puramente radiale $\Omega(r)$ la relazione tra lo splitting delle frequenze e la rotazione \'e
+%\begin{equation}
+%\Delta\omega_{\alpha}=-m\frac{\int_0^{\rsun{}}\rho_0\Omega\{|\xi_r-\xi_h|^2+[l(l+1)-2]|\xi_h|^2\}r^2\,dr}{\int_0^{\rsun{}}\rho_0\{|\xi_r|^2+l(l+1)|\xi_h|^2\}r^2\,dr}=\int_0^{\rsun{}}K_{\alpha}(r)\Omega(r)\,dr
+%\end{equation}
+%Any given $\Delta\omega_{\alpha}$ samples angular velocity in the depth range corresponding to $\xi_{\alpha}$.
+
+La velocit\'a angolare contribuisce a $\Delta\omega_{\alpha}$ negli strati in cui $\xi_{\alpha}$ \'e apprezzabile. Nel caso di rotazione dipendente solo da r si ha che $\Delta\omega_{\alpha}$ \'e lineare in m: ho $2l+1$ frequenze equispaziate.
+
+Per modi p di alto n approssimo lo splitting delle frequenze
+\begin{align}
+&\delta\omega_{nlm}\approx m\frac{\int_{r_t}^R\Omega(R)\,\frac{dr}{c}}{\int_{r_t}^R\frac{dr}{c}}\intxt{per dipendenza puramente radiale, mentre per velocit\'a angolare generale}
+&\delta\omega_{nlm}\approx m\frac{\int_{\cos{\Theta}}^{-\cos{\Theta}}(\cos^2{\Theta}-\cos^2{\theta})\expy{-\frac{1}{2}}\int_{r_t}^R(1-\frac{L^2c^2}{r^2\omega^2})\expy{\frac{1}{2}}\Omega(r,\theta)\frac{dr}{c}\,d(\cos{\theta})}{\int_{r_t}^R(1-\frac{L^2c^2}{r^2\omega^2})\expy{\frac{1}{2}}\,\frac{dr}{c}}\intxt{dove}
+&\Theta=\sin^{-1}{(\frac{m}{L})}
+\end{align}
+
+
+Deviazioni dalla simmetria sferica introducono una dipendenza delle frequenze dei modi da m. L'effetto della rotazione \'e descritto al primo ordine (in $\Omega$) da 
+\begin{equation}
+\Delta\omega_{nlm}
+\end{equation}
+
+Spesso \'e impossibile misurare lo splitting in m quindi si parametrizzano le frequenze nel multipletto $(n,l)$ tramite:
+\begin{equation}
+\nu_{nlm}=\nu_{nl0}+\sum_{j=1}^{j_{\max}}a_j(n,l)\pol_j^{(l)}(m)\label{eq:freqmulti}
+\end{equation}
+
+
+[fitting power spectra to measure splitting coefficients]
+Le deviazioni dalla simmetria sferica causano uno splitting delle frequenze: rappresento un multipletto di frequenze tramite espansione con base di polinomi appropriata (solitamente si usano i polinomi di Legendre)
+\begin{equation}
+\nu_{nlm}=\nu_{nl0}+\sum_{j=1}^{j_{\max}}a_j(n,l)\pol_j^{(l)}(m)\label{eq:freqmulti}
+\end{equation}
+e ricavo i coefficienti tramite fit con le frequenze osservate; i coefficienti dispari contengono il contributo della rotazione al termine lineare, i coefficienti pari effetti delle asfericit\'a nella struttura solare e effetti quadratici della rotazione.
 
 \begin{workout}[inversione rotazione 1D vs 1.5d vs 2d]
 Inversione 2d vs 1.5d
@@ -453,29 +509,7 @@ Le osservabili sismologiche che caratterizzano la zona convettiva sono $R_b$, $Y
 
 %[figure inversione al variare dei parametri solari da \cite{boothroyd2003our}]
 
-\begin{figure}[!h]
-\centering
 
-\begin{subfigure}[t]{0.32\textwidth}
-\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvZ}
-\end{subfigure}
-~
-\begin{subfigure}[t]{0.32\textwidth}
-\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvRR}
-\end{subfigure}
-~
-\begin{subfigure}[t]{0.32\textwidth}
-\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvDiff}
-\end{subfigure}
-\caption{Da \cite{boothroyd2003our}.}
-
-\end{figure}
-
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.99\textwidth,keepaspectratio]{soundinvRR}
-\caption{Da \cite{boothroyd2003our}.}
-\end{figure}
 
 
 

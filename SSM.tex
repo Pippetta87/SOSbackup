@@ -492,14 +492,9 @@ si tiene conto degli effetti quantistici tramite un opportuno coefficiente, il f
 
 La conduzione pu\'o essere trascurata in quanto nel Sole $l_{\Pphoton}\gg l_{\Pelectron}$, cio\'e i tempi caratteristici per il trasporto di calore per conduzione sono molto maggiori di quelli radiativi.
 
-
-\begin{workout}[fenomeni opacit\'a: opacit\'a solare??]
-
-\begin{equation}
-\delta\kappa(r)=\frac{\kappa_{OPAL}(\bar{T}(r),\bar{\rho}(r),\bar{Y}(r),\bar{Z}(r))}{\kappa_{OP}(\bar{T}(r),\bar{\rho}(r),\bar{Y}(r),\bar{Z}(r))}-1\leq0.025
-\end{equation}
-
-\end{workout}
+%\begin{equation}
+%\delta\kappa(r)=\frac{\kappa_{OPAL}(\bar{T}(r),\bar{\rho}(r),\bar{Y}(r),\bar{Z}(r))}{\kappa_{OP}(\bar{T}(r),\bar{\rho}(r),\bar{Y}(r),\bar{Z}(r))}-1\leq0.025
+%\end{equation}
 
 \begin{tikzpicture}[]
 %([shift={(1.5,0)}]0,0)
@@ -669,11 +664,6 @@ Il tempo trascorso da una stella di massa solare in sequenza principale consider
 \tau_n\approx\frac{E_n}{L}=\frac{fX\msun Q}{\lsun}\approx\SI{e+10}{\year},\ Q\approx\SI{6.3e18}{\erg\per\gram}
 \end{equation}
 
-\begin{wrapfigure}[20]{r}{0.5\textwidth}
-       \includegraphics[width=0.45\textwidth,keepaspectratio]{watt-PPvsCNO}
-        \caption{Andamento dell'energia generata per unit\'a di massa nel Sole: il contributo della catena PP \'e dominante rispetto ad altre reazioni.}
-\end{wrapfigure}
-
 L'energia liberata dalle reazioni nucleari per grammo per secondo $\epsilon(\rho,T,X_i)$ \'e determinata dalla probabilit\'a che la reazione $X(a,b)Y$ abbia luogo. Sia $E$ l'energia cinetica nel centro di massa dei nuclei, per la sezione d'urto $\sigma(E)$ di fusione si ha
 
 \begin{equation}
@@ -704,12 +694,9 @@ f(E)dE\propto\frac{E\expy{\frac{1}{2}}}{(kT)\expy{\frac{3}{2}}}\exp{-\frac{E}{kT
 \end{equation}
 
 %\begin{wrapfigure}[15]{r}{0.5\textwidth}
-{
-\captionof{figure}{Catena PP.}
-\resizebox{0.45\textwidth}{!}{
-        \input{ppchain.tex}
-        }
-~
+\input{ppchain.tex}
+     
+\begin{comment}
 \begin{adjustbox}{max width=0.45\textwidth,keepaspectratio,caption={Reaction rate \cite{adelberger2011solar}.},float=table}
 \begin{threeparttable}
 \begin{tabular}{|ccc|}
@@ -734,11 +721,12 @@ $\cel{Be}{7}{}{}(p,\Pphoton)\cel{B}{8}{}{}$& $(2.08 \pm 0.16)10^{-2}$ & $\pm 7.5
 \end{threeparttable}
 \end{adjustbox}%
 }
+\end{comment}
 
-Per determinare $\exv{\sigma v}$ uso il fatto che l'integrando $S(E)\exp{-\frac{E}{kT}-\frac{b}{\sqrt{E}}}$ ha forma approssimativamente gaussiana il cui massimo $E_0$, energia pi\'u probabile di reazione, e FWHM sono, posto $W=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:
+Per determinare $\exv{\sigma v}$ uso il fatto che l'integrando $S(E)\exp{-\frac{E}{kT}-\frac{b}{\sqrt{E}}}$ ha forma approssimativamente gaussiana il cui massimo $E_G$, energia pi\'u probabile di reazione, e FWHM sono, posto $W=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$:
 
 \begin{equation}
-E_0=\SI{5.665}{\kilo\ev} A\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}},\ \Delta E=4.249W\expy{\frac{1}{6}}T_7\expy{\frac{5}{6}}
+E_G=\SI{5.665}{\kilo\ev} A\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}},\ \Delta E=4.249W\expy{\frac{1}{6}}T_7\expy{\frac{5}{6}}
 \end{equation}
 quindi il rate locale per reazioni non risonanti si scrive approssimativamente come
 \begin{equation}
@@ -777,13 +765,14 @@ columns/react/.style={string type},
 columns={react,GB,GDGC,SVH,DTDI},
 /pgf/number format/precision=4
      ]{deltaSalpeter.txt} %%%
+     \caption{Discrepanze del fattore di screening determinato da diversi autori (vedi \cite{}) $\exp{\Lambda+\delta\Lambda}$ con $\Lambda$ ricavato da Salpeter secondo lo schema accennato: i valori sono $-\delta\Lambda(\%)$.}
 \end{wraptable}
 
 L'energia di interazione di due nuclei $Z_1$ e $Z_2$ a distanza r contiene un contributo delle altre cariche presenti nel plasma:
 \begin{equation}
 U_T=\frac{Z_1Z_2e^2}{r}+U(r_{12})=Z_1Z_2e^2\psi_T
 \end{equation}
-dove $U(r_{12})\approx0$ per $r\gg r_D$ e $U(r_{12})\to U_0\approx\frac{Z_1Z_2e^2}{r_D}$ per r che tende a zero; dato che $E_G\gg U_0$ approssimo la correziuone a \eqref{eq:} con un fattore $f=\exp{-\midfrac{-U_0}{KT}}$.
+dove $U(r_{12})\approx0$ per $r\gg r_D$ e $U(r_{12})\to U_0\approx\frac{Z_1Z_2e^2}{r_D}$ per r che tende a zero; dato che $E_G\gg U_0$ approssimo la correzione a \eqref{eq:} con un fattore $f=\exp{-\midfrac{-U_0}{KT}}$.
 
 La distribuzione media di carica del plasma, supposto di atomi completamente ionizzati di carica z, si scrive, usando la formula di Boltzmann per descrivere la perturbazione dovuta a $Z_1$:
 \begin{equation}
@@ -803,9 +792,8 @@ si ottiene
 U_0=-\frac{Z_1Z_2e^2}{r_D}
 \end{equation}
 
+Sulla base dell'efficienza delle reazioni nucleari, del profilo di densit\'a e temperatura ricavati da un modello solare le terminazione della catena pp $\cel{He}{3}{}{}-\cel{He}{3}{}{}$ e $\cel{He}{3}{}{}-\cel{He}{4}{}{}$ generano rispettivamente   $83.3\%$, $16.7\%$ della luminosit\'a totale mentre il ciclo CNO circa $1\%$.
 %\begin{wrapfigure}[23]{r}{0.6\textwidth}
-
-
 % T_6=10T_7=10^3T_9
 
 
@@ -839,7 +827,7 @@ display columns/4/.style={column name={$\frac{Z}{X}$}},
 %display columns/8/.style={column name={$\frac{Z}{X}$}},
 create on use/authors/.style={create col/set list={
 %Anders \& Grevesse (1989),Grevesse \& Noels (1993),
-Grevesse \& Sauval (1998),Lodders (2003),Asplund Grevesse \& Sauval (2005),Lodders Palme \& Gail (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
+Grevesse et al. (1998),Lodders (2003),Asplund et al. (2005),Lodders et al. (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
 columns/authors/.style={string type},
 columns={authors,x, y, z, zx
 %,xi,yi,zi, zxi
@@ -849,6 +837,11 @@ columns={authors,x, y, z, zx
 
 \captionof{table}{Metallicit\'a attuale determinata da varii autori.}
 \end{wraptable}
+
+\begin{figure}[!h]
+\includegraphics[width=\textwidth,trim=4 4 4 4,clip]{BP2000}
+\caption{Profilo radiale della densit\'a, abbondanza di idrogeno, luminosit\'a e temperatura; sono indicati i valori centrali e alla base della zona convettiva. Dati da \cite{BP2000}.}
+\end{figure}
 
 I risultati del modello solare sono afflitti da errori sistematici dovuti alla modellizzazione della fisica del plasma solare (EOS, opacit\'a,); per quanto riguarda la composizione le misure pi\'u accurate sono quelle basate sulle righe di assorbimento dell'atmosfera solare e quelle basate sulla composizione dei meteoriti (condriti CI), che si suppone abbiano conservato composizione originaria a parte H,C,N,O e gas nobili: i metodi sono in accordo per gli altri elementi.
 
@@ -888,66 +881,52 @@ Per determinare il modello solare attuale evolvo il modello del Sole in sequenza
 \end{itemize}
 
 
-\begin{workout}[Reaction rates]
-Nella fase di sequenza principale per massa e composizione solari la luminosit\'a \'e generata da reazioni delle catene $\Pproton\Pproton$ per circa il $99\%$.
-\end{workout}
+%\begin{workout}[Reaction rates]
+%\begin{wrapfigure}[10]{r}{0.5\textwidth}
+       %\includegraphics[width=0.45\textwidth,keepaspectratio]{watt-PPvsCNO}
+        %\caption{Andamento dell'energia generata per unit\'a di massa nel Sole: il contributo della catena PP \'e dominante rispetto ad altre reazioni.}
 
-\begin{figure}[!h]
-\includegraphics[width=\textwidth,trim=4 4 4 4,clip]{BP2000}
-\caption{Profilo radiale della densit\'a, abbondanza di idrogeno, luminosit\'a e temperatura; sono indicati i valori centrali e alla base della zona convettiva. Dati da \cite{BP2000}.}
-\end{figure}
+\clearpage
 
-\section{Osservabili sismologiche}
+\section{Caratteristiche solari determinate dall'eliosismologia}
 
 L'osservazione della superficie solare ha rivelato la presenza di oscillazioni descrivibili come modi normali adiabtici dell'intera struttura solare che dipendono da $P(r)$, $\rho(r)$, $g(r)$ e $\Gamma_1(r)$ e poich\'e queste quantit\'a sono legate dalle equazioni della struttura stellare i modi adiabatici sono determinati da 2 combinazioni indipendentidi queste grandezze; data la natura prevalentemente acustica delle oscillazioni la quantit\'a principale determinata dalla misura delle frequenze dei modi \'e
 \begin{equation}
 c_s^2=\Gamma_1\frac{P}{\rho}
 \end{equation}
 
-Il gradiente adimensionale della velocit\'a del suono mette in risalto le discontinuit\'a nel profilo termico (alla base della zona convettiva) e in $\Gamma_1$ (nelle zone di ionizzazione)
+\begin{figure}[!ht]
+\begin{subfigure}[r]{0.5\textwidth}\label{fig:soundspeedccm}
+        \includegraphics[width=0.99\textwidth,keepaspectratio]{soundspeed}
+        \caption{Profilo radiale di $c_s^2$ determinato dalle frequenze dei modi adiabatici. Da \cite{christensen1985speed}.}
+    \end{subfigure}
+~
+\begin{subfigure}[r]{0.5\textwidth}
+        \includegraphics[width=0.99\textwidth,keepaspectratio]{WrbczHHeioniz}\label{fig:dlessc}
+        \caption{Profilo di W calcolato da un modello solare. Da \cite{basu2008helioseismology}.}
+    \end{subfigure}
+\end{figure}
+
+Il gradiente adimensionale della velocit\'a del suono mette in risalto le rapide variazioni nel profilo termico (alla base della zona convettiva) e in $\Gamma_1$ (nelle zone di ionizzazione)
 
 \begin{equation}
 W=\frac{1}{g}\TDy{r}{c^2}
 \end{equation}
 
-\begin{figure}[!h]
-\begin{subfigure}[r]{0.4\textwidth}
-        \includegraphics[width=0.9\textwidth,keepaspectratio]{soundspeed}
-        \caption{Profilo radiale di $c_s^2$ determinato dalle frequenze dei modi adiabatici. Da \cite{christensen1985speed}.}
-    \end{subfigure}
-~
-\begin{subfigure}[r]{0.6\textwidth}
-        \includegraphics[width=0.9\textwidth,keepaspectratio]{WrbczHHeioniz}\label{fig:dlessc}
-        \caption{Profilo di W calcolato da un modello solare. Da \cite{basu2008helioseismology}.}
-    \end{subfigure}
-\end{figure}
-
 In \subref{fig:dlessc} si vedono la base della zona convettiva intorno a $0.7\rsun{}$ e i picchi dovuti alle regioni di ionizzazione a $HeII$, intorno a $0.98\rsun{}$, e di ionizzazione di $HI$ e $HeI$ verso la superficie: \'e possibile determinare l'abbondanza di $He$ nella zona convettiva anche se non \'e la tecnica pi\'u accurata.
 
-\begin{workout}[Caratteristiche base zona convettiva]
+\begin{wrapfigure}[15]{r}{0.3\textwidth}
+        \includegraphics[width=0.3\textwidth,keepaspectratio]{deltaCdeltaQ}
+        \caption{Profilo della derivata logaritmica di $c_s$ rispetto ai parametri del MSS $(\PDly{Q}{c_s})$.}
+\end{wrapfigure}
 
-Profondit\'a zona convettiva: opacit\'a. 
+Il buon accordo tra il profilo di $c_s$ determinato eliosismologicamente e calcolato da un modello solare (\subref{fig:soundspeedccm}) giustifica l'uso del modello per calcolare il comportamento dei modi solari che come iluustrer\'o nell'ultima parte permette di determinare il profilo di $\rho$ e $c_s$ in miglior accordo con le osservazioni.
 
-Regione in cui il gradiente radiativo raggiunge il gradiente adiabatico.
+Inoltre ricavando da un modello solare la dipendenza delle quantit\'a determinate eliosismicamente dai parametri del modello \'e possibile imporre dei vincoli ai parametri.
 
 
-$R_b$ \'e misurabile con grande accuratezza: discontinuit\'a.
-
-$Y_{ph}$ misurabile: Composizione zona convettiva omogenea:  $\Gamma_1$ in regioni di ionizzazione H-He
-
-\begin{figure}[!h]
-\begin{subfigure}[r]{0.6\textwidth}
-        \includegraphics[width=0.9\textwidth,keepaspectratio]{deltaCdeltaQ}
-        \caption{Profilo della derivata logaritmica di $c_s$ rispetto ai parametri del MSS}
-    \end{subfigure}
-~
-\begin{subfigure}[r]{0.4\textwidth}
-        \includegraphics[width=0.9\textwidth,keepaspectratio]{dlncdlnzjdetailed}
-        \caption{Derivata della velocit\'a del suono rispetto a $z_i=\midfrac{Z_{ph}}{x_{ph}}$. Da \cite{villante2014chemical}.}
-    \end{subfigure}
-\end{figure}
-
-\end{workout}
+%dlncdlnzjdetailed}
+        %\caption{Derivata della velocit\'a del suono rispetto a $z_i=\midfrac{Z_{ph}}{x_{ph}}$. Da \cite{villante2014chemical}.}
 
 
 
