@@ -509,27 +509,23 @@ Approssimo il comportamento spaziale delle oscillazioni localmente con un'onda p
 \begin{equation}\label{eq:secondorder}
 \TtwoDy{r}{\xi_r}=\frac{\omega^2}{c_s^2}(1-\frac{N^2}{\omega^2})(\frac{S_l^2}{\omega^2}-1)\xi_r=-K(r)\xi_r
 \end{equation}
-per $K(r)>0$ quest'equazione descrive un comportamento oscillante; considerando un'onda piana $\xi_r\propto\exp{ik_rr}$ si ha la relazione di dispersione:
+per $K(r)>0$ quest'equazione descrive un comportamento oscillante. Si ha la relazione di dispersione:
 \begin{equation}
 k_r^2=\frac{\omega^2}{c_s^2}(\frac{N^2}{\omega^2}-1)(\frac{S_l^2}{\omega^2}-1)\label{eq:approximatedispersion}
 \end{equation}
 
 Le approssimazioni fatte non sono pi\'u valide vicino alla superficie dove il termine in $\invers{H_P}$ non \'e trascurabile per $H_P$ piccolo e vicino al centro solare dove il termine in $\frac{2}{r}$ non \'e trascurabile.
 
-Considero $c,N$ costanti in \eqref{cowosc:main}: approssimazione valida se la lunghezza d'onda delle perturbazioni \'e molto minore della scala caratteristica di variazione.
+Considero \eqref{cowosc:main}  per lunghezza d'onda delle perturbazioni molto minore della scala caratteristica di variazione di $N, c$.
 %stix local treatment pg 165
 
 Sostituisco
 \begin{align}
-&\xi_r\propto\rho_0\expy{-\frac{1}{2}}\exp{ik_rr},\ P_1\propto\rho_0\expy{\frac{1}{2}}\exp{ik_rr}\intxt{forma richiesta dalla conservazione dell'energia e della quantit\'a di moto, e ottengo la relazione di dispersione}
-&k_r^2=\frac{\omega^2-\omega_A^2}{c^2}+S_l\frac{N^2-\omega^2}{c^2\omega^2}=\frac{\omega^2}{c^2}(1-\frac{\omega_{l,+}^2}{\omega^2})(1-\frac{\omega_{l,-}^2}{\omega^2})\label{eq:localdispersion}\intxt{e quindi determino le frequenze critiche per i modi gravo-acustici}
+&\xi_r\propto\rho_0\expy{-\frac{1}{2}}\exp{ik_rr},\ P_1\propto\rho_0\expy{\frac{1}{2}}\exp{ik_rr}\intxt{dove la dipendenza dalla densit\'a di equilibrio \'e dovuta alla costanza dell'energia interna e cinetica per unit\'a di volume, $\rho|\dvec{\xi}|^2\approx\frac{P}{\rho}\,d\rho$. Definisco la frequenza critica acustica:}
+&\omega_A=\frac{c_s}{2\densityscale{}}\sqrt{1-2\TDy{r}{\densityscale{}}}\propto T\expy{-\frac{1}{2}}\label{eq:acusticcutoff} \intxt{quindi ottengo la relazione di dispersione:}
+&k_r^2=\frac{\omega^2-\omega_A^2}{c^2}+S_l\frac{N^2-\omega^2}{c^2\omega^2}=\frac{\omega^2}{c^2}(1-\frac{\omega_{l,+}^2}{\omega^2})(1-\frac{\omega_{l,-}^2}{\omega^2})\label{eq:localdispersion}\intxt{dove ho definito le frequenze critiche per i modi gravo-acustici}
 &\omega_{\pm}=\frac{1}{2}(S_l^2+\omega_c^2)\pm\sqrt{\frac{1}{2}(S_l^2+\omega_c^2)^2-N^2S_l^2}
 \end{align}
-
-I modi di oscillazione soddisfano la relazione
-\begin{equation}
-\omega\int_{r_1}^{r_2}\sqrt{1-\frac{\omega_c^2}{\omega^2}-\frac{S_l^2}{\omega^2}(1-\frac{N^2}{\omega^2})}\,\frac{dr}{c}\approx\pi(n-\frac{1}{2})\label{eq:JWKBmode}
-\end{equation}
 
 \section{Cavit\'a risonanti.} \label{sec:resonantcavity} %Definizione frequenze critiche
 
@@ -593,46 +589,46 @@ Core radiativo: i modi g sono confinati tra la la parte centrale dove $g\to0$ e 
 %Segnale doppler periodico: $k_h=\sqrt{k_x^2+k_y^2}$ numero d'onda orizzontale e $\vec{k}=k_r\hat{r}+\vec{k}_h$:  i modi si concentrano in determinate regioni del diagramma  $(k_h,\omega)$.
 %\end{workout}
 
-\subsection{Condizione di risonanza radiale}
+\section{Condizione di risonanza radiale}
 %[Specificare il valore di L: spherical harmonic expansion vs ray picture]
-
-
-
-In \citet{duv82dispersion} si mostra che un grafico di $\frac{\pi(n+\alpha)}{\omega}$ rispetto a $\frac{\omega}{k_h}$ rappresenta i modi p con un'unica curva, per $\alpha$ opportuno, quindi:
-\begin{equation}
-(n+\alpha)\frac{\pi}{\omega}=F'(\frac{\omega}{k_h})=F(\frac{\omega}{L})\label{eq:duvallr}
-\end{equation}
-
-\begin{wrapfigure}[15]{r}{0.45\textwidth}
-\centering
-\includegraphics[keepaspectratio,width=0.4\textwidth]{dispersionDuvall}
-\caption{I modi p sono rappresentati in un unica linea. Da \cite{duv82dispersion}.}
-\end{wrapfigure}
 
 Questo si giustifica considerando che, per l fissato, le frequenze dei modi sono determinate dalla condizione che l'onda interferisca costruttivamente con se stessa, come per una cavita chiusa ad un'estremit\'a. Un'onda stazionaria in direzione radiale implica che l'integrale di $k_r$ nella regione di propagazione fra due zeri consecutivi sia un intero multiplo di $\pi$ mentre $\alpha$ tiene conto del combiamento di fase nella riflessione.
 \begin{equation}
-(n+\alpha)\pi\approx\int_{r_t}^Rk_r\,dr\approx\int_{r_t}^R\frac{\omega}{c_s}\sqrt{1-\frac{S_l^2}{\omega^2}}\,dr\label{eq:duvallexpli}
+\omega\int_{r_1}^{r_2}\sqrt{1-\frac{\omega_A^2}{\omega^2}-\frac{S_l^2}{\omega^2}(1-\frac{N^2}{\omega^2})}\,\frac{dr}{c}\approx\pi(n-\frac{1}{2})\label{eq:JWKBmode}
 \end{equation}
-ho usato la relazione di dispersione per onde acustiche considerando il limite ad alte frequenze di \eqref{eq:approximatedispersion}
+che tiene conto del numero dei nodi radiali e dello sfasamento $\alpha$ prodotto nelle regioni di riflessione.
+
+Questo comportamento \'e stato osservato per i modi p da \citet{duv82dispersion}. Un grafico di $\frac{\pi(n+\alpha)}{\omega}$ rispetto a $\frac{\omega}{k_h}$ rappresenta i modi p con un'unica curva (vedi \ref{fig:duv82dispersion}), per $\alpha$ opportuno con:
+\begin{equation}
+(n+\alpha)\frac{\pi}{\omega}=F'(\frac{\omega}{k_h})=F(\frac{\omega}{L})\label{eq:duvallr}
+\end{equation}
+e usando la relazione di dispersione per onde acustiche \eqref{eq:approximatedispersion}
 \begin{equation}
 k_r^2\frac{\omega^2}{c_s^2}(\frac{S_l^2}{\omega^2}-1)
 \end{equation}
-quindi \'e
-\begin{equation}
-F(w)=\int_{r_t}^R\sqrt{1-\frac{c_s^2}{r^2w^2}}\,\frac{dr}{c_s}\label{eq:duvallf}
-\end{equation}
+si ha:
+\begin{align}
+&F(w)=\int_{r_t}^R\sqrt{1-\frac{c_s^2}{r^2w^2}}\,\frac{dr}{c_s}\label{eq:duvallf}\\
+&(n+\alpha)\pi\approx\int_{r_t}^Rk_r\,dr\approx\int_{r_t}^R\frac{\omega}{c_s}\sqrt{1-\frac{S_l^2}{\omega^2}}\,dr\label{eq:duvallexpli}
+\end{align}
 
-Utilizzando invece il limite per basse frequenze di \eqref{eq:approximatedispersion} per i modi g trovo la relazione di dispersione approssimata per $l\neq0$
+\begin{wrapfigure}[21]{r}{0.5\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.45\textwidth]{dispersionDuvall}
+\caption{I modi p sono rappresentati in un unica linea. Da \cite{duv82dispersion}.}
+\end{wrapfigure}
 
+
+Utilizzando invece il limite per basse frequenze di \eqref{eq:approximatedispersion} per i modi g trovo la relazione di dispersione approssimata per $l\neq0$:
 \begin{equation}
 k_r^2=\frac{S_l^2}{c^2}(\frac{N^2}{\omega^2}-1)\label{eq:dispersionag}
 \end{equation}
 %[introdotta in precedenza \eqref{eq:bvf}]
-e ottengo l'espressione analoga di \eqref{eq:duvallexpli} per i modi g
-\begin{equation}
-\frac{(n+\alpha_g)\pi}{L}\approx\int_{r_1}^{r_2}(\frac{N^2}{\omega^2}-1)\expy{\frac{1}{2}}\,d\ln{r}\label{eq:duvallg}
+e ottengo l'espressione analoga di \eqref{eq:duvallexpli} per i modi g:
+\begin{equation}\label{eq:duvallg}
+\frac{(n+\alpha_g)\pi}{L}\approx\int_{r_1}^{r_2}(\frac{N^2}{\omega^2}-1)\expy{\frac{1}{2}}\,d\ln{r}
 \end{equation}
-con $r_2\approx R_{cz}$.
+con $r_2\approx R_{cz}$ e $\alpha_g$ \'e una fase dovuta alla riflessione e dipende dall'andamento di $N^2$ nella regione di inversione del moto, alla base della zona convettiva.
 
 \section{Espressioni asintotiche delle frequenze dei modi}
 
@@ -658,14 +654,21 @@ F(w)\approx\int_0^R\frac{dr}{c}-w\expy{-1}\frac{\pi}{2}
 e quindi le  frequenze sono equispaziate in n e $\nu_{nl}\approx\nu_{n-1,l+2}$ (per le deviazioni da questa uguaglianza, vedi \eqref{eq:tassoul}):
 \begin{align}
 &\nu_{nl}=\frac{\omega_{nl}}{2\pi}\approx(n+\frac{l}{2}+\frac{1}{4}+\alpha)\Delta\nu\label{eq:freqequi}\\
-&\Delta\nu=[2\int_0^R\frac{dr}{c}]\expy{-1}
+&\Delta\nu=[2\int_0^R\frac{dr}{c}]\expy{-1}\approx\SI{136}{\micro\hertz}
 \end{align}
+
+\begin{wrapfigure}[16]{r}{0.5\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.48\textwidth]{lowlmodes}
+\caption{Densit\'a spettrale modi p di basso grado angolare. Da \cite{chr02helioseismology}.}\label{fig:lowlmodes}
+\end{wrapfigure}
+
 Questo comportamento a bassi l \'e stato osservato da \cite{cla79solar} sulla luce integrata sul intero disco solare.
 
-\begin{workout}[Asymptotic approx modi g]
+%Le osservazioni della luce integrata sull'intero disco selezionano modi di basso grado angolare: \citet{cla79solar} osservano nello spettro Doppler (linee di assorbimento di K neutro: \SI{769.9}{\nano\meter}) della luce integrata sull'intero disco solare dei picchi equi-spaziati circa \SI{68}{\micro\hertz} interpretate come modi p di alto ordine n e basso grado l. I modi di basso ordine radiale l penetrano in profondit\'a e quindi portano informazioni sulle regioni di fusione e la loro evoluzione.
 
-[per basse frequenza: modi g]
-Nell'interno solare approssimo \eqref{eq:JWKBmode} con
+
+Per i modi g approssimo \eqref{eq:JWKBmode} con
 \begin{equation}
 \int_{r_1}^{r_2}\sqrt{\frac{N^2}{\omega}-1}\frac{dr}{r}=\frac{(n-\frac{1}{2})\pi}{L}
 \end{equation}
@@ -675,25 +678,7 @@ I modi g di alto n e basso l soddisfano un'equazione analoga a \eqref{eq:freqequ
 \begin{equation}
 \omega=\frac{L\int_{r_1}^{r_2}N\frac{dr}{r}}{\pi(n+\frac{l}{2}+\alpha_g)}
 \end{equation}
-
-[vedi dasnote]
-
-\end{workout}
-
-\begin{workout}[Osservazioni Claverie79 luce integrata sul disco: coerenza temporale - picchi equispaziati]
-\begin{workout}[power spectral density integrated sunlight large split - small split]
-
-
-\begin{wrapfigure}[16]{r}{0.6\textwidth}
-\centering
-\includegraphics[keepaspectratio,width=0.45\textwidth]{lowlmodes}
-\caption{Spettro modi di basso grado angolare. Da \cite{chr02helioseismology}.}\label{fig:lowlmodes}
-\end{wrapfigure}
-
-\end{workout}
-Le osservazioni della luce integrata sull'intero disco selezionano modi di basso grado angolare: \citet{cla79solar} osservano nello spettro Doppler (linee di assorbimento di K neutro: \SI{769.9}{\nano\meter}) della luce integrata sull'intero disco solare dei picchi equi-spaziati circa \SI{68}{\micro\hertz} interpretate come modi p di alto ordine n e basso grado l. I modi di basso ordine radiale l penetrano in profondit\'a e quindi portano informazioni sulle regioni di fusione e la loro evoluzione.
-\end{workout}
-
+e $\alpha_g\approx-\midfrac{1}{6}$.
 
 %[Inserisci figura khomeagisot]
 %[Inserisci figura pgmodesC]

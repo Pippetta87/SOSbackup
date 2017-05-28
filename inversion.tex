@@ -2,41 +2,22 @@
 
 \begin{document}
 
+In questa parte considero come estrarre informazioni sulla struttura di equilibrio dalle frequenze dei modi osservati: modi distinti sono confinati in cavit\'a di profondit\'a diversa e le ampiezze di oscillazione hanno differente comportamento spaziale, \'e quindi possibile invertire il problema date le frequenze osservate per ricavare il profilo radiale di $(P,\rho,\Gamma_1)$.
 
-\begin{errata}
-Considero la soluzione del problema inverso: come ricavare informazioni sulla struttura solare dalle frequenze osservate. Per quanto riguarda l'inversione asintotica, indipendente dal modello ma afflitta da errori sistematici o differneziale, dipendente da un procedimento di linearizzazione attorno ad un modello ma che riduce in parte l'errore, in questa tesi considero la forma elementare basata sull'inversione della legge di Duvall.
-Il punto di partenza delle tecniche di inversione non asintotiche sono le  differenze tra le frequenze dei modi solari osservati e quelli predetti da un modello solare, e le autofunzioni di un modello solare combinate in opportune funzioni dette kernel attraverso cui si mettono in relazione le differenze tra una coppia di variabili indipendenti, per esempio $(\rho,c^2)$, e differenze nelle frequenze.
-Si pu\'o cos\'i verificare la struttura prevista dal \mss{} tramite una misura indipendente di $d_{cz}$, $Y_{Ph}$, $\rho_b$ e $c_s(r)$, apportare migliorie alla fisica dei modelli solari e restringere l'incertezza su altre grandezze dei modelli quali opacit\'a e $(\frac{Z}{X})_{in}$.
-\end{errata}
-
-\begin{workout}
-reminder: wrapfigure delta vu: piccole differenze, $Q_{nl}$ definito in \eqref{eq:surfaceeffects} tiene conto del fatto che gli errori dovuti alla non adiabaticit\'a sono pi\'u importanti per i modi ad alto l confinati pi\'u in superficie.
-\end{workout}
-
-\begin{workout}
-In questa parte considero come estrarre informazioni sulla struttura di equilibrio dalle frequenze oservate sulla superficie solare. I modi di oscillazione adiabatici sono determinati dal profilo radiale di $P$, $\rho$, $\Gamma_1$; modi distinti sono confinati in cavit\'a di profondit\'a diversa e le ampiezze di oscillazione hanno differente comportamento spaziale, \'e quindi possibile invertire il problema date le frequenze osservate per ricavare il profilo radiale di $(P,\rho,\Gamma_1)$. Le tecniche di inversione si dividono in asintotiche, che usano l'andamento dei modi p ad alte frequenze, e non asintotiche che risolvono le equazioni per i modi di oscillazione linearizzandole attorno ai modi determinati dalla struttura di un modello solare dato.
+ Per quanto riguarda l'inversione asintotica, indipendente dal modello ma afflitta da errori sistematici o differneziale, dipendente da un procedimento di linearizzazione attorno ad un modello ma che riduce in parte l'errore, in questa tesi considero la forma elementare basata sull'inversione della legge di Duvall.
  
-\end{workout}
+Il punto di partenza delle tecniche di inversione non asintotiche sono le  differenze tra le frequenze dei modi solari osservati e quelli predetti da un modello solare, e le autofunzioni di un modello solare combinate in opportune funzioni dette kernel attraverso cui si mettono in relazione le differenze tra una coppia di variabili indipendenti, per esempio $(\rho,c^2)$, e differenze nelle frequenze.
 
-\begin{workout}
-dall'analisi del spettro dei modi \'e possibile determinare lo splitting, dovuto alla rotazione, dei diversi m
-\end{workout}
+Si pu\'o cos\'i verificare la struttura prevista dal \mss{} tramite una misura indipendente di $d_{cz}$, $Y_{Ph}$, $\rho_b$ e $c_s(r)$, apportare migliorie alla fisica dei modelli solari e restringere l'incertezza su altre grandezze dei modelli quali opacit\'a e $(\frac{Z}{X})_{in}$.
 
-\begin{workout}
-determinando con accuratezza necessaria il profilo radiale delle grandezze della struttura solare che determinano i modi determino inoltre le osservabili: $Y$, $R_{cz}$.
-\end{workout}
+\begin{workout}[HSCSM]
 
-\begin{workout}
 La struttura del modello solare standard dipende dagli input fisici e dai parametri utilizzati caratterizzati da incertezza.
 Cosa caratterizza $R_{cz}$??
 
 Composizione omogenea + diffusione.
 
 trasporto energia: convezione.
-
-\end{workout}
-
-\begin{workout}[HSCSM]
 
 L'inversione lineare, che assume dato un modello di equilibrio e le funzioni di struttura $\kappa(T,\rho,X_1)$, $\epsilon(T,\rho,X_1)$, $P(T,\rho,X_1)$, permette di restringere le incertezze sui parametri del modello e sulla fisica usata.
 
@@ -55,10 +36,10 @@ Considero i modi p di alte frequenze quindi \'e plausibile trascurare $N$ e la v
 
 \subsection{Inversione velocit\'a del suono.}
 
-\begin{wrapfigure}[]{r}{0.45\textwidth}
-\centering
-\includegraphics[keepaspectratio,width=0.4\textwidth]{soundspeed}
-\caption{Inversione del profilo radiale della velocit\'a del suono tramite inversione di \refeq{eq:analinversionc}: linea continua. La linea tratteggiata \'e la velocit\'a del suono calcolata sulla base di un modello solare. Da \cite{christensen1985speed}.}
+
+\begin{wrapfigure}[]{r}{0.45\textwidth}\label{fig:soundspeedccm}
+        \includegraphics[width=0.44\textwidth,keepaspectratio]{soundspeed}
+        \caption{Profilo radiale di $c_s^2$ determinato invertendo \eqref{eq:analinversionc} dalle frequenze dei modi osservate. Da \cite{christensen1985speed}.}
 \end{wrapfigure}
 
 Determinando sperimentalmente $F(\frac{\omega}{L})=F(w)$ l'equazione \eqref{eq:duvallf} pu\'o essere invertita analiticamente
@@ -180,23 +161,17 @@ Per modi p di alto n approssimo lo splitting delle frequenze
 \end{align}
 
 
-Deviazioni dalla simmetria sferica introducono una dipendenza delle frequenze dei modi da m. L'effetto della rotazione \'e descritto al primo ordine (in $\Omega$) da 
-\begin{equation}
-\Delta\omega_{nlm}
-\end{equation}
-
-Spesso \'e impossibile misurare lo splitting in m quindi si parametrizzano le frequenze nel multipletto $(n,l)$ tramite:
-\begin{equation}
-\nu_{nlm}=\nu_{nl0}+\sum_{j=1}^{j_{\max}}a_j(n,l)\pol_j^{(l)}(m)\label{eq:freqmulti}
-\end{equation}
-
-
-[fitting power spectra to measure splitting coefficients]
-Le deviazioni dalla simmetria sferica causano uno splitting delle frequenze: rappresento un multipletto di frequenze tramite espansione con base di polinomi appropriata (solitamente si usano i polinomi di Legendre)
-\begin{equation}
-\nu_{nlm}=\nu_{nl0}+\sum_{j=1}^{j_{\max}}a_j(n,l)\pol_j^{(l)}(m)\label{eq:freqmulti}
-\end{equation}
-e ricavo i coefficienti tramite fit con le frequenze osservate; i coefficienti dispari contengono il contributo della rotazione al termine lineare, i coefficienti pari effetti delle asfericit\'a nella struttura solare e effetti quadratici della rotazione.
+%Deviazioni dalla simmetria sferica introducono una dipendenza delle frequenze dei modi da m. L'effetto della rotazione \'e descritto al primo ordine (in $\Omega$) da 
+%Spesso \'e impossibile misurare lo splitting in m quindi si parametrizzano le frequenze nel multipletto $(n,l)$ tramite:
+%\begin{equation}
+%\nu_{nlm}=\nu_{nl0}+\sum_{j=1}^{j_{\max}}a_j(n,l)\pol_j^{(l)}(m)\label{eq:freqmulti}
+%\end{equation}
+%[fitting power spectra to measure splitting coefficients]
+%Le deviazioni dalla simmetria sferica causano uno splitting delle frequenze: rappresento un multipletto di frequenze tramite espansione con base di polinomi appropriata (solitamente si usano i polinomi di Legendre)
+%\begin{equation}
+%\nu_{nlm}=\nu_{nl0}+\sum_{j=1}^{j_{\max}}a_j(n,l)\pol_j^{(l)}(m)\label{eq:freqmulti}
+%\end{equation}
+%e ricavo i coefficienti tramite fit con le frequenze osservate; i coefficienti dispari contengono il contributo della rotazione al termine lineare, i coefficienti pari effetti delle asfericit\'a nella struttura solare e effetti quadratici della rotazione.
 
 \begin{workout}[inversione rotazione 1D vs 1.5d vs 2d]
 Inversione 2d vs 1.5d
@@ -207,9 +182,9 @@ Completare relazioni splitting inversione 1.5d
 \begin{workout}[Inversione 2D]
 
 \begin{align}
-&\omega_{nlm}-&\omega_{nl0}=m\int_0^R\int_0^{\pi}K_{nlm}(r,\theta)\Omega(r,\theta)r\,dr\,d\theta&\intertext{often data doesn't allow determination of individual frequency $\omega_{nlm}$}\\
-&\omega_{nlm}=&\omega_{nl0}+2\pi\sum_{j=1}^{j_{max}a_j(n,l)\mathcal{P}_j^{(l)}(m)}&\intertext{$\Delta\omega$ e $a_j$ sono legatoi da dipendenza lineare.}\\
-&2\pi a_j(n,l)=\sum_m\gamma_j(l,m)(\omega_{nlm}-\omega_{nl0}),\ 2\pi a_{2j+1}(n,l)=\int_0^R\int_0^{\pi}K_{nlj}^{(a)}(r,\theta)\Omega(r,\theta)r\,dr\,d\theta&\intertext{infered angular velocity $\bar{\Omega}(r_0,\theta_0)$ is linearly related to data:}\\
+&\omega_{nlm}-\omega_{nl0}=m\int_0^R\int_0^{\pi}K_{nlm}(r,\theta)\Omega(r,\theta)r\,dr\,d\theta\intxt{often data doesn't allow determination of individual frequency $\omega_{nlm}$}
+&\omega_{nlm}=\omega_{nl0}+2\pi\sum_{j=1}^{j_{max}a_j(n,l)\mathcal{P}_j^{(l)}(m)}\intxt{$\Delta\omega$ e $a_j$ sono legatoi da dipendenza lineare.}
+&2\pi a_j(n,l)=\sum_m\gamma_j(l,m)(\omega_{nlm}-\omega_{nl0}),\ 2\pi a_{2j+1}(n,l)=\int_0^R\int_0^{\pi}K_{nlj}^{(a)}(r,\theta)\Omega(r,\theta)r\,dr\,d\theta\intxt{infered angular velocity $\bar{\Omega}(r_0,\theta_0)$ is linearly related to data:}
 &\bar{\Omega}(r_0,\theta_0)=\int_0^{\pi}\int_0^R\mathcal{K}(r,\theta,r_0,\theta_0)\Omega(r,\theta)r\,dr\,d\theta
 \end{align}
 
