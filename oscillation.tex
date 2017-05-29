@@ -219,6 +219,26 @@ Il comportamento all'aumentare della frequenza \'e dovuto al fatto che per frequ
 
 %in assenza di effetti dissipativi la velocit\'a di fase \'e nulla e la velocit\'a di gruppo infinita, velocit\'a e pressione sono sfasati di $\frac{\pi}{2}$..
 
+\section{Principio variazionale}    %Vedi pg 110 dalsnote.
+
+Riscrivo l'equazione del moto linearizzata \eqref{eq:emper} nella forma
+\begin{equation}
+-\omega^2{\vec{\xi}=\frac{1}{\rho_0}\nabla p'-\vec{g}'-\frac{\rho'}{\rho_0}\vec{g}_0=L(\vec{\xi})\label{eq:eigenhermitian}
+\end{equation}
+\citet{Cha64Variational} ha dimostrato che questo costituisce un problema agli autovalori hermitiano per condizioni ai bordi di pressione e densit\'a nulle quindi $\omega^2$ \'e reale e autofunzioni di frequenza caratteristica diversa sono ortogonali:
+\begin{equation}
+\int\vec{\xi}_i*\vec{\xi}_j\rho\,d^3x=0
+\end{equation}
+
+\'E utile scrivere la relazione tra variazioni nell'operatore lineare $L$ e differenze nelle frequenze caratteristiche:
+\begin{equation}
+(L+\Lvar{L})(\xi+\Lvar{\xi})=-(\omega+\Lvar{\omega})^2(\xi+\Lvar{\xi}) 
+\end{equation}
+quindi considerando i termini lineari nelle variazioni e dato che le frequenze caratteristiche sono stazionarie per variazioni di $\xi$ si ha la relazione:
+\begin{equation}\label{eq:variational}
+\frac{\Lvar{\omega}}{\omega}=-\frac{\int_V\rho\vec{\xi}\Lvar{L}\vec{\xi}\,d^3x}{2\omega^2\int_V\rho\scap{\xi}{\xi}d^3x}
+\end{equation}
+
 
 {\let\clearpage\relax\let\cleardoublepage\relax
 \chapter{Campo di velocit\'a solare.}

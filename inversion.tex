@@ -4,13 +4,13 @@
 
 In questa parte considero come estrarre informazioni sulla struttura di equilibrio dalle frequenze dei modi osservati: modi distinti sono confinati in cavit\'a di profondit\'a diversa e le ampiezze di oscillazione hanno differente comportamento spaziale, \'e quindi possibile invertire il problema date le frequenze osservate per ricavare il profilo radiale di $(P,\rho,\Gamma_1)$.
 
- Per quanto riguarda l'inversione asintotica, indipendente dal modello ma afflitta da errori sistematici o differneziale, dipendente da un procedimento di linearizzazione attorno ad un modello ma che riduce in parte l'errore, in questa tesi considero la forma elementare basata sull'inversione della legge di Duvall.
+Un'inversione indipendente dal modello \'e possibile utilizzando l'approssimazione asintotica, valida nelle regioni in cui le autofunzioni variano molto pi\'u rapidamente delle grandezze di equilibrio e che trascura la perturbazione del potenziale gravitazionale.
  
-Il punto di partenza delle tecniche di inversione non asintotiche sono le  differenze tra le frequenze dei modi solari osservati e quelli predetti da un modello solare, e le autofunzioni di un modello solare combinate in opportune funzioni dette kernel attraverso cui si mettono in relazione le differenze tra una coppia di variabili indipendenti, per esempio $(\rho,c^2)$, e differenze nelle frequenze.
-
-Si pu\'o cos\'i verificare la struttura prevista dal \mss{} tramite una misura indipendente di $d_{cz}$, $Y_{Ph}$, $\rho_b$ e $c_s(r)$, apportare migliorie alla fisica dei modelli solari e restringere l'incertezza su altre grandezze dei modelli quali opacit\'a e $(\frac{Z}{X})_{in}$.
+L'inversione del sistema completo di equazioni dei modi si effettua utilizzando un modello di riferimento, per calcolare frequenze e autofunzioni dei modi, 
 
 \begin{workout}[HSCSM]
+
+Si pu\'o cos\'i verificare la struttura prevista dal \mss{} tramite una misura indipendente di $d_{cz}$, $Y_{Ph}$, $\rho_b$ e $c_s(r)$, apportare migliorie alla fisica dei modelli solari e restringere l'incertezza su altre grandezze dei modelli quali opacit\'a e $(\frac{Z}{X})_{in}$.
 
 La struttura del modello solare standard dipende dagli input fisici e dai parametri utilizzati caratterizzati da incertezza.
 Cosa caratterizza $R_{cz}$??
@@ -32,15 +32,14 @@ Si ricava, usando le espressioni asintotiche \eqref{cowosc:main}, il profilo rad
 
 \section{Inversione della legge di Duvall}
 
-Considero i modi p di alte frequenze quindi \'e plausibile trascurare $N$ e la variazione del potenziale gravitazionale. Le approssimazioni fatte introducono errori sistematici: per i modi pi\'u penetranti nell'interno solare la perturbazione del potenziale gravitazionale influenza sensibilmente $F(\frac{\omega}{L})$, per modi confinati vicino alla superficie $\alpha$ dipende da l.
-
-\subsection{Inversione velocit\'a del suono.}
-
-
 \begin{wrapfigure}[]{r}{0.45\textwidth}\label{fig:soundspeedccm}
         \includegraphics[width=0.44\textwidth,keepaspectratio]{soundspeed}
         \caption{Profilo radiale di $c_s^2$ determinato invertendo \eqref{eq:analinversionc} dalle frequenze dei modi osservate. Da \cite{christensen1985speed}.}
 \end{wrapfigure}
+
+Considero i modi p di alte frequenze quindi \'e plausibile trascurare $N$ e la variazione del potenziale gravitazionale. Le approssimazioni fatte introducono errori sistematici: per i modi pi\'u penetranti nell'interno solare la perturbazione del potenziale gravitazionale influenza sensibilmente $F(\frac{\omega}{L})$, per modi confinati vicino alla superficie $\alpha$ dipende da l.
+
+\subsection{Inversione velocit\'a del suono.}
 
 Determinando sperimentalmente $F(\frac{\omega}{L})=F(w)$ l'equazione \eqref{eq:duvallf} pu\'o essere invertita analiticamente
 
@@ -103,26 +102,6 @@ La funzione $H_2$ \'e determinata dalla regione sotto la fotosfera. \cite{chr92p
 La soluzione del problema inverso per il sistema completo di equazioni si basa sulla linearizzazione delle variazioni attorno ad un modello di cui siano calcolabili le autofunzioni del vettore moto perturbato $\vec{\xi}$: il problema \'e espresso matematicamente da \eqref{eq:variational}. Faccio l'esempio della correzione alle frequenze dei modi causata dalla rotazione.
 
 %Asymptotic approximation for radial eigenfunction (integral equation connectin sound speed $c(r)$ to $\Omega_{nl}$) is inadequate (especially in deep interior)
-
-\section{Principio variazionale}    %Vedi pg 110 dalsnote.
-
-Riscrivo l'equazione del moto linearizzata \eqref{eq:emper} nella forma
-\begin{equation}
--\omega^2\Lvar{\vec{r}}=\frac{1}{\rho}\nabla p'-\vec{g}'-\frac{\rho'}{\rho}\vec{g}=L(\Lvar{\vec{r}})\label{eq:eigenhermitian}
-\end{equation}
-\citet{Cha64Variational} ha dimostrato che questo costituisce un problema agli autovalori hermitiano per condizioni ai bordi di pressione e densit\'a nulle.
-
-Non essendo possibile misurare le autofunzioni delle oscillazioni lineari adiabatiche per l'interno solare si linearizza il problema attorno ad un modello solare per cui siano calcolabili mentre  le oscillazioni di un altro modello o del Sole stesso sono descritte da 
-\begin{equation}
-(L+\Lvar{L})(\xi+\Lvar{\xi})=-(\omega+\Lvar{\omega})^2(\xi+\Lvar{\xi}) 
-\end{equation}
-quindi la variazione delle frequenze \'e determinata da 
-
-\begin{equation}\label{eq:variational}
-\frac{\Lvar{\omega}}{\omega}=-\frac{\int_V\rho\vec{\xi}\Lvar{L}\vec{\xi}\,d^3x}{2\omega^2\int_V\rho\scap{\xi}{\xi}d^3x}
-\end{equation}
-dove $\vec{\xi}=\Lvar{\vec{r}}$ \'e autovettore (perturbazione lagrangiana) del problema agli autovalori \eqref{eq:eigenhermitian}.
-
 
 \section{Inversione della rotazione.}
 
