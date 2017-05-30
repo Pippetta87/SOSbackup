@@ -205,17 +205,17 @@ Le oscillazioni solari sono in prevalenza dovute ad onde acustiche, in cui la fo
 
 In \subref{fig:nrmodesLAWE} sono mostrate le frequenze dei modi soluzioni del sistema \eqref{eigenomega} calcolati usando le grandezze di equilibrio di un modello solare, in  \subref{fig:midlmodes} le frequenze misurate e in \subref{fig:nFreqdiff} le differenze tra frequenze predette e osservate. Le frequenze osservate hanno $\nu\geq\SI{500}{\micro\hertz}$, sono causate da modi p, onde stazionarie che si propagano come onda evanascente nell'atmosfera solare, e modi f, onde di superficie, di alto grado l.
 
-Gli effetti dovuti alla non corretta descrizione fisica dei modi vicino alla superficie, $r>0.95\rsun{}$ sono maggiori per i modi di l elevato perch\'e confinati in gusci meno profondi al crescere di l: per tenere conto di ci\'o si introduce il fattore
-\begin{equation}
-Q_{nl}=\frac{I_{nl}}{I^0_{nl}}\label{eq:surfaceeffects}
-\end{equation}
-dove ho definito l'inerzia del modo
-\begin{equation}
-I_{nl}=\int d^3x\rho_0(\vec{\xi}^*\cdot\vec{\xi})\label{eq:modeinertia}
-\end{equation}
+Gli effetti dovuti alla non corretta descrizione fisica dei modi vicino alla superficie, $r>0.95\rsun{}$ sono maggiori per i modi di l elevato perch\'e confinati in gusci meno profondi al crescere di l e, dato che per eccitazione stocastica l'energia di un modo \'e indipendente da l, si ottiene la dipendenza dell'ampiezza superficiale $V_{nl}$ dall'inerzia del modo $I_{nl}$
+
+\begin{align}
+E_{nl}=\frac{1}{2}V^2I_{nl}
+&\frac{V_{nl}}{V_0(\nu_{nl})}=(\frac{Q_{nl}}{Q_0(\nu_{nl})})\expy{-\midfrac{1}{2}}\intxt{dove ho introdotto l'inerzia e il rapporto d'inerzia $Q_{nl}$}
+&I_{nl}=\int d^3x\rho_0(\vec{\xi}^*\cdot\vec{\xi})\label{eq:modeinertia}\\
+&Q_{nl}=\frac{I_{nl}}{I^0_{nl}}\label{eq:surfaceeffects}
+\end{align}
 $Q_{nl}=1$ per $l=0$ e diminuisce al crescere di $l$.
 
-Il comportamento all'aumentare della frequenza \'e dovuto al fatto che per frequenze maggiori la regione in cui si ha riflessione interna \'e pi\'u in alto dove l'approssimazione adiabatica \'e meno valida; la figura \subref{fig:phasedifference} mostra la propagazione di fase ad alte frequenze dovuta ad effetti dissipativi.
+Il comportamento all'aumentare della frequenza mostrato in \ref{fig:nFreqdiff} \'e dovuto al fatto che per frequenze maggiori la regione in cui si ha riflessione interna \'e pi\'u in alto dove l'approssimazione adiabatica \'e meno valida; la figura \subref{fig:phasedifference} mostra la propagazione di fase ad alte frequenze dovuta ad effetti dissipativi.
 
 %in assenza di effetti dissipativi la velocit\'a di fase \'e nulla e la velocit\'a di gruppo infinita, velocit\'a e pressione sono sfasati di $\frac{\pi}{2}$..
 
@@ -223,7 +223,7 @@ Il comportamento all'aumentare della frequenza \'e dovuto al fatto che per frequ
 
 Riscrivo l'equazione del moto linearizzata \eqref{eq:emper} nella forma
 \begin{equation}
--\omega^2{\vec{\xi}=\frac{1}{\rho_0}\nabla p'-\vec{g}'-\frac{\rho'}{\rho_0}\vec{g}_0=L(\vec{\xi})\label{eq:eigenhermitian}
+-\omega^2\vec{\xi}=\frac{1}{\rho_0}\nabla p'-\vec{g}'-\frac{\rho'}{\rho_0}\vec{g}_0=L(\vec{\xi})\label{eq:eigenhermitian}
 \end{equation}
 \citet{Cha64Variational} ha dimostrato che questo costituisce un problema agli autovalori hermitiano per condizioni ai bordi di pressione e densit\'a nulle quindi $\omega^2$ \'e reale e autofunzioni di frequenza caratteristica diversa sono ortogonali:
 \begin{equation}
@@ -635,7 +635,7 @@ si ha:
 \begin{wrapfigure}[21]{r}{0.5\textwidth}
 \centering
 \includegraphics[keepaspectratio,width=0.45\textwidth]{dispersionDuvall}
-\caption{I modi p sono rappresentati in un unica linea. Da \cite{duv82dispersion}.}
+\caption{I modi p sono rappresentati in un unica linea. Da \cite{duv82dispersion}.}\label{fig:duv82dispersion}
 \end{wrapfigure}
 
 
@@ -665,17 +665,18 @@ dove $\mu_p=\frac{1}{\Gamma_1-1}$ \'e l'inidce politropico efficace della region
 
 I modi di basso l penetrano in profondit\'a, quindi approssimo $r_t\approx0$, e, usando l'espansione
 \begin{equation}
-F(w)\approx\int_0^R\frac{dr}{c}-w\expy{-1}\frac{\pi}{2}
+F(w)\approx\int_0^R\frac{dr}{c}-w\expy{-1}\frac{\pi}{2}\label{eq:Flinear}
 \end{equation}
  risulta
 \begin{equation}
 \int_0^R\frac{dr}{c}-\frac{L}{\omega}\frac{\pi}{2}=\frac{(n+\alpha)\pi}{\omega}
 \end{equation}
 e quindi le  frequenze sono equispaziate in n e $\nu_{nl}\approx\nu_{n-1,l+2}$ (per le deviazioni da questa uguaglianza, vedi \eqref{eq:tassoul}):
-\begin{align}
-&\nu_{nl}=\frac{\omega_{nl}}{2\pi}\approx(n+\frac{l}{2}+\frac{1}{4}+\alpha)\Delta\nu\label{eq:freqequi}\\
-&\Delta\nu=[2\int_0^R\frac{dr}{c}]\expy{-1}\approx\SI{136}{\micro\hertz}
-\end{align}
+
+\begin{equation}
+\nu_{nl}=\frac{\omega_{nl}}{2\pi}\approx(n+\frac{l}{2}+\frac{1}{4}+\alpha)\Delta\nu\label{eq:freqequi}
+\end{equation}
+con $\Delta\nu=[2\int_0^R\frac{dr}{c}]\expy{-1}\approx\SI{136}{\micro\hertz}$.
 
 \begin{wrapfigure}[16]{r}{0.5\textwidth}
 \centering
@@ -698,7 +699,7 @@ I modi g di alto n e basso l soddisfano un'equazione analoga a \eqref{eq:freqequ
 \begin{equation}
 \omega=\frac{L\int_{r_1}^{r_2}N\frac{dr}{r}}{\pi(n+\frac{l}{2}+\alpha_g)}
 \end{equation}
-e $\alpha_g\approx-\midfrac{1}{6}$.
+e $\lim_{n\to\infty}{\alpha_g}\approx-\midfrac{1}{6}$.
 
 %[Inserisci figura khomeagisot]
 %[Inserisci figura pgmodesC]
