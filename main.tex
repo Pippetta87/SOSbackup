@@ -64,7 +64,7 @@
       \counterwithout{table}{chapter}
       \counterwithin{figure}{part}
       \counterwithin{table}{part}
-	\renewcommand{\thesubfigure}{\arabic{figure}.\alph{subfigure}}
+	\renewcommand{\thesubfigure}{\arabic{chapter}-\arabic{figure}.\alph{subfigure}}
 	\renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
 	\renewcommand{\thetable}{\arabic{part}-\arabic{table}}
       }

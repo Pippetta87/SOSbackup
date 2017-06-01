@@ -99,12 +99,16 @@ La funzione $H_2$ \'e determinata dalla regione sotto la fotosfera. \cite{chr92p
 La soluzione del problema inverso per il sistema completo di equazioni si basa sulla linearizzazione delle variazioni attorno ad un modello di cui siano calcolabili le autofunzioni dell'operatore $L$ definito in \eqref{eq:variational}. E quindi si determinano attraverso procedure numeriche le correzioni alla struttura del modello sulla base delle differenze tra frequenze dei modi. Il peso che una perturbazione ha sulla differenze in frequenza \'e determinato dalle autofunzioni dei modi calcolate tramite un modello solare.
 %Asymptotic approximation for radial eigenfunction (integral equation connectin sound speed $c(r)$ to $\Omega_{nl}$) is inadequate (especially in deep interior)
 
+[quantificare errori dovuti a errori misura frequenze e dipendenza modello solare dei kernel]
+I risultati dell'inversione sono affetti da errori sistematici introdotti dalla procedura di inversione ([vedi effetti risoluzione finita sunto pg 1098 $\S 10$ pbp 2000 e DDFR97]).
+[quantificare: effetti risoluzione kernel e tecniche numeriche (regolarizzazione)]
+\ref{fig:deltacwu}
+
+
 \section{Tecniche di inversione numeriche.}
 %vedi JCD 2002 pg 25-32
 
 Elenco alcune tecniche numeriche usate.
-
-I risultati dell'inversione sono affetti da errori sistematici introdotti dalla procedura di inversione ([vedi effetti risoluzione finita sunto pg 1098 $\S 10$ pbp 2000 e DDFR97]).
 
 \subsection{Minimi quadrati}
 
@@ -178,7 +182,11 @@ Usando $(\scap{v_0}{\nabla})\vec{\xi}=im\vec{\Omega}\xi+\vecp{\Omega}{\xi}$, lo 
 \Delta\omega_{\alpha}=\frac{i\int\rho_0\xi_{\alpha}^*(\scap{v_0}{\nabla})\xi_{\alpha}}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}}=\frac{-m\int\rho_0\Omega\xi_{\alpha}^*\xi_{\alpha}\,dV+i\int\rho_0\xi_{\alpha}^*(\vecp{\Omega}{\xi_{\alpha}})\,dV}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}}
 \end{equation}
 
-
+\begin{figure}[!ht]
+\centering
+\includegraphics[keepaspectratio,width=0.8\textwidth]{invertedrotation}
+\caption{Inversione della velocit\'a di rotazione a diverse latitudini. La linea verticale tratteggiata indica la base della zona convettiva. Da \cite{chr02helioseismology}.}
+\end{figure}
 
 %Per rotazione puramente radiale $\Omega(r)$ la relazione tra lo splitting delle frequenze e la rotazione \'e
 %\begin{equation}
@@ -197,11 +205,6 @@ Per modi p di alto n approssimo lo splitting delle frequenze
 
 Le autofunzioni hanno ampiezza apprezzabile nella fascia compresa tra le latitudini $\pm\Theta$: questo permette la risoluzione anche della dipendenza da $\theta$ della rotazione.
 
-\begin{figure}[!h]
-\centering
-\includegraphics[keepaspectratio,width=0.8\textwidth]{invertedrotation}
-\caption{Inversione della velocit\'a di rotazione a diverse latitudini. La linea verticale tratteggiata indica la base della zona convettiva. Da \cite{chr02helioseismology}.}
-\end{figure}
 
 %Deviazioni dalla simmetria sferica introducono una dipendenza delle frequenze dei modi da m. L'effetto della rotazione \'e descritto al primo ordine (in $\Omega$) da 
 %Spesso \'e impossibile misurare lo splitting in m quindi si parametrizzano le frequenze nel multipletto $(n,l)$ tramite:
@@ -250,11 +253,11 @@ e quindi \'e possibile determinare $\Omega_s(r)$.
 
 \section{Correzioni struttura idrostatica.}
 
-Utilizzo le equazioni che descrivono le oscillazioni adiabatiche \eqref{eq:contper}, \eqref{eq:emper}, \eqref{eq:adper}, \eqref{eq:gapert} per scrivre l'equazione del moto variazionale nella forma
+Esplicito la forma della perturbazione $\delta L$ in \eqref{eq:EMvar} introducendo piccole variazioni nel profilo di $\rho$ e $c_s$:
 \begin{equation}
-\Lvar{L}\vec{\xi}=\nabla(\Lvar{c^2}\nabla\cdot\vec{\xi}+\Lvar{\vec{g}}\cdot\vec{
-\xi})+\nabla(\frac{\Lvar{\rho}}{\rho})c^2\nabla\cdot\vec{\xi}+\frac{1}
-{\rho}\nabla\rho\Lvar{c^2}\nabla\vec{\xi}+\Lvar{\vec{g}}\nabla\cdot\vec{\xi}-
+\Lvar{L}\vec{\xi}=\nabla(\Lvar{c_s^2}\nabla\cdot\vec{\xi}+\Lvar{\vec{g}}\cdot\vec{
+\xi})+\nabla(\frac{\Lvar{\rho}}{\rho_0})c^2\nabla\cdot\vec{\xi}+\frac{1}
+{\rho_0}\nabla\rho_0\Lvar{c_s^2}\nabla\vec{\xi}+\Lvar{\vec{g}}\nabla\cdot\vec{\xi}-
 G\nabla\int_V\frac{\nabla\cdot(\Lvar{\rho}\xi)}{|\vec{x}-
 \vec{x}'|}\,d^3x'\label{eq:eqmotvar}
 \end{equation}
@@ -263,16 +266,15 @@ con
 \Lvar{g}(r)=\frac{4\pi G}{r^2}\int_0^r\Lvar{\rho}(s)s^2\,ds
 \end{equation}
 
-Determino le differenze tra le frequenze osservate e quelle relative ad un modello, $\delta\omega_{nl}=\Omega_{\odot}-\Omega_{Mod}$, e le differenze nella stratificazione idrostatica tramite l'inversione per le variabili $(\rho,c^2)$
-
+Utilizzo la formula \eqref{eq:variational} per ricavare le differenze nelle frequenze dei modi dovute a $\delta L$ e specializzata al problema dell'inversione delle differenze $\delta\omega_{nl}=\omega_{\odot}-\omega_{Mod}$ fra frequenze osservate e predette da un modello:
 \begin{align}
 &\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^R[K^{nl}_{c^2,\rho}(r)\frac{\delta_rc^2}{c^2}(r)+K^{nl}_{\rho,c^2}(r)\frac{\delta_r\rho}{\rho}(r)]\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})+\sigma_i\label{eq:invstructure}&\intertext{dove $\sigma_i$ \'e l'incertezza sulle frequenze osservate e}\nonumber\\
 &\frac{\delta_rc^2}{c^2}(r)=\frac{[c_{\odot}^2(r)-c_{mod}^2(r)]}{c^2(r)},\ \frac{\delta_r\rho}{\rho}(r)=\frac{[\rho_{\odot}(r)-\rho_{mod}(r)]}{\rho(r)}
 \end{align}
 
-I kernel $K_Q^j$ dipendono dalle autofunzioni del modello, il termine $E_{nl}\expy{-1}F_{Surf}(\omega_{nl})$, con $E_{nl}=\int_V|\Lvar{\vec{r}}|^2\rho\,dV$, \'e una correzione dovuta alle differenti condizioni fisiche che si incontrano vicino alla superficie: i modi con basse frequenze sono riflessi pi\'u in profondit\'a a $\omega=\omega_c$ e quindi sono meno influenzati dagli strati superficiali.
+I kernel $K_Q^j$ dipendono dalle autofunzioni del modello, il termine $I_{nl}\expy{-1}F_{Surf}(\omega_{nl})$ tiene conto degli errori sistematici dovuti alla non corretta modellizzazione dei modi vicino alla superficie
 
-Esplicito la relazione linearizzata tra le differenze nelle grandezze $\rho$, g, P, $c^2$ e le differenze nelle frequenze sostituendo \eqref{eq:eqmotvar} in \eqref{eq:variational}:
+La forma esplicita dei kernel si ottiene sostituendo \eqref{eq:eqmotvar} in \eqref{eq:variational}:
 \begin{align}
 &F_{Surf}(\omega)-\frac{1}{2\omega^2}(I_1+I_2+I_3+I_4)=E_{nl}\frac{\Lvar{\omega}}{\omega}&\intertext{con}\nonumber\\
 &I_1=-\int_0^R\rho(\scap{\nabla}{\xi})^2\Lvar{c^2}r^2\,dr\\
@@ -301,7 +303,7 @@ Per investigare la composizione \'e necessario usare l'equazione di stato per es
 &\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^R[K^{nl}_{\Gamma_1,\rho}(r)\frac{\delta_r\Gamma_1}{\Gamma_1}(r)+K^{nl}_{\rho,\Gamma_1}(r)\frac{\delta_r\rho}{\rho}(r)]\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})+\sigma_i\label{eq:invdGammadrho}&\intertext{da questa, utilizzando l'equazione di stato per ricavare la dipendenza di $\Gamma_1$ dalla composizione chimica, \'e possibile ottenere il profilo radiale di $Y$: per diminuire gli errori sistematici dovuti alle discrepanze nell'equazione di stato e nella metallicit\'a riscrivo l'ultima espressione nella forma:}\nonumber\\
 &\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^RK^{nl}_{u,Y}(r)\frac{\delta_ru}{u}(r)\,dr+\int K^{nl}_{Y,u}(r)\delta_rY\,dr+\int_0^RK^{nl}_{c^2,\rho}(r)(\frac{\delta\Gamma_1}{\Gamma_1})_{int}\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})\label{eq:diffthermo}&\intertext{dove $(\delta\Gamma_1)_{int}$ \'e l'errore dovuto alle discrepanze nell'equazione di stato a $(P,\rho,Y)$ fissati.}\nonumber
 \end{align}
-La determinazione dell'abbondanza di elio nella regione convettiva \'e dovuta principalmente alla deviazione da $\Gamma_1=\frac{5}{3}$ nella regione di seconda ionizzazione dell'elio.
+La determinazione dell'abbondanza di elio nella regione convettiva \'e dovuta principalmente alla deviazione da $\Gamma_1=\frac{5}{3}$ nella regione di seconda ionizzazione dell'elio; risulta $Y_{CZ}=\num{0.2485+-0.0034}$.
 
 %Esprimendo $\delta_rc^2$ in termini di $\delta_ru=\delta_r(\frac{P}{\rho})$, $\delta_rY$ e $\delta_r\Gamma_1$, riscriviamo \eqref{eq:invstructure}, dove abbiamo utilizzato l'equazione di stato per descrivere la dipendenza di $\Gamma_1$ dall'abbondanza di $\cel{He}{4}{}{}$:
 % Dals Art pg 31-32
@@ -312,24 +314,19 @@ La determinazione dell'abbondanza di elio nella regione convettiva \'e dovuta pr
 \chapter{Vincoli al modello solare dalle osservazioni sismologiche.}%%chapter: vincoli al modello solare: HCSM.
 }
 
-\section{Osservabili sismologiche - approssimazione di scaling??}
+%\section{Osservabili sismologiche - approssimazione di scaling??}
 
-Come vedsremo nelle prossime sezioni tramite la misura delle frequenze dei modi normali \'e possibile verificare la struttura del modello solare standard.
+\begin{figure}[!ht]%{r}{0.5\textwidth}
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{deltacwu}
+        \caption{Differenza relativa nel profilo di $c_s$ risultanei dall'inversione delle differenze in frequenza tra Sole e modello: la linea chiara si riferisce alle frequenze di un modello con composzione GS98, la linea scura a composizione AGSS09. La banda chiara mostra l'errore inerente l'inversione eliosismologica, la banda scura l'incertezza a $1\sigma$ sul profilo di $c_s$ predetto dal modello. Da \cite{villante2014chemical}.}\label{fig:deltacwu}
+\end{figure}
 
-\begin{workout}[Velocit\'a del suono]
-
-[Fig.2, Fig.4 \cite{villante2014chemical}]
-$c^2=\Gamma_1\frac{P}{\rho}$: tramite il MSS \'e possibile trovare la dipendenza di $c$ dai parametri iniziali quindi ristringere le incertezze o determinare con maggiore accuratezza i parametri sulla base del miglior fit coi dati sismologici
-
-
-
-\end{workout}
-
-\begin{workout}[Base zona convettiva: opacit\'a, discontinuit\'a gradiente]
-
- \begin{wraptable}[10]{r}{0.4\textwidth}\label{wrap-tab:escreening}
+\begin{table}[!ht]%{r}{0.7\textwidth}
 
 \pgfplotstabletypeset[
+math/.style={%
+        preproc cell content/.append style={/pgfplots/table/@cell content/.add={$}{$}},
+    },
 every head row/.style={
  before row={\toprule
  %&\multicolumn{4}{c|}{Primordiale}
@@ -347,70 +344,41 @@ display columns/2/.style={column name={$R_{CZ}$}},
 display columns/3/.style={column name={$Y_{CZ}$}},
 display columns/4/.style={column name={$Y_0$}},
 create on use/comp/.style={create col/set list={
-eliosismologico,GS98,AGS05,AGSS09,C+11}},
+inversione,GS98,AGS05,AGSS09,C+11}},
 columns/comp/.style = {column type/.add={|}{}},
 columns/comp/.style={string type},
-columns/Z/X/.style={string type},
+columns/ZX/.style={string type},
+columns/ZX/.append style={math},
 columns/RCZ/.style={string type},
+columns/RCZ/.append style={math},
 columns/YCZ/.style={string type},
+columns/YCZ/.append style={math},
 columns/Y0/.style={string type},
-columns={comp,Z/X,RCZ,YCZ,Y0},
-/pgf/number format/precision=4
+columns/Y0/.append style={math},
+columns={comp,ZX,RCZ,YCZ,Y0},
+%/pgf/number format/precision=4
      ]{CZvsZ.txt} %%%
-     \caption{Da \cite{basu2016global}.}
-\end{wraptable}
+     \caption{Caratteristiche della zona convettiva: confronto tra valore eliosismologico e valore ricavato da modello solare con diverse metallicit\'a del raggio della base della zona convettiva $R_{CZ}$, dell'abbondanza di elio superficiale $Y_{CZ}$ e dell'abbondanza di elio primordiale. Da \cite{basu2016global}.}
+\label{tab:CZZvar}
+\end{table}
 
-\end{workout}
+L'inversione di $c_s$ o $\rho$ mostra se un modello solare riproduce accuratamente la posizione della base della zona convettiva in quanto nella zona convettiva si ha gradiente adiabtico maggiore del gradiente radiativo; diminuzione di opacit\'a, nel caso determinata da una minore metallicit\'a, sposta la base della zona convettiva pi\'u in alto come da tabella \ref{tab:CZZvar}.
 
-\begin{workout}[$\Gamma_1$]
+La figura \ref{fig:deltacwu} mostra che un modello solare con composizione GS98, meno accurata di AGSS09, riproduce il profilo di $c_s$ in maniera pi\'u accurata: ci\'o pu\'o indicare un'opacit\'a da incrementare nel modello. Analogamente la diminuzione dell'opacit\'a diminuisce il gradiente termico nella regione radiativa quindi a pari luminosit\'a si ha un contenuto di idrogeno maggiore.
 
-$\Gamma_1$ regioni ionizzazione
 
-\end{workout}
-
-[variazioni in opacit\'a vs variazioni in $\midfrac{Z}{X}$.]
-[Dipendenza dell'inversione dal modello di riferimento.]
-
-\begin{workout}[opacity changes]
+\begin{comment}
 Opacity changes affect structure radiative interior and position of $R_{cz}$
-\end{workout}
-
-\begin{workout}[effect of Z changes]
 Equation of state depends on number of free particle per unit volume - number density of heavy elements is two order of magnitude smaller than that of He, H: small effect on pressure.
 Ionization os elements causes $\Gamma_1$ to decrease in ionization zone.
 The effect of Z on convection zone is due to effect on EOS.
 CNO cycle increase vs opacity increase: vedi tab.12 bahcall06
-\end{workout}
+\end{comment}
+%[RMS sound speed difference: dominated by contrib from region where Z influence opacity]
+%Region $R\geq0.45$: sources of opacity are BF transition, in inner regions electron scattering and ff transitions.
 
-\begin{workout}[RMS sound speed difference: dominated by contrib from region where Z influence opacity]
-Region $R\geq0.45$: sources of opacity are BF transition, in inner regions electron scattering and ff transitions.
-\end{workout}
-
-\subsection{Caratteristiche zona convettiva}
-
-\begin{wrapfigure}[]{r}{0.4\textwidth}
-\centering
-\includegraphics[keepaspectratio,width=0.35\textwidth]{WrbczHHeioniz}
-\caption{. Da \cite{christensen1991depth}.}
-\end{wrapfigure}
-
-La regione radiativa ha stratificazione sub-adiabatica mentre a partire da $r=R_b$ si ha stratificazione quasi-adiabatica,  $\Gamma_1\approx\frac{5}{3}$: $P\propto\rho\expy{\frac{5}{3}}$. Per identificare il raggio a cui si ha il passaggio dal gradiente di temperatura subadiabatico ad adiabatico \'e utile considerare la funzione
-\begin{equation}
-W=\frac{r^2}{Gm(r)}\TDy{r}{c^2}=\Gamma_1(\invers{\PDly{\rho}{P}}-1)
-\end{equation}
-
-
-\section{Modello solare sismologico.}
-
-\subsection{Approssimazione di scaling.}
-
-Oltre a determinare il valore sismologico corretto delle grandezze meccaniche del modello solare si pu\'o stabilire il range dei parametri del SSM compatibili con le frequenze osservate: si approssima localmente una dipendenza della grandezza $Q$ dai parametri della forma $\frac{Q}{Q_{MSS}}=(\frac{P}{P_{MSS}})\expy{\alpha_{QP}}$ quindi si determina il range dei parametri $p_i=\frac{P^i}{P_{MSS}^i}$ compatibile con $\Omega_i\pm\Delta\Omega_i$, in particolare si usano le grandezze sismologiche pi\'u accurate $Y_{ph},\ R_b,\ \rho_b$.
-
-{Regione intermedia con $0.2<x<0.65$.}
-
-(Vedi: \cite{bah04accurately})
-Sotto la zona convettiva $\Gamma_1=\frac{5}{3}$ con accuratezza migliore di \num{e-3}. L'inversione sismologica \'e accurata: $\frac{\Delta u}{u}\leq5 \permil$. Dalla conoscenza di $u_{\odot}$ si ricava il profilo radiale della velocit\'a del suono tramite $c_s^2=\Gamma_1 u$.
-
+%(Vedi: \cite{bah04accurately})
+%Sotto la zona convettiva $\Gamma_1=\frac{5}{3}$ con accuratezza migliore di \num{e-3}. L'inversione sismologica \'e accurata: $\frac{\Delta u}{u}\leq5 \permil$. Dalla conoscenza di $u_{\odot}$ si ricava il profilo radiale della velocit\'a del suono tramite $c_s^2=\Gamma_1 u$.
 % Vedi H,SManf scilla pg 11-12
 %Le propriet\'a di questa regione sono determinate dall'opacit\'a e quindi, nella misura in cui \'e possibile combinare le differenze nei modi per cancellare il contributo della zona convettiva e considerare il contributo di $\frac{\Lvar{L}}{L}$ una piccola correzione, come accade fuori dalla regione di produzione di energia, \'e possibile studiare gli effetti delle variazioni di opacit\'a sui modi.
 %La quantit\'a da determinare \'e quindi
@@ -418,85 +386,61 @@ Sotto la zona convettiva $\Gamma_1=\frac{5}{3}$ con accuratezza migliore di \num
 %\frac{\delta\kappa}{\kappa}=\frac{\Lvar{\kappa}}{\kappa}+\Dcvar{\PDly{\rho}{\kappa}}{T}+\frac{\Lvar{T}}{T}\Dcvar{\PDly{T}{\kappa}}{\rho}
 %\end{equation}
 %dove $\frac{\Delta\kappa}{\kappa}$ rappresenta la correzione a $\kappa(\rho,T)$ a densit\'a, temperatura e composizione fissate.
-[vedi fig 11/12 \cite{ell95opacity} ??]
-
-
-{Core di fusione $x<0.2$.}
-
-Vedi \cite{ell98relativistic}
-
+%[vedi fig 11/12 \cite{ell95opacity} ??]
+%{Core di fusione $x<0.2$.}
+%Vedi \cite{ell98relativistic}
 %Inversione di $(\delta\Gamma_1)_{int}$ mostra la necessit\'a di tener conto degli effetti relativistici per gli elettroni, che nel core solare hanno energia termica \SI{1.35}{\kilo\ev} approx $0.3\%$ of $m_e$).
-
-\begin{align}
-&\frac{\Lvar{\Gamma_1}}{\Gamma_1}\approx-\frac{2+2X}{3+5X}T&\intertext{dove T \'e in unit\'a di $\frac{m_ec^2}{k}$}\nonumber
-\end{align}
-
+%\begin{align}
+%&\frac{\Lvar{\Gamma_1}}{\Gamma_1}\approx-\frac{2+2X}{3+5X}T&\intertext{dove T \'e in unit\'a di $\frac{m_ec^2}{k}$}\nonumber
+%\end{align}
 %[\cite{ell98relativistic} fig.3 ].
 %[Solar neutrino deduced from solar seismic model]
 
+\begin{comment}
+Oltre a determinare il valore sismologico corretto delle grandezze meccaniche del modello solare si pu\'o stabilire il range dei parametri del SSM compatibili con le frequenze osservate: si approssima localmente una dipendenza della grandezza $Q$ dai parametri della forma $\frac{Q}{Q_{MSS}}=(\frac{P}{P_{MSS}})\expy{\alpha_{QP}}$ quindi si determina il range dei parametri $p_i=\frac{P^i}{P_{MSS}^i}$ compatibile con $\Omega_i\pm\Delta\Omega_i$, in particolare si usano le grandezze sismologiche pi\'u accurate $Y_{ph},\ R_b,\ \rho_b$.
 La temperatura centrale dipende principalmente dall'opacit\'a e dal rapporto $\frac{Z}{X}$. Nella regione centrale si determina
 \begin{align}
 &R_b=R_{b,MSS}z\expy{-0.046}k\expy{-0.0084}\\
 &\rho_b=\rho_{b,MSS}z\expy{0.47}k\expy{0.095}\\
 &Y_{ph}=Y_{ph,MSS}z\expy{0.31}k\expy{0.61}&\intertext{dove k e z si riferiscono a opacit\'a e rapporto metalli/idrogeno.}\nonumber
 \end{align}
-
 Il valore ottimale dei parametri $(k,z)$ si determina minimizzando
 \begin{equation}
 \chi^2(z,k)=\sum_i(\frac{Q_{\odot i}-Q_i(z,k)}{\Delta Q_i})^2
 \end{equation}
 quindi per la temperatura centrale del Sole si ha 
 \begin{equation}
-T_{ES}=T_{MSS}(\frac{Y_{ph\odot}}{Y_{ph,MSS}})\expy{0.2}=\SI{1.587e7}{\kelvin}
+T_{ES}=T_{MSS}(\frac{Y_{ph\odot}}{Y_{ph,MSS}})\expy{0.2}=\SI{1.587e7}{\kelvin}(\pm1.4\%)
 \end{equation}
+\end{comment}
 
 
-\begin{workout}[modello solare sismologico]
-Same structure equations of SSM but input parameters choosen as best fit helioseismic observable
-\end{workout}
-
+%\begin{workout}[modello solare sismologico]
+%Same structure equations of SSM but input parameters choosen as best fit helioseismic observable
+%\end{workout}
 %Indico con $Q(P)$ e $Q_{\odot}$ i valori di una grandezza Q determinati tramite un modello solare, funzione dei parametri del modello, e risultanti dalle correzioni sismologiche a quest ultimi  
 %\begin{equation}
 %&Q_{\odot}=Q(P)+q(\omega)
 %\end{equation}
-
-\subsection{Zona convettiva}
-
-
-[accuratezza inversione $R_b$, $Y_{ph}$, $\rho_b$]
-
-Le osservabili sismologiche che caratterizzano la zona convettiva sono $R_b$, $Y_{ph}$ e $c_b$, $\rho_b$.
-
-\begin{itemize}
-
-\item L'abbondanza di elio \'e determinata da varii autori in un range $Y_{ph}=\numrange{0.226}{0.260}$.
-%Il valore di $Y_{ph}$ inferiore di \numrange{0.27}{0.28}, richiesto per calibrare i modelli con la luminosit\'a attuale, conferma l'importanza della diffusione dell'elio verso il centro di gravit\'a.
-    
-\item Profondit\'a della zona convettiva.
-
-    
-\begin{align*}
-&\frac{R_b}{\rsun{}}=\numrange{0.710}{0.716}\\
-&c_b=\SIrange{0.221}{0.225}{\mega\meter\per\second}
-\end{align*}
-
-\item Determinati tramite inversione il profilo radiale di u e $R_b$ si determina anche la densit\'a della base della zona convettiva:
-\begin{equation*}
-\rho_b=\SIrange{0.185}{0.199}{\gram\per\cubic\cm}
-\end{equation*}
-    
-\end{itemize}
-
-[\cite{deg97helioseismology} fig.3]
-
-
-\subsection{Reazioni nucleari}
-
+%\subsection{Zona convettiva}
+%[accuratezza inversione $R_b$, $Y_{ph}$, $\rho_b$]
+%Le osservabili sismologiche che caratterizzano la zona convettiva sono $R_b$, $Y_{ph}$ e $c_b$, $\rho_b$.
+%\begin{itemize}
+%\item L'abbondanza di elio \'e determinata da varii autori in un range $Y_{ph}=\numrange{0.226}{0.260}$.
+%Il valore di $Y_{ph}$ inferiore di \numrange{0.27}{0.28}, richiesto per calibrare i modelli con la luminosit\'a attuale, conferma l'importanza della diffusione dell'elio verso il centro di gravit\'a.  
+%\item Profondit\'a della zona convettiva.
+%\begin{align*}
+%&\frac{R_b}{\rsun{}}=\numrange{0.710}{0.716}\\
+%&c_b=\SIrange{0.221}{0.225}{\mega\meter\per\second}
+%\end{align*}
+%\item Determinati tramite inversione il profilo radiale di u e $R_b$ si determina anche la densit\'a della base della zona convettiva:
+%\begin{equation*}
+%\rho_b=\SIrange{0.185}{0.199}{\gram\per\cubic\cm}
+%\end{equation*}  
+%\end{itemize}
+%[\cite{deg97helioseismology} fig.3]
+%\subsection{Reazioni nucleari}
 %[figure inversione al variare dei parametri solari da \cite{boothroyd2003our}]
-
-
-
-
 
 
 \end{document}
