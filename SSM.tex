@@ -388,22 +388,24 @@ La velocit\'a degli elementi pesanti, analogamente si trova $w_A(1+2\frac{Y}{X})
 
 La diffusione termica concentra le particelle pi\'u pesanti (e pi\'u cariche) nelle zone pi\'u calde: in presenza di un gradiente termico si ha un trasferimento netto di momento negli urti in direzione del gradiente, in \eqref{eq:friction}, dovuto al maggior numero di particelle energetiche provenienti dalle regioni pi\'u calde che hanno diversa probabilit\'a di trasferimento di momento negli urti nella direzione del gradiente: la sezione d'urto coulombiana dipende dalla velocit\'a relativa $\propto v\expy{-4}$ e la probabilit\'a di collisione $\propto v\expy{-3}$.
 
-%Per un gas a pressione e composizione omogenea scrivo la distribuzione di una specie di particelle tramite un espansione al primo ardine in $\tau$, tempo fra collisioni
-\begin{comment}
+\begin{workout}[Diffusione termica]
+Per un gas a pressione e composizione omogenea scrivo la distribuzione di una specie di particelle tramite un espansione al primo ardine in $\tau$, tempo fra collisioni
+%\begin{comment}
 \begin{align}
 &f=f^{(0)}-KT(\vec{v}\tau\nabla T)\PDof{T}(\frac{f^{(0)}}{KT})=f^{(0)}-\frac{2\lambda}{5Kn_1}(\vec{v}\nabla T)\PDof{T}(\frac{m_1f^{(0)}}{KT})&\intxt{Il momento trasferito per unit\'a di volume tra due specie diverse in presenza di un gradiente termico, a causa degli urti, \'e}\\
 &\vec{P}=n_1n_2\int\int f_1f_2m_{12}\vec{g}\nu(g)\,d^3v_1\,d^3v_2=\frac{2m_{12}}{5K(m_1+m_1)}\PDy{T}{\bar{\nu}}(n_2m_2\lambda_1-n_1m_1\lambda_2)\nabla T\\
 &\overline{\nu}=\frac{1}{3}\int f^{(0)}\frac{m_{12}g^2}{kT}\nu(g)\,d^3g\\
 &\vec{v}_{HHe}^{th}\approx\frac{2}{5kN_Hn_{He}}(\frac{n_{He}m_{He}\vec{q}_H-n_Hm_H\vec{q}_{He}}{m_H+m_{He}})\PDy{T}{\ln{\overline{\nu}}}
 \end{align}
-\end{comment}
+\%end{comment}
 
-%Considero da prima un plasma di \Pelectron e \Pproton; per effetto della dipendenza della frequenza di collisione dalla velocit\'a relativa delle particelle si ha una forza per unit\'a di volume che modifica il campo elettrico:
-%\begin{equation}
-%P_{HHe_{th}}=\alpha_{HHe}n_Hn_{He}\frac{T}{P}\nabla T
-%\end{equation}
+Considero da prima un plasma di \Pelectron e \Pproton; per effetto della dipendenza della frequenza di collisione dalla velocit\'a relativa delle particelle si ha una forza per unit\'a di volume che modifica il campo elettrico:
+\begin{equation}
+P_{HHe_{th}}=\alpha_{HHe}n_Hn_{He}\frac{T}{P}\nabla T
+\end{equation}
+Si tiene conto del flusso di massa, momento ed energia nelle equazioni di conservazione attraverso le equazioni sviluppate da Burgers (1969).
 
-%Si tiene conto del flusso di massa, momento ed energia nelle equazioni di conservazione attraverso le equazioni sviluppate da Burgers (1969).
+\end{workout}
 
 \begin{minipage}{\linewidth}
 \begin{tikzpicture}
@@ -759,7 +761,7 @@ Il rate locale per reazioni non risonanti si scrive approssimativamente come:
 \end{equation}
 $S_{eff}$ \'e il risultato dell'espansione dell'integrando per $\invers{\tau}\ll1$ ed estrapolato a $E_0$ a partire dal valore a $E(0)$ determinato dalla fisica nucleare.
 
-\begin{wrapfigure}[14]{r}{0.4\textwidth}
+\begin{wrapfigure}[16]{r}{0.4\textwidth}
        \includegraphics[width=0.4\textwidth,keepaspectratio]{Rscreening}
        \caption{Andamento della correzione di schermaggio degli elettroni secondo diversi schemi.}
 \end{wrapfigure}
