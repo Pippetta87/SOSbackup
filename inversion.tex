@@ -113,13 +113,14 @@ Elenco alcune tecniche numeriche usate.
 \subsection{Minimi quadrati}
 
 Si parametrizzano le funzioni incognite $\frac{\delta_rc^2}{c^2}$, $\frac{\delta_r\rho}{\rho}$, $F_{Surf}$. Attraverso la tecnica dei minimi quadrati si ottengono i parametri e le correzioni. La funzione da minimizzare \'e
-\begin{align}
-&Y=(N-N_p)\chi^2+\alpha N\int_0^1(x\TDof{x}\frac{\Delta u}{u})^2\,dx\label{minimizerls}&\intertext{con}\nonumber\\
-&\chi^2=\frac{1}{N-N_p}\sum_{\alpha=1}^N(\frac{\Delta\nu_{obs}-\Delta\nu_{fit}}{\sigma})^2_{\alpha}
-\end{align}
-N indica il numero totale di modi $\alpha$, $N_p$ il numero di parametri da determinare, $\Delta\nu_{fit}$ contiene le funzioni incognite opportunamente parametrizzate ed \'e dato da \eqref{eq:diffthermo} o \eqref{eq:invstructure}, $\sigma$ \'e l'errore osservativo e il secondo addendo del lato destro di \eqref{eq:minimizerls} \'e introdotto per ridurre oscillazioni indesiderate nel risultato dell'inverisone con $\alpha$ parametro di regolarizzazione.
-
-
+\begin{equation}
+Y=(N-N_p)\chi^2+\alpha N\int_0^1(x\TDof{x}\frac{\Delta u}{u})^2\,dx\label{eq:minimizerls}
+\end{equation}
+con
+\begin{equation}
+\chi^2=\frac{1}{N-N_p}\sum_{\alpha=1}^N(\frac{\Delta\nu_{obs}-\Delta\nu_{fit}}{\sigma})^2_{\alpha}
+\end{equation}
+N indica il numero totale di modi $\alpha$, $N_p$ il numero di parametri da determinare, $\Delta\nu_{fit}$ contiene le funzioni incognite opportunamente parametrizzate ed \'e dato da \eqref{eq:diffthermo} o \eqref{eq:invstructure}, $\sigma$ \'e l'errore osservativo e il secondo addendo del lato destro di \eqref{eq:minimizerls} \'e introdotto per ridurre oscillazioni indesiderate nel risultato dell'inverisone con $\alpha$, parametro di regolarizzazione, scelto opportunamente.
 
 %Determinazione incertezza.
 %(Dziembowski90, Antia Basu 94), (JCD90).

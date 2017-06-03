@@ -8,12 +8,17 @@
 \usepackage[compact]{titlesec}
 \titleclass{\part}{top}
 
-\titleformat{\part}[block]{\huge\bfseries\centering\vspace*{\fill}}{\thepart}{10pt}{\huge}[\thispagestyle{plain}%
+\titleformat{\part}{\huge\bfseries\centering
+\vspace*{30pt}
+}{\thepart}{10pt}{\huge}[\thispagestyle{plain}%
 %\addtocounter{page}{-1}\vspace*{\fill}\cleardoublepage
 ]
 
+
+%\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp}{0pt}{\Huge\bfseries\barbox}
+
 %\titleformat{\chapter}[block]{\huge}{\chaptertitlename\ \thechapter:\ }{0pt}{\huge}
-\titleformat{\chapter}[block]{\Huge}{\thechapter.\ }{0pt}{\huge} %Titoli capitoli senza capitolo XZ:
+\titleformat{\chapter}{\Huge}{\thechapter.\ }{0pt}{\huge} %Titoli capitoli senza capitolo XZ:
 
 
 \titleformat{\section}{\LARGE}{\thesection: }{0pt}{\LARGE}

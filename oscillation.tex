@@ -209,7 +209,7 @@ Gli effetti dovuti alla non corretta descrizione fisica dei modi vicino alla sup
 
 \begin{align}
 &E_{nl}=\frac{1}{2}V^2I_{nl}\\
-&\frac{V_{nl}}{V_0(\nu_{nl})}=(\frac{Q_{nl}}{Q_0(\nu_{nl})})\expy{-\midfrac{1}{2}}\intxt{dove ho introdotto l'inerzia e il rapporto d'inerzia $Q_{nl}$}
+&\frac{V_{nl}}{V_0(\nu_{nl})}=(Q_{nl})\expy{-\midfrac{1}{2}}\intxt{dove ho introdotto l'inerzia e il rapporto d'inerzia $Q_{nl}$}
 &I_{nl}=\int d^3x\rho_0(\vec{\xi}^*\cdot\vec{\xi})\label{eq:modeinertia}\\
 &Q_{nl}=\frac{I_{nl}}{I^0_{nl}}\label{eq:surfaceeffects}
 \end{align}
@@ -232,7 +232,7 @@ Riscrivo l'equazione del moto linearizzata \eqref{eq:emper} nella forma
 
 \'E utile scrivere la relazione tra variazioni nell'operatore lineare $L$ e differenze nelle frequenze caratteristiche:
 \begin{equation}
-(L+\Lvar{L})(\xi+\Lvar{\xi})=-(\omega+\Lvar{\omega})^2(\xi+\Lvar{\xi}) 
+(L+\Lvar{L})(\xi+\Lvar{\xi})=-(\omega+\Lvar{\omega})^2(\xi+\Lvar{\xi})\label{eq:EMvar}
 \end{equation}
 quindi considerando i termini lineari nelle variazioni e dato che le frequenze caratteristiche sono stazionarie per variazioni di $\xi$ si ha la relazione:
 \begin{equation}\label{eq:variational}
@@ -322,14 +322,15 @@ dove $V_{nl}^2$ e $A_{nl}^2$ sono il valore quadratico medio della velocit\'a e 
 
 \section{Descrizione dello spettro dei modi tramite oscillatori armonici}
 
+
+
+Un modello per determinare l'ampiezza dei modi p considera un insieme di oscillatori armonici di frequenze naturali $\omega_{nl}$, i modi normali, introduce uno smorzamento che tiene conto dell'interazione con moti turbolenti ed altri effetti e una forzante stocastica che tiene conto della generazione di onde, con spettro determinato da velocit\'a e dimensioni della corrente turbolenta, da parte dei moti convettivi superficiali; trascuro gli effetti non lineari e eventuali instabilit\'a intrinseche alle pulsazioni. La sorgente delle eccitazioni stocastiche \'e supposta vicino alla superficie solare ed i modi normali risultano da quelle onde per cui si ha interferenza costruttiva.
+
 \begin{wrapfigure}[25]{r}{0.4\textwidth}
 \centering
 \includegraphics[keepaspectratio,width=0.4\textwidth]{Powerspectraldensity}
 \caption{$\exv{P}=|A(\omega)|^2$ spettro di oscillatore armonico forzato, smorzato di frequenza naturale $\midfrac{\omega_{nl}}{2\pi}$. Da \cite{houdek2006stochastic}.}\label{fig:Powerspectraldensity}
 \end{wrapfigure}
-
-Un modello per determinare l'ampiezza dei modi p considera un insieme di oscillatori armonici di frequenze naturali $\omega_{nl}$, i modi normali, introduce uno smorzamento che tiene conto dell'interazione con moti turbolenti ed altri effetti e una forzante stocastica che tiene conto della generazione di onde, con spettro determinato da velocit\'a e dimensioni della corrente turbolenta, da parte dei moti convettivi superficiali; trascuro gli effetti non lineari e eventuali instabilit\'a intrinseche alle pulsazioni. La sorgente delle eccitazioni stocastiche \'e supposta vicino alla superficie solare ed i modi normali risultano da quelle onde per cui si ha interferenza costruttiva.
-
 
 %La funzione $f(t)$ contiene il contributo dei moti turbolenti e fluttuazioni entropia causati dai moti convettivi.
 
@@ -418,12 +419,6 @@ In \subref{fig:peakDmeasured} si mostra il buon accordo tra $H$ calcolato sulla 
 
 \section{Rotazione}
 
-\begin{wrapfigure}[41]{r}{0.4\textwidth}
-\centering
-\includegraphics[keepaspectratio,angle=0,width=0.3\textwidth]{rotationshiftridge}
-\caption{Diagramma $\omega-k_h$ per osservazione di una regione solare $\ang{;;2}\times\ang{;;2}$ mediata in direzione nord-sud: la misura \'e maggirmente sensibile alle onde che si propagano in direzione est-ovest lungo l'equatore. Si osserva lo spostamento dovuto alla rotazione dalla predizione per modello non-rotante (linee continue). Da \cite{rhodes1979new}.}\label{fig:rotationshiftridge}
-\end{wrapfigure}
-
 La presenza di moti macroscopici modifica il termine d'inerzia $\rho_0\TDy{t}{\vec{v}}$ che per un campo di velocit\'a $\vec{v}_0$ diventa
 \begin{equation}
 \rho_0(\PDof{t}+\scap{v_0}{\nabla})^2\vec{\xi}\label{eq:inertialtermvf}
@@ -434,6 +429,12 @@ Il Sole \'e un rotatore lento: le osservazioni della superficie mostrano una dip
 \frac{\Omega(\theta)}{2\pi}=\SI{451.5}{\nano\hertz}-\SI{65.3}{\nano\hertz}\cos^2{\theta}-\SI{66.7}{\nano\hertz}\cos^4{\theta}
 \end{equation*}
 questa legge \'e soggetta a discrepanze e variazioni temporali.
+
+\begin{wrapfigure}[40]{r}{0.4\textwidth}
+\centering
+\includegraphics[keepaspectratio,angle=0,width=0.3\textwidth]{rotationshiftridge}
+\caption{Diagramma $\omega-k_h$ per osservazione di una regione solare $\ang{;;2}\times\ang{;;2}$ mediata in direzione nord-sud: la misura \'e maggirmente sensibile alle onde che si propagano in direzione est-ovest lungo l'equatore. Si osserva lo spostamento dovuto alla rotazione dalla predizione per modello non-rotante (linee continue). Da \cite{rhodes1979new}.}\label{fig:rotationshiftridge}
+\end{wrapfigure}
 
 Il campo di velocit\'a rotazionale \'e 
 \begin{equation}
@@ -568,12 +569,6 @@ I modi p e g sono confinati in regioni dell'interno solare determinate dalla var
 \end{tikzpicture}
 \end{minipage}
 
-\begin{wrapfigure}[17]{r}{0.4\textwidth}
-\centering
-\includegraphics[keepaspectratio,angle=0,width=0.4\textwidth]{plowertp}
-\caption{Andamento del raggio di inversione del moto in funzione del grado l. Da \cite{dal03notes}.}\label{fig:plowertp}
-\end{wrapfigure}
-
 Le onde acustiche sono confinate in una regione che \'e limitata superiormente dall'aumento della frequenza critica acustica
 \begin{equation}
 \omega_A=\frac{c_s}{2\densityscale{}}\sqrt{1-2\TDy{r}{\densityscale{}}}\propto T\expy{-\frac{1}{2}}\label{eq:acusticcutoff}
@@ -582,6 +577,12 @@ Le onde acustiche sono confinate in una regione che \'e limitata superiormente d
 \begin{equation}
 S_l^2=\frac{l(l+1)c_s^2}{r^2}\label{eq:Lambf}
 \end{equation}
+
+\begin{wrapfigure}[17]{r}{0.4\textwidth}
+\centering
+\includegraphics[keepaspectratio,angle=0,width=0.4\textwidth]{plowertp}
+\caption{Andamento del raggio di inversione del moto in funzione del grado l. Da \cite{dal03notes}.}\label{fig:plowertp}
+\end{wrapfigure}
 
 Maggiore \'e il grado l meno profonda \'e la cavit\'a: le cavit\'a acustiche si estendono nella zone convettiva fino alla profondit\'a in cui la rifrazione dovuta all'aumento della velocit\'a del suono $c_s\propto\sqrt{T}$ causa una riflessione totale dell'onda quando la velocit\'a del suono \'e aumentata fino alla loro velocit\'a di fase orizzontale.
 
