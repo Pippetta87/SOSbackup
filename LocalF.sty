@@ -12,19 +12,6 @@
   \item\relax}
  {\endlist}
  
- \newenvironment{abstractc} %%%% Abstract personalization
- {\small
-  \begin{center}
-  \bfseries Abstract\vspace{-.3em}\vspace{0pt}
-  \end{center}
-  \list{}{%
-    \setlength{\leftmargin}{-0mm}% <---------- CHANGE HERE
-    \setlength{\rightmargin}{\leftmargin}%
-    \thispagestyle{empty}
-  }%
-  \item\relax}
- {\endlist}
- 
 \newcounter{errata}
 \def\theerrata{(\arabic{errata})}
 \newenvironment{errata}[1][ ]%%%% Abstract personalization
@@ -32,12 +19,26 @@
 \color{grey}
 }{\endgroup}
 
-\newcounter{workout}
-\def\theworkout{(\arabic{workout})}
+
+
+\newcommand{\listworkoutname}{List of Workout}
+\newlistof{woc%counter
+}{wol%extension
+}{\listworkoutname}
+\newcommand\addwocontent[1]{%
+\addcontentsline{wol}{chapter}%
+{#1}
+}
+
+
+\newcounter{woc}
+\def\thewoc{(\arabic{woc})}
 \newenvironment{workout}[1][ ]%%%% Abstract personalization
-{\refstepcounter{workout}\begingroup {\theworkout: #1}
+{\refstepcounter{woc}\addwocontent{#1}%
+\begingroup {\thewoc: #1}
 \color{midnightblue}
 }{\endgroup}
+
  
 \renewcommand\cftappendixname{\appendixname~} %% Appendix ???
 
