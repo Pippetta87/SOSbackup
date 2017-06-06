@@ -1,6 +1,11 @@
 \documentclass[twoside,11pt,openany,fleqn]{memoir}%%% TESI
 %openany
 
+%% rimuove workout errata dalla versione da consegnare
+\def\versione{bozza}%%VERSIONE
+\def\bozza{bozza}
+\def\consegna{consegna}
+
 %% colors
 \usepackage[usenames,dvipsnames]{xcolor}
 \definecolor{antiquefuchsia}{rgb}{0.57, 0.36, 0.51}
@@ -65,8 +70,8 @@
       \counterwithout{table}{chapter}
       \counterwithin{figure}{part}
       \counterwithin{table}{part}
-	\renewcommand{\thesubfigure}{\arabic{chapter}-\arabic{figure}.\alph{subfigure}}
-	\renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
+	\renewcommand{\thesubfigure}{\arabic{part}-\arabic{figure}.\alph{subfigure}}
+	\renewcommand{\thefigure}{\arabic{part}-\arabic{figure}}
 	\renewcommand{\thetable}{\arabic{part}-\arabic{table}}
       }
     \makeatother
@@ -84,7 +89,7 @@
 \frontmatter
 \pagenumbering{roman}
 \maketitle
-
+ 
 \tableofcontents*
 
 %\clearpage %%% SOMMARIO
@@ -123,6 +128,9 @@
 
 \printbibliography
 
+\ifx\versione\bozza
 \woc
+\erratac
+\fi
 
 \end{document}

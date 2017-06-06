@@ -99,6 +99,23 @@ La funzione $H_2$ \'e determinata dalla regione sotto la fotosfera. \cite{chr92p
 La soluzione del problema inverso per il sistema completo di equazioni si basa sulla linearizzazione delle variazioni attorno ad un modello di cui siano calcolabili le autofunzioni dell'operatore $L$ definito in \eqref{eq:variational}. E quindi si determinano attraverso procedure numeriche le correzioni alla struttura del modello sulla base delle differenze tra frequenze dei modi. Il peso che una perturbazione ha sulla differenze in frequenza \'e determinato dalle autofunzioni dei modi calcolate tramite un modello solare.
 %Asymptotic approximation for radial eigenfunction (integral equation connectin sound speed $c(r)$ to $\Omega_{nl}$) is inadequate (especially in deep interior)
 
+In \ref{fig:deltacwu} la banda chiara attorno allo zero, che indica il modello solare in perfetto accordo con le osservazioni sismologiche, mostra l'incertezza nell'inversione della velocit\'a del suono; essa \'e dovuta a
+
+\begin{itemize}
+
+\item Incertezze nelle frequenze dei modi osservate. Oltre all'incertezza statistica propria del determinato strumento \'e possibile valutare gli effette di eventuali errori sistematici confrontando i risultati dell'inversione per set di frequenze ottenute con strumenti diversi: la differenza nella velocit\'a del suono \'e minore di $0.02\%$.
+
+\begin{workout}[Accuratezza frequenze osservate]
+!
+\end{workout}
+
+
+\item Incertezze inerenti la tecnica di inversione.
+
+\item Incertezze legate alla dipendenza da un modello solare per il calcolo dei kernel in \eqref{eq:invstructure}, \eqref{eq:invdGammadrho}, \eqref{eq:splitfreqrotation}.
+
+\end{itemize}
+
 \begin{workout}[incertezze]
 [quantificare errori dovuti a errori misura frequenze e dipendenza modello solare dei kernel]
 I risultati dell'inversione sono affetti da errori sistematici introdotti dalla procedura di inversione ([vedi effetti risoluzione finita sunto pg 1098 $\S 10$ pbp 2000 e DDFR97]).
@@ -109,28 +126,64 @@ I risultati dell'inversione sono affetti da errori sistematici introdotti dalla 
 \section{Tecniche di inversione numeriche.}
 %vedi JCD 2002 pg 25-32
 
-Elenco alcune tecniche numeriche usate.
+Elenco alcune tecniche numeriche usate. Considero per sempicit\'a una sola funzione da invertire $\frac{\delta f}{f}$, legata a $\delta\omega$ da \eqref{eq:variational}.
 
-\subsection{Minimi quadrati}
+\begin{workout}[Forma splitting frequenze: principio variazionale]
 
-Si parametrizzano le funzioni incognite $\frac{\delta_rc^2}{c^2}$, $\frac{\delta_r\rho}{\rho}$, $F_{Surf}$. Attraverso la tecnica dei minimi quadrati si ottengono i parametri e le correzioni. La funzione da minimizzare \'e
+$\midfrac{\delta\omega}{\omega}$ da \eqref{eq:variational}: forma esplicita dipende dalle quantit\'a da invertire.
+
+Due funzioni indipendenti di $\rho$, $P$, $\Gamma_1$ determinano i modi di oscillazione quindi indico con $\frac{\delta f_1}{f_1}$ e $\frac{\delta f_2}{f_2}$
+
+\end{workout}
+
+
+\begin{workout}[Inversione RLS/$\chi^2$ vs SOLA]
+
+Due funzioni indipendenti di $\rho$, $P$, $\Gamma_1$ determinano i modi di oscillazione quindi indico con $\frac{\delta f_1}{f_1}$ e $\frac{\delta f_2}{f_2}$
+
+\end{workout}
+
+\subsection{RLS}
+
+\begin{workout}[parametrizzo incognite tramite polinomi: legendre e cubic spline]
+
+Usando la tecnica del minimo $\chi^2$ regolarizzato si parametrizzano le funzioni incognite $\frac{\delta f_1}{f_1}$, $\frac{\delta f_2}{f_2}$ e $F_{Surf}$. Attraverso la tecnica dei minimi quadrati si determinano i coefficienti dei polinomi.
+
+\end{workout}
+
+Usando la tecnica del minimo $\chi^2$ regolarizzato si parametrizza la funzione incognita $\frac{\delta f}{f}$.
+
+La funzione da minimizzare \'e
 \begin{equation}
-Y=(N-N_p)\chi^2+\alpha N\int_0^1(x\TDof{x}\frac{\Delta u}{u})^2\,dx\label{eq:minimizerls}
+Y=(N-N_p)\chi^2+\alpha N\int_0^1(x\TDof{x}\frac{\Delta f}{f})^2\,dx\label{eq:minimizerls}
 \end{equation}
 con
 \begin{equation}
-\chi^2=\frac{1}{N-N_p}\sum_{\alpha=1}^N(\frac{\Delta\nu_{obs}-\Delta\nu_{fit}}{\sigma})^2_{\alpha}
+\chi^2=\frac{1}{N-N_p}\sum_{\alpha=1}^N(\frac{\delta\omega_{obs}-\delta\omega_{fit}}{\sigma})^2_{\alpha}
 \end{equation}
-N indica il numero totale di modi $\alpha$, $N_p$ il numero di parametri da determinare, $\Delta\nu_{fit}$ contiene le funzioni incognite opportunamente parametrizzate ed \'e dato da \eqref{eq:diffthermo} o \eqref{eq:invstructure}, $\sigma$ \'e l'errore osservativo e il secondo addendo del lato destro di \eqref{eq:minimizerls} \'e introdotto per ridurre oscillazioni indesiderate nel risultato dell'inverisone con $\alpha$, parametro di regolarizzazione, scelto opportunamente.
+N indica il numero totale di modi $\alpha$, $N_p$ il numero di parametri da determinare, $\Delta\nu_{fit}$ contiene la funzione incognita opportunamente parametrizzata e il secondo addendo del lato destro di \eqref{eq:minimizerls} \'e introdotto per ridurre oscillazioni indesiderate nel risultato dell'inverisone con $\alpha$, parametro di regolarizzazione, scelto opportunamente.
 
+\begin{workout}[Incertezze inerenti RLS]
+parametro regolarizzazione, numbers of bins, number of legendre polynomials
+\end{workout}
 %Determinazione incertezza.
 %(Dziembowski90, Antia Basu 94), (JCD90).
+
+\begin{workout}[Inversion: forma esplicita delta freq]
+ed \'e dato da \eqref{eq:diffthermo} o \eqref{eq:invstructure}, $\sigma$ \'e l'errore osservativo
+\end{workout}
 
 \subsection{Subtractive Optimally Localized Averaging}
 
 \begin{workout}[Risoluzone: largezza dei kernel]
 Risoluzione inversione \'e caratterizzata dalla larghezza dei kernel: il valore della grandezza a $r_0$ \'e una media sulla regione in cui il kernel ha il valore massimo.
 \end{workout}
+
+\begin{workout}[OLA]
+$\mathcal{K}(r,r_0)\approx\delta(\vec{r}-\vec{r}_0)$, $\int_0^R\mathcal{K}(r,r_0)\,dr=1$
+\end{workout}
+
+\begin{workout}[SOLA $f_i$ / OLA]
 
 Per determinare in generale la funzione $\frac{\delta f_1(r)}{f_1(r)}$ scelgo i $c_i(r_0)$ tali che $\sum c_i(r_0)\frac{\delta\omega_i}{\omega_i}$ fornisca una media del valore di $\frac{\delta f_1(r)}{f_1(r)}$ in $r=r_0$:
 
@@ -140,20 +193,44 @@ Per determinare in generale la funzione $\frac{\delta f_1(r)}{f_1(r)}$ scelgo i 
 
 Il primo termine approssima il valore di $\frac{\delta f_1}{f_1}$ pesato dal kernel $\mathcal{K}(r,r_0)=\sum_ic_i(r_0)K_{1,2}^i(r)$, il secondo tiene conto dell'influenza che hanno le discrepanze della seconda funzione su quelle della funzione che abbiamo scelto di invertire pesate da $\mathcal{L}_{21}(r_0,r)=\sum_ic_i(r_0)K_{21}^i(r)$, il terzo \'e il termine di superficie: i coefficienti $c_i(r_0)$ sono scelti in maniera da riprodurre la funzione target, minimizzare la contaminazione delle $\frac{\delta f_2}{f_2}$ via $\mathcal{L}_{21}$ e il rumore.
 
+\end{workout}
+
+Scelgo dei coefficienti $c_i(r_0)$ tali che $\sum c_i(r_0)\frac{\delta\omega_i}{\omega_i}$ fornisca una media del valore di $\frac{\delta f(r)}{f(r)}$ in $r=r_0$:
+
+\begin{equation}\label{eq:SOLAfmean}
+\sum_ic_i(r_0)\frac{\delta\omega_i}{\omega_i}=\int_0^R\sum_ic_i(r_0)K^i(r)\frac{\delta f(r)}{f(r)}\,dr=\exv{\frac{\delta f(r)}{f(r)}}
+\end{equation}
+
+e i coefficienti $c_i(r_0)$ sono determina minimizzando la funzione
+
+\begin{equation}\label{eq:SOLAcir0min}
+\int_0^R[\mathcal{K}(r_0,r)-\mathcal{T}(r_0,r)]^2\,dr+\mu\sum_i\sigma_ic_i(r_0)c_j(r_0)\\
+\end{equation}
+con $\mathcal{K}(r_0,r)=\sum_ic_i(r_0)K^i(r)$ e la funzione target $\mathcal{T}(r_0,r)$, la cui larghezza \'e anch'essa parametro del fit, determina la natura precisa della localizzazione.
+
+\begin{errata}[Funzione da minimizzare in SOLA: manca la funzione terget]
 I parametri si trovano minimizzando
 \begin{align*}
 &\int(\sum_ic_iK_{12}^i)^2\,dr+\beta\int(\sum_ic_iK_{21}^1)^2\,dr+\mu\sum_{ij}c_ic_jE_{ij}
 \end{align*}
 $\beta$ \'e un parametro per il contributo del secondo termine, $E$ \'e una matrice che rappresenta le incertezze sulle frequenze osservate.
 
-Illustro la tecnica SOLA per determinare $\frac{\delta_rc^2}{c^2}$: si formano delle combinazioni lineari di $\frac{\Lvar{\omega_i}}{\omega_i}$ pesate da coefficienti $c_i(r_0)$ tali che $\frac{\Lvar{c^2}}{c^2}$ sia centrato attorno $r_0$ e che gli altri termini in \eqref{eq:invstructure} siano soppressi, queste compongo un averaging kernel $\mathcal{K}_{c^2,\rho}(r_0,r)=\sum_ic_i(r_0)K_{c^2,\rho}^i(r)$, con $\int_0^R\mathcal{K}(r_0,r)\,dr$. La natura precisa della localizzazione \'e determinata da una funzione target la cui larghezza \'e anch'essa parametro del fit.
+\end{errata}
+
+Illustro la tecnica SOLA per determinare $\frac{\delta_rc^2}{c^2}$: si formano delle combinazioni lineari di $\frac{\Lvar{\omega_i}}{\omega_i}$ pesate da coefficienti $c_i(r_0)$ tali che $\frac{\Lvar{c^2}}{c^2}$ sia centrato attorno $r_0$ e che gli altri termini in \eqref{eq:invstructure} siano soppressi, queste compongo un averaging kernel $\mathcal{K}_{c^2,\rho}(r_0,r)=\sum_ic_i(r_0)K_{c^2,\rho}^i(r)$, con $\int_0^R\mathcal{K}(r_0,r)\,dr=1$.
+
+Determino i coefficienti minimizzando l'espressione
+\begin{equation}
+\int_0^R[\mathcal{K}_{c^2,\rho}(r_0,r)-\mathcal{T}(r_0,r)]^2\,dr+\beta\int_0^R\mathcal{L}_{\rho,c^2}(r_0,r)\,dr+\mu\sum_i\sigma_ic_i(r_0)c_j(r_0)
+\end{equation}
+dove
+\begin{equation}
+\mathcal{L}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)
+\end{equation}
+il kernel cross-term  contralla i contributi indesiderati di $\frac{\delta_r\rho}{\rho}$.
 
 
-Determino i varii coefficienti minimizzando l'espressione
-\begin{align}
-&\int_0^R[\mathcal{K}_{c^2,\rho}(r_0,r)-\mathcal{T}(r_0,r)]^2\,dr+\beta\int_0^R\mathcal{G}_{\rho,c^2}(r_0,r)\,dr+\mu\sum_i\sigma_ic_i(r_0)c_j(r_0)\\
-&\mathcal{G}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)&\intertext{il kernel cross-term  contralla i contributi indesiderati di $\frac{\delta_r\rho}{\rho}$}\nonumber
-\end{align}
+Il primo termine approssima il valore di $\frac{\delta c^2}{c^2}$ pesato dal kernel $\mathcal{K}(r,r_0)=\sum_ic_i(r_0)K_{c^2,\rho}^i(r)$, il secondo tiene conto dell'influenza che hanno le discrepanze della seconda funzione su quelle della funzione che abbiamo scelto di invertire pesate da $\mathcal{L}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)$, il terzo \'e il termine di superficie: i coefficienti $c_i(r_0)$ sono scelti in maniera da riprodurre la funzione target, minimizzare la contaminazione delle $\frac{\delta \rho}{\rho}$ via $\mathcal{L}_{\rho,c^2}$ e il rumore.
 
 
 \begin{comment}
@@ -174,40 +251,6 @@ $\frac{\delta\rho}{\rho}$&&&\\
 
 \section{Inversione della rotazione.}
 
-Considero il termine dovuto alla rotazione $\vec{v_0}=\vecp{\Omega}{r}$ come una piccola correzione al modello che modifica le frequenze dei modi $\omega_{(l,m)}+\Delta\omega_{(l,m)}$. L'equazione del moto al primo ordine nella perturbazione, con $\alpha=(l,m)$, \'e
-\begin{equation}
-\rho_0(\omega_{\alpha}^2+2\omega_{\alpha}\Delta\omega_{\alpha})\vec{\xi}=\nabla P_1-\frac{\rho_1}{\rho_0}\nabla P_0+\rho_0\nabla\Phi_1+2i\omega_{\alpha}\rho_0(\scap{v_0}{\nabla})\vec{\xi}
-\end{equation}
-dove ho esplicitato il termine inerziale \eqref{eq:inertialtermvf}.
-Usando $(\scap{v_0}{\nabla})\vec{\xi}=im\vec{\Omega}\xi+\vecp{\Omega}{\xi}$, lo splitting dovuto alla rotazione \'e:
-\begin{equation}
-\Delta\omega_{\alpha}=\frac{i\int\rho_0\xi_{\alpha}^*(\scap{v_0}{\nabla})\xi_{\alpha}}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}}=\frac{-m\int\rho_0\Omega\xi_{\alpha}^*\xi_{\alpha}\,dV+i\int\rho_0\xi_{\alpha}^*(\vecp{\Omega}{\xi_{\alpha}})\,dV}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}}
-\end{equation}
-
-\begin{figure}[!ht]
-\centering
-\includegraphics[keepaspectratio,width=0.8\textwidth]{invertedrotation}
-\caption{Inversione della velocit\'a di rotazione a diverse latitudini. La linea verticale tratteggiata indica la base della zona convettiva. Da \cite{chr02helioseismology}.}
-\end{figure}
-
-%Per rotazione puramente radiale $\Omega(r)$ la relazione tra lo splitting delle frequenze e la rotazione \'e
-%\begin{equation}
-%\Delta\omega_{\alpha}=-m\frac{\int_0^{\rsun{}}\rho_0\Omega\{|\xi_r-\xi_h|^2+[l(l+1)-2]|\xi_h|^2\}r^2\,dr}{\int_0^{\rsun{}}\rho_0\{|\xi_r|^2+l(l+1)|\xi_h|^2\}r^2\,dr}=\int_0^{\rsun{}}K_{\alpha}(r)\Omega(r)\,dr
-%\end{equation}
-%Any given $\Delta\omega_{\alpha}$ samples angular velocity in the depth range corresponding to $\xi_{\alpha}$.
-
-La velocit\'a angolare contribuisce a $\Delta\omega_{\alpha}$ negli strati in cui $\xi_{\alpha}$ \'e apprezzabile. Nel caso di rotazione dipendente solo da r si ha che $\Delta\omega_{\alpha}$ \'e lineare in m: ho $2l+1$ frequenze equispaziate.
-
-Per modi p di alto n approssimo lo splitting delle frequenze
-\begin{align}
-&\delta\omega_{nlm}\approx m\frac{\int_{r_t}^R\Omega(R)\,\frac{dr}{c}}{\int_{r_t}^R\frac{dr}{c}}\intxt{per $\Omega(r)$ puramente radiale, cio\'e  per una media sulla latitudine, mentre per velocit\'a angolare generale $\Omega(\theta,\phi)$:}
-&\delta\omega_{nlm}\approx m\frac{\int_{\cos{\Theta}}^{-\cos{\Theta}}(\cos^2{\Theta}-\cos^2{\theta})\expy{-\frac{1}{2}}\int_{r_t}^R(1-\frac{L^2c^2}{r^2\omega^2})\expy{\frac{1}{2}}\Omega(r,\theta)\frac{dr}{c}\,d(\cos{\theta})}{\int_{r_t}^R(1-\frac{L^2c^2}{r^2\omega^2})\expy{\frac{1}{2}}\,\frac{dr}{c}}\intxt{dove}
-&\Theta=\sin^{-1}{(\frac{m}{L}).}
-\end{align}
-
-Le autofunzioni hanno ampiezza apprezzabile nella fascia compresa tra le latitudini $\pm\Theta$: questo permette la risoluzione anche della dipendenza da $\theta$ della rotazione.
-
-
 %Deviazioni dalla simmetria sferica introducono una dipendenza delle frequenze dei modi da m. L'effetto della rotazione \'e descritto al primo ordine (in $\Omega$) da 
 %Spesso \'e impossibile misurare lo splitting in m quindi si parametrizzano le frequenze nel multipletto $(n,l)$ tramite:
 %\begin{equation}
@@ -219,6 +262,12 @@ Le autofunzioni hanno ampiezza apprezzabile nella fascia compresa tra le latitud
 %\nu_{nlm}=\nu_{nl0}+\sum_{j=1}^{j_{\max}}a_j(n,l)\pol_j^{(l)}(m)\label{eq:freqmulti}
 %\end{equation}
 %e ricavo i coefficienti tramite fit con le frequenze osservate; i coefficienti dispari contengono il contributo della rotazione al termine lineare, i coefficienti pari effetti delle asfericit\'a nella struttura solare e effetti quadratici della rotazione.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[keepaspectratio,width=0.8\textwidth]{invertedrotation}
+\caption{Inversione della velocit\'a di rotazione a diverse latitudini. La linea verticale tratteggiata indica la base della zona convettiva. Da \cite{chr02helioseismology}.}
+\end{figure}
 
 Per inversione 2D, cio\'e che considera la dipendenza da $(r,\theta)$, si esprimono direttamente le differenze in frequenze:
 \begin{equation}
@@ -250,66 +299,6 @@ e quindi \'e possibile determinare $\Omega_s(r)$.
 
 %Per investigare la dipendenza $\Omega(r,\theta)$ devo considerare le $2l+1$ frequenze.
 %latitudinal shear causa una deviazione da frequenze equispaziate.
-
-%% corretto fin qui
-
-\section{Correzioni struttura idrostatica.}
-
-Esplicito la forma della perturbazione $\delta L$ in \eqref{eq:EMvar} introducendo piccole variazioni nel profilo di $\rho$ e $c_s$:
-\begin{equation}
-\Lvar{L}\vec{\xi}=\nabla(\Lvar{c_s^2}\nabla\cdot\vec{\xi}+\Lvar{\vec{g}}\cdot\vec{
-\xi})+\nabla(\frac{\Lvar{\rho}}{\rho_0})c^2\nabla\cdot\vec{\xi}+\frac{1}
-{\rho_0}\nabla\rho_0\Lvar{c_s^2}\nabla\vec{\xi}+\Lvar{\vec{g}}\nabla\cdot\vec{\xi}-
-G\nabla\int_V\frac{\nabla\cdot(\Lvar{\rho}\xi)}{|\vec{x}-
-\vec{x}'|}\,d^3x'\label{eq:eqmotvar}
-\end{equation}
-con
-\begin{equation}
-\Lvar{g}(r)=\frac{4\pi G}{r^2}\int_0^r\Lvar{\rho}(s)s^2\,ds
-\end{equation}
-
-Utilizzo la formula \eqref{eq:variational} per ricavare le differenze nelle frequenze dei modi dovute a $\delta L$ e specializzata al problema dell'inversione delle differenze $\delta\omega_{nl}=\omega_{\odot}-\omega_{Mod}$ fra frequenze osservate e predette da un modello:
-\begin{align}
-&\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^R[K^{nl}_{c^2,\rho}(r)\frac{\delta_rc^2}{c^2}(r)+K^{nl}_{\rho,c^2}(r)\frac{\delta_r\rho}{\rho}(r)]\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})+\sigma_i\label{eq:invstructure}&\intertext{dove $\sigma_i$ \'e l'incertezza sulle frequenze osservate e}\nonumber\\
-&\frac{\delta_rc^2}{c^2}(r)=\frac{[c_{\odot}^2(r)-c_{mod}^2(r)]}{c^2(r)},\ \frac{\delta_r\rho}{\rho}(r)=\frac{[\rho_{\odot}(r)-\rho_{mod}(r)]}{\rho(r)}
-\end{align}
-
-I kernel $K_Q^j$ dipendono dalle autofunzioni del modello, il termine $I_{nl}\expy{-1}F_{Surf}(\omega_{nl})$ tiene conto degli errori sistematici dovuti alla non corretta modellizzazione dei modi vicino alla superficie
-
-La forma esplicita dei kernel si ottiene sostituendo \eqref{eq:eqmotvar} in \eqref{eq:variational}:
-\begin{align}
-&F_{Surf}(\omega)-\frac{1}{2\omega^2}(I_1+I_2+I_3+I_4)=E_{nl}\frac{\Lvar{\omega}}{\omega}&\intertext{con}\nonumber\\
-&I_1=-\int_0^R\rho(\scap{\nabla}{\xi})^2\Lvar{c^2}r^2\,dr\\
-&I_2=\int_0^R\xi_r[\rho\scap{\nabla}{\xi}+\nabla\cdot(\rho\vec{\xi})]\Lvar{g}r^2\,dr\\
-&I_3=\int_0^R\rho c^2\xi_r\scap{\nabla}{\xi}\PDof{r}(\frac{\Lvar{\rho}}{\rho})r^2\,dr\\
-\begin{split}
-&I_4=\frac{4\pi G}{2l+1}\int_0^R\divof{}(\rho\vec{\xi})r^2\,dr[\frac{1}{r\expy{l+1}}\int_0^rs\expy{l+2}(\rho\divec{\xi}-\rho\TDy{s}{\xi_r}-\frac{l+2}{s}\rho\xi_r)\frac{\Lvar{\rho}}{\rho}\,ds\\
-&+r^l\int_r^R\frac{1}{s\expy{l-1}}(\rho\divec{\xi}-\rho\TDy{s}{\xi_r}-\frac{1-l}{s}\rho\xi_r)\frac{\Lvar{\rho}}{\rho}\,ds]
-\end{split}
-\end{align}
-
-
-%Nel caso l'entit\'a delle correzioni a $\rho$ e $c^2$ non giustifichi l'approssimazione lineare si ha un miglior accordo definendo la differenza tramite $\frac{\Lvar{f}}{f}=\frac{f-f_0}{\sqrt{ff_0}}$.
-
-Le correzioni alle pressione si ottengono dall'equazione di equilibrio idrostatico \eqref{eq:fidroequilibrio}
-\begin{equation}
-\Lvar{P}=\int_r^R(g\Lvar{\rho}+\rho\Lvar{g})\,dr\label{eq:pressurecorrho}
-\end{equation}
-
-
-\subsection{Inversione equazione di stato e composizione.}
-
-Per investigare la composizione \'e necessario usare l'equazione di stato per esplicitare $\Gamma_1(P,\rho,X_i)$ riscrivendo \eqref{eq:variational} nella forma
-
-\begin{align}
-&\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^R[K^{nl}_{\Gamma_1,\rho}(r)\frac{\delta_r\Gamma_1}{\Gamma_1}(r)+K^{nl}_{\rho,\Gamma_1}(r)\frac{\delta_r\rho}{\rho}(r)]\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})+\sigma_i\label{eq:invdGammadrho}&\intertext{da questa, utilizzando l'equazione di stato per ricavare la dipendenza di $\Gamma_1$ dalla composizione chimica, \'e possibile ottenere il profilo radiale di $Y$: per diminuire gli errori sistematici dovuti alle discrepanze nell'equazione di stato e nella metallicit\'a riscrivo l'ultima espressione nella forma:}\nonumber\\
-&\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^RK^{nl}_{u,Y}(r)\frac{\delta_ru}{u}(r)\,dr+\int K^{nl}_{Y,u}(r)\delta_rY\,dr+\int_0^RK^{nl}_{c^2,\rho}(r)(\frac{\delta\Gamma_1}{\Gamma_1})_{int}\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})\label{eq:diffthermo}&\intertext{dove $(\delta\Gamma_1)_{int}$ \'e l'errore dovuto alle discrepanze nell'equazione di stato a $(P,\rho,Y)$ fissati.}\nonumber
-\end{align}
-La determinazione dell'abbondanza di elio nella regione convettiva \'e dovuta principalmente alla deviazione da $\Gamma_1=\frac{5}{3}$ nella regione di seconda ionizzazione dell'elio; risulta $Y_{CZ}=\num{0.2485+-0.0034}$.
-
-%Esprimendo $\delta_rc^2$ in termini di $\delta_ru=\delta_r(\frac{P}{\rho})$, $\delta_rY$ e $\delta_r\Gamma_1$, riscriviamo \eqref{eq:invstructure}, dove abbiamo utilizzato l'equazione di stato per descrivere la dipendenza di $\Gamma_1$ dall'abbondanza di $\cel{He}{4}{}{}$:
-% Dals Art pg 31-32
-%Le differenze in $U$ e $\rho$  fra modelli solari sismologici e modelli solari standard sono al massimo pochi per cento.
 
 
 {\let\clearpage\relax\let\cleardoublepage\relax

@@ -23,8 +23,6 @@ $\agesun{}$&\SI[separate-uncertainty=true]{4.57\pm0.02e9}{\year}\\
 \hline
 $\rsun{}$&\SI{695658+-140}{\kilo\meter}\footnotemark[1]\\
 \hline
-$\lsun{}$&\SI{3.844e33}{\erg\per\second}\\
-\hline
 $G\msun$&\num{132712440018+-8}\SI{e9}{\cubic\meter\per\square\second}\\
 \hline
 $\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
@@ -383,13 +381,53 @@ In un plasma costituito da idrogeno, elio ed elettroni per mantenere la neutrali
 n_Hv_H=\frac{(m_{He}n_Hn_{He})}{\rho}v_{HHe}\\
 \end{align}
 
-La velocit\'a degli elementi pesanti, analogamente si trova $w_A(1+2\frac{Y}{X})\approx-w_H$.
+La velocit\'a di diffusione degli elementi pesanti \'e determinata prevalentemente dagli urti con H e He:
+Indico con $\eta(A,r)$ la forza per unit\'a di volume sull'elemento di numero atomico Z e di massa A:
+\begin{equation}\label{eq:forceperVheavy}
+\begin{split}
+&\eta(A,r)=-\PDy{r}{P_A}+n_A(Z_Ae\vec{E}+Am_H\vec{g})\\
+&=-n_Ak_BT(\PDy{r}{\ln{P_A}}+Z_A\PDy{r}{\ln{P_e}}+\frac{AGm_HM}{r^2k_BT})
+\end{split}
+\end{equation}
+
+
+In condizioni stazionarie si ha:
+\begin{equation}\label{eq:diffheavystatinary}
+\vec{F}_A\approx\vec{R}_{A,H}+\vec{R}_{A,He}=\eta(A,r)
+\end{equation}
+e poich\'e
+\begin{equation}
+\frac{\eta(A,r)}{n_Av_H(m_{A,H}n_H\alpha_{A,H})}\propto\frac{1}{XZ_A}
+\end{equation}
+posso trascurare $\eta(A,r)$ in \eqref{eq:diffheavystatinary} ed esplicitando i contributi $R_{A,H}$ e $R_{A,He}$
+ottengo
+\begin{equation}\label{eq:diffvelocityA}
+v_A(1+2\frac{Y}{X})\approx-v_H
+\end{equation}
 %&n_Av_A(m_{AH}n_Hw_{AH})(1+2\frac{Y}{X})\approx-n_Av_H(m_{AH}n_Hw_{AH})
+
+\begin{workout}[Velocit\'a sedimentazione ioni pesanti]
+
+Il flusso di elementi pesanti $n_Av_A$ \'e determinato dalle collisioni degli ioni pesanti con  H e He:
+
+\begin{align}
+&\vec{R}_{A,H}=m_{A,H}n_An_Hw_{A,H}(\vec{v}_a-\vec{v}_H)\intxt{and similar equation for collision with He. La condizione di equilibrio \'e:}
+&\vec{F}_A\approx\vec{R}_{A,H}+\vec{R}_{A,He}=\eta(A,r)\intxt{con}
+&\eta(A,r)=-\PDy{r}{P_A}+n_A(Z_Ae\vec{E}+Am_H\vec{g})=-n_Ak_BT(\PDy{r}{\ln{P_A}}+Z_A\PDy{r}{\ln{P_e}}+\frac{AGm_HM}{r^2k_BT})\\
+&\vec{R}_{A,H}=m_{A,H}n_An_H\alpha_{A,H}(\vec{v}_A-\vec{v}_H)\\
+&\vec{R}_{A,He}=m_{A,He}n_An_{He}\alpha_{A,He}(\vec{v}_A-\vec{v}_{He})\\
+&n_Av_A(m_{A,H}n_H\alpha_{A,H})(1+2\frac{Y}{X})=-n_Av_H(m_{A,H}n_H\alpha_{A,H})+\eta(A,r)\\
+&\frac{\eta(A,r)}{n_Av_H(m_{A,H}n_H\alpha_{A,H})}\propto\frac{1}{XZ_A}\intxt{quindi approssimativamente si ha:}
+&v_A(1+2\frac{Y}{X})=-v_H
+\end{align}
+
+\end{workout}
 
 La diffusione termica concentra le particelle pi\'u pesanti (e pi\'u cariche) nelle zone pi\'u calde: in presenza di un gradiente termico si ha un trasferimento netto di momento negli urti in direzione del gradiente, in \eqref{eq:friction}, dovuto al maggior numero di particelle energetiche provenienti dalle regioni pi\'u calde che hanno diversa probabilit\'a di trasferimento di momento negli urti nella direzione del gradiente: la sezione d'urto coulombiana dipende dalla velocit\'a relativa $\propto v\expy{-4}$ e la probabilit\'a di collisione $\propto v\expy{-3}$.
 
 
 \begin{workout}[Diffusione termica]
+Vedi Roussel-Dupr\'e: computations of ion diffusion coefficients from the Boltzmann-Fokker-Plank equation.
 
 Per un gas a pressione e composizione omogenea scrivo la distribuzione di una specie di particelle tramite un espansione al primo ardine in $\tau$, tempo fra collisioni
 %\begin{comment}
@@ -400,6 +438,7 @@ Per un gas a pressione e composizione omogenea scrivo la distribuzione di una sp
 &\vec{v}_{HHe}^{th}\approx\frac{2}{5kN_Hn_{He}}(\frac{n_{He}m_{He}\vec{q}_H-n_Hm_H\vec{q}_{He}}{m_H+m_{He}})\PDy{T}{\ln{\overline{\nu}}}
 \end{align}
 %end{comment}
+
 
 Considero da prima un plasma di \Pelectron e \Pproton; per effetto della dipendenza della frequenza di collisione dalla velocit\'a relativa delle particelle si ha una forza per unit\'a di volume che modifica il campo elettrico:
 \begin{equation}
