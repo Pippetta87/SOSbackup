@@ -2,11 +2,13 @@
 
 \begin{document}
 
+{\let\clearpage\relax\let\cleardoublepage\relax
+\chapter{Principali osservabili solari}
+}
 
 La struttura stellare \'e determinata dalle condizioni di equilibrio idrostatico e termico locale: noti massa e composizione chimica iniziale \'e possibile costruire un modello che riproduca la struttura stellare a un tempo dato.
 
 I modelli stellari contengo dei parametri per descrivere i fenomeni fisici per cui non esiste una teoria completa: i parametri vengono scelti in maniera da riprodurre pi\'u accuratamente possibile la posizione della stella nel diagramma di \hr{}, definito da luminosit\'a e temperatura efficace.
-
 
 % save original \intextsep
 \newlength{\oldintextsep}
@@ -15,7 +17,7 @@ I modelli stellari contengo dei parametri per descrivere i fenomeni fisici per c
 \setlength\intextsep{0pt}
 \renewcommand{\arraystretch}{1.3}
 
-\begin{wraptable}[10]{l}[10pt]{7.5cm}
+\begin{wraptable}[9]{l}[10pt]{7.5cm}
 
 \begin{tabular}{l|c}
 
@@ -26,6 +28,7 @@ $\rsun{}$&\SI{695658+-140}{\kilo\meter}\footnotemark[1]\\
 $G\msun$&\num{132712440018+-8}\SI{e9}{\cubic\meter\per\square\second}\\
 \hline
 $\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
+\hline
 \end{tabular}
 
 \caption[Osservabili solari principali.]{Osservabili solari principali. \footnotetext[1]{\cite{haberreiter2008solving}}.}
@@ -35,13 +38,51 @@ $\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
 
 \setlength{\intextsep}{\oldintextsep}
 
+Per quanto riguarda il Sole \'e possibile determinare sperimentalmente l'et\'a, il prodotto $G\msun$, la distanza, la luminosit\'a, la composizione chimica al livello della fotosfera, ad eccezione del $\cel{He}{4}{}{}$ e altri gas nobili, e il raggio mentre allo stato delle conoscenze \'e conveniente introdurre nel modello solare un parametro $\alpha$ per descrivere l'efficienza del trasporto convettivo da determinare tramite la calibrazione del modello con le osservazioni, assieme all'abbondanza di $\cel{He}{4}{}{}$. Nel modello solare standard (MSS)  la zona convettiva occupa il $29\%$ pi\'u esterno del raggio solare e contiene il $2\%$ della massa: questa regione \'e chimicamente omogenea. 
 
-Per quanto riguarda il Sole \'e possibile determinare sperimentalmente il prodotto $G\msun$, la distanza, la luminosit\'a, la composizione chimica al livello della fotosfera, ad eccezione del $\cel{He}{4}{}{}$ e altri gas nobili, e il raggio mentre allo stato delle conoscenze \'e conveniente introdurre nel modello solare un parametro $\alpha$ per descrivere l'efficienza del trasporto convettivo da determinare tramite la calibrazione del modello con le osservazioni, assieme all'abbondanza di $\cel{He}{4}{}{}$. Nel modello solare standard (MSS)  la zona convettiva occupa il $29\%$ pi\'u esterno del raggio solare e contiene il $2\%$ della massa: questa regione \'e chimicamente omogenea. 
+\begin{wraptable}[15]{r}{0.6\textwidth}
+
+\pgfplotstabletypeset[
+every head row/.style={
+ before row={\toprule &\multicolumn{4}{c|}{Attuale}
+ %&\multicolumn{4}{c|}{Primordiale}
+ \\\midrule},
+ every last row/.style={after row=\bottomrule},
+ after row={\midrule}
+},
+every last row/.style={after row=\bottomrule},
+every first column/.style={column type/.add={|}{}},
+every last column/.style={column type/.add={}{|}},
+columns/x/.style = {column type/.add={|}{}},
+columns/xi/.style = {column type/.add={|}{}},
+display columns/0/.style={column name={}},
+display columns/1/.style={column name={$X$}},
+display columns/2/.style={column name={$Y$}},
+display columns/3/.style={column name={$Z$}},
+display columns/4/.style={column name={$\frac{Z}{X}$}},
+%display columns/5/.style={column name={$X$}},
+%display columns/6/.style={column name={$Y$}},
+%display columns/7/.style={column name={$Z$}},
+%display columns/8/.style={column name={$\frac{Z}{X}$}},
+create on use/authors/.style={create col/set list={
+%Anders \& Grevesse (1989),Grevesse \& Noels (1993),
+Grevesse et al. (1998),Lodders (2003),Asplund et al. (2005),Lodders et al. (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
+columns/authors/.style={string type},
+columns={authors,x, y, z, zx
+%,xi,yi,zi, zxi
+},
+/pgf/number format/precision=4
+     ]{asplund.txt} %%%
+\captionof{table}{Metallicit\'a attuale determinata da varii autori.}\label{tab:Zhistory}
+\end{wraptable}
 
 La composizione iniziale del Sole, supposta omogenea, \'e determinata a partire dalla composizione attuale delle regioni esterne, tenendo conto della diffusione, e attraverso la calibrazione del modello solare per le abbondanze di $\cel{H}{1}{}{}$ e $\cel{He}{4}{}{}$.
 
-%\vfill
+La composizione chimica attuale \'e determinata spettroscopicamente dalle righe di assorbimento dell'atmosfera solare: le composizioni basate su una modellizzazione pi\'u accurata dell'atmosfera solare e della fisica atomica portano ad una metallicit\'a solare pi\'u bassa (vedi \ref{tab:Zhistory}).
 
+La composizione dei meteoriti (condriti CI), che si suppone abbiano conservato composizione originaria, \'e in accordo con la determinazione spettroscopica a parte gli elementi volatili: H,C,N,O e gas nobili.
+
+%\vfill
 %Un modello stellare deve riprodurre la posizione di una stella nel diagramma entro le incertezze sulle osservabili sperimentali disponibili: luminosi\'a, massa, raggio, spettro della luce emessa dalla superficie (temperatura efficace, composizione chimica superficiale, accelerazione di gravit\'a) ed et\'a.
 
 Nei capitoli successivi descrivo la configurazione di equilibrio del Sole e le incertezze nella descrizione fisica del modelo solare standard (MSS).
@@ -57,26 +98,25 @@ Suppongo che la pressione del campo magnetico sia molto minore della pressione d
 
 %tensore pressione$\to$hydrostatic pressure
 
-La distribuzione di massa del Sole \'e determinata dall'equilibrio tra la forza di attrazione gravitazionale e il gradiente della pressione del gas. Considero una distribuzione di massa sferica con densit\'a $\rho(r,t)$, la variazione della massa presente entro il raggio $r$ \'e descritta da
+\begin{workout}[Eulerian/Lagrangian description]
+%https://www.physics.wisc.edu/grads/courses/726-f07/files/Section_3_Cont_02.pdf
+%http://wwwmpa.mpa-garching.mpg.de/~weiss/Stellar_Structure_Canterbury_09/Part1.pdf
+\end{workout}
 
+La distribuzione di massa del Sole \'e determinata dall'equilibrio tra la forza di attrazione gravitazionale e il gradiente della pressione del gas. Considero una distribuzione di massa sferica con densit\'a $\rho(r,t)$, la variazione della massa presente entro il raggio $r$ \'e descritta da%
 \begin{equation}
 dm=4\pi r^2\rho \,dr-4\pi r^2\rho v\,dt\label{eq:massvar}
 \end{equation}
-
 e $v(r,t)$ \'e il campo di velocit\'a della distribuzione di massa a distanza r dal centro e tempo $t$,
-
 %Eulerian vs Lagrangian description
-
-per una configurazione di equilibrio statico quindi
-
+per una configurazione di equilibrio statico quindi%
 \begin{equation}
 dm=4\pi r^2\rho \,dr\label{eq:massaguscio}	
 \end{equation}
 
-Differenziando \eqref{eq:massvar} rispetto alle variabili euleriane $r$ e $t$ ricavo l'equazione di continuit\'a
-
+Differenziando \eqref{eq:massvar} rispetto alle variabili euleriane $r$ e $t$ ricavo l'equazione di continuit\'a%
 \begin{align}
-&\PDy{t}{\rho}=-\frac{1}{r^2}\PDof{r}(\rho r^2 v)\intxt{che esprime la conservazione della massa per simmetria sferica, in generale}
+&\PDy{t}{\rho}=-\frac{1}{r^2}\PDof{r}(\rho r^2 v)\intxt{che esprime la conservazione della massa per simmetria sferica, localmente}
 &\PDy{t}{\rho}+\nabla\cdot(\rho\vec{v})=0\label{eq:continuityeq}
 \end{align}
 
@@ -84,8 +124,12 @@ Scrivo l'equazione del moto per la massa $dm$ racchiusa da un guscio sferico di 
 \begin{align}
 &\frac{dm}{4\pi r^2}\PtwoDy{t}{r}=f_P+f_g\shortintertext{dove il primo termine sulla destra \'e il contributo dovuto alla differenza di pressione fra i due bordi del guscio, mentre il secondo \'e il contributo della forza di gravit\'a. Esplicitando gli addendi sulla destra e differenziando rispetto a $m$ si ha l'espressione della conservazione della quantit\'a di moto usando variabili lagrangiane/euleriane:}
 &\frac{1}{4\pi r^2}\PtwoDy{t}{r}=-\PDy{m}{P}-\frac{Gm}{4\pi r^4}\label{eq:motionshell}\\
-&\rho\PDy{t}{\vec{v}}=-\nabla P+\rho\vec{f}\label{eq:motion}
+&\rho\TDy{t}{\vec{v}}=-\nabla P+\rho\vec{f}\label{eq:motion}
 \end{align}
+
+\begin{workout}[equation of motion \eqref{eq:motion} $\rho\TDy{t}{\vec{v}}$]
+???
+\end{workout}
 
 
 La condizione di equilibrio idrostatico $\ddvec{r}=0$ implica
@@ -95,20 +139,14 @@ La condizione di equilibrio idrostatico $\ddvec{r}=0$ implica
 \end{equation}
 
 La forma della forza per unit\'a di massa f \'e determinata dall'attrazione gravitazionale
-
-\begin{equation}
-g=\frac{Gm(r)}{r^2}\label{eq:gravitya}
-\end{equation}
-diretta verso il centro di massa.
-
-Definendo il potenziale gravitazionale $\Phi$, soluzione dell'equazione di Poisson 
-\begin{equation}
-\nabla^2\Phi=4\pi G\rho\label{eq:poisson}
-\end{equation}
-risulta:
 \begin{equation}
 \vec{g}=-\PDy{r}{\Phi}=-\frac{Gm(r)}{r^2}\hat{r}
 \end{equation}
+dove ho definito il potenziale gravitazionale $\Phi$, soluzione dell'equazione di Poisson 
+\begin{equation}
+\nabla^2\Phi=4\pi G\rho\label{eq:poisson}
+\end{equation}
+
 
 La condizione di equilibrio idrostatico diventa:
 \begin{equation}
@@ -276,8 +314,10 @@ sostituendo i valori solari di \ref{wrap-tab:sunO} si ha $\tkh{}\approx\SI{1.6e7
 
 La prima legge della termodinamica esprime la conservazione dell'energia interna, ovvero mette in relazione il flusso di calore $dq$ per unit\'a di massa in un elemento di gas nell'intervallo di tempo $dt$ con la variazione di energia interna per unit\'a di massa $du$ e di volume specifico $dV$:
 \begin{equation}
-\TDy{t}{q}=\TDy{t}{u}+P\TDof{t}(\frac{1}{\rho})=0=\TDy{t}{u}+P\TDy{t}{V}\label{eq:prima}
+\TDy{t}{q}=\TDy{t}{u}+P\TDof{t}(\frac{1}{\rho})\label{eq:prima}
+%\TDy{t}{u}+P\TDy{t}{V}
 \end{equation}
+
 
 che posso riscrivere come
 
@@ -873,48 +913,15 @@ Sulla base dell'efficienza delle reazioni nucleari, del profilo di densit\'a e t
 \chapter{Modello solare standard e osservabili sismologiche.}
 %}
 
-\begin{wraptable}[15]{r}{0.6\textwidth}
-
-\pgfplotstabletypeset[
-every head row/.style={
- before row={\toprule &\multicolumn{4}{c|}{Attuale}
- %&\multicolumn{4}{c|}{Primordiale}
- \\\midrule},
- every last row/.style={after row=\bottomrule},
- after row={\midrule}
-},
-every last row/.style={after row=\bottomrule},
-every first column/.style={column type/.add={|}{}},
-every last column/.style={column type/.add={}{|}},
-columns/x/.style = {column type/.add={|}{}},
-columns/xi/.style = {column type/.add={|}{}},
-display columns/0/.style={column name={}},
-display columns/1/.style={column name={$X$}},
-display columns/2/.style={column name={$Y$}},
-display columns/3/.style={column name={$Z$}},
-display columns/4/.style={column name={$\frac{Z}{X}$}},
-%display columns/5/.style={column name={$X$}},
-%display columns/6/.style={column name={$Y$}},
-%display columns/7/.style={column name={$Z$}},
-%display columns/8/.style={column name={$\frac{Z}{X}$}},
-create on use/authors/.style={create col/set list={
-%Anders \& Grevesse (1989),Grevesse \& Noels (1993),
-Grevesse et al. (1998),Lodders (2003),Asplund et al. (2005),Lodders et al. (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
-columns/authors/.style={string type},
-columns={authors,x, y, z, zx
-%,xi,yi,zi, zxi
-},
-/pgf/number format/precision=4
-     ]{asplund.txt} %%%
-\captionof{table}{Metallicit\'a attuale determinata da varii autori.}\label{tab:Zhistory}
-\end{wraptable}
-
 \begin{figure}[!h]
 \includegraphics[width=\textwidth,trim=4 4 4 4,clip]{BP2000}
 \caption{Profilo radiale della densit\'a, abbondanza di idrogeno, luminosit\'a e temperatura; sono indicati i valori centrali e alla base della zona convettiva. Dati da \cite{BP2000}.}
 \end{figure}
 
-La modellizzazione della fisica del plasma solare (EOS, opacit\'a,) sono necessarie approssimazioni che ne influenzano l'accuratezza, mentre per quanto riguarda la composizione chimica le misure pi\'u accurate sono quelle basate sulle righe di assorbimento dell'atmosfera solare e quelle basate sulla composizione dei meteoriti (condriti CI), che si suppone abbiano conservato composizione originaria a parte H,C,N,O e gas nobili (i due metodi sono in accordo per gli altri elementi): le composizioni basate su una modellizzazione pi\'u accurata dell'atmosfera solare e della fisica atomica portano ad una metallicit\'a solare pi\'u bassa (vedi \ref{tab:Zhistory}).
+La modellizzazione della fisica del plasma solare (EOS, opacit\'a,) sono necessarie approssimazioni che ne influenzano l'accuratezza, 
+\begin{workout}[e incertezze in Z]
+
+\end{workout}
 
 %La composizione determinata usando righe di assorbimento dell'atmosfera  poich\'e l'assorbimento continuo \'e dovuto principalmente all'idrogeno l'abbondanza degli elementi pesanti si esprime relativamente all'abbondanza di idrogeno.
 %Modelli di atmosfera pi\'u accurati, possibili grazie a maggiore potenza di calcolo, hanno fornito composizione di metalli sensibilmente minore

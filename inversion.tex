@@ -198,7 +198,7 @@ Il primo termine approssima il valore di $\frac{\delta f_1}{f_1}$ pesato dal ker
 Scelgo dei coefficienti $c_i(r_0)$ tali che $\sum c_i(r_0)\frac{\delta\omega_i}{\omega_i}$ fornisca una media del valore di $\frac{\delta f(r)}{f(r)}$ in $r=r_0$:
 
 \begin{equation}\label{eq:SOLAfmean}
-\sum_ic_i(r_0)\frac{\delta\omega_i}{\omega_i}=\int_0^R\sum_ic_i(r_0)K^i(r)\frac{\delta f(r)}{f(r)}\,dr=\exv{\frac{\delta f(r)}{f(r)}}
+\sum_ic_i(r_0)\frac{\delta\omega_i}{\omega_i}=\int_0^R\sum_ic_i(r_0)K^i(r)\frac{\delta f(r)}{f(r)}\,dr=\exv{\frac{\delta f(r_0)}{f(r_0)}}
 \end{equation}
 
 e i coefficienti $c_i(r_0)$ sono determina minimizzando la funzione
@@ -207,6 +207,9 @@ e i coefficienti $c_i(r_0)$ sono determina minimizzando la funzione
 \int_0^R[\mathcal{K}(r_0,r)-\mathcal{T}(r_0,r)]^2\,dr+\mu\sum_i\sigma_ic_i(r_0)c_j(r_0)\\
 \end{equation}
 con $\mathcal{K}(r_0,r)=\sum_ic_i(r_0)K^i(r)$ e la funzione target $\mathcal{T}(r_0,r)$, la cui larghezza \'e anch'essa parametro del fit, determina la natura precisa della localizzazione.
+
+La larghezza finita di $\mathcal{K}(r_0,r)$ determina il valor medio di $\frac{\delta f}{f}$ in intorno di $r_0$ e ci\'o causa una differenza sistematica  dal valore effettivo in $r_0$: per $c_s$ l'errore \'e minore del $0.03\%$ e le regioni pi\'u afflitte sono la base della zona convettiva, per la rapida variazione di $\frac{\delta c_s}{c_s}$ e la regione centrale, per il ridotto numero di modi che penetrano in questar zona.
+
 
 \begin{errata}[Funzione da minimizzare in SOLA: manca la funzione terget]
 I parametri si trovano minimizzando
@@ -231,7 +234,6 @@ il kernel cross-term  contralla i contributi indesiderati di $\frac{\delta_r\rho
 
 
 Il primo termine approssima il valore di $\frac{\delta c^2}{c^2}$ pesato dal kernel $\mathcal{K}(r,r_0)=\sum_ic_i(r_0)K_{c^2,\rho}^i(r)$, il secondo tiene conto dell'influenza che hanno le discrepanze della seconda funzione su quelle della funzione che abbiamo scelto di invertire pesate da $\mathcal{L}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)$, il terzo \'e il termine di superficie: i coefficienti $c_i(r_0)$ sono scelti in maniera da riprodurre la funzione target, minimizzare la contaminazione delle $\frac{\delta \rho}{\rho}$ via $\mathcal{L}_{\rho,c^2}$ e il rumore.
-
 
 \begin{comment}
 \section{risultati inversione}
@@ -290,13 +292,8 @@ e quindi \'e possibile determinare $\Omega_s(r)$.
 %&\omega_{nlm}-\omega_{nl0}=m\int_0^R\int_0^{\pi}K_{nlm}(r,\theta)\Omega(r,\theta)r\,dr\,d\theta
 %&\omega_{nlm}=\omega_{nl0}+2\pi\sum_{j=1}^{j_{max}a_j(n,l)\mathcal{P}_j^{(l)}(m)}
 %$\Delta\omega$ e $a_j$ sono legatoi da dipendenza lineare.
-
-
-
 %{infered angular velocity $\bar{\Omega}(r_0,\theta_0)$ is linearly related to data:}
 %\bar{\Omega}(r_0,\theta_0)=\int_0^{\pi}\int_0^R\mathcal{K}(r,\theta,r_0,\theta_0)\Omega(r,\theta)r\,dr\,d\theta
-
-
 %Per investigare la dipendenza $\Omega(r,\theta)$ devo considerare le $2l+1$ frequenze.
 %latitudinal shear causa una deviazione da frequenze equispaziate.
 
