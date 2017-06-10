@@ -223,7 +223,31 @@ La principale correzione che tiene conto dell'interazioni tra particelle \'e dov
 
 \end{workout}
 
-Introduco la correzione duvuta all'interazione Coulombiana secondo Debye-H\"uckel: il potenziale $V_i(r)$ dovuto allo ione $Z_i$ \'e schermato dagli elettroni quindi, per la formula di Boltzmann, la densit\'a delle particelle con carica Z \'e $n_Z=\overline{n}_Z\exp{-\frac{ZeV_i}{kT}}$, con $\overline{n}_Z$ densit\'a numerica della particell $Z$ imperturbata. Assumendo l'energia coulombiana molto minore dell'energia termica espando $n_Z$ al prim'ordine quindi l'equazione di Poisson per $V_i$ \'e
+Il potenziale $V_i(r)$ dovuto allo ione $Z_i$ altera la distribuzione di cariche quindi devo determinare il potenziale $\phi_i$ generato da $Z_i$ e dalla distribuzione di cariche attorno: per la formula di Boltzmann, la densit\'a delle particelle con carica Z \'e 
+\begin{equation}
+n_Z=\overline{n}_Z\exp{-\frac{Ze\phi_i}{kT}}
+\end{equation}
+con $\overline{n}_Z$ densit\'a numerica della particell $Z$ in assenza di $Z_i$. Assumendo l'energia coulombiana molto minore dell'energia termica espando $n_Z$ al prim'ordine quindi l'equazione di Poisson per $\phi$ \'e
+\begin{equation}
+\nabla^2\phi=-4\pi e\sum Zn_Z-4\pi\Sum Z_i\delta(\vec{r}-\vec{r}_i)
+\end{equation}
+dove si assume
+\begin{equation}
+\phi=\sum_i\phi_i
+\end{equation}
+
+Introduco il raggio di Debye:
+\begin{equation}
+\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\zeta,\ \zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}\label{eq:debyeradius}
+\end{equation}
+quindi ho l'equazione di Poisson per il potenziale a distanza $|\vec{r}-\vec{r}_i|$ dallo ione $Z_i$ in $\vec{r}_i$:
+\begin{equation}label{eq:poissonspheric}
+\frac{r_D^2}{r_i}\TtwoDy{r}{(r_i\phi_i)}
+\end{equation}
+la cui soluzione \'e
+\begin{equation}label{eq:screenedpotential}
+
+\end{equation}
 
 
 \begin{errata}[formula corretta potenziale elettrostatico generato da nuvola elettronica attorno a $Z_i$]
