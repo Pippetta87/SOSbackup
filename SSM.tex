@@ -260,13 +260,12 @@ La soluzione di \eqref{eq:poissonscreened} \'e
 &\nabla^2V_i=-4\pi e\sum Zn_Z\approx\frac{1}{r_D^2}V_i\intxt{da cui ottengo il potenziale generato dalla nube di cariche attorno a Z}
 &\phi_Z=-\frac{eZ}{r_D}
 \end{align}
-
-\end{errata}
-
 con $r_D$ raggio di Debye definito da:
 \begin{equation}
 \frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\zeta,\ \zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}\label{eq:debyeradius}
 \end{equation}
+
+\end{errata}
 
 \begin{errata}[correzioni $u_c/P_c$: notazione consistente.]
 Le correzioni dovute alle interazioni coulombiane sono
@@ -275,6 +274,12 @@ Le correzioni dovute alle interazioni coulombiane sono
 &P=\frac{\rho}{\mu}kT+P_c,\  P_c=\frac{1}{3}u_c
 \end{align}
 \end{errata}
+
+Le correzioni dovute alle interazioni coulombiane sono
+\begin{align}
+&u=\frac{3}{2}\frac{\gasconstant{}T}{\mu}+u_c,\ u_c=\frac{1}{2}\int\phi(\vec{r})\rho(\vec{r})\,d^3r\\
+&P=\frac{\rho}{\mu}kT+P_c,\  P_c=\frac{1}{3}u_c
+\end{align}
 
 La correzione alla pressione dovuta alle interazioni coulombiane raggiunge il picco relativo nelle regioni di ionizzazione parziale di idrogeno ed elio, come illustrato da \subref{fig:degenelectrocorrection}.
 
@@ -922,6 +927,7 @@ columns={react,GB,GDGC,SVH,DTDI},
 \end{wraptable}
 \end{comment}
 
+\begin{errata}[Salpeter 1954]
 L'energia di interazione di due nuclei $Z_1$ e $Z_2$ a distanza r contiene un contributo delle altre cariche presenti nel plasma:
 \begin{equation}
 U_T=\frac{Z_1Z_2e^2}{r}+U(r_{12})=Z_1Z_2e^2\psi_T
@@ -947,7 +953,28 @@ si ottiene
 U_0=-\frac{Z_1Z_2e^2}{r_D}
 \end{equation}
 
-Sulla base dell'efficienza delle reazioni nucleari, del profilo di densit\'a e temperatura ricavati da un modello solare le terminazione della catena pp $\cel{He}{3}{}{}-\cel{He}{3}{}{}$ e $\cel{He}{3}{}{}-\cel{He}{4}{}{}$ generano rispettivamente   $83.3\%$, $16.7\%$ della luminosit\'a totale mentre il ciclo CNO circa $1\%$.
+\end{errata}
+
+L'energia potenziale dovuta all'interazione di due nuclei $Z_1$ e $Z_2$ a distanza r contiene un contributo delle altre cariche presenti nel plasma:
+\begin{equation}
+U=\frac{Z_1Z_2e^2}{r}+U_s(r_{12})
+\end{equation}
+dove il primo termine \'e l'energia potenziale non schermata e il termine $U_s(r_{12})$ il contributo della nuvola elettronica. L'effetto di $U_s$ \'e di aumentare la probabilit\'a di attraversamento della barriera coulombiana. Correggo quindi \eqref{eq:fusioncrosssection} con il fattore moltiplicativo:
+\begin{equation}
+f=\exp{-\midfrac{U_0}{KT}}\label{eq:screeningfactor}
+\end{equation}
+dove $U_0=U_s(0)$ poich\'e $r\ll r_D$ e considerando solo la correzione al fattore di penetrazione ($E_G\gg U_0$).
+
+Per determinare $U_0$ considero l'energia potenziale di $Z_1$ e $Z_2$ a distanza $r$
+\begin{equation}
+U=Z_2e\int_{\infty}^r\PDy{r_1}{\phi_1}\,dr_1=\frac{Z_1Z_2e^2\exp{-\midfrac{r}{r_D}}}{r}
+\end{equation}
+con $\phi_1$ dato da \eqref{eq:screenedpotential}, e quindi
+\begin{equation}
+U_S=U-\frac{Z_1Z_2e^2}{r}
+\end{equation}
+
+Sulla base dell'efficienza delle reazioni nucleari, del profilo di densit\'a e temperatura ricavati da un modello solare le terminazione della catena pp $\cel{He}{3}{}{}-\cel{He}{3}{}{}$ e $\cel{He}{3}{}{}-\cel{He}{4}{}{}$ generano rispettivamente $83.3\%$, $16.7\%$ della luminosit\'a totale mentre il ciclo CNO circa $1\%$.
 %\begin{wrapfigure}[23]{r}{0.6\textwidth}
 % T_6=10T_7=10^3T_9
 \thispagestyle{plain}
