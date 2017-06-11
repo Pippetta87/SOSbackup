@@ -233,7 +233,7 @@ La principale correzione che tiene conto dell'interazioni tra particelle \'e dov
 
 La presenza dello ione $Z_i$ altera la distribuzione di cariche quindi devo determinare il potenziale $\phi_i$ generato da $Z_i$ e dalla distribuzione di cariche attorno: per la formula di Boltzmann, la densit\'a delle particelle con carica Z \'e 
 \begin{equation}
-n_Z=\overline{n}_Z\exp{-\frac{Ze\phi_i}{kT}}
+n_Z=\overline{n}_Z\exp{-\frac{Ze\phi}{kT}}
 \end{equation}
 con $\overline{n}_Z$ densit\'a numerica della particell $Z$ in assenza di $Z_i$.
 
@@ -241,7 +241,7 @@ L'equazione di Poisson per $\phi$ \'e
 \begin{equation}\label{eq:poissonscreened}
 \nabla^2\phi=-4\pi e\sum Zn_Z-4\pi\sum Z_i\delta(\vec{r}-\vec{r}_i)
 \end{equation}
-Nel regime di schermaggio debole, dove l'energia coulombiana \'e molto minore dell'energia termica $e\phi\ll KT$, espando $n_Z$ al prim'ordine quindi in \eqref{eq:poissonscreened} rimane il termine lineare in $phi$.
+Nel regime di schermaggio debole, dove l'energia coulombiana \'e molto minore dell'energia termica $e\phi\ll KT$, espando $n_Z$ al prim'ordine quindi in \eqref{eq:poissonscreened} rimane il termine lineare in $\phi$.
 
 Introduco il raggio di Debye:
 \begin{equation}
@@ -255,6 +255,14 @@ con
 \begin{equation}
 \phi=\sum_i\phi_i
 \end{equation}
+
+\begin{workout}[Raggio di debye e degenerazione elettronica]
+Il rapporto fra densit\'a elettronica e quella imperturbata \'e
+\begin{equation}
+\midfrac{f(\psi-\midfrac{U_e(r)}{KT})}{f(\psi)}
+\end{equation}
+dove $U_e(r)$ \'e l'energia di interazione di un elettrone
+\end{workout}
 
 La soluzione di \eqref{eq:poissonscreened} \'e
 \begin{equation}\label{eq:screenedpotential}

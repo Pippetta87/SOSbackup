@@ -179,8 +179,19 @@ La condizione di non propagazione oltre la fotosfera dipende dalla descrizione d
 \end{align}
 \end{itemize}
 
-\begin{workout}[L'ampiezza dei modi \'e normalizzata a all'ampiezza osservata in superficie. ]
+\begin{workout}[L'ampiezza dei modi \'e normalizzata a all'ampiezza osservata in superficie.]
+
 L'ampiezza dei modi \'e normalizzata a all'ampiezza osservata in superficie. o a 1 ??
+
+L'energia totale di un modo \'e
+\begin{align}
+&E_{(n,l)}=\int_0^M\,dm\exv{\dvec{\xi}^2_{nl}}
+%E_{\omega_0}=\int_0^M\exv{v_{osc}^2}
+\intxt{e avendo normalizzato i modi in maniera opportuna si ha}
+&E_{nl}=I_{nl}V_{nl}^2=\frac{1}{2}I_{nl}\omega_{nl}^2A_{nl}^2
+\end{align}
+dove $V_{nl}^2$ e $A_{nl}^2$ sono il valore quadratico medio della velocit\'a e dell'ampiezza dell'oscillazione in superficie.
+
 \end{workout}
 
 L'ampiezza dei modi \'e normalizzata a all'ampiezza osservata in superficie. 
@@ -330,7 +341,7 @@ La determinazione dell'abbondanza di elio nella regione convettiva \'e dovuta pr
 
 I fenomeni periodici sulla superficie solare sono osservabili tramite tecniche fotometriche o spettroscopiche, tramite effetto doppler: una parte basilare dell'informazione contenuta nei modi di oscillazione \'e ricavata analizzando  lo spostamento doppler delle righe di assorbimento dei metalli presenti negli strati visibili pi\'u esterni del sole.
 
-L'ampiezza della velocit\'a di oscillazione per il singolo modo \'e  al pi\'u \SI{15}{\cm\per\second} quindi l'effetto doppler causa uno shift, al massimo, di $\frac{\Delta\lambda}{\lambda}\approx\num{e-10}$: \ref{fig:modespheomenology} mostra $\dvec{\xi}_{rms}$, l'energia totale del modo e la larghezza del picco nello spettro di potenza, inversamente proporzionale al tempo di vita, per modi con  . Le misure Doppler su luce integrata sull'intero disco solare sono effettuate tramite uno spettroscopio a scattering risonante, in cui lo splitting  Zeeman dovuto a un campo magnetico esterno applicato a vapori di $Na/K$ permette la trasmissione  in due bande molto strette simmetriche rispetto alla linea spettrale di cui si vuole misurare lo shift: la velocit\'a Doppler \'e proporzionale alla differenza di intesit\'a osservata nelle due bande. Il tacometro di Fourier \'e uno degli strumenti pi\'u utilizzati per misure Doppler  con risoluzione spaziale.
+L'ampiezza della velocit\'a di oscillazione per il singolo modo \'e  al pi\'u \SI{15}{\cm\per\second} quindi l'effetto doppler causa uno shift, al massimo, di $\frac{\Delta\lambda}{\lambda}\approx\num{e-10}$. Le misure Doppler su luce integrata sull'intero disco solare sono effettuate tramite uno spettroscopio a scattering risonante, in cui lo splitting  Zeeman dovuto a un campo magnetico esterno applicato a vapori di $Na/K$ permette la trasmissione  in due bande molto strette simmetriche rispetto alla linea spettrale di cui si vuole misurare lo shift: la velocit\'a Doppler \'e proporzionale alla differenza di intesit\'a osservata nelle due bande. Il tacometro di Fourier \'e uno degli strumenti pi\'u utilizzati per misure Doppler  con risoluzione spaziale.
 
 %Linee altezza formazione Diminuzione T formazione atomo? Diminuzione pressione minori collisioni?
 % Na $D$ lines: $\lambda=\SI{589.6}{\nano\meter},\SI{589.0}{\nano\meter}$; SOHO (MDI): Ni \SI{678.8}{\nano\meter}; K Fraunhofer line \SI{770}{\nano\meter}; Ca \SI{643.9}{\nano\meter}; K \SI{769.9}{\nano\meter}
@@ -343,7 +354,8 @@ Il segnale Doppler osservato \'e proporzionale a:
 Il fattore $\sin{\theta}\cos{\phi}$ deriva dalla proiezione della velocit\'a radiale sulla linea di vista: i modi relativi alle oscillazioni dei 5 minuti di grado l non elevato causano uno spostamento quasi totalmente radiale:
 \begin{align}
 &\frac{\xi_r}{\xi_h}=\frac{1}{\sigma^2}\intxt{con}
-&\sigma^2=\frac{\rsun{}}{G\msun{}}\omega^2\approx1000\intxt{per oscillazioni con periodo intorno a \SI{5}{\minute}}
+&\sigma^2=\frac{\rsun{}}{G\msun{}}\omega^2\approx1000\intxt{per oscillazioni con periodo intorno a \SI{5}{\minute}}\\
+&\frac{\delta h|_{rms}}{\delta r|_{rms}}=\frac{\sqrt{l(l+1)}}{\sigma}
 \end{align}
 
 \begin{workout}[rms displacement]
@@ -351,7 +363,8 @@ Il fattore $\sin{\theta}\cos{\phi}$ deriva dalla proiezione della velocit\'a rad
 \begin{align}
 &\delta r|_{rms}=\exv{\vec{\xi}\cdot\hat{r}}=\frac{1}{2}|\tilde{xi}_r|^2\\
 &=\frac{1}{\Pi}\int_0^{\pi}\,dt\frac{1}{4\pi}\oint\Re{\tilde{\xi}_rY_{l,m}(\theta,\phi)\exp{-i\omega t}}^2\,d\omega\\
-&\delta h_{rms}^2=\exv{|\vec{\xi}_h|^2}=\frac{1}{2}l(l+1)|\tilde{\xi}_h(r)|^2
+&\delta h_{rms}^2=\exv{|\vec{\xi}_h|^2}=\frac{1}{2}l(l+1)|\tilde{\xi}_h(r)|^2\\
+&\frac{\delta h|_{rms}}{\delta r|_{rms}}=\frac{\sqrt{l(l+1)}}{\sigma}
 \end{align}
 
 \end{workout}
@@ -365,7 +378,7 @@ e ho integrato sul disco solare con $W_{l_0m_0}\approx Y_{l_0m_0}$. $S_{l_0m_0,l
 La trasformata di Fourier della sequenza temporale di velocit\'a Doppler acquisita permette l'identificazioni nel diagramma $l-\nu$ le regioni in cui \'e concentrata la potenza.
 La trasformata di Fourier di $V_{l_0m_0}(t)$ permette di isolare i modi come picchi nello spettro di potenza:
 \begin{equation}
-P(\omega,l,m)=|A_{nlm}|^2(\omega)
+P(\omega,l,m)\propto|A_{nlm}|^2(\omega)
 \end{equation}
 
 Un segnale di durata T permette una risoluzione $\Delta\omega=\frac{2\pi}{T}$ mentre il limite superiore delle frequenze osservate \'e dato dalla frequenza di Nyquist $\omega_{Ny}=\frac{\pi}{\Delta t}$ con $\Delta t$ risoluzione temporale; nel caso le dimensioni lineari $L_i$ della regione osservata siano piccole da poter trascurare la curvatura si hanno analoghe relazioni per le variabili spaziali cartesiane e vettore d'onda associato:
@@ -382,7 +395,7 @@ e dalla distribuzione delle frequenze, che identifica l'ordine n ovvero il numer
 In generale per un processo stocastico $x(t)$ campionato per un tempo T:
 \begin{align}
 &X_T(\nu)=\int_{-\frac{T}{2}}^{\frac{T}{2}}x(t)\exp{i2\pi\nu t}\intxt{la cui densit\'a spettrale di potenza \'e}
-&P_T(\nu)=\frac{1}{T}|X_T(\nu)|^2
+&P_T(\nu)=\frac{1}{T}|X_T(\nu)|^2\label{eq:powerspectraldensity}
 %&S_T(\nu)=\frac{1}{T}\int_{-T/2}^{T/2}\int_{-T/2}^{T/2}x(t)x(t')\exp{i2\pi\nu t}\exp{i2\pi\nu t}\,dt\,dt'\\
 =\int_{-T/2}^{T/2}\left[\frac{1}{T}\int_{-T/2}^{T/2}x(t')x(t'+\tau)\,dt'\right]\exp{i2\pi\nu \tau}\,d\tau\intxt{e definendo la funzione di autocorrelazione $C_T(\tau)$ si ha}
 &P_T(\nu)=\int_{-T/2}^{T/2}C_T(\tau)\exp{i2\pi\nu\tau}\,d\tau\\
@@ -392,12 +405,14 @@ In generale per un processo stocastico $x(t)$ campionato per un tempo T:
 &C(0)=\int_{-\infty}^{-\infty}P_x(\nu)\,d\nu=E(x^2)
 \end{align}
 
-Per ricavare i parametri che descrivono il picco della densit\'a spettrale considero un profilo lorentziano del picco con altezza
+Per ricavare i parametri che descrivono il picco della densit\'a spettrale considero un profilo lorentziano del picco della DSP della velocit\'a osservata con altezza:
 \begin{equation}
 H_{nl}=\int_{\nu_0-\midfrac{\delta}{2}}^{\nu_0-\midfrac{\delta}{2}}|\tilde{V}(\nu)|^2\,d\nu,\ \delta=\midfrac{1}{T}
 \end{equation}
 e larghezza a met\'a altezza $\midfrac{\Gamma_{nl}}{2\pi}=\Delta_{nl}$ illustrato in \ref{fig:FWHMbison}.
 
+
+\begin{workout}[Energia totale del modo (in fenomeni stazionari stocastici)]
 L'energia totale di un modo \'e
 \begin{align}
 &E_{(n,l)}=\int_0^M\,dm\exv{\dvec{\xi}^2_{nl}}
@@ -446,6 +461,7 @@ L'energia dell'oscillatore varia su tempi scala proporzionali a $\invers{\Gamma}
 \end{align}
 dove $\exv{\dvec{\xi}_{nl}\cdot\vec{F}}$ \'e il lavoro della forzante mediato su un periodo.
 
+\begin{workout}[Energia totale del modo (in descrizione spettro dei modi tramite oscillatori armonici)]
 \begin{align}
 &E_{(n,l)}=\int_0^M\,dm\exv{\dvec{\xi}^2_{nl}}
 %E_{\omega_0}=\int_0^M\exv{v_{osc}^2}
@@ -453,7 +469,7 @@ dove $\exv{\dvec{\xi}_{nl}\cdot\vec{F}}$ \'e il lavoro della forzante mediato su
 &E_{nl}=I_{nl}E[V_{nl}^2]=\frac{1}{2}I_{nl}\omega_{nl}E[A_{nl}^2]\\
 &\propto I_{nl}\omega_{nl}\intsinf{}P(\omega)\,d\omega
 \end{align}
-
+\end{workout}
 %
 %E=Mv^2(\nu_0),\ M(r_s)=\frac{I}{\xi_r^2(r_s)}\intxt{$r_s$ raggio linea osservazione}
 %&\propto\frac{P_f(\omega_{nl})}{\Gamma_{nl}}
