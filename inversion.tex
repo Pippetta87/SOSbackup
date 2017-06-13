@@ -96,7 +96,15 @@ La funzione $H_2$ \'e determinata dalla regione sotto la fotosfera. \cite{chr92p
 
 {\let\clearpage\relax\let\cleardoublepage\relax \chapter{Inversione non asintotica.}} % Inizio chapter "Inversione non asintotica." senza nuava pagina
 
-La soluzione del problema inverso per il sistema completo di equazioni si basa sulla linearizzazione delle variazioni attorno ad un modello di cui siano calcolabili le autofunzioni dell'operatore $L$ definito in \eqref{eq:variational}. E quindi si determinano attraverso procedure numeriche le correzioni alla struttura del modello sulla base delle differenze tra frequenze dei modi. Il peso che una perturbazione ha sulla differenze in frequenza \'e determinato dalle autofunzioni dei modi calcolate tramite un modello solare.
+La soluzione del problema inverso per il sistema completo di equazioni si basa sulla linearizzazione delle variazioni attorno ad un modello di cui siano calcolabili le autofunzioni dell'operatore $L$ definito in \eqref{eq:variational}.
+
+Utilizzo la formula \eqref{eq:variational} specializzata al problema dell'inversione delle differenze $\delta\omega_{nl}=\omega_{\odot}-\omega_{Mod}$ fra frequenze osservate e predette da un modello. Per l'inversione della struttura idrostatica si ha:
+\begin{align}
+&\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^R[K^{nl}_{c^2,\rho}(r)\frac{\delta_rc^2}{c^2}(r)+K^{nl}_{\rho,c^2}(r)\frac{\delta_r\rho}{\rho}(r)]\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})+\sigma_i\label{eq:invstructure}\intxt{dove $\sigma_i$ \'e l'incertezza sulle frequenze osservate e}
+&\frac{\delta_rc^2}{c^2}(r)=\frac{[c_{\odot}^2(r)-c_{mod}^2(r)]}{c^2(r)},\ \frac{\delta_r\rho}{\rho}(r)=\frac{[\rho_{\odot}(r)-\rho_{mod}(r)]}{\rho(r)}
+\end{align}
+
+E quindi si determinano attraverso procedure numeriche le correzioni alla struttura del modello sulla base delle differenze tra frequenze dei modi. Il peso che una perturbazione ha sulla differenze in frequenza \'e determinato dalle autofunzioni dei modi calcolate tramite un modello solare.
 %Asymptotic approximation for radial eigenfunction (integral equation connectin sound speed $c(r)$ to $\Omega_{nl}$) is inadequate (especially in deep interior)
 
 In \ref{fig:deltacwu} la banda chiara attorno allo zero, che indica il modello solare in perfetto accordo con le osservazioni sismologiche, mostra l'incertezza nell'inversione della velocit\'a del suono; essa \'e dovuta a

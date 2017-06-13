@@ -2,7 +2,7 @@
 %openany
 
 %% rimuove workout errata dalla versione da consegnare
-\def\versione{bozza}%%VERSIONE
+\def\versione{consegna}%%VERSIONE
 \def\bozza{bozza}
 \def\consegna{consegna}
 
@@ -77,6 +77,10 @@
     \makeatother
 %%%%
 
+\makeatletter
+\newcommand{\titolo}{\@title}
+\makeatother
+
 \author{ }
 \title{Studio delle oscillazioni solari}
 \date{\today}
@@ -85,11 +89,29 @@
 
 \begin{document}
 
+\begingroup
 
-\frontmatter
-\pagenumbering{roman}
-\maketitle
- 
+\thispagestyle{empty}
+\begin{center}
+\Huge Universit\'a di Pisa\\ \vspace{1cm}\textbf{\huge Facolt\'a di Scienze Matematiche Fisiche e Naturali}\\ \vspace{2cm} \textbf{\LARGE Corso di Laurea in Fisica}\\\Large Anno Accademico 2016/2017\\ \vspace{5cm} \LARGE Elaborato Finale\\ \vspace{1cm} \huge\titolo
+
+\end{center}
+
+\vspace{9cm}
+
+\begin{minipage}[l]{0.5\textwidth}\Large
+Candidato\\
+Rossi Filippo
+\end{minipage}
+\begin{minipage}[r]{0.5\textwidth}\Large
+Relatore\\Prof.sa Scilla Degl'Innocenti
+\end{minipage}
+%\frontmatter
+
+\endgroup
+
+\cleartorecto
+
 \tableofcontents*
 
 %\clearpage %%% SOMMARIO
@@ -97,6 +119,7 @@
 %\subfile{sommario}
 
 %\cleardoublepage
+\pagenumbering{roman}
 
 \mainmatter
 

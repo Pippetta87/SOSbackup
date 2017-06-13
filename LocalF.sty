@@ -26,15 +26,15 @@
 
 \newcounter{erratac}
 \def\thewoc{(\arabic{erratac})}
-\newenvironment{errata}[1][ ]%%%% workout
+\newenvironment{errata}[1][ ]%%%% errata
 {\refstepcounter{erratac}\adderratacontent{#1}%
 \begingroup {\theerratac: #1}
 \color{grey}
-}{\noindent\rule{0.5\textwidth}{0.4pt}\endgroup}
+}{\vspace{5mm}\noindent\rule{0.5\textwidth}{0.4pt}\\\endgroup}
 
 \else
 
-\newenvironment{workout}[1][ ]%%%% workout
+\newenvironment{errata}[1][ ]%%%% errata
 {}{}
  
 \fi
@@ -54,8 +54,9 @@
 \newenvironment{workout}[1][ ]%%%% workout
 {\refstepcounter{woc}\addwocontent{#1}%
 \begingroup {\thewoc: #1}
+\begin{center}
 \color{midnightblue}
-}{\noindent\rule{0.5\textwidth}{0.4pt}\endgroup}
+}{\end{center}\noindent\rule{0.5\textwidth}{0.4pt}\endgroup}
 
 \else
 
