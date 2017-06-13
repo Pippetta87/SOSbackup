@@ -328,8 +328,11 @@ Per investigare la composizione \'e necessario usare l'equazione di stato per es
 &\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^RK^{nl}_{u,Y}(r)\frac{\delta_ru}{u}(r)\,dr+\int K^{nl}_{Y,u}(r)\delta_rY\,dr+\int_0^RK^{nl}_{c^2,\rho}(r)(\frac{\delta\Gamma_1}{\Gamma_1})_{int}\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})\label{eq:diffthermo}\intxt{dove $(\delta\Gamma_1)_{int}$ \'e l'errore dovuto alle discrepanze nell'equazione di stato a $(P,\rho,Y)$ fissati.}
 \end{align}
 
+La determinazione dell'abbondanza di elio nella regione convettiva \'e dovuta principalmente alla deviazione da $\Gamma_1=\frac{5}{3}$ nella regione di seconda ionizzazione dell'elio.
+
 \begin{workout}[coerenza: in questa parte solo differenze frequenze ($Y_{CZ}$]
-La determinazione dell'abbondanza di elio nella regione convettiva \'e dovuta principalmente alla deviazione da $\Gamma_1=\frac{5}{3}$ nella regione di seconda ionizzazione dell'elio; risulta $Y_{CZ}=\num{0.2485+-0.0034}$.
+La determinazione dell'abbondanza di elio nella regione convettiva \'e dovuta principalmente alla deviazione da $\Gamma_1=\frac{5}{3}$ nella regione di seconda ionizzazione dell'elio.
+risulta $Y_{CZ}=\num{0.2485+-0.0034}$.
 \end{workout}
 
 %Esprimendo $\delta_rc^2$ in termini di $\delta_ru=\delta_r(\frac{P}{\rho})$, $\delta_rY$ e $\delta_r\Gamma_1$, riscriviamo \eqref{eq:invstructure}, dove abbiamo utilizzato l'equazione di stato per descrivere la dipendenza di $\Gamma_1$ dall'abbondanza di $\cel{He}{4}{}{}$:
@@ -411,6 +414,12 @@ I modi normali sono identificati tramite la distribuzione spaziale delle oscilla
 \end{equation}
 e dalla distribuzione delle frequenze, che identifica l'ordine n ovvero il numero di zeri radiali della velocit\'a perturbata.
 
+\begin{wrapfigure}[20]{r}{0.3\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.3\textwidth]{Powerspectraldensity}
+\caption{Densit\'a spettrale di oscillatore smorzato di frequenza naturale $\midfrac{\omega_{nl}}{2\pi}$ con forzante stocastica. $P_f$ \'e la DSP della forzante. $P=P_fP_L$. Da \cite{houdek2006stochastic}.}\label{fig:Powerspectraldensity}
+\end{wrapfigure}
+
 In generale per un processo stocastico $x(t)$ campionato per un tempo T:
 \begin{align}
 &X_T(\nu)=\int_{-\frac{T}{2}}^{\frac{T}{2}}x(t)\exp{i2\pi\nu t}\intxt{la cui densit\'a spettrale di potenza (DSP) \'e}
@@ -428,12 +437,6 @@ Il valore di aspettazione della densit\'a spettrale per un tempo di osservazione
 &C(0)=\int_{-\infty}^{-\infty}P_x(\nu)\,d\nu=E(x^2)
 \end{align}
 
-\begin{wrapfigure}[25]{r}{0.4\textwidth}
-\centering
-\includegraphics[keepaspectratio,width=0.4\textwidth]{Powerspectraldensity}
-\caption{$\exv{P}=|A(\omega)|^2$ spettro di oscillatore armonico forzato, smorzato di frequenza naturale $\midfrac{\omega_{nl}}{2\pi}$. Da \cite{houdek2006stochastic}.}\label{fig:Powerspectraldensity}
-\end{wrapfigure}
-
 \begin{workout}[Asteroseismology: data analysis - Il segnale solare osservato \'e sovrapposizione di un segnale armonico e del rumore]
 Il segnale solare osservato \'e sovrapposizione di un segnale armonico e del rumore: la densit\'a spettrale si scrive
 \begin{equation}
@@ -441,6 +444,12 @@ P_x(\nu)=P_{osc}(\nu)+P_n(\nu)=\sum_{n,l,m}H_nV_l^2c_{l,m}L(\frac{\nu-\nu_{nlm}}
 \end{equation}
 dove $H_n$ \'e l'altezza del picco $\Gamma_{nlm}$ la larghezza a met\'a altezza del picco. La seconda sommatoria descrive il rumore solare e strumentale.
 \end{workout}
+
+\begin{wrapfigure}[24]{r}{0.3\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.3\textwidth]{modespheomenology}
+\caption{Risultati osservativi per $\Gamma$, $\exv{V^2}$ e $E_{nl}$ in funzione della frequenza per modi con $l\approx20$. Da \cite{libbrecht1988solar}.}\label{fig:Powerspectraldensity}
+\end{wrapfigure}
 
 Il segnale solare osservato \'e sovrapposizione di un segnale armonico e del rumore: la densit\'a spettrale si scrive
 \begin{equation}
@@ -466,12 +475,6 @@ L'energia dell'oscillatore varia su tempi scala proporzionali a $\invers{\Gamma}
 &\exv{{E}_{nl}}=\frac{\exv{\dvec{\xi}_{nl}\cdot\vec{F}}}{\Gamma_{nl}}
 \end{align}
 dove $\exv{\dvec{\xi}_{nl}\cdot\vec{F}}$ \'e il lavoro della forzante mediato su un periodo.
-
-\begin{wrapfigure}[25]{r}{0.4\textwidth}
-\centering
-\includegraphics[keepaspectratio,width=0.4\textwidth]{modespheomenology}
-\caption{Risultati osservativi per $\Gamma$, $\exv{V^2}$ e $E_{nl}$ in funzione della frequenza per modi con $l\approx20$. Da \cite{libbrecht1988solar}.}\label{fig:Powerspectraldensity}
-\end{wrapfigure}
 
 Il valore di aspettazione dell'energia totale di un modo si ottiene dalle osservazioni tramite:
 \begin{equation}
@@ -524,7 +527,7 @@ e larghezza a met\'a altezza $\midfrac{\Gamma_{nl}}{2\pi}=\Delta_{nl}$ illustrat
 
 %\section{Descrizione dello spettro dei modi tramite oscillatori armonici}
 
-\begin{errata}
+\begin{errata}[modello per determinare l'ampiezza dei modi p ]
 
 Un modello per determinare l'ampiezza dei modi p considera un insieme di oscillatori armonici di frequenze naturali $\omega_{nl}$, i modi normali, introduce uno smorzamento che tiene conto dell'interazione con moti turbolenti ed altri effetti e una forzante stocastica che tiene conto della generazione di onde, con spettro determinato da velocit\'a e dimensioni della corrente turbolenta, da parte dei moti convettivi superficiali; trascuro gli effetti non lineari e eventuali instabilit\'a intrinseche alle pulsazioni. La sorgente delle eccitazioni stocastiche \'e supposta vicino alla superficie solare ed i modi normali risultano da quelle onde per cui si ha interferenza costruttiva.
 
@@ -630,7 +633,7 @@ In \subref{fig:peakDmeasured} si mostra il buon accordo tra $H$ calcolato sulla 
 
 \section{Rotazione}
 
-\begin{wrapfigure}[41]{r}{0.4\textwidth}
+\begin{wrapfigure}[48]{r}{0.4\textwidth}
 \centering
 \includegraphics[keepaspectratio,angle=0,width=0.39\textwidth]{rotationshiftridge}
 \caption{Diagramma $\omega-k_h$ per osservazione di una regione solare $\ang{;;2}\times\ang{;;2}$ mediata in direzione nord-sud: la misura \'e maggirmente sensibile alle onde che si propagano in direzione est-ovest lungo l'equatore. Si osserva lo spostamento dovuto alla rotazione dalla predizione per modello non-rotante (linee continue). Da \cite{rhodes1979new}.}\label{fig:rotationshiftridge}
@@ -690,9 +693,10 @@ dove ho esplicitato il termine inerziale \eqref{eq:inertialtermvf}.
 
 Usando $(\scap{v_0}{\nabla})\vec{\xi}=im\vec{\Omega}\xi+\vecp{\Omega}{\xi}$, lo splitting dovuto alla rotazione \'e:
 \begin{equation}\label{eq:splitfreqrotation}
-%\begin{split}
-\Delta\omega_{\alpha}=\frac{i\int\rho_0\xi_{\alpha}^*(\scap{v_0}{\nabla})\xi_{\alpha}\,d^3x}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}\,d^3x}=\frac{-m\int\rho_0\Omega\xi_{\alpha}^*\xi_{\alpha}\,d^3x+i\int\rho_0\xi_{\alpha}^*(\vecp{\Omega}{\xi_{\alpha}})\,d^3x}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}\,d^3x}
-%\end{split}
+\begin{split}
+&\Delta\omega_{\alpha}=\frac{i\int\rho_0\xi_{\alpha}^*(\scap{v_0}{\nabla})\xi_{\alpha}\,d^3x}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}\,d^3x}\\
+&=\frac{-m\int\rho_0\Omega\xi_{\alpha}^*\xi_{\alpha}\,d^3x+i\int\rho_0\xi_{\alpha}^*(\vecp{\Omega}{\xi_{\alpha}})\,d^3x}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}\,d^3x}
+\end{split}
 \end{equation}
 
 
@@ -872,6 +876,12 @@ Questo si giustifica considerando che, per l fissato, le frequenze dei modi sono
 \end{equation}
 che tiene conto del numero dei nodi radiali e dello sfasamento $\alpha$ prodotto nelle regioni di riflessione.
 
+\begin{wrapfigure}[19]{r}{0.4\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.4\textwidth]{dispersionDuvall}
+\caption{I modi p sono rappresentati da un unica $F$. n \'e l'ordine radiale, $\alpha$ una fase dovuta alla riflessione. Da \cite{duv82dispersion}.}\label{fig:duv82dispersion}
+\end{wrapfigure}
+
 Questo comportamento \'e stato osservato per i modi p da \citet{duv82dispersion}. Un grafico di $\frac{\pi(n+\alpha)}{\omega}$ rispetto a $\frac{\omega}{k_h}$ rappresenta i modi p con un'unica curva (vedi \ref{fig:duv82dispersion}), per $\alpha$ opportuno con:
 \begin{equation}
 (n+\alpha)\frac{\pi}{\omega}=F'(\frac{\omega}{k_h})=F(\frac{\omega}{L})\label{eq:duvallr}
@@ -885,13 +895,6 @@ si ha:
 &F(w)=\int_{r_t}^R\sqrt{1-\frac{c_s^2}{r^2w^2}}\,\frac{dr}{c_s}\label{eq:duvallf}\\
 &(n+\alpha)\pi\approx\int_{r_t}^Rk_r\,dr\approx\int_{r_t}^R\frac{\omega}{c_s}\sqrt{1-\frac{S_l^2}{\omega^2}}\,dr\label{eq:duvallexpli}
 \end{align}
-
-\begin{wrapfigure}[21]{r}{0.5\textwidth}
-\centering
-\includegraphics[keepaspectratio,width=0.45\textwidth]{dispersionDuvall}
-\caption{I modi p sono rappresentati in un unica linea. Da \cite{duv82dispersion}.}\label{fig:duv82dispersion}
-\end{wrapfigure}
-
 
 Utilizzando invece il limite per basse frequenze di \eqref{eq:approximatedispersion} per i modi g trovo la relazione di dispersione approssimata per $l\neq0$:
 \begin{equation}
