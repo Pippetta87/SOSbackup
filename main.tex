@@ -1,4 +1,10 @@
-\documentclass[twoside,11pt,fleqn]{memoir}%%% TESI
+\documentclass[twoside,11pt,openany,fleqn]{memoir}%%% TESI
+%openany
+
+%% rimuove workout errata dalla versione da consegnare
+\def\versione{consegna}%%VERSIONE
+\def\bozza{bozza}
+\def\consegna{consegna}
 
 %% colors
 \usepackage[usenames,dvipsnames]{xcolor}
@@ -64,13 +70,16 @@
       \counterwithout{table}{chapter}
       \counterwithin{figure}{part}
       \counterwithin{table}{part}
-	\renewcommand{\thesubfigure}{\arabic{figure}.\alph{subfigure}}
-	\renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
+	\renewcommand{\thesubfigure}{\arabic{part}-\arabic{figure}.\alph{subfigure}}
+	\renewcommand{\thefigure}{\arabic{part}-\arabic{figure}}
 	\renewcommand{\thetable}{\arabic{part}-\arabic{table}}
       }
     \makeatother
 %%%%
 
+\makeatletter
+\newcommand{\titolo}{\@title}
+\makeatother
 
 \author{ }
 \title{Studio delle oscillazioni solari}
@@ -80,10 +89,28 @@
 
 \begin{document}
 
+\begingroup
 
-\frontmatter
-\pagenumbering{roman}
-\maketitle
+\thispagestyle{empty}
+\begin{center}
+\Huge Universit\'a di Pisa\\ \vspace{1cm}\textbf{\huge Facolt\'a di Scienze Matematiche Fisiche e Naturali}\\ \vspace{2cm} \textbf{\LARGE Corso di Laurea in Fisica}\\\Large Anno Accademico 2016/2017\\ \vspace{5cm} \LARGE Elaborato Finale\\ \vspace{1cm} \huge\titolo
+
+\end{center}
+
+\vspace{9cm}
+
+\begin{minipage}[l]{0.5\textwidth}\Large
+Candidato\\
+Rossi Filippo
+\end{minipage}
+\begin{minipage}[r]{0.5\textwidth}\Large
+Relatore\\Prof.sa Scilla Degl'Innocenti
+\end{minipage}
+%\frontmatter
+
+\endgroup
+
+\cleartorecto
 
 \tableofcontents*
 
@@ -92,19 +119,23 @@
 %\subfile{sommario}
 
 %\cleardoublepage
+\pagenumbering{roman}
 
 \mainmatter
 
 \pagenumbering{arabic}
 
+\cleartorecto
 \part{Il modello solare standard. Importanza osservabili sismologiche.}
 
 \subfile{SSM}
 
+\cleartorecto
 \part{Oscillazioni della fotosfera con grande coerenza spaziale e temporale: modi normali di cavit\'a risonanti dell'interno solare.}
 
 \subfile{oscillation}
 
+\cleartorecto
 %\part{Problema inverso e accuratezza parametri del modello solare.}
 \part{Accuratezza del modello solare tramite confronto con osservabili sismologiche.}
 
@@ -113,12 +144,16 @@
 \backmatter
 
 %\newgeometry{margin=60px,tmargin=20px}%%APPENDICE
-\appendix
-\part{Appendice}
-\subfile{appendix}
+%\appendix
+%\part{Appendice}
+%\subfile{appendix}
 %\restoregeometry
 
 \printbibliography
 
+\ifx\versione\bozza
+\woc
+\erratac
+\fi
 
 \end{document}
