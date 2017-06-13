@@ -669,11 +669,6 @@ Il tempo trascorso da una stella di massa solare in sequenza principale consider
 \tau_n\approx\frac{E_n}{L}=\frac{fX\msun Q}{\lsun}\approx\SI{e+10}{\year},\ Q\approx\SI{6.3e18}{\erg\per\gram}
 \end{equation}
 
-\begin{wrapfigure}[20]{r}{0.5\textwidth}
-       \includegraphics[width=0.45\textwidth,keepaspectratio]{watt-PPvsCNO}
-        \caption{Andamento dell'energia generata per unit\'a di massa nel Sole: il contributo della catena PP \'e dominante rispetto ad altre reazioni.}
-\end{wrapfigure}
-
 L'energia liberata dalle reazioni nucleari per grammo per secondo $\epsilon(\rho,T,X_i)$ \'e determinata dalla probabilit\'a che la reazione $X(a,b)Y$ abbia luogo. Sia $E$ l'energia cinetica nel centro di massa dei nuclei, per la sezione d'urto $\sigma(E)$ di fusione si ha
 
 \begin{equation}
@@ -773,6 +768,7 @@ display columns/4/.style={column name={DTDL}},
 create on use/react/.style={create col/set list={
 $p+p$,$\cel{He}{3}{}{}+\cel{He}{4}{}{}$,$p+\cel{N}{14}{}{}$,$p+\cel{Be}{7}{}{}$}},
 columns/react/.style = {column type/.add={|}{}},
+columns/react/.style = {column type/.add={}{|}},
 columns/react/.style={string type},
 columns={react,GB,GDGC,SVH,DTDI},
 /pgf/number format/precision=4
@@ -803,9 +799,15 @@ si ottiene
 U_0=-\frac{Z_1Z_2e^2}{r_D}
 \end{equation}
 
+\begin{workout}[Reaction rates]
+\begin{wrapfigure}[20]{r}{0.5\textwidth}
+       \includegraphics[width=0.45\textwidth,keepaspectratio]{watt-PPvsCNO}
+        \caption{Andamento dell'energia generata per unit\'a di massa nel Sole: il contributo della catena PP \'e dominante rispetto ad altre reazioni.}
+\end{wrapfigure}
+Nella fase di sequenza principale per massa e composizione solari la luminosit\'a \'e generata da reazioni delle catene $\Pproton\Pproton$ per circa il $99\%$.
+\end{workout}
+
 %\begin{wrapfigure}[23]{r}{0.6\textwidth}
-
-
 % T_6=10T_7=10^3T_9
 
 
@@ -839,7 +841,7 @@ display columns/4/.style={column name={$\frac{Z}{X}$}},
 %display columns/8/.style={column name={$\frac{Z}{X}$}},
 create on use/authors/.style={create col/set list={
 %Anders \& Grevesse (1989),Grevesse \& Noels (1993),
-Grevesse \& Sauval (1998),Lodders (2003),Asplund Grevesse \& Sauval (2005),Lodders Palme \& Gail (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
+Grevesse et al. (1998),Lodders (2003),Asplund et al. (2005),Lodders et al. (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
 columns/authors/.style={string type},
 columns={authors,x, y, z, zx
 %,xi,yi,zi, zxi
@@ -886,11 +888,6 @@ Per determinare il modello solare attuale evolvo il modello del Sole in sequenza
 \item L'efficienza della convezione determina il gradiente della regione esterna convettiva \'e scelta in maniera da avere la temperatura efficace attuale, cio\'e il raggio attuale; in generale devo  fare ulteriore correzione perch\'e cambiando il gradiente termico della regione esterna la soluzione delle equazioni stellari avr\'a in generale un profilo termico leggermente diverso e un modello solare che non riproduce la luminosit\'a attuale.
 
 \end{itemize}
-
-
-\begin{workout}[Reaction rates]
-Nella fase di sequenza principale per massa e composizione solari la luminosit\'a \'e generata da reazioni delle catene $\Pproton\Pproton$ per circa il $99\%$.
-\end{workout}
 
 \begin{figure}[!h]
 \includegraphics[width=\textwidth,trim=4 4 4 4,clip]{BP2000}
