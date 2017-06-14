@@ -18,10 +18,10 @@
 %\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp}{0pt}{\Huge\bfseries\barbox}
 
 %\titleformat{\chapter}[block]{\huge}{\chaptertitlename\ \thechapter:\ }{0pt}{\huge}
-\titleformat{\chapter}{\Huge}{\thechapter.\ }{0pt}{\huge} %Titoli capitoli senza capitolo XZ:
+\titleformat{\chapter}{\Needspace{10\baselineskip}\Huge}{\thechapter.\ }{0pt}{\huge}[] %Titoli capitoli senza capitolo XZ:
 
 
-\titleformat{\section}{\LARGE}{\thesection: }{0pt}{\LARGE}
+\titleformat{\section}{\Needspace{5\baselineskip}\LARGE}{\thesection: }{0pt}{\LARGE}[]
 
 
 \titleformat{\subsection}[runin]{\LARGE}{\arabic{chapter}.\arabic{section}.\arabic{subsection}}{5pt}{\large\scshape}

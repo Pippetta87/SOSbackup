@@ -36,12 +36,12 @@ r=R\Exp{-\frac{2}{\pi}\int_{a_s}^a(w\expy{-2}-a\expy{-2})\expy{-\frac{1}{2}}\TDy
 
 dove $a=\frac{c_s}{r}$.
 
-Dall'equazione precedente, nota la funzione $F(w)$ dalle osservazioni, di ricavare $c_s(r)$ (vedi figura \ref{fig:soundspeedccm}). Il confronto tra $c_{sm}(r)$ calcolato tramite un modello solare e $c_{s0}^(r)$ invertito usando l'equazione precedente per lo stesso modello mostra che l'errore sistematico dovuto alla tecnica di inversione nel range $0.4\leq x \leq 0.9$ \'e minore del $2.5\%$.
+Dall'equazione precedente, nota la funzione $F(w)$ dalle osservazioni, di ricavare $c_s(r)$ (vedi figura \ref{fig:soundspeedccm}). Il confronto tra $c_{sm}(r)$ calcolato tramite un modello solare e $c_{s0}(r)$ invertito usando l'equazione precedente per lo stesso modello mostra che l'errore sistematico dovuto alla tecnica di inversione nel range $0.4\leq x \leq 0.9$ \'e minore del $2.5\%$.
 
 
 \section{Struttura dei modi penetranti nel core stellare}
 
-La deviazione dalla \eqref{eq:freqequi} fornisce informazioni sull'evoluzione chimica del core di fusione: infatti estendendo ancora l'espansione di \eqref{eq:duvallf} si ha una misura della variazione di $c$ nel core della stella
+La deviazione dalla \eqref{eq:freqequi} fornisce informazioni sull'evoluzione chimica del core di fusione: infatti estendendo ancora l'espansione di \eqref{eq:duvallf} si ha una misura della variazione di $c_s$ nel core della stella
 \begin{equation}\label{eq:tassoul}
     d_{nl}=\nu_{nl}-\nu_{n-1,l+2}\approx-(4l+6)\frac{\Delta\nu}{4\pi^2\nu_{nl}}\int_0^R\frac{dc_s}{dr}\frac{dr}{r}
 \end{equation}
@@ -50,13 +50,14 @@ La velocit\'a del suono \'e ridotta a causa dell'aumentare di $\mu$ durante la f
 \section{Forma differenziale della legge di Duvall}
 
 Considero l'effetto di perturbazioni del modello sulle frequenze dei modi introducendo nella legge di Duvall \eqref{eq:duvallexpli} perturbazioni nel profilo della velocit\'a del suono e in $\alpha$:
-\begin{align}
-&S_{nl}\frac{\delta\omega_{nl}}{\omega_{nl}}\approx H_1(\frac{\omega_{nl}}{L})+H_2(\omega_{nl})\\\label{eq:Dlinear} &S_{nl}=\int_{r_t}^R(1-\frac{L^2c^2}{r^2\omega_{nl}^2})\expy{-\frac{1}{2}}\frac{dr}{c}-\pi\TDy{\omega}{\alpha}
-\end{align}
-dove ho definito
 \begin{equation}
-H_1(w)=\int_{r_t}^R(1-\frac{c^2}{r^2w^2})\expy{-\frac{1}{2}}\frac{\delta_rc}{c}\frac{dr}{c},\ H_2(\omega)=\frac{\pi}{\omega}\delta\alpha(\omega)
+S_{nl}\frac{\delta\omega_{nl}}{\omega_{nl}}\approx H_1(\frac{\omega_{nl}}{L})+H_2(\omega_{nl})\label{eq:Dlinear}
 \end{equation}
+
+\begin{align}
+&S_{nl}=\int_{r_t}^R(1-\frac{L^2c^2}{r^2\omega_{nl}^2})\expy{-\frac{1}{2}}\frac{dr}{c}-\pi\TDy{\omega}{\alpha}\\
+&H_1(w)=\int_{r_t}^R(1-\frac{c^2}{r^2w^2})\expy{-\frac{1}{2}}\frac{\delta_rc}{c}\frac{dr}{c},\ H_2(\omega)=\frac{\pi}{\omega}\delta\alpha(\omega)
+\end{align}
 
 La funzione $S_{nl}$ \'e approssimabile con un temine proporzionale a $Q_{nl}$ (\cite{christensen1991solar}):
 \begin{align}
@@ -71,7 +72,7 @@ Le funzioni $H_1(\frac{\omega_{nl}}{L})$ e $H_2(\omega_{nl})$ possono essere ott
         \caption{a) Residuo della differenza di frequenze fra il sole e un modello senza diffusione a cui \'e stato sottratto $H_1$. b) Fit di $H_2$ linea continua e per contrasto fit di $H_2$ per differenze di frequenze tra Sole e modello con diffusione. Da \cite{dal03notes}.}\label{fig:H2dnd}
 \end{wrapfigure}
 
-La relazione \eqref{eq:Dlinear}, considerando che $1-\midfrac{L^2c^2}{r^2\omega^2}\approx1$ a parte vicino al punto d'inversione $r_t$, pu\'o essere approssimata da
+La relazione \eqref{eq:Dlinear}, considerando che $1-\midfrac{L^2c^2}{r^2\omega^2}\approx1$ ad eccezione delle regioni vicino al punto d'inversione $r_t$, pu\'o essere approssimata da
 \begin{equation}
 \frac{\delta\omega}{\omega}\approx\frac{\int_{r_t}^{R}\frac{\delta_rc_s}{c_s}\frac{dr}{c_s}}{\int_{r_t}^R\frac{dr}{c_s}}
 \end{equation}
@@ -159,7 +160,7 @@ Usando la tecnica del minimo $\chi^2$ regolarizzato si parametrizzano le funzion
 
 \end{workout}
 
-Usando la tecnica del minimo $\chi^2$ regolarizzato si parametrizza la funzione incognita $\frac{\delta f}{f}$.
+Usando la tecnica del minimo $\chi^2$ regolarizzato si parametrizza la funzione incognita $\frac{\delta f}{f}$ tramite funzioni di base opportune.
 
 La funzione da minimizzare \'e
 \begin{equation}
@@ -169,7 +170,7 @@ con
 \begin{equation}
 \chi^2=\frac{1}{N-N_p}\sum_{\alpha=1}^N(\frac{\delta\omega_{obs}-\delta\omega_{fit}}{\sigma})^2_{\alpha}
 \end{equation}
-N indica il numero totale di modi $\alpha$, $N_p$ il numero di parametri da determinare, $\Delta\nu_{fit}$ contiene la funzione incognita opportunamente parametrizzata e il secondo addendo del lato destro di \eqref{eq:minimizerls} \'e introdotto per ridurre oscillazioni indesiderate nel risultato dell'inverisone con $\alpha$, parametro di regolarizzazione, scelto opportunamente.
+N indica il numero totale di modi $\alpha$, $N_p$ il numero di parametri da determinare, $\Delta\nu_{fit}$, ricavato tramite \eqref{eq:variational}, contiene la funzione incognita opportunamente parametrizzata; il secondo addendo del lato destro di \eqref{eq:minimizerls} \'e introdotto per ridurre oscillazioni indesiderate nel risultato dell'inverisone con $\alpha$, parametro di regolarizzazione, scelto opportunamente.
 
 \begin{workout}[Incertezze inerenti RLS]
 parametro regolarizzazione, numbers of bins, number of legendre polynomials
@@ -234,11 +235,11 @@ Determino i coefficienti minimizzando l'espressione
 \begin{equation}
 \int_0^R[\mathcal{K}_{c^2,\rho}(r_0,r)-\mathcal{T}(r_0,r)]^2\,dr+\beta\int_0^R\mathcal{L}_{\rho,c^2}(r_0,r)\,dr+\mu\sum_i\sigma_ic_i(r_0)c_j(r_0)
 \end{equation}
-dove
+dove il kernel cross-term
 \begin{equation}
 \mathcal{L}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)
 \end{equation}
-il kernel cross-term  contralla i contributi indesiderati di $\frac{\delta_r\rho}{\rho}$.
+contralla i contributi indesiderati di $\frac{\delta_r\rho}{\rho}$.
 
 
 Il primo termine approssima il valore di $\frac{\delta c^2}{c^2}$ pesato dal kernel $\mathcal{K}(r,r_0)=\sum_ic_i(r_0)K_{c^2,\rho}^i(r)$, il secondo tiene conto dell'influenza che hanno le discrepanze della seconda funzione su quelle della funzione che abbiamo scelto di invertire pesate da $\mathcal{L}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)$, il terzo \'e il termine di superficie: i coefficienti $c_i(r_0)$ sono scelti in maniera da riprodurre la funzione target, minimizzare la contaminazione delle $\frac{\delta \rho}{\rho}$ via $\mathcal{L}_{\rho,c^2}$ e il rumore.
@@ -279,7 +280,7 @@ $\frac{\delta\rho}{\rho}$&&&\\
 \caption{Inversione della velocit\'a di rotazione a diverse latitudini. La linea verticale tratteggiata indica la base della zona convettiva. Da \cite{chr02helioseismology}.}
 \end{figure}
 
-Per inversione 2D, cio\'e che considera la dipendenza da $(r,\theta)$, si esprimono direttamente le differenze in frequenze:
+Per inversione 2D, cio\'e che considera la dipendenza generica $\Omega(r,\theta)$, si esprimono direttamente le differenze in frequenze:
 \begin{equation}
 \omega_{nlm}-\omega_{nl0}=m\int_0^R\int_0^{\pi}K_{nlm}(r,\theta)\Omega(r,\theta)r\,dr\,d\theta\label{eq:invrot2D}
 \end{equation}
