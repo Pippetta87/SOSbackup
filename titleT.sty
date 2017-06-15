@@ -18,7 +18,8 @@
 %\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp}{0pt}{\Huge\bfseries\barbox}
 
 %\titleformat{\chapter}[block]{\huge}{\chaptertitlename\ \thechapter:\ }{0pt}{\huge}
-\titleformat{\chapter}{\Needspace{10\baselineskip}\Huge}{\thechapter.\ }{0pt}{\huge}[] %Titoli capitoli senza capitolo XZ:
+\titleformat{\chapter}{\makeatletter\let\ps@chapter\ps@plain\makeatother
+\Needspace{10\baselineskip}\Huge}{\thechapter.\ }{0pt}{\huge}[\thispagestyle{plain}] %Titoli capitoli senza capitolo XZ:
 
 
 \titleformat{\section}{\Needspace{5\baselineskip}\LARGE}{\thesection: }{0pt}{\LARGE}[]
