@@ -6,7 +6,7 @@ In questa parte considero come estrarre informazioni sulla struttura di equilibr
 
 Un'inversione indipendente dal modello \'e possibile utilizzando l'approssimazione asintotica, valida nelle regioni in cui le autofunzioni variano molto pi\'u rapidamente delle grandezze di equilibrio e che trascura la perturbazione del potenziale gravitazionale.
  
-L'inversione del sistema completo di equazioni dei modi si effettua considerando le perturbazioni al MSS che danno un miglior accordo tra frequenze osservate e misurate: considero solo i termini lineari nelle perturbazioni e quindi le correzioni agli autovettori sono trascurate.
+L'inversione del sistema completo di equazioni dei modi si effettua considerando le perturbazioni al MSS che danno un miglior accordo tra frequenze osservate e predette dal MSS: considero solo i termini lineari nelle perturbazioni e quindi le correzioni agli autovettori sono trascurate.
 
 I risultati dell'inversione sismologica permettono di valutare l'accuratezza della struttura del \mss{} , in particolare del profilo radiale della velocit\'a del suono, della densit\'a e di $\Gamma_1$; inoltre, usando l'equazione di stato per esplicitare la dipendenza di $\Gamma_1$ da $Y$, \'e possibile ricavare l'abbondanza di elio nella zona convettiva $Y_{CZ}$.
 
@@ -239,10 +239,9 @@ dove il kernel cross-term
 \begin{equation}
 \mathcal{L}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)
 \end{equation}
-contralla i contributi indesiderati di $\frac{\delta_r\rho}{\rho}$.
+controlla i contributi indesiderati di $\frac{\delta_r\rho}{\rho}$.
 
-
-Il primo termine approssima il valore di $\frac{\delta c^2}{c^2}$ pesato dal kernel $\mathcal{K}(r,r_0)=\sum_ic_i(r_0)K_{c^2,\rho}^i(r)$, il secondo tiene conto dell'influenza che hanno le discrepanze della seconda funzione su quelle della funzione che abbiamo scelto di invertire pesate da $\mathcal{L}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)$, il terzo \'e il termine di superficie: i coefficienti $c_i(r_0)$ sono scelti in maniera da riprodurre la funzione target, minimizzare la contaminazione delle $\frac{\delta \rho}{\rho}$ via $\mathcal{L}_{\rho,c^2}$ e il rumore.
+%Il primo termine approssima il valore di $\frac{\delta c^2}{c^2}$ pesato dal kernel $\mathcal{K}(r,r_0)=\sum_ic_i(r_0)K_{c^2,\rho}^i(r)$, il secondo tiene conto dell'influenza che hanno le discrepanze della seconda funzione su quelle della funzione che abbiamo scelto di invertire pesate da $\mathcal{L}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)$, il terzo \'e il termine di superficie: i coefficienti $c_i(r_0)$ sono scelti in maniera da riprodurre la funzione target, minimizzare la contaminazione delle $\frac{\delta \rho}{\rho}$ via $\mathcal{L}_{\rho,c^2}$ e il rumore.
 
 \begin{comment}
 \section{risultati inversione}

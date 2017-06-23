@@ -8,7 +8,7 @@
 
 La struttura stellare \'e determinata dalle condizioni di equilibrio idrostatico e termico locale: noti massa e composizione chimica iniziale \'e possibile costruire un modello stellare (modello solare standard nel caso del Sole, per brevit\'a MSS) che riproduca la struttura stellare a un tempo dato.
 
-I modelli stellari devono contenere una descrizione accurata del plasma solare, in particolare \'e necessario conoscere l'equazione di stata, le propriet\'a di trasmisione della radiazione e l'efficienza delle reazioni di fusione. Inoltre per alcuni meccanismi fisici, come ad esempio la convezione negli esterni stellari, non esiste ancora una teoria completa quindi si introducono dei parametri nel modello scelti in maniera da riprodurre pi\'u accuratamente possibile la posizione della stella nel diagramma di \hr{}, definito da luminosit\'a e temperatura efficace.
+I modelli stellari devono contenere una descrizione accurata del plasma solare, in particolare \'e necessario conoscere l'equazione di stato, le propriet\'a di trasmisione della radiazione e l'efficienza delle reazioni di fusione. Inoltre per alcuni meccanismi fisici, come ad esempio la convezione negli esterni stellari, non esiste ancora una teoria completa quindi si introducono dei parametri nel modello scelti in maniera da riprodurre pi\'u accuratamente possibile la posizione della stella nel diagramma di \hr{}, definito da luminosit\'a e temperatura efficace.
 
 % save original \intextsep
 \newlength{\oldintextsep}
@@ -38,7 +38,7 @@ $\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
 
 \setlength{\intextsep}{\oldintextsep}
 
-Per quanto riguarda il Sole \'e possibile determinare sperimentalmente l'et\'a, il prodotto $G\msun$, la distanza, la luminosit\'a, la composizione chimica al livello della fotosfera, ad eccezione del $\cel{He}{4}{}{}$ e altri gas nobili, e il raggio mentre allo stato delle conoscenze \'e conveniente introdurre nel modello solare un parametro $\alpha$ per descrivere l'efficienza del trasporto convettivo da determinare tramite la calibrazione del modello con le osservazioni, assieme all'abbondanza di $\cel{He}{4}{}{}$. Nel modello solare standard (MSS)  la zona convettiva occupa circa il $29\%$ pi\'u esterno del raggio solare e contiene il $2\%$ della massa: questa regione \'e chimicamente omogenea. 
+Per quanto riguarda il Sole \'e possibile determinare sperimentalmente l'et\'a, il prodotto $G\msun$, la distanza, la luminosit\'a, la composizione chimica al livello della fotosfera, ad eccezione del $\cel{He}{4}{}{}$ e altri gas nobili, e il raggio mentre allo stato delle conoscenze \'e conveniente introdurre nel modello solare un parametro $\alpha$ per descrivere l'efficienza del trasporto convettivo da determinare tramite la calibrazione del modello con le osservazioni, assieme all'abbondanza di $\cel{He}{4}{}{}$. Nel modello solare standard (MSS) la zona convettiva occupa circa il $29\%$ pi\'u esterno del raggio solare e contiene il $2\%$ della massa: questa regione \'e chimicamente omogenea. 
 
 \begin{wraptable}[15]{r}{0.6\textwidth}
 
@@ -76,7 +76,7 @@ columns={authors,x, y, z, zx
 \captionof{table}{Metallicit\'a attuale determinata da varii autori.}\label{tab:Zhistory}
 \end{wraptable}
 
-La composizione iniziale del Sole, supposta omogenea, \'e determinata a partire dalla composizione attuale delle regioni esterne, tenendo conto della diffusione, e attraverso la calibrazione del modello solare per le abbondanze di $\cel{H}{1}{}{}$ e $\cel{He}{4}{}{}$.
+La composizione iniziale del Sole, supposta omogenea, \'e determinata tramite il modello solare, a partire dalla composizione attuale delle regioni esterne osservata spettroscopicamente, tenendo conto della diffusione, per e attraverso la calibrazione del modello solare per le abbondanze di $\cel{H}{1}{}{}$ e $\cel{He}{4}{}{}$.
 
 La composizione chimica attuale \'e determinata spettroscopicamente dalle righe di assorbimento dell'atmosfera solare: le composizioni basate su una modellizzazione pi\'u accurata dell'atmosfera solare e della fisica atomica portano ad una metallicit\'a solare pi\'u bassa (vedi \ref{tab:Zhistory}).
 
@@ -363,7 +363,7 @@ Detta $W=E_i+\Omega$ l'energia totale della stella, si ha:
 \begin{equation}
 \Omega=-2E_i\label{eq:virialegpm}
 \end{equation}
-e dalla conservazione dell'energia $\TDy{t}{W}+L=0$ segue che durante la fase di collasso prima dell'inizio della sequenza principale met\'a dell'energia gravitazionale viene spesa per aumentare l'energia interna e met\'a in luminosit\'a:
+e dalla conservazione dell'energia $\TDy{t}{W}+L=0$ segue che durante la fase di contrazione prima dell'inizio della sequenza principale met\'a dell'energia gravitazionale viene spesa per aumentare l'energia interna e met\'a in luminosit\'a:
 \begin{equation}
 L=-\frac{1}{2}\dot{\Omega}=\dot{E}_i
 \end{equation}
@@ -423,7 +423,7 @@ dove ho definito la concentrazione relativa $c_i=\frac{n_i}{n}$, il coefficiente
 
 %Il primo termine tende a diminuire il gradiente di concentrazione, il secondo del gradiente di pressione, il terzo della forza per unit\'a di massa agente sulle componenti, il quarto del gradiente termico.
 
-L'equazione \eqref{eq:diffusionaller} descrive l'effetto sulle diverse particelle, importante per l'evoluzione chimica solare, delle disomogeneit\'a di composizione, pressione e temperatura presenti nel Sole approssimando la soluzione dell'equazione del trasporto di Boltzmann del trasporto con la distribuzione di equilibrio traslata della velocit\'a di diffusione. La distribuzione di velocit\'a $f_i(\vec{r},\vec{v},t)$ della specie i \'e soluzione dell'equazione del trasporto:
+L'equazione \eqref{eq:diffusionaller} descrive l'effetto sulle diverse particelle, importante per l'evoluzione chimica solare, delle disomogeneit\'a di composizione, pressione e temperatura presenti nel Sole approssimando la soluzione dell'equazione del trasporto di Boltzmann con la distribuzione di equilibrio traslata della velocit\'a di diffusione. La distribuzione di velocit\'a $f_i(\vec{r},\vec{v},t)$ della specie i \'e soluzione dell'equazione del trasporto:
 \begin{equation}
 \TDy{t}{f_i}=\PDy{t}{f_i}+\vec{v}_i\cdot\PDy{\vec{r}}{f_i}+\vec{F}_i\cdot\PDy{\vec{v}}{f_i}=-\Div_{\vec{p}}(\vec{s})=C(f_j)\label{eq:Btransport}
 \end{equation}
@@ -569,6 +569,15 @@ Sebbene il tempo caratteristico per percorre un raggio solare sia lungo $\tau_{d
 }
 
 \section{Trasporto radiativo.}
+
+\begin{workout}{sezione d'urto assorbimento per particella}
+
+\begin{align}
+&dI=-\sigma\frac{N_A\rho}{\mu}I_{\nu}\quad \frac{1}{\kappa\rho}\approx\SI{1}{\cm}\\
+&\kappa_{\nu}=\sigma_{\nu}\frac{N_a}{\mu}
+\end{align}
+
+\end{workout}
 
 Nell'interno stellare il cammino libero medio dei fotoni \'e molto corto $\frac{1}{\kappa\rho}\approx\SI{1}{\cm}\ll \rsun{}$, con $\kappa$ opacit\'a radiativa per unit\'a di massa, quindi considero la radiazione localmente in equilibrio con la materia. Il flusso di energia verso la superficie \'e generato da una piccola anisotropia nell'intensit\'a descritta al prim'ordine tramite:
 \begin{equation}
@@ -757,28 +766,21 @@ Una maggiore efficienza del trasporto convettivo di energia si riflette in una m
 \subsection{Teoria della mixing-length.}
 
 In presenza di convezione il flusso di energia verso l'esterno ha una componente radiativa, determinata dal gradiente di temperatura, e una componente dominante convettiva 
-\begin{equation}
+\begin{equation}\label{eq:radconvflux}
 F=F_{con}+F_{rad}=\frac{\lsun{}}{4\pi r^2}
-\end{equation}
-Definisco il gradiente radiativo fittizio:
-\begin{equation}
-F=\frac{4acG}{3}\frac{T^4m}{\kappa Pr^2}\nrad{}\label{eq:fictionrad}
 \end{equation}
 
 Per determinare il gradiente di temperatura effettivo $\nabla$ uso la teoria della mixing-length (\cite{prandtl25tur} e \cite{vitense53kon}):
 si considera l'eccesso di calore trasportato dai blob di gas nel moto convettivo $c_P\Delta T$ rispetto all'ambiente, il cui cammino libero medio \'e la mixing-length $l_m=\alpha H_P$, che da luogo al flusso di energia
-
 \begin{equation}
 F_{con}=\exv{\rho vc_P\Delta T}\label{eq:convectiveflux}
 \end{equation}
-
 dove $\exv{}$ indica una media opportuna sulla sfera di raggio r. Determino il valor medio della differenza di temperatura prendendo come valore caratteristico dello spostamento del blob, considerando moti in entrambi i versi, $\Delta r\approx\frac{l_m}{2}$:
 \begin{equation}
-\frac{\Delta T}{T}\approx\frac{1}{T}\PDy{r}{(\Delta T)}\frac{l_m}{2}=(\nabla-\nabla_e)\frac{l_m}{2}\frac{1}{H_P}
+\frac{\Delta T}{T}\approx\frac{1}{T}\PDy{r}{(\Delta T)}\frac{l_m}{2}=(\nabla-\nabla_e)\frac{l_m}{2}\frac{1}{H_P}\label{eq:blobambdiff}
 \end{equation}
 
 Assumo il lavoro medio fatto dalla forza di galleggiamento per unit\'a di massa $-g\frac{\Delta\rho}{\rho}$ uguale al valore medio della forza, cio\'e la met\'a di quello alla superficie sferica data, moltiplicato lo spostamento medio $\frac{l_m}{2}$ quindi, assumendo in oltre che in media met\'a del lavoro fatto dalla forza di galleggiamento sia trasformato in energia cinetica del blob si ottiene
-
 \begin{equation}
 v^2=g\delta(\nabla-\nabla_e)\frac{l_m^2}{8H_P}\label{eq:blobvelocity}
 \end{equation}
@@ -802,8 +804,15 @@ e approssimando il gradiente normale alla superficie con $\exv{\Delta T}$ ed usa
 \frac{\nabla_e-\nad{}}{\nabla-\nabla_e}=\frac{6acT^3}{\kappa\rho^2c_Pl_mv}
 \end{equation}
 
-Le 5 equazioni \eqref{eq:fictionrad},\eqref{eq:radiativegradient}, \eqref{eq:convectiveflux}, \eqref{eq:blobvelocity}, \eqref{eq:nablavitense} determinano completamente le variabili $F_{rad}, F_{con}, v, \nabla_e, \nabla$ in funzione di $P,T,l(r),m(r),c_P,\nad{},\nrad{},g$ .
+\begin{errata}{Le 5 equazioni del flusso convettivo}
 
+Le 5 equazioni \eqref{eq:fictionrad},\eqref{eq:radiativegradient}, \eqref{eq:convectiveflux}, \eqref{eq:blobvelocity}, \eqref{eq:nablavitense} determinano completamente le variabili $F_{rad}, F_{con}, v, \nabla_e, \nabla$ in funzione di $P,T,l(r),m(r),c_P,\nad{},\nrad{},g$.
+
+\end{errata}
+
+\begin{workout}{Determino $\nabla-\nabla_e$}
+Inserisco in \eqref{eq:radconvflux} le equazioni \eqref{eq:blobvelocity} e \eqref{eq:blobambdiff}: cubic equation for $(\nabla-\nabla_e)$
+\end{workout}
 
 {\let\clearpage\relax\let\cleardoublepage\relax
 \chapter{Produzione di energia: reazioni di fusione.}
