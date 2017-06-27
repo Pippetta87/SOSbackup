@@ -341,6 +341,12 @@ Per i valori solari (\ref{wrap-tab:sunO}) $\tau_{ff}\approx\tau_{esp}\approx\SI{
 
 La contrazione di una nube di gas interstellare \'e un processo complesso. Quando si raggiunge una configurazione abbastanza densa, tale che il cammino libero medio degli atomi e dei fotoni sia breve, si raggiunge rapidamente l'equilibrio idrostatico e termico locale. Il processo di contrazione gravitazionale continua, su tempi-scala termodinamici, fino a che l'energia prodotta dalle reazioni nucleari bilancia l'energia irradiata.
 
+\begin{workout}{LTE vs non LTE}
+
+The majority of the work has been performed under the assumption of local thermodynamic equilibrium (LTE), where the ther- modynamic state of the atmospheric plasma is described via the Saha-Boltzmann equations as a function of the local temperature and electron density alone. However, this approxi- mation strictly holds only in the limit that collisions, i.e. thermalising processes, dominate, and that photon-mean-free-paths are small. For a more accurate physical description the non-local nature of the radiation field and its interaction with the stellar plasma has to be ac- counted for. This requires consideration of the detailed atomic processes for excitation and ionization, as expressed in the rate equations of statistical equilibrium.
+
+\end{workout}
+
 \subsection{Teorema del viriale}
 
 Il teorema del viriale esprime una propriet\'a statistica di particelle interagenti: si trova una relazione tra energia interna, dovuta al moto traslazionale degli atomi, ed energia potenziale gravitazionale.
@@ -570,13 +576,20 @@ Sebbene il tempo caratteristico per percorre un raggio solare sia lungo $\tau_{d
 
 \section{Trasporto radiativo.}
 
-\begin{workout}{sezione d'urto assorbimento per particella}
+\begin{workout}[sezione d'urto assorbimento per particella]
 
 \begin{align}
 &dI=-\sigma\frac{N_A\rho}{\mu}I_{\nu}\quad \frac{1}{\kappa\rho}\approx\SI{1}{\cm}\\
 &\kappa_{\nu}=\sigma_{\nu}\frac{N_a}{\mu}
 \end{align}
 
+\end{workout}
+
+
+\begin{workout}[Equazione trasporto radiatiovo in condizioni di equilibrio termico locale]
+\begin{equation}
+\frac{dI_{\nu}}{\rho\,ds}=\kappa_{\nu}B_{\nu}(T)-\kappa_{\nu}I_{\nu}
+\end{equation}
 \end{workout}
 
 Nell'interno stellare il cammino libero medio dei fotoni \'e molto corto $\frac{1}{\kappa\rho}\approx\SI{1}{\cm}\ll \rsun{}$, con $\kappa$ opacit\'a radiativa per unit\'a di massa, quindi considero la radiazione localmente in equilibrio con la materia. Il flusso di energia verso la superficie \'e generato da una piccola anisotropia nell'intensit\'a descritta al prim'ordine tramite:
@@ -606,6 +619,12 @@ Definisco il gradiente radiativo a partire da \eqref{eq:radfluxTgradrelation}
 con $l(r)=4\pi r^2F$ luminosit\'a totale in funzione di r.
 
 \subsection{Opacit\'a.}
+
+\begin{workout}[Scattering particella carica-oscillatore]
+
+Scattering dipolo
+
+\end{workout}
 
 I fenomeni che contribuiscono all'opacit\'a nel Sole sono:
 
@@ -804,13 +823,13 @@ e approssimando il gradiente normale alla superficie con $\exv{\Delta T}$ ed usa
 \frac{\nabla_e-\nad{}}{\nabla-\nabla_e}=\frac{6acT^3}{\kappa\rho^2c_Pl_mv}
 \end{equation}
 
-\begin{errata}{Le 5 equazioni del flusso convettivo}
+\begin{errata}[Le 5 equazioni del flusso convettivo]
 
 Le 5 equazioni \eqref{eq:fictionrad},\eqref{eq:radiativegradient}, \eqref{eq:convectiveflux}, \eqref{eq:blobvelocity}, \eqref{eq:nablavitense} determinano completamente le variabili $F_{rad}, F_{con}, v, \nabla_e, \nabla$ in funzione di $P,T,l(r),m(r),c_P,\nad{},\nrad{},g$.
 
 \end{errata}
 
-\begin{workout}{Determino $\nabla-\nabla_e$}
+\begin{workout}[Determino $\nabla-\nabla_e$]
 Inserisco in \eqref{eq:radconvflux} le equazioni \eqref{eq:blobvelocity} e \eqref{eq:blobambdiff}: cubic equation for $(\nabla-\nabla_e)$
 \end{workout}
 
@@ -847,7 +866,7 @@ Scrivo la sezione d'urto per i nuclei di carica $Z_1$, $Z_2$ e m massa ridotta:
 
 La funzione $\epsilon(\rho,T,X_i)$ \'e determinata dalla somma di tutti i contributi
 \begin{equation}
-\epsilon_{ij}=\frac{1}{1+\delta_{ij}}Q_{ij}\frac{\rho N_A^2X_jX_k}{{A_jA_k}}\exv{\sigma v}\label{eq:energyrate}
+\epsilon_{ij}=Q_{ij}\frac{n_in_j}{\rho(1+\delta_{ij})}\lambda_{ij}=\frac{1}{1+\delta_{ij}}Q_{ij}\frac{\rho N_A^2X_jX_k}{{A_jA_k}}\exv{\sigma v}\label{eq:energyrate}
 \end{equation}
 dove $Q_{ij}$ \'e l'energia liberata per reazione tra nucleo di specie i e j; $X_i$ indica la frazione in  massa della specie i; $\exv{}$ indica la media sulla distribuzione di Maxwell-Boltzmann
 \begin{equation}

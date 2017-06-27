@@ -1,5 +1,11 @@
 \ProvidesPackage{LocalF}
 
+\newcommand{\canrel}[2]{%
+\par\medskip\noindent
+\makebox[\textwidth][s]{\rlap{#1}\hfill%#2\hfill
+\llap{\texttt{#2}}}%
+\par\medskip}
+
 \renewenvironment{abstract} %%%% Abstract personalization
  {\small
   \begin{center}
@@ -26,7 +32,7 @@
 \def\thewoc{(\arabic{erratac})}
 \newenvironment{errata}[1][ ]%%%% errata
 {\refstepcounter{erratac}\adderratacontent{#1}%
-\begingroup {\theerratac: #1}
+\begingroup {(\theerratac): #1}
 \color{grey}
 }{\vspace{5mm}\noindent\rule{0.5\textwidth}{0.4pt}\\\endgroup}
 
