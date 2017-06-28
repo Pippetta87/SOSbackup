@@ -124,6 +124,13 @@ e scrivo la variazione euleriana di densit\'a, pressione e potenziale gravitazio
 (\rho',P',\Phi')=\exp{i\omega t}[\rho'(r),P'(r),\Phi'(r)]Y_l^m
 \end{equation}
 
+
+\begin{workout}{Spostamento perturbato senza L a dividere}
+\begin{equation}
+\vec{\xi}=\exp{i\omega t}(\xi_r(r),\frac{\xi_h(r)}{L}\PDof{\theta},\frac{\xi_h(r)}{L\sin{\theta}}\PDof{\phi})Y_l^m(\theta,\phi)
+\end{equation}
+\end{workout}
+
 %inoltre, introducendo la frequenza di \bv{} (vedi \eqref{eq:bvfs}), $a=\Phi'+\frac{P}{\rho_0}$, $b=\div{\vec{\xi}}$, riscrivo l'equazione del moto \eqref{eq:emper} nella forma (vedi \citet*{ledoux1958variable})
 Dall'equazione del moto \eqref{eq:emper}, poich\'e le deviazioni dalla simmetria sferica sono in prima approssimazione trascurabili, \'e evidente che:
 \begin{equation}
@@ -148,7 +155,7 @@ infine $\xi_r(r)$, $P'(r)$ e $\Phi'(r)$ sono determinati da
 &\frac{1}{r^2}\TDof{r}(r^2\TDy{r}{\Phi'})-\frac{l(l+1)}{r^2}\Phi'-\frac{4\pi G\rho_0}{g}N^2\xi_r-\frac{4\pi G}{c^2}P'=0
 \end{align}
 \end{subequations}
-con $g=-\frac{1}{\rho_0}\TDy{r}{P_0}$.
+%con $g=-\frac{1}{\rho_0}\TDy{r}{P_0}$.
 
 Il sistema di equazione \eqref{eigenomega} ha soluzione con le opportune condizioni al contorno per un insieme discreto di valori delle frequenze, $\omega_{nlm}$. L'ordine angolare m non compare nelle equazioni quindi gli autovalori $\omega_{nlm}$ sono $2l+1$ degeneri: la degenerazione \'e rimossa nel caso si tenga conto della rotazione ($\frac{\Omega}{\omega}\approx\num{e-4}$).
 %o di effetti gravitazionali di altri corpi.
