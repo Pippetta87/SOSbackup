@@ -121,9 +121,8 @@ Il moto di una elemento di fluido \'e descritto dalla relazione adiabatica
 La condizione di perturbazione adiabatica linearizzata \'e:
 \begin{align}
 &\PDy{t}{\Lvar{P}}-\frac{\Gamma_{1,0}P_0}{\rho_0}\PDy{t}{\Lvar{\rho}}=0\intxt{che integrata rispetto a t ed in funzione della variazione euleriana diventa}
-&P'+\vec{\xi}\cdot\nabla P_0=\frac{\Gamma_{1,0}P_0}{\rho}(\rho'+\vec{\xi}\cdot\nabla\rho_0)\label{eq:adper}
+&P'+\vec{\xi}\cdot\nabla P_0=\frac{\Gamma_{1,0}P_0}{\rho_0}(\rho'+\vec{\xi}\cdot\nabla\rho_0)\label{eq:adper}
 \end{align}
-
 Cerco una soluzione della forma di un'onda stazionaria: esprimo la dipendenza temporale tramite $\exp{i\omega t}$ e angolare tramite le funzioni armoniche sferiche $Y_{lm}(\theta,\phi)$ con:
 \begin{align}
 &Y_{lm}(\theta,\phi)=(-)^mc_{lm}P_l^m(\cos{\theta})\exp{im\phi}\\
@@ -204,7 +203,7 @@ L'energia totale di un modo \'e
 &E_{(n,l)}=\int_0^M\,dm\exv{\dvec{\xi}^2_{nl}}
 %E_{\omega_0}=\int_0^M\exv{v_{osc}^2}
 \intxt{e avendo normalizzato i modi in maniera opportuna si ha}
-&E_{nl}=I_{nl}V_{nl}^2=\frac{1}{2}I_{nl}\omega_{nl}^2A_{nl}^2
+&E_{nl}=\msun{}??I_{nl}V_{nl}^2=\frac{1}{2}I_{nl}\omega_{nl}^2A_{nl}^2
 \end{align}
 dove $V_{nl}^2$ e $A_{nl}^2$ sono il valore quadratico medio della velocit\'a e dell'ampiezza dell'oscillazione in superficie.
 
@@ -388,6 +387,9 @@ risulta $Y_{CZ}=\num{0.2485+-0.0034}$.
 % Dals Art pg 31-32
 %Le differenze in $U$ e $\rho$  fra modelli solari sismologici e modelli solari standard sono al massimo pochi per cento.
 
+\begin{workout}[Spostare ordine: qui propriet\'a asintotiche]
+
+\end{workout}
 
 {\let\clearpage\relax\let\cleardoublepage\relax
 \chapter{Campo di velocit\'a solare.}
@@ -842,7 +844,7 @@ Approssimo il comportamento spaziale delle oscillazioni localmente con un'onda p
 \end{equation}
 per $K(r)>0$ quest'equazione descrive un comportamento oscillante. Si ha la relazione di dispersione:
 \begin{equation}
-k_r^2=\frac{\omega^2}{c_s^2}(\frac{N^2}{\omega^2}-1)(\frac{S_l^2}{\omega^2}-1)\label{eq:approximatedispersion}
+k_r^2=\frac{\omega^2}{c_s^2}(1-\frac{N^2}{\omega^2})(1-\frac{S_l^2}{\omega^2})\label{eq:approximatedispersion}
 \end{equation}
 
 Le approssimazioni fatte non sono pi\'u valide vicino alla superficie dove il termine in $\invers{H_P}$ non \'e trascurabile per $H_P$ piccolo e vicino al centro solare dove il termine in $\frac{2}{r}$ non \'e trascurabile.
@@ -850,8 +852,25 @@ Le approssimazioni fatte non sono pi\'u valide vicino alla superficie dove il te
 Considero \eqref{cowosc:main}  per lunghezza d'onda delle perturbazioni molto minore della scala caratteristica di variazione di $N, c$.
 %stix local treatment pg 165
 
-\begin{workout}[dipendenza dalla densit\'a della perturbazione $\xi$ $P'=P_1$]
-la dipendenza dalla densit\'a di equilibrio \'e dovuta alla costanza dell'energia interna e cinetica per unit\'a di volume, $\rho|\dvec{\xi}|^2\approx\frac{P}{\rho}\,d\rho$
+\begin{workout}[Unire relazione dispersione e cavit\'a risonanti]
+e levare tentativo deduzione $\omega_c$
+\end{workout}
+
+\begin{workout}[Costanza del flusso: densit\'a di energia per velocit\'a di gruppo]
+
+\begin{align}
+&\xi_r\propto\rho_0\expy{-1/2}\exp{ik_rr},\ P_1\propto\rho_0\expy{1/2}\exp{ik_rr}
+\end{align}
+
+Ulrich70/landau fluid $\S49$/dalsnotes Pg 127 chapt 7
+Uso che $\vec{\xi}$ e $\delta P$ sono sfasati di $90$
+
+Work\[-\int_0^{2\pi/\omega}v_zP'\,dt\]
+Therma flux\[-\int_0^{2\pi/\omega}\rho v_zE\,dt\]
+Thermal energy density\[-\int_0^{2\pi/\omega}[\rho E-(\rho E)_0]\,dt\]
+KE density\[-\int_0^{2\pi/\omega}\frac{1}{2}\rho v^2\,dt\]
+\[-\int_{z_1}^{z_2}[\text{Energy density}]\,dz=F(z_1)-F(z_2)\]
+
 \end{workout}
 
 Sostituisco

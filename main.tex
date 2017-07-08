@@ -79,6 +79,13 @@
     \makeatother
 %%%%
 
+%%% SOlve page pre chapter at begginning page without number%@ps
+
+\makeatletter
+  \let\ps@plain\ps@empty
+\makeatother
+%%%
+
 
 \makeatletter
 \newcommand{\titolo}{\@title}
@@ -89,6 +96,8 @@
 \date{\today}
 
 %%%
+%\outputonly{1}% output in pdf only page number
+
 
 \begin{document}
 
@@ -102,17 +111,11 @@
 \Huge Universit\'a di Pisa\\ \vspace{1cm}\textbf{\huge Facolt\'a di Scienze Matematiche Fisiche e Naturali}\\ \vspace{2cm} \textbf{\LARGE Corso di Laurea in Fisica}\\\Large Anno Accademico 2016/2017\\ \vspace{5cm} \LARGE Elaborato Finale\\ \vspace{1cm} \Huge\titolo
 \vspace{9cm}
 
-{
-\centering
-\hspace*{0.1\textwidth}
-{\Large Candidato} \hspace*{0.4\textwidth} {\Large Relatore}
-\hspace*{0.1\textwidth}
-}
 
 {
 \centering
 %\hspace*{\fill}
-{\huge Rossi Filippo} \hspace*{0.1\textwidth} \begin{minipage}[c]{0.5\textwidth}\huge Prof.sa Scilla Degl'Innocenti\end{minipage}
+\begin{minipage}[c]{0.5\textwidth}\centering\Large Candidato\\ \Large Rossi Filippo\end{minipage}\hfill \begin{minipage}[c]{0.5\textwidth}\centering\Large Relatore \\ \Large Prof.sa Scilla Degl'Innocenti\end{minipage}
 %\hspace*{\fill}
 }
 
