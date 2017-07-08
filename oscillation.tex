@@ -12,31 +12,42 @@ In questa sezione ricavo l'equazione del moto perturbato che descrive i modi nor
 \chapter{Modi normali della struttura solare.}
 }
 
+\begin{workout}[cito JCD-helio02, dalsnote-stellar pulsation, AB-non asymptotic inversion]
+In questo capitolo seguo 
+\end{workout}
+
 \section{Perturbazione dello stato di equilibrio.}
 
-Descrivo le oscillazioni come piccole perturbazioni attorno allo stato di equilibrio stazionario (gli effetti non lineari, fra cui lo scambio di energia tra i modi, sono dell'ordine di $\frac{v}{c_s}$ dove v \'e l'ampiezza della velocit\'a dell'oscillazione). 
+Descrivo le oscillazioni come piccole perturbazioni dello stato di equilibrio; in particolare considero l'equazione del moto per un elemento di fluido sottoposto a uno spostamento infinitesimo dalla posizione di equilibrio al termine lineare nelle perturbazioni nel sistema di riferimento dell'elemento.
+%(gli effetti non lineari, fra cui lo scambio di energia tra i modi, sono dell'ordine di $\frac{v}{c_s}$ dove v \'e l'ampiezza della velocit\'a dell'oscillazione). 
 In generale pu\'o essere presente un campo di velocit\'a $\vec{v}_0$:
 \begin{align}
 &\vec{v}=\vec{v}_0+\vec{v}'\intxt{con $\vec{v}'$ perturbazione euleriana della velocit\'a. La variazione di una grandezza euleriana nel riferimento solidale con l'elemento di fluido si esprime tramite:}
-&\TDof{t}=\PDof{t}+(\vec{v}_0\cdot\nabla)
+&\TDof{t}=\PDof{t}+(\vec{v}\cdot\nabla)
 \end{align}
 in prima approssimazione prendo $\vec{v}_0=0$ per poi considerare come perturbazioni gli effetti dovuti a campi di velocit\'a in specie rotazione.
 
-Indico con $P'(\vec{r},t)$ e $\delta P$ la perturbazione euleriana e lagrangiana della pressione e con $\rho'$, $\Phi'$ e $\vec{g}'$ la perturbazione euleriana della densit\'a , e le perturbazioni euleriane del potenziale gravitazionale e dell'accelerazione di gravit\'a conseguenti  con $\delta\vec{r}=\vec{\xi}$ il vettore spostamento perturbato. Il valore attuale della pressione \'e la sovrapposizione del valore di equilibrio e della perturbazione:
+Lo spostamento infinitesimo $\vec{\xi}$ dalla posizione di equilibrio determina perturbazioni nella densit\'a e nella pressione: indico con $P'(\vec{r},t)$ e $\delta P$ la perturbazione euleriana e lagrangiana della pressione e con $\rho'$, $\Phi'$ e $\vec{g}'$ la perturbazione euleriana della densit\'a , e le perturbazioni euleriane del potenziale gravitazionale e dell'accelerazione di gravit\'a conseguenti, con:
 \begin{align}
-&P(\vec{r},t)=P_0(\vec{r})+P'(\vec{r},t)\label{eq:pressureperturbation}\\
-&\Lvar{P(\vec{r})}=P(\vec{r}+\Lvar{\vec{r}})-P_0(\vec{r})=P'(\vec{r})+\Lvar{\vec{r}}\cdot\nabla P_0\\
-&\vec{g}'=-\nabla\Phi',\ \nabla^2\Phi'=4\pi G\rho'\label{eq:gapert}
+&\vec{g}'=-\nabla\Phi'\\
+&\nabla^2\Phi'=4\pi G\rho'\label{eq:gapert}
 \end{align}
-Ricavo l'equazione del moto perturbato sostituendo \eqref{eq:pressureperturbation} nell'equazione del moto \eqref{eq:motion} considerando solo i termini lineari nella perturbazione:
-\begin{equation}
-\rho_0\TDof{t}\vec{v}=\rho_0\PtwoDy{t}{\Lvar{\vec{r}}}=-\nabla P'+\rho_0\vec{g}'+\rho'\vec{g}_0\label{eq:emper}
-\end{equation}
-
-Analogamente per l'equazione di continuit\'a ottengo
+%Il valore attuale della pressione \'e la sovrapposizione del valore di equilibrio e della perturbazione:
+Scrivo la pressione come somma della pressione di equilibrio e della perturbazione euleriana indicata con l'apice:
+\begin{align}
+&P(\vec{r},t)=P_0(\vec{r})+P'(\vec{r},t)\label{eq:pressureperturbation}\intxt{quindi per la perturbazione lagrangiana risulta:}
+&\Lvar{P(\vec{r})}=P(\vec{r}+\Lvar{\vec{r}})-P_0(\vec{r})=P'(\vec{r})+\Lvar{\vec{r}}\cdot\nabla P_0\\
+\end{align}
+mentre integrando l'equazione di continuit\'a rispetto al tempo ottengo la relazione:
 \begin{equation}
 \rho'+\div{(\rho_0\Lvar{\vec{r}})}=0\label{eq:contper}
 \end{equation}
+
+Ricavo l'equazione del moto perturbato considerando solo i termini lineari nella perturbazione:
+\begin{equation}
+\rho_0\TDof{t}\vec{v}=\rho_0\PtwoDy{t}{\Lvar{\vec{r}}}=-\nabla P'+\rho_0\vec{g}'+\rho'\vec{g}_0\label{eq:emper}
+\end{equation}
+dove ho utilizzato la condizione di equilibrio idrostatico.
 
 \section{Oscillazioni lineari adiabatiche.}
 
@@ -64,8 +75,8 @@ L'equazione di conservazione dell'energia interna \eqref{eq:primatemp}, esplicit
 
 Mostro schematicamente che il termine a destra \'e trascurabile su tempi del periodo delle oscillazioni solari.
 
-Stimo il tempo caratteristico $\tau_R$ per flusso radiativo \eqref{eq:radfluxTgradrelation}, con $H$ lunghezza caratteristica per  la variazione di T:
 
+Stimo il tempo caratteristico $\tau_R$ per flusso radiativo dovuto al secondo termine del membro di destra dell'equazione precedente utilizzando \eqref{eq:radiativeflux}, con $H$ lunghezza caratteristica per la variazione di T:
 \noindent
 \begin{minipage}[c]{0.5\textwidth}
 \begin{align*}
@@ -82,10 +93,9 @@ $\tau_R\approx\SI{e7}{\year}\approx\tkh{}$&$\tau_R\approx\SI{e3}{\year}$\\
 
 %Sole: $\kappa=1$, $\rho=1$, $T=\num{e6}$, $H=\num{e10}$)
 %Zona convettiva$\kappa=100$, $\rho=\num{e-5}$, $T=\num{e4}$, $H=\num{e9}$)
+Il termine dovuto alle reazioni nucleari nell'interno solare \'e caratterizzato da un tempo $\tau_{\epsilon}\approx\frac{c_PT}{\epsilon}\approx\SI{e7}{\year}$, che confronta l'energia disponibile per grammo con quella generata dalle reazioni di fusione per unit\'a di tempo.
 
-e nella parte interna il termine dovuto alle reazioni nucleari \'e caratterizzato da un tempo $\tau_{\epsilon}\approx\frac{c_PT}{\epsilon}\approx\tkh{}$, che confronta l'energia disponibile per grammo con quella generata dalle reazioni di fusione per unit\'a di tempo.
-
-Entrambi i tempi scala per scambio di calore sono molto maggiori del periodo delle oscillazioni quindi su un periodo i termini dovuti allo scambio di calore sono trascurabili; l'approssimazione adiabatica non \'e pi\'u valida vicino alla superficie solare dove i tempi per lo scambio di calore sono pi\'u brevi.
+I tempi scala per scambio di calore nell'interno solare sono molto maggiori del periodo delle oscillazioni quindi l'approssimazione adiabatica \'e giustificata mentre non \'e pi\'u valida vicino alla superficie solare dove i tempi per lo scambio di calore sono pi\'u brevi.
 
 Il moto di una elemento di fluido \'e descritto dalla relazione adiabatica
 \begin{equation}
@@ -137,11 +147,10 @@ Dall'equazione del moto \eqref{eq:emper}, poich\'e le deviazioni dalla simmetria
 %&\omega^2\vec{\xi}=\nabla a+\frac{N^2c^2}{g}b\frac{\vec{r}}{r}\\
 \hat{r}\cdot(\rot{\vec{\xi}})=0\ \Rightarrow\ \PDof{\theta}(\sin{\theta}\xi_{\phi})-\PDy{\phi}{\xi_{\theta}}=0
 \end{equation}
-ed \'e quindi possibile ricavare la componente tangenziale della perturbazione da una funzione scalare:
+ed \'e quindi possibile ricavare la componente tangenziale della perturbazione da una funzione scalare. Scrivo:
 \begin{equation}
 \vec{\xi}=\exp{i\omega t}(\xi_r(r),\xi_h(r)\PDof{\theta},\frac{\xi_h(r)}{\sin{\theta}}\PDof{\phi})Y_l^m(\theta,\phi)
 \end{equation}
-dove ho scomposto il vettore spostamento perturbato in componente radiale $\xi_r(r)$ e tangenziale $\xi_h(r)$.
 
 Ricavo la componente $\xi_h(r)$ applicando la parte tangenziale della divergenza all'equazione del moto:
 \begin{equation}
@@ -159,6 +168,10 @@ infine $\xi_r(r)$, $P'(r)$ e $\Phi'(r)$ sono determinati da
 
 Il sistema di equazione \eqref{eigenomega} ha soluzione con le opportune condizioni al contorno per un insieme discreto di valori delle frequenze, $\omega_{nlm}$. L'ordine angolare m non compare nelle equazioni quindi gli autovalori $\omega_{nlm}$ sono $2l+1$ degeneri: la degenerazione \'e rimossa nel caso si tenga conto della rotazione ($\frac{\Omega}{\omega}\approx\num{e-4}$).
 %o di effetti gravitazionali di altri corpi.
+
+\begin{workout}[Riferimenti rotazione: stix]
+
+\end{workout}
 
 Condizioni al contorno: sono necessarie 4 condizioni.
 \begin{itemize}
