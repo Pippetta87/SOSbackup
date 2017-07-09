@@ -2,12 +2,7 @@
 
 \begin{document}
 
-{\let\clearpage\relax\let\cleardoublepage\relax
-\chapter{Principali osservabili solari}
-}
-
 \begin{errata}[Conservazione energia interna-contiene stella che prende la luminosit\'a dal potenziale gravitazionale]
-
  Il processo di contrazione gravitazionale continua, su tempi-scala termodinamici, fino a che l'energia prodotta dalle reazioni nucleari bilancia l'energia irradiata.
 
 \end{errata}
@@ -18,84 +13,7 @@ Un modello stellare descrive l'evoluzione temporale della struttura stellare not
 
 I modelli stellari devono contenere una descrizione accurata del plasma stellare, in particolare \'e necessario conoscere l'equazione di stato, le propriet\'a di trasporto della radiazione e l'efficienza delle reazioni di fusione. Inoltre per alcuni meccanismi fisici, come ad esempio la convezione negli esterni stellari, non esiste ancora una teoria completa quindi si introducono dei parametri nel modello scelti in maniera da riprodurre pi\'u accuratamente possibile la posizione della stella nel diagramma di \hr{}, definito da luminosit\'a e temperatura efficace.
 
-% save original \intextsep
-\newlength{\oldintextsep}
-\setlength{\oldintextsep}{\intextsep}
-
-\setlength\intextsep{0pt}
-\renewcommand{\arraystretch}{1.3}
-
-\begin{wraptable}[9]{l}[10pt]{7.5cm}
-
-\begin{tabular}{l|c}
-
-$\agesun{}$&\SI[separate-uncertainty=true]{4.57\pm0.02e9}{\year}\\
-\hline
-$\rsun{}$&\SI{695658+-140}{\kilo\meter}\footnotemark[1]\\
-\hline
-$G\msun$&\num{132712440018+-8}\SI{e9}{\cubic\meter\per\square\second}\\
-\hline
-$\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
-\hline
-\end{tabular}
-
-\caption[Osservabili solari principali.]{Osservabili solari principali. \footnotetext[1]{\cite{haberreiter2008solving}}.}
-\label{wrap-tab:sunO}
-
-\end{wraptable}
-
-\setlength{\intextsep}{\oldintextsep}
-
-Per quanto riguarda il Sole \'e possibile determinare sperimentalmente l'et\'a, il prodotto $G\msun$, la distanza, la luminosit\'a, la composizione chimica al livello della fotosfera, ad eccezione del $\cel{He}{4}{}{}$ e altri gas nobili, e il raggio mentre allo stato delle conoscenze \'e conveniente introdurre nel modello solare un parametro $\alpha$ per descrivere l'efficienza del trasporto convettivo da determinare tramite la calibrazione del modello con le osservazioni, assieme all'abbondanza di $\cel{He}{4}{}{}$. Nel modello solare standard (MSS) la zona convettiva occupa circa il $29\%$ pi\'u esterno del raggio solare e contiene il $2\%$ della massa: questa regione \'e chimicamente omogenea.
-
-\begin{wraptable}[15]{r}{0.6\textwidth}
-
-\pgfplotstabletypeset[
-every head row/.style={
- before row={\toprule% &\multicolumn{4}{c|}{Attuale}
- %&\multicolumn{4}{c|}{Primordiale}
- %\midrule
- },
- %every last row/.style={after row=\bottomrule},
- after row={\midrule}
-},
-every 2 row/.style={after row=\midrule},
-every last row/.style={after row=\bottomrule},
-every first column/.style={column type/.add={|}{}},
-every last column/.style={column type/.add={}{|}},
-columns/x/.style = {column type/.add={|}{}},
-columns/xi/.style = {column type/.add={|}{}},
-display columns/0/.style={column name={}},
-display columns/1/.style={column name={$X$}},
-display columns/2/.style={column name={$Y$}},
-display columns/3/.style={column name={$Z$}},
-display columns/4/.style={column name={$\frac{Z}{X}$}},
-%display columns/5/.style={column name={$X$}},
-%display columns/6/.style={column name={$Y$}},
-%display columns/7/.style={column name={$Z$}},
-%display columns/8/.style={column name={$\frac{Z}{X}$}},
-create on use/authors/.style={create col/set list={
-%Anders \& Grevesse (1989),Grevesse \& Noels (1993),
-\cite{grevesse1998standard} (GS98),\cite{lodders2003solar}, \cite{asplund2005new},\cite{lodders20094},\cite{asplund2009chemical} (AGSS09),\cite{caffau2011solar} (C11)}},
-columns/authors/.style={string type},
-columns={authors,x, y, z, zx
-%,xi,yi,zi, zxi
-},
-/pgf/number format/precision=4
-     ]{asplund.txt} %%%
-\captionof{table}{Metallicit\'a attuale determinata da varii autori.}\label{tab:Zhistory}
-\end{wraptable}
-
-La composizione iniziale del Sole, supposta omogenea, \'e determinata tramite il modello solare, a partire dalla composizione attuale delle regioni esterne osservata spettroscopicamente, tenendo conto della diffusione, per e attraverso la calibrazione del modello solare per le abbondanze di $\cel{H}{1}{}{}$ e $\cel{He}{4}{}{}$.
-
-La composizione chimica attuale \'e determinata spettroscopicamente dalle righe di assorbimento dell'atmosfera solare: le composizioni basate su una modellizzazione pi\'u accurata dell'atmosfera solare e della fisica atomica portano ad una metallicit\'a solare pi\'u bassa (vedi \ref{tab:Zhistory}).
-
-La composizione dei meteoriti (condriti CI), che si suppone abbiano conservato composizione originaria, \'e in accordo con la determinazione spettroscopica a parte gli elementi volatili: H,C,N,O e gas nobili.
-
-%\vfill
-%Un modello stellare deve riprodurre la posizione di una stella nel diagramma entro le incertezze sulle osservabili sperimentali disponibili: luminosi\'a, massa, raggio, spettro della luce emessa dalla superficie (temperatura efficace, composizione chimica superficiale, accelerazione di gravit\'a) ed et\'a.
-
-Nei capitoli successivi descrivo la configurazione di equilibrio del Sole e le incertezze nella descrizione fisica del modelo solare standard (MSS).
+Nei capitoli successivi descrivo la configurazione di equilibrio stellare con riferimento a stelle di massa solare e le incertezze nella descrizione fisica del modelo solare standard (MSS).
 
 
 {\let\clearpage\relax\let\cleardoublepage\relax
@@ -1134,6 +1052,87 @@ Sulla base dell'efficienza delle reazioni nucleari, del profilo di densit\'a e t
 \chapter{Modello solare standard e osservabili sismologiche.}
 }
 
+\section{Principali osservabili solari}
+
+% save original \intextsep
+\newlength{\oldintextsep}
+\setlength{\oldintextsep}{\intextsep}
+
+\setlength\intextsep{0pt}
+\renewcommand{\arraystretch}{1.3}
+
+\begin{wraptable}[9]{l}[10pt]{7.5cm}
+
+\begin{tabular}{l|c}
+
+$\agesun{}$&\SI[separate-uncertainty=true]{4.57\pm0.02e9}{\year}\\
+\hline
+$\rsun{}$&\SI{695658+-140}{\kilo\meter}\footnotemark[1]\\
+\hline
+$G\msun$&\num{132712440018+-8}\SI{e9}{\cubic\meter\per\square\second}\\
+\hline
+$\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
+\hline
+\end{tabular}
+
+\caption[Osservabili solari principali.]{Osservabili solari principali. \footnotetext[1]{\cite{haberreiter2008solving}}.}
+\label{wrap-tab:sunO}
+
+\end{wraptable}
+
+\setlength{\intextsep}{\oldintextsep}
+
+Per quanto riguarda il Sole \'e possibile determinare sperimentalmente l'et\'a, il prodotto $G\msun$, la distanza, la luminosit\'a, la composizione chimica al livello della fotosfera, ad eccezione del $\cel{He}{4}{}{}$ e altri gas nobili, e il raggio mentre allo stato delle conoscenze \'e conveniente introdurre nel modello solare un parametro $\alpha$ per descrivere l'efficienza del trasporto convettivo da determinare tramite la calibrazione del modello con le osservazioni, assieme all'abbondanza di $\cel{He}{4}{}{}$. Nel modello solare standard (MSS) la zona convettiva occupa circa il $29\%$ pi\'u esterno del raggio solare e contiene il $2\%$ della massa: questa regione \'e chimicamente omogenea.
+
+\begin{wraptable}[15]{r}{0.6\textwidth}
+
+\pgfplotstabletypeset[
+every head row/.style={
+ before row={\toprule% &\multicolumn{4}{c|}{Attuale}
+ %&\multicolumn{4}{c|}{Primordiale}
+ %\midrule
+ },
+ %every last row/.style={after row=\bottomrule},
+ after row={\midrule}
+},
+every 2 row/.style={after row=\midrule},
+every last row/.style={after row=\bottomrule},
+every first column/.style={column type/.add={|}{}},
+every last column/.style={column type/.add={}{|}},
+columns/x/.style = {column type/.add={|}{}},
+columns/xi/.style = {column type/.add={|}{}},
+display columns/0/.style={column name={}},
+display columns/1/.style={column name={$X$}},
+display columns/2/.style={column name={$Y$}},
+display columns/3/.style={column name={$Z$}},
+display columns/4/.style={column name={$\frac{Z}{X}$}},
+%display columns/5/.style={column name={$X$}},
+%display columns/6/.style={column name={$Y$}},
+%display columns/7/.style={column name={$Z$}},
+%display columns/8/.style={column name={$\frac{Z}{X}$}},
+create on use/authors/.style={create col/set list={
+%Anders \& Grevesse (1989),Grevesse \& Noels (1993),
+\cite{grevesse1998standard} (GS98),\cite{lodders2003solar}, \cite{asplund2005new},\cite{lodders20094},\cite{asplund2009chemical} (AGSS09),\cite{caffau2011solar} (C11)}},
+columns/authors/.style={string type},
+columns={authors,x, y, z, zx
+%,xi,yi,zi, zxi
+},
+/pgf/number format/precision=4
+     ]{asplund.txt} %%%
+\captionof{table}{Metallicit\'a attuale determinata da varii autori.}\label{tab:Zhistory}
+\end{wraptable}
+
+La composizione iniziale del Sole, supposta omogenea, \'e determinata tramite il modello solare, a partire dalla composizione attuale delle regioni esterne osservata spettroscopicamente, tenendo conto della diffusione, per e attraverso la calibrazione del modello solare per le abbondanze di $\cel{H}{1}{}{}$ e $\cel{He}{4}{}{}$.
+
+La composizione chimica attuale \'e determinata spettroscopicamente dalle righe di assorbimento dell'atmosfera solare: le composizioni basate su una modellizzazione pi\'u accurata dell'atmosfera solare e della fisica atomica portano ad una metallicit\'a solare pi\'u bassa (vedi \ref{tab:Zhistory}).
+
+La composizione dei meteoriti (condriti CI), che si suppone abbiano conservato composizione originaria, \'e in accordo con la determinazione spettroscopica a parte gli elementi volatili: H,C,N,O e gas nobili.
+
+%\vfill
+%Un modello stellare deve riprodurre la posizione di una stella nel diagramma entro le incertezze sulle osservabili sperimentali disponibili: luminosi\'a, massa, raggio, spettro della luce emessa dalla superficie (temperatura efficace, composizione chimica superficiale, accelerazione di gravit\'a) ed et\'a.
+
+\section{Calibrazione del MSS}
+
 \begin{figure}[!h]
 \includegraphics[width=\textwidth,trim=4 4 4 4,clip]{BP2000}
 \caption{Profilo radiale della densit\'a, abbondanza di idrogeno, luminosit\'a e temperatura; sono indicati i valori centrali e alla base della zona convettiva. Dati da \cite{BP2000}.}
@@ -1204,7 +1203,14 @@ cio\'e il raggio attuale; in generale devo  fare ulteriore correzione perch\'e c
 \item L'abbondanza iniziale di elementi pi\'u pesanti di idrogeno ed elio \'e determinata in maniera da riprodurre quella attuale determinata spettroscopicamente tenendo conto della diffusione.
 \end{itemize}
 
+\begin{workout}[incertezze nella calibrazione]
+$Y-T_c$, $\alpha/\TDy{r}{T}|_{env}$.
 
+Incertezze nelle osservabili: $\agesun$, $\lsun{}$, $(\midfrac{Z}{X})_{ph}$.
+
+Incertezze input: $\kappa$, $S$
+
+\end{workout}
 %\begin{workout}[Reaction rates]
 %\begin{wrapfigure}[10]{r}{0.5\textwidth}
        %\includegraphics[width=0.45\textwidth,keepaspectratio]{watt-PPvsCNO}

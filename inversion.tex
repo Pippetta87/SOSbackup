@@ -115,9 +115,9 @@ Utilizzo la formula \eqref{eq:variational} specializzata al problema dell'invers
 Si determinano attraverso tecniche numeriche le correzioni alla struttura del modello sulla base delle differenze tra frequenze dei modi. Il peso che una perturbazione ha sulla differenze in frequenza \'e determinato dall'ampiezza delle autofunzioni dei modi calcolate tramite un modello solare.
 %Asymptotic approximation for radial eigenfunction (integral equation connectin sound speed $c(r)$ to $\Omega_{nl}$) is inadequate (especially in deep interior)
 
-In \ref{fig:deltacwu} la banda chiara attorno allo zero, che indica il modello solare in perfetto accordo con le osservazioni sismologiche, mostra l'incertezza nell'inversione della velocit\'a del suono; essa \'e dovuta a
+In \ref{fig:deltacwu} la banda chiara attorno allo linea orizzontale sullo zero, che indica il profilo radiale di $c_s(r)$ solare, mostra l'incertezza nell'inversione della velocit\'a del suono; essa \'e dovuta a
 
-\begin{itemize}
+\begin{enumerate}
 
 \item Incertezze nelle frequenze dei modi osservate. Oltre all'incertezza statistica propria del determinato strumento \'e possibile valutare gli effette di eventuali errori sistematici confrontando i risultati dell'inversione per set di frequenze ottenute con strumenti diversi: la differenza nella velocit\'a del suono \'e minore di $0.02\%$.
 
@@ -130,7 +130,7 @@ In \ref{fig:deltacwu} la banda chiara attorno allo zero, che indica il modello s
 
 \item Incertezze legate alla dipendenza da un modello solare per il calcolo dei kernel in \eqref{eq:invstructure}.
 
-\end{itemize}
+\end{enumerate}
 
 \begin{workout}[incertezze]
 [quantificare errori dovuti a errori misura frequenze e dipendenza modello solare dei kernel]
@@ -347,7 +347,7 @@ every last row/.style={after row=\bottomrule},
 every first column/.style={column type/.add={|}{}},
 every last column/.style={column type/.add={}{|}},
 %columns/0/.style = {column type/.add={|}{}},
-display columns/0/.style={column name={Composizione}},
+display columns/0/.style={column name={}},
 display columns/1/.style={column name={$Z/X$}},
 display columns/2/.style={column name={$R_{CZ}$}},
 display columns/3/.style={column name={$Y_{CZ}$}},
@@ -371,9 +371,7 @@ columns={comp,ZX,RCZ,YCZ,Y0},
 \label{tab:CZZvar}
 \end{table}
 
-L'inversione di $c_s$ o $\rho$ mostra se un modello solare riproduce accuratamente la posizione della base della zona convettiva in quanto nella zona convettiva si ha gradiente adiabtico maggiore del gradiente radiativo; diminuzione di opacit\'a, nel caso determinata da una minore metallicit\'a, sposta la base della zona convettiva pi\'u in alto come da tabella \ref{tab:CZZvar}.
-
-La figura \ref{fig:deltacwu} mostra che un modello solare con composizione GS98, meno accurata di AGSS09, riproduce il profilo di $c_s$ in maniera pi\'u accurata: ci\'o pu\'o indicare un'opacit\'a da incrementare nel modello. Analogamente la diminuzione dell'opacit\'a diminuisce il gradiente termico nella regione radiativa quindi a pari luminosit\'a si ha un contenuto di idrogeno maggiore.
+L'inversione di $c_s$ (o $\rho$) mostra in particolare se un modello solare riproduce accuratamente la posizione della base della zona convettiva in quanto il profilo radiale di $c_s(r)$ \'e approssimativamente proporzionale nell'interno solare a $\frac{T}{\mu}$ quindi la differenza tra gradiente radiativo e adibatico produce una differenza nel profile termico tra Sole e modello osservabile nel'inversione della velocit\'a del suono. Il differente comportamento di $\frac{\delta c}{c}$ (vedi figure \ref{fig:deltacwu}) tra modelli con composizione GS98 e AGSS09 \'e dovuto alla minore opacit\'a, a causa della minore metallicit\'a tra i due modelli, che sposta la base della zona convettiva pi\'u in alto (vedi tabella \ref{tab:CZZvar}). Analogamente la diminuzione dell'opacit\'a diminuisce il gradiente termico nella regione radiativa quindi a pari luminosit\'a si ha un contenuto di idrogeno maggiore.
 
 
 \begin{comment}
