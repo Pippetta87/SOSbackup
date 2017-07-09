@@ -81,9 +81,7 @@
 
 %%% SOlve page pre chapter at begginning page without number%@ps
 
-\makeatletter
-  \let\ps@plain\ps@empty
-\makeatother
+\chapterstyle{plain}
 %%%
 
 
@@ -126,7 +124,7 @@
 
 %\hspace
 
-\frontmatter
+%\frontmatter
 
 \endgroup
 
@@ -148,6 +146,11 @@
 \aliaspagestyle{chapter}{plain}
 
 \part{Il modello solare standard. Importanza osservabili sismologiche.}
+
+\begin{workout}[Intro eliosismologia]
+
+\end{workout}
+
 
 \subfile{SSM}
 
