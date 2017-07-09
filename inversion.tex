@@ -2,25 +2,31 @@
 
 \begin{document}
 
+\begin{errata}[estrarre informazioni sulla struttura di equilibrio]
 In questa parte considero come estrarre informazioni sulla struttura di equilibrio dalle frequenze dei modi osservati: modi distinti sono confinati in cavit\'a di profondit\'a diversa e le ampiezze di oscillazione hanno differente comportamento spaziale, \'e quindi possibile invertire il problema date le frequenze osservate per ricavare il profilo radiale di $(P,\rho,\Gamma_1)$.
+\end{errata}
+
+In questa sezione considero come determinare le grandezze solari di equilibrio, in particolare il profilo radiale della velocit\'a del suono e le caratteristiche della zona convettiva, in particolare abbondanza di elio e profondit\'a della zona convettiva. I risultati dell'inversione sismologica permettono di valutare l'accuratezza della struttura del \mss{}.
 
 Un'inversione indipendente dal modello \'e possibile utilizzando l'approssimazione asintotica, valida nelle regioni in cui le autofunzioni variano molto pi\'u rapidamente delle grandezze di equilibrio e che trascura la perturbazione del potenziale gravitazionale.
  
 L'inversione del sistema completo di equazioni dei modi si effettua considerando le perturbazioni al MSS che danno un miglior accordo tra frequenze osservate e predette dal MSS: considero solo i termini lineari nelle perturbazioni e quindi le correzioni agli autovettori sono trascurate.
 
-I risultati dell'inversione sismologica permettono di valutare l'accuratezza della struttura del \mss{} , in particolare del profilo radiale della velocit\'a del suono, della densit\'a e di $\Gamma_1$; inoltre, usando l'equazione di stato per esplicitare la dipendenza di $\Gamma_1$ da $Y$, \'e possibile ricavare l'abbondanza di elio nella zona convettiva $Y_{CZ}$.
-
+\begin{errata}[I risultati dell'inversione sismologica permettono di valutare l'accuratezza della struttura del \mss{}]
+I risultati dell'inversione sismologica permettono di valutare l'accuratezza della struttura del \mss{}, in particolare del profilo radiale della velocit\'a del suono, della densit\'a e di $\Gamma_1$; inoltre, usando l'equazione di stato per esplicitare la dipendenza di $\Gamma_1$ da $Y$, \'e possibile ricavare l'abbondanza di elio nella zona convettiva $Y_{CZ}$.
 \'E possibile ricavare le caratteristiche della base della zona convettiva, profondit\'a della zona convettiva $d_{CZ}=\rsun{}-R_{CZ}$, $\rho_b=\rho(R_{CZ})$, $c_s=c_s(R_{CZ})$, oltre a $Y_{CZ}$, con grande accuratezza.
+\end{errata}
 
-
-{\let\clearpage\relax\let\cleardoublepage\relax \chapter{Inversione della legge di Duvall.}} % Inizio chapter "Inversione asintotica." senza nuava pagina
+{\let\clearpage\relax\let\cleardoublepage\relax \chapter{Inversione della relazione di Duvall.}} % Inizio chapter "Inversione asintotica." senza nuava pagina
 
 %Si ricava, usando le espressioni asintotiche \eqref{cowosc:main}, il profilo radiale della velocit\'a del suono indipendente dal modello solare e si determina l'effetto dell'evoluzione stellare sui modi p di basso ordine radiale.
 %Considerando la differenza tra risultati relativi a diversi set di frequenze \'e possibile attenuare gli effetti degli errori sistematici dovuti alla descrizione asintotica.
 
+\begin{workout}[ref dalsnote chap 7]
 
-L'inversione della legge di Duvall \eqref{eq:duvallexpli} permette di ricavare il profilo di $c_s(r)$ sulla base dei modi osservati, tuttavia le approssimazioni fatte introducono errori sistematici: per i modi pi\'u penetranti nell'interno solare la perturbazione del potenziale gravitazionale influenza sensibilmente $F(\frac{\omega}{L})$ mentre per modi confinati vicino alla superficie $\alpha$ dipende da l.
+\end{workout}
 
+L'inversione della relazione di Duvall \eqref{eq:duvallexpli} permette di ricavare il profilo di $c_s(r)$ sulla base delle frequenze dei modi osservate, tuttavia le approssimazioni fatte introducono errori sistematici: per i modi pi\'u penetranti nell'interno solare la perturbazione del potenziale gravitazionale influenza sensibilmente $F(\frac{\omega}{L})$, mentre per modi confinati vicino alla superficie $\alpha$ dipende da l.
 
 \section{Inversione analitica della velocit\'a del suono}
 
@@ -36,36 +42,37 @@ r=R\Exp{-\frac{2}{\pi}\int_{a_s}^a(w\expy{-2}-a\expy{-2})\expy{-\frac{1}{2}}\TDy
 
 dove $a=\frac{c_s}{r}$.
 
-Dall'equazione precedente, nota la funzione $F(w)$ dalle osservazioni, di ricavare $c_s(r)$ (vedi figura \ref{fig:soundspeedccm}). Il confronto tra $c_{sm}(r)$ calcolato tramite un modello solare e $c_{s0}(r)$ invertito usando l'equazione precedente per lo stesso modello mostra che l'errore sistematico dovuto alla tecnica di inversione nel range $0.4\leq x \leq 0.9$ \'e minore del $2.5\%$.
+Determinata la funzione $F(w)$ dalle osservazioni, \'e possibile ricavare $c_s(r)$ (vedi figura \ref{fig:soundspeedccm}). Il confronto tra $c_{sm}(r)$, profilo della velocit\'a del suono calcolato tramite MSS e $c_{s0}(r)$ determinato usando l'equazione precedente per frequenze dei modi calcolate con lo stesso modello mostra che l'errore sistematico dovuto alla tecnica di inversione nel range $0.4\leq x \leq 0.9$ \'e minore del $2.5\%$.
 
 
 \section{Struttura dei modi penetranti nel core stellare}
 
-La deviazione dalla \eqref{eq:freqequi} fornisce informazioni sull'evoluzione chimica del core di fusione: infatti estendendo ancora l'espansione di \eqref{eq:duvallf} si ha una misura della variazione di $c_s$ nel core della stella
+La deviazione dalla \eqref{eq:freqequi} fornisce informazioni sull'evoluzione chimica del core di fusione: infatti estendendo ancora l'espansione di \eqref{eq:duvallf} si ha:
 \begin{equation}\label{eq:tassoul}
     d_{nl}=\nu_{nl}-\nu_{n-1,l+2}\approx-(4l+6)\frac{\Delta\nu}{4\pi^2\nu_{nl}}\int_0^R\frac{dc_s}{dr}\frac{dr}{r}
 \end{equation}
-La velocit\'a del suono \'e ridotta a causa dell'aumentare di $\mu$ durante la fusione di H in He durante l'evoluzione stellare: il centro solare \'e un minimo locale per la velocit\'a del suono e quindi, essendo il gradiente della velocit\'a del suono positivo, la parte centrale da un contributo sempre pi\'u negativo in \eqref{eq:tassoul} con l'evolversi della stella.
+La velocit\'a del suono \'e ridotta a causa dell'aumentare di $\mu$ durante la fusione di H in He durante l'evoluzione stellare: il centro solare \'e un minimo locale per la velocit\'a del suono e quindi la parte centrale da un contributo sempre pi\'u negativo con l'evolversi della stella.
 
-\section{Forma differenziale della legge di Duvall}
+\section{Forma differenziale della relazione di Duvall}
 
-Considero l'effetto di perturbazioni del modello sulle frequenze dei modi introducendo nella legge di Duvall \eqref{eq:duvallexpli} perturbazioni nel profilo della velocit\'a del suono e in $\alpha$:
-\begin{equation}
-S_{nl}\frac{\delta\omega_{nl}}{\omega_{nl}}\approx H_1(\frac{\omega_{nl}}{L})+H_2(\omega_{nl})\label{eq:Dlinear}
-\end{equation}
-
+Considero l'effetto di variazioni del modello sulle frequenze dei modi introducendo nella relazione di Duvall \eqref{eq:duvallexpli} perturbazioni nel profilo della velocit\'a del suono e in $\alpha$. Definisco le funzioni
 \begin{align}
-&S_{nl}=\int_{r_t}^R(1-\frac{L^2c^2}{r^2\omega_{nl}^2})\expy{-\frac{1}{2}}\frac{dr}{c}-\pi\TDy{\omega}{\alpha}\\
-&H_1(w)=\int_{r_t}^R(1-\frac{c^2}{r^2w^2})\expy{-\frac{1}{2}}\frac{\delta_rc}{c}\frac{dr}{c},\ H_2(\omega)=\frac{\pi}{\omega}\delta\alpha(\omega)
+&H_1(w)=\int_{r_t}^R(1-\frac{c^2}{r^2w^2})\expy{-\frac{1}{2}}\frac{\delta_rc}{c}\frac{dr}{c}\\
+&H_2(\omega)=\frac{\pi}{\omega}\delta\alpha(\omega)
 \end{align}
-
-La funzione $S_{nl}$ \'e approssimabile con un temine proporzionale a $Q_{nl}$ (\cite{christensen1991solar}):
+e la funzione
 \begin{align}
+&S_{nl}=\int_{r_t}^R(1-\frac{L^2c^2}{r^2\omega_{nl}^2})\expy{-\frac{1}{2}}\frac{dr}{c}-\pi\TDy{\omega}{\alpha}\intxt{approssimabile con un temine proporzionale a $Q_{nl}$ (\cite{christensen1991solar}):}\\
 &\frac{S_{nl}}{\tau_0}\approx Q_{nl}\intxt{con}
 &\tau_0=\int_{0}^R\frac{dr}{c_s}
 \end{align}
 
-Le funzioni $H_1(\frac{\omega_{nl}}{L})$ e $H_2(\omega_{nl})$ possono essere ottenute separatamente attraverso fitting dei dati sperimentali: la prima caratterizza il contributo alle differenze nelle frequenze dei modi dovuto alle differenze del profilo radiale della velocit\'a del suono, la seconda alle diffenze nella regione vicino alla superficie.
+La forma differenziale della relazione di Duvall \'e:
+\begin{equation}
+S_{nl}\frac{\delta\omega_{nl}}{\omega_{nl}}\approx H_1(\frac{\omega_{nl}}{L})+H_2(\omega_{nl})\label{eq:Dlinear}
+\end{equation}
+
+Considerando le differenze tra frequenze dei modi solari osservate e calcolate tramite MSS attraverso fitting dei dati sperimentali \'e possibile ottenere le funzioni $H_1(\frac{\omega_{nl}}{L})$ e $H_2(\omega_{nl})$ separatamente : la prima caratterizza il contributo alle differenze nelle frequenze dei modi dovuto alle differenze del profilo radiale della velocit\'a del suono, la seconda alle differenze nella regione vicino alla superficie.
 
 \begin{wrapfigure}[29]{r}{0.45\textwidth}
         \includegraphics[width=0.44\textwidth,keepaspectratio]{H2dnd}
